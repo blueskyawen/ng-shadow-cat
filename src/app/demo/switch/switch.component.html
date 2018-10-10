@@ -1,0 +1,58 @@
+<h2 class="title">开关</h2>
+<p>开关-switch，用于表示项目的启用或禁止</p>
+<div style="margin-top: 20px;">
+  <nc-switch></nc-switch>
+  <nc-switch [switch]="false"></nc-switch>
+  <nc-switch [tipLabels]="['开','关']"></nc-switch>
+  <nc-switch [tipLabels]="['是','否']"></nc-switch>
+</div>
+<div style="margin-top: 20px;">
+  <nc-switch [type]="'min'"></nc-switch>
+  <nc-switch [type]="'min'" [switch]="false"></nc-switch>
+  <nc-switch [type]="'min'" [tipLabels]="['开','关']"></nc-switch>
+  <nc-switch [type]="'min'" [tipLabels]="['是','否']"></nc-switch>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:220px;">
+      <nc-switch></nc-switch>
+      <nc-switch [switch]="false"></nc-switch>
+      <nc-switch [tipLabels]="['开','关']"></nc-switch>
+      <nc-switch [tipLabels]="['是','否']"></nc-switch>
+
+      <nc-switch [type]="'min'"></nc-switch>
+      <nc-switch [type]="'min'" [switch]="false"></nc-switch>
+      <nc-switch [type]="'min'" [tipLabels]="['开','关']"></nc-switch>
+      <nc-switch [type]="'min'" [tipLabels]="['是','否']"></nc-switch>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>type</td>
+    <td>指定大小，2个取值：max,min</td>
+    <td>max</td>
+  </tr>
+  <tr>
+    <td>switch</td>
+    <td>指定开关默认值,true/false</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>tipLabels</td>
+    <td>指定个性化开关显示文本,默认无</td>
+    <td>[]</td>
+  </tr>
+  </tbody>
+</table>

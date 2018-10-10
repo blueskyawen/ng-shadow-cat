@@ -1,0 +1,91 @@
+<h2 class="title">按钮组</h2>
+<p>按钮用来进行用户操作与交互</p>
+<h3>1. 普通按钮</h3>
+<nc-button (click)="getUsers()">普通按钮</nc-button>
+<nc-button [type]="'cancel'" (click)="addUsers()">取消按钮</nc-button>
+<nc-button [style]="'max'" (click)="delUsers()">普通按钮</nc-button>
+<nc-button [type]="'cancel'" [style]="'max'" (click)="getOneUser()">取消按钮</nc-button>
+
+<h3>2. 添加按钮</h3>
+<nc-button [type]="'add'">添加按钮</nc-button>
+<nc-button [type]="'add'" [style]="'max'">添加按钮</nc-button>
+
+<h3>3. 重要按钮</h3>
+<nc-button [type]="'major'">重要按钮</nc-button>
+<nc-button [type]="'major'" [style]="'max'">重要按钮</nc-button>
+
+<h3>4. 禁用按钮</h3>
+<nc-button [disabled]="true">禁用按钮</nc-button>
+<nc-button [type]="'add'" [disabled]="true">禁用按钮</nc-button>
+<nc-button [type]="'major'" [disabled]="true">禁用按钮</nc-button>
+<nc-button [type]="'cancel'" [disabled]="true">禁用按钮</nc-button>
+
+<h3>5. 状态按钮</h3>
+<nc-button [loading]="true">状态按钮</nc-button>
+<nc-button [type]="'add'" [loading]="true">状态按钮</nc-button>
+<nc-button [type]="'major'" [loading]="true">状态按钮</nc-button>
+
+<h3>6. 动态按钮</h3>
+<nc-button [dnymic]="true">动态按钮</nc-button>
+<nc-button [dnymic]="true" [suffix]="true">动态按钮</nc-button>
+
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:240px;">
+      <nc-button>普通按钮</nc-button>
+      <nc-button [type]="'cancel'">取消按钮</nc-button>
+      <nc-button [style]="'max'">普通按钮</nc-button>
+      <nc-button [type]="'cancel'" [style]="'max'">取消按钮</nc-button>
+      <nc-button [type]="'add'">添加按钮</nc-button>
+      <nc-button [type]="'major'">重要按钮</nc-button>
+      <nc-button [disabled]="true">禁用按钮</nc-button>
+      <nc-button [loading]="true">状态按钮</nc-button>
+      <nc-button [dnymic]="true">动态按钮</nc-button>
+      <nc-button [dnymic]="true" [suffix]="true">动态按钮</nc-button>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>type</td>
+    <td>类型，4种取值：normal，add, major, cancel</td>
+    <td>normal</td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>代表大小，2种取值：max（大），min（小）</td>
+    <td>min</td>
+  </tr>
+  <tr>
+    <td>disabled</td>
+    <td>是否禁用，true/false</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>loading</td>
+    <td>是否loading，true/false</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>dnymic</td>
+    <td>是否有动态效果，true/false</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>suffix</td>
+    <td>是否有后缀，true/false</td>
+    <td>false</td>
+  </tr>
+  </tbody>
+</table>

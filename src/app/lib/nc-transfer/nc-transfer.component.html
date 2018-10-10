@@ -1,0 +1,38 @@
+<div class="transferContainer">
+  <div class="optionsContain">
+    <div class="header">
+				<span class="select-all"  [class.checked]="allSourceChecked">
+					<span class="checkbox" (click)="checkAllSource()">✔</span>
+					<span class="items">{{getSourceCheckedNum()}}/{{sourceOptions.length}} items</span>
+				</span>
+      <span class="text">Source</span>
+    </div>
+    <div class="content">
+      <span class="option" *ngFor="let sourOption of sourceOptions" [class.disable]="sourOption.disable"
+            [class.checked]="sourOption.checked" (click)="checkSourOption(sourOption)">
+        <span class="checkbox">✔</span>
+        <span class="item">{{sourOption.label}}</span>
+      </span>
+    </div>
+  </div>
+  <div class="transfer">
+    <div class="toleft" [class.active]="toSourceActive" (click)="targetToSource()">‹</div>
+    <div class="toright" [class.active]="toTargetActive" (click)="sourceToTarget()">›</div>
+  </div>
+  <div class="optionsContain">
+    <div class="header">
+				<span class="select-all" [class.checked]="allTargetChecked">
+					<span class="checkbox" (click)="checkAllTarget()">✔</span>
+					<span class="items">{{getTargetCheckedNum()}}/{{targetOptions.length}} items</span>
+				</span>
+      <span class="text">Target</span>
+    </div>
+    <div class="content">
+      <span class="option" *ngFor="let targOption of targetOptions" (click)="checkTargOption(targOption)"
+            [class.checked]="targOption.checked">
+        <span class="checkbox">✔</span>
+        <span class="item">{{targOption.label}}</span>
+      </span>
+    </div>
+  </div>
+</div>

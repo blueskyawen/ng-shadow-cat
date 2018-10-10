@@ -1,0 +1,56 @@
+
+#pinfen .star {
+  position: relative;
+  margin: 20px 30px;
+  display: inline-block;
+  cursor:pointer;
+}
+#pinfen .star .star1 {
+  width: 0px;
+  height: 0px;
+  border:50px solid;
+  border-color:  transparent transparent transparent #ccc;
+  border-width: 25px 18px;
+  -moz-transform: rotate(18deg);
+  transform: rotate(18deg);
+  position: absolute;
+}
+#pinfen .star .star1.active {
+  border-color:  transparent transparent transparent red;
+}
+#pinfen .star .star2 {
+  width: 0px;
+  height: 0px;
+  border:100px solid;
+  border-color:  transparent #ccc transparent transparent;
+  border-width: 25px 18px;
+  -moz-transform: rotate(-18deg);
+  transform: rotate(-18deg);
+  position: absolute;
+  left:-18px;
+}
+#pinfen .star .star2.active {
+  border-color:  transparent red transparent transparent;
+}
+#pinfen .star .star3 {
+  width: 0px;
+  height: 0px;
+  border:100px solid;
+  border-color:  #ccc transparent transparent transparent;
+  border-width: 18px 25px;
+  position: absolute;
+  left:-16px;
+  top:14px;
+}
+#pinfen .star .star3.active {
+  border-color: red transparent transparent transparent;
+}
+#pinfen .star:hover {
+  transform:scale(1.1,1.1);
+}
+#pinfen p {
+  display:inline-block;
+  margin-left:30px;
+  position: relative;
+  top:10px;
+}

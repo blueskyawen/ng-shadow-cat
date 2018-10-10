@@ -1,0 +1,29 @@
+.alert {
+  display:flex;
+  align-items:center;
+  height:30px;
+  width:500px;
+  padding: 5px;
+  border-radius:4px;
+  margin: 10px 5px;
+}
+.alert-success {
+  background:#b3ffb3;
+  color:#00802b;
+}
+.alert-info {
+  background:#cceeff;
+  color:#1a8cff;
+}
+.alert-warning {
+  background:#ffe6cc;
+  color:#ff6600;
+}
+.alert-danger {
+  background:#ffcccc;
+  color:#ff0000;
+}
+.alert a:hover {
+  text-decoration:underline;
+  cursor:pointer;
+}

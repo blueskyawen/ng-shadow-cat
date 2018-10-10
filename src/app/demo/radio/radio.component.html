@@ -1,0 +1,71 @@
+<h2 class="title">单选</h2>
+<p>单选-radio，用于表单的单选项目</p>
+<div style="margin-top: 20px;">
+  <span>请选择： </span>
+  <span *ngFor="let item of items" style="margin-right:10px;">
+    <nc-radio [(checked)]="item.checked" (checkedChange)="checkItem(item)"></nc-radio>
+    <span>{{item.label}}</span>
+  </span>
+</div>
+<div style="margin-top: 20px;">
+  <span>禁止选择： </span>
+  <span *ngFor="let item of items" style="margin-right:10px;">
+    <nc-radio [disabled]="true" [(checked)]="item.checked" (checkedChange)="checkItem(item)"></nc-radio>
+    <span>{{item.label}}</span>
+  </span>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:180px;">
+      <span>请选择： </span>
+      <nc-radio [(checked)]="item[0].checked" (checkedChange)="checkItem(item)"></nc-radio>
+      <nc-radio [(checked)]="item[1].checked" (checkedChange)="checkItem(item)"></nc-radio>
+      <nc-radio [(checked)]="item[2].checked" (checkedChange)="checkItem(item)"></nc-radio>
+
+      <span>禁止选择：
+      <nc-radio [disabled]="true" [(checked)]="item[0].checked" (checkedChange)="checkItem(item)"></nc-radio>
+      <nc-radio [disabled]="true" [(checked)]="item[1].checked" (checkedChange)="checkItem(item)"></nc-radio>
+      <nc-radio [disabled]="true" [(checked)]="item[2].checked" (checkedChange)="checkItem(item)"></nc-radio>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:220px;">
+      items : any[] = [
+        {label: '何炅', checked: true},
+        {label: '黄磊', checked: false},
+        {label: '大华', checked: false}
+      ];
+
+      checkItem(item : any) {
+        this.items.forEach((item) => {
+          item.checked = false;
+        });
+        item.checked = true;
+      }
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>checked</td>
+    <td>指定是否选择</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>disabled</td>
+    <td>指定禁止选择,true.false</td>
+    <td>false</td>
+  </tr>
+  </tbody>
+</table>

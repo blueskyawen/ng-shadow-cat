@@ -1,0 +1,4 @@
+<div class="alert" [ngClass]="colorClasses">
+  <span *ngIf="!callback">{{title}}</span>
+  <a *ngIf="callback" (click)="clickit()">{{title}}</a>
+</div>

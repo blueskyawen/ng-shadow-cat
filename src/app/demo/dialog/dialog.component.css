@@ -1,0 +1,70 @@
+.description{
+  width:90%;
+  display:flex;
+  margin:auto;
+  border:solid 1px #66ccff;
+  border-radius:4px;
+  background:#e5f7ff;
+  padding:8px;
+}
+.description .grade{
+  width:20px;
+  height:20px;
+  text-align:center;
+  line-height:20px;
+  border-radius:50%;
+  border:solid 1px #0040ff;
+  color:#0040ff;
+  margin-top:5px;
+  margin-left:5px
+}
+.description .text{
+  width:90%;
+  font-size:12px;
+  text-align:left;
+  margin-left:10px;;
+}
+form {
+  width:90%;
+  margin:auto;
+  margin-top:30px;
+  margin-bottom:30px;
+}
+
+.form-group{
+  text-align:left;
+  height:30px;
+  align-items:center;
+  margin-bottom:20px;
+}
+.form-group label{
+  width:120px;
+  text-align:center;
+  height:100%;
+  font-size:18px;
+  display:inline-block;
+}
+.form-group label:after{
+  content:":"
+}
+.form-group .group-right{
+  height:100%;
+  font-size:14px;
+  display:inline-block;
+}
+.form-group .group-right  input{
+  height:100%;
+  width:360px;
+  font-size:14px;
+  border:solid 1px  #999999;
+  border-radius:4px;
+  box-shadow:none;
+}
+.form-group .group-right input:focus{
+  border-color:#0039e6;
+}
+.wenzhang{
+  margin:30px;
+  line-height:30px;
+  text-indent:50px;
+}

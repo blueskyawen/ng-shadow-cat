@@ -1,0 +1,11 @@
+a.manage{
+  display:inline-block;
+  font-size:14px;
+  margin-left:30px;
+  margin-bottom:20px;
+  color:#0040ff;
+}
+a.manage:hover{
+  cursor:pointer;
+  text-decoration:underline;
+}

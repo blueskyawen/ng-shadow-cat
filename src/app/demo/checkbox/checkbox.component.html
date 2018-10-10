@@ -1,0 +1,66 @@
+<h2 class="title">多选</h2>
+<p>多选-checkbox，用于表单的多选项目</p>
+<div style="margin-top: 20px;">
+  <span>请选择： </span>
+  <span *ngFor="let item of items" style="margin-right:10px;">
+    <nc-checkbox [(checked)]="item.checked"></nc-checkbox>
+    <span>{{item.label}}</span>
+  </span>
+</div>
+<div style="margin-top: 20px;">
+  <span>禁止选择： </span>
+  <span *ngFor="let item of items" style="margin-right:10px;">
+    <nc-checkbox [(checked)]="item.checked" [disabled]="item.Disable"></nc-checkbox>
+    <span>{{item.label}}</span>
+  </span>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:180px;">
+      <span>请选择： </span>
+      <nc-checkbox [(checked)]="item[0].checked"></nc-checkbox>
+      <nc-checkbox [(checked)]="item[1].checked"></nc-checkbox>
+      <nc-checkbox [(checked)]="item[2].checked"></nc-checkbox>
+
+      <span>禁止选择：
+      <nc-checkbox [disabled]="true" [(checked)]="item[0].checked"></nc-checkbox>
+      <nc-checkbox [disabled]="true" [(checked)]="item[1].checked"></nc-checkbox>
+      <nc-checkbox [disabled]="true" [(checked)]="item[2].checked"></nc-checkbox>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:220px;">
+      items : any[] = [
+        {label: '何炅', checked: 1, Disable: true},
+        {label: '黄磊', checked: 0, Disable: true},
+        {label: '大华', checked: 0, Disable: false},
+        {label: '大彭', checked: 2, Disable: true},
+        {label: 'H', checked: 0, Disable: false},
+      ];
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>checked</td>
+    <td>指定是否选择</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>disabled</td>
+    <td>指定禁止选择,true.false</td>
+    <td>false</td>
+  </tr>
+  </tbody>
+</table>

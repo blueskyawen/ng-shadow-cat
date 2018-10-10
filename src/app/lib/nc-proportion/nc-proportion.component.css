@@ -1,0 +1,108 @@
+.proport-bar {
+  margin: 5px;
+}
+.proport-bar .ratebar {
+  display:inline-block;
+  height:	12px;
+  width:360px;
+  border-radius:6px;
+  text-align:right;
+  line-height:12px;
+  background:#d9d9d9;
+  position:relative;
+}
+.proport-bar .ratebar .childratebar {
+  height:100%;
+  display:inline-block;
+}
+.proport-bar .ratebar .childratebar:first-child {
+  border-radius:8px 0 0 8px/8px 0 0 8px;
+  float:left;
+}
+.proport-bar.normal-bar .childcolor{
+  color:#009933;
+}
+.proport-bar.warn-bar .childcolor{
+  color:#ffa31a;
+}
+.proport-bar.urgent-bar .childcolor{
+  color:#ff1a1a;
+}
+.proport-bar.normal-bar .ratebar .childratebar{
+  width:20%;
+  background:#009933;
+}
+.proport-bar.warn-bar .ratebar .childratebar{
+  width:65%;
+  background:#ffa31a;
+}
+.proport-bar.urgent-bar .ratebar .childratebar{
+  width:87%;
+  background:#ff1a1a;
+}
+.usage {
+  font-size:12px;
+}
+.usage span{
+  margin-right:10px;
+}
+.usage span:before{
+  content:"";
+  height:10px;
+  width:10px;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:10px;
+}
+.normal-bar .usage span.used:before{
+  background:#009933;
+}
+.usage span.unuse:before{
+  background:#d9d9d9;
+}
+.warn-bar .usage span.used:before{
+  background:#ffa31a;
+}
+.urgent-bar .usage span.used:before{
+  background:#ff1a1a;
+}
+span.description{
+  margin-right:-50px;
+}
+.mutil-bar.ratebar .childratebar {
+  float:left;
+}
+.usage.mutil-bar span.used1:before {
+  background:#009933;
+}
+.usage.mutil-bar span.used2:before {
+  background:#ffa31a;
+}
+.usage.mutil-bar span.used3:before {
+  background:#ff1a1a;
+}
+
+.mutil-bar .ratebar .childratebar1,.nest-mutil-dongbar .ratebar .childratebar1{
+  width:20%;
+  background:#009933;
+  float:left;
+}
+.nest-mutil-bar .ratebar .childratebar2,.nest-mutil-dongbar .ratebar .childratebar2{
+  width:40%;
+  background:#ffa31a;
+  float:left;
+}
+.nest-mutil-bar .ratebar .childratebar3,.nest-mutil-dongbar .ratebar .childratebar3{
+  width:30%;
+  background:#ff1a1a;
+  float:left;
+}
+#nestmutildongbar .usage span.used1:before,.nest-mutil-bar .usage span.used1:before{
+  background:#009933;
+}
+#nestmutildongbar .usage span.used2:before,.nest-mutil-bar .usage span.used2:before{
+  background:#ffa31a;
+}
+#nestmutildongbar .usage span.used3:before,.nest-mutil-bar .usage span.used3:before{
+  background:#ff1a1a;
+}

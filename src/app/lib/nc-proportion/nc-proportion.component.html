@@ -1,0 +1,22 @@
+<div class="proport-bar" [ngClass]="colorClass">
+  <span class="ratebar childcolor" *ngIf="!multiple">
+    <span class="childratebar" [ngStyle]="widthStyle"></span>
+    <span class="description">{{valueShow}}%</span>
+  </span>
+  <div class="usage" *ngIf="!multiple">
+    <span class="used">已使用: {{value}}</span>
+    <span class="unuse">剩余: {{total - value}}</span>
+  </div>
+
+  <span class="ratebar mutil-bar" *ngIf="multiple">
+				<span class="childratebar" *ngFor="let item of valueList"
+              [ngStyle]="{'width': item.valueShow+'%','background': item.color}">
+        </span>
+  </span>
+  <div class="usage mutil-bar" *ngIf="multiple">
+    <span class="used{{i+1}}" *ngFor="let item of valueList;let i=index">
+      {{item.label}}: {{item.value}}
+    </span>
+    <span class="unuse">剩余: {{leftValue}}</span>
+  </div>
+</div>

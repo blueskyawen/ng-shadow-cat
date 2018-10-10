@@ -1,0 +1,59 @@
+<h2 class="title">面包屑</h2>
+<p>面包屑，用于不同页面之间的导航</p>
+<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
+  <nc-breadcrumb [items]="breadItems"></nc-breadcrumb>
+  <nc-breadcrumb [style]="'>'" [items]="breadItems"></nc-breadcrumb>
+  <nc-breadcrumb [style]="'>>'" [items]="breadItems"></nc-breadcrumb>
+
+  <nc-breadcrumb [items]="breadItems2"></nc-breadcrumb>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [type]="'card'" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:120px;">
+      <nc-breadcrumb [items]="breadItems"></nc-breadcrumb>
+      <nc-breadcrumb [style]="'>'" [items]="breadItems"></nc-breadcrumb>
+      <nc-breadcrumb [style]="'>>'" [items]="breadItems"></nc-breadcrumb>
+      <nc-breadcrumb [items]="breadItems2"></nc-breadcrumb>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:240px;">
+      breadItems : any[] = [
+        {url: 'http://home.baidu.com/',label: '百度',isDisable: false},
+        {url: 'https://www.baidu.com/more/',label: '百度产品',isDisable: false},
+        {url: 'https://xiongzhang.baidu.com/site',label: '熊掌号',isDisable: false},
+        {label: '登录'}
+      ];
+      breadItems2 : any[] = [
+        {url: 'http://home.baidu.com/',label: '百度',isDisable: false},
+        {url: 'https://www.baidu.com/more/',label: '百度产品',isDisable: true},
+        {url: 'https://xiongzhang.baidu.com/site',label: '熊掌号',isDisable: true},
+        {label: '登录'}
+      ];
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>items</td>
+    <td>项目数组,每个元素包含3个属性：url,label,isDisable</td>
+    <td>[]</td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>指定项目之间的间隔符</td>
+    <td>/</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,38 @@
+<h2 class="title">评分星星</h2>
+<p>评分，用于评价体验分数</p>
+<div style="margin-top: 20px;margin-bottom: 30px;">
+  <nc-rate></nc-rate>
+  <nc-rate [starNum]="10" [star]="3"></nc-rate>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:120px;">
+      <nc-rate></nc-rate>
+      <nc-rate [starNum]="10" [(star)]="3"></nc-rate>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>starNum</td>
+    <td>指定总的星星数</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>star</td>
+    <td>指定当前星数</td>
+    <td>2</td>
+  </tr>
+  </tbody>
+</table>

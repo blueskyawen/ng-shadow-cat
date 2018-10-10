@@ -1,0 +1,12 @@
+<div id="nc-backTopz" class="nc-backTop" [ngClass]="typeClasses" (click)="scrollWindow()">
+  <div *ngIf="type === 'rocket'" class="backTop-rocket">
+    <div class="rocket-left"></div>
+    <div class="rocket-body"><div class="body-mark"></div></div>
+    <div class="rocket-right"></div>
+  </div>
+  <div *ngIf="type === 'circle'" class="nc-backTop-body">
+    <div class="nc-back-head"></div>
+    <div class="nc-back-content">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="input-container" [class.input-search]="isSearch">
+  <span *ngIf="prefixList.length == 1" class="puffix">{{prefixList[0].label}}</span>
+  <nc-select *ngIf="prefixList.length > 1" [width]="'60px'" [height]="'30px'" [options]="prefixList"
+             [value]="prefixList[0].label">
+  </nc-select>
+  <input name="input" #myInput
+         [type]="type"
+         [value]="modelValue"
+         [attr.placeholder]="placeHolder"
+         [disabled]="disabled"
+         [readonly]="readon"
+         [max]="max"
+         [min]="min"
+         (change)="inputChange(myInput.value)"
+         [class.hasSuffix]="suffixList.length !== 0"
+         [class.hasPrefix]="prefixList.length !== 0"
+  />
+  <span *ngIf="!required" class="optional">(可选)</span>
+  <span *ngIf="suffixList.length == 1" class="suffix">{{suffixList[0].label}}</span>
+  <nc-select *ngIf="suffixList.length > 1" [width]="'60px'" [height]="'30px'" [options]="suffixList"
+             [value]="suffixList[0].label">
+  </nc-select>
+  <span *ngIf="isSearch" class="Search"></span>
+</div>

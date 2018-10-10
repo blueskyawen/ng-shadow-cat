@@ -1,0 +1,108 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  width: 120px;
+  height:50px;
+  color: #333;
+  font-size:14px;
+  border-radius: 6px;
+  border:solid 1px #999;
+  padding: 5px;
+  background:#999;
+  color:#fff;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  transform: translateY(10px);
+  -webkit-transition: transform .2s ease-out;
+  -moz-transition: transform .2s ease-out;
+  -ms-transition: transform .2s ease-out;
+  -o-transition: transform .2s ease-out;
+  transition: transform .2s ease-out;
+}
+.tooltip:hover {
+  cursor:pointer;
+}
+.tooltip:hover  .tooltiptext {
+  visibility: visible;
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
+}
+.place-top .tooltiptext {
+  left:50%;
+  bottom:150%;
+  margin-left:-65px;
+}
+.place-top .tooltiptext::after{
+  content:"";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  padding:0px;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #999 transparent transparent transparent;
+}
+.place-bottom .tooltiptext {
+  left:50%;
+  top:150%;
+  margin-left:-65px;
+}
+.place-bottom .tooltiptext::after{
+  content:"";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  padding:0px;
+  margin-left: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #999 transparent;
+}
+.place-left .tooltiptext{
+  right:150%;
+  top:50%;
+  margin-top:-30px;
+}
+.place-left .tooltiptext::after{
+  content:"";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  padding:0px;
+  margin-top: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #999;
+}
+.place-right .tooltiptext{
+  left:150%;
+  bottom:50%;
+  margin-bottom:-30px;
+}
+.place-right .tooltiptext::after{
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  padding:0px;
+  margin-top: -8px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent #999 transparent transparent;
+}

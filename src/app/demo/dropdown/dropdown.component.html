@@ -1,0 +1,97 @@
+<h2 class="title">下拉菜单</h2>
+<p>下拉菜单，用于以列表格式显示链接的上下文菜单</p>
+<div style="width:100%;height:80px;padding-left: 20px;display:block;margin-top:30px;">
+  <div style="margin:5px 20px;display: inline-block;">
+    <nc-dropdown [options]="options"></nc-dropdown>
+  </div>
+  <div style="margin:5px 20px;display: inline-block;">
+    <nc-dropdown [options]="options" [place]="'right'"></nc-dropdown>
+  </div>
+  <div style="margin:5px 20px;display: inline-block;">
+    <nc-dropdown [options]="options" [place]="'up'"></nc-dropdown>
+  </div>
+  <div style="margin:5px 20px;display: inline-block;">
+    <nc-dropdown [options]="options" [place]="'left'"></nc-dropdown>
+  </div>
+</div>
+<div style="width:100%;height:80px;padding-left: 20px;display:block;margin-top:30px;">
+  <div style="margin:5px 20px;display: inline-block;">
+    <nc-dropdown [options]="options" [type]="'hover'" [title]="'我的菜单'"></nc-dropdown>
+  </div>
+  <div style="margin:5px 20px;display: inline-block;">
+    <nc-dropdown [options]="options" [place]="'right'" [type]="'hover'" [title]="'我的菜单'"></nc-dropdown>
+  </div>
+  <div style="margin:5px 20px;display: inline-block;">
+    <nc-dropdown [options]="options" [place]="'up'" [type]="'hover'" [title]="'我的菜单'"></nc-dropdown>
+  </div>
+  <div style="margin:5px 20px;display: inline-block;">
+    <nc-dropdown [options]="options" [place]="'left'" [type]="'hover'" [title]="'我的菜单'"></nc-dropdown>
+  </div>
+</div>
+<!--div style="width:100%;height:80px;padding-left: 20px;display:block;margin-top:30px;">
+  <div style="margin:5px 20px;display: inline-block;">
+    <nc-dropdown [options]="options" [type]="'click'" [divider]="true"></nc-dropdown>
+  </div>
+  <div style="margin:5px 20px;display: inline-block;">
+    <nc-dropdown [options]="options" [place]="'right'" [type]="'hover'" [divider]="true"></nc-dropdown>
+  </div>
+</div>-->
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:160px;">
+      <nc-dropdown [options]="options"></nc-dropdown>
+      <nc-dropdown [options]="options" [place]="'right'"></nc-dropdown>
+      <nc-dropdown [options]="options" [place]="'up'"></nc-dropdown>
+      <nc-dropdown [options]="options" [place]="'left'"></nc-dropdown>
+
+      <nc-dropdown [options]="options" [type]="'hover'"></nc-dropdown>
+      <nc-dropdown [options]="options" [place]="'right'" [type]="'hover'"></nc-dropdown>
+      <nc-dropdown [options]="options" [place]="'up'" [type]="'hover'"></nc-dropdown>
+      <nc-dropdown [options]="options" [place]="'left'" [type]="'hover'"></nc-dropdown>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:180px;">
+    options : any[] = [{name:'阿里巴巴',disable:false,callback: () => {console.log('阿里巴巴');}},
+                      {name:'百度',disable:true},
+                      {name:'下拉菜单标题',divider:true,
+                        children:[{name:'小米',disable:false,callback: () => {console.log('小米');}},
+                          {name:'网易',disable:false,callback: () => {console.log('腾讯');}}]},
+                      {name:'新浪',disable:false,callback: () => {console.log('网易');}}];
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>nc-dropdown--参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>options</td>
+    <td>菜单列表项</td>
+    <td>[]</td>
+  </tr>
+  <tr>
+    <td>type</td>
+    <td>菜单展开方式,click/hover</td>
+    <td>click</td>
+  </tr>
+  <tr>
+    <td>place</td>
+    <td>菜单显示位置,down/up/left/right</td>
+    <td>down</td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>菜单名称</td>
+    <td>下拉菜单</td>
+  </tr>
+  </tbody>
+</table>

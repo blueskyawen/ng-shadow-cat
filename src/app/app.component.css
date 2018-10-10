@@ -1,0 +1,138 @@
+.main-app  {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main-app header {
+  width: inherit;
+  height: 65px;
+  background: #000080;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 2px 8px #4d4dff;
+  z-index: 10;
+}
+.main-app header .app-icon {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.main-app header .app-icon .app-logo {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-app header .app-icon .app-logo img {
+  width: 50px;
+  height: 50px;
+}
+.main-app header .app-icon .app-title {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  color: #f2f2f2;
+  font-size: 24px;
+  align-items: center;
+}
+.main-app header .app-icon .app-sapare {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.main-app header .app-icon .app-sapare div {
+  width: 1px;
+  height: 50%;
+  background: #fff;
+}
+.main-app header .app-menu {
+  width: 80%;
+  height: 100%;
+  display: flex;
+}
+.main-app header .app-menu .menu-item {
+  width: 20%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-app header .app-menu .menu-item.active {
+  background:#4d4dff;
+  font-size: 18px;
+  color:#fff;
+}
+.main-app header .app-menu .menu-item:hover {
+  cursor: pointer;
+  background:#ccccff;
+}
+.main-app header .app-menu .menu-item a {
+  color: #ccc;
+  font-weight: 600;
+  text-decoration: none;
+}
+.main-app header .app-menu .menu-item:hover a {
+  color: #fff;
+}
+.main-app article {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-top: 5px;
+}
+.main-app article .side-bars {
+  width: 20%;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  border-right: solid 1px #e6e6e6;
+  max-height: 1000px;
+  background: #e6e6e6;
+  overflow-y: scroll;
+  position:relative;
+}
+.main-app article .content {
+  width: 80%;
+  height: inherit;
+  padding: 60px;
+  padding-top: 42px;
+  box-sizing: border-box;
+  height: 1000px;
+  max-height: 1000px;
+  overflow-y: scroll;
+}
+.main-app article .content2 {
+  width: 100%;
+}
+
+
+.suoqi {
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size:14px;
+  text-align: center;
+  border-radius: 50%;
+  background: #4da6ff;
+  z-index: 200;
+  left:20%;
+  opacity: 0;
+  color:#fff;
+  font-weight: bolder;
+}
+.suoqi2 {
+  left:15px;
+}
+.main-app article .side-bars.side-bars2 {
+  width:10px;
+}
+.suoqi:hover {
+  cursor: pointer;
+  opacity: 1.0;
+}

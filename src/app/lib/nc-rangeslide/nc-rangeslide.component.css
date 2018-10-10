@@ -1,0 +1,79 @@
+div.rangContainer {
+  display:inline-block;
+  width:500px;
+  height:30px;
+  position:relative;;
+}
+div.rangContainer input {
+  width:100%;
+  height:100%;
+  border:solid 0px;
+  opacity:0;
+  margin:0;
+  cursor:pointer;
+}
+div.rangContainer span.range {
+  display:flex;
+  align-items:center;
+  width:100%;
+  height:100%;
+  border:solid 0px red;
+  position:absolute;
+  top:0px;
+  padding:0;
+  z-index:-12;
+  cursor:pointer;
+}
+
+div.rangContainer span.range span.anniu{
+  display:inline-block;
+  width:12px;
+  height:12px;
+  border:solid 3px #0066ff;
+  border-radius:50%;
+  left:200px;
+  margin-left:-5px;
+  background:#fff;
+}
+div.rangContainer:hover span.range span.anniu{
+  width:16px;
+  height:16px;
+}
+div.disable span.range span.anniu{
+  border-color:#666;
+}
+div.rangContainer span.range span.before{
+  display:inline-block;
+  width:205px;
+  height:8px;
+  border:solid 0px;
+  border-radius:4px 0 0 4px;
+  top:2px;
+  background:#4da6ff;
+  float:left;
+}
+div.disable span.range span.before{
+  background:#666;
+}
+div.rangContainer span.range span.after{
+  display:inline-block;
+  width:295px;
+  height:8px;
+  border:solid 0px;
+  border-radius:0 4px 4px 0;
+  background:#ccc;
+  float:left;
+}
+span.text {
+  display:inline-block;
+  height:30px;
+  position:absolute;
+  left:0;
+  top:5px;
+  left:105%;
+}
+div.rangContainer.disable,
+div.rangContainer.disable input,
+div.rangContainer.disable span.range span.anniu{
+  cursor:not-allowed;
+}

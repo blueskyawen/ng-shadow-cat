@@ -1,0 +1,71 @@
+ul.aw-tree {
+  margin-top:30px;
+  margin-left:30px;
+}
+ul.aw-tree,ul.aw-tree ul {
+  list-style: none;
+  padding:0;
+  padding-left: 24px;
+}
+ul.aw-tree li {
+//border: solid 0px;
+  line-height: 30px;
+  position:relative;
+}
+ul.aw-tree li:not(:last-child) {
+//color:red;
+}
+ul.aw-tree li:last-child {
+//color: grey;
+}
+ul.aw-tree li:not(:last-child):after {
+  content: '';
+//height:30px;
+  position:absolute;
+  border:dotted 1px grey;
+  border-style: none none none dotted;
+  left:-18px;
+  top:0px;
+  bottom:0;
+}
+ul.aw-tree li:before {
+  content:'';
+  width:15px;
+  height:15px;
+  border:dotted 1px grey;
+  border-style: none none dotted none;
+  position:absolute;
+  top: 0px;
+  left: -18px;
+}
+ul.aw-tree li:last-child:before {
+  border-left-style:dotted;
+}
+ul.aw-tree > li:first-child:before {
+  border-style:none none dotted none;
+}
+ul.aw-tree > li:first-child:after {
+  top:15px;
+}
+ul.aw-tree li span.switch {
+  height:10px;
+  width:10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border: solid 1px #666;
+  text-align:center;
+  font-size:12px;
+  position:absolute;
+  left:-24px;
+  top:9px;
+  z-index:2;
+  background:#fff;
+}
+ul.aw-tree li span.switch img {
+  height:100%;
+  width: 100%;
+}
+ul.aw-tree li span.switch:hover {
+  cursor:pointer;
+}

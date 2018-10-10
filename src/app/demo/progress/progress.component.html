@@ -1,0 +1,113 @@
+<h2 class="title">进度条</h2>
+<p>进度条，用于展示操作或任务的进度情况</p>
+<h3>1. 正常进度</h3>
+<div style="margin-top: 20px;">
+  <div>
+    <nc-progress [value]="35" [total]="100"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="70" [total]="100"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="90" [total]="100"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="60" [total]="200" [style]="'small'"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="150" [total]="200" [style]="'small'"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="190" [total]="200" [style]="'small'"></nc-progress>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:120px;">
+      <nc-progress [value]="35" [total]="100"></nc-progress>
+      <nc-progress [value]="70" [total]="100"></nc-progress>
+      <nc-progress [value]="90" [total]="100"></nc-progress>
+      <nc-progress [value]="60" [total]="200" [style]="'small'"></nc-progress>
+      <nc-progress [value]="150" [total]="200" [style]="'small'"></nc-progress>
+      <nc-progress [value]="190" [total]="200" [style]="'small'"></nc-progress>
+    </textarea>
+  </div>
+</nc-tab>
+<h3>2. 动态进度</h3>
+<div style="margin-top: 20px;">
+  <div>
+    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [style]="'small'" [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:120px;">
+      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
+
+      <nc-progress [style]="'small'" [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab2 === 'typescript'">
+    <textarea style="height:350px;">
+      curValue : number = 0;
+      total : number = 100;
+      timelen : number = 10;
+
+      ngOnInit() {
+        setTimeout(() => {
+          this.progressing();
+        },1000);
+      }
+
+      progressing() {
+        let step = this.total / this.timelen;
+        if(this.curValue === this.total) {
+          this.curValue = 0;
+        } else {
+          this.curValue += step;
+        }
+        setTimeout(() => {
+          this.progressing();
+        },1000);
+      }
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>total</td>
+    <td>总进度数</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>当前进度数</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>进度条尺寸,2种取值：big,small</td>
+    <td>big</td>
+  </tr>
+  <tr>
+    <td>isDynamic</td>
+    <td>是否动态进度条,true/false</td>
+    <td>false</td>
+  </tr>
+  </tbody>
+</table>

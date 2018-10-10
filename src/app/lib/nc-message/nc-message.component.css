@@ -1,0 +1,142 @@
+.message {
+  min-height:45px;
+  width:560px;
+  position:fixed;
+  top:2px;
+  left:50%;
+  transform: translateX(-50%);
+  background:#009900;
+  border-radius:2px;
+  line-height:45px;
+  text-align:center;
+  display:flex;
+  color:#fff;
+  justify-content: center;
+}
+.success{
+  background:#009900;
+  text-align:center;
+}
+.warn{
+  background:#ff9933;
+}
+.warn .msg,.error .msg {
+  height:100%;
+  text-align:center;
+  flex:1 1 auto;
+}
+.warn .oper-cancel,.error .oper-cancel{
+  width:100%;
+  flex:0 0 45px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.warn .oper-cancel span,.error .oper-cancel span {
+  height:50%;
+  width:50%;
+  line-height:22.5px;
+  text-align:center;
+  border-radius:50%;
+  font-size:14px;
+}
+.warn .oper-cancel span:hover{
+  background:#b35900;
+  cursor:pointer;
+}
+.error{
+  background:#cc0000;
+}
+.error .oper-cancel span:hover{
+  background:#800000;
+  cursor:pointer;
+}
+
+
+.info-container{
+  display:flex;
+  width:400px;
+  min-height:180px;
+  position:fixed;
+  top:30px;
+  right:30px;
+  border:solid 1px #666;
+  border-radius:6px;
+  box-shadow:2px 2px 2px #bfbfbf,-2px 2px 2px #bfbfbf;
+  flex-direction:column;
+  z-index: 10;
+  background: #fff;
+  -webkit-animation: modal-out-3 500ms;
+  animation: modal-out-3  500ms;
+  -moz-animation: modal-out-3 500ms;
+}
+@keyframes modal-out-3 {
+  0% {right:-100px;}
+  100% {right:30px;}
+}
+.info-container .header{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  height:36px;
+  border:solid 0px;
+}
+.info-container .header span{
+  display:inline-block;
+  height:24px;
+  width:24px;
+  line-height:24px;
+  text-align:center;
+  border-radius:50%;
+  margin-right:10px;
+}
+.info-container .header span:hover{
+  background:#999;
+  cursor:pointer;
+}
+.info-container .actire{
+  display:flex;
+  flex-direction:column;
+  width:90%;
+  margin:auto;
+  margin-top:10px;
+  margin-bottom:0px;
+}
+.info-container .actire .content {
+  font-size:12px;
+  border:solid 0px;
+  margin-left:30px;
+  word-break:break-all;
+}
+.info-container .actire .gradetitle{
+  width:100%;
+}
+.info-container .actire .gradetitle .title{
+  margin-left:5px;
+}
+.info-container .actire .gradetitle .icon{
+  display:inline-block;
+  height:20px;
+  width:20px;
+  line-height:20px;
+  text-align:center;
+  border-radius:50%;
+  background:#fff;
+}
+.icon-green{
+  border:solid 1px #009900;
+  color:#009900;
+}
+.icon-yellow{
+  border:solid 1px #ff9900;
+  color:#ff9900;
+}
+.icon-red{
+  border:solid 1px #ff1a1a;
+  color:#ff1a1a;
+}
+.info-container .footer{
+  display:inline-block;
+  width:90%;
+  margin:auto;
+}

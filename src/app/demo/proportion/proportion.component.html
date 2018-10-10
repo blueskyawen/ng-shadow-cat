@@ -1,0 +1,93 @@
+<h2 class="title">比例条</h2>
+<p>比例条，用于资源的使用情况</p>
+<h3>1. 单项比例条</h3>
+<div style="margin-top: 20px;">
+  <nc-proportion [total]="100" [value]="45"></nc-proportion>
+  <nc-proportion [total]="480" [value]="180"></nc-proportion>
+  <nc-proportion [total]="100" [value]="70"></nc-proportion>
+  <nc-proportion [total]="100" [value]="90"></nc-proportion>
+</div>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:120px;">
+    <nc-proportion [total]="100" [value]="45"></nc-proportion>
+    <nc-proportion [total]="480" [value]="180"></nc-proportion>
+    <nc-proportion [total]="100" [value]="70"></nc-proportion>
+    <nc-proportion [total]="100" [value]="90"></nc-proportion>
+    </textarea>
+  </div>
+</nc-tab>
+<h3>动态比例条,鼠标放置在上面看变化</h3>
+<div style="margin-top: 20px;">
+  <nc-proportion [total]="total" [value]="curValue" (mouseover)="startDong()" (mouseout)="stopDong()">
+  </nc-proportion>
+</div>
+
+<h3>2. 多项比例条</h3>
+<div style="margin-top: 20px;">
+  <nc-proportion [multiple]="true" [total]="100" [valueList]="itemList1"></nc-proportion>
+  <nc-proportion [multiple]="true" [total]="500" [valueList]="itemList2"></nc-proportion>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:120px;">
+    <nc-proportion [multiple]="true" [total]="100" [valueList]="itemList1"></nc-proportion>
+
+    <nc-proportion [multiple]="true" [total]="500" [valueList]="itemList2"></nc-proportion>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab2 === 'typescript'">
+    <textarea style="height:200px;">
+      itemList1 : any[] = [
+        {label: '选项1',color: '#009933',value: 30},
+        {label: '选项2',color: '#ffa31a',value: 15},
+        {label: '选项3',color: '#ff1a1a',value: 30}
+      ];
+      itemList2 : any[] = [
+        {label: '选项1',color: '#009933',value: 70},
+        {label: '选项2',color: '#ffa31a',value: 55},
+        {label: '选项3',color: '#ff1a1a',value: 230}
+      ];
+    </textarea>
+  </div>
+</nc-tab>
+<h3>动态多项比例条,鼠标放置在上面看变化</h3>
+<div style="margin-top: 20px;">
+  <nc-proportion [multiple]="true" [total]="100" [valueList]="itemList"
+                 (mouseover)="startDong2()" (mouseout)="stopDong2()">
+  </nc-proportion>
+</div>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>multiple</td>
+    <td>是否多项目</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>total</td>
+    <td>总数</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>单项比例条时当前值</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>valueList</td>
+    <td>多项比例条时，各个项目的对象数组</td>
+    <td>[]</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,19 @@
+.form-group{
+  text-align:left;
+  align-items:center;
+  margin-bottom:20px;
+  display: flex;
+}
+.form-group label{
+  width:120px;
+  text-align:center;
+  height:100%;
+  font-size:18px;
+  display:inline-block;
+}
+.form-group label:after{
+  content:":"
+}
+.form-group .group-right{
+  display:inline-block;
+}

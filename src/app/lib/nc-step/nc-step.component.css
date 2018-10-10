@@ -1,0 +1,100 @@
+.step-container {
+  width:100%;
+  margin:auto;
+}
+.step-container .steps {
+  width:100%;
+  height:50px;
+  margin-top:30px;
+}
+.step-container .steps .step {
+  display:inline-block;
+  width:20%;
+  height:100%;
+  float:left;
+  text-align:center;
+  line-height:50px;
+  box-sizing:border-box;
+  color:#a6a6a6;
+}
+.step-container .steps .step:hover {
+  cursor: pointer;
+}
+.step-container .steps .step.step-underline {
+  border-bottom:solid 3px  #bfbfbf;
+}
+.step-container .steps .step.step-centerline {
+  position:relative;
+}
+.step-container .steps .step:before {
+  display:inline-block;
+  height:20px;
+  width:20px;
+  border:solid 1px #a6a6a6;
+  border-radius:50%;
+  line-height:20px;
+  background:#a6a6a6;
+  color:#fff;
+  font-size:14px;
+  content: attr(title);
+}
+.step-container .steps .step.step-underline:before {
+  border-width: 1px;
+  margin-right:8px;
+}
+.step-container .steps .step.step-centerline:before {
+  border-width: 2px;
+  position:absolute;
+  left:45%;
+  bottom:-10px;
+}
+.step-container .steps .step.actived:before{
+  content:"✔";
+  background:#fff;
+  color:#1a75ff;
+  border-color:#1a75ff;
+}
+.step-container .steps .step.active:before{
+  background:#1a75ff;
+  border-color:#1a75ff;
+}
+.step-container .steps .step.active{
+  color:#000;
+}
+.step-container .steps .step.step-underline.active {
+  border-bottom:solid #1a75ff 3px;
+}
+.step-container .steps .step.step-centerline.actived:after{
+  background:#1a75ff;
+}
+.step-container .steps .step.step-centerline:not(:last-child):after{
+  content:"";
+  display:inline-block;
+  height:2px;
+  width:100%;
+  background:#a6a6a6;
+  position:absolute;
+  bottom:0%;
+  left:50%;
+  z-index:-1;
+}
+.step_content{
+  clear:both;
+  margin:auto;
+}
+.step_content.centerline{
+  height:80px;
+  padding:20px;
+  width:80%;
+}
+.step_content.underline {
+  height:120px;
+  padding:10px;
+  width:100%;
+}
+.step-container .step-footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
+}

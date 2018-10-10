@@ -1,0 +1,17 @@
+<div class="dropdown" id="dropdown1" [ngClass]="placeClasses"
+     (click)="clickDown()" (mouseenter)="moveInDown()" (mouseleave)="moveOutDown()">
+  <button class="dropbtn dropdown-toggle" *ngIf="!divider">{{title}}
+    <span class="caret"></span></button>
+  <div class="dropdown-divi" *ngIf="divider">
+    <button class="dropbtn dropdown-grey">新浪</button>
+    <button class="dropbtn dropdown-grey dropdown-toggle ">
+      <span class="caret"></span>
+    </button>
+  </div>
+  <ul class="dropdown-content menu-width" [style.display]="isShow ? 'block' : 'none'" >
+    <li *ngFor="let item of items;let i=index;" (click)="clickItem(item)"
+        [ngClass]="{'dropdown-item':!item.divider,'divider':item.divider,'dropdown-header':item.subTitle,'disabled':item.disable}">
+      <a tabindex="-1" href="javascript:void(0);" *ngIf="!item.divider">{{item.name}}</a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,61 @@
+<h2 class="title">告警信息</h2>
+<p>告警信息，向用户提供了一种定义消息样式的方式</p>
+<h3>1. 仅提示</h3>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+  <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type">
+  </nc-alert>
+</div>
+<h3>2. 带操作的提示</h3>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+  <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type" [callback]="callbackFun">
+  </nc-alert>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:150px;">
+      <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type">
+      </nc-alert>
+
+      <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type" [callback]="callbackFun">
+      </nc-alert>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:150px;">
+      titles : any[] = [{text:'成功！很好地完成了提交。',type: 'success'},
+        {text:'信息！请注意这个信息。',type: 'info'},
+        {text:'警告！请不要提交。',type: 'warn'},
+        {text:'错误！请进行一些更改。',type: 'danger'}];
+      callback : any = () => {alert('错误！请进行一些更改');};
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>nc-alert--参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>title</td>
+    <td>提示文本</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>type</td>
+    <td>提示类型</td>
+    <td>click</td>
+  </tr>
+  <tr>
+    <td>callback</td>
+    <td>带操作的提示回调</td>
+    <td></td>
+  </tr>
+  </tbody>
+</table>

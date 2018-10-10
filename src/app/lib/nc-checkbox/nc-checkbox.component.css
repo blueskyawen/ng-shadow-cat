@@ -1,0 +1,78 @@
+._checkbox{
+  display:inline-block;
+  height:30px;
+  line-height:30px;
+}
+._checkbox span input{
+  position:absolute;
+  left:-1px;
+  opacity: 0.0;
+  z-index: 7;
+  transform: scale(1.8,1.8);
+  box-shadow:none;
+  cursor:pointer;
+}
+._checkbox span{
+  display:inline-block;
+  height:20px;
+  width:20px;
+  border:solid 1px #999;
+  border-radius:4px;
+  margin-right:10px;
+  position:relative;
+  left:6px;
+  top:5px;
+  box-sizing:border-box;
+}
+._checkbox:not(.disabled) span:hover{
+  border-color:#1a75ff;
+}
+._checkbox span.active{
+  background:#1a75ff;
+  border-color:#1a75ff;
+}
+._checkbox span.active.checkall:after{
+  content:"✔";
+  color:#fff;
+  font-size:16px;
+  font-weight:bold;
+  position:absolute;
+  top:-6px;
+  left:3px;
+}
+._checkbox span.active.partcheck:after{
+  content:"-";
+  color:#fff;
+  font-size:32px;
+  font-weight:bold;
+  position:absolute;
+  top:-10px;
+  left:3px;
+}
+._checkbox span input{
+  position:absolute;
+  top:-1px;
+  opacity: 0;
+  z-index:5;
+  transform: scale(1.8,1.8);
+  box-shadow:none;
+  cursor:pointer;
+}
+span._checkbox:hover{
+  cursor:pointer;
+}
+
+span._checkbox.disabled{
+  cursor:not-allowed;
+}
+span._checkbox.disabled span{
+  background-color:#ccc;
+  border-color:#999;
+  opacity: 0.6;
+}
+span._checkbox.disabled span:after{
+  color:#4d4d4d;
+}
+span._checkbox.disabled input{
+  cursor:not-allowed;
+}

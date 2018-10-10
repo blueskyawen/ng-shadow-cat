@@ -1,0 +1,18 @@
+<div class="image-container">
+  <div class="e-image" *ngFor="let image of images">
+    <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
+    <div class="img-footer">
+      <div class="img-name">{{image.alt}}</div>
+      <div class="img-description" title="查看更多">{{image.title}}</div>
+    </div>
+  </div>
+</div>
+
+<nc-dialog *ngIf="isShow" [header]="selectImg.alt" [style]="'normal'" [size]="'big'" [(isShow)]="isShow">
+  <div class="content">
+    <img class="selet-Img" [src]="selectImg.src" [alt]="selectImg.alt" />
+  </div>
+  <div class="footer">
+    <nc-button [type]="'cancel'" (click)="closeModal()">取消</nc-button>
+  </div>
+</nc-dialog>

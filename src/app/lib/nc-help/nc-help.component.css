@@ -1,0 +1,67 @@
+
+.help{
+  display:inline-block;
+  height:20px;
+  width:20px;
+  border:solid 1px #0099ff;
+  border-radius:50%;
+  line-height:20px;
+  text-align:center;
+  margin:30px;
+  margin-top:10px;
+  position: relative;
+}
+.help:hover{
+  cursor:pointer;
+}
+.normal-help{
+  border-color:#0099ff;
+  color:#0099ff;
+}
+.warn-help{
+  border-color: #ff9900;
+  color: #ff9900;
+}
+.error-help{
+  border-color:#ff0000;
+  color:#ff0000;
+}
+.helptext {
+  display:inline-block;
+  width: 150px;
+  min-height:60px;
+  position: absolute;
+  left:150%;
+  top:50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  visibility: hidden;
+  color: #333;
+  font-size:12px;
+  border-radius: 4px;
+  border:solid 1px #999;
+  padding: 2px;
+  background:#999;
+  color:#fff;
+  -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  cursor:pointer;
+  text-align: left;
+}
+.help:hover .helptext{
+  visibility:visible;
+}
+.helptext::after{
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  padding:0px;
+  margin-top: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #999 transparent transparent;
+}

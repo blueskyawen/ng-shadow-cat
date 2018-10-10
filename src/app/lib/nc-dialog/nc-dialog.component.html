@@ -1,0 +1,22 @@
+<div class="dialog-container" [style.display]="isShow ? 'block' : 'none'">
+  <div class="shade"></div>
+  <div class="myDialog" [ngClass]="dialogClass">
+    <header>
+      <span>{{header}}</span>
+      <span (click)="close()">×</span>
+    </header>
+    <article>
+      <ng-content select=".content"></ng-content>
+      <div class="description" *ngIf="operType">
+        <div class="gradetitle">
+          <span class="icon back-blue">!</span>
+          <span class="title">我是副标题</span>
+        </div>
+        <div class="text"><p>新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个元素时启动一段 JavaScript</p></div>
+      </div>
+    </article>
+    <footer>
+      <ng-content select=".footer"></ng-content>
+    </footer>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+.container {
+  display: inline-block;
+}
+.container .swicth-container {
+  display:flex;
+  border-radius:15px;
+  padding:2px;
+  margin: 5px;
+  border:none;
+}
+.container-max {
+  height:30px;
+  width:65px;
+}
+.container-min {
+  height:20px;
+  width:40px;
+}
+.swicth-container:hover {
+  cursor:pointer;
+}
+.switch-start{
+  justify-content: flex-start;
+  background:#b3b3b3;
+}
+.switch-end{
+  justify-content: flex-end;
+  background:#1a8cff;
+}
+.switch-row{
+  flex-direction: row;
+  background:#b3b3b3;
+}
+.switch-reverse{
+  flex-direction: row-reverse;
+  background:#1a8cff;
+}
+.swicth-container span {
+  display:inline-block;
+  height:100%;
+  margin:auto;
+}
+.container-max span {
+  font-size: 14px;
+  line-height:30px;
+}
+.container-min span {
+  font-size: 8px;
+  line-height:20px;
+}
+.swicth-container .switch{
+  border-radius:50%;
+  border:none;
+  background:#f2f2f2;
+}
+.swicth-container .switch.swicth-max {
+  width:30px;
+  height:30px;
+}
+.swicth-container .switch.swicth-min {
+  width:20px;
+  height:20px;
+}
+@keyframes myswitch {
+  0% {display:flex;flex-direction: row;}
+  100% {display:flex;flex-direction: row-reverse;}
+}
+
+

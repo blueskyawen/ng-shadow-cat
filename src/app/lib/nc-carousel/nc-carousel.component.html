@@ -1,0 +1,31 @@
+<div class="carousel" *ngIf="effect === 'scroll'">
+  <ul>
+    <li *ngFor="let caption of captions;let i=index" (click)="callBack(caption)"
+      [ngStyle]="caption.moveStyle">
+      <img [src]="caption.url" alt="image_{{i}}"/>
+    </li>
+  </ul>
+  <div class="bars">
+    <span *ngFor="let caption of captions;let i=index"
+          [ngClass]="{'active': activeIndex === i,'noactive': activeIndex !== i}"
+          (click)="changePic(i)"></span>
+  </div>
+  <div class="left" (click)="pre()"></div>
+  <div class="right" (click)="next()"></div>
+</div>
+
+<div class="carousel-fade" *ngIf="effect === 'fade'">
+  <ul>
+    <li *ngFor="let caption of captions;let i=index" (click)="callBack(caption)"
+        [ngStyle]="caption.moveStyle">
+      <img [src]="caption.url" alt="image_{{i}}"/>
+    </li>
+  </ul>
+  <div class="bars">
+    <span *ngFor="let caption of captions;let i=index"
+          [ngClass]="{'active': activeIndex === i,'noactive': activeIndex !== i}"
+          (click)="changePic(i)"></span>
+  </div>
+  <div class="left" (click)="pre()"></div>
+  <div class="right" (click)="next()"></div>
+</div>

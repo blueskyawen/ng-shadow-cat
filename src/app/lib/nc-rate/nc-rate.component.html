@@ -1,0 +1,10 @@
+<div id="pinfen" (mouseout)="ok()">
+  <div class="star" *ngFor="let item of starItems" (mouseover)="overStar(item)" (click)="setStar(item)">
+    <div class="star1" [class.active]="item.checked"></div>
+    <div class="star2" [class.active]="item.checked"></div>
+    <div class="star3" [class.active]="item.checked"></div>
+  </div>
+  <p>
+    {{star}} {{title}}
+  </p>
+</div>

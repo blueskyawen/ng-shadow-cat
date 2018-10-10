@@ -1,0 +1,167 @@
+<h2 class="title">折叠面板</h2>
+<p>折叠面板，用于折叠显示一些文档或表单输入</p>
+<h3>1. 正常展开</h3>
+<div style="margin-top: 20px;">
+  <nc-collapse>
+    <nc-panel [header]="'杨过'">
+      <p>杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
+        名字为郭靖、黄蓉所取，取“有过则改之”之意。</p>
+    </nc-panel>
+    <nc-panel [header]="'小龙女'">
+      <p>小龙女，是金庸小说《神雕侠侣》的女主角，金庸笔下广受读者喜爱的女角之一。容貌秀美若仙、清丽绝俗。性格宽容恬淡、天真可爱。
+        武功轻灵飘逸，于婀娜妩媚中击敌制胜</p>
+    </nc-panel>
+    <nc-panel [header]="'黄药师'">
+      <p>黄药师，外号“东邪”，天下“五绝”之一，是金庸武侠小说《射雕英雄传》和《神雕侠侣》中的角色。是黄蓉之父，
+        对其妻冯氏（小字阿衡）一往情深。</p>
+    </nc-panel>
+  </nc-collapse>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:280px;">
+      <nc-collapse>
+        <nc-panel [header]="'杨过'">
+          <p>杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
+            名字为郭靖、黄蓉所取，取“有过则改之”之意。</p>
+        </nc-panel>
+        <nc-panel [header]="'小龙女'">
+          <p>小龙女，是金庸小说《神雕侠侣》的女主角，金庸笔下广受读者喜爱的女角之一。容貌秀美若仙、清丽绝俗。性格宽容恬淡、天真可爱。
+            武功轻灵飘逸，于婀娜妩媚中击敌制胜</p>
+        </nc-panel>
+        <nc-panel [header]="'黄药师'">
+          <p>黄药师，外号“东邪”，天下“五绝”之一，是金庸武侠小说《射雕英雄传》和《神雕侠侣》中的角色。是黄蓉之父，
+            对其妻冯氏（小字阿衡）一往情深。</p>
+        </nc-panel>
+      </nc-collapse>
+    </textarea>
+  </div>
+</nc-tab>
+<h3>2. 默认展开和禁止展开</h3>
+<div style="margin-top: 20px;">
+  <nc-collapse>
+    <nc-panel [header]="'杨过'" [isActive]="true">
+      <p>杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
+        名字为郭靖、黄蓉所取，取“有过则改之”之意。</p>
+    </nc-panel>
+    <nc-panel [header]="'小龙女'" [isDisable]="true">
+      <p>小龙女，是金庸小说《神雕侠侣》的女主角，金庸笔下广受读者喜爱的女角之一。容貌秀美若仙、清丽绝俗。性格宽容恬淡、天真可爱。
+        武功轻灵飘逸，于婀娜妩媚中击敌制胜</p>
+    </nc-panel>
+    <nc-panel [header]="'黄药师'">
+      <p>黄药师，外号“东邪”，天下“五绝”之一，是金庸武侠小说《射雕英雄传》和《神雕侠侣》中的角色。是黄蓉之父，
+        对其妻冯氏（小字阿衡）一往情深。</p>
+    </nc-panel>
+  </nc-collapse>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:280px;">
+      <nc-collapse>
+        <nc-panel [header]="'杨过'" [isActive]="true">
+          <p>杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
+            名字为郭靖、黄蓉所取，取“有过则改之”之意。</p>
+        </nc-panel>
+        <nc-panel [header]="'小龙女'" [isDisable]="true">
+          <p>小龙女，是金庸小说《神雕侠侣》的女主角，金庸笔下广受读者喜爱的女角之一。容貌秀美若仙、清丽绝俗。性格宽容恬淡、天真可爱。
+            武功轻灵飘逸，于婀娜妩媚中击敌制胜</p>
+        </nc-panel>
+        <nc-panel [header]="'黄药师'">
+          <p>黄药师，外号“东邪”，天下“五绝”之一，是金庸武侠小说《射雕英雄传》和《神雕侠侣》中的角色。是黄蓉之父，
+            对其妻冯氏（小字阿衡）一往情深。</p>
+        </nc-panel>
+      </nc-collapse>
+    </textarea>
+  </div>
+</nc-tab>
+<h3>3. 一次展开一个</h3>
+<div style="margin-top: 20px;">
+  <nc-collapse>
+    <nc-panel [header]="panelItems[0].label" [(isActive)]="panelItems[0].active"
+              (isActiveChange)="handleChange(0)">
+      <p>杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
+        名字为郭靖、黄蓉所取，取“有过则改之”之意。</p>
+    </nc-panel>
+    <nc-panel [header]="panelItems[1].label" [(isActive)]="panelItems[1].active"
+              (isActiveChange)="handleChange(1)">
+      <p>小龙女，是金庸小说《神雕侠侣》的女panelItems[1].label主角，金庸笔下广受读者喜爱的女角之一。容貌秀美若仙、清丽绝俗。性格宽容恬淡、天真可爱。
+        武功轻灵飘逸，于婀娜妩媚中击敌制胜</p>
+    </nc-panel>
+    <nc-panel [header]="panelItems[2].label" [(isActive)]="panelItems[2].active"
+              (isActiveChange)="handleChange(2)">
+      <p>黄药师，外号“东邪”，天下“五绝”之一，是金庸武侠小说《射雕英雄传》和《神雕侠侣》中的角色。是黄蓉之父，
+        对其妻冯氏（小字阿衡）一往情深。</p>
+    </nc-panel>
+  </nc-collapse>
+</div>
+<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
+  <div *ngIf="currentTab3 === 'html'">
+    <textarea style="height:320px;">
+      <nc-collapse>
+        <nc-panel [header]="panelItems[0].label" [(isActive)]="panelItems[0].active"
+                  (isActiveChange)="handleChange(0)">
+          <p>杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
+            名字为郭靖、黄蓉所取，取“有过则改之”之意。</p>
+        </nc-panel>
+        <nc-panel [header]="panelItems[1].label" [(isActive)]="panelItems[1].active"
+                  (isActiveChange)="handleChange(1)">
+          <p>小龙女，是金庸小说《神雕侠侣》的女panelItems[1].label主角，金庸笔下广受读者喜爱的女角之一。容貌秀美若仙、清丽绝俗。性格宽容恬淡、天真可爱。
+            武功轻灵飘逸，于婀娜妩媚中击敌制胜</p>
+        </nc-panel>
+        <nc-panel [header]="panelItems[2].label" [(isActive)]="panelItems[2].active"
+                  (isActiveChange)="handleChange(2)">
+          <p>黄药师，外号“东邪”，天下“五绝”之一，是金庸武侠小说《射雕英雄传》和《神雕侠侣》中的角色。是黄蓉之父，
+            对其妻冯氏（小字阿衡）一往情深。</p>
+        </nc-panel>
+      </nc-collapse>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab3 === 'typescript'">
+    <textarea style="height:240px;">
+      panelItems : any[] = [
+        {label:'杨过',active:false},
+        {label:'小龙女',active:false},
+        {label:'黄药师',active:false}
+      ];
+      handleChange(index : number) {
+        for(let i=0;i < this.panelItems.length;i++) {
+          if(i !== index) {
+            this.panelItems[i].active = false;
+          }
+        }
+      }
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>nc-panel--参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>header</td>
+    <td>折叠标题栏</td>
+    <td>header</td>
+  </tr>
+  <tr>
+    <td>isActive</td>
+    <td>是否默认展开,true.false</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>isDisable</td>
+    <td>是否禁用,true.false</td>
+    <td>false</td>
+  </tr>
+  </tbody>
+</table>
+
+<nc-toTop></nc-toTop>

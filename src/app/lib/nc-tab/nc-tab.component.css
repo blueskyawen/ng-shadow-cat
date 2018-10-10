@@ -1,0 +1,90 @@
+.tabka {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+.tabka ul.tabss {
+  display: block;
+  padding: 0;
+  margin: 20px 0;
+  position: relative;
+}
+.first-tab ul.tabss li {
+  display: inline-block;
+  float: left;
+  height:30px;
+  line-height:30px;
+  padding: 8px 30px;
+  text-align:center;
+  box-sizing: content-box;
+  border-bottom: 1px solid #ddd;
+}
+.tabka ul.tabss li.disabled:hover {
+  cursor:not-allowed;
+  background: #f2f2f2;
+}
+.tabka ul.tabss li.active {
+  border-bottom:none;
+  border-left:1px solid #ddd;
+  border-right:1px solid #ddd;
+  border-top:2px solid #3366ff;
+  padding: 7px 30px;
+}
+.tabka ul.tabss li.noactive:not(:last-child):not(.disabled):hover {
+  cursor:pointer;
+  background:#e5ffff;
+}
+.tabka .tabss li:last-child {
+  width:100%;
+  display:inline-block;
+  position:absolute;
+}
+.tabka .tab-content{
+  min-height:80px;
+  width:100%;
+  display:block;
+}
+.tab-line ul.tabss li.active {
+  border: none;
+  border-bottom:3px solid #3366ff;
+  padding:8px 30px;
+}
+.tab-line ul.tabss li.noactive:not(:last-child):not(.disabled):hover {
+  cursor:pointer;
+  background:#e5ffff;
+}
+
+.second-tab ul.tabss li{
+  display: inline-block;
+  float: left;
+  height:20px;
+  line-height:20px;
+  padding: 8px 30px;
+  text-align:center;
+  box-sizing: content-box;
+  cursor:pointer;
+}
+.second-tab ul.tabss li:not(:last-child) {
+  border: 1px solid #ddd;
+  border-right:none;
+}
+.second-tab ul.tabss li:last-child {
+  border: 1px solid #ddd;
+  border-radius:0 4px 4px 0/0 4px 4px 0;
+  width: auto;
+}
+.second-tab ul.tabss li:first-child {
+  border-radius:4px 0 0 4px/4px 0 0 4px;
+}
+.second-tab ul.tabss li.active {
+  background:#3366ff;
+  border-color:#3366ff;
+  color:#fff;
+}
+.second-tab ul.tabss li.noactive:not(.disabled):hover {
+  background:#ccf5ff;
+}
+.tabka ul.tabss li.disabled:hover {
+  cursor:not-allowed;
+  background: #f2f2f2;
+}

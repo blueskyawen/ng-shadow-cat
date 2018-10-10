@@ -1,0 +1,56 @@
+<h2 class="title">加载等待</h2>
+<p>加载等待用于访问初始访问页面的加载等候，以及从后端获取数据的等待处理</p>
+
+<h3>1. 普通加载中</h3>
+<nc-loading [type]="'normal'" [loadSize]="'max'"></nc-loading>
+<nc-loading [type]="'normal'" [loadSize]="'medium'"></nc-loading>
+<nc-loading [loadSize]="'min'"></nc-loading>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:80px;">
+      <nc-loading [type]="'normal'" [loadSize]="'max'"></nc-loading>
+      <nc-loading [type]="'normal'" [loadSize]="'medium'"></nc-loading>
+      <nc-loading [loadSize]="'min'"></nc-loading>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>2. 四叶加载中</h3>
+<nc-loading [type]="'clover'" [loadSize]="'max'"></nc-loading>
+<nc-loading [type]="'clover'" [loadSize]="'medium'"></nc-loading>
+<nc-loading [type]="'clover'" [loadSize]="'min'"></nc-loading>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:80px;">
+      <nc-loading [type]="'clover'" [loadSize]="'max'"></nc-loading>
+      <nc-loading [type]="'clover'" [loadSize]="'medium'"></nc-loading>
+      <nc-loading [type]="'clover'" [loadSize]="'min'"></nc-loading>
+    </textarea>
+  </div>
+</nc-tab>
+
+
+<h3>参数</h3>
+<table>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>说明</th>
+      <th>默认值</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>type</td>
+      <td>代表形状类型，两种取值：normal（一般），clover（四叶形状）</td>
+      <td>normal</td>
+    </tr>
+    <tr>
+      <td>loadSize</td>
+      <td>代表大小，3种取值：max（大），medium（中），min（小）</td>
+      <td>max</td>
+    </tr>
+  </tbody>
+</table>

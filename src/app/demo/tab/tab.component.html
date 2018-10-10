@@ -1,0 +1,199 @@
+<h2 class="title">Tab页</h2>
+<p>Tab用于在不同视图框中根据选择来呈现不同的内容</p>
+<h3>1. 卡片式</h3>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'apple'">
+    苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
+  </div>
+  <div *ngIf="currentTab1 === 'xiaomi'">
+    北京小米科技有限责任公司成立2010年4月，是一家专注于智能硬件和电子产品研发的移动互联网公司。“为发烧而生”是小米的产品概念
+  </div>
+  <div *ngIf="currentTab1 === 'oppo'">
+    OPPO 更多年轻人选择的拍照手机。十年来，OPPO一直专注手机拍照的技术创新，开创了“手机自拍美颜”时代
+  </div>
+  <div *ngIf="currentTab1 === 'vivo'">
+    vivo是一家全球性的移动互联网智能终端公司，致力于为消费者打造拥有极致拍照、畅快游戏、Hi-Fi音乐的智能手机产品。
+  </div>
+  <div *ngIf="currentTab1 === 'zte'">
+    中兴通讯（ZTE）,全球领先的综合通信解决方案提供商，中国最大的通信设备上市公司
+  </div>
+</nc-tab>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:290px;">
+      <nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+        <div *ngIf="currentTab1 === 'apple'">
+          苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
+        </div>
+        <div *ngIf="currentTab1 === 'xiaomi'">
+          北京小米科技有限责任公司成立2010年4月，是一家专注于智能硬件和电子产品研发的移动互联网公司。“为发烧而生”是小米的产品概念
+        </div>
+        <div *ngIf="currentTab1 === 'oppo'">
+          OPPO 更多年轻人选择的拍照手机。十年来，OPPO一直专注手机拍照的技术创新，开创了“手机自拍美颜”时代
+        </div>
+        <div *ngIf="currentTab1 === 'vivo'">
+          vivo是一家全球性的移动互联网智能终端公司，致力于为消费者打造拥有极致拍照、畅快游戏、Hi-Fi音乐的智能手机产品。
+        </div>
+        <div *ngIf="currentTab1 === 'zte'">
+          中兴通讯（ZTE）,全球领先的综合通信解决方案提供商，中国最大的通信设备上市公司
+        </div>
+      </nc-tab>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab2 === 'typescript'">
+    <textarea style="height:290px;">
+      this.tabItems1 = [{name:'苹果',label:'apple',isActive:true,isDisable:false},
+        {name:'小米',label:'xiaomi',isActive:false,isDisable:false},
+        {name:'欧普',label:'oppo',isActive:false,isDisable:false},
+        {name:'维沃',label:'vivo',isActive:false,isDisable:false},
+        {name:'中兴',label:'zte',isActive:false,isDisable:false}];
+      this.currentTab1 = this.tabItems1[0].label;
+    </textarea>
+  </div>
+</nc-tab>
+<p class="header">禁止某个tab项</p>
+<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
+  <div *ngIf="currentTab3 === 'apple'">
+    苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
+  </div>
+  <div *ngIf="currentTab3 === 'xiaomi'">
+    北京小米科技有限责任公司成立2010年4月，是一家专注于智能硬件和电子产品研发的移动互联网公司。“为发烧而生”是小米的产品概念
+  </div>
+  <div *ngIf="currentTab3 === 'oppo'">
+    OPPO 更多年轻人选择的拍照手机。十年来，OPPO一直专注手机拍照的技术创新，开创了“手机自拍美颜”时代
+  </div>
+</nc-tab>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems4" [(selectTab)] = "currentTab4">
+  <div *ngIf="currentTab4 === 'html'">
+    <textarea style="height:150px;">
+      <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+        <div *ngIf="currentTab4 === 'apple'">
+          text...</div>
+        <div *ngIf="currentTab4 === 'xiaomi'">
+          text...</div>
+        <div *ngIf="currentTab4 === 'oppo'">
+          text...</div>
+      </nc-tab>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab4 === 'typescript'">
+    <textarea style="height:150px;">
+      this.tabItems = [{name:'苹果',label:'apple',isActive:true,isDisable:false},
+        {name:'小米',label:'xiaomi',isActive:false,isDisable:true},
+        {name:'欧普',label:'oppo',isActive:false,isDisable:false}];
+      this.currentTab = this.tabItems1[0].label;
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>2. 线条式</h3>
+<nc-tab [tabs]="tabItems5" [type]="'line'" [(selectTab)] = "currentTab5">
+  <div *ngIf="currentTab5 === 'apple'">
+    苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
+  </div>
+  <div *ngIf="currentTab5 === 'xiaomi'">
+    北京小米科技有限责任公司成立2010年4月，是一家专注于智能硬件和电子产品研发的移动互联网公司。“为发烧而生”是小米的产品概念
+  </div>
+  <div *ngIf="currentTab5 === 'oppo'">
+    OPPO 更多年轻人选择的拍照手机。十年来，OPPO一直专注手机拍照的技术创新，开创了“手机自拍美颜”时代
+  </div>
+</nc-tab>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems6" [type]="'line'" [(selectTab)] = "currentTab6">
+  <div *ngIf="currentTab6 === 'html'">
+    <textarea style="height:200px;">
+      <nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
+        <div *ngIf="currentTab === 'apple'">
+          苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
+        </div>
+        <div *ngIf="currentTab === 'xiaomi'">
+          北京小米科技有限责任公司成立2010年4月，是一家专注于智能硬件和电子产品研发的移动互联网公司。“为发烧而生”是小米的产品概念
+        </div>
+        <div *ngIf="currentTab === 'oppo'">
+          OPPO 更多年轻人选择的拍照手机。十年来，OPPO一直专注手机拍照的技术创新，开创了“手机自拍美颜”时代
+        </div>
+      </nc-tab>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab6 === 'typescript'">
+    <textarea style="height:200px;">
+      this.tabItems = [{name:'苹果',label:'apple',isActive:true,isDisable:false},
+        {name:'小米',label:'xiaomi',isActive:false,isDisable:true},
+        {name:'欧普',label:'oppo',isActive:false,isDisable:false}];
+      this.currentTab = this.tabItems1[0].label;
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>3. 二级Tab</h3>
+<nc-tab [tabs]="tabItems7" [tabStyle]="'secondTab'" [(selectTab)] = "currentTab7">
+  <div *ngIf="currentTab7 === 'apple'">
+    苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
+  </div>
+  <div *ngIf="currentTab7 === 'xiaomi'">
+    北京小米科技有限责任公司成立2010年4月，是一家专注于智能硬件和电子产品研发的移动互联网公司。“为发烧而生”是小米的产品概念
+  </div>
+  <div *ngIf="currentTab7 === 'oppo'">
+    OPPO 更多年轻人选择的拍照手机。十年来，OPPO一直专注手机拍照的技术创新，开创了“手机自拍美颜”时代
+  </div>
+  <div *ngIf="currentTab7 === 'vivo'">
+    vivo是一家全球性的移动互联网智能终端公司，致力于为消费者打造拥有极致拍照、畅快游戏、Hi-Fi音乐的智能手机产品。
+  </div>
+  <div *ngIf="currentTab7 === 'zte'">
+    中兴通讯（ZTE）,全球领先的综合通信解决方案提供商，中国最大的通信设备上市公司
+  </div>
+</nc-tab>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems6" [type]="'card'" [(selectTab)] = "currentTab6">
+  <div *ngIf="currentTab6 === 'html'">
+    <textarea style="height:120px;">
+      <nc-tab [tabs]="tabItems" [tabStyle]="'secondTab'" [(selectTab)] = "currentTab">
+        同上...
+      </nc-tab>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab6 === 'typescript'">
+    <textarea style="height:120px;">
+      this.tabItems = [{name:'苹果',label:'apple',isActive:true,isDisable:false},
+      {name:'小米',label:'xiaomi',isActive:false,isDisable:false},
+      {name:'欧普',label:'oppo',isActive:false,isDisable:false},
+      {name:'维沃',label:'vivo',isActive:false,isDisable:false},
+      {name:'中兴',label:'zte',isActive:false,isDisable:false}];
+      this.currentTab = this.tabItems1[0].label;
+    </textarea>
+  </div>
+
+  <h3>参数</h3>
+  <table>
+    <thead>
+    <tr>
+      <th>参数</th>
+      <th>说明</th>
+      <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>tabStyle</td>
+      <td>代表一级/二级tab，两种取值：firstTab，secondTab</td>
+      <td>firstTab</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>一级tab类型，2种取值：card（卡片），line（线性）</td>
+      <td>card</td>
+    </tr>
+    <tr>
+      <td>tabs</td>
+      <td>tab项目数组，4种取值：name,label,isActive（是否默认激活）,isDisable（是否禁用）</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <td>selectTab</td>
+      <td>当前选择的tab页</td>
+      <td>空</td>
+    </tr>
+    </tbody>
+  </table>

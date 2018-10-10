@@ -1,0 +1,67 @@
+.default-card {
+    display:flex;
+    flex-direction:column;
+    border:solid 1px #999;
+    width:33%;
+    border-radius:4px;
+}
+.default-card:hover{
+    box-shadow: 1px 1px 10px 3px #ccc;
+}
+.default-card .card-header {
+    display:flex;
+    border-bottom:solid 1px #999;
+    align-items:center;
+    justify-content:space-between;
+    padding:5px;
+}
+.default-card .card-header .header-title {
+    height:36px;
+    display:flex;
+    align-items:center;
+}
+.default-card .card-header .header-action {
+    color:#66a3ff;
+}
+.default-card .card-header .header-action:hover {
+    color:#0052cc;
+    cursor:pointer;
+    font-size:1.5;
+}
+.default-card .card-content {
+    display:flex;
+}
+.default-card .card-content .card-img {
+    //width:40%;
+    //height:160px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:10px;
+    box-sizing:border-box;
+}
+.default-card .card-content .card-img img {
+    //height:80%;
+    width:100%;
+}
+.default-card .card-content .card-description {
+    display:flex;
+    align-items:center;
+}
+.default-card .card-footer {
+    display:flex;
+    border-top:solid 1px #999;
+    justify-content:center;
+    align-items:center;
+}
+.default-card .card-footer .footer-action {
+    height:36px;
+    display:flex;
+    align-items:center;
+    color:#0099ff;
+}
+.default-card .card-footer .footer-action:hover {
+    text-decoration:underline;
+    color:#006bb3;
+    cursor:pointer;
+}

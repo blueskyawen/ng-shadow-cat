@@ -1,0 +1,6 @@
+<span class="_checkbox" [class.disabled]="disabled"
+      (click)="checkItem()">
+    <span [ngClass]="{'active': checked !== 0,'checkall': checked === 1,'partcheck': checked === 2}">
+      <input name="dongxi" type="checkbox" value="yes"/>
+    </span>
+</span>

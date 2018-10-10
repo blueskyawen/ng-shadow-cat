@@ -1,0 +1,148 @@
+.dialog-container {
+  position: fixed;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  display:block;
+  z-index: 2000;
+  overflow-y: auto;
+}
+.shade{
+  height:100%;
+  width:100%;
+  background:#ccc;
+  opacity: 0.5;
+  position: fixed;
+}
+.dialog-container .myDialog {
+  display: flex;
+  flex-direction:column;
+  position: absolute;
+  z-index: 2000;
+  opacity: 1;
+  left:50%;
+  overflow: auto;
+  background:#fff;
+  border:solid 1px #999;
+  border-radius:8px;
+  width:50%;
+  min-height:120px;
+  transform: translateX(-50%);
+  box-shadow:2px 2px 2px #a3a375;
+}
+.dialog-container .myDialog.normal-dialog {
+  top:60px;
+  -webkit-animation: modal-out  200ms;
+  animation: modal-out  200ms;
+  -moz-animation: modal-out 200ms;
+}
+.dialog-container .myDialog.confirm-dialog {
+  top:160px;
+  -webkit-animation: modal-out-2  200ms;
+  animation: modal-out-2  200ms;
+  -moz-animation: modal-out-2 200ms;
+}
+.dialog-container .myDialog.big {
+  width:70%;
+  min-height:500px;
+}
+@keyframes modal-out {
+  0% {top:0px;}
+  100% {top:60px;}
+}
+@keyframes modal-out-2 {
+  0% {top:0px;}
+  100% {top:160px;}
+}
+.myDialog header{
+  border:solid 0px;
+  height:36px;
+  line-height:36px;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index: 2000;
+}
+.myDialog header span:first-child{
+  margin-left:15px;
+  font-size:14px;
+}
+.myDialog header span:last-child{
+  height:23px;
+  width:23px;
+  line-height:23px;
+  text-align:center;
+  border-radius:50%;
+  margin-right:15px;
+}
+.myDialog header span:last-child:hover{
+  background:#a6a6a6;
+  cursor:pointer;
+}
+.myDialog article{
+  display:inline-block;
+  width:90%;
+  border:solid 0px;
+  margin:auto;
+  margin-top:10px;
+}
+.myDialog footer{
+  width:90%;
+  margin:auto;
+  margin-top:10px;
+  margin-bottom:20px;
+  display:flex;
+  justify-content:center;
+}
+.big{
+  width:70%;
+  min-height:500px;
+}
+.dialog-container .myDialog.confirm-dialog article {
+  margin-top:30px;
+  margin-bottom:30px;
+}
+
+.description{
+  display:flex;
+  flex-direction:column;
+  border:none;
+  background:#fff;
+  border:solid 0px
+}
+.description .gradetitle{
+  display:flex;
+  height:36px;
+  line-height:36px;
+  border:solid 0px;
+}
+.description .gradetitle .icon{
+  display:inline-block;
+  height:24px;
+  width:24px;
+  border-radius:50%;
+  line-height:24px;
+  text-align:center;
+  color:#fff;
+  margin-top:6px;
+}
+.back-blue{
+  background:#0040ff;
+}
+.back-red{
+  background:#ff1a1a;
+}
+.description .gradetitle .title{
+  display:inline-block;
+  font-size:16px;
+  font-weight:bold;
+  margin-left:10px;
+}
+.description .text p{
+  display:inline-block;
+  width:100%;
+  font-size:12px;
+  border:solid 0px;
+  margin-left:24px;
+}

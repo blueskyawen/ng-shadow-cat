@@ -1,0 +1,21 @@
+<div class="page-header">
+  <header>
+    <h2>页面标题实例</h2>
+    <span class="question" title="页面标题实例">?</span>
+  </header>
+  <p class="description">这是一个示例文本。这是一个示例文本。。</p>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:380px;">
+    <div class="page-header">
+      <header>
+        <h2>页面标题实例</h2>
+        <span class="question" title="页面标题实例">?</span>
+      </header>
+      <p class="description">这是一个示例文本。这是一个示例文本。。</p>
+    </div>
+    </textarea>
+  </div>
+</nc-tab>

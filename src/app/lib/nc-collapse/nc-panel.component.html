@@ -1,0 +1,8 @@
+<div class="collapse" [class.active]="isActive" [class.disable]="isDisable">
+  <header (click)="checkIt()"><span></span>
+    {{header}}
+  </header>
+  <article>
+    <ng-content></ng-content>
+  </article>
+</div>

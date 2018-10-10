@@ -1,0 +1,83 @@
+<h2 class="title">transfer穿梭框</h2>
+<p>transfer穿梭框，用直观的方式在两栏中移动元素，完成选择行为</p>
+<h3>1. 基本的用法</h3>
+<div style="margin-top: 20px;">
+  <nc-transfer [sourceOptions]="sourceOptions" [(targetOptions)]="targetOptions"></nc-transfer>
+  <div style="margin-top: 10px;margin-bottom: 10px;">已选目标项目:
+    <span *ngFor="let option of targetOptions">{{option.label}}, </span>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:120px;">
+    <nc-transfer [sourceOptions]="sourceOptions" [(targetOptions)]="targetOptions"></nc-transfer>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:200px;">
+    sourceOptions : any[] = [{label:'content01',value:'content01',disable:false},
+      {label:'content02',value:'content02',disable:false},
+      {label:'content03',value:'content03',disable:false},
+      {label:'content04',value:'content04',disable:false},
+      {label:'content05',value:'content05',disable:false},
+      {label:'content06',value:'content06',disable:false},
+      {label:'content07',value:'content07',disable:false},
+      {label:'content08',value:'content08',disable:false},
+      {label:'content01',value:'content01',disable:false}];
+    targetOptions : any[] = [{label:'content09',value:'content09',disable:false},
+      {label:'content10',value:'content10',disable:false}];
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>2. 自定义渲染数据，禁止部分项目</h3>
+<div style="margin-top: 20px;">
+  <nc-transfer [sourceOptions]="sourceOptions2" [(targetOptions)]="targetOptions2"></nc-transfer>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:120px;">
+    <nc-transfer [sourceOptions]="sourceOptions" [(targetOptions)]="targetOptions"></nc-transfer>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:200px;">
+    sourceOptions : any[] = [{label:'content01',value:'content01',disable:false},
+      {label:'content02',value:'content02',disable:false},
+      {label:'content03',value:'content03',disable:true},
+      {label:'content04',value:'content04',disable:false},
+      {label:'content05',value:'content05',disable:true},
+      {label:'content06',value:'content06',disable:false},
+      {label:'content07',value:'content07',disable:false},
+      {label:'content08',value:'content08',disable:false},
+      {label:'content01',value:'content01',disable:false}];
+    targetOptions : any[] = [{label:'content09',value:'content09',disable:false},
+      {label:'content10',value:'content10',disable:false}];
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>sourceOptions</td>
+    <td>源数据列表</td>
+    <td>[]</td>
+  </tr>
+  <tr>
+    <td>targetOptions</td>
+    <td>目标数据列表</td>
+    <td>[]</td>
+  </tr>
+  </tbody>
+</table>

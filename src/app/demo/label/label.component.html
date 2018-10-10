@@ -1,0 +1,46 @@
+<h2 class="title">标签</h2>
+<p>标签，可用于计数、提示或页面上其他的标记显示</p>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+  <nc-label></nc-label>
+  <nc-label [type]="'primary'" [title]="'主要标签'"></nc-label>
+  <nc-label [type]="'success'" [title]="'成功标签'"></nc-label>
+  <nc-label [type]="'info'" [title]="'信息标签'"></nc-label>
+  <nc-label [type]="'warn'" [title]="'警告标签'"></nc-label>
+  <nc-label [type]="'danger'" [title]="'危险标签'"></nc-label>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:160px;">
+    <nc-label></nc-label>
+    <nc-label [type]="'primary'" [title]="'主要标签'"></nc-label>
+    <nc-label [type]="'success'" [title]="'成功标签'"></nc-label>
+    <nc-label [type]="'info'" [title]="'信息标签'"></nc-label>
+    <nc-label [type]="'warn'" [title]="'警告标签'"></nc-label>
+    <nc-label [type]="'danger'" [title]="'危险标签'"></nc-label>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>nc-label--参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>title</td>
+    <td>标签文本</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>type</td>
+    <td>标签类型</td>
+    <td>default</td>
+  </tr>
+  </tbody>
+</table>

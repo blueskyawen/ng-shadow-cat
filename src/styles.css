@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    padding:0;
+    margin: 0;
+}
+
+textarea {
+    width:100%;
+    border:none;
+}
+
+table
+{
+    border-collapse:collapse;
+    width:60%;
+}
+
+table, th, td
+{
+    border: 1px solid #666;
+}
+
+table th,
+table td {
+    padding:10px;
+}

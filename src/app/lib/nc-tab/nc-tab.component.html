@@ -1,0 +1,13 @@
+<div class="tabka"
+     [ngClass]="{'first-tab':tabStyle === 'firstTab','tab-line':type === 'line','second-tab':tabStyle === 'secondTab'}">
+  <ul class="tabss">
+    <li *ngFor="let tab of tabs" (click)="select(tab)"
+        [ngClass]="{'active':tab.isActive,'noactive':!tab.isActive,'disabled':tab.isDisable}">
+      {{tab.name}}
+    </li>
+    <li *ngIf="tabStyle === 'firstTab'"></li>
+  </ul>
+  <div class="tab-content">
+    <ng-content></ng-content>
+  </div>
+</div>

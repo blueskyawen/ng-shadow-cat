@@ -1,0 +1,39 @@
+<ul class="pager">
+  <li><a href="#">上一页</a></li>
+  <li><a href="#">下一页</a></li>
+</ul>
+<ul class="pager page-center">
+  <li class="disabled"><a href="#">上一页</a></li>
+  <li><a href="#">下一页</a></li>
+</ul>
+<ul class="pager page-end">
+  <li><a href="#">上一页</a></li>
+  <li><a href="#">下一页</a></li>
+</ul>
+<ul class="pager page-between">
+  <li><a href="#">&larr; 上一页</a></li>
+  <li><a href="#">下一页 &rarr;</a></li>
+</ul>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:240px;">
+    <ul class="pager">
+      <li><a href="#">上一页</a></li>
+      <li><a href="#">下一页</a></li>
+    </ul>
+    <ul class="pager page-center">
+      <li class="disabled"><a href="#">上一页</a></li>
+      <li><a href="#">下一页</a></li>
+    </ul>
+    <ul class="pager page-end">
+      <li><a href="#">上一页</a></li>
+      <li><a href="#">下一页</a></li>
+    </ul>
+    <ul class="pager page-between">
+      <li><a href="#">&larr; 上一页</a></li>
+      <li><a href="#">下一页 &rarr;</a></li>
+    </ul>
+    </textarea>
+  </div>
+</nc-tab>

@@ -1,0 +1,98 @@
+.select-dropdown{
+  margin:20px;
+  position:relative;
+  width:420px;
+}
+.select-dropdown .inputItem {
+  width: inherit;
+  display: flex;
+}
+.select-dropdown.disable{
+  cursor:not-allowed;
+}
+.select-dropdown.disable .inputItem input,
+.select-dropdown.disable .inputItem .carcat {
+  background:#e6e6e6;
+  opacity: 0.6;
+  cursor:not-allowed;
+}
+.select-dropdown.disable:hover .inputItem input,
+.select-dropdown.disable:hover .inputItem .carcat {
+  border-color:#808080;
+}
+.select-dropdown .inputItem input{
+  display:inline-block;
+  height:36px;
+  width:calc(100% - 30px);
+  border:solid 1px #808080;
+  border-radius:4px 0 0 4px;
+  border-right: none;
+  margin:0;
+  padding:0;
+  padding-left: 5px;
+  font-size:14px;
+  background: #fff;
+  white-space: nowrap;
+  word-wrap: normal;
+  text-overflow: ellipsis;
+
+}
+.select-dropdown .inputItem .carcat {
+  display:inline-block;
+  width: 30px;
+  border:solid 1px #808080;
+  border-radius:0 4px 4px 0;
+  border-left: none;
+}
+.select-dropdown .inputItem .carcat:after{
+  content:"";
+  display:inline-block;
+  border:solid 6px;
+  border-color: #808080 transparent transparent transparent;
+  position:absolute;
+  right:5px;
+  top:50%;
+  transform: translateY(-2px);
+}
+.select-dropdown .dropdown-content{
+  display:none;
+  width:100%;
+  height:120px;
+  margin-top:5px;
+  border:solid 1px #808080;
+  border-radius:4px;
+  position:absolute;
+  top:100%;
+  left:0;
+  font-size:12px;
+  overflow-y:auto;
+  cursor:pointer;
+  box-sizing:border-box;
+  z-index:1;
+  background:#fff;
+}
+.select-dropdown .dropdown-content span{
+  display:block;
+  width:100%;
+  height:30px;
+  line-height:30px;
+  padding-left:10px;
+  box-sizing:border-box;
+  white-space: nowrap;
+  word-wrap: normal;
+  text-overflow: ellipsis;
+}
+.select-dropdown .dropdown-content span:hover{
+  background:#ccc;
+}
+.select-dropdown:hover .inputItem input,
+.select-dropdown:hover .inputItem .carcat {
+  border-color:#1a53ff;
+}
+.select-dropdown:hover .inputItem .carcat:after{
+  border-color: #1a53ff transparent transparent transparent;
+}
+.select-dropdown .dropdown-content span.disable {
+  cursor: not-allowed;
+  background: #d9d9d9;
+}

@@ -1,0 +1,76 @@
+<h2 class="title">select选择器</h2>
+<p>select选择器，用于表单的项目选择，包括单选和多选</p>
+<h5>正常选择</h5>
+<nc-select [options]="options" [(value)]="value"></nc-select>
+<h5>禁止选择</h5>
+<nc-select [options]="options" [(value)]="value" [isDisable]="true"></nc-select>
+<h5>部分选项禁止</h5>
+<nc-select [options]="options2" [(value)]="value"></nc-select>
+<h5>自定义长度,高度</h5>
+<nc-select [options]="options" [(value)]="value" [width]="'180px'" [height]="'30px'"></nc-select>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:180px;">
+    <!--h5>正常选择</h5-->
+    <nc-select [options]="options" [(value)]="value"></nc-select>
+    <!--h5>禁止选择</h5-->
+    <nc-select [options]="options" [(value)]="value" [isDisable]="true"></nc-select>
+    <!--h5>部分选项禁止</h5-->
+    <nc-select [options]="options2" [(value)]="value"></nc-select>
+    <!--h5>自定义长度</h5-->
+    <nc-select [options]="options" [(value)]="value" [width]="'180px'" [height]="'30px'"></nc-select>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:180px;">
+    value: string = 'paletxui';
+    options : any[] = [{label: 'paletx-UI',value: 'paletxui',disable: false},
+      {label: 'Iaas',value: 'iaas',disable: false},
+      {label: 'Paas',value: 'paas',disable: false},{label: 'Saas',value: 'saas',disable: false},
+      {label: 'NG-ANT',value: 'ng-ant',disable: false}];
+    options2 : any[] = [{label: 'paletx-UI',value: 'paletxui',disable: false},
+      {label: 'Iaas',value: 'iaas',disable: true},
+      {label: 'Paas',value: 'paas',disable: false},{label: 'Saas',value: 'saas',disable: true},
+      {label: 'NG-ANT',value: 'ng-ant',disable: false}];
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>options</td>
+    <td>select项目列表</td>
+    <td>[]</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>默认值</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>isDisable</td>
+    <td>是否禁用,true/false</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>选择框自定义长度</td>
+    <td>420px</td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>选择框自定义高度</td>
+    <td>36px</td>
+  </tr>
+  </tbody>
+</table>

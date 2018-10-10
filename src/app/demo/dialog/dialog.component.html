@@ -1,0 +1,190 @@
+<h2 class="title">模态框</h2>
+<p>模态框，用于用户的操作交互</p>
+<h3>1. 普通模态框</h3>
+<div style="margin-top: 20px;">
+  <nc-button (click)="openDialog(0)">标准尺寸</nc-button>
+  <nc-button (click)="openDialog(1)">大尺寸</nc-button>
+</div>
+<nc-dialog *ngIf="isShows[0]" [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
+  <div class="content">
+    <div class="description">
+      <span class="grade">!</span>
+      <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
+    </div>
+    <form>
+      <div class="form-group">
+        <label>姓名</label>
+        <div class="group-right">
+          <input type="text" name="_name" value="Jack" maxlength="8"
+                 autocomplete="on"  required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>技能</label>
+        <div class="group-right">
+          <input type="text" name="_skill" value="" autocomplete="on" />
+          <span>(可选)</span>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="footer">
+    <nc-button (click)="isShows[0]=flase">确定</nc-button>
+    <nc-button [type]="'cancel'" (click)="isShows[0]=flase">取消</nc-button>
+  </div>
+</nc-dialog>
+<nc-dialog *ngIf="isShows[1]" [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
+  <div class="content">
+    <div class="description">
+      <span class="grade">!</span>
+      <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
+    </div>
+    <div class="wenzhang">
+      <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。以一身晶莹，绽放独特魅力；以一分柔媚，征服万物生灵；
+        以一缕素洁，攫获万心宠爱。如蝶飞舞，如梦唯美，如烟轻柔，如雾飘缈，如心纯净，如水澄澈。</p>
+      <p>忧郁的愁丝晕染了流年的底色，孤寒的素洁染白了寒冬的萧瑟。凛冽的寒风呼啸而来，残瘦的枯枝在风中摇曳。清冷的浩空好似在酝酿一场盛
+        大的群舞盛宴，天边仿佛飞来白茫茫一片素洁，那是雪精灵在炫舞翩跹。曼妙的舞姿，灵动的舞步，飘逸的神韵，优雅地绽放，美而不艳，媚而不俗，
+        令人沉醉，不能自拔……</p>
+      <p>“晚来天欲雪，能饮一杯无？”——期盼了一个冬季的雪花，终于纷纷扬扬地飘洒在苍穹的天宇。隔着透明的玻璃窗，看着一片片雪花轻盈飘落，心底
+        情不自禁地奔涌出一股抑制不住的惊喜。迫不及待地推开门，只见千千万万片飞絮，犹如一片片雪白的鹅毛，洋洋洒洒地从天而降，穿越浩渺星空，
+        飞向苍茫大地。</p>
+    </div>
+  </div>
+  <div class="footer">
+    <nc-button (click)="isShows[1]=flase">确定</nc-button>
+    <nc-button [type]="'cancel'" (click)="isShows[1]=flase">取消</nc-button>
+  </div>
+</nc-dialog>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:400px;">
+      //标准尺寸
+      <nc-dialog *ngIf="isShows[0]" [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
+        <div class="content">
+          <div class="description">
+            <span class="grade">!</span>
+            <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
+          </div>
+          <form>
+            <div class="form-group">
+              <label>姓名</label>
+              <div class="group-right">
+                <input type="text" name="_name" value="Jack" maxlength="8"
+                       autocomplete="on"  required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>技能</label>
+              <div class="group-right">
+                <input type="text" name="_skill" value="" autocomplete="on" />
+                <span>(可选)</span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="footer">
+          <nc-button (click)="isShows[0]=flase">确定</nc-button>
+          <nc-button [type]="'cancel'" (click)="isShows[0]=flase">取消</nc-button>
+        </div>
+      </nc-dialog>
+
+      //大尺寸
+      <nc-dialog *ngIf="isShows[1]" [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
+        <div class="content">
+          <div class="description">
+            <span class="grade">!</span>
+            <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
+          </div>
+          <div class="wenzhang">
+            <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。以一身晶莹，绽放独特魅力；以一分柔媚，征服万物生灵；
+              以一缕素洁，攫获万心宠爱。如蝶飞舞，如梦唯美，如烟轻柔，如雾飘缈，如心纯净，如水澄澈。</p>
+          </div>
+        </div>
+        <div class="footer">
+          <nc-button (click)="isShows[1]=flase">确定</nc-button>
+          <nc-button [type]="'cancel'" (click)="isShows[1]=flase">取消</nc-button>
+        </div>
+      </nc-dialog>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>2. 操作模态框</h3>
+<div style="margin-top: 20px;">
+  <nc-button (click)="openDialog(2)">确认操作</nc-button>
+  <nc-button (click)="openDialog(3)">删除操作</nc-button>
+</div>
+<nc-dialog *ngIf="isShows[2]" [header]="'操作名称'" [style]="'confirm'" [operType]="'normal'" [(isShow)]="isShows[2]">
+  <div class="content">
+  </div>
+  <div class="footer">
+    <nc-button (click)="isShows[2]=flase">确定</nc-button>
+    <nc-button [type]="'cancel'" (click)="isShows[2]=flase">取消</nc-button>
+  </div>
+</nc-dialog>
+<nc-dialog *ngIf="isShows[3]" [header]="'操作名称'" [style]="'confirm'" [operType]="'delete'" [(isShow)]="isShows[3]">
+  <div class="content">
+  </div>
+  <div class="footer">
+    <nc-button [type]="'major'" (click)="isShows[3]=flase">删除</nc-button>
+    <nc-button [type]="'cancel'" (click)="isShows[3]=flase">取消</nc-button>
+  </div>
+</nc-dialog>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:340px;">
+  <nc-dialog *ngIf="isShows[2]" [header]="'操作名称'" [style]="'confirm'" [operType]="'normal'" [(isShow)]="isShows[2]">
+    <div class="content">
+    </div>
+    <div class="footer">
+      <nc-button (click)="isShows[2]=flase">确定</nc-button>
+      <nc-button [type]="'cancel'" (click)="isShows[2]=flase">取消</nc-button>
+    </div>
+  </nc-dialog>
+
+  <nc-dialog *ngIf="isShows[3]" [header]="'操作名称'" [style]="'confirm'" [operType]="'delete'" [(isShow)]="isShows[3]">
+    <div class="content">
+    </div>
+    <div class="footer">
+      <nc-button [type]="'major'" (click)="isShows[3]=flase">删除</nc-button>
+      <nc-button [type]="'cancel'" (click)="isShows[3]=flase">取消</nc-button>
+    </div>
+  </nc-dialog>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>header</td>
+    <td>模态框名称</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>style</td>
+    <td>指定模态框的类型，2种取值:normal普通,confirm操作确认</td>
+    <td>normal</td>
+  </tr>
+  <tr>
+    <td>size</td>
+    <td>指定模态框的大小,normal,big</td>
+    <td>normal</td>
+  </tr>
+  <tr>
+    <td>operType</td>
+    <td>指定操作确认模态框的类型,normal,delete</td>
+    <td>normal</td>
+  </tr>
+  </tbody>
+</table>

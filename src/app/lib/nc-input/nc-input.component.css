@@ -1,0 +1,77 @@
+.input-container {
+  display: flex;
+}
+.input-container input {
+  height:30px;
+  line-height: 30px;
+  width:360px;
+  font-size:14px;
+  border:solid 1px  #999999;
+  border-radius:4px;
+  box-shadow:none;
+  padding-left: 5px;
+}
+.input-container input:focus{
+  border-color:#0039e6;
+}
+.input-container input:disabled:hover{
+  cursor:not-allowed;
+}
+.input-container .optional {
+  margin-left: 5px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+.input-container .suffix {
+  width:60px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px #999;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+}
+.input-container .puffix {
+  width:60px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px #999;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+.input-container input.hasSuffix {
+  width:300px;
+  border-radius:4px 0 0 4px;
+}
+.input-container input.hasPrefix {
+  width:300px;
+  border-radius:0 4px 4px 0;
+}
+.input-container.input-search {
+  position:relative;
+}
+.input-container.input-search span.Search{
+  position:absolute;
+  right:10px;
+  top:7px;
+  height:14px;
+  width:14px;
+  display:inline-block;
+  border:solid 1px #4d4d4d;
+  border-radius:50%;
+  transform: rotate(45deg);
+}
+.input-container.input-search span.Search:after{
+  content:"";
+  position:absolute;
+  display:inline-block;
+  width:6px;
+  height:0px;
+  border:solid 1px #4d4d4d;
+  top:50%;
+  left:100%;
+}

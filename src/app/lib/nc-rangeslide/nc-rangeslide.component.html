@@ -1,0 +1,10 @@
+<div class="rangContainer" [class.disable]="disable">
+  <input type="range" #range name="points" min="0" [max]="total" [value]="value"
+         (change)="rangeChange(range.value)" [attr.disabled]="disable">
+  <span class="range">
+    <span class="before" [ngStyle]="beforeStyle"></span>
+    <span class="anniu" [ngStyle]="anniuStyle"></span>
+    <span class="after" [ngStyle]="afterStyle"></span>
+  </span>
+  <span class="text">{{value}}</span>
+</div>

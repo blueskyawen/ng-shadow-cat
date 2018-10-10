@@ -1,0 +1,45 @@
+<h2 class="title">滑动输入条</h2>
+<p>滑动输入条，用于方便的输入数值</p>
+<div style="margin-top: 20px;">
+  <nc-rangeslide></nc-rangeslide>
+  <nc-rangeslide [total]="50" [value]="30"></nc-rangeslide>
+  <nc-rangeslide [disable]="true"></nc-rangeslide>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:80px;">
+      <nc-rangeslide></nc-rangeslide>
+      <nc-rangeslide [total]="50" [value]="30"></nc-rangeslide>
+      <nc-rangeslide [disable]="true"></nc-rangeslide>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>total</td>
+    <td>输入条的总数</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>默认当前值</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>disable</td>
+    <td>是否禁用,true/false</td>
+    <td>false</td>
+  </tr>
+  </tbody>
+</table>

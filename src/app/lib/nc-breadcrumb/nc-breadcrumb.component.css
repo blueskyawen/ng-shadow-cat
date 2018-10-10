@@ -1,0 +1,33 @@
+ul.breadcrumb{
+  display: block;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+ul.breadcrumb li{
+  display: inline-block;
+}
+ul.breadcrumb li a{
+  text-decoration: none;
+  color: #1a75ff;
+}
+ul.breadcrumb li:last-child a{
+  font-size: 24px;
+  color: #333;
+  cursor: default;
+}
+ul.breadcrumb li:not(:last-child) a:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+ul.breadcrumb li.disable a{
+  color: #d9d9d9;
+}
+ul.breadcrumb li.disable:not(:last-child) a:hover{
+  color: #808080;
+  cursor: not-allowed;
+}
+ul.breadcrumb li span{
+  margin-left: 10px;
+  margin-right: 10px;
+}

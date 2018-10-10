@@ -1,0 +1,17 @@
+.side-bar .side-item {
+  width: inherit;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e6e6e6;
+}
+.side-bar .side-item:hover {
+  color: #4d4dff;
+  cursor: pointer;
+}
+.side-bar .side-item.selected {
+  background: #fff;
+  color: #4d4dff;
+  border-left: solid 5px #1a1aff;
+}

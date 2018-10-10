@@ -1,0 +1,27 @@
+<div *ngIf="show && style === 'top'" class="message" [ngClass]="spinClasses">
+  <div [class.msg]="type !== 'success'">
+    <ng-content></ng-content>
+  </div>
+  <div *ngIf="type !== 'success'" class="oper-cancel">
+    <span (click)="cancel()">x</span>
+  </div>
+</div>
+
+<div *ngIf="show && style === 'right'" class="info-container">
+  <div class="header">
+    <span (click)="cancel(1)">×</span>
+  </div>
+  <div class="actire">
+    <div class="gradetitle">
+      <span class="icon" [ngClass]="spinClasses2">{{iocnType}}</span>
+      <span class="title">{{headerTitle}}</span>
+    </div>
+    <div class="content">
+      <ng-content select="[name=content]"></ng-content>
+    </div>
+  </div>
+  <div class="footer">
+    <ng-content select="[name=footer]"></ng-content>
+  </div>
+</div>
+

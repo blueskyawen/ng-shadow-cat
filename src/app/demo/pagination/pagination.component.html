@@ -1,0 +1,59 @@
+<h2 class="title">分页条</h2>
+<p>分页条,一种无序列表,用于项目或表格分页</p>
+<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
+  <div>
+    <nc-pagination></nc-pagination>
+    <nc-pagination [haveBorder]="true"></nc-pagination>
+  </div>
+  <div>
+    <nc-pagination [appearNum]="4"></nc-pagination>
+    <nc-pagination [haveBorder]="true" [appearNum]="8"></nc-pagination>
+  </div>
+  <div>
+    <nc-pagination [pageNum]="15"></nc-pagination>
+    <nc-pagination [haveBorder]="true" [pageNum]="15"></nc-pagination>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:180px;">
+    <nc-pagination></nc-pagination>
+    <nc-pagination [haveBorder]="true"></nc-pagination>
+
+    <nc-pagination [appearNum]="4"></nc-pagination>
+    <nc-pagination [haveBorder]="true" [appearNum]="8"></nc-pagination>
+
+    <nc-pagination [pageNum]="15"></nc-pagination>
+    <nc-pagination [haveBorder]="true" [pageNum]="15"></nc-pagination>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>haveBorder</td>
+    <td>是否渲染边框，true,false</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>appearNum</td>
+    <td>显示的可点击的页码数目</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>pageNum</td>
+    <td>最大分页数目</td>
+    <td>10</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<div class="step-container">
+  <div class="steps">
+    <div class="step" [title] ="stepItem.dataContent"
+         *ngFor="let stepItem of stepItems;let i=index" (click)="onClickStep(i)"
+         [ngClass]="{'actived':i < stepIndex,'active':i === stepIndex,'step-centerline':type === 'centerline','step-underline':type === 'underline'}">
+      {{stepItem.label}}
+    </div>
+  </div>
+  <div class="step_content" [ngClass]="{'underline': type === 'underline','centerline': type === 'centerline'}">
+    <ng-content select=".content"></ng-content>
+  </div>
+  <div class="step-footer">
+    <ng-content select=".footer"></ng-content>
+  </div>
+</div>

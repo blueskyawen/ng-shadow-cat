@@ -1,0 +1,58 @@
+<h2 class="title">轮播</h2>
+<p>轮播，一种灵活的响应式的向站点添加滑块的方式</p>
+<h3>1. 左右滑动</h3>
+<nc-carousel [captions]="captions" [timerlen]="timerlen"></nc-carousel>
+<h3>2. 渐显</h3>
+<nc-carousel [captions]="captions2" [timerlen]="timerlen" [effect]="'fade'"></nc-carousel>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:100px;">
+    <h3>1. 左右滑动</h3>
+    <nc-carousel [captions]="captions" [timerlen]="timerlen"></nc-carousel>
+    <h3>2. 渐显</h3>
+    <nc-carousel [captions]="captions2" [timerlen]="timerlen" [effect]="'fade'"></nc-carousel>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:180px;">
+    timerlen : number = 1000;
+    captions : any[] = [
+      {url: 'http://upload.shunwang.com/2014/0625/1403670070972.JPG',disable: false,callback: () => {console.log('callback1');}},
+      {url: 'http://f4.topitme.com/4/b3/e5/1118294546054e5b34o.jpg',disable: false,callback: () => {console.log('callback2');}},
+      {url: 'http://pic1.win4000.com/wallpaper/4/561cade9bbfd6.jpg',disable: false,callback: () => {console.log('callback3');}},
+      {url: 'http://img17.3lian.com/d/file/201701/19/fd92ea2409b6b157c247b78ce4eda95a.jpg',disable: false,
+        callback: () => {console.log('callback4');}}
+    ];
+    </textarea>
+  </div>
+</nc-tab>
+
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>captions</td>
+    <td>轮播项目数组</td>
+    <td>[]</td>
+  </tr>
+  <tr>
+    <td>timerlen</td>
+    <td>变化时长</td>
+    <td>1s</td>
+  </tr>
+  <tr>
+    <td>effect</td>
+    <td>轮播类型，scroll/fade</td>
+    <td>scroll</td>
+  </tr>
+  </tbody>
+</table>

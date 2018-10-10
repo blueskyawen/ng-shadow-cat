@@ -1,0 +1,27 @@
+span.label {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  padding: 5px 10px;
+  margin:5px;
+  color:#fff;
+  border-radius:10px;
+}
+.label-default {
+  background:#808080;
+}
+.label-primary {
+  background:#0000ff;
+}
+.label-success {
+  background:#00e64d;
+}
+.label-info {
+  background:#6699ff;
+}
+.label-warning {
+  background:#ffad33;
+}
+.label-danger {
+  background:#ff1a1a;
+}

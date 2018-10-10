@@ -1,0 +1,43 @@
+<div class="select-dropdown" [class.disable]="isDisable"
+     (mouseover)="moveOn()" (mouseout)="moveOut()" (click)="clickSelect()">
+  <div class="selectss" *ngIf="!showCheckNum">
+    <span class="option" *ngFor="let selection of selections" [class.disable]="selection.disable">
+      <span class="text" title="{{selection.label}}">
+        {{selection.label}}
+      </span>
+      <span class="biao" (click)="delOption(selection)"
+            (mouseover)="moveInDel()" (mouseout)="moveInDel()">×</span>
+    </span>
+  </div>
+  <div class="selectss" *ngIf="showCheckNum">已选择{{selections.length}}个项目</div>
+  <div class="dropdown-content" *ngIf="isContentOpen && !hasheckbox" (mouseover)="moveContent()" (mouseout)="moveContent()">
+    <span *ngFor="let option of options" (click)="selectOption(option)"
+          [ngClass]="{'selected':option.isChecked,'unselected':!option.isChecked,'disable':option.disable}"
+          title="{{option.label}}">
+      {{option.label}}</span>
+  </div>
+  <div class="dropdown-content check-box" *ngIf="isContentOpen && hasheckbox" (mouseover)="moveContent()" (mouseout)="moveContent()">
+    <span *ngFor="let option of options" (click)="selectOption(option)"
+          [ngClass]="{'selected':option.isChecked,'unselected':!option.isChecked,'disable':option.disable,'option':hasheckbox}"
+          title="{{option.label}}">
+         <span class="checkbox"></span>
+				 <span class="text">{{option.label}}</span>
+    </span>
+  </div>
+  <div class="dropdown-content check-box" style="height: 160px;"
+       *ngIf="isContentOpen && hasheckbox && allcheck" (mouseover)="moveContent()" (mouseout)="moveContent()">
+    <span class="option" (click)="selectAll()" [ngClass]="{'selected':isAllSelected,'unselected':!isAllSelected}">
+      <span class="checkbox"></span>
+      <span class="text">全选</span>
+    </span>
+    <div class="optionContent">
+      <span *ngFor="let option of options" (click)="selectOption(option)"
+            [ngClass]="{'selected':option.isChecked,'unselected':!option.isChecked,'disable':option.disable,'option':hasheckbox}"
+            title="{{option.label}}">
+           <span class="checkbox"></span>
+           <span class="text">{{option.label}}</span>
+      </span>
+    </div>
+  </div>
+</div>
+

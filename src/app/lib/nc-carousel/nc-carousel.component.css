@@ -1,0 +1,174 @@
+.carousel{
+  display:block;
+  margin:auto;
+  height:420px;
+  width:90%;
+  position:relative;
+  border:solid 0px #666;
+  padding:0;
+}
+.carousel ul{
+  height:100%;
+  width:100%;
+  list-style:none;
+  padding:0;
+  margin:0;
+  position:relative;
+  overflow:hidden;
+}
+.carousel ul li{
+  height:100%;
+  width:100%;
+  display:inline-block;
+  position:absolute;
+  transition: left 1s ease-out;
+}
+.carousel ul li:first-child{
+  left:0%;
+}
+.carousel ul li:not(:first-child){
+  top:100%;
+}
+.carousel ul li img{
+  height:100%;
+  width:100%;
+  max-height:100%;
+  max-width:100%;
+}
+.carousel ul li img:hover {
+  cursor: pointer;
+}
+.carousel .bars{
+  display:block;
+  position:absolute;
+  bottom:5%;
+  left:50%;
+  transform: translateX(-50%);
+}
+.carousel .bars span{
+  display:inline-block;
+  height:10px;
+  width:10px;
+  border:solid 2px #999;
+  border-radius:50%;
+  cursor:pointer;
+  margin-left:5px;
+}
+.carousel .bars span:hover,.carousel .bars span.active{
+  border-color:#fff;
+}
+.carousel .left{
+  display:inline-block;
+  height:8px;
+  width:8px;
+  border:solid 4px #666;
+  border-color: #666 transparent transparent #666;
+  opacity:0.8;
+  position:absolute;
+  top:50%;
+  left:15px;
+  transform: translateY(-50%) rotate(-45deg);
+  cursor:pointer;
+}
+.carousel .left:hover{
+  border-color: #fff transparent transparent #fff;
+}
+.carousel .right{
+  display:inline-block;
+  height:8px;
+  width:8px;
+  border:solid 4px #666;
+  border-color: #666 #666 transparent transparent;
+  opacity:0.8;
+  position:absolute;
+  top:50%;
+  right:15px;
+  transform: translateY(-50%) rotate(45deg);
+  cursor:pointer;
+}
+.carousel .right:hover{
+  border-color: #fff  #fff transparent transparent;
+}
+
+
+.carousel-fade {
+  display:block;
+  margin:auto;
+  height:420px;
+  width:90%;
+  position:relative;
+  border:solid 1px #999;
+  padding:0;
+}
+.carousel-fade ul{
+  height:100%;
+  width:100%;
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.carousel-fade ul li{
+  position:absolute;
+  transition: opacity 1s ease-out;
+  height:100%;
+  width:100%
+}
+.carousel-fade ul li img{
+  height:100%;
+  width:100%;
+}
+@keyframes modal-out {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+.carousel-fade .bars{
+  display:block;
+  position:absolute;
+  bottom:5%;
+  left:50%;
+  transform: translateX(-50%);
+}
+.carousel-fade .bars span{
+  display:inline-block;
+  height:10px;
+  width:10px;
+  border:solid 2px #999;
+  border-radius:50%;
+  cursor:pointer;
+  margin-left:5px;
+}
+.carousel-fade .bars span:hover,.carousel-fade .bars span.active{
+  border-color:#fff;
+}
+.carousel-fade .left{
+  display:inline-block;
+  height:8px;
+  width:8px;
+  border:solid 4px #666;
+  border-color: #666 transparent transparent #666;
+  opacity:0.8;
+  position:absolute;
+  top:50%;
+  left:15px;
+  transform: translateY(-50%) rotate(-45deg);
+  cursor:pointer;
+}
+.carousel-fade .left:hover{
+  border-color: #fff transparent transparent #fff;
+}
+.carousel-fade .right{
+  display:inline-block;
+  height:8px;
+  width:8px;
+  border:solid 4px #666;
+  border-color: #666 #666 transparent transparent;
+  opacity:0.8;
+  position:absolute;
+  top:50%;
+  right:15px;
+  transform: translateY(-50%) rotate(45deg);
+  cursor:pointer;
+}
+.carousel-fade .right:hover{
+  border-color: #fff  #fff transparent transparent;
+}

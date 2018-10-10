@@ -1,0 +1,145 @@
+<h2 class="title">开关</h2>
+<p>开关-switch，用于表示项目的启用或禁止</p>
+<h3>1. 步骤条一</h3>
+<div style="margin-top: 20px;">
+  <nc-step [type]="'underline'" [(stepIndex)]="curStepIndex" [stepItems]="stepItems">
+    <div class="content">
+      <div *ngIf="curStepIndex === 0">步骤1</div>
+      <div *ngIf="curStepIndex === 1">步骤2</div>
+      <div *ngIf="curStepIndex === 2">步骤3</div>
+      <div *ngIf="curStepIndex === 3">步骤4</div>
+      <div *ngIf="curStepIndex === 4">步骤5</div>
+    </div>
+    <div class="footer">
+      <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
+      <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
+      <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+    </div>
+  </nc-step>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:300px;">
+  <nc-step [type]="'underline'" [(stepIndex)]="curStepIndex" [stepItems]="stepItems">
+    <div class="content">
+      <div *ngIf="curStepIndex === 0">步骤1</div>
+      <div *ngIf="curStepIndex === 1">步骤2</div>
+      <div *ngIf="curStepIndex === 2">步骤3</div>
+      <div *ngIf="curStepIndex === 3">步骤4</div>
+      <div *ngIf="curStepIndex === 4">步骤5</div>
+    </div>
+    <div class="footer">
+      <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
+      <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
+      <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+    </div>
+  </nc-step>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab1 === 'typescript'">
+    <textarea style="height:300px;">
+  stepItems : any[] = [
+    {label: '基本信息'},
+    {label: '附加信息'},
+    {label: '高级设置'},
+    {label: '构建成功'},
+    {label: '最终结束'}
+  ];
+  curStepIndex : number = 0;
+  preStep() {
+    this.curStepIndex--;
+  }
+
+  nextStep() {
+    this.curStepIndex++;
+  }
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>2. 步骤条二</h3>
+<div style="margin-top: 20px;">
+  <nc-step [type]="'centerline'" [(stepIndex)]="curStepIndex" [stepItems]="stepItems">
+    <div class="content">
+      <div *ngIf="curStepIndex === 0">步骤1</div>
+      <div *ngIf="curStepIndex === 1">步骤2</div>
+      <div *ngIf="curStepIndex === 2">步骤3</div>
+      <div *ngIf="curStepIndex === 3">步骤4</div>
+      <div *ngIf="curStepIndex === 4">步骤5</div>
+    </div>
+    <div class="footer buttons2">
+      <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
+      <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
+      <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+    </div>
+  </nc-step>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:300px;">
+  <nc-step [type]="'centerline'" [(stepIndex)]="curStepIndex" [stepItems]="stepItems">
+    <div class="content">
+      <div *ngIf="curStepIndex === 0">步骤1</div>
+      <div *ngIf="curStepIndex === 1">步骤2</div>
+      <div *ngIf="curStepIndex === 2">步骤3</div>
+      <div *ngIf="curStepIndex === 3">步骤4</div>
+      <div *ngIf="curStepIndex === 4">步骤5</div>
+    </div>
+    <div class="footer buttons2">
+      <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
+      <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
+      <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+    </div>
+  </nc-step>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab1 === 'typescript'">
+    <textarea style="height:300px;">
+  stepItems : any[] = [
+    {label: '基本信息'},
+    {label: '附加信息'},
+    {label: '高级设置'},
+    {label: '构建成功'},
+    {label: '最终结束'}
+  ];
+  curStepIndex : number = 0;
+  preStep() {
+    this.curStepIndex--;
+  }
+
+  nextStep() {
+    this.curStepIndex++;
+  }
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>type</td>
+    <td>步骤条类型，两种取值：underline，centerline</td>
+    <td>underline</td>
+  </tr>
+  <tr>
+    <td>stepItems</td>
+    <td>步骤条项目</td>
+    <td>[]</td>
+  </tr>
+  <tr>
+    <td>stepIndex</td>
+    <td>步骤条当前所处index</td>
+    <td>0</td>
+  </tr>
+  </tbody>
+</table>

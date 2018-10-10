@@ -1,0 +1,59 @@
+<h2 class="title">提示工具</h2>
+<p>提示工具，用直观的方式在两栏中移动元素，完成选择行为</p>
+<div class="container">
+  <div class="sub-con">
+    <nc-tooltip class="top" [tipTitle]="'上边'" [tipContext]="'我在上边'" [place]="'top'">
+    </nc-tooltip>
+    <nc-tooltip class="right" [tipTitle]="'右边'" [tipContext]="'我在右边'" [place]="'right'">
+    </nc-tooltip>
+    <nc-tooltip class="bottom" [tipTitle]="'下边'" [tipContext]="'我在下边'" [place]="'bottom'">
+    </nc-tooltip>
+    <nc-tooltip class="left" [tipTitle]="'左边'" [tipContext]="'我在左边'" [place]="'left'">
+    </nc-tooltip>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:160px;">
+    <nc-tooltip [tipTitle]="'上边'" [tipContext]="'我在上边'" [place]="'top'">
+    </nc-tooltip>
+    <nc-tooltip [tipTitle]="'右边'" [tipContext]="'我在右边'" [place]="'right'">
+    </nc-tooltip>
+    <nc-tooltip [tipTitle]="'下边'" [tipContext]="'我在下边'" [place]="'bottom'">
+    </nc-tooltip>
+    <nc-tooltip [tipTitle]="'左边'" [tipContext]="'我在左边'" [place]="'left'">
+    </nc-tooltip>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>tipTitle</td>
+    <td>提示工具文本</td>
+    <td>tipTitle</td>
+  </tr>
+  <tr>
+    <td>tipContext</td>
+    <td>提示的具体内容</td>
+    <td>tipContext</td>
+  </tr>
+  <tr>
+    <td>place</td>
+    <td>提示内容的显示方向，4种取值：top,right,bottom,left</td>
+    <td>right</td>
+  </tr>
+  </tbody>
+</table>
+
+<nc-toTop [type]="'rocket'"></nc-toTop>
