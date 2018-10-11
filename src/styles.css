@@ -24,3 +24,10 @@ table th,
 table td {
     padding:10px;
 }
+
+h2 {
+    margin-bottom: 20px;
+}
+h3 {
+    margin: 10px 0;
+}

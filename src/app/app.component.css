@@ -3,17 +3,18 @@
   padding: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  //display: flex;
+  //flex-direction: column;
 }
 .main-app header {
   width: inherit;
   height: 65px;
-  background: #000080;
+  background: #001933;
   display: flex;
   flex-direction: row;
-  box-shadow: 0 2px 8px #4d4dff;
+  box-shadow: 0 1px 6px #0072e6;
   z-index: 10;
+  position: fixed;
 }
 .main-app header .app-icon {
   width: 20%;
@@ -62,13 +63,13 @@
   align-items: center;
 }
 .main-app header .app-menu .menu-item.active {
-  background:#4d4dff;
+  background:#004c99;
   font-size: 18px;
   color:#fff;
 }
 .main-app header .app-menu .menu-item:hover {
   cursor: pointer;
-  background:#ccccff;
+  background:#0072e6;
 }
 .main-app header .app-menu .menu-item a {
   color: #ccc;
@@ -81,29 +82,31 @@
 .main-app article {
   width: 100%;
   height: 100%;
-  display: flex;
-  padding-top: 5px;
+  //display: flex;
+  //padding-top: 5px;
 }
 .main-app article .side-bars {
   width: 20%;
-  height: 1000px;
+  height: calc(100% - 65px);
+  min-height: calc(100% - 65px);
   display: flex;
   flex-direction: column;
   border-right: solid 1px #e6e6e6;
-  max-height: 1000px;
   background: #e6e6e6;
   overflow-y: scroll;
-  position:relative;
+  position:fixed;
+  top:65px;
 }
 .main-app article .content {
   width: 80%;
-  height: inherit;
   padding: 60px;
-  padding-top: 42px;
+  padding-top: 85px;
   box-sizing: border-box;
-  height: 1000px;
-  max-height: 1000px;
+  height: 100%;
+  max-height: 100%;
   overflow-y: scroll;
+  position: fixed;
+  left:20%;
 }
 .main-app article .content2 {
   width: 100%;
@@ -111,7 +114,7 @@
 
 
 .suoqi {
-  position: absolute;
+  position: fixed;
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -122,6 +125,7 @@
   background: #4da6ff;
   z-index: 200;
   left:20%;
+  top:70px;
   opacity: 0;
   color:#fff;
   font-weight: bolder;

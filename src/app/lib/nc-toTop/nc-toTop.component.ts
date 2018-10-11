@@ -13,6 +13,7 @@ export class NcToTopComponent implements OnInit {
   typeClasses : any = {};
   timer : any = null;
   displayType : string;
+  window = window;
 
   constructor() {
   }
@@ -20,20 +21,26 @@ export class NcToTopComponent implements OnInit {
   ngOnInit() {
     this.displayType = this.type === 'circle' ? 'flex' : 'block';
     this.typeClasses = {'nc-backTop-circle': this.type === 'circle','nc-backTop-rocket': this.type === 'rocket'};
-    window.onscroll = () => {
-      var backtop = window.pageYOffset;
+    this.window.onscroll = () => {
+      var backtop = this.window.pageYOffset;
       if(backtop > 0){
-        document.getElementById("nc-backTopz").style.display = this.displayType;
+        this.setBackTopPlace(this.displayType);
       } else {
-        document.getElementById("nc-backTopz").style.display = "none";
+        this.setBackTopPlace("none");
       }
     };
   }
 
+  setBackTopPlace(type : any) {
+    if(document.getElementById("nc-backTopz")) {
+      document.getElementById("nc-backTopz").style.display = type;
+    }
+  }
+
   scrollWindow(){
     this.timer = setInterval(() => {
-      var backtop = window.pageYOffset;
-      window.scrollBy(0,-60);
+      var backtop = this.window.pageYOffset;
+      this.window.scrollBy(0,-60);
       if(backtop < 1){
         clearInterval(this.timer);
       }
