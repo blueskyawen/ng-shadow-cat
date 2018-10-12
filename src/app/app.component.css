@@ -191,6 +191,9 @@
     padding-top: 125px;
     position: relative;
   }
+  .app-icon:after {
+    display:none;
+  }
 }
 /* 小型设备（平板电脑，768px 起） */
 @media (min-width: 768px) {
@@ -246,4 +249,5 @@
 .main-app article .content2 {
   width: 100%;
   left:0%;
+  padding-left:15px;
 }
