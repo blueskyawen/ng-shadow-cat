@@ -251,3 +251,6 @@
   left:0%;
   padding-left:15px;
 }
+.main-app article .side-bars-hidden {
+  display: none;
+}
