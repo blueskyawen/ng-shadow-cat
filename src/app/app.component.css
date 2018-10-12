@@ -17,12 +17,19 @@
   position: fixed;
 }
 .main-app header .app-icon {
-  width: 20%;
   display: flex;
   align-items: center;
+  height: 65px;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+.main-app header .app-icon .app-logo-title {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
 }
 .main-app header .app-icon .app-logo {
-  width: 40%;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -33,25 +40,68 @@
   height: 50px;
 }
 .main-app header .app-icon .app-title {
-  width: 60%;
   height: 100%;
   display: flex;
   color: #f2f2f2;
   font-size: 24px;
   align-items: center;
 }
-.main-app header .app-icon .app-sapare {
-  height: 100%;
-  display: flex;
-  align-items: center;
+.app-icon .nc-anticon-menu {
+  height:65px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  margin-right:30px;
 }
-.main-app header .app-icon .app-sapare div {
-  width: 1px;
-  height: 50%;
-  background: #fff;
+.app-icon .nc-anticon-menu .nc-anticon {
+  display:inline-block;
+  width: 24px;
+  border:solid 1px #d9d9d9;
+  border-radius:1px;
+}
+.app-icon .nc-anticon-menu:before {
+  content:"";
+  display:inline-block;
+  width: 24px;
+  border:solid 1px #d9d9d9;
+  border-radius:1px;
+  position:absolute;
+  transform: translateX(-50%);
+  left:50%;
+  top:20px;
+}
+.app-icon .nc-anticon-menu:after {
+  content:"";
+  display:inline-block;
+  width: 24px;
+  border:solid 1px #d9d9d9;
+  border-radius:1px;
+  position:absolute;
+  transform: translateX(-50%);
+  left:50%;
+  bottom:20px;
+}
+.app-icon .nc-anticon-menu:hover {
+  cursor:pointer;
+}
+.app-icon .nc-anticon-menu:hover .nc-anticon,
+.app-icon .nc-anticon-menu:hover:before,
+.app-icon .nc-anticon-menu:hover:after {
+  border-color:#fff;
+}
+.app-icon:after {
+  content:"";
+  display:inline-block;
+  height: 35%;
+  border:solid 1px #d9d9d9;
+  border-radius:1px;
+  position:absolute;
+  top:50%;
+  right:0;
+  transform: translateY(-50%);
 }
 .main-app header .app-menu {
-  width: 80%;
   height: 100%;
   display: flex;
 }
@@ -86,7 +136,6 @@
   //padding-top: 5px;
 }
 .main-app article .side-bars {
-  width: 20%;
   height: calc(100% - 65px);
   min-height: calc(100% - 65px);
   display: flex;
@@ -98,45 +147,103 @@
   top:65px;
 }
 .main-app article .content {
-  width: 80%;
   padding: 60px;
   padding-top: 85px;
   box-sizing: border-box;
   height: 100%;
   max-height: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
   position: fixed;
-  left:20%;
 }
+
+/* 超小设备（手机，小于 768px） */
+/* Bootstrap 中默认情况下没有媒体查询 */
+@media (max-width: 767px) {
+  .main-app header {
+    height: auto;
+    flex-direction: column;
+  }
+  .main-app header .app-icon {
+    width: 100%;
+    position: relative;
+  }
+  .main-app header .app-icon .nc-anticon-menu {
+    margin-left:30px;
+  }
+  .main-app header .app-icon .app-title {
+    margin-left: 20px;
+  }
+  .main-app header .app-menu {
+    width: 100%;
+    height: 45px;
+    background: #0058b3;
+  }
+  .main-app article .side-bars {
+    width: 100%;
+    top:110px;
+    position: relative;
+  }
+  .main-app article .content {
+    width: 100%;
+    left:0;
+    padding: 0;
+    padding-top: 125px;
+    position: relative;
+  }
+}
+/* 小型设备（平板电脑，768px 起） */
+@media (min-width: 768px) {
+  .main-app header .app-icon {
+    width: 30%;
+  }
+  .main-app header .app-menu {
+    width: 70%;
+  }
+  .main-app article .side-bars {
+    width: 30%;
+  }
+  .main-app article .content {
+    width: 70%;
+    left:30%;
+  }
+}
+
+/* 中型设备（台式电脑，992px 起） */
+@media (min-width: 992px) {
+  .main-app header .app-icon {
+    width: 25%;
+  }
+  .main-app header .app-menu {
+    width: 75%;
+  }
+  .main-app article .side-bars {
+    width: 25%;
+  }
+  .main-app article .content {
+    width: 75%;
+    left:25%;
+  }
+}
+
+/* 大型设备（大台式电脑，1200px 起） */
+@media (min-width: 1200px) {
+  .main-app header .app-icon {
+    width: 20%;
+  }
+  .main-app header .app-menu {
+    width: 80%;
+  }
+  .main-app article .side-bars {
+    width: 20%;
+  }
+  .main-app article .content {
+    width: 80%;
+    left:20%;
+  }
+}
+
 .main-app article .content2 {
   width: 100%;
-}
-
-
-.suoqi {
-  position: fixed;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  font-size:14px;
-  text-align: center;
-  border-radius: 50%;
-  background: #4da6ff;
-  z-index: 200;
-  left:20%;
-  top:70px;
-  opacity: 0;
-  color:#fff;
-  font-weight: bolder;
-}
-.suoqi2 {
-  left:15px;
-}
-.main-app article .side-bars.side-bars2 {
-  width:10px;
-}
-.suoqi:hover {
-  cursor: pointer;
-  opacity: 1.0;
+  left:0%;
 }
