@@ -1,18 +1,19 @@
 <h2 class="title">回到顶端</h2>
 <p>toTop回到顶端，用于在浏览页面内容超出可视区后，可以快速回到顶部的工具</p>
 <p>鼠标向下滚动体验</p>
-<nc-toTop></nc-toTop>
+<nc-toTop [parentId]="'nc-content'"></nc-toTop>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
     <textarea style="height:80px;">
       <nc-toTop></nc-toTop>
 
-      <nc-toTop [type]="'rocket'"></nc-toTop>
+      <nc-toTop [parentId]="'nc-content'"></nc-toTop>
+
+      <nc-toTop [type]="'rocket'" [parentId]="'nc-content'"></nc-toTop>
     </textarea>
   </div>
 </nc-tab>
-
 <h3>参数</h3>
 <table>
   <thead>
@@ -28,5 +29,18 @@
     <td>现状或类型;rocket/circle</td>
     <td>circle</td>
   </tr>
+  <tr>
+    <td>parentId</td>
+    <td>返回顶部组件侦测的父文档Id,不设默认为window</td>
+    <td></td>
+  </tr>
   </tbody>
 </table>
+
+<p style="margin: 20px 0;">滚动测试</p>
+<p style="margin: 20px 0;">滚动测试</p>
+<p style="margin: 20px 0;">滚动测试</p>
+<p style="margin: 20px 0;">滚动测试</p>
+<p style="margin: 20px 0;">滚动测试</p>
+<p style="margin: 20px 0;">滚动测试</p>
+<p style="margin: 20px 0;">滚动测试</p>
