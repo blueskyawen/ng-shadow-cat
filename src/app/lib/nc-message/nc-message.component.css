@@ -12,6 +12,7 @@
   display:flex;
   color:#fff;
   justify-content: center;
+  z-index: 999;
 }
 .success{
   background:#009900;
