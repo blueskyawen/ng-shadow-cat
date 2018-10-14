@@ -1,27 +1,53 @@
 /**
  * Created by liuxuwen on 18-6-14.
  */
-import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } from '@angular/core';
+import { Component,OnInit,Input,OnDestroy,EventEmitter,OnChanges,SimpleChanges } from '@angular/core';
+//import {clearInterval,setInterval} from "timers";
 
 @Component({
   selector: 'nc-carousel',
   templateUrl: './nc-carousel.component.html',
   styleUrls: ['./nc-carousel.component.css']
 })
-export class NcCarouselComponent implements OnInit {
-  @Input() isAuto : boolean  = false;
+export class NcCarouselComponent implements OnInit, OnDestroy {
   @Input() effect : string  = 'scroll';
-  @Input() timerlen : number = 1000;
+  @Input() timerlen : number;
   @Input() captions : any[] = [];
+  @Input() height : string = '650px';
+  @Input() width : string = '100%';
+  @Input() isPause : boolean = false;
   activeIndex : number = 0;
   isCanClick : boolean = true;
   oldIndex : number = 0;
+  carStyleStr : any;
+  autoTimerId : any = undefined;
 
   constructor() {}
 
   ngOnInit() {
     for(let caption of this.captions) {
       caption.moveStyle = {};
+    }
+    this.carStyleStr = {'height':this.height,'width' :this.width};
+    this.setAutoTimer();
+  }
+
+  ngOnDestroy() {
+    this.clearAutoTimer();
+  }
+
+  setAutoTimer() {
+    if(this.timerlen) {
+      this.autoTimerId = setInterval(() => {
+        this.next();
+      },this.timerlen);
+    }
+  }
+
+  clearAutoTimer() {
+    if(this.autoTimerId) {
+      clearInterval(this.autoTimerId);
+      this.autoTimerId = undefined;
     }
   }
 
@@ -107,7 +133,7 @@ export class NcCarouselComponent implements OnInit {
       this.activeIndex = curIndex;
       setTimeout(() => {
         this.recoverImgState();
-      },this.timerlen);
+      },1000);
     },50);
   }
   changeRight(curIndex : number) {
@@ -120,7 +146,7 @@ export class NcCarouselComponent implements OnInit {
       this.activeIndex = curIndex;
       setTimeout(() => {
         this.recoverImgState();
-      },this.timerlen);
+      },1000);
     },50);
   }
 
@@ -129,5 +155,16 @@ export class NcCarouselComponent implements OnInit {
     this.isCanClick = true;
   }
 
+  moveCarousel(type : any) {
+    if(!this.isPause) {
+      return;
+    }
+    if(type === 'over') {
+      this.clearAutoTimer();
+    }
+    if(type === 'out') {
+      this.setAutoTimer();
+    }
+  }
 
 }

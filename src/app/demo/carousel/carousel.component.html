@@ -1,17 +1,31 @@
 <h2 class="title">轮播</h2>
 <p>轮播，一种灵活的响应式的向站点添加滑块的方式</p>
 <h3>1. 左右滑动</h3>
-<nc-carousel [captions]="captions" [timerlen]="timerlen"></nc-carousel>
+<nc-carousel [captions]="captions"></nc-carousel>
 <h3>2. 渐显</h3>
-<nc-carousel [captions]="captions2" [timerlen]="timerlen" [effect]="'fade'"></nc-carousel>
+<nc-carousel [captions]="captions2" [effect]="'fade'"></nc-carousel>
+<h3>3. 自定义尺寸</h3>
+<nc-carousel [captions]="captions3" [effect]="'fade'" [width]="'60%'" [height]="'360px'">
+</nc-carousel>
+<h3>4. 启动/停止自动播放</h3>
+<p>自动播放</p>
+<nc-carousel [captions]="captions4" [timerlen]="4000" [width]="'80%'" [height]="'420px'"></nc-carousel>
+<p>鼠标放置停止播放</p>
+<nc-carousel [captions]="captions5" [timerlen]="4000" [isPause]="true" [width]="'80%'" [height]="'420px'"></nc-carousel>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
     <textarea style="height:100px;">
     <h3>1. 左右滑动</h3>
-    <nc-carousel [captions]="captions" [timerlen]="timerlen"></nc-carousel>
+    <nc-carousel [captions]="captions"></nc-carousel>
     <h3>2. 渐显</h3>
-    <nc-carousel [captions]="captions2" [timerlen]="timerlen" [effect]="'fade'"></nc-carousel>
+    <nc-carousel [captions]="captions2" [effect]="'fade'"></nc-carousel>
+    <h3>3. 自定义尺寸</h3>
+    <nc-carousel [captions]="captions2" [effect]="'fade'" [width]="'60%'" [height]="'360px'">
+    </nc-carousel>
+    <h3>4. 自动播放</h3>
+    <nc-carousel [captions]="captions2" [timerlen]="4000" [width]="'80%'" [height]="'420px'"></nc-carousel>
+    <nc-carousel [captions]="captions2" [timerlen]="4000" [isPause]="true" [width]="'80%'" [height]="'420px'"></nc-carousel>
     </textarea>
   </div>
   <div *ngIf="currentTab === 'typescript'">
@@ -46,13 +60,28 @@
   </tr>
   <tr>
     <td>timerlen</td>
-    <td>变化时长</td>
-    <td>1s</td>
+    <td>自动播放时长,默认不设为undefined,不自动播放</td>
+    <td>undefined</td>
   </tr>
   <tr>
     <td>effect</td>
     <td>轮播类型，scroll/fade</td>
     <td>scroll</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义宽度，string</td>
+    <td>100%</td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>自定义高度，string</td>
+    <td>650px</td>
+  </tr>
+  <tr>
+    <td>isPause</td>
+    <td>鼠标浮动其上是否停止自动播放，离开恢复播放，Boolean</td>
+    <td>false</td>
   </tr>
   </tbody>
 </table>
