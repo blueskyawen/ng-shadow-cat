@@ -1,15 +1,17 @@
 .transferContainer{
   display:flex;
-  justify-content:center;
+  justify-content: space-between;
   height:260px;
+  min-height:100px;
   width:500px;
+  min-width:300px;
   padding:0;
 }
 .transferContainer .optionsContain{
   display:flex;
   flex-direction:column;
   height:100%;
-  width:45%;
+  width:calc(50% - 38px);
   border:solid 1px #999;
   border-radius:4px;
 }

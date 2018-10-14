@@ -34,6 +34,8 @@ export class TransferComponent {
   currentTab : string;
   tabItems1 : any[] = [];
   currentTab1 : string;
+  tabItems2 : any[] = [];
+  currentTab2 : string;
 
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
@@ -42,5 +44,8 @@ export class TransferComponent {
     this.tabItems1 = [{name:'html',label:'html',isActive:true,isDisable:false},
       {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
     this.currentTab1= this.tabItems1[0].label;
+    this.tabItems2 = [{name:'html',label:'html',isActive:true,isDisable:false},
+      {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
+    this.currentTab2= this.tabItems2[0].label;
   }
 }

@@ -12,10 +12,13 @@ export class NcTransferComponent implements OnInit {
   @Input() sourceOptions : any[] = [];
   @Input() targetOptions : any[] = [];
   @Output() targetOptionsChange = new EventEmitter();
+  @Input() height : string = '260px';
+  @Input() width : string = '500px';
   toTargetActive : boolean = false;
   toSourceActive : boolean = false;
   allTargetChecked : boolean = false;
   allSourceChecked : boolean = false;
+  containSTyle : any;
 
   constructor() {
   }
@@ -27,6 +30,7 @@ export class NcTransferComponent implements OnInit {
     for(let tOption of this.targetOptions) {
       tOption.checked = false;
     }
+    this.containSTyle = {'height':this.height,'width' :this.width};
   }
 
   checkAllSource() {

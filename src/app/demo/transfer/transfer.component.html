@@ -58,6 +58,36 @@
     </textarea>
   </div>
 </nc-tab>
+<h3>3. 自定义尺寸</h3>
+<div style="margin-top: 20px;">
+  <nc-transfer [sourceOptions]="sourceOptions2" [(targetOptions)]="targetOptions2" [height]="'160px'" [width]="'1000px'">
+  </nc-transfer>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:120px;">
+    <nc-transfer [sourceOptions]="sourceOptions" [(targetOptions)]="targetOptions" [height]="'160px'" [width]="'1000px'">
+    </nc-transfer>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:200px;">
+    sourceOptions : any[] = [{label:'content01',value:'content01',disable:false},
+      {label:'content02',value:'content02',disable:false},
+      {label:'content03',value:'content03',disable:true},
+      {label:'content04',value:'content04',disable:false},
+      {label:'content05',value:'content05',disable:true},
+      {label:'content06',value:'content06',disable:false},
+      {label:'content07',value:'content07',disable:false},
+      {label:'content08',value:'content08',disable:false},
+      {label:'content01',value:'content01',disable:false}];
+    targetOptions : any[] = [{label:'content09',value:'content09',disable:false},
+      {label:'content10',value:'content10',disable:false}];
+    </textarea>
+  </div>
+</nc-tab>
+
 
 <h3>参数</h3>
 <table>
@@ -78,6 +108,16 @@
     <td>targetOptions</td>
     <td>目标数据列表</td>
     <td>[]</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义宽度，string</td>
+    <td>500px</td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>自定义高度，string</td>
+    <td>260px</td>
   </tr>
   </tbody>
 </table>
