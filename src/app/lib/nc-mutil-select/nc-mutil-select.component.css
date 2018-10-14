@@ -2,6 +2,7 @@
   margin:20px;
   position:relative;
   width:420px;
+  min-width:220px;
   min-height:36px;
   border:solid 1px #808080;
   display:inline-block;
@@ -34,9 +35,16 @@
   align-items:center;
   flex-wrap:wrap;
   flex-basis:auto;
-  width:100%;
+  width:380px;
+  min-width:180px;
   border:solid 0px red;
   border-radius:4px;
+}
+.select-dropdown .selectss .selectedTitle {
+  color:#000;
+}
+.select-dropdown .selectss .holdplace {
+  margin-left:10px;
 }
 .select-dropdown .selectss .option{
   display:inline-block;
@@ -55,6 +63,7 @@
 .select-dropdown .selectss .option .text{
   display:inline-block;
   max-width:330px;
+  min-width:130px;
   white-space:nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -70,13 +79,13 @@
   position:absolute;
   right:5px;
   cursor:pointer;
+  top:5px;
 }
 .select-dropdown:not(.disable) .selectss .option .biao:hover{
   background:#8c8c8c;
 }
 .select-dropdown:not(.disable) .selectss .option.disable .biao:hover{
   background:#d9d9d9;
-  cursor: ;
 }
 .select-dropdown.disable .selectss .option .biao:hover{
   cursor:not-allowed;
@@ -84,7 +93,7 @@
 .select-dropdown .dropdown-content{
   display:inline-block;
   width:100%;
-  height:140px;
+  height:120px;
   margin-top:5px;
   border:solid 1px #808080;
   border-radius:2px;
@@ -105,7 +114,7 @@
   border-top:solid 1px #bfbfbf;
   overflow-y:auto;
 }
-.select-dropdown .dropdown-content span{
+.select-dropdown .dropdown-content > span.item {
   display:block;
   width:100%;
   height:30px;
@@ -118,13 +127,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.select-dropdown .dropdown-content span:not(.selected):hover{
+.select-dropdown .dropdown-content > span.item:not(.selected):hover{
   background:#ccc;
 }
-.select-dropdown .dropdown-content span.selected{
+.select-dropdown .dropdown-content > span.item.selected{
+  background:#f2f2f2;
   color:#666;
 }
-.select-dropdown .dropdown-content span:after{
+.select-dropdown .dropdown-content > span.item:after{
   display:inline-block;
   content:"";
   font-size:18px;
@@ -132,10 +142,10 @@
   position:absolute;
   right:36px;
 }
-.select-dropdown .dropdown-content span.selected:after{
+.select-dropdown .dropdown-content > span.item.selected:after{
   content:"✔";
 }
-.select-dropdown .dropdown-content span.disable {
+.select-dropdown .dropdown-content > span.item.disable {
   background:#f2f2f2;
   cursor: not-allowed;
 }
@@ -178,6 +188,7 @@
 }
 .select-dropdown .dropdown-content .option.disable{
   cursor:not-allowed;
+  background:#bfbfbf;
 }
 .select-dropdown .dropdown-content .option.disable .checkbox{
   background:#bfbfbf;

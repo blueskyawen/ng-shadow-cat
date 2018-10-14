@@ -16,6 +16,9 @@ export class NcMutilSelectComponent  implements OnInit {
   @Input() hasheckbox : boolean = false;
   @Input() allcheck : boolean = false;
   @Input() showCheckNum : boolean = false;
+  @Input() width : number = 420;
+  seleWidth : number;
+  selOpWidth : number;
   isContentOpen: boolean = false;
   isMoveInSelect: boolean = false;
   isMoveInContent : boolean = false;
@@ -41,6 +44,10 @@ export class NcMutilSelectComponent  implements OnInit {
       selection.disable = this.options[index2].disable;
     }
     this.isAllSelected = this.options.length === this.selections.length;
+    if(this.width && typeof this.width === 'number') {
+      this.seleWidth = this.width - 40;
+      this.selOpWidth = this.width - 90;
+    }
   }
 
   moveOn() {

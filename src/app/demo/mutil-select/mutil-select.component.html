@@ -21,6 +21,9 @@
 <nc-mutil-select [showCheckNum]="true" [options]="options" [(selections)]="selectedOptions"></nc-mutil-select>
 <nc-mutil-select [showCheckNum]="true" [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions">
 </nc-mutil-select>
+<h3>5. 自定义尺寸</h3>
+<nc-mutil-select [options]="options" [(selections)]="selectedOptions" [width]="220"></nc-mutil-select>
+<nc-mutil-select [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions" [width]="620"></nc-mutil-select>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
@@ -42,6 +45,9 @@
     <nc-mutil-select [showCheckNum]="true" [options]="options" [(selections)]="selectedOptions"></nc-mutil-select>
     <nc-mutil-select [showCheckNum]="true" [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions">
     </nc-mutil-select>
+    <!--h3>5.  自定义尺寸</h3>-->
+    <nc-mutil-select [options]="options" [(selections)]="selectedOptions" [width]="220"></nc-mutil-select>
+    <nc-mutil-select [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions" [width]="620"></nc-mutil-select>
     </textarea>
   </div>
   <div *ngIf="currentTab === 'typescript'">
@@ -100,6 +106,11 @@
     <td>showCheckNum</td>
     <td>是否显示选择数目,true/false</td>
     <td>false</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义选择器宽度，Number</td>
+    <td>420</td>
   </tr>
   </tbody>
 </table>
