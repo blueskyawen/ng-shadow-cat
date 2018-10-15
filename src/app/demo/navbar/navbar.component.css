@@ -1,10 +1,4 @@
-body {margin: 0;}
-p.secondMu{
-  font-size:14px;
-  color:#990073;
-}
-
-nav.navbar {
+nav.nc-navbar {
   width:100%;
   height:50px;
   background:#008ae6;
@@ -13,37 +7,37 @@ nav.navbar {
   align-items:center;
   //flex-direction:wrap;
 }
-nav.navbar a {
+nav.nc-navbar a {
   text-decoration: none;
   color:#fff;
 }
-nav.navbar .navbar-header {
+nav.nc-navbar .nc-navbar-header {
   width:160px;
   height:100%;
   display:flex;
   align-items:center;
   justify-content:center;
 }
-nav.navbar .navbar-header  a {
+nav.nc-navbar .nc-navbar-header  a {
   font-size:28px;
 }
-nav.navbar .navbar-divider {
+nav.nc-navbar .nc-navbar-divider {
   display:inline-block;
   height:50%;
   width:1px;
   background:#fff;
   margin-right:10px;
 }
-nav.navbar .navbar-body {
+nav.nc-navbar .nc-navbar-body {
   display:flex;
   height:100%;
   width:calc(100% - 171px);
   //flex-direction:wrap;
 }
-nav.navbar .navbar-body.space-between {
+nav.nc-navbar .nc-navbar-body.space-between {
   justify-content:space-between;
 }
-nav.navbar .navbar-body ul.navbar-nav {
+nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav {
   list-style-type: none;
   padding: 0px;
   margin:0;
@@ -51,17 +45,17 @@ nav.navbar .navbar-body ul.navbar-nav {
   display: flex;
   align-items: center;
 }
-nav.navbar .navbar-body ul.navbar-nav > li {
+nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav > li {
   height:100%;
 }
-nav.navbar .navbar-body ul.navbar-nav li.dropdown  {
+nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav li.dropdown  {
   position:relative;
   display: flex;
   height:100%;
   width:80px;
   align-items:center;
 }
-nav.navbar .navbar-body ul.navbar-nav li.dropdown .carcat{
+nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav li.dropdown .carcat{
   display:inline-block;
   height:3px;
   width:3px;
@@ -71,7 +65,7 @@ nav.navbar .navbar-body ul.navbar-nav li.dropdown .carcat{
   margin-right:10px;
   margin-left:0;
 }
-ul.navbar-nav li.dropdown .dropdown-content {
+ul.nc-navbar-nav li.dropdown .dropdown-content {
   display: none;
   position: absolute;
   left:0;
@@ -84,7 +78,7 @@ ul.navbar-nav li.dropdown .dropdown-content {
   list-style:none;
   padding:0;
 }
-ul.navbar-nav li.dropdown ul.dropdown-content li a {
+ul.nc-navbar-nav li.dropdown ul.dropdown-content li a {
   color: #333;
   text-decoration: none;
   display: inline-block;
@@ -94,17 +88,17 @@ ul.navbar-nav li.dropdown ul.dropdown-content li a {
   padding-top:5px;
   padding-bottom:5px;
 }
-ul.navbar-nav li.dropdown .dropdown-content li:not(:last-child) a {
+ul.nc-navbar-nav li.dropdown .dropdown-content li:not(:last-child) a {
   border-bottom:solid 1px #cce5ff;
 }
-ul.navbar-nav li.dropdown .dropdown-content a:hover {
+ul.nc-navbar-nav li.dropdown .dropdown-content a:hover {
   background-color: #e5ffff;
   color:#008ae6;
 }
-ul.navbar-nav li.dropdown:hover .dropdown-content {
+ul.nc-navbar-nav li.dropdown:hover .dropdown-content {
   display: block;
 }
-nav.navbar .navbar-body ul.navbar-nav li a {
+nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav li a {
   display: flex;
   height:100%;
   width:80px;
@@ -112,21 +106,21 @@ nav.navbar .navbar-body ul.navbar-nav li a {
   justify-content:center;
   align-items:center;
 }
-nav.navbar .navbar-body ul.navbar-nav li a.active {
+nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav li a.active {
   background: #005ce6;
 }
-nav.navbar .navbar-body ul.navbar-nav li:hover {
+nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav li:hover {
   background: #80ccff;
 }
-nav.navbar .navbar-body ul.navbar-nav li.search {
+nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav li.search {
   display:flex;
   height:100%;
   align-items:center;
 }
-nav.navbar .navbar-body ul.navbar-nav li.search label {
+nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav li.search label {
   margin-right:5px;
 }
-nav.navbar .navbar-body ul.navbar-nav li.search input {
+nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav li.search input {
   height:24px;
 }
 div.mavcontent22{
@@ -137,7 +131,7 @@ div.mavcontent22{
   margin-bottom:30px;
 }
 
-nav.navbar-vertify {
+nav.nc-navbar-vertify {
   width:171px;
   height:auto;
   background:#008ae6;
@@ -145,24 +139,24 @@ nav.navbar-vertify {
   display:flex;
   flex-direction: column;
 }
-nav.navbar-vertify .navbar-header {
+nav.nc-navbar-vertify .nc-navbar-header {
   width:100%;
   height: 60px;
   display:flex;
   align-items:center;
   justify-content:center;
 }
-nav.navbar-vertify .navbar-header  a {
+nav.nc-navbar-vertify .nc-navbar-header  a {
   font-size:28px;
 }
-nav.navbar-vertify .navbar-divider {
+nav.nc-navbar-vertify .nc-navbar-divider {
   display:inline-block;
   height:1px;
   width:50%;
   background:#fff;
   margin-bottom:10px;
 }
-nav.navbar-vertify  .navbar-body {
+nav.nc-navbar-vertify  .nc-navbar-body {
   display:flex;
   flex-direction: column;
   height:auto;
@@ -170,7 +164,7 @@ nav.navbar-vertify  .navbar-body {
   overflow: auto;
   background:#bfbfbf;
 }
-nav.navbar-vertify .navbar-body ul.navbar-nav {
+nav.nc-navbar-vertify .nc-navbar-body ul.nc-navbar-nav {
   list-style-type: none;
   padding: 0;
   margin:0;
@@ -178,10 +172,10 @@ nav.navbar-vertify .navbar-body ul.navbar-nav {
   display: flex;
   flex-direction: column;
 }
-nav.navbar-vertify  .navbar-body ul.navbar-nav li {
+nav.nc-navbar-vertify  .nc-navbar-body ul.nc-navbar-nav li {
   width:100%;
 }
-nav.navbar-vertify  .navbar-body ul.navbar-nav li a {
+nav.nc-navbar-vertify  .nc-navbar-body ul.nc-navbar-nav li a {
   display: flex;
   height:50px;
   font-size:16px;
@@ -190,11 +184,11 @@ nav.navbar-vertify  .navbar-body ul.navbar-nav li a {
   width:100%;
   color:#595959;
 }
-nav.navbar-vertify .navbar-body ul.navbar-nav li a.active {
+nav.nc-navbar-vertify .nc-navbar-body ul.nc-navbar-nav li a.active {
   background: #fff;
   color:#008ae6;
 }
-nav.navbar-vertify  .navbar-body ul.navbar-nav li a:not(.active):hover{
+nav.nc-navbar-vertify  .nc-navbar-body ul.nc-navbar-nav li a:not(.active):hover{
   background: #999;
 }
 div.mavcontent22{
@@ -206,23 +200,23 @@ div.mavcontent22{
 }
 
 @media screen and (max-width: 600px) {
-  nav.navbar,
-  nav.navbar .navbar-header,
-  nav.navbar .navbar-body,
-  nav.navbar .navbar-body ul.navbar-nav,
-  nav.navbar .navbar-body ul.navbar-nav li,
-  nav.navbar .navbar-body ul.navbar-nav li a {
+  nav.nc-navbar,
+  nav.nc-navbar .nc-navbar-header,
+  nav.nc-navbar .nc-navbar-body,
+  nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav,
+  nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav li,
+  nav.nc-navbar .nc-navbar-body ul.nc-navbar-nav li a {
     flex-direction: column;
     width:100%;
   }
-  nav.navbar {
+  nav.nc-navbar {
     height:auto;
   }
-  nav.navbar .navbar-divider,
-  nav.navbar-vertify .navbar-divider {
+  nav.nc-navbar .nc-navbar-divider,
+  nav.nc-navbar-vertify .nc-navbar-divider {
     display:none;
   }
-  nav.navbar-vertify {
+  nav.nc-navbar-vertify {
     width:100%;
   }
   .mav2 {

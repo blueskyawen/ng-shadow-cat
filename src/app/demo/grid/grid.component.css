@@ -13,3 +13,11 @@
 .nc-col:nth-child(even) div {
   background: #99ccff;
 }
+.nc-row2 {
+  height:30px;
+  margin-top:2px;
+  margin-bottom:2px;
+}
+.nc-row2 .nc-col {
+  height:30px;
+}

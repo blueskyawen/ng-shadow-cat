@@ -1,13 +1,13 @@
 <h2>横向导航</h2>
 <div style="margin-top:10px;margin-bottom: 10px;">
-  <nav class="navbar">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">菜鸟教程</a>
+  <nav class="nc-navbar">
+    <div class="nc-navbar-header">
+      <a class="nc-navbar-brand" href="#">菜鸟教程</a>
     </div>
-    <div class="navbar-divider">
+    <div class="nc-navbar-divider">
     </div>
-    <div class="navbar-body">
-      <ul class="navbar-nav">
+    <div class="nc-navbar-body">
+      <ul class="nc-navbar-nav">
         <li><a class="active" href="#home" onclick="selectNav(0)">主页</a></li>
         <li class="dropdown">
           <a class="noactive" href="#news" onclick="selectNav(1)">新闻</a><span class="carcat"></span>
@@ -25,7 +25,7 @@
         </li>
         <li><a class="noactive"href="#contact" onclick="selectNav(2)">联系</a></li>
       </ul>
-      <ul class="navbar-nav">
+      <ul class="nc-navbar-nav">
         <li><a  class="noactive" href="#about" onclick="selectNav(3)">注册</a></li>
         <li><a  class="noactive" href="#about" onclick="selectNav(3)">登录</a></li>
       </ul>
@@ -39,14 +39,14 @@
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
     <textarea style="height:460px;">
-    <nav class="navbar">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">菜鸟教程</a>
+    <nav class="nc-navbar">
+      <div class="nc-navbar-header">
+        <a class="nc-navbar-brand" href="#">菜鸟教程</a>
       </div>
-      <div class="navbar-divider">
+      <div class="nc-navbar-divider">
       </div>
-      <div class="navbar-body">
-        <ul class="navbar-nav">
+      <div class="nc-navbar-body">
+        <ul class="nc-navbar-nav">
           <li><a class="active" href="#home" onclick="selectNav(0)">主页</a></li>
           <li class="dropdown">
             <a class="noactive" href="#news" onclick="selectNav(1)">新闻</a><span class="carcat"></span>
@@ -64,7 +64,7 @@
           </li>
           <li><a class="noactive"href="#contact" onclick="selectNav(2)">联系</a></li>
         </ul>
-        <ul class="navbar-nav">
+        <ul class="nc-navbar-nav">
           <li><a  class="noactive" href="#about" onclick="selectNav(3)">注册</a></li>
           <li><a  class="noactive" href="#about" onclick="selectNav(3)">登录</a></li>
         </ul>
@@ -81,19 +81,19 @@
 <h2>竖向导航</h2>
 <div style="margin-top:10px;margin-bottom: 10px;">
   <div id="mav3" class="mav2">
-    <nav class="navbar navbar-vertify">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">菜鸟教程</a>
+    <nav class="nc-navbar nc-navbar-vertify">
+      <div class="nc-navbar-header">
+        <a class="nc-navbar-brand" href="#">菜鸟教程</a>
       </div>
-      <div class="navbar-divider">
+      <div class="nc-navbar-divider">
       </div>
-      <div class="navbar-body">
-        <ul class="navbar-nav">
+      <div class="nc-navbar-body">
+        <ul class="nc-navbar-nav">
           <li><a class="active" href="#home" onclick="selectNav(0)">主页</a></li>
           <li><a class="noactive" href="#news" onclick="selectNav(1)">新闻</a></li>
           <li><a class="noactive"href="#contact" onclick="selectNav(2)">联系</a></li>
         </ul>
-        <ul class="navbar-nav">
+        <ul class="nc-navbar-nav">
           <li><a  class="noactive" href="#about" onclick="selectNav(3)">注册</a></li>
           <li><a  class="noactive" href="#about" onclick="selectNav(3)">登录</a></li>
         </ul>
@@ -108,19 +108,19 @@
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
   <div *ngIf="currentTab2 === 'html'">
     <textarea style="height:460px;">
-    <nav class="navbar navbar-vertify">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">菜鸟教程</a>
+    <nav class="nc-navbar nc-navbar-vertify">
+      <div class="nc-navbar-header">
+        <a class="nc-navbar-brand" href="#">菜鸟教程</a>
       </div>
-      <div class="navbar-divider">
+      <div class="nc-navbar-divider">
       </div>
-      <div class="navbar-body">
-        <ul class="navbar-nav">
+      <div class="nc-navbar-body">
+        <ul class="nc-navbar-nav">
           <li><a class="active" href="#home" onclick="selectNav(0)">主页</a></li>
           <li><a class="noactive" href="#news" onclick="selectNav(1)">新闻</a></li>
           <li><a class="noactive"href="#contact" onclick="selectNav(2)">联系</a></li>
         </ul>
-        <ul class="navbar-nav">
+        <ul class="nc-navbar-nav">
           <li><a  class="noactive" href="#about" onclick="selectNav(3)">注册</a></li>
           <li><a  class="noactive" href="#about" onclick="selectNav(3)">登录</a></li>
         </ul>
@@ -135,33 +135,33 @@
 
 <h2>横向-竖向导航</h2>
 <div style="margin-top:10px;margin-bottom: 10px;">
-  <nav class="navbar">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">菜鸟教程</a>
+  <nav class="nc-navbar">
+    <div class="nc-navbar-header">
+      <a class="nc-navbar-brand" href="#">菜鸟教程</a>
     </div>
-    <div class="navbar-divider">
+    <div class="nc-navbar-divider">
     </div>
-    <div class="navbar-body space-between">
-      <ul class="navbar-nav">
+    <div class="nc-navbar-body space-between">
+      <ul class="nc-navbar-nav">
         <li><a class="active" href="#home" onclick="selectNav(0)">主页</a></li>
         <li><a class="noactive" href="#news" onclick="selectNav(1)">新闻</a></li>
         <li class="search"><label>搜索:</label><input type="text" /></li>
       </ul>
-      <ul class="navbar-nav">
+      <ul class="nc-navbar-nav">
         <li><a  class="noactive" href="#about" onclick="selectNav(3)">注册</a></li>
         <li><a  class="noactive" href="#about" onclick="selectNav(3)">登录</a></li>
       </ul>
     </div>
   </nav>
   <div id="mav2" class="mav2">
-    <nav class="navbar navbar-vertify">
-      <div class="navbar-body">
-        <ul class="navbar-nav">
+    <nav class="nc-navbar nc-navbar-vertify">
+      <div class="nc-navbar-body">
+        <ul class="nc-navbar-nav">
           <li><a class="active" href="#home" onclick="selectNav(0)">主页</a></li>
           <li><a class="noactive" href="#news" onclick="selectNav(1)">新闻</a></li>
           <li><a class="noactive"href="#contact" onclick="selectNav(2)">联系</a></li>
         </ul>
-        <ul class="navbar-nav">
+        <ul class="nc-navbar-nav">
           <li><a  class="noactive" href="#about" onclick="selectNav(3)">注册</a></li>
           <li><a  class="noactive" href="#about" onclick="selectNav(3)">登录</a></li>
         </ul>
@@ -176,33 +176,33 @@
 <nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
   <div *ngIf="currentTab3 === 'html'">
     <textarea style="height:460px;">
-    <nav class="navbar">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">菜鸟教程</a>
+    <nav class="nc-navbar">
+      <div class="nc-navbar-header">
+        <a class="nc-navbar-brand" href="#">菜鸟教程</a>
       </div>
-      <div class="navbar-divider">
+      <div class="nc-navbar-divider">
       </div>
-      <div class="navbar-body space-between">
-        <ul class="navbar-nav">
+      <div class="nc-navbar-body space-between">
+        <ul class="nc-navbar-nav">
           <li><a class="active" href="#home" onclick="selectNav(0)">主页</a></li>
           <li><a class="noactive" href="#news" onclick="selectNav(1)">新闻</a></li>
           <li class="search"><label>搜索:</label><input type="text" /></li>
         </ul>
-        <ul class="navbar-nav">
+        <ul class="nc-navbar-nav">
           <li><a  class="noactive" href="#about" onclick="selectNav(3)">注册</a></li>
           <li><a  class="noactive" href="#about" onclick="selectNav(3)">登录</a></li>
         </ul>
       </div>
     </nav>
     <div id="mav2" class="mav2">
-      <nav class="navbar navbar-vertify">
-        <div class="navbar-body">
-          <ul class="navbar-nav">
+      <nav class="nc-navbar nc-navbar-vertify">
+        <div class="nc-navbar-body">
+          <ul class="nc-navbar-nav">
             <li><a class="active" href="#home" onclick="selectNav(0)">主页</a></li>
             <li><a class="noactive" href="#news" onclick="selectNav(1)">新闻</a></li>
             <li><a class="noactive"href="#contact" onclick="selectNav(2)">联系</a></li>
           </ul>
-          <ul class="navbar-nav">
+          <ul class="nc-navbar-nav">
             <li><a  class="noactive" href="#about" onclick="selectNav(3)">注册</a></li>
             <li><a  class="noactive" href="#about" onclick="selectNav(3)">登录</a></li>
           </ul>

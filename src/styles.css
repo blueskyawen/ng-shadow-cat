@@ -31,3 +31,9 @@ h2 {
 h3 {
     margin: 10px 0;
 }
+
+body {margin: 0;}
+p.secondMu{
+    font-size:14px;
+    color:#990073;
+}

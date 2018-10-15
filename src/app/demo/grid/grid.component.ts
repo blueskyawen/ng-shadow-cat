@@ -6,7 +6,7 @@ import { Component,OnInit } from '@angular/core';
 @Component({
   selector: 'demo-grid',
   templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.css','../../lib/nc-grid/nc-grid.css']
+  styleUrls: ['./grid.component.css','../../lib/nc-shadow-cat.css']
 })
 export class GridComponent {
   tabItems : any[] = [];

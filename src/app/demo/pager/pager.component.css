@@ -1,6 +1,7 @@
 ul.pager {
   list-style:none;
   display:flex;
+  margin: 10px 0;
 }
 ul.pager.page-center {
   justify-content:center;
