@@ -12,6 +12,7 @@ export class AppComponent {
     {'name':'关于','value':'about','isActive':false}];
   currentMenu : any;
   isExtend : boolean = true;
+  isShowActicle : boolean = true;
 
   constructor(private router : Router) {
     this.currentMenu = this.menuTypes[0];
@@ -26,6 +27,10 @@ export class AppComponent {
     } else if(this.currentMenu.value === 'pattern') {
       this.router.navigate(['/pattern/navbar']);
     }
+    this.isShowActicle = false;
+    setTimeout(() => {
+      this.isShowActicle = true;
+    },50);
   }
 
   changeExtend() {

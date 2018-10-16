@@ -17,7 +17,7 @@
       </div>
     </div>
   </header>
-  <article>
+  <article *ngIf="isShowActicle">
     <div class="side-bars" [class.side-bars-hidden]="!isExtend">
       <div>
         <sidebar-about *ngIf="currentMenu.value === 'about'"></sidebar-about>

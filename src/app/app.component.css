@@ -133,6 +133,11 @@
   height: 100%;
   //display: flex;
   //padding-top: 5px;
+  opacity: 1;
+  animation:article_out 1.5s;
+  -moz-animation:article_out 1.5s; /* Firefox */
+  -webkit-animation:article_out 1.5s; /* Safari and Chrome */
+  -o-animation:article_out 1.5s; /* Opera */
 }
 .main-app article .side-bars {
   height: calc(100% - 65px);
@@ -144,6 +149,8 @@
   overflow-y: scroll;
   position:fixed;
   top:65px;
+  margin-left: 0;
+  transition: margin-left 500ms;
 }
 .main-app article .content {
   padding: 40px;
@@ -153,6 +160,13 @@
   overflow-y: scroll;
   overflow-x: hidden;
   position: fixed;
+  transition: width 500ms,left 500ms;
+}
+
+@keyframes article_out
+{
+  0%   {opacity:0;}
+  100% {opacity:1;}
 }
 
 /* 超小设备（手机，小于 768px） */
@@ -182,6 +196,9 @@
     top:0;
     position: relative;
   }
+  .main-app article .side-bars-hidden {
+    margin-left: -100%;
+  }
   .main-app article .content {
     width: 100%;
     left:0;
@@ -204,6 +221,9 @@
   .main-app article .side-bars {
     width: 30%;
   }
+  .main-app article .side-bars-hidden {
+    margin-left: -30%;
+  }
   .main-app article .content {
     width: 70%;
     left:30%;
@@ -220,6 +240,9 @@
   }
   .main-app article .side-bars {
     width: 25%;
+  }
+  .main-app article .side-bars-hidden {
+    margin-left: -25%;
   }
   .main-app article .content {
     width: 75%;
@@ -238,6 +261,9 @@
   .main-app article .side-bars {
     width: 20%;
   }
+  .main-app article .side-bars-hidden {
+    margin-left: -20%;
+  }
   .main-app article .content {
     width: 80%;
     left:20%;
@@ -248,7 +274,4 @@
   width: 100%;
   left:0%;
   padding-left:15px;
-}
-.main-app article .side-bars-hidden {
-  display: none;
 }
