@@ -3,41 +3,28 @@
   margin-left:auto;
   margin-right:auto;
   border: solid 1px;
-}
-/*超小型桌面,手机*/
-@media (max-width: 575px) {
-  .nc-container {
+  /*超小型桌面,手机*/
+  @media (max-width: @nc-screen-xs-min) {
+    width: 100%;
+  }
+  /*小型桌面,平板*/
+  @media (min-width: @nc-screen-sm-min) {
+    width: 100%;
+  }
+  /*中型桌面屏幕*/
+  @media (min-width: @nc-screen-md-min) {
+    width: 100%;
+  }
+  /*大型桌面屏幕*/
+  @media (min-width: @nc-screen-lg-min) {
+    width: 100%;
+  }
+  /*超大型桌面屏幕*/
+  @media (min-width: @nc-screen-xl-min) {
     width: 100%;
   }
 }
-/*小型桌面,平板*/
-@media (min-width: 576px) {
-  .nc-container {
-    //width: 570px;
-    width: 100%;
-  }
-}
-/*中型桌面屏幕*/
-@media (min-width: 768px) {
-  .nc-container {
-    //width: 760px;
-    width: 100%;
-  }
-}
-/*大型桌面屏幕*/
-@media (min-width: 992px) {
-  .nc-container {
-    //width: 985px;
-    width: 100%;
-  }
-}
-/*超大型桌面屏幕*/
-@media (min-width: 1200px) {
-  .nc-container {
-    //width: 1190px;
-    width: 100%;
-  }
-}
+
 .nc-row {
   width:100%;
   display: flex;
@@ -54,557 +41,47 @@
 /*@media (max-width: 575px) {
 
 }*/
-.nc-col-1 {
-  width: 8.333333333333%;
+.calc-flex-grid-columns(@index,@class,@type) when (@type = width) and (@index > 0) {
+  .nc-@{class}-col-@{index} {
+    width: percentage((@index / @max-grid-num));
+  }
 }
-.nc-col-2 {
-  width: 16.666666666666%;
+.calc-flex-grid-columns(@index,@class,@type) when (@type = offset-left) and (@index > 0) {
+  .nc-@{class}-offset-@{index} {
+    margin-left: percentage((@index / @max-grid-num));
+  }
 }
-.nc-col-3 {
-  width: 25%;
+.calc-flex-grid-columns(@index,@class,@type) when (@type = offset-right) and (@index > 0) {
+  .nc-@{class}-right-offset-@{index} {
+    margin-left: percentage((@index / @max-grid-num));
+  }
 }
-.nc-col-4 {
-  width: 33.333333333333%;
+.loop-flex-grid-columns(@index,@class,@type) when (@index > 0) {
+  .calc-flex-grid-columns(@index,@class,@type);
+  .loop-flex-grid-columns((@index - 1),@class,@type);
 }
-.nc-col-5 {
-  width: 41.666666666666%;
-}
-.nc-col-6 {
-  width: 50%;
-}
-.nc-col-7 {
-  width: 58.333333333333%;
-}
-.nc-col-8 {
-  width: 66.666666666666%;
-}
-.nc-col-9 {
-  width: 75%;
-}
-.nc-col-10 {
-  width: 83.333333333333%;
-}
-.nc-col-11 {
-  width: 91.666666666666%;
-}
-.nc-col-12 {
-  width: 100%;
-}
-.nc-offset-1 {
-  margin-left: 8.333333333333%;
-}
-.nc-offset-2 {
-  margin-left: 16.666666666666%;
-}
-.nc-offset-3 {
-  margin-left: 25%;
-}
-.nc-offset-4 {
-  margin-left: 33.333333333333%;
-}
-.nc-offset-5 {
-  margin-left: 41.666666666666%;
-}
-.nc-offset-6 {
-  margin-left: 50%;
-}
-.nc-offset-7 {
-  margin-left: 58.333333333333%;
-}
-.nc-offset-8 {
-  margin-left: 66.666666666666%;
-}
-.nc-offset-9 {
-  margin-left: 75%;
-}
-.nc-offset-10 {
-  margin-left: 83.333333333333%;
-}
-.nc-offset-11 {
-  margin-left: 91.666666666666%;
-}
-.nc-offset-12 {
-  margin-left: 100%;
-}
-.nc-right-offset-1 {
-  margin-right: 8.333333333333%;
-}
-.nc-right-offset-2 {
-  margin-right: 16.666666666666%;
-}
-.nc-right-offset-3 {
-  margin-right: 25%;
-}
-.nc-right-offset-4 {
-  margin-right: 33.333333333333%;
-}
-.nc-right-offset-5 {
-  margin-right: 41.666666666666%;
-}
-.nc-right-offset-6 {
-  margin-right: 50%;
-}
-.nc-right-offset-7 {
-  margin-right: 58.333333333333%;
-}
-.nc-right-offset-8 {
-  margin-right: 66.666666666666%;
-}
-.nc-right-offset-9 {
-  margin-right: 75%;
-}
-.nc-right-offset-10 {
-  margin-right: 83.333333333333%;
-}
-.nc-right-offset-11 {
-  margin-right: 91.666666666666%;
-}
-.nc-right-offset-12 {
-  margin-right: 100%;
+.nc-make-grid(@class) {
+  .loop-flex-grid-columns(@max-grid-num,@class,width);
+  .loop-flex-grid-columns(@max-grid-num,@class,offset-left);
+  .loop-flex-grid-columns(@max-grid-num,@class,offset-right);
 }
 
-/*小型桌面,平板,nc-sm-col-*/
-@media (min-width: 576px) {
-  .nc-sm-col-1 {
-    width: 8.333333333333%;
-  }
-  .nc-sm-col-2 {
-    width: 16.666666666666%;
-  }
-  .nc-sm-col-3 {
-    width: 25%;
-  }
-  .nc-sm-col-4 {
-    width: 33.333333333333%;
-  }
-  .nc-sm-col-5 {
-    width: 41.666666666666%;
-  }
-  .nc-sm-col-6 {
-    width: 50%;
-  }
-  .nc-sm-col-7 {
-    width: 58.333333333333%;
-  }
-  .nc-sm-col-8 {
-    width: 66.666666666666%;
-  }
-  .nc-sm-col-9 {
-    width: 75%;
-  }
-  .nc-sm-col-10 {
-    width: 83.333333333333%;
-  }
-  .nc-sm-col-11 {
-    width: 91.666666666666%;
-  }
-  .nc-sm-col-12 {
-    width: 100%;
-  }
-  .nc-sm-offset-1 {
-    margin-left: 8.333333333333%;
-  }
-  .nc-sm-offset-2 {
-    margin-left: 16.666666666666%;
-  }
-  .nc-sm-offset-3 {
-    margin-left: 25%;
-  }
-  .nc-sm-offset-4 {
-    margin-left: 33.333333333333%;
-  }
-  .nc-sm-offset-5 {
-    margin-left: 41.666666666666%;
-  }
-  .nc-sm-offset-6 {
-    margin-left: 50%;
-  }
-  .nc-sm-offset-7 {
-    margin-left: 58.333333333333%;
-  }
-  .nc-sm-offset-8 {
-    margin-left: 66.666666666666%;
-  }
-  .nc-sm-offset-9 {
-    margin-left: 75%;
-  }
-  .nc-sm-offset-10 {
-    margin-left: 83.333333333333%;
-  }
-  .nc-sm-offset-11 {
-    margin-left: 91.666666666666%;
-  }
-  .nc-sm-offset-12 {
-    margin-left: 100%;
-  }
-  .nc-sm-right-offset-1 {
-    margin-right: 8.333333333333%;
-  }
-  .nc-sm-right-offset-2 {
-    margin-right: 16.666666666666%;
-  }
-  .nc-sm-right-offset-3 {
-    margin-right: 25%;
-  }
-  .nc-sm-right-offset-4 {
-    margin-right: 33.333333333333%;
-  }
-  .nc-sm-right-offset-5 {
-    margin-right: 41.666666666666%;
-  }
-  .nc-sm-right-offset-6 {
-    margin-right: 50%;
-  }
-  .nc-sm-right-offset-7 {
-    margin-right: 58.333333333333%;
-  }
-  .nc-sm-right-offset-8 {
-    margin-right: 66.666666666666%;
-  }
-  .nc-sm-right-offset-9 {
-    margin-right: 75%;
-  }
-  .nc-sm-right-offset-10 {
-    margin-right: 83.333333333333%;
-  }
-  .nc-sm-right-offset-11 {
-    margin-right: 91.666666666666%;
-  }
-  .nc-sm-right-offset-12 {
-    margin-right: 100%;
-  }
+.nc-make-grid(xs);
+/*小型桌面,平板*/
+@media (min-width: @nc-screen-sm-min) {
+  .nc-make-grid(sm);
 }
-/*中型桌面屏幕,nc-md-col-*/
-@media (min-width: 768px) {
-  .nc-md-col-1 {
-    width: 8.333333333333%;
-  }
-  .nc-md-col-2 {
-    width: 16.666666666666%;
-  }
-  .nc-md-col-3 {
-    width: 25%;
-  }
-  .nc-md-col-4 {
-    width: 33.333333333333%;
-  }
-  .nc-md-col-5 {
-    width: 41.666666666666%;
-  }
-  .nc-md-col-6 {
-    width: 50%;
-  }
-  .nc-md-col-7 {
-    width: 58.333333333333%;
-  }
-  .nc-md-col-8 {
-    width: 66.666666666666%;
-  }
-  .nc-md-col-9 {
-    width: 75%;
-  }
-  .nc-md-col-10 {
-    width: 83.333333333333%;
-  }
-  .nc-md-col-11 {
-    width: 91.666666666666%;
-  }
-  .nc-md-col-12 {
-    width: 100%;
-  }
-  .nc-md-offset-1 {
-    margin-left: 8.333333333333%;
-  }
-  .nc-md-offset-2 {
-    margin-left: 16.666666666666%;
-  }
-  .nc-md-offset-3 {
-    margin-left: 25%;
-  }
-  .nc-md-offset-4 {
-    margin-left: 33.333333333333%;
-  }
-  .nc-md-offset-5 {
-    margin-left: 41.666666666666%;
-  }
-  .nc-md-offset-6 {
-    margin-left: 50%;
-  }
-  .nc-md-offset-7 {
-    margin-left: 58.333333333333%;
-  }
-  .nc-md-offset-8 {
-    margin-left: 66.666666666666%;
-  }
-  .nc-md-offset-9 {
-    margin-left: 75%;
-  }
-  .nc-md-offset-10 {
-    margin-left: 83.333333333333%;
-  }
-  .nc-md-offset-11 {
-    margin-left: 91.666666666666%;
-  }
-  .nc-md-offset-12 {
-    margin-left: 100%;
-  }
-  .nc-md-right-offset-1 {
-    margin-right: 8.333333333333%;
-  }
-  .nc-md-right-offset-2 {
-    margin-right: 16.666666666666%;
-  }
-  .nc-md-right-offset-3 {
-    margin-right: 25%;
-  }
-  .nc-md-right-offset-4 {
-    margin-right: 33.333333333333%;
-  }
-  .nc-md-right-offset-5 {
-    margin-right: 41.666666666666%;
-  }
-  .nc-md-right-offset-6 {
-    margin-right: 50%;
-  }
-  .nc-md-right-offset-7 {
-    margin-right: 58.333333333333%;
-  }
-  .nc-md-right-offset-8 {
-    margin-right: 66.666666666666%;
-  }
-  .nc-md-right-offset-9 {
-    margin-right: 75%;
-  }
-  .nc-md-right-offset-10 {
-    margin-right: 83.333333333333%;
-  }
-  .nc-md-right-offset-11 {
-    margin-right: 91.666666666666%;
-  }
-  .nc-md-right-offset-12 {
-    margin-right: 100%;
-  }
+/*中型桌面屏幕*/
+@media (min-width: @nc-screen-md-min) {
+  .nc-make-grid(md);
 }
-/*大型桌面屏幕,nc-lg-col-*/
-@media (min-width: 992px) {
-  .nc-lg-col-1 {
-    width: 8.333333333333%;
-  }
-  .nc-lg-col-2 {
-    width: 16.666666666666%;
-  }
-  .nc-lg-col-3 {
-    width: 25%;
-  }
-  .nc-lg-col-4 {
-    width: 33.333333333333%;
-  }
-  .nc-lg-col-5 {
-    width: 41.666666666666%;
-  }
-  .nc-lg-col-6 {
-    width: 50%;
-  }
-  .nc-lg-col-7 {
-    width: 58.333333333333%;
-  }
-  .nc-lg-col-8 {
-    width: 66.666666666666%;
-  }
-  .nc-lg-col-9 {
-    width: 75%;
-  }
-  .nc-lg-col-10 {
-    width: 83.333333333333%;
-  }
-  .nc-lg-col-11 {
-    width: 91.666666666666%;
-  }
-  .nc-lg-col-12 {
-    width: 100%;
-  }
-  .nc-lg-offset-1 {
-    margin-left: 8.333333333333%;
-  }
-  .nc-lg-offset-2 {
-    margin-left: 16.666666666666%;
-  }
-  .nc-lg-offset-3 {
-    margin-left: 25%;
-  }
-  .nc-lg-offset-4 {
-    margin-left: 33.333333333333%;
-  }
-  .nc-lg-offset-5 {
-    margin-left: 41.666666666666%;
-  }
-  .nc-lg-offset-6 {
-    margin-left: 50%;
-  }
-  .nc-lg-offset-7 {
-    margin-left: 58.333333333333%;
-  }
-  .nc-lg-offset-8 {
-    margin-left: 66.666666666666%;
-  }
-  .nc-lg-offset-9 {
-    margin-left: 75%;
-  }
-  .nc-lg-offset-10 {
-    margin-left: 83.333333333333%;
-  }
-  .nc-lg-offset-11 {
-    margin-left: 91.666666666666%;
-  }
-  .nc-lg-offset-12 {
-    margin-left: 100%;
-  }
-  .nc-lg-right-offset-1 {
-    margin-right: 8.333333333333%;
-  }
-  .nc-lg-right-offset-2 {
-    margin-right: 16.666666666666%;
-  }
-  .nc-lg-right-offset-3 {
-    margin-right: 25%;
-  }
-  .nc-lg-right-offset-4 {
-    margin-right: 33.333333333333%;
-  }
-  .nc-lg-right-offset-5 {
-    margin-right: 41.666666666666%;
-  }
-  .nc-lg-right-offset-6 {
-    margin-right: 50%;
-  }
-  .nc-lg-right-offset-7 {
-    margin-right: 58.333333333333%;
-  }
-  .nc-lg-right-offset-8 {
-    margin-right: 66.666666666666%;
-  }
-  .nc-lg-right-offset-9 {
-    margin-right: 75%;
-  }
-  .nc-lg-right-offset-10 {
-    margin-right: 83.333333333333%;
-  }
-  .nc-lg-right-offset-11 {
-    margin-right: 91.666666666666%;
-  }
-  .nc-lg-right-offset-12 {
-    margin-right: 100%;
-  }
+/*大型桌面屏幕*/
+@media (min-width: @nc-screen-lg-min) {
+  .nc-make-grid(lg);
 }
-/*超大型桌面屏幕,nc-xl-col-*/
-@media (min-width: 1200px) {
-  .nc-xl-col-1 {
-    width: 8.333333333333%;
-  }
-  .nc-xl-col-2 {
-    width: 16.666666666666%;
-  }
-  .nc-xl-col-3 {
-    width: 25%;
-  }
-  .nc-xl-col-4 {
-    width: 33.333333333333%;
-  }
-  .nc-xl-col-5 {
-    width: 41.666666666666%;
-  }
-  .nc-xl-col-6 {
-    width: 50%;
-  }
-  .nc-xl-col-7 {
-    width: 58.333333333333%;
-  }
-  .nc-xl-col-8 {
-    width: 66.666666666666%;
-  }
-  .nc-xl-col-9 {
-    width: 75%;
-  }
-  .nc-xl-col-10 {
-    width: 83.333333333333%;
-  }
-  .nc-xl-col-11 {
-    width: 91.666666666666%;
-  }
-  .nc-xl-col-12 {
-    width: 100%;
-  }
-  .nc-xl-offset-1 {
-    margin-left: 8.333333333333%;
-  }
-  .nc-xl-offset-2 {
-    margin-left: 16.666666666666%;
-  }
-  .nc-xl-offset-3 {
-    margin-left: 25%;
-  }
-  .nc-xl-offset-4 {
-    margin-left: 33.333333333333%;
-  }
-  .nc-xl-offset-5 {
-    margin-left: 41.666666666666%;
-  }
-  .nc-xl-offset-6 {
-    margin-left: 50%;
-  }
-  .nc-xl-offset-7 {
-    margin-left: 58.333333333333%;
-  }
-  .nc-xl-offset-8 {
-    margin-left: 66.666666666666%;
-  }
-  .nc-xl-offset-9 {
-    margin-left: 75%;
-  }
-  .nc-xl-offset-10 {
-    margin-left: 83.333333333333%;
-  }
-  .nc-xl-offset-11 {
-    margin-left: 91.666666666666%;
-  }
-  .nc-xl-offset-12 {
-    margin-left: 100%;
-  }
-  .nc-xl-right-offset-1 {
-    margin-right: 8.333333333333%;
-  }
-  .nc-xl-right-offset-2 {
-    margin-right: 16.666666666666%;
-  }
-  .nc-xl-right-offset-3 {
-    margin-right: 25%;
-  }
-  .nc-xl-right-offset-4 {
-    margin-right: 33.333333333333%;
-  }
-  .nc-xl-right-offset-5 {
-    margin-right: 41.666666666666%;
-  }
-  .nc-xl-right-offset-6 {
-    margin-right: 50%;
-  }
-  .nc-xl-right-offset-7 {
-    margin-right: 58.333333333333%;
-  }
-  .nc-xl-right-offset-8 {
-    margin-right: 66.666666666666%;
-  }
-  .nc-xl-right-offset-9 {
-    margin-right: 75%;
-  }
-  .nc-xl-right-offset-10 {
-    margin-right: 83.333333333333%;
-  }
-  .nc-xl-right-offset-11 {
-    margin-right: 91.666666666666%;
-  }
-  .nc-xl-right-offset-12 {
-    margin-right: 100%;
-  }
+/*超大型桌面屏幕*/
+@media (min-width: @nc-screen-xl-min) {
+  .nc-make-grid(xl);
 }
+
 

@@ -56,42 +56,15 @@
 .nc-flex-nowrap {
     flex-wrap: nowrap !important;
 }
-.nc-flex-order-1 {
-    order: 1;
+
+.loop-flex-order-columns(@index) when(@index > 0) {
+    .nc-flex-order-@{index} {
+        order: @index;
+    }
+    .loop-flex-order-columns(@index - 1);
 }
-.nc-flex-order-2 {
-    order: 2;
-}
-.nc-flex-order-3 {
-    order: 3;
-}
-.nc-flex-order-4 {
-    order: 4;
-}
-.nc-flex-order-5 {
-    order: 5;
-}
-.nc-flex-order-6 {
-    order: 6;
-}
-.nc-flex-order-7 {
-    order: 7;
-}
-.nc-flex-order-8 {
-    order: 8;
-}
-.nc-flex-order-9 {
-    order: 9;
-}
-.nc-flex-order-10 {
-    order: 10;
-}
-.nc-flex-order-11 {
-    order: 11;
-}
-.nc-flex-order-12 {
-    order: 12;
-}
+.loop-flex-order-columns(@max-grid-num);
+
 .nc-align-self-auto {
     align-self: auto !important;
 }
