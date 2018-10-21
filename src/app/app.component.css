@@ -195,9 +195,11 @@
     width: 100%;
     top:0;
     position: relative;
+    transition: margin-left 500ms,display 500ms;
   }
   .main-app article .side-bars-hidden {
     margin-left: -100%;
+    display:none;
   }
   .main-app article .content {
     width: 100%;
