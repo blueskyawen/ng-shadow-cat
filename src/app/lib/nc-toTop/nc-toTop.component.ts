@@ -15,19 +15,19 @@ export class NcToTopComponent implements OnInit {
   timer : any = null;
   displayType : string;
   contentDom : any;
+  isWindows : boolean = false;
 
   constructor() {
   }
 
   ngOnInit() {
-    this.contentDom = this.parentId ?
-        (this.parentId !== 'window' ? document.getElementById(this.parentId) : window) : window;
+    this.isWindows = !(this.parentId &&  this.parentId !== 'window' && window.innerWidth >= 768);
+    this.contentDom = this.isWindows ? window : document.getElementById(this.parentId);
     this.displayType = this.type === 'circle' ? 'flex' : 'block';
     this.typeClasses = {'nc-backTop-circle': this.type === 'circle','nc-backTop-rocket': this.type === 'rocket'};
     if(this.contentDom) {
       this.contentDom.onscroll = () => {
-        let backtop = (!this.parentId || this.parentId === 'window') ?
-            this.contentDom.pageYOffset : this.contentDom.scrollTop;
+        let backtop = this.isWindows ? this.contentDom.pageYOffset : this.contentDom.scrollTop;
         if(backtop > 0) {
           this.setBackTopPlace(this.displayType);
         } else {
@@ -46,9 +46,12 @@ export class NcToTopComponent implements OnInit {
   scrollWindow(){
     if(this.contentDom) {
       this.timer = setInterval(() => {
-        let backtop = (!this.parentId || this.parentId === 'window') ?
-            this.contentDom.pageYOffset : this.contentDom.scrollTop;
-        this.contentDom.scrollBy(0,-60);
+        let backtop = this.isWindows ? this.contentDom.pageYOffset : this.contentDom.scrollTop;
+        if(this.isWindows) {
+          this.contentDom.scrollBy(0,-60);
+        } else {
+          this.contentDom.scrollTop -= 60;
+        }
         if(backtop < 1){
           clearInterval(this.timer);
         }

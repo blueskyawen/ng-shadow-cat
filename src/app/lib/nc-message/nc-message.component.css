@@ -1,6 +1,15 @@
+@media (min-width: 768px) {
+  .message {
+    width:50%;
+  }
+}
+@media (max-width: 767px) {
+  .message {
+    width: 75%;
+  }
+}
 .message {
   min-height:45px;
-  width:560px;
   position:fixed;
   top:2px;
   left:50%;
