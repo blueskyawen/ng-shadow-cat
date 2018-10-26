@@ -1,32 +1,30 @@
 .proport-bar {
   margin: 5px;
-}
-.proport-bar .ratebar {
-  display:inline-block;
-  height:	12px;
+  display: inline-flex;
+  flex-direction: column;
   width:360px;
+}
+.proport-bar .ratebar-container {
+  display: flex;
+  width:100%;
+}
+.proport-bar .ratebar-container .ratebar {
+  display:inline-block;
+  height: 12px;
+  width:calc(100% - 50px);
   border-radius:6px;
   text-align:right;
   line-height:12px;
   background:#d9d9d9;
   position:relative;
 }
-.proport-bar .ratebar .childratebar {
+.proport-bar .ratebar-container .ratebar .childratebar {
   height:100%;
   display:inline-block;
 }
-.proport-bar .ratebar .childratebar:first-child {
+.proport-bar .ratebar-container .ratebar .childratebar:first-child {
   border-radius:8px 0 0 8px/8px 0 0 8px;
   float:left;
-}
-.proport-bar.normal-bar .childcolor{
-  color:#009933;
-}
-.proport-bar.warn-bar .childcolor{
-  color:#ffa31a;
-}
-.proport-bar.urgent-bar .childcolor{
-  color:#ff1a1a;
 }
 .proport-bar.normal-bar .ratebar .childratebar{
   width:20%;
@@ -40,8 +38,30 @@
   width:87%;
   background:#ff1a1a;
 }
+.proport-bar .ratebar-container span.description {
+  font-size: 12px;
+  line-height: 12px;
+  margin-left: 5px;
+}
+.proport-bar.normal-bar .ratebar-container span.description {
+  color:#009933;
+}
+.proport-bar.warn-bar .ratebar-container span.description {
+  color:#ffa31a;
+}
+.proport-bar.urgent-bar .ratebar-container span.description {
+  color:#ff1a1a;
+}
 .usage {
   font-size:12px;
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding-right: 50px;
+  box-sizing: border-box;
+}
+.usage.mutil-bar {
+  padding-right: 0;
 }
 .usage span{
   margin-right:10px;
@@ -52,7 +72,7 @@
   width:10px;
   border-radius:50%;
   display:inline-block;
-  margin-right:10px;
+  margin-right:5px;
 }
 .normal-bar .usage span.used:before{
   background:#009933;
@@ -66,9 +86,7 @@
 .urgent-bar .usage span.used:before{
   background:#ff1a1a;
 }
-span.description{
-  margin-right:-50px;
-}
+
 .mutil-bar.ratebar .childratebar {
   float:left;
 }
@@ -82,6 +100,9 @@ span.description{
   background:#ff1a1a;
 }
 
+ .proport-bar .ratebar-container .ratebar.mutil-ratebar {
+  width: 100%;
+ }
 .mutil-bar .ratebar .childratebar1,.nest-mutil-dongbar .ratebar .childratebar1{
   width:20%;
   background:#009933;

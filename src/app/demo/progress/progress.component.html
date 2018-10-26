@@ -12,6 +12,9 @@
     <nc-progress [value]="90" [total]="100"></nc-progress>
   </div>
   <div>
+    <nc-progress [value]="100" [total]="100"></nc-progress>
+  </div>
+  <div>
     <nc-progress [value]="60" [total]="200" [style]="'small'"></nc-progress>
   </div>
   <div>
@@ -19,6 +22,15 @@
   </div>
   <div>
     <nc-progress [value]="190" [total]="200" [style]="'small'"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="200" [total]="200" [style]="'small'"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'60%'"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'200px'"></nc-progress>
   </div>
 </div>
 <p>使用方式:</p>
@@ -31,6 +43,8 @@
       <nc-progress [value]="60" [total]="200" [style]="'small'"></nc-progress>
       <nc-progress [value]="150" [total]="200" [style]="'small'"></nc-progress>
       <nc-progress [value]="190" [total]="200" [style]="'small'"></nc-progress>
+      <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'60%'"></nc-progress>
+      <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'200px'"></nc-progress>
     </textarea>
   </div>
 </nc-tab>
@@ -42,14 +56,22 @@
   <div>
     <nc-progress [style]="'small'" [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
   </div>
+  <div>
+    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'200px'"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'"></nc-progress>
+  </div>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
   <div *ngIf="currentTab2 === 'html'">
     <textarea style="height:120px;">
       <nc-progress [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
-
       <nc-progress [style]="'small'" [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
+
+      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'200px'"></nc-progress>
+      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'"></nc-progress>
     </textarea>
   </div>
   <div *ngIf="currentTab2 === 'typescript'">
@@ -103,6 +125,11 @@
     <td>style</td>
     <td>进度条尺寸,2种取值：big,small</td>
     <td>big</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义比例条的宽度，px或百分比，比如：50%，400px</td>
+    <td>360px</td>
   </tr>
   <tr>
     <td>isDynamic</td>

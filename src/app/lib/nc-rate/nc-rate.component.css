@@ -1,4 +1,6 @@
-
+#pinfen {
+  display: inline-block;
+}
 #pinfen .star {
   position: relative;
   margin: 20px 30px;

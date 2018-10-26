@@ -18,14 +18,16 @@ export class NcProportionComponent  implements OnInit,OnChanges {
     {label: '选项2',color: '#ffa31a',value: 20},
     {label: '选项3',color: '#ff1a1a',value: 30}
   ];
+  @Input() width: string = '360px';
   colorClass : any = {};
   widthStyle : any = {};
-  widthStyle2 : any = {};
+  proporStyleStr : any = {};
   leftValue : number = 0;
 
   constructor() {}
 
   ngOnInit() {
+    this.proporStyleStr = {'width': this.width};
     this.valueShow = this.value * 100 / this.total;
     this.colorClass = {'normal-bar': this.valueShow <= 50,
       'warn-bar': this.valueShow > 50 && this.valueShow < 80,

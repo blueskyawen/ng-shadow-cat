@@ -1,21 +1,29 @@
 .process{
-  display:inline-block;
+  display:inline-flex;
   width:360px;
-  background:#d9d9d9;
-  margin-left:20px;
-  margin-bottom:20px;
+  margin:10px;
   text-align:right;
-  position:relative;
 }
 .big{
   height: 24px;
-  border-radius:12px;
 }
 .small{
   height:12px;
+}
+.process .processing-container {
+  width: calc(100% - 50px);
+  height:100%;
+  display: inline-block;
+  position: relative;
+  background:#d9d9d9;
+}
+.process.big .processing-container {
+  border-radius:12px;
+}
+.process.small .processing-container {
   border-radius:6px;
 }
-.process .processing {
+.process .processing-container .processing {
   display:inline-block;
   height:100%;
   width: 30%;
@@ -25,8 +33,14 @@
 .process.big .processing {
   border-radius:12px 0 0 12px/12px 0 0 12px;
 }
-.process.small .processing {
+.process.big .processing-container .processing.percent100 {
+  border-radius:12px;
+}
+.process.small .processing-container .processing {
   border-radius:6px 0 0 6px/6px 0 0 6px;
+}
+.process.small .processing-container .processing.percent100 {
+  border-radius:6px;
 }
 .process .processing.normal {
   background:#3399ff;
@@ -37,16 +51,16 @@
 .process .processing.urgent {
   background:#ff3300;
 }
+.process span.description {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 5px;
+}
 .process.big span.description{
-  position:absolute;
-  right: -40px;
-  top: 4px;
+  font-size: 14px;
 }
 .process.small span.description {
-  position:absolute;
   font-size: 12px;
-  right: -30px;
-  top: 0px;
 }
 .process.big .processing.dyna {
   width:0%;

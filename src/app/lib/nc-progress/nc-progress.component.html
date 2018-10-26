@@ -1,6 +1,8 @@
-<span class="process" [ngClass]="sizeClass">
-  <span class="processing" [ngClass]="colorClass" [ngStyle]="widthStyle">
-    <span class="dyna" *ngIf="isDynamic"></span>
+<span class="process" [ngClass]="sizeClass" [ngStyle]="progStyleStr">
+  <span class="processing-container">
+    <span class="processing" [ngClass]="colorClass" [ngStyle]="widthStyle">
+      <span class="dyna" *ngIf="isDynamic"></span>
+    </span>
   </span>
   <span class="description">{{valueShow}}%</span>
 </span>

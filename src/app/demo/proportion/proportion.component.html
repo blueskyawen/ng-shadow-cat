@@ -6,6 +6,8 @@
   <nc-proportion [total]="480" [value]="180"></nc-proportion>
   <nc-proportion [total]="100" [value]="70"></nc-proportion>
   <nc-proportion [total]="100" [value]="90"></nc-proportion>
+  <nc-proportion [total]="100" [value]="60" [width]="'60%'"></nc-proportion>
+  <nc-proportion [total]="100" [value]="30" [width]="'160px'"></nc-proportion>
 </div>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
@@ -14,6 +16,8 @@
     <nc-proportion [total]="480" [value]="180"></nc-proportion>
     <nc-proportion [total]="100" [value]="70"></nc-proportion>
     <nc-proportion [total]="100" [value]="90"></nc-proportion>
+    <nc-proportion [total]="100" [value]="60" [width]="'60%'"></nc-proportion>
+    <nc-proportion [total]="100" [value]="30" [width]="'160px'"></nc-proportion>
     </textarea>
   </div>
 </nc-tab>
@@ -27,14 +31,18 @@
 <div style="margin-top: 20px;">
   <nc-proportion [multiple]="true" [total]="100" [valueList]="itemList1"></nc-proportion>
   <nc-proportion [multiple]="true" [total]="500" [valueList]="itemList2"></nc-proportion>
+  <nc-proportion [multiple]="true" [total]="500" [valueList]="itemList1" [width]="'70%'"></nc-proportion>
+  <nc-proportion [multiple]="true" [total]="500" [valueList]="itemList1" [width]="'160px'"></nc-proportion>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
   <div *ngIf="currentTab2 === 'html'">
     <textarea style="height:120px;">
     <nc-proportion [multiple]="true" [total]="100" [valueList]="itemList1"></nc-proportion>
-
     <nc-proportion [multiple]="true" [total]="500" [valueList]="itemList2"></nc-proportion>
+
+    <nc-proportion [multiple]="true" [total]="500" [valueList]="itemList2" [width]="'70%'"></nc-proportion>
+    <nc-proportion [multiple]="true" [total]="500" [valueList]="itemList2" [width]="'160px'"></nc-proportion>
     </textarea>
   </div>
   <div *ngIf="currentTab2 === 'typescript'">
@@ -78,6 +86,11 @@
     <td>total</td>
     <td>总数</td>
     <td>100</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义比例条的宽度，px或百分比，比如：50%，400px</td>
+    <td>360px</td>
   </tr>
   <tr>
     <td>value</td>

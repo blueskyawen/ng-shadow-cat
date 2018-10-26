@@ -18,6 +18,7 @@ export class NcProgressComponent  implements OnInit,OnChanges {
   sizeClass : any = {};
   colorClass : any = {};
   widthStyle : any = {};
+  progStyleStr : any;
 
   constructor() {
   }
@@ -27,7 +28,10 @@ export class NcProgressComponent  implements OnInit,OnChanges {
     this.sizeClass = {'big': this.style === 'big','small': this.style === 'small'};
     this.colorClass = {'normal': !this.isDynamic && this.valueShow <= 50,
       'warn': !this.isDynamic && (this.valueShow > 50 && this.valueShow < 80),
-      'urgent': !this.isDynamic && this.valueShow >= 80};
+      'urgent': !this.isDynamic && this.valueShow >= 80,
+      'percent100': !this.isDynamic && this.valueShow == 100
+    };
+    this.progStyleStr = {'width': this.width};
     this.widthStyle = {'width': `${this.valueShow}%`};
   }
 
@@ -46,7 +50,8 @@ export class NcProgressComponent  implements OnInit,OnChanges {
     } else {
       this.colorClass = {'normal': !this.isDynamic && this.valueShow <= 50,
         'warn': !this.isDynamic && (this.valueShow > 50 && this.valueShow < 80),
-        'urgent': !this.isDynamic && this.valueShow >= 80};
+        'urgent': !this.isDynamic && this.valueShow >= 80,
+        'percent100': !this.isDynamic && this.valueShow == 100};
     }
     this.widthStyle = {'width': `${this.valueShow}%`};
   }

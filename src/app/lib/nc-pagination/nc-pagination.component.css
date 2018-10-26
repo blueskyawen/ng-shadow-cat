@@ -1,10 +1,9 @@
 ul.pagination {
-  display: inline-block;
   padding: 10px;
   margin: 0;
 }
 ul.pagination li{
-  display: inline;
+  display: inline-block;
 }
 ul.pagination li a {
   color: #262626;
