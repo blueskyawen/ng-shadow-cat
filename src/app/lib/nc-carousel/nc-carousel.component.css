@@ -4,8 +4,9 @@
   height:650px;
   width:100%;
   position:relative;
-  border:solid 0px #666;
+  border:none;
   padding:0;
+  max-width: 100%;
 }
 .carousel ul{
   height:100%;

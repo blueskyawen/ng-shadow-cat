@@ -32,14 +32,19 @@
   border-color:#1a75ff;
 }
 ._checkbox span.active.checkall:after{
-  content:"✔";
+  content:"";
   display: inline-block;
   color:#fff;
   font-size:14px;
   font-weight:bold;
   position:absolute;
-  top:-6px;
-  left:3px;
+  top:1px;
+  left:6px;
+  border:solid 2px #fff;
+  border-color: transparent #fff #fff transparent;
+  transform: rotate(40deg);
+  height: 50%;
+  width:20%;
 }
 ._checkbox span.active.partcheck:after{
   content:"";

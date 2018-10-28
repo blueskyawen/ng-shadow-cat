@@ -22,14 +22,15 @@
   z-index: 2000;
   opacity: 1;
   left:50%;
-  overflow: auto;
   background:#fff;
   border:solid 1px #999;
   border-radius:8px;
-  width:50%;
+  width:760px;
+  max-width: 90%;
   min-height:120px;
   transform: translateX(-50%);
   box-shadow:2px 2px 2px #a3a375;
+  overflow: hidden;
 }
 .dialog-container .myDialog.normal-dialog {
   top:60px;
@@ -141,7 +142,6 @@
 }
 .description .text p{
   display:inline-block;
-  width:100%;
   font-size:12px;
   border:solid 0px;
   margin-left:24px;

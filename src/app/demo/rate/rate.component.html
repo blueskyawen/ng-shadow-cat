@@ -1,8 +1,12 @@
 <h2 class="title">评分星星</h2>
 <p>评分，用于评价体验分数</p>
 <div style="margin-top: 20px;margin-bottom: 30px;">
-  <nc-rate></nc-rate>
-  <nc-rate [starNum]="10" [star]="3"></nc-rate>
+  <div>
+    <nc-rate></nc-rate>
+  </div>
+  <div>
+    <nc-rate [starNum]="10" [star]="3"></nc-rate>
+  </div>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">

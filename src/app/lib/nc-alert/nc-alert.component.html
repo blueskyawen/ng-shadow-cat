@@ -1,4 +1,4 @@
-<div class="alert" [ngClass]="colorClasses">
+<div class="alert" [ngClass]="colorClasses" [ngStyle]="alertStyle">
   <span *ngIf="!callback">{{title}}</span>
   <a *ngIf="callback" (click)="clickit()">{{title}}</a>
 </div>

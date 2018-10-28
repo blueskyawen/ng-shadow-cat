@@ -1,10 +1,35 @@
+.form-group{
+  text-align:left;
+  align-items:center;
+  margin-bottom:20px;
+  display: flex;
+  width:470px;
+  max-width: 100%;
+}
+label{
+  width:100px;
+  text-align:right;
+  height:100%;
+  font-size:13px;
+  display:inline-block;
+  margin-right: 10px;
+}
+label:after{
+  content:":"
+}
+.form-group .group-right{
+  display:inline-block;
+  width:calc(100% - 110px);
+}
+
 .input-container {
   display: flex;
+  width:100%;
 }
 .input-container input {
   height:30px;
   line-height: 30px;
-  width:360px;
+  width:calc(100% - 15px);
   font-size:14px;
   border:solid 1px  #999999;
   border-radius:4px;
@@ -19,9 +44,12 @@
 }
 .input-container .optional {
   margin-left: 5px;
-  font-size: 12px;
+  font-size: 16px;
   display: flex;
   align-items: center;
+  color:red;
+  width: 10px;
+  padding-top: 3px;
 }
 .input-container .suffix {
   width:60px;
@@ -44,11 +72,9 @@
   border-radius: 4px 0 0 4px;
 }
 .input-container input.hasSuffix {
-  width:300px;
   border-radius:4px 0 0 4px;
 }
 .input-container input.hasPrefix {
-  width:300px;
   border-radius:0 4px 4px 0;
 }
 .input-container.input-search {
@@ -56,7 +82,7 @@
 }
 .input-container.input-search span.Search{
   position:absolute;
-  right:10px;
+  right:25px;
   top:7px;
   height:14px;
   width:14px;

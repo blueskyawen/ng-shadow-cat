@@ -12,20 +12,14 @@
       <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
     </div>
     <form>
-      <div class="form-group">
-        <label>姓名</label>
-        <div class="group-right">
-          <input type="text" name="_name" value="Jack" maxlength="8"
-                 autocomplete="on"  required />
-        </div>
-      </div>
-      <div class="form-group">
-        <label>技能</label>
-        <div class="group-right">
-          <input type="text" name="_skill" value="" autocomplete="on" />
-          <span>(可选)</span>
-        </div>
-      </div>
+      <nc-form-group>
+        <nc-form-label>姓名</nc-form-label>
+        <nc-input [type]="'text'" [(modelValue)]="name" [required]="true"></nc-input>
+      </nc-form-group>
+      <nc-form-group>
+        <nc-form-label>技能</nc-form-label>
+        <nc-input [type]="'text'" [(modelValue)]="skill" [required]="false"></nc-input>
+      </nc-form-group>
     </form>
   </div>
   <div class="footer">

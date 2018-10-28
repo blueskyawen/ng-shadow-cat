@@ -1,7 +1,7 @@
 <div class="tabka"
      [ngClass]="{'first-tab':tabStyle === 'firstTab','tab-line':type === 'line','second-tab':tabStyle === 'secondTab'}">
   <ul class="tabss">
-    <li *ngFor="let tab of tabs" (click)="select(tab)"
+    <li *ngFor="let tab of tabs" (click)="select(tab)" class="tabItem"
         [ngClass]="{'active':tab.isActive,'noactive':!tab.isActive,'disabled':tab.isDisable}">
       {{tab.name}}
     </li>

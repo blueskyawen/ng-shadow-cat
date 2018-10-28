@@ -14,6 +14,8 @@ export class DialogComponent {
   tabItems2 : any[] = [];
   currentTab2 : string;
   isShows : boolean[] = [false,false,false,false];
+  name : string = 'Jack';
+  skill : string = '';
 
   constructor() {
     this.tabItems1 = [{name:'html',label:'html',isActive:true,isDisable:false}];

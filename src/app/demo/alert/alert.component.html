@@ -7,7 +7,8 @@
 </div>
 <h3>2. 带操作的提示</h3>
 <div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
-  <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type" [callback]="callbackFun">
+  <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type" [width]="'70%'"
+            [callback]="callbackFun">
   </nc-alert>
 </div>
 <p>使用方式:</p>
@@ -17,7 +18,8 @@
       <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type">
       </nc-alert>
 
-      <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type" [callback]="callbackFun">
+      <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type"  [width]="'70%'"
+                [callback]="callbackFun">
       </nc-alert>
     </textarea>
   </div>
@@ -56,6 +58,11 @@
     <td>callback</td>
     <td>带操作的提示回调</td>
     <td></td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义宽度，px或百分比，比如：50%，400px</td>
+    <td>500px</td>
   </tr>
   </tbody>
 </table>

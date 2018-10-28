@@ -2,6 +2,7 @@
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .tabka ul.tabss {
   display: block;

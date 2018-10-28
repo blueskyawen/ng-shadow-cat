@@ -3,6 +3,7 @@
   min-height:100px;
   display: flex;
   flex-direction:column;
+  max-width: 100%;
 }
 .collapse {
   margin-bottom:5px;

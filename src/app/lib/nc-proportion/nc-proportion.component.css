@@ -3,6 +3,7 @@
   display: inline-flex;
   flex-direction: column;
   width:360px;
+  max-width: 100%;
 }
 .proport-bar .ratebar-container {
   display: flex;

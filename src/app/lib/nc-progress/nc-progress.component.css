@@ -3,6 +3,7 @@
   width:360px;
   margin:10px;
   text-align:right;
+  max-width: 100%;
 }
 .big{
   height: 24px;

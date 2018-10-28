@@ -29,7 +29,7 @@ import {NcMutilSelectComponent} from './nc-mutil-select/nc-mutil-select.componen
 import {NcCarouselComponent} from './nc-carousel/nc-carousel.component';
 import {NcTransferComponent} from './nc-transfer/nc-transfer.component';
 import {NcTreeComponent} from './nc-tree/nc-tree.component';
-import {NcInputComponent} from './nc-input/nc-input.component';
+import {NcInputComponent,NcFormGroupComponent,NcFormLabelComponent} from './nc-input/index';
 import {NcDropdownComponent} from './nc-dropdown/nc-dropdown.component';
 import {NcAlertComponent} from './nc-alert/nc-alert.component';
 import {NcLabelComponent} from './nc-label/nc-label.component';
@@ -42,13 +42,13 @@ import {NcLabelComponent} from './nc-label/nc-label.component';
     NcPanelComponent,NcRangeSlideComponent,NcProgressComponent,NcProportionComponent,
     NcDialogComponent,NcStepComponent,NcSelectComponent,NcMutilSelectComponent,NcCarouselComponent,
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
-    NcLabelComponent],
+    NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
     NcPanelComponent,NcRangeSlideComponent,NcProgressComponent,NcProportionComponent,
     NcDialogComponent,NcStepComponent,NcSelectComponent,NcMutilSelectComponent,NcCarouselComponent,
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
-    NcLabelComponent]
+    NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent]
 })
 export class LibModule { }
