@@ -23,7 +23,7 @@ export class AppComponent {
     if(this.currentMenu.value === 'components') {
       this.router.navigate(['/components/loading']);
     } else if(this.currentMenu.value === 'about') {
-      this.router.navigate(['/about/grid']);
+      this.router.navigate(['/about/about']);
     } else if(this.currentMenu.value === 'pattern') {
       this.router.navigate(['/pattern/navbar']);
     }
