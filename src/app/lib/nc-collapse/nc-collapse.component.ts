@@ -8,7 +8,13 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
   templateUrl: './nc-collapse.component.html',
   styleUrls: ['./nc-collapse.component.css']
 })
-export class NcCollapseComponent {
+export class NcCollapseComponent implements  OnInit {
+  @Input() width : string = '800px';
+  collapseStyle : any = {};
 
   constructor() {}
+
+  ngOnInit() {
+    this.collapseStyle = {'width': this.width};
+  }
 }

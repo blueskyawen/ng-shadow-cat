@@ -1,18 +1,18 @@
 <div class="select-dropdown" [class.disable]="isDisable" [style.width.px]="width ? width : 420"
      (mouseover)="moveOn()" (mouseout)="moveOut()" (click)="clickSelect()">
-  <div class="selectss" *ngIf="selections.length === 0" [style.width.px]="seleWidth ? seleWidth : 380">
+  <div class="selectss" *ngIf="selections.length === 0" [style.width]="seleWidth ? seleWidth : 380">
     <span class="holdplace">请选择</span>
   </div>
-  <div class="selectss" *ngIf="selections.length !== 0 && !showCheckNum" [style.width.px]="seleWidth ? seleWidth : 380">
+  <div class="selectss" *ngIf="selections.length !== 0 && !showCheckNum" [style.width]="seleWidth ? seleWidth : 380">
     <span class="option" *ngFor="let selection of selections" [class.disable]="selection.disable">
-      <span class="text" title="{{selection.label}}" [style.max-width.px]="selOpWidth ? selOpWidth : 330">
+      <span class="text" title="{{selection.label}}" [style.max-width]="selOpWidth ? selOpWidth : 330">
         {{selection.label}}
       </span>
       <span class="biao" (click)="delOption(selection)"
             (mouseover)="moveInDel()" (mouseout)="moveInDel()">×</span>
     </span>
   </div>
-  <div class="selectss" *ngIf="selections.length !== 0 && showCheckNum" [style.width.px]="seleWidth ? seleWidth : 380">
+  <div class="selectss" *ngIf="selections.length !== 0 && showCheckNum" [style.width]="seleWidth ? seleWidth : 380">
     <span class="holdplace selectedTitle">已选择{{selections.length}}个项目</span>
   </div>
   <div class="dropdown-content" *ngIf="isContentOpen && !hasheckbox" (mouseover)="moveContent()" (mouseout)="moveContent()">

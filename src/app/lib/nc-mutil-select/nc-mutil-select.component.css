@@ -1,8 +1,9 @@
 .select-dropdown {
-  margin:20px;
+  margin:20px 0;
   position:relative;
   width:420px;
   min-width:220px;
+  max-width: 100%;
   min-height:36px;
   border:solid 1px #808080;
   display:inline-block;
@@ -59,11 +60,12 @@
   background:#d9d9d9;
   color:#1a1a1a;
   position:relative;
+  max-width: calc(100% - 30px);
 }
 .select-dropdown .selectss .option .text{
   display:inline-block;
-  max-width:330px;
-  min-width:130px;
+  min-width:30px;
+  //min-width:130px;
   white-space:nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

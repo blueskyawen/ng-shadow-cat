@@ -1,10 +1,12 @@
 .select-dropdown{
-  margin:20px;
+  margin:20px 0;
   position:relative;
   width:420px;
+  max-width: 100%;
+  min-width: 80px;
 }
 .select-dropdown .inputItem {
-  width: inherit;
+  width: 100%;
   display: flex;
 }
 .select-dropdown.disable{

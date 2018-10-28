@@ -76,9 +76,9 @@
     </textarea>
   </div>
 </nc-tab>
-<h3>3. 一次展开一个</h3>
+<h3>3. 一次展开一个/自定义宽度</h3>
 <div style="margin-top: 20px;">
-  <nc-collapse>
+  <nc-collapse [width]="'1000px'">
     <nc-panel [header]="panelItems[0].label" [(isActive)]="panelItems[0].active"
               (isActiveChange)="handleChange(0)">
       <p>杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
@@ -99,7 +99,7 @@
 <nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
   <div *ngIf="currentTab3 === 'html'">
     <textarea style="height:320px;">
-      <nc-collapse>
+      <nc-collapse [width]="'1000px'">
         <nc-panel [header]="panelItems[0].label" [(isActive)]="panelItems[0].active"
                   (isActiveChange)="handleChange(0)">
           <p>杨过，名过，字改之，是金庸武侠小说《神雕侠侣》[1]  中的主人公，前作《射雕英雄传》中杨康与穆念慈之子，西毒欧阳锋的义子。
@@ -160,6 +160,11 @@
     <td>isDisable</td>
     <td>是否禁用,true.false</td>
     <td>false</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义宽度，px或百分比，比如：50%，400px</td>
+    <td>800px</td>
   </tr>
   </tbody>
 </table>

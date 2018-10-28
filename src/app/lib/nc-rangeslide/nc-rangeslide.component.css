@@ -2,7 +2,8 @@ div.rangContainer {
   display:inline-block;
   width:500px;
   height:30px;
-  position:relative;;
+  position:relative;
+  max-width: 100%;
 }
 div.rangContainer input {
   width:100%;

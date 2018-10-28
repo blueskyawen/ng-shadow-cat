@@ -173,3 +173,12 @@
 .carousel-fade .right:hover{
   border-color: #fff  #fff transparent transparent;
 }
+
+@media (max-width: 768px) {
+  .carousel {
+    height:240px !important;
+  }
+  .carousel-fade {
+    height:240px !important;
+  }
+}
