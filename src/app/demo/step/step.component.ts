@@ -10,7 +10,7 @@ import { Component,OnInit } from '@angular/core';
 })
 export class StepComponent {
   stepItems : any[] = [
-    {label: '基本信息'},
+    {label: '基本信息-基本信息-基本信息-基本信息'},
     {label: '附加信息'},
     {label: '高级设置'},
     {label: '构建成功'},

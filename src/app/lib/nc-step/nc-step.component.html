@@ -1,9 +1,15 @@
 <div class="step-container">
-  <div class="steps">
-    <div class="step" [title] ="stepItem.dataContent"
-         *ngFor="let stepItem of stepItems;let i=index" (click)="onClickStep(i)"
-         [ngClass]="{'actived':i < stepIndex,'active':i === stepIndex,'step-centerline':type === 'centerline','step-underline':type === 'underline'}">
-      {{stepItem.label}}
+  <div class="steps-container" [title]="name">
+    <span class="step-oper step-prev">&lt;</span>
+    <span class="step-oper step-next">&gt;</span>
+    <div class="steps">
+      <div class="step"
+           *ngFor="let stepItem of stepItems;let i=index" (click)="onClickStep(i)"
+           [ngClass]="{'actived':i < stepIndex,'active':i === stepIndex,'step-centerline':type === 'centerline','step-underline':type === 'underline'}">
+        <span  class="step-index" *ngIf="i >= stepIndex">{{i+1}}</span>
+        <span  class="step-index" *ngIf="i < stepIndex">✔</span>
+        <span [title]="stepItem.label" class="step-label">{{stepItem.label}}</span>
+      </div>
     </div>
   </div>
   <div class="step_content" [ngClass]="{'underline': type === 'underline','centerline': type === 'centerline'}">

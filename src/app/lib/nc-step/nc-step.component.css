@@ -1,68 +1,104 @@
 .step-container {
   width:100%;
   margin:auto;
+  margin-top:30px;
+}
+.step-container .steps-container {
+  width: 90%;
+  margin:auto;
+  position:relative;
+  overflow-x: hidden;
+  padding: 0 20px;
+}
+.step-container .steps-container .step-oper {
+  display: none;
+  height:100%;
+  position: absolute;
+  font-size: 24px;
+  color:#999;
+  cursor: pointer;
+  align-items: center;
+  width:20px;
+  background: #fff;
+  z-index: 2;
+}
+.step-container .steps-container .step-oper:hover {
+  background: #f2f2f2;
+  color:#666;
+}
+.step-container .steps-container .step-prev {
+  left:0;
+  justify-content: flex-start;
+}
+.step-container .steps-container .step-next {
+  right:0;
+  justify-content: flex-end;
 }
 .step-container .steps {
   width:100%;
-  height:50px;
-  margin-top:30px;
+  display: inline-flex;
+  flex-wrap: nowrap;
 }
 .step-container .steps .step {
-  display:inline-block;
+  display:inline-flex;
+  align-items: center;
   width:20%;
   height:100%;
   float:left;
   text-align:center;
-  line-height:50px;
   box-sizing:border-box;
-  color:#a6a6a6;
+  min-width: 120px;
+  position: relative;
+  padding: 5px;
 }
 .step-container .steps .step:hover {
   cursor: pointer;
 }
+.step-container .steps .step .step-label {
+  color:#a6a6a6;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
 .step-container .steps .step.step-underline {
   border-bottom:solid 3px  #bfbfbf;
+  justify-content: center;
 }
-.step-container .steps .step.step-centerline {
-  position:relative;
+.step-container .steps .step.step-underline.active {
+  border-bottom:solid #1a75ff 3px;
 }
-.step-container .steps .step:before {
+.step-container .steps .step .step-index {
   display:inline-block;
   height:20px;
   width:20px;
+  min-width: 20px;
+  min-height: 20px;
   border:solid 1px #a6a6a6;
   border-radius:50%;
   line-height:20px;
   background:#a6a6a6;
   color:#fff;
   font-size:14px;
-  content: attr(title);
 }
-.step-container .steps .step.step-underline:before {
-  border-width: 1px;
-  margin-right:8px;
-}
-.step-container .steps .step.step-centerline:before {
-  border-width: 2px;
-  position:absolute;
-  left:45%;
-  bottom:-10px;
-}
-.step-container .steps .step.actived:before{
-  content:"✔";
+.step-container .steps .step.actived .step-index {
   background:#fff;
   color:#1a75ff;
   border-color:#1a75ff;
 }
-.step-container .steps .step.active:before{
+.step-container .steps .step.active .step-index {
   background:#1a75ff;
   border-color:#1a75ff;
 }
-.step-container .steps .step.active{
+.step-container .steps .step.active .step-label {
   color:#000;
 }
-.step-container .steps .step.step-underline.active {
-  border-bottom:solid #1a75ff 3px;
+.step-container .steps .step.step-underline .step-index {
+  margin-right: 5px;
+}
+.step-container .steps .step.step-centerline {
+  flex-direction: column-reverse;
+  justify-content: center;
 }
 .step-container .steps .step.step-centerline.actived:after{
   background:#1a75ff;
@@ -74,23 +110,16 @@
   width:100%;
   background:#a6a6a6;
   position:absolute;
-  bottom:0%;
+  bottom:15px;
   left:50%;
   z-index:-1;
 }
 .step_content{
   clear:both;
   margin:auto;
-}
-.step_content.centerline{
+  width:90%;
   height:80px;
   padding:20px;
-  width:80%;
-}
-.step_content.underline {
-  height:120px;
-  padding:10px;
-  width:100%;
 }
 .step-container .step-footer {
   width: 100%;

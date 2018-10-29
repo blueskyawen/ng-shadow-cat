@@ -2,7 +2,7 @@
 <p>开关-switch，用于表示项目的启用或禁止</p>
 <h3>1. 步骤条一</h3>
 <div style="margin-top: 20px;">
-  <nc-step [type]="'underline'" [(stepIndex)]="curStepIndex" [stepItems]="stepItems">
+  <nc-step [type]="'underline'" [(stepIndex)]="curStepIndex" [stepItems]="stepItems" [name]="'step01'">
     <div class="content">
       <div *ngIf="curStepIndex === 0">步骤1</div>
       <div *ngIf="curStepIndex === 1">步骤2</div>
@@ -60,7 +60,7 @@
 
 <h3>2. 步骤条二</h3>
 <div style="margin-top: 20px;">
-  <nc-step [type]="'centerline'" [(stepIndex)]="curStepIndex" [stepItems]="stepItems">
+  <nc-step [type]="'centerline'" [(stepIndex)]="curStepIndex" [stepItems]="stepItems"  [name]="'step02'">
     <div class="content">
       <div *ngIf="curStepIndex === 0">步骤1</div>
       <div *ngIf="curStepIndex === 1">步骤2</div>
