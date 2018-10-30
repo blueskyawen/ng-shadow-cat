@@ -16,7 +16,6 @@
   position: absolute;
   font-size: 24px;
   color:#999;
-  cursor: pointer;
   align-items: center;
   width:20px;
   background: #fff;
@@ -25,6 +24,10 @@
 .step-container .steps-container .step-oper:hover {
   background: #f2f2f2;
   color:#666;
+  cursor: pointer;
+}
+.step-container .steps-container .step-oper.disbaled:hover {
+  cursor: not-allowed;
 }
 .step-container .steps-container .step-prev {
   left:0;
@@ -38,6 +41,8 @@
   width:100%;
   display: inline-flex;
   flex-wrap: nowrap;
+  margin-left: 0;
+  transition:margin-left 300ms;
 }
 .step-container .steps .step {
   display:inline-flex;
@@ -59,6 +64,8 @@
   white-space:nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.step-container .steps .step.step-centerline .step-label {
   width: 100%;
 }
 .step-container .steps .step.step-underline {
@@ -122,8 +129,8 @@
   padding:20px;
 }
 .step-container .step-footer {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: flex-start;
-  padding-left: 5px;
+  margin: auto;
 }

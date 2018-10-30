@@ -16,6 +16,7 @@ export class CardComponent {
   callbackFun : any = () => {alert('错误！请进行一些更改');};
   tabItems : any[] = [];
   currentTab : string;
+  cards : any[] = [1,2,3,4,5,6,7,8]
 
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},

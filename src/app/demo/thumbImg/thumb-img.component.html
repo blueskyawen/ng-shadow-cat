@@ -1,14 +1,18 @@
-<div class="image-container">
-  <div class="e-image" *ngFor="let image of images">
-    <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
-    <div class="img-footer">
-      <div class="img-name">{{image.alt}}</div>
-      <div class="img-description" title="查看更多">{{image.title}}</div>
+<div class="nc-container" style="border:none;">
+  <div class="nc-row nc-image-container">
+    <div class="nc-col nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2" *ngFor="let image of images">
+      <div class="nc-e-image">
+        <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
+        <div class="nc-img-footer">
+          <div class="nc-img-name">{{image.alt}}</div>
+          <div class="nc-img-description" title="查看更多">{{image.title}}</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<nc-dialog *ngIf="isShow" [header]="selectImg.alt" [style]="'normal'" [size]="'big'" [(isShow)]="isShow">
+<nc-dialog *ngIf="isShow" [header]="selectImg.alt" [style]="'normal'" [(isShow)]="isShow">
   <div class="content">
     <img class="selet-Img" [src]="selectImg.src" [alt]="selectImg.alt" />
   </div>
@@ -16,3 +20,31 @@
     <nc-button [type]="'cancel'" (click)="closeModal()">取消</nc-button>
   </div>
 </nc-dialog>
+
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [type]="'card'" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:500px;">
+    <div class="nc-container" style="border:none;">
+      <div class="nc-row nc-image-container">
+        <div class="nc-col nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2" *ngFor="let image of images">
+          <div class="nc-e-image">
+            <img (click)="openModal(image)" [src]="src" [alt]="'alt'" />
+            <div class="nc-img-footer">
+              <div class="nc-img-name">{{alt}}</div>
+              <div class="nc-img-description" title="查看更多">{{title}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:500px;">
+    images : any[] = [
+      {src:'111',alt: '222',title:'333'}
+      ];
+    </textarea>
+  </div>
+</nc-tab>

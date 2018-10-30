@@ -1,9 +1,14 @@
+.nc-card-container {
+    flex-wrap: wrap;
+    height:auto;
+}
 .default-card {
     display:flex;
     flex-direction:column;
     border:solid 1px #999;
     width:100%;
     border-radius:4px;
+    margin: 5px;
 }
 .default-card:hover{
     box-shadow: 1px 1px 10px 3px #ccc;

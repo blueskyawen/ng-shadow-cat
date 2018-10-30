@@ -1,8 +1,9 @@
 <h1>卡片</h1>
 
 <div class="nc-container" style="border:none;">
-    <div class="nc-row nc-row2">
-        <div class="nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-6 nc-lg-col-4 nc-xl-col-4">
+    <div class="nc-row nc-card-container">
+        <div class="nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-6 nc-lg-col-4 nc-xl-col-3"
+            *ngFor="let card of cards">
             <div class="default-card">
                 <div class="card-header">
                     <div class="header-title">动态切换</div>
@@ -23,3 +24,40 @@
         </div>
     </div>
 </div>
+
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [type]="'card'" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:500px;">
+    <div class="nc-container" style="border:none;">
+        <div class="nc-row nc-card-container">
+            <div class="nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-6 nc-lg-col-4 nc-xl-col-3"
+                 *ngFor="let card of cards">
+                <div class="default-card">
+                    <div class="card-header">
+                        <div class="header-title">动态切换</div>
+                        <div class="header-action">上操作</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+                        </div>
+                        <div class="card-description">
+                            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="footer-action">下操作</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:500px;">
+        cards : any[] = []
+    </textarea>
+    </div>
+</nc-tab>

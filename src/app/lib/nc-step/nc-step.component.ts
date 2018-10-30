@@ -2,7 +2,6 @@
  * Created by liuxuwen on 18-6-7.
  */
 import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges,AfterViewInit } from '@angular/core';
-declare var $: any;
 
 @Component({
   selector: 'nc-step',
@@ -14,14 +13,16 @@ export class NcStepComponent  implements OnInit, AfterViewInit {
   @Input() stepItems: any[] = [];
   @Input() stepIndex : number = 0;
   @Output() stepIndexChange = new EventEmitter();
-  @Input() name: string;
+  @Input() id: string;
   stepClass: any = {};
-  outWidth : any = 0;
-  innerWidth : any = 0;
-  $stepCon : any;
-  $stepss : any;
+  scrollWidth : any = 0;
+  stepContainWidth : any = 0;
+  stepContainer : any;
+  stepss : any;
+  stepOperPrev : any;
+  stepOperNext : any;
   offset : any = 0;
-  leftWidth : any = 0;
+  overWidth : any = 0;
 
   constructor() {
   }
@@ -33,51 +34,62 @@ export class NcStepComponent  implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.regetWidths();
     let that = this;
-    $(".steps-container[title="+this.name+"] .step-prev").click(function() {
-      if((that.leftWidth + that.offset) <= 1) {
+    that.getStepDoms();
+    that.getStepWidths();
+    that.stepOperPrev.addEventListener("click",function() {
+      if((that.overWidth + that.offset) <= 0) {
         return;
       }
-      if((that.leftWidth + that.offset) < 60) {
-        $(this).closest(".steps-container").find(".steps:eq(0)").animate({'margin-left': '-'+that.leftWidth+'px'},300);
-        that.offset = 0 - that.leftWidth;
+      if((that.overWidth + that.offset) < 60) {
+        that.stepss.style.marginLeft = "-"+that.overWidth+"px";
+        that.offset = 0 - that.overWidth;
+        that.stepOperPrev.classList.add("disbaled");
       } else {
-        $(this).closest(".steps-container").find(".steps:eq(0)").animate({'margin-left': '-=60px'},300);
         that.offset -= 60;
+        that.stepss.style.marginLeft = that.offset+"px";
+        that.stepOperPrev.classList.remove("disbaled");
       }
-    });
-    $(".steps-container[title="+this.name+"] .step-next").click(function() {
-      if(that.offset >= 0) {
-        return;
-      }
-      if((60 + that.offset) < 0) {
-        $(this).closest(".steps-container").find(".steps:eq(0)").animate({'margin-left': '+=60px'},300);
-        that.offset += 60;
-      } else {
-        $(this).closest(".steps-container").find(".steps:eq(0)").animate({'margin-left': '0px'},300);
-        that.offset = 0;
-      }
-    });
-    $(window).resize(function(){
-      that.regetWidths();
-    });
+    },false);
+    that.stepOperNext.addEventListener("click",function() {
+          if(that.offset >= 0) {
+            return;
+          }
+          if((60 + that.offset) < 0) {
+            that.offset += 60;
+            that.stepss.style.marginLeft = that.offset+"px";
+            that.stepOperNext.classList.remove("disbaled");
+          } else {
+            that.stepss.style.marginLeft = "0px";
+            that.offset = 0;
+            that.stepOperNext.classList.add("disbaled");
+          }
+      },false);
+      window.addEventListener("resize",function() {
+        that.getStepWidths();
+      },false);
   }
 
-  regetWidths() {
-    this.innerWidth = 0;
-    this.$stepCon = $(".steps-container:eq(0)");
-    this.$stepss = $(".steps:eq(0) .step");
-    this.outWidth = this.$stepCon.width();
-    for(let i=0;i < this.$stepss.length;i++) {
-      this.innerWidth += this.$stepss.eq(i).outerWidth(false);
-    }
-    this.leftWidth = this.innerWidth - this.outWidth;
-    if(this.leftWidth > 0) {
-      $(".steps-container[title="+this.name+"] .step-oper").css('display','inline-flex');
+  getStepWidths() {
+    this.scrollWidth = this.stepss.scrollWidth;
+    this.stepContainWidth = this.stepContainer.clientWidth- 40;
+    this.overWidth = this.scrollWidth - this.stepContainWidth;
+    if(this.overWidth > 0) {
+      this.stepOperPrev.style.display = "inline-flex";
+      this.stepOperNext.style.display = "inline-flex";
     } else {
-      $(".steps-container[title="+this.name+"] .step-oper").css('display','none')
+      this.stepOperPrev.style.display = "none";
+      this.stepOperNext.style.display = "none";
+      this.stepss.style.marginLeft = "0px";
+      this.offset = 0;
     }
+  }
+
+  getStepDoms() {
+    this.stepContainer = document.getElementById(this.id);
+    this.stepss = document.getElementById(this.id).getElementsByClassName("steps")[0];
+    this.stepOperPrev = this.stepContainer.getElementsByClassName("step-prev")[0];
+    this.stepOperNext = this.stepContainer.getElementsByClassName("step-next")[0];
   }
 
   onClickStep(index : number) {
