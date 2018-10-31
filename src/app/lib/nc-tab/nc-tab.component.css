@@ -1,91 +1,121 @@
-.tabka {
+.nc-nav-tabs {
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.tabka ul.tabss {
-  display: block;
-  padding: 0;
-  margin: 20px 0;
-  position: relative;
+.nc-nav-tabs .tabbars-container {
+  width: 96%;
+  margin:auto;
+  position:relative;
+  overflow-x: hidden;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
-.first-tab ul.tabss li {
-  display: inline-block;
-  float: left;
-  height:30px;
-  line-height:30px;
-  padding: 8px 30px;
-  text-align:center;
-  box-sizing: content-box;
-  border-bottom: 1px solid #ddd;
+.nc-nav-tabs .tabbars-container .tab-oper {
+  display: inline-flex;
+  height:100%;
+  position: absolute;
+  font-size: 24px;
+  color:#999;
+  align-items: center;
+  width:20px;
+  background: #fff;
+  z-index: 2;
 }
-.tabka ul.tabss li.disabled:hover {
-  cursor:not-allowed;
+.nc-nav-tabs .tabbars-container .tab-oper:hover {
   background: #f2f2f2;
+  color:#666;
+  cursor: pointer;
 }
-.tabka ul.tabss li.active {
-  border-bottom:none;
-  border-left:1px solid #ddd;
-  border-right:1px solid #ddd;
-  border-top:2px solid #3366ff;
-  padding: 7px 30px;
+.nc-nav-tabs .tabbars-container .tab-oper.disbaled:hover {
+  cursor: not-allowed;
 }
-.tabka ul.tabss li.noactive:not(:last-child):not(.disabled):hover {
-  cursor:pointer;
-  background:#e5ffff;
+.nc-nav-tabs .tabbars-container .tab-prev {
+  left:0;
+  justify-content: flex-start;
 }
-.tabka .tabss li:last-child {
-  width:100%;
+.nc-nav-tabs .tabbars-container .tab-next {
+  right:0;
+  justify-content: flex-end;
+}
+.nc-nav-tabs ul.tab-bars {
+  list-style:none;
+  //width:100%;
+  display: inline-flex;
+  border-bottom:solid 1px #ddd;
+  padding:0;
+  flex-wrap: nowrap;
+  margin-left: 0;
+  transition:margin-left 300ms;
+}
+.nc-nav-tabs ul.tab-bars li.tabItem {
   display:inline-block;
-  position:absolute;
+  padding: 8px 20px;
+  background:#fff;
+  box-sizing:border-box;
+  min-width: 100px;
+  text-align: center;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.tabka .tab-content{
-  min-height:80px;
-  width:100%;
-  display:block;
-}
-.tab-line ul.tabss li.active {
-  border: none;
-  border-bottom:3px solid #3366ff;
-  padding:8px 30px;
-}
-.tab-line ul.tabss li.noactive:not(:last-child):not(.disabled):hover {
-  cursor:pointer;
-  background:#e5ffff;
+.nc-nav-tabs ul.tab-bars li:not(.tabItem) {
+  display:inline-block;
+  background:#fff;
+  width: 100%;
 }
 
-.second-tab ul.tabss li{
-  display: inline-block;
-  float: left;
-  height:20px;
-  line-height:20px;
-  padding: 8px 30px;
-  text-align:center;
-  box-sizing: content-box;
-  cursor:pointer;
+.nc-nav-tabs ul.tab-bars li.tabItem.disabled {
+  cursor:not-allowed;
+  background:#e6e6e6;
+  opacity:0.6;
 }
-.second-tab ul.tabss li:not(:last-child) {
-  border: 1px solid #ddd;
+.nc-nav-tabs ul.tab-bars li.tabItem:not(.disabled):hover {
+  cursor:pointer;
+  background:#e5ffff;
+}
+.nc-nav-tabs ul.tab-bars li.active {
+  border-left:1px solid #ddd;
+  border-right:1px solid #ddd;
+  border-top:3px solid #3366ff;
+  margin-bottom: -1px;
+}
+.nc-nav-tabs .tab-content {
+  height:150px;
+  width:96%;
+  display:block;
+  padding:20px 50px;
+}
+.nc-nav-tabs.tab-down ul.tab-bars li.tabItem.active {
+  border:none;
+  border-bottom:3px solid #3366ff;
+  margin-bottom: -1px;
+}
+
+.nc-nav-tabs.second-tab ul.tab-bars {
+  border:none;
+}
+.nc-nav-tabs.second-tab ul.tab-bars li.tabItem {
+  display: flex;
+  padding: 8px 20px;
+  background:#fff;
+  box-sizing:border-box;
+  border: 1px solid #999;
   border-right:none;
 }
-.second-tab ul.tabss li:last-child {
-  border: 1px solid #ddd;
-  border-radius:0 4px 4px 0/0 4px 4px 0;
-  width: auto;
+.nc-nav-tabs.second-tab ul.tab-bars li.tabItem:last-child {
+  border-right: 1px solid #999;
+  border-radius:0 4px 4px 0;
 }
-.second-tab ul.tabss li:first-child {
-  border-radius:4px 0 0 4px/4px 0 0 4px;
+.nc-nav-tabs.second-tab ul.tab-bars li.tabItem:first-child {
+  border-radius:4px 0 0 4px;
 }
-.second-tab ul.tabss li.active {
+.nc-nav-tabs.second-tab ul.tab-bars li.tabItem.active {
   background:#3366ff;
   border-color:#3366ff;
   color:#fff;
+  margin-bottom: 0;
 }
-.second-tab ul.tabss li.noactive:not(.disabled):hover {
-  background:#ccf5ff;
-}
-.tabka ul.tabss li.disabled:hover {
-  cursor:not-allowed;
-  background: #f2f2f2;
-}
+

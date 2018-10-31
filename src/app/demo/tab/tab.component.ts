@@ -27,7 +27,7 @@ export class TabComponent {
 
   constructor() {
     this.tabItems1 = [{name:'苹果',label:'apple',isActive:true,isDisable:false},
-      {name:'小米',label:'xiaomi',isActive:false,isDisable:false},
+      {name:'小米-小米-小米-小米-小米-小米',label:'xiaomi',isActive:false,isDisable:false},
       {name:'欧普',label:'oppo',isActive:false,isDisable:false},
       {name:'维沃',label:'vivo',isActive:false,isDisable:false},
       {name:'中兴',label:'zte',isActive:false,isDisable:false}];
@@ -44,7 +44,9 @@ export class TabComponent {
     this.currentTab4= this.tabItems2[0].label;
     this.tabItems5 = [{name:'苹果',label:'apple',isActive:true,isDisable:false},
       {name:'小米',label:'xiaomi',isActive:false,isDisable:true},
-      {name:'欧普',label:'oppo',isActive:false,isDisable:false}];
+      {name:'欧普',label:'oppo',isActive:false,isDisable:false},
+      {name:'维沃',label:'vivo',isActive:false,isDisable:false},
+      {name:'中兴',label:'zte',isActive:false,isDisable:false}];
     this.currentTab5= this.tabItems5[0].label;
     this.tabItems6 = [{name:'html',label:'html',isActive:true,isDisable:false},
       {name:'typescript',label:'typescript',isActive:false,isDisable:false}];

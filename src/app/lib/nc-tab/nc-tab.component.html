@@ -1,12 +1,16 @@
-<div class="tabka"
-     [ngClass]="{'first-tab':tabStyle === 'firstTab','tab-line':type === 'line','second-tab':tabStyle === 'secondTab'}">
-  <ul class="tabss">
-    <li *ngFor="let tab of tabs" (click)="select(tab)" class="tabItem"
-        [ngClass]="{'active':tab.isActive,'noactive':!tab.isActive,'disabled':tab.isDisable}">
-      {{tab.name}}
-    </li>
-    <li *ngIf="tabStyle === 'firstTab'"></li>
-  </ul>
+<div class="nc-nav-tabs"
+     [ngClass]="{'tab-top':tabStyle === 'firstTab','tab-down':type === 'line','second-tab':tabStyle === 'secondTab'}">
+  <div class="tabbars-container" [id]="id">
+    <span class="tab-oper tab-prev">&lt;</span>
+    <span class="tab-oper tab-next">&gt;</span>
+    <ul class="tab-bars">
+      <li *ngFor="let tab of tabs" (click)="select(tab)" class="tabItem"
+          [ngClass]="{'active':tab.isActive,'noactive':!tab.isActive,'disabled':tab.isDisable}" [title]="tab.name">
+        {{tab.name}}
+      </li>
+      <li></li>
+    </ul>
+  </div>
   <div class="tab-content">
     <ng-content></ng-content>
   </div>

@@ -1,7 +1,7 @@
 <h2 class="title">Tab页</h2>
 <p>Tab用于在不同视图框中根据选择来呈现不同的内容</p>
 <h3>1. 卡片式</h3>
-<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1" [id]="'tab01'">
   <div *ngIf="currentTab1 === 'apple'">
     苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
   </div>
@@ -19,10 +19,10 @@
   </div>
 </nc-tab>
 <p>使用方式:</p>
-<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2" [id]="'aaa'">
   <div *ngIf="currentTab2 === 'html'">
-    <textarea style="height:290px;">
-      <nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+    <textarea style="height:200px;">
+      <nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1" [id]="'tab011'">
         <div *ngIf="currentTab1 === 'apple'">
           苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
         </div>
@@ -42,7 +42,7 @@
     </textarea>
   </div>
   <div *ngIf="currentTab2 === 'typescript'">
-    <textarea style="height:290px;">
+    <textarea style="height:200px;">
       this.tabItems1 = [{name:'苹果',label:'apple',isActive:true,isDisable:false},
         {name:'小米',label:'xiaomi',isActive:false,isDisable:false},
         {name:'欧普',label:'oppo',isActive:false,isDisable:false},
@@ -52,8 +52,9 @@
     </textarea>
   </div>
 </nc-tab>
-<p class="header">禁止某个tab项</p>
-<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
+<br/>
+<h4 class="header">禁止某个tab项</h4>
+<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3" [id]="'tab02'">
   <div *ngIf="currentTab3 === 'apple'">
     苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
   </div>
@@ -65,10 +66,10 @@
   </div>
 </nc-tab>
 <p>使用方式:</p>
-<nc-tab [tabs]="tabItems4" [(selectTab)] = "currentTab4">
+<nc-tab [tabs]="tabItems4" [(selectTab)] = "currentTab4" [id]="'nnn'">
   <div *ngIf="currentTab4 === 'html'">
     <textarea style="height:150px;">
-      <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+      <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab" [id]="'tab012'">
         <div *ngIf="currentTab4 === 'apple'">
           text...</div>
         <div *ngIf="currentTab4 === 'xiaomi'">
@@ -89,7 +90,7 @@
 </nc-tab>
 
 <h3>2. 线条式</h3>
-<nc-tab [tabs]="tabItems5" [type]="'line'" [(selectTab)] = "currentTab5">
+<nc-tab [tabs]="tabItems5" [type]="'line'" [(selectTab)] = "currentTab5" [id]="'tab03'">
   <div *ngIf="currentTab5 === 'apple'">
     苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
   </div>
@@ -101,10 +102,10 @@
   </div>
 </nc-tab>
 <p>使用方式:</p>
-<nc-tab [tabs]="tabItems6" [type]="'line'" [(selectTab)] = "currentTab6">
+<nc-tab [tabs]="tabItems6" [type]="'line'" [(selectTab)] = "currentTab6" [id]="'vvv'">
   <div *ngIf="currentTab6 === 'html'">
     <textarea style="height:200px;">
-      <nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
+      <nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab"  [id]="'tab013'">
         <div *ngIf="currentTab === 'apple'">
           苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
         </div>
@@ -128,7 +129,7 @@
 </nc-tab>
 
 <h3>3. 二级Tab</h3>
-<nc-tab [tabs]="tabItems7" [tabStyle]="'secondTab'" [(selectTab)] = "currentTab7">
+<nc-tab [tabs]="tabItems7" [tabStyle]="'secondTab'" [(selectTab)] = "currentTab7"  [id]="'tab04'">
   <div *ngIf="currentTab7 === 'apple'">
     苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
   </div>
@@ -146,15 +147,15 @@
   </div>
 </nc-tab>
 <p>使用方式:</p>
-<nc-tab [tabs]="tabItems6" [type]="'card'" [(selectTab)] = "currentTab6">
+<nc-tab [tabs]="tabItems8" [type]="'card'" [(selectTab)] = "currentTab8" [id]="'ddd'">
   <div *ngIf="currentTab6 === 'html'">
     <textarea style="height:120px;">
-      <nc-tab [tabs]="tabItems" [tabStyle]="'secondTab'" [(selectTab)] = "currentTab">
+      <nc-tab [tabs]="tabItems" [tabStyle]="'secondTab'" [(selectTab)] = "currentTab"  [id]="'tab014'">
         同上...
       </nc-tab>
     </textarea>
   </div>
-  <div *ngIf="currentTab6 === 'typescript'">
+  <div *ngIf="currentTab8 === 'typescript'">
     <textarea style="height:120px;">
       this.tabItems = [{name:'苹果',label:'apple',isActive:true,isDisable:false},
       {name:'小米',label:'xiaomi',isActive:false,isDisable:false},
@@ -194,6 +195,11 @@
       <td>selectTab</td>
       <td>当前选择的tab页</td>
       <td>空</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>步骤条的id</td>
+      <td>string</td>
     </tr>
     </tbody>
   </table>
