@@ -5,15 +5,11 @@ import { Component,OnInit } from '@angular/core';
 
 @Component({
   selector: 'demo-pager',
-  templateUrl: './pager.component.html',
-  styleUrls: ['./pager.component.css']
+  templateUrl: './pager.component.html'
 })
 export class PagerComponent {
-  titles : any[] = [{text:'成功！很好地完成了提交。',type: 'success'},
-    {text:'信息！请注意这个信息。',type: 'info'},
-    {text:'警告！请不要提交。',type: 'warn'},
-    {text:'错误！请进行一些更改。',type: 'danger'}];
-  callbackFun : any = () => {alert('错误！请进行一些更改');};
+  pagers : any[] = [{title:'上一页',callback: () => {window.alert('上一页');}},
+    {title:'下一页',callback: () => {window.alert('下一页');}}];
   tabItems : any[] = [];
   currentTab : string;
 

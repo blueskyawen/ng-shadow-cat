@@ -13,8 +13,10 @@ export class NcAlertComponent  implements OnInit {
   @Input() callback : any;
   @Input() title : string = '成功！很好地完成了提交!';
   @Input() width : string = '500px';
+  @Input() dims : boolean = false;
   colorClasses : any = {};
   alertStyle : any = {};
+  isDisplay : boolean = true;
 
   constructor() {}
 
@@ -28,5 +30,9 @@ export class NcAlertComponent  implements OnInit {
     if(this.callback) {
       (this.callback)();
     }
+  }
+
+  closeit() {
+    this.isDisplay = false;
   }
 }

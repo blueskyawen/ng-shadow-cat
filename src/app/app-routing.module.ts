@@ -11,7 +11,7 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   MutilSelectComponent,CarouselComponent,TransferComponent,TreeComponent,InputComponent,
   GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
   NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
-  ListGroupComponent,AboutNgCatComponent} from './demo/index';
+  ListGroupComponent,AboutNgCatComponent,LayoutComponent} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -44,7 +44,8 @@ const appRoutes: Routes = [
       { path: 'input', component: InputComponent },
       { path: 'dropdown', component: DropdownComponent},
       { path: 'alert', component: AlertComponent},
-      { path: 'label', component: LabelComponent}
+      { path: 'label', component: LabelComponent},
+      { path: 'pager', component: PagerComponent}
     ]
   },
   {
@@ -54,10 +55,10 @@ const appRoutes: Routes = [
       { path: 'card', component: CardComponent},
       { path: 'navbar', component: NavbarComponent},
       { path: 'pageHeader', component: PageHeaderComponent},
-      { path: 'pager', component: PagerComponent},
       { path: 'thumbimg', component: ThumbImgComponent},
       { path: 'badge', component: BadgeComponent},
-      { path: 'listGroup', component: ListGroupComponent}
+      { path: 'listGroup', component: ListGroupComponent},
+      { path: 'flexLayout', component: LayoutComponent}
     ]
   },
   {

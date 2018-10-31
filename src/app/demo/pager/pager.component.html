@@ -1,39 +1,50 @@
-<ul class="pager">
-  <li><a href="#">上一页</a></li>
-  <li><a href="#">下一页</a></li>
-</ul>
-<ul class="pager page-center">
-  <li class="disabled"><a href="#">上一页</a></li>
-  <li><a href="#">下一页</a></li>
-</ul>
-<ul class="pager page-end">
-  <li><a href="#">上一页</a></li>
-  <li><a href="#">下一页</a></li>
-</ul>
-<ul class="pager page-between">
-  <li><a href="#">&larr; 上一页</a></li>
-  <li><a href="#">下一页 &rarr;</a></li>
-</ul>
+<h2 class="title">翻页条</h2>
+<p>翻页条,一种无序列表,用于文章的上下页翻动</p>
+<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
+  <nc-pager></nc-pager>
+  <nc-pager [titles]="pagers"></nc-pager>
+  <nc-pager [titles]="pagers" [place]="'center'"></nc-pager>
+  <nc-pager [titles]="pagers" [place]="'end'"></nc-pager>
+  <nc-pager [titles]="pagers" [place]="'between'"></nc-pager>
+</div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
-    <textarea style="height:240px;">
-    <ul class="pager">
-      <li><a href="#">上一页</a></li>
-      <li><a href="#">下一页</a></li>
-    </ul>
-    <ul class="pager page-center">
-      <li class="disabled"><a href="#">上一页</a></li>
-      <li><a href="#">下一页</a></li>
-    </ul>
-    <ul class="pager page-end">
-      <li><a href="#">上一页</a></li>
-      <li><a href="#">下一页</a></li>
-    </ul>
-    <ul class="pager page-between">
-      <li><a href="#">&larr; 上一页</a></li>
-      <li><a href="#">下一页 &rarr;</a></li>
-    </ul>
+    <textarea style="height:150px;">
+    <nc-pager></nc-pager>
+    <nc-pager [titles]="pagers"></nc-pager>
+    <nc-pager [titles]="pagers" [place]="'center'"></nc-pager>
+    <nc-pager [titles]="pagers" [place]="'end'"></nc-pager>
+    <nc-pager [titles]="pagers" [place]="'between'"></nc-pager>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:150px;">
+    pagers : any[] = [{title:'上一页',callback: () => {window.alert('上一页');}},
+                    {title:'下一页',callback: () => {window.alert('下一页');}}];
     </textarea>
   </div>
 </nc-tab>
+
+<h3>参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>titles</td>
+    <td>上下页数组，包括：文本和操作方法</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>place</td>
+    <td>上下页分布位置，start/center/end/between</td>
+    <td>start</td>
+  </tr>
+  </tbody>
+</table>

@@ -21,13 +21,13 @@ export class SidebarPatternComponent implements OnInit {
   selectSideName : any = '';
 
   constructor(private router : Router) {
-    this.sideTypes = [{'name':'导航','label':'navbar','isActive':false,'url':'/navbar'},
+    this.sideTypes = [//{'name':'导航','label':'navbar','isActive':false,'url':'/navbar'},
       {'name':'页面标题','label':'pageheader','isActive':false,'url':'/pageHeader'},
       {'name':'缩略图','label':'thumbnail','isActive':false,'url':'/thumbimg'},
-      {'name':'分页','label':'pager','isActive':false,'url':'/pager'},
       {'name':'徽章','label':'badge','isActive':false,'url':'/badge'},
       {'name':'列表组','label':'listGroup','isActive':false,'url':'/listGroup'},
-      {'name':'卡片','label':'card','isActive':false,'url':'/card'}];
+      {'name':'卡片','label':'card','isActive':false,'url':'/card'},
+      {'name':'Flex布局','label':'flex','isActive':false,'url':'/flexLayout'}];
   }
 
   ngOnInit() {

@@ -42,6 +42,7 @@ import {ThumbImgComponent} from './thumbImg/thumb-img.component';
 import {BadgeComponent} from './badge/badge.component';
 import {ListGroupComponent} from './list-group/list-group.component';
 import {AboutNgCatComponent} from './about-ngcat/about-ngcat.component';
+import {LayoutComponent} from './layout/layout.component';
 
 @NgModule({
   imports: [CommonModule,LibModule],
@@ -52,7 +53,7 @@ import {AboutNgCatComponent} from './about-ngcat/about-ngcat.component';
     MutilSelectComponent,CarouselComponent,TransferComponent,TreeComponent,InputComponent,
     GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
-    ListGroupComponent,AboutNgCatComponent],
+    ListGroupComponent,AboutNgCatComponent,LayoutComponent],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -60,6 +61,6 @@ import {AboutNgCatComponent} from './about-ngcat/about-ngcat.component';
     MutilSelectComponent,CarouselComponent,TransferComponent,TreeComponent,InputComponent,
     GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
-    ListGroupComponent,AboutNgCatComponent]
+    ListGroupComponent,AboutNgCatComponent,LayoutComponent]
 })
 export class DemoModule { }

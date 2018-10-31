@@ -25,7 +25,7 @@ export class AppComponent {
     } else if(this.currentMenu.value === 'about') {
       this.router.navigate(['/about/about']);
     } else if(this.currentMenu.value === 'pattern') {
-      this.router.navigate(['/pattern/navbar']);
+      this.router.navigate(['/pattern/pageHeader']);
     }
     this.isShowActicle = false;
     setTimeout(() => {

@@ -39,4 +39,7 @@ export * from './thumbImg/thumb-img.component';
 export * from './badge/badge.component';
 export * from './list-group/list-group.component';
 export * from './about-ngcat/about-ngcat.component';
+export * from './layout/layout.component';
+
+
 

@@ -5,7 +5,7 @@
         <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
         <div class="nc-img-footer">
           <div class="nc-img-name">{{image.alt}}</div>
-          <div class="nc-img-description" title="查看更多">{{image.title}}</div>
+          <div class="nc-img-description" title="查看更多" (click)="image.callback()">{{image.title}}</div>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
             <img (click)="openModal(image)" [src]="src" [alt]="'alt'" />
             <div class="nc-img-footer">
               <div class="nc-img-name">{{alt}}</div>
-              <div class="nc-img-description" title="查看更多">{{title}}</div>
+              <div class="nc-img-description" title="查看更多" (click)="image.callback()">{{title}}</div>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
   <div *ngIf="currentTab === 'typescript'">
     <textarea style="height:500px;">
     images : any[] = [
-      {src:'111',alt: '222',title:'333'}
+      {src:'111',alt: '222',title:'333',callback: () => {..}}
       ];
     </textarea>
   </div>

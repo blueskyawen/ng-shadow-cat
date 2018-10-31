@@ -1,0 +1,57 @@
+<h2 class="title">Flex布局</h2>
+<p>Flex布局,常用的页面布局</p>
+<br/>
+<div class="nc-layout">
+    <div class="nc-header content-center">header</div>
+    <div class="nc-content content-center">content</div>
+    <div class="nc-footer content-center">footer</div>
+</div>
+<br/>
+<div class="nc-layout">
+    <div class="nc-header content-center">header</div>
+    <div class="nc-layout nc-flex-direction-row">
+        <div class="nc-sider content-center">sider</div>
+        <div class="nc-content content-center">content</div>
+    </div>
+    <div class="nc-footer content-center">footer</div>
+</div>
+<br/>
+<div class="nc-layout nc-flex-direction-row">
+    <div class="nc-sider content-center">sider</div>
+    <div class="nc-layout">
+        <div class="nc-header content-center">header</div>
+        <div class="nc-content content-center">content</div>
+        <div class="nc-footer content-center">footer</div>
+    </div>
+</div>
+
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:300px;">
+    <div class="nc-layout">
+        <div class="nc-header">header</div>
+        <div class="nc-content">content</div>
+        <div class="nc-footer">footer</div>
+    </div>
+
+    <div class="nc-layout">
+        <div class="nc-header">header</div>
+        <div class="nc-layout nc-flex-direction-row">
+            <div class="nc-sider">sider</div>
+            <div class="nc-content">content</div>
+        </div>
+        <div class="nc-footer">footer</div>
+    </div>
+
+    <div class="nc-layout">
+        <div class="nc-sider">sider</div>
+        <div class="nc-layout nc-flex-direction-row">
+            <div class="nc-header header-heigth">header</div>
+            <div class="nc-content content-heigth">content</div>
+            <div class="nc-footer footer-heigth">footer</div>
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>

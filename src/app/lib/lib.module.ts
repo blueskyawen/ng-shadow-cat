@@ -33,6 +33,7 @@ import {NcInputComponent,NcFormGroupComponent,NcFormLabelComponent} from './nc-i
 import {NcDropdownComponent} from './nc-dropdown/nc-dropdown.component';
 import {NcAlertComponent} from './nc-alert/nc-alert.component';
 import {NcLabelComponent} from './nc-label/nc-label.component';
+import {NcPagerComponent} from './nc-pager/nc-pager.component';
 
 @NgModule({
   imports: [CommonModule],
@@ -42,13 +43,13 @@ import {NcLabelComponent} from './nc-label/nc-label.component';
     NcPanelComponent,NcRangeSlideComponent,NcProgressComponent,NcProportionComponent,
     NcDialogComponent,NcStepComponent,NcSelectComponent,NcMutilSelectComponent,NcCarouselComponent,
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
-    NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent],
+    NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
     NcPanelComponent,NcRangeSlideComponent,NcProgressComponent,NcProportionComponent,
     NcDialogComponent,NcStepComponent,NcSelectComponent,NcMutilSelectComponent,NcCarouselComponent,
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
-    NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent]
+    NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent]
 })
 export class LibModule { }
