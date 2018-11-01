@@ -40,6 +40,7 @@ export * from './badge/badge.component';
 export * from './list-group/list-group.component';
 export * from './about-ngcat/about-ngcat.component';
 export * from './layout/layout.component';
+export * from './quick-start/quick-start.component';
 
 
 

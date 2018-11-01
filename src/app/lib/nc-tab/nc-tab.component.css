@@ -80,13 +80,13 @@
   border-left:1px solid #ddd;
   border-right:1px solid #ddd;
   border-top:3px solid #3366ff;
-  margin-bottom: -1px;
+  margin-bottom: -2px;
 }
 .nc-nav-tabs .tab-content {
-  height:150px;
   width:96%;
   display:block;
-  padding:20px 50px;
+  padding:20px;
+  box-sizing: border-box;
 }
 .nc-nav-tabs.tab-down ul.tab-bars li.tabItem.active {
   border:none;

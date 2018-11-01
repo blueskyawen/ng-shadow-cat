@@ -14,7 +14,7 @@ export class NcTabComponent implements OnInit, AfterViewInit {
   @Input() tabs : any[] = [];
   @Input() selectTab :string;
   @Output() selectTabChange = new EventEmitter();
-  @Input() id: string;
+  @Input() id: string = 'uuidddddd';
   spinClasses : any = {};
   scrollWidth : any = 0;
   tabContainWidth : any = 0;
@@ -24,6 +24,7 @@ export class NcTabComponent implements OnInit, AfterViewInit {
   tabOperNext : any;
   offset : any = 0;
   overWidth : any = 0;
+  isShowLast : boolean = false;
 
   constructor() {
   }
@@ -76,12 +77,14 @@ export class NcTabComponent implements OnInit, AfterViewInit {
       this.tabOperPrev.style.display = "inline-flex";
       this.tabOperNext.style.display = "inline-flex";
       this.tabsss.style.width = "auto";
+      this.isShowLast = true;
     } else {
       this.tabOperPrev.style.display = "none";
       this.tabOperNext.style.display = "none";
       this.tabsss.style.marginLeft = "0px";
       this.tabsss.style.width = "100%";
       this.offset = 0;
+      this.isShowLast = false;
     }
   }
 

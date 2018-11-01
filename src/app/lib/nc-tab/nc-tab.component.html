@@ -8,7 +8,7 @@
           [ngClass]="{'active':tab.isActive,'noactive':!tab.isActive,'disabled':tab.isDisable}" [title]="tab.name">
         {{tab.name}}
       </li>
-      <li></li>
+      <li *ngIf="isShowLast"></li>
     </ul>
   </div>
   <div class="tab-content">

@@ -19,7 +19,7 @@ export class SidebarAboutComponent implements OnInit {
 
   constructor(private router : Router) {
     this.sideTypes = [{'name':'关于NgCat','label':'ng-cat','isActive':false,'url':'/about'},
-      {'name':'快速上手','label':'guide','isActive':false,'url':'/www'},
+      {'name':'快速上手','label':'quickstart','isActive':false,'url':'/quickstart'},
       {'name':'栅格系统','label':'grid','isActive':false,'url':'/grid'}];
   }
 

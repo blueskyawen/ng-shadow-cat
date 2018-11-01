@@ -11,7 +11,7 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   MutilSelectComponent,CarouselComponent,TransferComponent,TreeComponent,InputComponent,
   GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
   NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
-  ListGroupComponent,AboutNgCatComponent,LayoutComponent} from './demo/index';
+  ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -66,6 +66,7 @@ const appRoutes: Routes = [
     //component: GridComponent,
     children: [
       { path: 'about', component: AboutNgCatComponent},
+      { path: 'quickstart', component: QuickStartComponent},
       { path: 'grid', component: GridComponent}
     ]
   },
