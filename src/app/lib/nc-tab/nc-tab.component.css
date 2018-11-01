@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 .nc-nav-tabs .tabbars-container .tab-oper {
-  display: inline-flex;
+  display: none;
   height:100%;
   position: absolute;
   font-size: 24px;
