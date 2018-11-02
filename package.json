@@ -12,7 +12,6 @@
     "build_less": "lessc ./src/app/lib/nc-common/nc-shadow-cat.less ./src/app/lib/nc-shadow-cat.css",
     "e2e": "ng e2e"
   },
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blueskyawen/ng-shadow-cat.git"

@@ -1,0 +1,25 @@
+<div class="nc-bar-chart" [ngStyle]="{'height':data.height,'width':data.width}" *ngIf="isShow">
+    <span class="nc-bar-chart-title">{{data.title}}</span>
+    <div class="chart-percent">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <span class="chart-objs">
+        <span class="chart-obj" *ngFor="let option of data.options">
+          <span class="chart-obj-icon" [ngStyle]="{'background':option.color}"></span>
+          <span class="chart-obj-title">{{option.obj}}</span>
+        </span>
+    </span>
+    <div class="chart-bars">
+       <span class="chart-bar" *ngFor="let barOption of barOptions"
+             [ngStyle]="{'width':widthOfperBar}">
+         <span *ngFor="let barItem of barOption.bar_data;let i=index;"
+               [ngStyle]="{'height':barItem,'width':widthOfoneBar,'background':this.data.options[i].color,'opacity':1}">
+         </span>
+       </span>
+    </div>
+</div>

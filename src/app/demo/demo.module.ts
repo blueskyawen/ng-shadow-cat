@@ -44,6 +44,8 @@ import {ListGroupComponent} from './list-group/list-group.component';
 import {AboutNgCatComponent} from './about-ngcat/about-ngcat.component';
 import {LayoutComponent} from './layout/layout.component';
 import {QuickStartComponent} from './quick-start/quick-start.component';
+import {BarChartComponent} from './bar-chart/bar-chart.component';
+import {PieChartComponent} from './pie-chart/pie-chart.component';
 
 @NgModule({
   imports: [CommonModule,LibModule],
@@ -54,7 +56,8 @@ import {QuickStartComponent} from './quick-start/quick-start.component';
     MutilSelectComponent,CarouselComponent,TransferComponent,TreeComponent,InputComponent,
     GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
-    ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent],
+    ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
+    PieChartComponent],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -62,6 +65,7 @@ import {QuickStartComponent} from './quick-start/quick-start.component';
     MutilSelectComponent,CarouselComponent,TransferComponent,TreeComponent,InputComponent,
     GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
-    ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent]
+    ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
+    PieChartComponent]
 })
 export class DemoModule { }

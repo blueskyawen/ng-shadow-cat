@@ -41,6 +41,8 @@ export * from './list-group/list-group.component';
 export * from './about-ngcat/about-ngcat.component';
 export * from './layout/layout.component';
 export * from './quick-start/quick-start.component';
+export * from './bar-chart/bar-chart.component';
+export * from './pie-chart/pie-chart.component';
 
 
 

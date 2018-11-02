@@ -1,0 +1,55 @@
+<h2 class="title">饼/环状图</h2>
+<p>饼/环状图，向用户提供了一种数据比例的呈现方式</p>
+<h3>1. 饼状图</h3>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+    <nc-pie-chart *ngFor="let data1 of datas1" [data]="data1"></nc-pie-chart>
+</div>
+<h3>2. 环状图</h3>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+    <nc-pie-chart *ngFor="let data2 of datas2" [data]="data2"></nc-pie-chart>
+</div>
+
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:300px;">
+      <nc-pie-chart *ngFor="let data1 of datas1" [data]="data1"></nc-pie-chart>
+
+      <nc-pie-chart *ngFor="let data2 of datas2" [data]="data2"></nc-pie-chart>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:300px;">
+        datas1 = [
+            {title:'使用率',type:'pie',data:[{title:'已使用',value:37},{title:'总共',value:100}]},
+            {title:'使用率',type:'pie',data:[{title:'已使用',value:75},{title:'总共',value:100}]},
+            {title:'使用率',type:'pie',data:[{title:'已使用',value:90},{title:'总共',value:100}]}
+        ];
+        datas2 = [
+            {title:'使用率',type:'annulus',data:[{title:'已使用',value:37},{title:'总共',value:100}]},
+            {title:'使用率',type:'annulus',data:[{title:'已使用',value:75},{title:'总共',value:100}]},
+            {title:'使用率',type:'annulus',data:[{title:'已使用',value:90},{title:'总共',value:100}]}
+        ];
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>nc-pie-chart--参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>data</td>
+        <td>饼/环状图数据对象</td>
+        <td>空对象</td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>

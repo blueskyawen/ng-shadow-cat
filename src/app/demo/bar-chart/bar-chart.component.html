@@ -1,0 +1,83 @@
+<h2 class="title">柱状图</h2>
+<p>柱状图，向用户提供了一种数据或者分析比例的呈现方式</p>
+<h3>1. 单对象数据</h3>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+    <nc-bar-chart [data]="data1"></nc-bar-chart>
+</div>
+<h3>2. 多对象数据</h3>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+    <nc-bar-chart [data]="data2"></nc-bar-chart>
+</div>
+
+
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:300px;">
+      <nc-bar-chart [data]="data1"></nc-bar-chart>
+
+      <nc-bar-chart [data]="data2"></nc-bar-chart>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:300px;">
+        data1 : any = {
+            title:'单对象数据图表',
+            width:'60%',
+            height:'300px',
+            options:[
+                {obj:'对象1',
+                color:'#70dbdb',
+                data:[{used:15,total:100},{used:30,total:100},
+                    {used:40,total:100},{used:50,total:100},
+                    {used:70,total:100},{used:90,total:100}]
+                }]
+        };
+        data2 : any = {
+            title:'多对象数据图表',
+            width:'80%',
+            height:'400px',
+            options:[
+                {obj:'对象1',
+                color:'#70dbdb',
+                data:[{used:15,total:100},{used:30,total:100},
+                    {used:40,total:100},{used:50,total:100},
+                    {used:70,total:100},{used:90,total:100}]
+                },
+                {obj:'对象2',
+                color:'#00e673',
+                data:[{used:37,total:100},{used:25,total:100},
+                    {used:50,total:100},{used:78,total:100},
+                    {used:95,total:100},{used:70,total:100}]
+                },
+                {obj:'对象3',
+                color:'#ff751a',
+                data:[{used:56,total:100},{used:73,total:100},
+                    {used:18,total:100},{used:89,total:100},
+                    {used:61,total:100},{used:33,total:100}]
+                }
+            ]
+        };
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>nc-bar-chart--参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>data</td>
+        <td>图表数据对象</td>
+        <td>空对象</td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>

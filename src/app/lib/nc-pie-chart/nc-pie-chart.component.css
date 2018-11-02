@@ -1,0 +1,89 @@
+.nc-pie-chart-container {
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    margin:20px;
+}
+.nc-pie-chart {
+    display:inline-block;
+    height:140px;
+    width:140px;
+    background:#fff;
+    border-radius:50%;
+    overflow:hidden;
+    cursor:pointer;
+    position:relative;
+    z-index:0;
+    border:none;
+}
+.nc-pie-chart-container .nc-pie-title {
+    display:inline-block;
+    margin-bottom:20px;
+}
+.nc-pie-chart-container .nc-pie-footer {
+    display:inline-flex;
+    width:100%;
+    justify-content:space-between;
+    margin-top:10px;
+    font-size:12px;
+}
+.nc-pie-chart .nc-pie-left-cont .nc-pie-left {
+    position:absolute;
+    display:inline-block;
+    height:100%;
+    width:50%;
+    left:0%;
+    top:0%;
+    background:#e6e6e6;
+    border:none;
+    z-index:-1;
+}
+.nc-pie-chart .nc-pie-left-cont .nc-pie-left:last-child {
+    transform:rotate(-180deg);
+    transform-origin:center right;
+    transition: transform 500ms linear;
+}
+.nc-pie-chart .nc-pie-right-cont .nc-pie-right {
+    display:inline-block;
+    height:100%;
+    width:50%;
+    background:#4db8ff;
+    position:absolute;
+    left:50%;
+    z-index:-2;
+}
+.nc-pie-chart .nc-pie-right-cont .nc-pie-right:last-child {
+    transform-origin:center left;
+    transition:transform 500ms linear;
+}
+.nc-pie-chart-middle .nc-pie-right-cont .nc-pie-right {
+    background:#ffb366;
+}
+.nc-pie-chart-high .nc-pie-right-cont .nc-pie-right {
+    background:#ff1a1a;
+}
+.nc-pie-chart .nc-pie-center {
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    height:80%;
+    width:80%;
+    border-radius:50%;
+    background:#fff;
+    z-index:10;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translateX(-50%) translateY(-50%);
+}
+.nc-pie-chart .nc-pie-left-cont .z-index2,
+.nc-pie-chart .nc-pie-right-cont .z-index2 {
+    z-index:-1;
+}
+.nc-pie-chart .nc-pie-left-cont .z-index1,
+.nc-pie-chart .nc-pie-right-cont .z-index1 {
+    z-index:-2;
+}
+.nc-pie-chart .noDisplay {
+    display:none;
+}

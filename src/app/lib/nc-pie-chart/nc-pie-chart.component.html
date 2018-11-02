@@ -1,0 +1,19 @@
+<span class="nc-pie-chart-container" [ngClass]="pieClasses">
+  <span class="nc-pie-title">{{data.title}}</span>
+  <span class="nc-pie-chart">
+    <span class="nc-pie-left-cont">
+      <span class="nc-pie-left" [ngClass]="leftClass1"></span>
+      <span class="nc-pie-left" [ngClass]="leftClass2" [ngStyle]="leftStyle">
+      </span>
+    </span>
+    <span class="nc-pie-right-cont">
+      <span class="nc-pie-right" [ngClass]="rightClass1"></span>
+      <span class="nc-pie-right" [ngClass]="rightClass2" [ngStyle]="rightStyle">
+      </span>
+    </span>
+    <span class="nc-pie-center" *ngIf="data.type === 'annulus'">{{data.usageshow}}</span>
+  </span>
+  <span class="nc-pie-footer">
+    <span *ngFor="let item of data.data">{{item.title}}:{{item.value}}</span>
+  </span>
+</span>
