@@ -7,10 +7,6 @@
     margin:100px 50px;
     position:relative;
     opacity: 1;
-    animation:chart_out 1s;
-    -moz-animation:chart_out 1s; /* Firefox */
-    -webkit-animation:chart_out 1s; /* Safari and Chrome */
-    -o-animation:chart_out 1s; /* Opera */
 }
 .nc-bar-chart .nc-bar-chart-title {
     position: absolute;
@@ -75,6 +71,7 @@
     width:100%;
     height:100%;
     display:flex;
+    overflow-y: hidden;
 }
 .nc-bar-chart .chart-bars .chart-bar {
     display:inline-flex;
@@ -91,14 +88,13 @@
     display:inline-block;
     width:30%;
     background:#70dbdb;
-    opacity:0;
     bottom:0;
     z-index:1;
     margin-left:5px;
     margin-right:5px;
     position:relative;
-    height:0;
-    transition: height 500ms;
+    transform: translateY(100%);
+    transition: transform 1s;
 }
 .nc-bar-chart .chart-objs {
     display:inline-flex;

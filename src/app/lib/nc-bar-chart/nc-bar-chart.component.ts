@@ -26,7 +26,7 @@ export class NcBarChartComponent  implements OnInit {
     widthOfperBar : string;
     widthOfoneBar : string;
     alertStyle : any = {};
-    isShow : boolean = false;
+    barTraslate : any = 'translateY(100%)';
 
     constructor() {}
 
@@ -42,7 +42,9 @@ export class NcBarChartComponent  implements OnInit {
                 this.barOptions[index].bar_data.push(tmpUsage);
             }
         });
-        setTimeout(() => {this.isShow=true;},1000);
+        setTimeout(() => {
+            this.barTraslate = 'translateY(0%)';
+        },0);
     }
 
 }

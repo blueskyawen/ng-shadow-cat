@@ -1,4 +1,4 @@
-<div class="nc-bar-chart" [ngStyle]="{'height':data.height,'width':data.width}" *ngIf="isShow">
+<div class="nc-bar-chart" [ngStyle]="{'height':data.height,'width':data.width}">
     <span class="nc-bar-chart-title">{{data.title}}</span>
     <div class="chart-percent">
         <span></span>
@@ -18,7 +18,7 @@
        <span class="chart-bar" *ngFor="let barOption of barOptions"
              [ngStyle]="{'width':widthOfperBar}">
          <span *ngFor="let barItem of barOption.bar_data;let i=index;"
-               [ngStyle]="{'height':barItem,'width':widthOfoneBar,'background':this.data.options[i].color,'opacity':1}">
+               [ngStyle]="{'height':barItem,'width':widthOfoneBar,'background':this.data.options[i].color,'transform':barTraslate}">
          </span>
        </span>
     </div>
