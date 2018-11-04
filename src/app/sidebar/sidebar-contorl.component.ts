@@ -42,12 +42,12 @@ export class SidebarContorlComponent implements OnInit {
       {'name':'穿梭选择框','label':'transfer','isActive':false,'url':'/transfer'},
       //{'name':'树型控件','label':'tree','isActive':false,'url':'/tree'},
       {'name':'文本输入框','label':'input','isActive':false,'url':'/input'},
+      {'name':'柱状图','label':'barchart','isActive':false,'url':'/barchart'},
+      {'name':'饼/环状图','label':'piechart','isActive':false,'url':'/piechart'},
       {'name':'下拉菜单','label':'dropdown','isActive':false,'url':'/dropdown'},
       {'name':'标签','label':'label','isActive':false,'url':'/label'},
       {'name':'告警','label':'alert','isActive':false,'url':'/alert'},
-      {'name':'翻页','label':'pager','isActive':false,'url':'/pager'},
-      {'name':'柱状图','label':'barchart','isActive':false,'url':'/barchart'},
-      {'name':'饼/环状图','label':'piechart','isActive':false,'url':'/piechart'}];
+      {'name':'翻页','label':'pager','isActive':false,'url':'/pager'}];
   }
 
   ngOnInit() {

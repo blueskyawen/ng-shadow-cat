@@ -4,13 +4,68 @@
 
 <h2>下载方式</h2>
 <pre>
-  npm install ng-shadow-cat --save-dev
+  npm install ng-shadow-cat-d --save-dev
 </pre>
 
-<h2>在Angular-cli中使用</h2>
-<p>待补充</p>
+<h2>使用方式</h2>
+
+<h4>1. 安装Cli</h4>
+<pre>
+    npm install -g @angular/cli
+</pre>
+<ul>
+  <li>请务必确认Node.js的版本是v8.10或以上，建议升级至最新版本的@angular/cli</li>
+</ul>
+<p>查看cli脚手架版本，有版本信息呈现则安装成功</p>
+<pre>
+    ng -v
+</pre>
+
+<h4>2. 新建angular项目</h4>
+<pre>
+    ng new my-app
+</pre>
 
 
+<h4>3. 下载Ng-Shadow-Cat库</h4>
+<pre>
+    npm install ng-shadow-cat-d --save-dev
+</pre>
 
+<h4>4. 配置模块</h4>
+<p>在app.module.ts配置ng-shadow-cat-d</p>
+<pre>
+    import &#123; BrowserModule &#125; from '@angular/platform-browser';
+    import &#123; NgModule &#125; from '@angular/core';
+    import &#123; AppRoutingModule &#125; from './app-routing.module';
+    import &#123; LibModule &#125; from 'ng-shadow-cat-d';
+
+    import &#123; AppComponent &#125; from './app.component';
+
+    @NgModule(&#123;
+      imports: [
+        BrowserModule,AppRoutingModule,LibModule
+      ],
+      declarations: [
+        AppComponent
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
+    &#125;)
+    export class AppModule &#123;&#125;
+</pre>
+
+<h4>5. 配置样式</h4>
+<p>更新.angular-cli.json配置</p>
+<pre>
+    "styles": [
+        "./node_modules/ng-shadow-cat-d/ng-shadow-cat-d.css"
+    ],
+    "scripts": [
+    ],
+</pre>
+
+<br/>
+<br/>
 
 
