@@ -4,9 +4,10 @@
     border:solid 1px #999;
     border-top:none;
     border-right:none;
-    margin:100px 50px;
+    margin:100px auto;
     position:relative;
     opacity: 1;
+    max-width: calc(100% - 120px);
 }
 .nc-bar-chart .nc-bar-chart-title {
     position: absolute;
@@ -100,7 +101,7 @@
     display:inline-flex;
     flex-direction:column;
     position:absolute;
-    left:105%;
+    left:calc(100% + 20px);
 }
 .nc-bar-chart .chart-objs .chart-obj {
     display:inline-flex;

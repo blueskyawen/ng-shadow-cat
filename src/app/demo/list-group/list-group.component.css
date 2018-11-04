@@ -29,6 +29,7 @@ ul.list-group {
   border:solid 1px #999;
   border-radius:6px;
   width:50%;
+  max-width:100%;
 }
 ul.list-group li.list-group-item {
   display:flex;

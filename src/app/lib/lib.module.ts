@@ -29,7 +29,9 @@ import {NcMutilSelectComponent} from './nc-mutil-select/nc-mutil-select.componen
 import {NcCarouselComponent} from './nc-carousel/nc-carousel.component';
 import {NcTransferComponent} from './nc-transfer/nc-transfer.component';
 import {NcTreeComponent} from './nc-tree/nc-tree.component';
-import {NcInputComponent,NcFormGroupComponent,NcFormLabelComponent} from './nc-input/index';
+import {NcInputComponent} from './nc-input/nc-input.component';
+import {NcFormGroupComponent} from './nc-input/nc-form-group.component';
+import {NcFormLabelComponent} from './nc-input/nc-form-label.component';
 import {NcDropdownComponent} from './nc-dropdown/nc-dropdown.component';
 import {NcAlertComponent} from './nc-alert/nc-alert.component';
 import {NcLabelComponent} from './nc-label/nc-label.component';

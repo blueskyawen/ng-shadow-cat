@@ -33,8 +33,8 @@ export class NcRateComponent  implements OnInit {
     for(let i=num;i < this.starNum;i++) {
       this.starItems[i].checked = false;
     }
-    for(let i=0;i < num;i++) {
-      this.starItems[i].checked = true;
+    for(let j=0;j < num;j++) {
+      this.starItems[j].checked = true;
     }
   }
 

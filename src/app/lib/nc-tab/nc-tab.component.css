@@ -41,7 +41,6 @@
 }
 .nc-nav-tabs ul.tab-bars {
   list-style:none;
-  //width:100%;
   display: inline-flex;
   border-bottom:solid 1px #ddd;
   padding:0;

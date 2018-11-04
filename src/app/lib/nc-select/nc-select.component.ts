@@ -11,7 +11,7 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
 export class NcSelectComponent  implements OnInit {
   @Input() isDisable : boolean = false;
   @Input() options: any[] = [];
-  @Input() value : number = 0;
+  @Input() value : any = '';
   @Output() valueChange = new EventEmitter();
   @Input() width : string = '420px';
   @Input() height : string = '36px';
@@ -33,7 +33,7 @@ export class NcSelectComponent  implements OnInit {
 
   getSelectOption() {
     for(let option of this.options) {
-      if(option.value === this.value) {
+      if(option.value && option.value == this.value) {
         return option;
       }
     }

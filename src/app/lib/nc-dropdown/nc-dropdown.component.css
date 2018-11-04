@@ -118,9 +118,6 @@
   background-color: #0066cc;
   color:#fff;
 }
-.dropdown:hover .dropdown-content {
-//display: block;
-}
 .dropdown ul.dropdown-content .divider {
   display: block;
   background:#d9d9d9;

@@ -8,19 +8,11 @@ ul.aw-tree,ul.aw-tree ul {
   padding-left: 24px;
 }
 ul.aw-tree li {
-//border: solid 0px;
   line-height: 30px;
   position:relative;
 }
-ul.aw-tree li:not(:last-child) {
-//color:red;
-}
-ul.aw-tree li:last-child {
-//color: grey;
-}
 ul.aw-tree li:not(:last-child):after {
   content: '';
-//height:30px;
   position:absolute;
   border:dotted 1px grey;
   border-style: none none none dotted;

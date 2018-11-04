@@ -65,7 +65,6 @@
 .select-dropdown .selectss .option .text{
   display:inline-block;
   min-width:30px;
-  //min-width:130px;
   white-space:nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
