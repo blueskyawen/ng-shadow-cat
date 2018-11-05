@@ -59,7 +59,7 @@ export class NcPieChartComponent  implements OnInit {
                 this.rightClass2 = {'z-index1':this.data.isMoveleft,'z-index2':!this.data.isMoveleft,
                     'noDisplay':!this.data.isMoveleft};
                 this.rightStyle = {'transform':'rotate('+this.data.barusage+'deg)'};
-            },500);
+            },300);
         }
     }
 

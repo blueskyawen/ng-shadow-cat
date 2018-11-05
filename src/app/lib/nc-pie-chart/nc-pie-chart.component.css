@@ -41,7 +41,7 @@
 .nc-pie-chart .nc-pie-left-cont .nc-pie-left:last-child {
     transform:rotate(-180deg);
     transform-origin:center right;
-    transition: transform 500ms linear;
+    transition: transform 300ms linear;
 }
 .nc-pie-chart .nc-pie-right-cont .nc-pie-right {
     display:inline-block;
@@ -54,7 +54,7 @@
 }
 .nc-pie-chart .nc-pie-right-cont .nc-pie-right:last-child {
     transform-origin:center left;
-    transition:transform 500ms linear;
+    transition:transform 300ms linear;
 }
 .nc-pie-chart-middle .nc-pie-right-cont .nc-pie-right {
     background:#ffb366;

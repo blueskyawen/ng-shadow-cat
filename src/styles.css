@@ -67,3 +67,11 @@ p {
     color: #333;
     line-height: 32px;
 }
+
+pre {
+    background: #262626;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 0;
+    margin-left: 10px;
+}
