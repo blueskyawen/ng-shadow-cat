@@ -5,8 +5,7 @@ import { Component,OnInit } from '@angular/core';
 
 @Component({
   selector: 'demo-thumb-img',
-  templateUrl: './thumb-img.component.html',
-  styleUrls: ['./thumb-img.component.css']
+  templateUrl: './thumb-img.component.html'
 })
 export class ThumbImgComponent {
   images : any[] = [

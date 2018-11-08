@@ -5,8 +5,7 @@ import { Component,OnInit } from '@angular/core';
 
 @Component({
   selector: 'demo-page-header',
-  templateUrl: './page-header.component.html',
-  styleUrls: ['./page-header.component.css']
+  templateUrl: './page-header.component.html'
 })
 export class PageHeaderComponent {
   titles : any[] = [{text:'成功！很好地完成了提交。',type: 'success'},

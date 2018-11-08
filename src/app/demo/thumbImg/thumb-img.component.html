@@ -13,8 +13,8 @@
 </div>
 
 <nc-dialog *ngIf="isShow" [header]="selectImg.alt" [style]="'normal'" [(isShow)]="isShow">
-  <div class="content">
-    <img class="selet-Img" [src]="selectImg.src" [alt]="selectImg.alt" />
+  <div class="content nc-thumb-content">
+    <img class="nc-thumb-selet-Img" [src]="selectImg.src" [alt]="selectImg.alt" />
   </div>
   <div class="footer">
     <nc-button [type]="'cancel'" (click)="closeModal()">取消</nc-button>

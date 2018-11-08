@@ -1,0 +1,40 @@
+ul.nc-list-group {
+  list-style:none;
+  padding:0;
+  margin:5px 0;
+  border:solid 1px #999;
+  border-radius:6px;
+  width:50%;
+  max-width:100%;
+  li {
+    &.nc-list-group-item {
+      display:flex;
+      align-items:center;
+      padding:10px 5px;
+      cursor:pointer;
+      width:100%;
+      box-sizing:border-box;
+      &:not(.active):hover {
+        background:#e5ffff;
+      }
+      &.active {
+        background:#0099ff;
+        color:#fff;
+      }
+      &:not(:last-child) {
+        border-bottom:solid 1px #999;
+      }
+      img {
+        height: 200px;
+        margin-left: 30px;
+      }
+    }
+  }
+  li {
+
+  }
+}
+ul.nc-unfinite-list-group {
+  max-height:300px;
+  overflow-y: auto;
+}

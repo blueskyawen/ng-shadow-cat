@@ -1,19 +1,19 @@
 <h2 class="title">徽章</h2>
 <p>徽章，主要用于突出显示新的或未读的项</p>
 <div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
-  <span class="badge badge-info">42</span>
-  <span class="badge badge-success">42</span>
-  <span class="badge badge-warning">42</span>
-  <span class="badge badge-danger">42</span>
+  <span class="nc-badge nc-badge-info">42</span>
+  <span class="nc-badge nc-badge-success">42</span>
+  <span class="nc-badge nc-badge-warning">42</span>
+  <span class="nc-badge nc-badge-danger">42</span>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
     <textarea style="height:220px;">
-      <span class="badge badge-info">42</span>
-      <span class="badge badge-success">42</span>
-      <span class="badge badge-warning">42</span>
-      <span class="badge badge-danger">42</span>
+      <span class="nc-badge nc-badge-info">42</span>
+      <span class="nc-badge nc-badge-success">42</span>
+      <span class="nc-badge nc-badge-warning">42</span>
+      <span class="nc-badge nc-badge-danger">42</span>
     </textarea>
   </div>
 </nc-tab>

@@ -5,8 +5,7 @@ import { Component,OnInit } from '@angular/core';
 
 @Component({
   selector: 'demo-list-group',
-  templateUrl: './list-group.component.html',
-  styleUrls: ['./list-group.component.css']
+  templateUrl: './list-group.component.html'
 })
 export class ListGroupComponent {
   titles : any[] = [{text:'成功！很好地完成了提交。',type: 'success'},

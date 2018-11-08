@@ -1,3 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+textarea {
+  width: 100%;
+  border: none;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table,
+th,
+td {
+  border: 1px solid #666;
+}
+table th,
+table td {
+  padding: 10px;
+}
+body {
+  margin: 0;
+}
+p.secondMu {
+  font-size: 14px;
+  color: #990073;
+}
+h1 {
+  font-size: 36px;
+  font-weight: 900;
+  margin: 20px 10px;
+}
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 20px 10px;
+}
+h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 20px 10px;
+}
+h4 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 20px 10px;
+}
+h5 {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 20px 10px;
+}
+h6 {
+  font-size: 14px;
+  font-weight: 200;
+  margin: 20px 10px;
+}
+p {
+  font-size: 16px;
+  margin: 10px;
+  color: #333;
+  line-height: 32px;
+}
+pre {
+  background: #262626;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 0;
+  margin-left: 10px;
+}
 .nc-flex-grow-1 {
   flex: 1 1 auto;
 }
@@ -713,4 +784,251 @@
   .nc-xl-right-offset-1 {
     margin-left: 8.33333333%;
   }
+}
+span.nc-badge {
+  display: inline-block;
+  background: #999;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 10px;
+  padding: 3px 5px;
+  margin: 5px 10px;
+}
+span.nc-badge:empty {
+  display: none;
+}
+span.nc-badge.nc-badge-danger {
+  background: #ff3333;
+}
+span.nc-badge.nc-badge-success {
+  background: #4dc4ff;
+}
+span.nc-badge.nc-badge-info {
+  background: #999;
+}
+span.nc-badge.nc-badge-warning {
+  background: #ffa31a;
+}
+.nc-page-header {
+  margin: 5px 10px;
+}
+.nc-page-header header {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.nc-page-header header h2 {
+  margin: 0;
+}
+.nc-page-header .question {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: solid 1px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 18px;
+  margin-left: 10px;
+}
+.nc-page-header .question:hover {
+  cursor: pointer;
+}
+.nc-page-header .description {
+  font-size: 12px;
+  color: #666;
+}
+ul.nc-list-group {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+  border: solid 1px #999;
+  border-radius: 6px;
+  width: 50%;
+  max-width: 100%;
+}
+ul.nc-list-group li.nc-list-group-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+ul.nc-list-group li.nc-list-group-item:not(.active):hover {
+  background: #e5ffff;
+}
+ul.nc-list-group li.nc-list-group-item.active {
+  background: #0099ff;
+  color: #fff;
+}
+ul.nc-list-group li.nc-list-group-item:not(:last-child) {
+  border-bottom: solid 1px #999;
+}
+ul.nc-list-group li.nc-list-group-item img {
+  height: 200px;
+  margin-left: 30px;
+}
+ul.nc-unfinite-list-group {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.nc-card-container {
+  flex-wrap: wrap;
+  height: auto;
+}
+.nc-card-container .nc-default-card {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #999;
+  width: 100%;
+  border-radius: 4px;
+  margin: 5px;
+}
+.nc-card-container .nc-default-card:hover {
+  box-shadow: 1px 1px 10px 3px #ccc;
+}
+.nc-card-container .nc-default-card .nc-card-header {
+  display: flex;
+  border-bottom: solid 1px #999;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+.nc-card-container .nc-default-card .nc-card-header .nc-header-title {
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+.nc-card-container .nc-default-card .nc-card-header .nc-header-action {
+  color: #66a3ff;
+}
+.nc-card-container .nc-default-card .nc-card-header .nc-header-action:hover {
+  color: #0052cc;
+  cursor: pointer;
+  font-size: 1.5;
+}
+.nc-card-container .nc-default-card .nc-card-content {
+  display: flex;
+}
+.nc-card-container .nc-default-card .nc-card-content .nc-card-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.nc-card-container .nc-default-card .nc-card-content .nc-card-img img {
+  width: 100%;
+}
+.nc-card-container .nc-default-card .nc-card-content .nc-card-description {
+  display: flex;
+  align-items: center;
+}
+.nc-card-container .nc-default-card .nc-card-footer {
+  display: flex;
+  border-top: solid 1px #999;
+  justify-content: center;
+  align-items: center;
+}
+.nc-card-container .nc-default-card .nc-card-footer .nc-footer-action {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  color: #0099ff;
+}
+.nc-card-container .nc-default-card .nc-card-footer .nc-footer-action:hover {
+  text-decoration: underline;
+  color: #006bb3;
+  cursor: pointer;
+}
+.nc-image-container {
+  flex-wrap: wrap;
+  height: auto;
+}
+.nc-image-container .nc-e-image {
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  flex-direction: column;
+  border: solid 1px;
+  border-radius: 4px;
+  margin: 8px;
+  padding: 8px;
+  perspective: 1000px;
+  width: 90%;
+}
+.nc-image-container .nc-e-image:hover {
+  box-shadow: 1px 1px 5px #666;
+  cursor: pointer;
+}
+.nc-image-container .nc-e-image img {
+  border-radius: 4px;
+  display: flex;
+  flex: 1 1 auto;
+  height: 200px;
+  width: 100%;
+}
+.nc-image-container .nc-e-image img:hover {
+  transform: translateZ(50px);
+  transition: transform 1s;
+}
+.nc-image-container .nc-e-image .nc-img-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5px;
+}
+.nc-image-container .nc-e-image .nc-img-footer .nc-img-name {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+}
+.nc-image-container .nc-e-image .nc-img-footer .nc-img-name:hover {
+  color: #4d94ff;
+}
+.nc-image-container .nc-e-image .nc-img-footer .nc-img-description {
+  font-size: 12px;
+  color: #666;
+  width: 100%;
+  margin: 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@-webkit-keyframes nc-thumb-zoom {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes nc-thumb-zoom {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.nc-thumb-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.nc-thumb-content .nc-thumb-selet-Img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: nc-thumb-zoom 1s 1 forwards;
+  -moz-animation: nc-thumb-zoom 1s 1 forwards;
+  animation: nc-thumb-zoom 1s 1 forwards;
 }

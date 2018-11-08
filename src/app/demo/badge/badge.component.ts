@@ -5,8 +5,7 @@ import { Component,OnInit } from '@angular/core';
 
 @Component({
   selector: 'demo-badge',
-  templateUrl: './badge.component.html',
-  styleUrls: ['./badge.component.css']
+  templateUrl: './badge.component.html'
 })
 export class BadgeComponent {
   titles : any[] = [{text:'成功！很好地完成了提交。',type: 'success'},
