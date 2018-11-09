@@ -12,7 +12,7 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
   NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
   ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,
-  BarChartComponent,PieChartComponent} from './demo/index';
+  BarChartComponent,PieChartComponent,MenuComponent} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -61,7 +61,8 @@ const appRoutes: Routes = [
       { path: 'thumbimg', component: ThumbImgComponent},
       { path: 'badge', component: BadgeComponent},
       { path: 'listGroup', component: ListGroupComponent},
-      { path: 'flexLayout', component: LayoutComponent}
+      { path: 'flexLayout', component: LayoutComponent},
+      { path: 'menu', component: MenuComponent}
     ]
   },
   {
