@@ -1,0 +1,104 @@
+<h2 class="title">头像</h2>
+<p>头像，用来代表用户图片或图标展示</p>
+<h3>1. 仅显示头像</h3>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+    <nc-avater [type]="'square'" [size]="'large'" [imgSrc]="imgSrcs[0]"></nc-avater>
+    <nc-avater [type]="'square'" [size]="'middle'" [imgSrc]="imgSrcs[0]"></nc-avater>
+    <nc-avater [type]="'square'" [size]="'small'" [imgSrc]="imgSrcs[0]"></nc-avater>
+    <nc-avater [type]="'circle'" [size]="'large'" [imgSrc]="imgSrcs[1]"></nc-avater>
+    <nc-avater [type]="'circle'" [size]="'middle'" [imgSrc]="imgSrcs[1]"></nc-avater>
+    <nc-avater [type]="'circle'" [size]="'small'" [imgSrc]="imgSrcs[1]"></nc-avater>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:150px;">
+    <nc-avater [type]="'square'" [size]="'large'" [imgSrc]="imgSrcs[0]"></nc-avater>
+    <nc-avater [type]="'square'" [size]="'middle'" [imgSrc]="imgSrcs[0]"></nc-avater>
+    <nc-avater [type]="'square'" [size]="'small'" [imgSrc]="imgSrcs[0]"></nc-avater>
+    <nc-avater [type]="'circle'" [size]="'large'" [imgSrc]="imgSrcs[1]"></nc-avater>
+    <nc-avater [type]="'circle'" [size]="'middle'" [imgSrc]="imgSrcs[1]"></nc-avater>
+    <nc-avater [type]="'circle'" [size]="'small'" [imgSrc]="imgSrcs[1]"></nc-avater>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:150px;">
+    imgSrcs : any[] = ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542034193317&di=35c68f159f719a1af77f02666d694efe&imgtype=0&src=http%3A%2F%2Fimage.biaobaiju.com%2Fuploads%2F20180928%2F15%2F1538121289-sMcpvdUDTX.jpeg',
+    'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1179569741,464641894&fm=26&gp=0.jpg'];
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>2. 显示头像的消息徽章</h3>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+    <nc-avater [type]="'square'" [size]="'large'" [imgSrc]="imgSrcs[0]" [isShowBadge]="true">
+        <nc-badge [type]="'error'" [count]="5" [width]="'12px'" [height]="'12px'"></nc-badge>
+    </nc-avater>
+    <nc-avater [type]="'square'" [size]="'large'" [imgSrc]="imgSrcs[0]" [isShowBadge]="true">
+        <nc-badge [type]="'error'" [count]="5" [width]="'12px'" [height]="'12px'" [isShowNum]="false"></nc-badge>
+    </nc-avater>
+    <nc-avater [type]="'circle'" [size]="'large'" [imgSrc]="imgSrcs[1]" [isShowBadge]="true">
+        <nc-badge [type]="'error'" [count]="5" [width]="'12px'" [height]="'12px'"></nc-badge>
+    </nc-avater>
+    <nc-avater [type]="'circle'" [size]="'large'" [imgSrc]="imgSrcs[1]" [isShowBadge]="true">
+        <nc-badge [type]="'error'" [count]="5" [width]="'12px'" [height]="'12px'" [isShowNum]="false"></nc-badge>
+    </nc-avater>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:150px;">
+    <nc-avater [type]="'square'" [size]="'large'" [imgSrc]="imgSrcs[0]" [isShowBadge]="true">
+        <nc-badge [type]="'error'" [count]="5" [width]="'12px'" [height]="'12px'"></nc-badge>
+    </nc-avater>
+    <nc-avater [type]="'square'" [size]="'large'" [imgSrc]="imgSrcs[0]" [isShowBadge]="true">
+        <nc-badge [type]="'error'" [count]="5" [width]="'12px'" [height]="'12px'" [isShowNum]="false"></nc-badge>
+    </nc-avater>
+    <nc-avater [type]="'circle'" [size]="'large'" [imgSrc]="imgSrcs[1]" [isShowBadge]="true">
+        <nc-badge [type]="'error'" [count]="5" [width]="'12px'" [height]="'12px'"></nc-badge>
+    </nc-avater>
+    <nc-avater [type]="'circle'" [size]="'large'" [imgSrc]="imgSrcs[1]" [isShowBadge]="true">
+        <nc-badge [type]="'error'" [count]="5" [width]="'12px'" [height]="'12px'" [isShowNum]="false"></nc-badge>
+    </nc-avater>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab2 === 'typescript'">
+    <textarea style="height:150px;">
+    imgSrcs : any[] = ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542034193317&di=35c68f159f719a1af77f02666d694efe&imgtype=0&src=http%3A%2F%2Fimage.biaobaiju.com%2Fuploads%2F20180928%2F15%2F1538121289-sMcpvdUDTX.jpeg',
+    'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1179569741,464641894&fm=26&gp=0.jpg'];
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>nc-avater--参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>type</td>
+        <td>类型,square/circle</td>
+        <td>square</td>
+    </tr>
+    <tr>
+        <td>size</td>
+        <td>尺寸，large/middle/small</td>
+        <td>large</td>
+    </tr>
+    <tr>
+        <td>imgSrc</td>
+        <td>图片的地址url</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>isShowBadge</td>
+        <td>是否支持徽章显示，boolean</td>
+        <td>true</td>
+    </tr>
+    </tbody>
+</table>

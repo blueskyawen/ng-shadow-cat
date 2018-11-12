@@ -47,7 +47,9 @@ export class SidebarContorlComponent implements OnInit {
       {'name':'下拉菜单','label':'dropdown','isActive':false,'url':'/dropdown'},
       {'name':'标签','label':'label','isActive':false,'url':'/label'},
       {'name':'告警','label':'alert','isActive':false,'url':'/alert'},
-      {'name':'翻页','label':'pager','isActive':false,'url':'/pager'}];
+      {'name':'翻页','label':'pager','isActive':false,'url':'/pager'},
+      {'name':'徽章','label':'badge','isActive':false,'url':'/badge'},
+      {'name':'头像','label':'avater','isActive':false,'url':'/avater'}];
   }
 
   ngOnInit() {

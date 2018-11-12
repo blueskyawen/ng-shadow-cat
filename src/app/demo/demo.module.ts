@@ -47,6 +47,7 @@ import {QuickStartComponent} from './quick-start/quick-start.component';
 import {BarChartComponent} from './bar-chart/bar-chart.component';
 import {PieChartComponent} from './pie-chart/pie-chart.component';
 import {MenuComponent} from './menu/menu.component';
+import {AvaterComponent} from './avater/avater.component';
 
 @NgModule({
   imports: [CommonModule,LibModule],
@@ -58,7 +59,7 @@ import {MenuComponent} from './menu/menu.component';
     GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
-    PieChartComponent,MenuComponent],
+    PieChartComponent,MenuComponent,AvaterComponent],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -67,6 +68,6 @@ import {MenuComponent} from './menu/menu.component';
     GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
-    PieChartComponent,MenuComponent]
+    PieChartComponent,MenuComponent,AvaterComponent]
 })
 export class DemoModule { }

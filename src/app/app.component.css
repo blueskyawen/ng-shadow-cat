@@ -45,7 +45,7 @@
   font-size: 24px;
   align-items: center;
 }
-.app-icon .nc-anticon-menu {
+.app-icon .nc-anticon-menu-t {
   height:65px;
   display:flex;
   justify-content:center;
@@ -53,13 +53,13 @@
   position:relative;
   margin-right:30px;
 }
-.app-icon .nc-anticon-menu .nc-anticon {
+.app-icon .nc-anticon-menu-t .nc-anticon-t {
   display:inline-block;
   width: 24px;
   border:solid 1px #d9d9d9;
   border-radius:1px;
 }
-.app-icon .nc-anticon-menu:before {
+.app-icon .nc-anticon-menu-t:before {
   content:"";
   display:inline-block;
   width: 24px;
@@ -70,7 +70,7 @@
   left:50%;
   top:20px;
 }
-.app-icon .nc-anticon-menu:after {
+.app-icon .nc-anticon-menu-t:after {
   content:"";
   display:inline-block;
   width: 24px;
@@ -81,12 +81,12 @@
   left:50%;
   bottom:20px;
 }
-.app-icon .nc-anticon-menu:hover {
+.app-icon .nc-anticon-menu-t:hover {
   cursor:pointer;
 }
-.app-icon .nc-anticon-menu:hover .nc-anticon,
-.app-icon .nc-anticon-menu:hover:before,
-.app-icon .nc-anticon-menu:hover:after {
+.app-icon .nc-anticon-menu-t:hover .nc-anticon-t,
+.app-icon .nc-anticon-menu-t:hover:before,
+.app-icon .nc-anticon-menu-t:hover:after {
   border-color:#fff;
 }
 .app-icon:after {
@@ -180,7 +180,7 @@
     width: 100%;
     position: relative;
   }
-  .main-app header .app-icon .nc-anticon-menu {
+  .main-app header .app-icon .nc-anticon-menu-t {
     margin-left:30px;
   }
   .main-app header .app-icon .app-title {

@@ -1,19 +1,72 @@
 <h2 class="title">徽章</h2>
 <p>徽章，主要用于突出显示新的或未读的项</p>
-<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
-  <span class="nc-badge nc-badge-info">42</span>
-  <span class="nc-badge nc-badge-success">42</span>
-  <span class="nc-badge nc-badge-warning">42</span>
-  <span class="nc-badge nc-badge-danger">42</span>
+<div style="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
+  <nc-badge [type]="'default'" [count]="5"></nc-badge>
+  <nc-badge [type]="'success'" [count]="5"></nc-badge>
+  <nc-badge [type]="'warn'" [count]="5"></nc-badge>
+  <nc-badge [type]="'error'" [count]="5"></nc-badge>
+  <nc-badge [type]="'error'" [count]="99" [maxCount]="99"></nc-badge>
+  <nc-badge [type]="'error'" [count]="102" [maxCount]="99"></nc-badge>
+  <nc-badge [type]="'error'" [count]="10" [isShowNum]="false"></nc-badge>
+  <nc-badge [type]="'error'" [count]="5" [width]="'20px'" [height]="'20px'"></nc-badge>
+  <nc-badge [type]="'error'" [count]="5" [width]="'50px'" [height]="'20px'"></nc-badge>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
     <textarea style="height:220px;">
-      <span class="nc-badge nc-badge-info">42</span>
-      <span class="nc-badge nc-badge-success">42</span>
-      <span class="nc-badge nc-badge-warning">42</span>
-      <span class="nc-badge nc-badge-danger">42</span>
+    <nc-badge [type]="'default'" [count]="5"></nc-badge>
+    <nc-badge [type]="'success'" [count]="5"></nc-badge>
+    <nc-badge [type]="'warn'" [count]="5"></nc-badge>
+    <nc-badge [type]="'error'" [count]="5"></nc-badge>
+    <nc-badge [type]="'error'" [count]="99" [maxCount]="99"></nc-badge>
+    <nc-badge [type]="'error'" [count]="102" [maxCount]="99"></nc-badge>
+    <nc-badge [type]="'error'" [count]="10" [isShowNum]="false"></nc-badge>
+    <nc-badge [type]="'error'" [count]="5" [width]="'20px'" [height]="'20px'"></nc-badge>
+    <nc-badge [type]="'error'" [count]="5" [width]="'50px'" [height]="'20px'"></nc-badge>
     </textarea>
   </div>
 </nc-tab>
+
+<h3>nc-badge--参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>count</td>
+    <td>文本数字</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>type</td>
+    <td>类型,default/success/warn/error</td>
+    <td>default</td>
+  </tr>
+  <tr>
+    <td>maxCount</td>
+    <td>最大显示数，大于时显示+号</td>
+    <td>99</td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>自定义高度，px或百分比，比如：50%，400px</td>
+    <td>30px</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义宽度，px或百分比，比如：50%，400px</td>
+    <td>30px</td>
+  </tr>
+  <tr>
+    <td>isShowNum</td>
+    <td>是否支持数字显示，boolean</td>
+    <td>true</td>
+  </tr>
+  </tbody>
+</table>

@@ -785,30 +785,6 @@ pre {
     margin-left: 8.33333333%;
   }
 }
-span.nc-badge {
-  display: inline-block;
-  background: #999;
-  color: #fff;
-  border-radius: 12px;
-  font-size: 10px;
-  padding: 3px 5px;
-  margin: 5px 10px;
-}
-span.nc-badge:empty {
-  display: none;
-}
-span.nc-badge.nc-badge-danger {
-  background: #ff3333;
-}
-span.nc-badge.nc-badge-success {
-  background: #4dc4ff;
-}
-span.nc-badge.nc-badge-info {
-  background: #999;
-}
-span.nc-badge.nc-badge-warning {
-  background: #ffa31a;
-}
 .nc-page-header {
   margin: 5px 10px;
 }

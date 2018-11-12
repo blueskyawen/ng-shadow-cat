@@ -1,0 +1,22 @@
+span.nc-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #999;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 10px;
+    margin: 10px;
+}
+span.nc-badge.nc-badge-danger {
+    background: #ff3333;
+}
+span.nc-badge.nc-badge-success {
+    background: #4dc4ff;
+}
+span.nc-badge.nc-badge-info {
+    background: #999;
+}
+span.nc-badge.nc-badge-warning {
+    background: #ffa31a;
+}

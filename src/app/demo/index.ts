@@ -44,6 +44,7 @@ export * from './quick-start/quick-start.component';
 export * from './bar-chart/bar-chart.component';
 export * from './pie-chart/pie-chart.component';
 export * from './menu/menu.component';
+export * from './avater/avater.component';
 
 
 

@@ -1,0 +1,42 @@
+.nc-avater {
+    display:inline-block;
+    background:#999;
+    position:relative;
+    margin: 5px;
+}
+.nc-avater img {
+    height:100%;
+    width:100%;
+}
+.nc-avater-lg {
+    height:50px;
+    width:50px;
+}
+.nc-avater-md {
+    height:40px;
+    width:40px;
+}
+.nc-avater-sm {
+    height:30px;
+    width:30px;
+}
+.nc-avater-square,
+.nc-avater-square img {
+    border-radius:6px;
+}
+.nc-avater-circle,
+.nc-avater-circle img {
+    border-radius:50%;
+}
+.nc-avater .nc-count-square {
+    position:absolute;
+    left:100%;
+    bottom:100%;
+    transform: translateX(-50%) translateY(50%);
+}
+.nc-avater .nc-count-circle {
+    position:absolute;
+    left:100%;
+    bottom:100%;
+    transform: translateX(-70%) translateY(70%);
+}
