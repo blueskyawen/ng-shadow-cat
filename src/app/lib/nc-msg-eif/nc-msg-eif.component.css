@@ -1,0 +1,235 @@
+.nc-msg-bubble {
+    display:inline-flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:60px;
+    width:80px;
+    background:#ffad33;
+    border-radius:0 10px 10px 10px;
+    margin:20px;
+    position:relative;
+    perspective: 750px;
+}
+.nc-msg-bubble:before {
+    content:"";
+    display:inline-block;
+    border: solid 1px;
+    border-width:6px;
+    border-color:#ffad33 #ffad33 transparent transparent;
+    position:absolute;
+    right:100%;
+    top:0;
+}
+.nc-msg-bubble .nc-bubble-eyes {
+    display:inline-flex;
+    justify-content:space-between;
+    align-items:center;
+    width:45px;
+    height:50%;
+    margin-top:10px;
+}
+.nc-msg-bubble .nc-bubble-eyes .bubble-eye {
+    display:inline-block;
+    width:10px;
+    height:10px;
+    background-color:#262626;
+    border-radius:50%;
+    position:relative;
+}
+.nc-msg-bubble .nc-bubble-mouth-contain {
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    height:50%;
+}
+.nc-msg-bubble .nc-bubble-mouth {
+    display:inline-block;
+}
+.nc-bubble-laugh .nc-bubble-mouth {
+    width:30px;
+    height:20px;
+    background-color:#262626;
+    border-radius:50%;
+    background: linear-gradient(to bottom,transparent 50%,#262626 50%,#262626 100%);
+    margin-top:-8px;
+}
+.nc-bubble-serious .nc-bubble-mouth {
+    width:20px;
+    height:5px;
+    background-color:#262626;
+}
+.nc-bubble-aggrieve .nc-bubble-mouth {
+    width:36px;
+    height:10px;
+    border:solid 3px #262626;
+    border-radius:50%;
+    position:relative;
+}
+.nc-bubble-aggrieve .nc-bubble-mouth:after {
+    content:"";
+    display:inline-block;
+    width:50px;
+    height:10px;
+    background-color:#ffad33;
+    position:absolute;
+    top:50%;
+    left:-5px;
+}
+.nc-bubble-angry .nc-bubble-mouth {
+    width:34px;
+    height:20px;
+    background-color:#262626;
+    border-radius:50%;
+    margin-top:-4px;
+}
+.nc-bubble-angry .nc-bubble-eyes .bubble-eye:before {
+    content:"";
+    display:inline-block;
+    width:22px;
+    height:4px;
+    background-color:#262626;
+    position:absolute;
+    top:-6px;
+}
+.nc-bubble-angry .nc-bubble-eyes .bubble-left-eye:before {
+    transform:rotate(30deg);
+    left:-4px;
+}
+.nc-bubble-angry .nc-bubble-eyes .bubble-right-eye:before {
+    transform:rotate(-30deg);
+    left:-8px;
+}
+.nc-bubble-love .nc-bubble-mouth {
+    width:30px;
+    height:20px;
+    background-color:#262626;
+    border-radius:50%;
+    margin-top:-8px;
+    position:relative;
+}
+.nc-bubble-love .nc-bubble-mouth:before {
+    content:"";
+    display:inline-block;
+    width:44px;
+    height:20px;
+    background-color:#ffad33;
+    border-radius:50%;
+    position:absolute;
+    top:-8px;
+    left:-7px;
+}
+.nc-bubble-love .nc-bubble-eyes .bubble-eye {
+    display:inline-block;
+    width:10px;
+    height:10px;
+    background-color:#262626;
+    border-radius:0%;
+    position:relative;
+    z-index:1;
+}
+.nc-bubble-love .nc-bubble-eyes .bubble-eye:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius:50%;
+    content: '';
+    background: #262626;
+    left:-50%;
+}
+.nc-bubble-love .nc-bubble-eyes .bubble-eye:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius:50%;
+    content: '';
+    background: #262626;
+    bottom:50%;
+}
+.nc-bubble-love .nc-bubble-eyes .bubble-left-eye {
+    transform: rotate(15deg);
+}
+.nc-bubble-love .nc-bubble-eyes .bubble-right-eye {
+    transform: rotate(75deg);
+}
+.nc-bubble-love.nc-bubble-animate .nc-bubble-eyes .bubble-left-eye  {
+    animation:bubble-eye-left-love 500ms infinite alternate;
+    -moz-animation:bubble-eye-left-love 500ms infinite alternate; /* Firefox */
+    -webkit-animation:bubble-eye-left-love 500ms infinite alternate; /* Safari and Chrome */
+    -o-animation:bubble-eye-left-love 500ms infinite alternate; /* Opera */
+}
+.nc-bubble-love.nc-bubble-animate .nc-bubble-eyes .bubble-right-eye  {
+    animation:bubble-eye-right-love 500ms infinite alternate;
+    -moz-animation:bubble-eye-right-love 500ms infinite alternate; /* Firefox */
+    -webkit-animation:bubble-eye-right-love 500ms infinite alternate; /* Safari and Chrome */
+    -o-animation:bubble-eye-right-love 500ms infinite alternate; /* Opera */
+}
+@keyframes bubble-eye-left-love
+{
+    0%   {transform: scale(0.9,0.9) rotate(15deg);}
+    50%   {transform: scale(1,1) rotate(15deg);}
+    100% {transform: scale(1.1,1.1) rotate(15deg);}
+}
+@keyframes bubble-eye-right-love
+{
+    0%   {transform: scale(0.9,0.9) rotate(75deg);}
+    50%   {transform: scale(1,1) rotate(75deg);}
+    100% {transform: scale(1.1,1.1) rotate(75deg);}
+}
+.nc-bubble-angry.nc-bubble-animate .nc-bubble-mouth {
+    animation:bubble-mouth-angry 500ms infinite alternate;
+    -moz-animation:bubble-mouth-angry 500ms infinite alternate; /* Firefox */
+    -webkit-animation:bubble-mouth-angry 500ms infinite alternate; /* Safari and Chrome */
+    -o-animation:bubble-mouth-angry 500ms infinite alternate; /* Opera */
+}
+@keyframes bubble-mouth-angry
+{
+    0%   {height:20px;transform: scale(0.9,0.9);}
+    50%   {height:15px;transform: scale(1,1);}
+    100% {height:10px;transform: scale(1.1,1.1);}
+}
+.nc-bubble-angry .nc-bubble-eyes .bubble-left-eye:before {
+    transform:rotate(30deg);
+    left:-4px;
+}
+.nc-bubble-angry .nc-bubble-eyes .bubble-right-eye:before {
+    transform:rotate(-30deg);
+    left:-8px;
+}
+
+.nc-bubble-aggrieve.nc-bubble-animate .nc-bubble-mouth {
+    animation:bubble-mouth-aggrieve 1s infinite alternate;
+    -moz-animation:bubble-mouth-aggrieve 1 infinite alternate; /* Firefox */
+    -webkit-animation:bubble-mouth-aggrieve 1s infinite alternate; /* Safari and Chrome */
+    -o-animation:bubble-mouth-aggrieve 1s infinite alternate; /* Opera */
+}
+@keyframes bubble-mouth-aggrieve
+{
+    0%   {width:30px;}
+    50%   {width:35px;}
+    100% {width:42px;}
+}
+.nc-bubble-serious.nc-bubble-animate .nc-bubble-mouth {
+    animation:bubble-mouth-serious 1s infinite alternate;
+    -moz-animation:bubble-mouth-serious 1 infinite alternate; /* Firefox */
+    -webkit-animation:bubble-mouth-serious 1s infinite alternate; /* Safari and Chrome */
+    -o-animation:bubble-mouth-serious 1s infinite alternate; /* Opera */
+}
+@keyframes bubble-mouth-serious
+{
+    0%   {width:20px;}
+    50%   {width:25px;}
+    100% {width:30px;}
+}
+.nc-bubble-laugh.nc-bubble-animate .nc-bubble-mouth {
+    animation:bubble-mouth-laugh 500ms infinite alternate;
+    -moz-animation:bubble-mouth-laugh 500ms infinite alternate; /* Firefox */
+    -webkit-animation:bubble-mouth-laugh 500ms infinite alternate; /* Safari and Chrome */
+    -o-animation:bubble-mouth-laugh 500ms infinite alternate; /* Opera */
+}
+@keyframes bubble-mouth-laugh
+{
+    0%   {background: linear-gradient(to bottom,transparent 50%,#262626 50%,#262626 100%);}
+    50%   {background: linear-gradient(to bottom,transparent 60%,#262626 60%,#262626 100%);}
+    100% {background: linear-gradient(to bottom,transparent 70%,#262626 70%,#262626 100%);}
+}

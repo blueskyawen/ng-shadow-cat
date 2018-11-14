@@ -12,7 +12,8 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
   NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
   ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,
-  BarChartComponent,PieChartComponent,MenuComponent,AvaterComponent} from './demo/index';
+  BarChartComponent,PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,
+  SkeletonComponent} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -50,7 +51,9 @@ const appRoutes: Routes = [
       { path: 'barchart', component: BarChartComponent},
       { path: 'piechart', component: PieChartComponent},
       { path: 'badge', component: BadgeComponent},
-      { path: 'avater', component: AvaterComponent}
+      { path: 'avater', component: AvaterComponent},
+      { path: 'msgEif', component: MsgEifComponent},
+      { path: 'skeleton', component: SkeletonComponent}
     ]
   },
   {

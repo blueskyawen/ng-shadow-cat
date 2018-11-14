@@ -45,6 +45,8 @@ export * from './bar-chart/bar-chart.component';
 export * from './pie-chart/pie-chart.component';
 export * from './menu/menu.component';
 export * from './avater/avater.component';
+export * from './msg-eif/msg-eif.component';
+export * from './skeleton/skeleton.component';
 
 
 

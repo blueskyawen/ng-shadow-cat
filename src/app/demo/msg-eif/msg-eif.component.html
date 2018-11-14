@@ -1,0 +1,66 @@
+<h2 class="title">消息表情</h2>
+<p>消息表情,用于显示消息的动态卡通头像</p>
+<h3>1. 静态表情</h3>
+<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
+    <nc-msg-eif [type]="'laugh'"></nc-msg-eif>
+    <nc-msg-eif [type]="'serious'"></nc-msg-eif>
+    <nc-msg-eif [type]="'aggrieve'"></nc-msg-eif>
+    <nc-msg-eif [type]="'angry'"></nc-msg-eif>
+    <nc-msg-eif [type]="'love'"></nc-msg-eif>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:180px;">
+    <nc-msg-eif [type]="'laugh'"></nc-msg-eif>
+    <nc-msg-eif [type]="'serious'"></nc-msg-eif>
+    <nc-msg-eif [type]="'aggrieve'"></nc-msg-eif>
+    <nc-msg-eif [type]="'angry'"></nc-msg-eif>
+    <nc-msg-eif [type]="'love'"></nc-msg-eif>
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>2. 动态表情</h3>
+<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
+    <nc-msg-eif [type]="'laugh'" [isAnimate]="true"></nc-msg-eif>
+    <nc-msg-eif [type]="'serious'" [isAnimate]="true"></nc-msg-eif>
+    <nc-msg-eif [type]="'aggrieve'" [isAnimate]="true"></nc-msg-eif>
+    <nc-msg-eif [type]="'angry'" [isAnimate]="true"></nc-msg-eif>
+    <nc-msg-eif [type]="'love'" [isAnimate]="true"></nc-msg-eif>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:180px;">
+    <nc-msg-eif [type]="'laugh'" [isAnimate]="true"></nc-msg-eif>
+    <nc-msg-eif [type]="'serious'" [isAnimate]="true"></nc-msg-eif>
+    <nc-msg-eif [type]="'aggrieve'" [isAnimate]="true"></nc-msg-eif>
+    <nc-msg-eif [type]="'angry'" [isAnimate]="true"></nc-msg-eif>
+    <nc-msg-eif [type]="'love'" [isAnimate]="true"></nc-msg-eif>
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>type</td>
+        <td>表情类型，laugh/serious/aggrieve/angry/love</td>
+        <td>laugh</td>
+    </tr>
+    <tr>
+        <td>isAnimate</td>
+        <td>是否动态</td>
+        <td>false</td>
+    </tr>
+    </tbody>
+</table>

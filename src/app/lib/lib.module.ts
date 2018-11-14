@@ -40,6 +40,8 @@ import {NcBarChartComponent} from './nc-bar-chart/nc-bar-chart.component';
 import {NcPieChartComponent} from './nc-pie-chart/nc-pie-chart.component';
 import {NcBadgeComponent} from './nc-badge/nc-badge.component';
 import {NcAvaterComponent} from './nc-avater/nc-avater.component';
+import {NcMsgEifComponent} from './nc-msg-eif/nc-msg-eif.component';
+import {NcSkeletonComponent} from './nc-skeleton/nc-skeleton.component';
 
 @NgModule({
   imports: [CommonModule],
@@ -50,7 +52,7 @@ import {NcAvaterComponent} from './nc-avater/nc-avater.component';
     NcDialogComponent,NcStepComponent,NcSelectComponent,NcMutilSelectComponent,NcCarouselComponent,
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
     NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent,NcBarChartComponent,
-    NcPieChartComponent,NcBadgeComponent,NcAvaterComponent],
+    NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
@@ -58,6 +60,6 @@ import {NcAvaterComponent} from './nc-avater/nc-avater.component';
     NcDialogComponent,NcStepComponent,NcSelectComponent,NcMutilSelectComponent,NcCarouselComponent,
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
     NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent,NcBarChartComponent,
-    NcPieChartComponent,NcBadgeComponent,NcAvaterComponent]
+    NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent]
 })
 export class LibModule { }

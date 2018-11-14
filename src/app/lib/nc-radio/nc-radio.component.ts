@@ -8,7 +8,7 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
   templateUrl: './nc-radio.component.html',
   styleUrls: ['./nc-radio.component.css']
 })
-export class NcRadioComponent  implements OnInit {
+export class NcRadioComponent implements OnInit {
   @Input() checked : boolean = false;
   @Output() checkedChange = new EventEmitter();
   @Input() disabled : boolean = false;
