@@ -50,6 +50,7 @@ import {MenuComponent} from './menu/menu.component';
 import {AvaterComponent} from './avater/avater.component';
 import {MsgEifComponent} from './msg-eif/msg-eif.component';
 import {SkeletonComponent} from './skeleton/skeleton.component';
+import {NumberInputComponent} from './number-input/number-input.component';
 
 @NgModule({
   imports: [CommonModule,LibModule],
@@ -61,7 +62,8 @@ import {SkeletonComponent} from './skeleton/skeleton.component';
     GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
-    PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent],
+    PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
+    NumberInputComponent],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -70,6 +72,7 @@ import {SkeletonComponent} from './skeleton/skeleton.component';
     GridComponent,DropdownComponent,AlertComponent,LabelComponent,CardComponent,
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
-    PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent]
+    PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
+    NumberInputComponent]
 })
 export class DemoModule { }

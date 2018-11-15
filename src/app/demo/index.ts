@@ -47,6 +47,7 @@ export * from './menu/menu.component';
 export * from './avater/avater.component';
 export * from './msg-eif/msg-eif.component';
 export * from './skeleton/skeleton.component';
+export * from './number-input/number-input.component';
 
 
 

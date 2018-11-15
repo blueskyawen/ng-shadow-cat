@@ -9,6 +9,7 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
   styleUrls: ['./nc-rangeslide.component.css']
 })
 export class NcRangeSlideComponent  implements OnInit {
+  @Input() width: number = 500;
   @Input() total: number = 100;
   @Input() value: number = 30;
   @Output() valueChange = new EventEmitter();
@@ -16,6 +17,7 @@ export class NcRangeSlideComponent  implements OnInit {
   beforeStyle : any = {};
   anniuStyle : any = {};
   afterStyle : any = {};
+  slideStyle : any = {};
 
   constructor() {
   }
@@ -32,9 +34,10 @@ export class NcRangeSlideComponent  implements OnInit {
 
   setRang(value : number) {
     this.value = value;
-    this.beforeStyle = {'width': `${this.value * 500 / this.total}px`};
-    this.anniuStyle = {'left': `${this.value * 500 / this.total}px`};
-    this.afterStyle = {'width': `${500 - this.value * 500 / this.total}px`};
+    this.slideStyle = {'width': `${this.width}px`};
+    this.beforeStyle = {'width': `${this.value * this.width / this.total}px`};
+    this.anniuStyle = {'left': `${this.value * this.width / this.total}px`};
+    this.afterStyle = {'width': `${this.width - this.value * this.width / this.total}px`};
     this.valueChange.emit(this.value);
   }
 

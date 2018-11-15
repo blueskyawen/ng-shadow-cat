@@ -1,6 +1,6 @@
-<div class="rangContainer" [class.disable]="disable">
+<div class="rangContainer" [class.disable]="disable" [ngStyle]="slideStyle">
   <input type="range" #range name="points" min="0" [max]="total" [value]="value"
-         (change)="rangeChange(range.value)" [attr.disabled]="disable">
+         (change)="rangeChange(range.value)" [disabled]="disable">
   <span class="range">
     <span class="before" [ngStyle]="beforeStyle"></span>
     <span class="anniu" [ngStyle]="anniuStyle"></span>

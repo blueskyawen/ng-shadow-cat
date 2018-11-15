@@ -1,59 +1,55 @@
-#pinfen {
-  display: inline-block;
-  max-width: 100%;
-}
-#pinfen .star {
+.rating {
   position: relative;
-  margin: 20px 30px;
+  padding:10px;
   display: inline-block;
+}
+.rating .stars {
+  display: inline-block;
+}
+.rating .stars .star-item {
+  display: inline-block;
+  float:left;
+  font-size:28px;
+  margin:0 5px;
+  color:#ff8000;
   cursor:pointer;
 }
-#pinfen .star .star1 {
-  width: 0px;
-  height: 0px;
-  border:50px solid;
-  border-color:  transparent transparent transparent #ccc;
-  border-width: 25px 18px;
-  -moz-transform: rotate(18deg);
-  transform: rotate(18deg);
-  position: absolute;
+.rate-color-normal .stars .star-item {
+  color:#ff8000;
 }
-#pinfen .star .star1.active {
-  border-color:  transparent transparent transparent red;
+.rate-color-error .stars .star-item {
+  color:#ff1a1a;
 }
-#pinfen .star .star2 {
-  width: 0px;
-  height: 0px;
-  border:100px solid;
-  border-color:  transparent #ccc transparent transparent;
-  border-width: 25px 18px;
-  -moz-transform: rotate(-18deg);
-  transform: rotate(-18deg);
-  position: absolute;
-  left:-18px;
+.rating .stars .star-item:before {
+  display: inline-block;
+  content:"☆";
 }
-#pinfen .star .star2.active {
-  border-color:  transparent red transparent transparent;
+.rating .stars .star-item.active:before {
+  display: inline-block;
+  content:"★";
 }
-#pinfen .star .star3 {
-  width: 0px;
-  height: 0px;
-  border:100px solid;
-  border-color:  #ccc transparent transparent transparent;
-  border-width: 18px 25px;
-  position: absolute;
-  left:-16px;
-  top:14px;
+.rating .stars .star-item.mousehover:before {
+  display: inline-block;
+  content:"★";
 }
-#pinfen .star .star3.active {
-  border-color: red transparent transparent transparent;
+.rating .stars .star-item.unmousehover:before {
+  display: inline-block;
+  content:"☆";
 }
-#pinfen .star:hover {
-  transform:scale(1.1,1.1);
+.rating .rate-description {
+  display: inline-flex;
+  align-items:center;
+  height:100%;
+  font-size:14px;
+  width:30px;
+  position:absolute;
+  margin-left:5px;
+  top:0;
+  left:100%;
 }
-#pinfen p {
-  display:inline-block;
-  margin-left:30px;
-  position: relative;
-  top:10px;
+.rate-color-normal .rate-description {
+  color:#ff8000;
+}
+.rate-color-error .rate-description {
+  color:#ff1a1a;
 }

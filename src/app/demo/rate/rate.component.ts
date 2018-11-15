@@ -10,6 +10,7 @@ import { Component,OnInit } from '@angular/core';
 export class RateComponent {
   tabItems : any[] = [];
   currentTab : string;
+  curRate : number = 3;
 
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false}];

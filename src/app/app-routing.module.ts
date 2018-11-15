@@ -13,7 +13,7 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
   ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,
   BarChartComponent,PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,
-  SkeletonComponent} from './demo/index';
+  SkeletonComponent,NumberInputComponent} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -53,7 +53,8 @@ const appRoutes: Routes = [
       { path: 'badge', component: BadgeComponent},
       { path: 'avater', component: AvaterComponent},
       { path: 'msgEif', component: MsgEifComponent},
-      { path: 'skeleton', component: SkeletonComponent}
+      { path: 'skeleton', component: SkeletonComponent},
+      { path: 'numberInput', component: NumberInputComponent}
     ]
   },
   {

@@ -1,10 +1,10 @@
-<div id="pinfen" (mouseout)="ok()">
-  <div class="star" *ngFor="let item of starItems" (mouseover)="overStar(item)" (click)="setStar(item)">
-    <div class="star1" [class.active]="item.checked"></div>
-    <div class="star2" [class.active]="item.checked"></div>
-    <div class="star3" [class.active]="item.checked"></div>
+<div class="rating" (mouseleave)="outRating()">
+  <div class="stars">
+    <div class="star-item" *ngFor="let rateItem of rateItems"
+         (mouseenter)="overStarItem(rateItem)" (click)="setStarItem(rateItem)"
+         [ngClass]="{'active': rateItem.checked,'mousehover': rateItem.hovered,'unmousehover': rateItem.unhovered}"
+         [ngStyle]="rateStyle">
+    </div>
   </div>
-  <p>
-    {{star}} {{title}}
-  </p>
+  <div class="rate-description">{{curRate}} {{title}}</div>
 </div>

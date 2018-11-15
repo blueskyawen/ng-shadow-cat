@@ -2,7 +2,14 @@
 <p>滑动输入条，用于方便的输入数值</p>
 <div style="margin-top: 20px;">
   <nc-rangeslide></nc-rangeslide>
+</div>
+<div style="margin-top: 20px;">
   <nc-rangeslide [total]="50" [value]="30"></nc-rangeslide>
+</div>
+<div style="margin-top: 20px;">
+  <nc-rangeslide [total]="100" [value]="36" [width]="1000"></nc-rangeslide>
+</div>
+<div style="margin-top: 20px;">
   <nc-rangeslide [disable]="true"></nc-rangeslide>
 </div>
 <p>使用方式:</p>
@@ -11,6 +18,7 @@
     <textarea style="height:80px;">
       <nc-rangeslide></nc-rangeslide>
       <nc-rangeslide [total]="50" [value]="30"></nc-rangeslide>
+      <nc-rangeslide [total]="100" [value]="36" [width]="1000"></nc-rangeslide>
       <nc-rangeslide [disable]="true"></nc-rangeslide>
     </textarea>
   </div>
@@ -40,6 +48,11 @@
     <td>disable</td>
     <td>是否禁用,true/false</td>
     <td>false</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义宽度</td>
+    <td>500px</td>
   </tr>
   </tbody>
 </table>

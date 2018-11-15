@@ -1,0 +1,71 @@
+.input-container {
+    display:inline-block;
+    position:relative;
+    height:42px;
+    width:100px;
+    border:solid 1px #999;
+    border-radius:6px;
+    transition:all .5s;
+    margin:5px;
+}
+.input-container input {
+    height:100%;
+    width:100%;
+    border:none;
+    border-radius:6px;
+    padding:0;
+}
+.input-container .input-opers {
+    display:inline-flex;
+    flex-direction:column;
+    border-left:solid 1px #999;
+    border-radius:0 6px 6px 0;
+    height:100%;
+    width:24px;
+    position:absolute;
+    right:0;
+    opacity:0;
+    transition:opacity 1s;
+}
+.input-container .input-opers .input-oper {
+    position:relative;
+    display:inline-flex;
+    height:50%;
+    width:100%;
+    justify-content:center;
+    align-items:center;
+    font-size:1px;
+    transition:all .5s;
+}
+.input-container .input-opers .oper-del {
+    border-top:solid 1px #999;
+}
+.input-container:hover {
+    border-color:#1aa3ff;
+}
+.input-container .input-opers:hover {
+    cursor:pointer;
+}
+.input-container:hover .input-opers {
+    opacity:1;
+}
+.input-container .input-opers .oper-add:hover {
+    padding-top:30%;
+    color:#1aa3ff;
+}
+.input-container .input-opers .oper-del:hover {
+    padding-bottom:30%;
+    color:#1aa3ff;
+}
+.input-container .input-opers .input-oper-disable {
+    cursor:not-allowed;
+}
+.input-container.input-lg {
+    height:48px;
+}
+.input-container.input-md {
+    height:38px;
+}
+.input-container.input-sm {
+    height:28px;
+}
