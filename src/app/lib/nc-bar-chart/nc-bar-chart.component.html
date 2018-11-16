@@ -1,4 +1,4 @@
-<div class="nc-bar-chart" [ngStyle]="{'height':data.height,'width':data.width}">
+<div class="nc-bar-chart" [ngStyle]="{'height':data.height,'width':data.width}" (mouseleave)="mouseLeaveBars()">
     <span class="nc-bar-chart-title">{{data.title}}</span>
     <div class="chart-percent">
         <span></span>
@@ -8,18 +8,33 @@
         <span></span>
         <span></span>
     </div>
-    <span class="chart-objs">
-        <span class="chart-obj" *ngFor="let option of data.options">
-          <span class="chart-obj-icon" [ngStyle]="{'background':option.color}"></span>
-          <span class="chart-obj-title">{{option.obj}}</span>
+    <span class="nc-chart-objs">
+        <span class="nc-chart-obj" *ngFor="let option of data.options">
+          <span class="nc-chart-obj-icon" [ngStyle]="{'background':option.color}"></span>
+          <span class="nc-chart-obj-title">{{option.obj}}</span>
         </span>
     </span>
     <div class="chart-bars">
-       <span class="chart-bar" *ngFor="let barOption of barOptions"
-             [ngStyle]="{'width':widthOfperBar}">
+       <span class="chart-bar" *ngFor="let barOption of barOptions;let j=index;"
+             [ngStyle]="{'width':widthOfperBar}" (mouseenter)="mouseOverItem(j,$event)">
          <span *ngFor="let barItem of barOption.bar_data;let i=index;"
-               [ngStyle]="{'height':barItem,'width':widthOfoneBar,'background':this.data.options[i].color,'transform':barTraslate}">
+               [ngStyle]="{'height':barItem.usage,'width':widthOfoneBar,'background':this.data.options[i].color,'transform':barTraslate}">
          </span>
        </span>
+    </div>
+    <div class="chart-bar-items">
+       <span class="bar-item" *ngFor="let barOption of barOptions" [ngStyle]="{'width':widthOfperBar}">
+         {{barOption.name}}
+       </span>
+    </div>
+
+    <div class="nc-chart-hover" *ngIf="hoverItemObj" [ngStyle]="hoverItemStyle">
+        <span class="nc-chart-objs">
+            <span class="nc-chart-hover-item">{{hoverItemObj.name}}</span>
+            <span class="nc-chart-obj" *ngFor="let bardata of hoverItemObj.bar_data">
+              <span class="nc-chart-obj-icon" [ngStyle]="{'background':bardata.color}"></span>
+              <span class="nc-chart-obj-title">{{bardata.obj}}:{{bardata.useNum}}</span>
+            </span>
+        </span>
     </div>
 </div>

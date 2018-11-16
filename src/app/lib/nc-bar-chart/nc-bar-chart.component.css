@@ -80,6 +80,19 @@
     align-items:flex-end;
     height:100%;
     width:20%;
+    position:relative;
+}
+.nc-bar-chart .chart-bar-items {
+    width:100%;
+    display:inline-flex;
+}
+.nc-bar-chart .chart-bar-items .bar-item {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    font-size:12px;
+    height:30px;
 }
 .nc-bar-chart .chart-bars .chart-bar:hover {
     background:#e6e6e6;
@@ -97,20 +110,20 @@
     transform: translateY(100%);
     transition: transform 1s;
 }
-.nc-bar-chart .chart-objs {
+.nc-chart-objs {
     display:inline-flex;
     flex-direction:column;
     position:absolute;
     left:calc(100% + 20px);
 }
-.nc-bar-chart .chart-objs .chart-obj {
+.nc-chart-objs .nc-chart-obj {
     display:inline-flex;
     align-items:center;
     font-size:12px;
     color:#666;
     position:relative;
 }
-.nc-bar-chart .chart-objs .chart-obj .chart-obj-icon {
+.nc-chart-objs .nc-chart-obj .nc-chart-obj-icon {
     display:inline-block;
     height:12px;
     width:12px;
@@ -118,7 +131,7 @@
     background:#70dbdb;
     margin-right:5px;
 }
-.nc-bar-chart .chart-objs .chart-obj .chart-obj-title {
+.nc-chart-objs .nc-chart-obj .nc-chart-obj-title {
     display:inline-block;
     font-size:12px;
     color:#666;
@@ -128,4 +141,27 @@
 {
     0%   {opacity:0;}
     100% {opacity:1;}
+}
+
+.nc-chart-hover {
+    display:inline-flex;
+    flex-direction:column;
+    background:#f2f2f2;
+    position:fixed;
+    left:0px;
+    top:0px;
+    border:solid 1px #999;
+    border-radius:5px;
+    padding:5px 10px;
+    z-index:2;
+}
+.nc-chart-hover .nc-chart-objs .nc-chart-hover-item {
+    margin:0px 0px 5px;
+    font-size:14px;
+    color:#666;
+}
+.nc-chart-hover .nc-chart-objs {
+    position: relative;
+    left: 0;
+    top:0;
 }

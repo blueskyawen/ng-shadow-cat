@@ -8,7 +8,7 @@ import { Component,OnInit } from '@angular/core';
     templateUrl: './number-input.component.html'
 })
 export class NumberInputComponent {
-    value : number = 36;
+    values : number[] = [36,54,78,30,20];
     tabItems : any[] = [];
     currentTab : string;
 

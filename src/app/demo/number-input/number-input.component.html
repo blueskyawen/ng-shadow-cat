@@ -1,7 +1,65 @@
 <h2 class="title">数字输入框</h2>
 <p>数字输入框,通过鼠标或键盘，输入范围内的数值</p>
 <div style="margin-top: 20px;">
-    <nc-number-put></nc-number-put>
-    <nc-number-put [type]="'middle'"></nc-number-put>
-    <nc-number-put [type]="'small'"></nc-number-put>
+    <nc-number-put [(value)]="values[0]"></nc-number-put>
+    <nc-number-put [type]="'middle'" [(value)]="values[1]"></nc-number-put>
+    <nc-number-put [type]="'small'" [(value)]="values[2]"></nc-number-put>
+    <nc-number-put [max]="50" [min]="10" [(value)]="values[3]"></nc-number-put>
+    <nc-number-put [(value)]="values[4]" [step]="5"></nc-number-put>
 </div>
+
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:100px;">
+    <nc-number-put [(value)]="values[0]"></nc-number-put>
+    <nc-number-put [type]="'middle'" [(value)]="values[1]"></nc-number-put>
+    <nc-number-put [type]="'small'" [(value)]="values[2]"></nc-number-put>
+    <nc-number-put [max]="50" [min]="10" [(value)]="values[3]"></nc-number-put>
+    <nc-number-put [(value)]="values[4]" [step]="5"></nc-number-put>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:100px;">
+    values : number[] = [36,54,78,30,20];
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>type</td>
+        <td>类型，large/middle/small</td>
+        <td>large</td>
+    </tr>
+    <tr>
+        <td>value</td>
+        <td>当前值</td>
+        <td>88</td>
+    </tr>
+    <tr>
+        <td>max</td>
+        <td>最大值</td>
+        <td>99</td>
+    </tr>
+    <tr>
+        <td>min</td>
+        <td>最小值</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>step</td>
+        <td>每步数目</td>
+        <td>1</td>
+    </tr>
+    </tbody>
+</table>

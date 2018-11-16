@@ -44,6 +44,8 @@ import {NcMsgEifComponent} from './nc-msg-eif/nc-msg-eif.component';
 import {NcSkeletonComponent} from './nc-skeleton/nc-skeleton.component';
 import {NcNumberPutComponent} from './nc-num-put/nc-number-put.component';
 
+import { InputNumberDirective } from './nc-num-put/input-number.directive';
+
 @NgModule({
   imports: [CommonModule],
   declarations: [NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
@@ -54,7 +56,7 @@ import {NcNumberPutComponent} from './nc-num-put/nc-number-put.component';
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
     NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent,NcBarChartComponent,
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
-    NcNumberPutComponent],
+    NcNumberPutComponent,InputNumberDirective],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,

@@ -24,4 +24,26 @@ export class NcNumberPutComponent implements OnInit {
         this.numPutClasses = {'input-lg':this.type === 'large','input-md':this.type === 'middle',
             'input-sm':this.type === 'small'};
     }
+
+    inputAdd() {
+        if(this.value >= this.max) {return;}
+        if((this.value + this.step) >= this.max) {
+            this.value = this.max;
+        } else {
+            this.value += this.step;
+        }
+    }
+
+    inputDesc() {
+        if(this.value <= this.min) {return;}
+        if((this.step + this.min) >= this.value) {
+            this.value = this.min;
+        } else {
+            this.value -= this.step;
+        }
+    }
+
+    valueChanges() {
+        this.valueChange.emit(this.value);
+    }
 }
