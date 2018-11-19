@@ -15,14 +15,17 @@
            (click)="chickMenu(menuType)">
         <a href="javascript:void(0);">{{menuType.name}}</a>
       </div>
+      <a class="github-item" href="https://github.com/blueskyawen/ng-shadow-cat" target="_blank">
+        <i class="fa fa-github" style="color:#fff;" title="Ng-Shadow-Cat"></i>
+      </a>
     </div>
   </header>
   <article *ngIf="isShowActicle">
     <div class="side-bars" [class.side-bars-hidden]="!isExtend">
       <div>
-        <sidebar-about *ngIf="currentMenu.value === 'about'"></sidebar-about>
-        <sidebar-pattern *ngIf="currentMenu.value === 'pattern'"></sidebar-pattern>
-        <sidebar-contorl *ngIf="currentMenu.value === 'components'"></sidebar-contorl>
+        <sidebar-about *ngIf="currentMenu.value === 'about'" [activeSide]="activeSideItem"></sidebar-about>
+        <sidebar-pattern *ngIf="currentMenu.value === 'pattern'" [activeSide]="activeSideItem"></sidebar-pattern>
+        <sidebar-contorl *ngIf="currentMenu.value === 'components'" [activeSide]="activeSideItem"></sidebar-contorl>
       </div>
     </div>
 
@@ -30,5 +33,31 @@
       <router-outlet></router-outlet>
     </div>
   </article>
-  <footer></footer>
+  <footer>
+    <!--div class="footer-item">
+      <a href="https://github.com/blueskyawen/ng-shadow-cat" target="_blank">
+        <i class="fa fa-github" style="color:#fff;" title="Ng-Shadow-Cat"></i>Ng-Shadow-Cat
+      </a>
+    </div>
+    <div class="footer-item">
+      <a href="http://blueskyawen.com/boot-shadow" target="_blank">
+        <i class="fa fa-github" style="color:#fff;" title="Boot-Shadow"></i>Boot-Shadow
+      </a>
+    </div>
+    <div class="footer-item">
+      <a href="https://angular.cn/docs" target="_blank">
+        Angular官方文档
+      </a>
+    </div>
+    <div class="footer-item">
+      <a href="https://cli.angular.io/" target="_blank">
+        Angular Cli
+      </a>
+    </div>
+    <div class="footer-item">
+      <a href="https://www.typescriptlang.org/" target="_blank">
+        TypeScript
+      </a>
+    </div>-->
+  </footer>
 </div>

@@ -14,10 +14,11 @@ import { Router }  from '@angular/router';
   styleUrls:  ['./sidebar.css']
 })
 export class SidebarContorlComponent implements OnInit {
+  @Input() activeSide : string = 'loading';
   sideTypes: any[] = [];
 
   constructor(private router : Router) {
-    this.sideTypes = [{'name':'加载等待','label':'loading','isActive':true,'url':'/loading'},
+    this.sideTypes = [{'name':'加载等待','label':'loading','isActive':false,'url':'/loading'},
       {'name':'TAB页','label':'tab','isActive':false,'url':'/tab'},
       {'name':'按钮','label':'button','isActive':false,'url':'/button'},
       {'name':'通知','label':'message','isActive':false,'url':'/message'},
@@ -56,7 +57,12 @@ export class SidebarContorlComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.sideTypes[0].isActive = true;
+    let activeSidebar = this.sideTypes.find((item) => {return item.label === this.activeSide;});
+    if(!activeSidebar) {
+      this.sideTypes[0].isActive = true;
+    } else {
+      activeSidebar.isActive = true;
+    }
   }
 
   selectSide(side : any) {

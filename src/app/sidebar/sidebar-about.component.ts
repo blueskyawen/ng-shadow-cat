@@ -14,6 +14,7 @@ import { Router }  from '@angular/router';
   styleUrls:  ['./sidebar.css']
 })
 export class SidebarAboutComponent implements OnInit {
+  @Input() activeSide : string = 'ng-cat';
   sideTypes: any[] = [];
   selectSideName : any = '';
 
@@ -24,7 +25,12 @@ export class SidebarAboutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.sideTypes[0].isActive = true;
+    let activeSidebar = this.sideTypes.find((item) => {return item.label === this.activeSide;});
+    if(!activeSidebar) {
+      this.sideTypes[0].isActive = true;
+    } else {
+      activeSidebar.isActive = true;
+    }
   }
 
   selectSide(side : any) {

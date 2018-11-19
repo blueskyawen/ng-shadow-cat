@@ -128,6 +128,16 @@
 .main-app header .app-menu .menu-item:hover a {
   color: #fff;
 }
+.main-app header .app-menu a.github-item {
+  font-size: 30px;
+  text-decoration: none;
+  height: 65px;
+  position: absolute;
+  right:30px;
+  display: inline-flex;
+  align-items: center;
+}
+
 .main-app article {
   width: 100%;
   height: 100%;
@@ -190,6 +200,9 @@
     width: 100%;
     height: 45px;
     background: #0058b3;
+  }
+  .main-app header .app-menu a.github-item {
+    height: 45px;
   }
   .main-app article .side-bars {
     width: 100%;
@@ -276,4 +289,23 @@
   width: 100%;
   left:0%;
   padding-left:15px;
+}
+
+.main-app footer {
+  width: 100%;
+  background: #001933;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+.main-app footer  .footer-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:15%;
+  height:30px;
+}
+.main-app footer .footer-item a {
+  text-decoration: none;
 }

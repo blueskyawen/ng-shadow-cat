@@ -9,6 +9,7 @@ textarea {
 table {
   border-collapse: collapse;
   width: 100%;
+  margin: 20px 0;
 }
 table,
 th,
@@ -1065,25 +1066,8 @@ ul.nc-unfinite-list-group {
 }
 span.nc-icon {
   display: inline-block;
-  height: 16px;
-  width: 16px;
-  border: solid 1px #666;
-  border-radius: 50%;
   color: #666;
   position: relative;
-}
-span.nc-icon:after {
-  content: "";
-  display: inline-block;
-  height: 6px;
-  width: 6px;
-  border: solid 1px #666;
-  border-radius: 50%;
-  color: #666;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
 }
 .nc-menu-item .nc-icon {
   margin-right: 5px;
@@ -1092,7 +1076,7 @@ span.nc-icon:after {
 .nc-menu-item-title.active .nc-icon,
 .nc-menu-item-title:hover .nc-icon:after,
 .nc-menu-item-title.active .nc-icon:after {
-  border-color: #1890ff;
+  color: #1890ff;
 }
 span.nc-carat {
   display: inline-block;

@@ -13,9 +13,18 @@ export class AppComponent {
   currentMenu : any;
   isExtend : boolean = true;
   isShowActicle : boolean = true;
+  urls : string[] = [];
+  activeMenu : string;
+  activeSideItem : string;
 
   constructor(private router : Router) {
-    this.currentMenu = this.menuTypes[0];
+    this.urls = location.href.split('/');
+    this.activeMenu = this.urls[this.urls.length - 2];
+    this.activeSideItem = this.urls[this.urls.length - 1];
+    this.currentMenu = this.menuTypes.find((item) => {return item.value === this.activeMenu;});
+    if(!this.currentMenu) {
+      this.currentMenu = this.menuTypes[0];
+    }
   }
 
   chickMenu(menuType : any) {
