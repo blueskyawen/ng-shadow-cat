@@ -48,6 +48,11 @@ export * from './avater/avater.component';
 export * from './msg-eif/msg-eif.component';
 export * from './skeleton/skeleton.component';
 export * from './number-input/number-input.component';
+export * from './affix/affix.component';
+export * from './form/form.component';
+
+
+
 
 
 

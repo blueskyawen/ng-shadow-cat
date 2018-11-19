@@ -28,7 +28,9 @@ export class SidebarPatternComponent implements OnInit {
       {'name':'列表组','label':'listGroup','isActive':false,'url':'/listGroup'},
       {'name':'卡片','label':'card','isActive':false,'url':'/card'},
       {'name':'Flex布局','label':'flex','isActive':false,'url':'/flexLayout'},
-      {'name':'导航菜单','label':'menu','isActive':false,'url':'/menu'}];
+      {'name':'导航菜单','label':'menu','isActive':false,'url':'/menu'},
+      {'name':'锚点书签','label':'affix','isActive':false,'url':'/affix'},
+      {'name':'表单','label':'form','isActive':false,'url':'/form'}];
   }
 
   ngOnInit() {

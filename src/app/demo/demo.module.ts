@@ -51,6 +51,8 @@ import {AvaterComponent} from './avater/avater.component';
 import {MsgEifComponent} from './msg-eif/msg-eif.component';
 import {SkeletonComponent} from './skeleton/skeleton.component';
 import {NumberInputComponent} from './number-input/number-input.component';
+import {AffixComponent} from './affix/affix.component';
+import {FormComponent} from './form/form.component';
 
 @NgModule({
   imports: [CommonModule,LibModule],
@@ -63,7 +65,7 @@ import {NumberInputComponent} from './number-input/number-input.component';
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
-    NumberInputComponent],
+    NumberInputComponent,AffixComponent,FormComponent],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -73,6 +75,6 @@ import {NumberInputComponent} from './number-input/number-input.component';
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
-    NumberInputComponent]
+    NumberInputComponent,AffixComponent,FormComponent]
 })
 export class DemoModule { }

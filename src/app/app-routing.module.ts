@@ -13,7 +13,7 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
   ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,
   BarChartComponent,PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,
-  SkeletonComponent,NumberInputComponent} from './demo/index';
+  SkeletonComponent,NumberInputComponent,AffixComponent,FormComponent} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -67,7 +67,9 @@ const appRoutes: Routes = [
       { path: 'thumbimg', component: ThumbImgComponent},
       { path: 'listGroup', component: ListGroupComponent},
       { path: 'flexLayout', component: LayoutComponent},
-      { path: 'menu', component: MenuComponent}
+      { path: 'menu', component: MenuComponent},
+      { path: 'affix', component: AffixComponent},
+      { path: 'form', component: FormComponent}
     ]
   },
   {
