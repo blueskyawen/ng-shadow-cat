@@ -188,13 +188,27 @@
     50%   {height:15px;transform: scale(1,1);}
     100% {height:10px;transform: scale(1.1,1.1);}
 }
-.nc-bubble-angry .nc-bubble-eyes .bubble-left-eye:before {
+.nc-bubble-angry.nc-bubble-animate .nc-bubble-eyes .bubble-left-eye:before {
     transform:rotate(30deg);
     left:-4px;
+    animation:bubble-eye-angry-left 1s infinite alternate;
+    top:-10px;
 }
-.nc-bubble-angry .nc-bubble-eyes .bubble-right-eye:before {
+@keyframes bubble-eye-angry-left
+{
+    0%   {top:-6px;transform: rotate(30deg);}
+    100% {top:-9px;transform: rotate(20deg);}
+}
+.nc-bubble-angry.nc-bubble-animate .nc-bubble-eyes .bubble-right-eye:before {
     transform:rotate(-30deg);
     left:-8px;
+    animation:bubble-eye-angry-right 1s infinite alternate;
+    top:-10px;
+}
+@keyframes bubble-eye-angry-right
+{
+    0%   {top:-6px;transform: rotate(-30deg);}
+    100% {top:-9px;transform: rotate(-20deg);}
 }
 
 .nc-bubble-aggrieve.nc-bubble-animate .nc-bubble-mouth {
