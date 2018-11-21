@@ -134,6 +134,7 @@ ul {
 
   &.nc-menu-horizontal {
     display:flex;
+    width:100%;
     li.nc-menu-item {
       max-width:20%;
     }
@@ -179,8 +180,7 @@ ul {
     flex-direction:column;
     border:solid 1px #999;
     max-width:100%;
-    width:160px;
-    min-width:130px;
+    min-width:150px;
     li.nc-menu-item {
       width:100%;
       &.active {
@@ -214,6 +214,9 @@ ul {
       li.nc-menu-item {
         width:100%;
         position:relative;
+      }
+      &.sub-menu-show {
+        display:block;
       }
     }
   }

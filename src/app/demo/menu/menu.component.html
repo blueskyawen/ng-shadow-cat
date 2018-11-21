@@ -1,179 +1,92 @@
-<ul class="nc-menu nc-menu-horizontal">
-    <li class="nc-menu-item">
-			<span class="nc-menu-item-title">
-				<span class="nc-icon fa fa-car"></span>Navigation One</span>
-    </li>
-    <li class="nc-menu-item">
-			<span class="nc-menu-item-title active">
-				<span class="nc-icon fa fa-camera"></span>Navigation Two</span>
-    </li>
-    <li class="nc-menu-item">
-        <span class="nc-menu-item-title">
-			<span class="nc-icon fa fa-coffee"></span>Navigation There</span>
+<ul class="nc-menu" [ngClass]="menuClasss">
+	<li class="nc-menu-item" *ngFor="let navItem of menuItems.navItems">
+		<span class="nc-menu-item-title" [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem(navItem)">
+			<span class="{{navItem.icon}}"></span>
+			{{navItem.title}}
+		</span>
 
-        <ul class="nc-sub-menu nc-menu-vertical nc-menu-place-right">
-            <li class="nc-menu-item">
-					<span class="nc-menu-item-title">
-						<span class="nc-menu-title">option5</span>
-					</span>
-            </li>
-            <li class="nc-menu-item">
-					<span class="nc-menu-item-title">
-						<span class="nc-menu-title">option6</span>
-					</span>
-            </li>
-        </ul>
-    </li>
-    <li class="nc-menu-item">
-        <span class="nc-menu-item-title">
-			<span class="nc-icon fa fa-cubes"></span>Navigation Four</span>
-    </li>
-    <li class="nc-menu-item">
-        <span class="nc-menu-item-title">Navigation Five</span>
-    </li>
-</ul>
+		<ul  *ngIf="navItem.childs" class="nc-sub-menu"
+			 [ngClass]="getSubMenuClass(navItem.childs)">
+			<li class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
+				<span class="nc-menu-item-title" [ngClass]="{'active':navItem2.isActive}" (click)="clickNavItem(navItem2)">
+					<span class="nc-menu-title">{{navItem2.title}}</span>
+				</span>
 
-<div class="nc-anticon-menu">
-    <div class="nc-anticon"></div>
-</div>
-
-<ul class="nc-menu nc-menu-vertical nc-menu-place-down">
-    <li class="nc-menu-item">
-			<span class="nc-menu-item-title">
-				<span class="nc-menu-title">
-					<span class="nc-icon fa fa-gift"></span>Navigation One</span>
-				<span class="nc-carat nc-carat-down"></span>
-			</span>
-
-        <ul class="nc-sub-menu nc-menu-vertical nc-menu-place-down">
-            <li class="nc-menu-item">
-					<span class="nc-menu-item-title">
-						<span class="nc-menu-title">option1</span>
-					</span>
-            </li>
-            <li class="nc-menu-item">
-					<span class="nc-menu-item-title">
-						<span class="nc-menu-title">option2</span>
-						<span class="nc-carat nc-carat-down"></span>
-					</span>
-
-                <ul class="nc-sub-menu nc-menu-vertical nc-menu-place-down">
-                    <li class="nc-menu-item">
-							<span class="nc-menu-item-title">
-								<span class="nc-menu-title">option3</span>
-							</span>
-                    </li>
-                    <li class="nc-menu-item">
-							<span class="nc-menu-item-title">
-								<span class="nc-menu-title">option4</span>
-							</span>
-                    </li>
-                </ul>
-
-            </li>
-        </ul>
-
-    </li>
-    <li class="nc-menu-item">
-			<span class="nc-menu-item-title">
-				<span class="nc-menu-title">
-					<span class="nc-icon fa fa-gear"></span>Navigation Two</span>
-				<span class="nc-carat nc-carat-down"></span>
-			</span>
-
-        <ul class="nc-sub-menu nc-menu-vertical nc-menu-place-down">
-            <li class="nc-menu-item">
-					<span class="nc-menu-item-title">
-						<span class="nc-menu-title">option5</span>
-					</span>
-            </li>
-            <li class="nc-menu-item">
-					<span class="nc-menu-item-title">
-						<span class="nc-menu-title">option6</span>
-					</span>
-            </li>
-        </ul>
-    </li>
-    <li class="nc-menu-item">
-			<span class="nc-menu-item-title active">
-				<span class="nc-menu-title">
-					<span class="nc-icon fa fa-globe"></span>Navigation There</span>
-			</span>
-    </li>
-    <li class="nc-menu-item">
-			<span class="nc-menu-item-title">
-				<span class="nc-menu-title">Navigation Five</span>
-			</span>
-    </li>
+				<ul  *ngIf="navItem2.childs" class="nc-sub-menu"
+					 [ngClass]="getSubMenuClass(navItem2.childs)">
+					<li class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
+				<span class="nc-menu-item-title" [ngClass]="{'active':navItem3.isActive}" (click)="clickNavItem(navItem3)">
+					<span class="nc-menu-title">{{navItem3.title}}</span>
+				</span>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
 </ul>
 
 <br/>
-<ul class="nc-menu nc-menu-vertical nc-menu-place-right">
-    <li class="nc-menu-item">
-			<span class="nc-menu-item-title">
-				<span class="nc-menu-title">
-					<span class="nc-icon fa fa-lock"></span>Navigation One</span>
-				<span class="nc-carat nc-carat-right"></span>
+
+<ul class="nc-menu" [ngClass]="menuClasss2">
+	<li class="nc-menu-item" *ngFor="let navItem of menuItems2.navItems">
+		<span class="nc-menu-item-title" [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem2(navItem)">
+			<span class="nc-menu-title">
+				<span class="{{navItem.icon}}"></span>
+				{{navItem.title}}
 			</span>
+			<span class="nc-carat" *ngIf="navItem.childs" [ngClass]="getCaratClass(navItem.childs)"></span>
+		</span>
 
-        <ul class="nc-sub-menu nc-menu-vertical nc-menu-place-right">
-            <li class="nc-menu-item">
-					<span class="nc-menu-item-title">
-						<span class="nc-menu-title">option1</span>
-					</span>
-            </li>
-            <li class="nc-menu-item">
-					<span class="nc-menu-item-title">
-						<span class="nc-menu-title">option2</span>
-						<span class="nc-carat nc-carat-right"></span>
-					</span>
+		<ul class="nc-sub-menu" *ngIf="navItem.childs" [ngClass]="getSubMenuClass(navItem.childs)">
+			<li class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
+				<span class="nc-menu-item-title"  (click)="clickNavItem2(navItem2)" [ngClass]="{'active':navItem2.isActive}">
+					<span class="nc-menu-title">{{navItem2.title}}</span>
+					<span class="nc-carat" *ngIf="navItem2.childs" [ngClass]="getCaratClass(navItem2.childs)"></span>
+				</span>
 
-                <ul class="nc-sub-menu nc-menu-vertical nc-menu-place-right">
-                    <li class="nc-menu-item">
-							<span class="nc-menu-item-title">
-								<span class="nc-menu-title">option3</span>
-							</span>
-                    </li>
-                    <li class="nc-menu-item">
-							<span class="nc-menu-item-title">
-								<span class="nc-menu-title">option4</span>
-							</span>
-                    </li>
-                </ul>
-
-            </li>
-        </ul>
-
-    </li>
-    <li class="nc-menu-item">
-			<span class="nc-menu-item-title active">
-				<span class="nc-menu-title">
-					<span class="nc-icon fa fa-microphone"></span>Navigation Two</span>
-				<span class="nc-carat nc-carat-right"></span>
-			</span>
-
-        <ul class="nc-sub-menu nc-menu-vertical nc-menu-place-right">
-            <li class="nc-menu-item">
-					<span class="nc-menu-item-title">
-						<span class="nc-menu-title">option5</span>
-					</span>
-            </li>
-            <li class="nc-menu-item">
-					<span class="nc-menu-item-title">
-						<span class="nc-menu-title">option6</span>
-					</span>
-            </li>
-        </ul>
-    </li>
-    <li class="nc-menu-item">
-			<span class="nc-menu-item-title">
-				<span class="nc-menu-title">
-					<span class="nc-icon fa fa-plane"></span>Navigation There</span>
-			</span>
-    </li>
-    <li class="nc-menu-item">
-			<span class="nc-menu-item-title">
-				<span class="nc-menu-title">Navigation Five</span>
-			</span>
-    </li>
+				<ul *ngIf="navItem2.childs" class="nc-sub-menu" [ngClass]="getSubMenuClass(navItem2.childs)">
+					<li class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
+						<span class="nc-menu-item-title" (click)="clickNavItem2(navItem3)" [ngClass]="{'active':navItem2.isActive}">
+							<span class="nc-menu-title">{{navItem3.title}}</span>
+						</span>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
 </ul>
+
+<br/>
+
+<ul class="nc-menu" [ngClass]="menuClasss3">
+	<li class="nc-menu-item" *ngFor="let navItem of menuItems3.navItems">
+		<span class="nc-menu-item-title" [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem(navItem)">
+			<span class="nc-menu-title">
+				<span class="{{navItem.icon}}"></span>
+				{{navItem.title}}
+			</span>
+			<span class="nc-carat nc-carat-right" *ngIf="navItem.childs"></span>
+		</span>
+
+		<ul class="nc-sub-menu" *ngIf="navItem.childs" [ngClass]="getSubMenuClass(navItem.childs)">
+			<li class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
+				<span class="nc-menu-item-title" (click)="clickNavItem(navItem2)">
+					<span class="nc-menu-title">{{navItem2.title}}</span>
+					<span class="nc-carat nc-carat-right" *ngIf="navItem2.childs"></span>
+				</span>
+
+				<ul class="nc-sub-menu"  *ngIf="navItem2.childs" [ngClass]="getSubMenuClass(navItem2.childs)">
+					<li class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
+						<span class="nc-menu-item-title" (click)="clickNavItem(navItem3)">
+							<span class="nc-menu-title">{{navItem3.title}}</span>
+						</span>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+<div class="nc-anticon-menu">
+	<div class="nc-anticon"></div>
+</div>

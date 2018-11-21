@@ -60,6 +60,38 @@
 .input-container .input-opers .input-oper-disable {
     cursor:not-allowed;
 }
+.input-container .input-opers .input-oper:after {
+    content:"";
+    display:inline-block;
+    height:6px;
+    width:6px;
+    border:solid 2px #999;
+    transform-origin:center center;
+    position:absolute;
+}
+.input-container .input-opers .input-oper.oper-add:after {
+    border-color: #999 #999 transparent transparent;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) rotate(-45deg);
+}
+.input-container .input-opers .input-oper.oper-del:after {
+    border-color: transparent #999 #999 transparent;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+.input-container .input-opers .oper-add:hover:after {
+    border-color: #1aa3ff #1aa3ff transparent transparent;
+}
+.input-container .input-opers .oper-del:hover:after {
+    border-color: transparent #1aa3ff #1aa3ff transparent;
+}
+.input-container.input-sm .input-opers .input-oper:after {
+    height:4px;
+    width:4px;
+}
+
 .input-container.input-lg {
     height:48px;
 }

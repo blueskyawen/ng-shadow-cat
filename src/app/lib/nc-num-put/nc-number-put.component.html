@@ -1,7 +1,7 @@
 <span class="input-container" [ngClass]="numPutClasses">
 	<span class="input-opers">
-		<span class="input-oper oper-add" (click)="inputAdd()">&and;</span>
-		<span class="input-oper oper-del" (click)="inputDesc()">&or;</span>
+		<span class="input-oper oper-add" (click)="inputAdd()"></span>
+		<span class="input-oper oper-del" (click)="inputDesc()"></span>
 	</span>
 	<input [value] = "value" [inputNumber]="max" (change)="valueChanges()" />
 </span>

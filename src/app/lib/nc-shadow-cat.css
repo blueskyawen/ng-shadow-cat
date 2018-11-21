@@ -1138,6 +1138,7 @@ ul.nc-menu li.nc-menu-item .nc-menu-item-title .nc-menu-title {
 }
 ul.nc-menu-horizontal {
   display: flex;
+  width: 100%;
 }
 ul.nc-menu-horizontal li.nc-menu-item {
   max-width: 20%;
@@ -1181,8 +1182,7 @@ ul.nc-menu-vertical {
   flex-direction: column;
   border: solid 1px #999;
   max-width: 100%;
-  width: 160px;
-  min-width: 130px;
+  min-width: 150px;
 }
 ul.nc-menu-vertical li.nc-menu-item {
   width: 100%;
@@ -1215,6 +1215,9 @@ ul.nc-menu-place-down ul.nc-sub-menu {
 ul.nc-menu-place-down ul.nc-sub-menu li.nc-menu-item {
   width: 100%;
   position: relative;
+}
+ul.nc-menu-place-down ul.nc-sub-menu.sub-menu-show {
+  display: block;
 }
 ul.nc-menu-place-right li.nc-menu-item ul.nc-sub-menu {
   display: none;
