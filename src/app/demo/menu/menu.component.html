@@ -1,3 +1,7 @@
+<h2 class="title">Menu导航菜单</h2>
+<p>导航菜单,为页面和功能提供导航的菜单列表。</p>
+
+<h1>1. 顶部导航菜单</h1>
 <ul class="nc-menu" [ngClass]="menuClasss">
 	<li class="nc-menu-item" *ngFor="let navItem of menuItems.navItems">
 		<span class="nc-menu-item-title" [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem(navItem)">
@@ -25,19 +29,25 @@
 	</li>
 </ul>
 
-<br/>
+<h1></h1>
 
+<h1>2. 垂直导航菜单,展开/缩起</h1>
+<div style="margin:10px;">
+	<div class="nc-anticon-menu" (click)="antionUser('1')">
+		<div class="nc-anticon"></div>
+	</div>
+</div>
 <ul class="nc-menu" [ngClass]="menuClasss2">
 	<li class="nc-menu-item" *ngFor="let navItem of menuItems2.navItems">
 		<span class="nc-menu-item-title" [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem2(navItem)">
 			<span class="nc-menu-title">
 				<span class="{{navItem.icon}}"></span>
-				{{navItem.title}}
+				<span *ngIf="isShowSide1">{{navItem.title}}</span>
 			</span>
-			<span class="nc-carat" *ngIf="navItem.childs" [ngClass]="getCaratClass(navItem.childs)"></span>
+			<span class="nc-carat" *ngIf="navItem.childs && isShowSide1" [ngClass]="getCaratClass(navItem.childs)"></span>
 		</span>
 
-		<ul class="nc-sub-menu" *ngIf="navItem.childs" [ngClass]="getSubMenuClass(navItem.childs)">
+		<ul class="nc-sub-menu" *ngIf="navItem.childs && isShowSide1" [ngClass]="getSubMenuClass(navItem.childs)">
 			<li class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
 				<span class="nc-menu-item-title"  (click)="clickNavItem2(navItem2)" [ngClass]="{'active':navItem2.isActive}">
 					<span class="nc-menu-title">{{navItem2.title}}</span>
@@ -46,7 +56,7 @@
 
 				<ul *ngIf="navItem2.childs" class="nc-sub-menu" [ngClass]="getSubMenuClass(navItem2.childs)">
 					<li class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
-						<span class="nc-menu-item-title" (click)="clickNavItem2(navItem3)" [ngClass]="{'active':navItem2.isActive}">
+						<span class="nc-menu-item-title" (click)="clickNavItem2(navItem3)" [ngClass]="{'active':navItem3.isActive}">
 							<span class="nc-menu-title">{{navItem3.title}}</span>
 						</span>
 					</li>
@@ -56,28 +66,34 @@
 	</li>
 </ul>
 
-<br/>
+<h1></h1>
 
+<h1>3. 垂直导航菜单,浮动呈现</h1>
+<div style="margin:10px;">
+	<div class="nc-anticon-menu" (click)="antionUser('2')">
+		<div class="nc-anticon"></div>
+	</div>
+</div>
 <ul class="nc-menu" [ngClass]="menuClasss3">
 	<li class="nc-menu-item" *ngFor="let navItem of menuItems3.navItems">
-		<span class="nc-menu-item-title" [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem(navItem)">
+		<span class="nc-menu-item-title" [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem3(navItem)">
 			<span class="nc-menu-title">
 				<span class="{{navItem.icon}}"></span>
-				{{navItem.title}}
+				<span *ngIf="isShowSide2">{{navItem.title}}</span>
 			</span>
-			<span class="nc-carat nc-carat-right" *ngIf="navItem.childs"></span>
+			<span class="nc-carat nc-carat-right" *ngIf="navItem.childs && isShowSide2"></span>
 		</span>
 
 		<ul class="nc-sub-menu" *ngIf="navItem.childs" [ngClass]="getSubMenuClass(navItem.childs)">
 			<li class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
-				<span class="nc-menu-item-title" (click)="clickNavItem(navItem2)">
+				<span class="nc-menu-item-title" (click)="clickNavItem3(navItem2)" [ngClass]="{'active':navItem2.isActive}">
 					<span class="nc-menu-title">{{navItem2.title}}</span>
 					<span class="nc-carat nc-carat-right" *ngIf="navItem2.childs"></span>
 				</span>
 
 				<ul class="nc-sub-menu"  *ngIf="navItem2.childs" [ngClass]="getSubMenuClass(navItem2.childs)">
 					<li class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
-						<span class="nc-menu-item-title" (click)="clickNavItem(navItem3)">
+						<span class="nc-menu-item-title" (click)="clickNavItem3(navItem3)" [ngClass]="{'active':navItem3.isActive}">
 							<span class="nc-menu-title">{{navItem3.title}}</span>
 						</span>
 					</li>
@@ -86,7 +102,3 @@
 		</ul>
 	</li>
 </ul>
-
-<div class="nc-anticon-menu">
-	<div class="nc-anticon"></div>
-</div>

@@ -114,7 +114,26 @@ export class MenuComponent {
             {title:'Navigation One',
                 icon:'nc-icon fa fa-car',
                 isActive:false,
-                callback: () => {console.log('click menu item!');}
+                callback: () => {console.log('click menu item!');},
+                childs: {
+                    type:'vertical',place: 'down',
+                    navItems: [
+                        {title:'option1',icon:'',isActive:false,type:'vertical',place: 'down',
+                            callback: () => {console.log('click menu item!');}},
+                        {title:'option2',icon:'',isActive:false,type:'vertical',place: 'down',
+                            callback: () => {console.log('click menu item!');},
+                            childs: {
+                                type:'vertical',place: 'down',
+                                navItems: [
+                                    {title:'option3',icon:'',isActive:false,
+                                        callback: () => {console.log('click menu item!');}},
+                                    {title:'option4',icon:'',isActive:false,
+                                        callback: () => {console.log('click menu item!');}}
+                                ]
+                            }
+                        }
+                    ]
+                }
             },
             {title:'Navigation Two',
                 icon:'nc-icon fa fa-camera',
@@ -150,6 +169,8 @@ export class MenuComponent {
     menuClasss : any = {};
     menuClasss2 : any = {};
     menuClasss3 : any = {};
+    isShowSide1 : boolean = true;
+    isShowSide2 : boolean = true;
 
     constructor() {
         this.menuClasss = this.getSubMenuClass(this.menuItems);
@@ -171,28 +192,38 @@ export class MenuComponent {
     }
 
     clickNavItem(item : any) {
-        console.log('clickNavItem');
         if(item.childs && item.childs.navItems.length !== 0) {
             return;
         }
         this.clearMenuItemsActive(this.menuItems);
         item.isActive = true;
         this.setMenuItemsActive(this.menuItems);
+        item.callback();
     }
 
     clickNavItem2(item : any) {
-        console.log('clickNavItem2');
+        if(!this.isShowSide1) {return;}
         if(!item.childs || item.childs.navItems.length === 0) {
             this.clearMenuItemsActive(this.menuItems2);
             item.isActive = true;
             this.setMenuItemsActive(this.menuItems2);
+            item.callback();
         } else {
             item.childs.isShow = !item.childs.isShow;
         }
     }
 
+    clickNavItem3(item : any) {
+        if(item.childs && item.childs.navItems.length !== 0) {
+            return;
+        }
+        this.clearMenuItemsActive(this.menuItems3);
+        item.isActive = true;
+        this.setMenuItemsActive(this.menuItems3);
+        item.callback();
+    }
+
     clearMenuItemsActive(menuNav : any) {
-        console.log('clearMenuItemsActive');
         if(!menuNav || menuNav.navItems.length === 0) {
             return;
         }
@@ -223,5 +254,13 @@ export class MenuComponent {
             }
         }
         return false;
+    }
+
+    antionUser(antIndex : any) {
+        if(antIndex === '1') {
+            //this.isShowSide1 = !this.isShowSide1;
+        } else {
+            //this.isShowSide2 = !this.isShowSide2;
+        }
     }
 }

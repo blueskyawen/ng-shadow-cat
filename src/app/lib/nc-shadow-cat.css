@@ -1010,9 +1010,8 @@ ul.nc-unfinite-list-group {
   animation: nc-thumb-zoom 1s 1 forwards;
 }
 .nc-anticon-menu {
-  height: 36px;
-  width: 50px;
-  border: solid 1px #999;
+  height: 20px;
+  width: 30px;
   border-radius: 4px;
   position: relative;
 }
@@ -1021,7 +1020,7 @@ ul.nc-unfinite-list-group {
   height: 2px;
   width: 60%;
   border-radius: 1px;
-  background: #ccc;
+  background: #666;
   position: absolute;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
@@ -1033,7 +1032,7 @@ ul.nc-unfinite-list-group {
   height: 2px;
   width: 60%;
   border-radius: 1px;
-  background: #ccc;
+  background: #666;
   position: absolute;
   top: 20%;
   transform: translateX(-50%);
@@ -1045,14 +1044,14 @@ ul.nc-unfinite-list-group {
   height: 2px;
   width: 60%;
   border-radius: 1px;
-  background: #ccc;
+  background: #666;
   position: absolute;
   bottom: 20%;
   transform: translateX(-50%);
   left: 50%;
 }
 .nc-anticon-menu:hover {
-  border-color: #1aa3ff;
+  border-color: #008ae6;
   cursor: pointer;
 }
 .nc-anticon-menu:hover .nc-anticon {
@@ -1066,10 +1065,7 @@ ul.nc-unfinite-list-group {
 }
 span.nc-icon {
   display: inline-block;
-  color: #666;
   position: relative;
-}
-.nc-menu-item .nc-icon {
   margin-right: 5px;
 }
 .nc-menu-item-title:hover .nc-icon,
@@ -1110,7 +1106,7 @@ ul.nc-menu {
   list-style: none;
   padding: 0;
   border-bottom: solid 1px #999;
-  margin: 20px;
+  margin: 0px;
   cursor: pointer;
   background: #fff;
 }
@@ -1180,9 +1176,10 @@ ul.nc-menu-horizontal > li.nc-menu-item:hover > ul.nc-sub-menu {
 ul.nc-menu-vertical {
   display: inline-flex;
   flex-direction: column;
-  border: solid 1px #999;
+  border: solid 1px #ccc;
   max-width: 100%;
-  min-width: 150px;
+  width: 180px;
+  background: #fff;
 }
 ul.nc-menu-vertical li.nc-menu-item {
   width: 100%;
@@ -1193,7 +1190,6 @@ ul.nc-menu-vertical li.nc-menu-item.active {
   margin-bottom: 0;
 }
 ul.nc-menu-vertical li.nc-menu-item:hover {
-  color: #1890ff;
   cursor: pointer;
   border-bottom: none;
   margin-bottom: 0;
@@ -1211,13 +1207,21 @@ ul.nc-menu-place-down ul.nc-sub-menu {
   list-style: none;
   padding: 0;
   padding-left: 20px;
-}
-ul.nc-menu-place-down ul.nc-sub-menu li.nc-menu-item {
-  width: 100%;
-  position: relative;
+  z-index: 2;
 }
 ul.nc-menu-place-down ul.nc-sub-menu.sub-menu-show {
   display: block;
+  animation: nc-menu_down_out 0.5s;
+  -moz-animation: nc-menu_down_out 0.5s;
+  /* Firefox */
+  -webkit-animation: nc-menu_down_out 0.5s;
+  /* Safari and Chrome */
+  -o-animation: nc-menu_down_out 0.5s;
+  /* Opera */
+}
+ul.nc-sub-menu li.nc-menu-item {
+  width: 100%;
+  position: relative;
 }
 ul.nc-menu-place-right li.nc-menu-item ul.nc-sub-menu {
   display: none;
@@ -1237,7 +1241,7 @@ ul.nc-menu-place-right li.nc-menu-item ul.nc-sub-menu {
   opacity: 0;
   box-shadow: -1px -1px 2px 1px #d9d9d9, 1px 1px 2px 1px #d9d9d9;
   margin-left: 1px;
-  color: #666;
+  z-index: 2;
 }
 ul.nc-menu-place-right li.nc-menu-item:hover > ul.nc-sub-menu {
   display: inline-flex;
@@ -1250,6 +1254,9 @@ ul.nc-menu-place-right li.nc-menu-item:hover > ul.nc-sub-menu {
   -o-animation: nc-menu_right_out 1s;
   /* Opera */
 }
+ul.menu-width-auto {
+  width: auto;
+}
 @keyframes nc-menu_right_out {
   0% {
     opacity: 0;
@@ -1258,5 +1265,13 @@ ul.nc-menu-place-right li.nc-menu-item:hover > ul.nc-sub-menu {
   100% {
     opacity: 1;
     display: inline-flex;
+  }
+}
+@keyframes nc-menu_down_out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
