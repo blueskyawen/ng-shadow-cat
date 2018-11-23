@@ -73,6 +73,9 @@ pre {
 .nc-flex-grow-1 {
   flex: 1 1 auto;
 }
+.nc-flex {
+  display: flex !important;
+}
 .nc-inline-flex {
   display: inline-flex !important;
 }
@@ -1274,4 +1277,49 @@ ul.menu-width-auto {
   100% {
     opacity: 1;
   }
+}
+.nc-layout {
+  flex-direction: column;
+  width: 100%;
+}
+.nc-layout .nc-header {
+  background: #d9d9d9;
+  align-items: center;
+}
+.nc-layout .nc-header .nc-header-logo {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nc-layout .nc-header .nc-header-logo .nc-logo {
+  display: flex;
+  align-items: center;
+}
+.nc-layout .nc-header .nc-header-logo img {
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  margin: 0 10px;
+}
+.nc-layout .nc-header .nc-header-logo-2 {
+  width: 210px;
+  justify-content: space-between;
+}
+.nc-layout .nc-header .nc-header-menu {
+  width: 100%;
+}
+.nc-layout .nc-content {
+  background: #f2f2f2;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 100px;
+}
+.nc-layout .nc-footer {
+  background: #d9d9d9;
+}
+.nc-layout .nc-sider {
+  max-width: 100%;
+  background: #ffffe5;
 }

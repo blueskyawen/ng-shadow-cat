@@ -1,0 +1,42 @@
+<ul class="nc-menu" [ngClass]="menuClasss">
+    <li class="nc-menu-item" *ngFor="let navItem of navItems">
+		<span class="nc-menu-item-title" *ngIf="type === 'horizontal'"
+              [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem(navItem)">
+			<span class="{{navItem.icon}}"></span>
+            <span>{{navItem.title}}</span>
+		</span>
+        <span class="nc-menu-item-title"  *ngIf="type === 'vertical'"
+              [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem(navItem)">
+			<span class="nc-menu-title">
+				<span class="{{navItem.icon}}"></span>
+				<span>{{navItem.title}}</span>
+			</span>
+			<span class="nc-carat" *ngIf="navItem.childs && place === 'down'" [ngClass]="getCaratClass(navItem.childs)"></span>
+            <span class="nc-carat nc-carat-right" *ngIf="navItem.childs && place === 'right'"></span>
+		</span>
+
+        <ul  *ngIf="navItem.childs" class="nc-sub-menu"
+             [ngClass]="getSubMenuClass(navItem.childs)">
+            <li class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
+				<span class="nc-menu-item-title" [ngClass]="{'active':navItem2.isActive}" (click)="clickNavItem(navItem2)">
+					<span class="nc-menu-title">{{navItem2.title}}</span>
+                    <span class="nc-carat" *ngIf="navItem2.childs && place === 'down'"
+                          [ngClass]="getCaratClass(navItem2.childs)"></span>
+                    <span class="nc-carat nc-carat-right" *ngIf="navItem2.childs && place === 'right'"></span>
+				</span>
+
+                <ul  *ngIf="navItem2.childs" class="nc-sub-menu"
+                     [ngClass]="getSubMenuClass(navItem2.childs)">
+                    <li class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
+                        <span class="nc-menu-item-title" [ngClass]="{'active':navItem3.isActive}" (click)="clickNavItem(navItem3)">
+                            <span class="nc-menu-title">{{navItem3.title}}</span>
+                        </span>
+                    </li>
+                </ul>
+
+            </li>
+        </ul>
+
+    </li>
+</ul>
+

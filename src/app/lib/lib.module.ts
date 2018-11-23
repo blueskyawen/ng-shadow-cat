@@ -43,6 +43,7 @@ import {NcAvaterComponent} from './nc-avater/nc-avater.component';
 import {NcMsgEifComponent} from './nc-msg-eif/nc-msg-eif.component';
 import {NcSkeletonComponent} from './nc-skeleton/nc-skeleton.component';
 import {NcNumberPutComponent} from './nc-num-put/nc-number-put.component';
+import {NcMenuComponent} from './nc-menu/nc-menu.component';
 
 import { InputNumberDirective } from './nc-num-put/input-number.directive';
 
@@ -56,7 +57,7 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
     NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent,NcBarChartComponent,
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
-    NcNumberPutComponent,InputNumberDirective],
+    NcNumberPutComponent,InputNumberDirective,NcMenuComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
@@ -65,6 +66,6 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
     NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent,NcBarChartComponent,
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
-    NcNumberPutComponent]
+    NcNumberPutComponent,NcMenuComponent]
 })
 export class LibModule { }

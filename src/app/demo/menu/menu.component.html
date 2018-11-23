@@ -2,103 +2,226 @@
 <p>导航菜单,为页面和功能提供导航的菜单列表。</p>
 
 <h1>1. 顶部导航菜单</h1>
-<ul class="nc-menu" [ngClass]="menuClasss">
-	<li class="nc-menu-item" *ngFor="let navItem of menuItems.navItems">
-		<span class="nc-menu-item-title" [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem(navItem)">
-			<span class="{{navItem.icon}}"></span>
-			{{navItem.title}}
-		</span>
-
-		<ul  *ngIf="navItem.childs" class="nc-sub-menu"
-			 [ngClass]="getSubMenuClass(navItem.childs)">
-			<li class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
-				<span class="nc-menu-item-title" [ngClass]="{'active':navItem2.isActive}" (click)="clickNavItem(navItem2)">
-					<span class="nc-menu-title">{{navItem2.title}}</span>
-				</span>
-
-				<ul  *ngIf="navItem2.childs" class="nc-sub-menu"
-					 [ngClass]="getSubMenuClass(navItem2.childs)">
-					<li class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
-				<span class="nc-menu-item-title" [ngClass]="{'active':navItem3.isActive}" (click)="clickNavItem(navItem3)">
-					<span class="nc-menu-title">{{navItem3.title}}</span>
-				</span>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
+<div style="margin-bottom: 120px;">
+	<nc-menu [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
+</div>
 
 <h1></h1>
 
 <h1>2. 垂直导航菜单,展开/缩起</h1>
-<div style="margin:10px;">
-	<div class="nc-anticon-menu" (click)="antionUser('1')">
-		<div class="nc-anticon"></div>
-	</div>
+<div style="margin-top: 30px;margin-bottom: 30px;">
+	<nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
 </div>
-<ul class="nc-menu" [ngClass]="menuClasss2">
-	<li class="nc-menu-item" *ngFor="let navItem of menuItems2.navItems">
-		<span class="nc-menu-item-title" [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem2(navItem)">
-			<span class="nc-menu-title">
-				<span class="{{navItem.icon}}"></span>
-				<span *ngIf="isShowSide1">{{navItem.title}}</span>
-			</span>
-			<span class="nc-carat" *ngIf="navItem.childs && isShowSide1" [ngClass]="getCaratClass(navItem.childs)"></span>
-		</span>
-
-		<ul class="nc-sub-menu" *ngIf="navItem.childs && isShowSide1" [ngClass]="getSubMenuClass(navItem.childs)">
-			<li class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
-				<span class="nc-menu-item-title"  (click)="clickNavItem2(navItem2)" [ngClass]="{'active':navItem2.isActive}">
-					<span class="nc-menu-title">{{navItem2.title}}</span>
-					<span class="nc-carat" *ngIf="navItem2.childs" [ngClass]="getCaratClass(navItem2.childs)"></span>
-				</span>
-
-				<ul *ngIf="navItem2.childs" class="nc-sub-menu" [ngClass]="getSubMenuClass(navItem2.childs)">
-					<li class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
-						<span class="nc-menu-item-title" (click)="clickNavItem2(navItem3)" [ngClass]="{'active':navItem3.isActive}">
-							<span class="nc-menu-title">{{navItem3.title}}</span>
-						</span>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
-
 <h1></h1>
 
 <h1>3. 垂直导航菜单,浮动呈现</h1>
-<div style="margin:10px;">
+<div style="margin-top: 30px;margin-bottom: 30px;">
+	<nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"></nc-menu>
+</div>
+<!--div style="margin:10px;">
 	<div class="nc-anticon-menu" (click)="antionUser('2')">
 		<div class="nc-anticon"></div>
 	</div>
-</div>
-<ul class="nc-menu" [ngClass]="menuClasss3">
-	<li class="nc-menu-item" *ngFor="let navItem of menuItems3.navItems">
-		<span class="nc-menu-item-title" [ngClass]="{'active':navItem.isActive}" (click)="clickNavItem3(navItem)">
-			<span class="nc-menu-title">
-				<span class="{{navItem.icon}}"></span>
-				<span *ngIf="isShowSide2">{{navItem.title}}</span>
-			</span>
-			<span class="nc-carat nc-carat-right" *ngIf="navItem.childs && isShowSide2"></span>
-		</span>
+</div>-->
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+	<div *ngIf="currentTab === 'html'">
+    <textarea style="height:240px;">
+  	<nc-menu [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
 
-		<ul class="nc-sub-menu" *ngIf="navItem.childs" [ngClass]="getSubMenuClass(navItem.childs)">
-			<li class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
-				<span class="nc-menu-item-title" (click)="clickNavItem3(navItem2)" [ngClass]="{'active':navItem2.isActive}">
-					<span class="nc-menu-title">{{navItem2.title}}</span>
-					<span class="nc-carat nc-carat-right" *ngIf="navItem2.childs"></span>
-				</span>
+  	<nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
 
-				<ul class="nc-sub-menu"  *ngIf="navItem2.childs" [ngClass]="getSubMenuClass(navItem2.childs)">
-					<li class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
-						<span class="nc-menu-item-title" (click)="clickNavItem3(navItem3)" [ngClass]="{'active':navItem3.isActive}">
-							<span class="nc-menu-title">{{navItem3.title}}</span>
-						</span>
-					</li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-</ul>
+	<nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"></nc-menu>
+    </textarea>
+	</div>
+	<div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:240px;">
+    menuItems : any = {
+        type: 'horizontal',
+        place: '',
+        navItems: [
+            {title:'Navigation One',
+                 icon:'nc-icon fa fa-car',
+                 isActive:false,
+                 callback: () => {console.log('click menu item!');}
+            },
+            {title:'Navigation Two',
+                icon:'nc-icon fa fa-camera',
+                isActive:true,
+                callback: () => {console.log('click menu item!');}
+            },
+            {title:'Navigation There',
+                icon:'nc-icon fa fa-coffee',
+                isActive:false,
+                callback: () => {console.log('click menu item!');},
+                childs: {
+                    type:'vertical',place: 'down',
+                    navItems: [
+                        {title:'option5',icon:'',isActive:false,
+                            callback: () => {console.log('click menu item!');}},
+                        {title:'option6',icon:'',isActive:false,
+                            callback: () => {console.log('click menu item!');}}
+                    ]
+                }
+            },
+            {title:'Navigation Four',
+                icon:'nc-icon fa fa-cubes',
+                isActive:false,
+                callback: () => {console.log('click menu item!');}
+            },
+            {title:'Navigation Five',
+                icon:'nc-icon fa fa-wifi',
+                isActive:false,
+                callback: () => {console.log('click menu item!');}
+            }
+        ]
+    };
+    menuItems2 : any = {
+        type: 'vertical',
+        place: 'down',
+        navItems: [
+            {title:'Navigation One',
+                icon:'nc-icon fa fa-car',
+                isActive:false,
+                callback: () => {console.log('click menu item!');},
+                childs: {
+                    type:'vertical',place: 'down',isShow:false,
+                    navItems: [
+                        {title:'option1',icon:'',isActive:false,type:'vertical',place: 'down',
+                            callback: () => {console.log('click menu item!');}},
+                        {title:'option2',icon:'',isActive:false,type:'vertical',place: 'down',
+                            callback: () => {console.log('click menu item!');},
+                            childs: {
+                                type:'vertical',place: 'down',isShow:false,
+                                navItems: [
+                                    {title:'option3',icon:'',isActive:false,
+                                        callback: () => {console.log('click menu item!');}},
+                                    {title:'option4',icon:'',isActive:false,
+                                        callback: () => {console.log('click menu item!');}}
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {title:'Navigation Two',
+                icon:'nc-icon fa fa-camera',
+                isActive:false,
+                callback: () => {console.log('click menu item!');},
+                childs: {
+                    type:'vertical',place: 'down',isShow:false,
+                    navItems: [
+                        {title:'option5',icon:'',isActive:false,
+                            callback: () => {console.log('click menu item!');}},
+                        {title:'option6',icon:'',isActive:false,
+                            callback: () => {console.log('click menu item!');}}
+                    ]
+                }
+            },
+            {title:'Navigation There',
+                icon:'nc-icon fa fa-coffee',
+                isActive:true,
+                callback: () => {console.log('click menu item!');},
+            },
+            {title:'Navigation Four',
+                icon:'nc-icon fa fa-cubes',
+                isActive:false,
+                callback: () => {console.log('click menu item!');}
+            },
+            {title:'Navigation Five',
+                icon:'nc-icon fa fa-wifi',
+                isActive:false,
+                callback: () => {console.log('click menu item!');}
+            }
+        ]
+    };
+    menuItems3 : any = {
+        type: 'vertical',
+        place: 'right',
+        navItems: [
+            {title:'Navigation One',
+                icon:'nc-icon fa fa-car',
+                isActive:false,
+                callback: () => {console.log('click menu item!');},
+                childs: {
+                    type:'vertical',place: 'down',
+                    navItems: [
+                        {title:'option1',icon:'',isActive:false,type:'vertical',place: 'down',
+                            callback: () => {console.log('click menu item!');}},
+                        {title:'option2',icon:'',isActive:false,type:'vertical',place: 'down',
+                            callback: () => {console.log('click menu item!');},
+                            childs: {
+                                type:'vertical',place: 'down',
+                                navItems: [
+                                    {title:'option3',icon:'',isActive:false,
+                                        callback: () => {console.log('click menu item!');}},
+                                    {title:'option4',icon:'',isActive:false,
+                                        callback: () => {console.log('click menu item!');}}
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {title:'Navigation Two',
+                icon:'nc-icon fa fa-camera',
+                isActive:true,
+                callback: () => {console.log('click menu item!');}
+            },
+            {title:'Navigation There',
+                icon:'nc-icon fa fa-coffee',
+                isActive:false,
+                callback: () => {console.log('click menu item!');},
+                childs: {
+                    type:'vertical',place: 'down',
+                    navItems: [
+                        {title:'option5',icon:'',isActive:false,
+                            callback: () => {console.log('click menu item!');}},
+                        {title:'option6',icon:'',isActive:false,
+                            callback: () => {console.log('click menu item!');}}
+                    ]
+                }
+            },
+            {title:'Navigation Four',
+                icon:'nc-icon fa fa-cubes',
+                isActive:false,
+                callback: () => {console.log('click menu item!');}
+            },
+            {title:'Navigation Five',
+                icon:'nc-icon fa fa-wifi',
+                isActive:false,
+                callback: () => {console.log('click menu item!');}
+            }
+        ]
+    };
+    </textarea>
+	</div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+	<thead>
+	<tr>
+		<th>参数</th>
+		<th>说明</th>
+		<th>默认值</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>type</td>
+		<td>类型，2种取值：horizontal/vertical,水平/垂直</td>
+		<td>horizontal</td>
+	</tr>
+	<tr>
+		<td>place</td>
+		<td>子菜单呈现位置，down/right,向下/向右</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>navItems</td>
+		<td>菜单项目数组</td>
+		<td>[]</td>
+	</tr>
+	</tbody>
+</table>

@@ -10,7 +10,7 @@ import { Component,OnInit } from '@angular/core';
 export class MenuComponent {
     menuItems : any = {
         type: 'horizontal',
-        place: 'down/right',
+        place: '',
         navItems: [
             {title:'Navigation One',
                  icon:'nc-icon fa fa-car',
@@ -166,101 +166,15 @@ export class MenuComponent {
             }
         ]
     };
-    menuClasss : any = {};
-    menuClasss2 : any = {};
-    menuClasss3 : any = {};
     isShowSide1 : boolean = true;
     isShowSide2 : boolean = true;
+    tabItems : any[] = [];
+    currentTab : string;
 
     constructor() {
-        this.menuClasss = this.getSubMenuClass(this.menuItems);
-        this.menuClasss2 = this.getSubMenuClass(this.menuItems2);
-        this.menuClasss3 = this.getSubMenuClass(this.menuItems3);
+        this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
+            {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
+        this.currentTab= this.tabItems[0].label;
     }
 
-    getSubMenuClass(item : any) {
-        return {'nc-menu-horizontal': item.type === 'horizontal',
-            'nc-menu-vertical': item.type === 'vertical',
-            'nc-menu-place-down': item.place === 'down',
-            'nc-menu-place-right': item.place === 'right',
-            'sub-menu-show':item.isShow};
-    }
-
-    getCaratClass(item : any) {
-        return {'nc-carat-down': !item.isShow,
-            'nc-carat-up': item.isShow};
-    }
-
-    clickNavItem(item : any) {
-        if(item.childs && item.childs.navItems.length !== 0) {
-            return;
-        }
-        this.clearMenuItemsActive(this.menuItems);
-        item.isActive = true;
-        this.setMenuItemsActive(this.menuItems);
-        item.callback();
-    }
-
-    clickNavItem2(item : any) {
-        if(!this.isShowSide1) {return;}
-        if(!item.childs || item.childs.navItems.length === 0) {
-            this.clearMenuItemsActive(this.menuItems2);
-            item.isActive = true;
-            this.setMenuItemsActive(this.menuItems2);
-            item.callback();
-        } else {
-            item.childs.isShow = !item.childs.isShow;
-        }
-    }
-
-    clickNavItem3(item : any) {
-        if(item.childs && item.childs.navItems.length !== 0) {
-            return;
-        }
-        this.clearMenuItemsActive(this.menuItems3);
-        item.isActive = true;
-        this.setMenuItemsActive(this.menuItems3);
-        item.callback();
-    }
-
-    clearMenuItemsActive(menuNav : any) {
-        if(!menuNav || menuNav.navItems.length === 0) {
-            return;
-        }
-        for(let index = 0;index < menuNav.navItems.length;index++) {
-            menuNav.navItems[index].isActive = false;
-            this.clearMenuItemsActive(menuNav.navItems[index].childs);
-        }
-    }
-
-    setMenuItemsActive(MenuNav : any) {
-        if(MenuNav && MenuNav.navItems.length === 0) {
-            return;
-        }
-        for(let index = 0;index < MenuNav.navItems.length;index++) {
-            MenuNav.navItems[index].isActive = this.setMenuChildrenActive(MenuNav.navItems[index]);
-            //MenuNav.navItems[index].isActive = this.setMenuItemsActive(MenuNav.navItems[index].childs);
-        }
-    }
-
-    setMenuChildrenActive(childItem : any) {
-        if(!childItem.childs || childItem.childs.navItems.length === 0) {
-            return childItem.isActive;
-        }
-        for(let index = 0;index < childItem.childs.navItems.length;index++) {
-            if(this.setMenuChildrenActive(childItem.childs.navItems[index])) {
-                childItem.isActive = true;
-                return true;
-            }
-        }
-        return false;
-    }
-
-    antionUser(antIndex : any) {
-        if(antIndex === '1') {
-            //this.isShowSide1 = !this.isShowSide1;
-        } else {
-            //this.isShowSide2 = !this.isShowSide2;
-        }
-    }
 }
