@@ -29,7 +29,7 @@ export class SidebarPatternComponent implements OnInit {
       {'name':'卡片','label':'card','isActive':false,'url':'/card'},
       {'name':'Flex布局','label':'flex','isActive':false,'url':'/flexLayout'},
       {'name':'导航菜单','label':'menu','isActive':false,'url':'/menu'},
-      {'name':'锚点书签','label':'affix','isActive':false,'url':'/affix'},
+      //{'name':'锚点书签','label':'affix','isActive':false,'url':'/affix'},
       {'name':'表单','label':'form','isActive':false,'url':'/form'}];
   }
 

@@ -13,7 +13,7 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
   ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,
   BarChartComponent,PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,
-  SkeletonComponent,NumberInputComponent,AffixComponent,FormComponent} from './demo/index';
+  SkeletonComponent,NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -69,6 +69,7 @@ const appRoutes: Routes = [
       { path: 'flexLayout', component: LayoutComponent},
       { path: 'menu', component: MenuComponent},
       { path: 'affix', component: AffixComponent},
+      { path: 'affix/demo1', component: AffixDemo1Component},
       { path: 'form', component: FormComponent}
     ]
   },

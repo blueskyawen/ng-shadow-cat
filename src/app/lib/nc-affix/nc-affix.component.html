@@ -1,0 +1,16 @@
+<div class="nc-affix" id="myArticlemark">
+    <ul class="nav" id="articlemark1" [ngClass]="{'nav-nofloat': !isFloat,'navItems-show':!isShowEye}">
+        <li class="nav-item-hide" *ngIf="isFloat" (click)="switchNavItems('eye')">
+            <span>x</span>
+        </li>
+        <li class="nav-item" *ngFor="let navItem of navItems" [ngClass]="{'active':navItem.isActive}">
+            <a [href]="navItem.url" title="{{navItem.title}}">{{navItem.title}}</a>
+        </li>
+        <li class="nav-linkboll"></li>
+    </ul>
+
+    <ul class="nc-nav-eye" [ngClass]="{'nc-nav-eye-show':isShowEye}" (click)="switchNavItems('nav')">
+        <li class="nav-eye"></li>
+        <li class="nav-post">文章导航</li>
+    </ul>
+</div>

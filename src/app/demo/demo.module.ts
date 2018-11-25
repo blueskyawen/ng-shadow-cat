@@ -53,6 +53,7 @@ import {SkeletonComponent} from './skeleton/skeleton.component';
 import {NumberInputComponent} from './number-input/number-input.component';
 import {AffixComponent} from './affix/affix.component';
 import {FormComponent} from './form/form.component';
+import {AffixDemo1Component} from './affix/affix-demo1.component';
 
 @NgModule({
   imports: [CommonModule,LibModule],
@@ -65,7 +66,7 @@ import {FormComponent} from './form/form.component';
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
-    NumberInputComponent,AffixComponent,FormComponent],
+    NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -75,6 +76,6 @@ import {FormComponent} from './form/form.component';
     NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
-    NumberInputComponent,AffixComponent,FormComponent]
+    NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component]
 })
 export class DemoModule { }

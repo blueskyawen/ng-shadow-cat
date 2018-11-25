@@ -50,6 +50,8 @@ export * from './skeleton/skeleton.component';
 export * from './number-input/number-input.component';
 export * from './affix/affix.component';
 export * from './form/form.component';
+export * from './affix/affix-demo1.component';
+
 
 
 

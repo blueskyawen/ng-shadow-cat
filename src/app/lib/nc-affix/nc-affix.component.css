@@ -61,6 +61,9 @@
     border-radius:4px;
     display:none;
 }
+.nc-affix ul.nav.navItems-show {
+    display: block;
+}
 .nc-affix ul.nav.nav-nofloat {
     border:none;
     border-left:solid 2px #cccccc;
@@ -128,6 +131,9 @@ ul.nc-nav-eye {
     display:none;
     background-color:#fff;
 }
+ul.nc-nav-eye.nc-nav-eye-show {
+    display:inline-flex;
+}
 ul.nc-nav-eye li.nav-eye {
     display:inline-block;
     height:8px;
@@ -180,14 +186,4 @@ ul.nc-nav-eye:hover li.nav-eye:after {
 }
 
 
-.row .section {
-    width:100%;
-}
-.row .section p {
-    line-height:24px;
-}
-
-.row .content {
-    margin-left:150px;
-}
 
