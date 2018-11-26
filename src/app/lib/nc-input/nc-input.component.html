@@ -1,25 +1,30 @@
-<div class="input-container" [class.input-search]="isSearch">
-  <span *ngIf="prefixList.length == 1" class="puffix">{{prefixList[0].label}}</span>
-  <nc-select *ngIf="prefixList.length > 1" [width]="'60px'" [height]="'30px'" [options]="prefixList"
-             [value]="prefixList[0].label">
-  </nc-select>
+<div class="nc-form-group-item" [ngClass]="afixClasses" [ngStyle]="inputStyle">
+  <span *ngIf="prefixList.length == 1" class="input-affix input-preffix">{{prefixList[0].label}}</span>
+  <ng-content select="nc-input-icon"></ng-content>
+
   <input name="input" #myInput
          [type]="type"
          [value]="modelValue"
          [attr.placeholder]="placeHolder"
          [disabled]="disabled"
          [readonly]="readon"
+         [autofocus]="autofocus"
+         [required]="required"
          [max]="max"
          [min]="min"
+         [step]="step"
          (change)="inputChange(myInput.value)"
          [class.hasSuffix]="suffixList.length !== 0"
          [class.hasPrefix]="prefixList.length !== 0"
+         autocomplete="on"
   />
-  <span *ngIf="suffixList.length == 1" class="suffix">{{suffixList[0].label}}</span>
-  <nc-select *ngIf="suffixList.length > 1" [width]="'60px'" [height]="'30px'" [options]="suffixList"
-             [value]="suffixList[0].label">
-  </nc-select>
-  <span *ngIf="isSearch" class="Search"></span>
-  <span *ngIf="required" class="optional">*</span>
-  <span *ngIf="!required" class="optional"></span>
+
+  <span class="nc-form-group-search" *ngIf="isSearch"></span>
+  <span *ngIf="suffixList.length == 1" class="input-affix input-subffix">{{suffixList[0].label}}</span>
+</div>
+<div class="nc-form-group-hint nc-form-group-explain" *ngIf="isShowHint">
+  请输入中文或者英文
+</div>
+<div class="nc-form-group-hint nc-form-group-error" *ngIf="isShowError">
+  请输入中文或者英文
 </div>

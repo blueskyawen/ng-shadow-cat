@@ -1,2 +1,113 @@
 <h2 class="title">表单</h2>
 <p>Form表单，具有数据收集、校验和提交的功能，包含复选框、单选框、输入框、下拉选择框等元素的集合使用</p>
+
+<h3>1. 水平表单</h3>
+<div style="margin-top: 20px;margin-left: 20px;">
+    <form style="display: inline-flex;align-items: center;">
+        <nc-form-group>
+            <nc-form-control>
+                <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+                    <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+                </nc-input>
+            </nc-form-control>
+            <nc-form-control>
+                <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+                    <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-button>登录</nc-button>
+    </form>
+</div>
+
+<h3>2.垂直表单</h3>
+<div style="margin-top: 20px;margin-left: 20px;">
+    <nc-form-group>
+        <nc-form-label [required]="true">姓名</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'text'" [(modelValue)]="value" [required]="true"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label [required]="true">密码</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'password'" [(modelValue)]="password" [required]="true"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label>别名(可选)</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'text'" [(modelValue)]="value2"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label [required]="true">数目</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'number'" [(modelValue)]="num" [min]="1" [max]="99" [step]="5" [required]="true"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label [required]="true">禁用</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'text'" [(modelValue)]="value2" [disabled]="true" [required]="true"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label [required]="true">只读</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'text'" [(modelValue)]="value2" [readon]="true" [required]="true"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label [required]="true">自动聚焦</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'text'" [(modelValue)]="value2" [autofocus]="true" [required]="true"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label [required]="true">单位组合</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'text'" [(modelValue)]="num2" [suffixList]="units" [required]="true"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label [required]="true">网址</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [required]="true"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label [required]="true">网址2</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [suffixList]="units" [required]="true"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label>搜索框</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true"></nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label [required]="true">用户名</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+                <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label [required]="true">密码</nc-form-label>
+        <nc-form-control>
+            <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+                <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group>
+        <nc-form-label>文本域</nc-form-label>
+        <nc-form-control>
+            <nc-text-area [(modelValue)]="textArea"></nc-text-area>
+        </nc-form-control>
+    </nc-form-group>
+</div>

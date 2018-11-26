@@ -13,17 +13,19 @@ export class InputComponent {
   value2 : string = 'Jack2';
   password : string = '';
   num : number = 1;
-  num2 : number = 3;
-  num2s : number = 4;
+  num2 : string = '3';
+  num2s : string = '127.0.0.1';
   units : any[] = [{label:'GB',value:'gb'}];
   units3 : any[] = [{label:'GB',value:'gb'},{label:'核',value:'core'}];
   units2 : any[] = [{label:'http://',value:'http://'}];
   units4 : any[] = [{label:'http://',value:'http://'},{label:'https://',value:'https://'}];
+  textArea : string = '';
   sarchValue : string = '';
   tabItems : any[] = [];
   currentTab : string;
   tabItems2 : any[] = [];
   currentTab2 : string;
+
 
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},

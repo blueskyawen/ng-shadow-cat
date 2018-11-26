@@ -1,122 +1,161 @@
-<h2 class="title">文本输入框</h2>
-<p>文本输入框，用于日常表单的数据输入</p>
+<h2 class="title">输入框</h2>
+<p>输入框，用于日常表单的数据输入</p>
 
-<div style="margin-top: 20px;">
-  <nc-form-group>
-    <nc-form-label>姓名</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="value" (modelValueChange)="aaa()" [required]="true"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>别名(可选)</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="value2" (modelValueChange)="aaa()"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>密码</nc-form-label>
-    <nc-input [type]="'password'" [(modelValue)]="password" (modelValueChange)="aaa()"  [required]="true"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>数目</nc-form-label>
-    <nc-input [type]="'number'" [(modelValue)]="num" [max]="6" [min]="1"
-              [required]="true"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>禁用</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="value2"  [disabled]="true"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>只读</nc-form-label>
+<h3>1. 常用输入框</h3>
+<div style="margin-top: 20px;margin-left: 20px;">
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="value" [required]="true"></nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true"></nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="value2"></nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'number'" [(modelValue)]="num" [min]="1" [max]="99" [step]="5" [required]="true">
+    </nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="value2" [disabled]="true" [required]="true"></nc-input>
+  </div>
+  <div style="margin: 20px 0;">
     <nc-input [type]="'text'" [(modelValue)]="value2" [readon]="true" [required]="true"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>单位组合</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="num2" [required]="true" [suffixList]="units">
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="value2" [autofocus]="true" [required]="true"></nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="num2" [suffixList]="units" [required]="true"></nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [required]="true"></nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [suffixList]="units" [required]="true">
     </nc-input>
-  </nc-form-group>
-  <!--nc-form-group>
-    <nc-form-label>多个单位</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="num2" [required]="true" [suffixList]="units3">
-    </nc-input>
-  </nc-form-group>-->
-  <nc-form-group>
-    <nc-form-label>网址</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="num2s" [required]="true" [prefixList]="units2">
-    </nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>搜索框</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="sarchValue" [required]="true" [isSearch]="true">
-    </nc-input>
-  </nc-form-group>
-  <nc-form-group [width]="'700px'">
-    <nc-form-label>搜索框</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="sarchValue" [required]="true" [isSearch]="true">
-    </nc-input>
-  </nc-form-group>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true"></nc-input>
+  </div>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
-    <textarea style="height:300px;">
-  <nc-form-group>
-    <nc-form-label>姓名</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="value" (modelValueChange)="aaa()" [required]="true"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>别名(可选)</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="value2" (modelValueChange)="aaa()"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>密码</nc-form-label>
-    <nc-input [type]="'password'" [(modelValue)]="password" (modelValueChange)="aaa()"  [required]="true"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>数目</nc-form-label>
-    <nc-input [type]="'number'" [(modelValue)]="num" [max]="6" [min]="1"
-              [required]="true"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>禁用</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="value2"  [disabled]="true"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>只读</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="value2" [readon]="true" [required]="true"></nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>单位组合</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="num2" [required]="true" [suffixList]="units">
-    </nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>网址</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="num2s" [required]="true" [prefixList]="units2">
-    </nc-input>
-  </nc-form-group>
-  <nc-form-group>
-    <nc-form-label>搜索框</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="sarchValue" [required]="true" [isSearch]="true">
-    </nc-input>
-  </nc-form-group>
-  <nc-form-group [width]="'700px'">
-    <nc-form-label>搜索框</nc-form-label>
-    <nc-input [type]="'text'" [(modelValue)]="sarchValue" [required]="true" [isSearch]="true">
-    </nc-input>
-  </nc-form-group>
+    <textarea style="height:160px;">
+  <nc-input [type]="'text'" [(modelValue)]="value" [required]="true"></nc-input>
+  <nc-input [type]="'password'" [(modelValue)]="password" [required]="true"></nc-input>
+  <nc-input [type]="'text'" [(modelValue)]="value2"></nc-input>
+  <nc-input [type]="'number'" [(modelValue)]="num" [min]="1" [max]="99" [step]="5" [required]="true">
+  </nc-input>
+  <nc-input [type]="'text'" [(modelValue)]="value2" [disabled]="true" [required]="true"></nc-input>
+  <nc-input [type]="'text'" [(modelValue)]="value2" [readon]="true" [required]="true"></nc-input>
+  <nc-input [type]="'text'" [(modelValue)]="value2" [autofocus]="true" [required]="true"></nc-input>
+  <nc-input [type]="'text'" [(modelValue)]="num2" [suffixList]="units" [required]="true"></nc-input>
+  <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [required]="true"></nc-input>
+  <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [suffixList]="units" [required]="true">
+  </nc-input>
+  <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true"></nc-input>
     </textarea>
   </div>
   <div *ngIf="currentTab === 'typescript'">
-    <textarea style="height:200px;">
-    value : string = 'Jack';
-    value2 : string = 'Jack2';
-    password : string = '';
-    num : number = 1;
-    num2 : number = 3;
-    units : any[] = ['unit'];
-    units2 : any[] = ['http://'];
-    sarchValue : string = '';
+    <textarea style="height:160px;">
+  value : string = 'Jack';
+  value2 : string = 'Jack2';
+  password : string = '';
+  num : number = 1;
+  num2 : string = '3';
+  num2s : string = '127.0.0.1';
+  units : any[] = [{label:'GB',value:'gb'}];
+  units3 : any[] = [{label:'GB',value:'gb'},{label:'核',value:'core'}];
+  units2 : any[] = [{label:'http://',value:'http://'}];
+  units4 : any[] = [{label:'http://',value:'http://'},{label:'https://',value:'https://'}];
+  textArea : string = '';
     </textarea>
   </div>
 </nc-tab>
+
+<h3>2. 输入框与图标组合</h3>
+<div style="margin-top: 20px;margin-left: 20px;">
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+      <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+    </nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+      <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+    </nc-input>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [type]="'line'" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:150px;">
+    <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+      <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+    </nc-input>
+
+    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+      <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+    </nc-input>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>3. 文本域</h3>
+<div style="margin-top: 20px;margin-left: 20px;">
+  <div style="margin: 20px 0;">
+    <nc-text-area [(modelValue)]="textArea"></nc-text-area>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [type]="'line'" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:100px;">
+    <nc-text-area [(modelValue)]="textArea"></nc-text-area>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>4. 自定义尺寸</h3>
+<div style="margin-top: 20px;margin-left: 20px;">
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="value" [width]="'600px'" [height]="'48px'"></nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="value" [width]="'200px'" [height]="'30px'"></nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2"
+              [suffixList]="units" [width]="'600px'" [height]="'48px'">
+    </nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true" [width]="'600px'" [height]="'48px'">
+    </nc-input>
+  </div>
+  <div style="margin: 20px 0;">
+    <nc-text-area [(modelValue)]="textArea" [width]="'600px'" [height]="'130px'"></nc-text-area>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [type]="'line'" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:150px;">
+    <nc-input [type]="'text'" [(modelValue)]="value" [width]="'600px'" [height]="'48px'"></nc-input>
+    <nc-input [type]="'text'" [(modelValue)]="value" [width]="'200px'" [height]="'30px'"></nc-input>
+    <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2"
+              [suffixList]="units" [width]="'600px'" [height]="'48px'">
+    </nc-input>
+    <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true" [width]="'600px'" [height]="'48px'">
+    </nc-input>
+
+    <nc-text-area [(modelValue)]="textArea" [width]="'600px'" [height]="'130px'"></nc-text-area>
+    </textarea>
+  </div>
+</nc-tab>
+
 
 <h3>参数</h3>
 <table>
@@ -154,6 +193,11 @@
     <td>false</td>
   </tr>
   <tr>
+    <td>autofocus</td>
+    <td>是否自动聚焦,true/false</td>
+    <td>false</td>
+  </tr>
+  <tr>
     <td>readon</td>
     <td>是否只读,true/false</td>
     <td>false</td>
@@ -185,9 +229,19 @@
     <td>0</td>
   </tr>
   <tr>
+    <td>step</td>
+    <td>步长</td>
+    <td>1</td>
+  </tr>
+  <tr>
     <td>width</td>
     <td>自定义宽度，px或百分比，比如：50%，400px</td>
-    <td>470px</td>
+    <td>380px</td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>自定义高度，px或百分比，比如：50%，400px</td>
+    <td>36px</td>
   </tr>
   </tbody>
 </table>

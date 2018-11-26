@@ -1,3 +1,5 @@
-<label>
-    <ng-content></ng-content>
-</label>
+<div class="nc-form-group-label" [class.nc-form-group-require]="required" [ngStyle]="labelStyle">
+    <label>
+        <ng-content></ng-content>
+    </label>
+</div>

@@ -1,0 +1,8 @@
+<div class="nc-form-textarea" [ngStyle]="inputStyle">
+    <textarea name="textarea" #mytextarea
+              [value]="modelValue"
+              (change)="inputChange(mytextarea.value)"
+              [attr.placeholder]="placeHolder"
+              maxlength="100">
+    </textarea>
+</div>

@@ -45,6 +45,9 @@ import {NcSkeletonComponent} from './nc-skeleton/nc-skeleton.component';
 import {NcNumberPutComponent} from './nc-num-put/nc-number-put.component';
 import {NcMenuComponent} from './nc-menu/nc-menu.component';
 import {NcAffixComponent} from './nc-affix/nc-affix.component';
+import {NcFormControlComponent} from './nc-input/nc-form-control.component';
+import {NcInputIconComponent} from './nc-input/nc-input-icon.component';
+import {NcTextAreaComponent} from './nc-input/nc-textarea.component';
 
 import { InputNumberDirective } from './nc-num-put/input-number.directive';
 
@@ -58,7 +61,8 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
     NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent,NcBarChartComponent,
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
-    NcNumberPutComponent,InputNumberDirective,NcMenuComponent,NcAffixComponent],
+    NcNumberPutComponent,InputNumberDirective,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
+    NcInputIconComponent,NcTextAreaComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
@@ -67,6 +71,7 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcTransferComponent,NcTreeComponent,NcInputComponent,NcDropdownComponent,NcAlertComponent,
     NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent,NcBarChartComponent,
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
-    NcNumberPutComponent,NcMenuComponent,NcAffixComponent]
+    NcNumberPutComponent,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
+    NcInputIconComponent,NcTextAreaComponent]
 })
 export class LibModule { }

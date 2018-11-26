@@ -19,16 +19,24 @@ export class NcInputComponent  implements OnInit {
   @Input() suffixList : any[] = []; //后缀单位
   @Input() isSearch : boolean = false;
   @Input() readon : boolean = false;
-  @Input() width : string = '260px';
+  @Input() autofocus : boolean = false;
+  @Input() height : string = '36px';
+  @Input() width : string = '380px';
   @Input() min : number = 0;
-  @Input() max : number = 0;
+  @Input() max : number = 99;
+  @Input() step : number = 1;
   @Input() patternStr : string;
-  placeClasses : any = {}
+  afixClasses : any = {}
+  isShowHint : boolean = false;
+  isShowError : boolean = false;
+  inputStyle : any = {};
 
   constructor() {}
 
   ngOnInit() {
-
+    this.afixClasses = {'input-with-subffix':this.suffixList.length !== 0 && this.prefixList.length === 0,
+      'input-with-preffix':this.prefixList.length !== 0,'nc-form-group-item-disabled':this.disabled};
+    this.inputStyle = {'width':this.width,'height':this.height};
   }
 
   inputChange(value : string) {

@@ -42,7 +42,7 @@ export class SidebarContorlComponent implements OnInit {
       {'name':'轮播','label':'carousel','isActive':false,'url':'/carousel'},
       {'name':'穿梭选择框','label':'transfer','isActive':false,'url':'/transfer'},
       //{'name':'树型控件','label':'tree','isActive':false,'url':'/tree'},
-      {'name':'文本输入框','label':'input','isActive':false,'url':'/input'},
+      {'name':'输入框','label':'input','isActive':false,'url':'/input'},
       {'name':'数字输入框','label':'numberInput','isActive':false,'url':'/numberInput'},
       {'name':'柱状图','label':'barchart','isActive':false,'url':'/barchart'},
       {'name':'饼/环状图','label':'piechart','isActive':false,'url':'/piechart'},
