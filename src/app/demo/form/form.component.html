@@ -1,27 +1,82 @@
 <h2 class="title">表单</h2>
 <p>Form表单，具有数据收集、校验和提交的功能，包含复选框、单选框、输入框、下拉选择框等元素的集合使用</p>
 
-<h3>1. 水平表单</h3>
-<div style="margin-top: 20px;margin-left: 20px;">
-    <form style="display: inline-flex;align-items: center;">
-        <nc-form-group>
-            <nc-form-control>
-                <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
-                    <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
-                </nc-input>
-            </nc-form-control>
-            <nc-form-control>
-                <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
-                    <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
-                </nc-input>
-            </nc-form-control>
-        </nc-form-group>
-        <nc-button>登录</nc-button>
-    </form>
-</div>
+<h3>1. 行内表单</h3>
+<form class="nc-form-line">
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4 nc-content-end">用户名</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+                <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">密码</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+                <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control class="nc-xl-offset-1 nc-lg-offset-1 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
+            <nc-button>登录</nc-button>
+        </nc-form-control>
+    </nc-form-group>
+</form>
 
 <h3>2.垂直表单</h3>
-<div style="margin-top: 20px;margin-left: 20px;">
+<form style="max-width: 600px;">
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">用户名</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+                <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">密码</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+                <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control class="nc-xl-offset-4 nc-lg-offset-4 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
+            <nc-button>登录</nc-button>
+        </nc-form-control>
+    </nc-form-group>
+</form>
+
+<h3>3.水平表单</h3>
+<form>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12 nc-content-start">用户名</nc-form-label>
+        <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+                <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12 nc-content-start nc-content-start">密码</nc-form-label>
+        <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+                <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control>
+            <nc-button>登录</nc-button>
+        </nc-form-control>
+    </nc-form-group>
+</form>
+
+<!--div style="margin-top: 20px;margin-left: 20px;">
     <nc-form-group>
         <nc-form-label [required]="true">姓名</nc-form-label>
         <nc-form-control>
@@ -110,4 +165,4 @@
             <nc-text-area [(modelValue)]="textArea"></nc-text-area>
         </nc-form-control>
     </nc-form-group>
-</div>
+</div>-->

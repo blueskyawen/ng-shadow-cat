@@ -21,7 +21,7 @@ export class NcInputComponent  implements OnInit {
   @Input() readon : boolean = false;
   @Input() autofocus : boolean = false;
   @Input() height : string = '36px';
-  @Input() width : string = '380px';
+  @Input() width : string = '100%';
   @Input() min : number = 0;
   @Input() max : number = 99;
   @Input() step : number = 1;

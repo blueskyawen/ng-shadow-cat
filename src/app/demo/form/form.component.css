@@ -1,0 +1,7 @@
+.nc-form-line .nc-form-item {
+    display: inline-block;
+}
+
+.nc-content-start >>> .nc-form-group-label {
+    justify-content: flex-start;
+}

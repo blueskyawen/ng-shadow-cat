@@ -1,28 +1,36 @@
 .nc-form-group{
-  display:flex;
-  margin:10px;
+  display:inline-flex;
+  width:480px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  width:100%;
 }
 
 .nc-form-group-label {
-  width:100px;
   height:36px;
   display:inline-flex;
   align-items:center;
+  justify-content: flex-end;
   color:#333;
+  width:100%;
 }
 .nc-form-group-label label {
   display:inline-flex;
   height:100%;
-  width:100%;
+  //width:100%;
   align-items:center;
-  justify-content:flex-end;
+  //justify-content:flex-end;
+  color: #666;
+  position: relative;
 }
  .nc-form-group-label.nc-form-group-require label:before {
   content:"*";
-  margin-right: 5px;
+  margin-left: -10px;
   color:#ff3300;
-  position:relative;
-  top:5px;
+  position:absolute;
+  top:50%;
+   transform: translateY(-50%);
 }
 .nc-form-group-label label:after{
   content:":";
@@ -30,13 +38,18 @@
 }
 
 .nc-form-group-control {
-  margin-right: 10px;
+  //margin-right: 10px;
+  display: inline-block;
+  height: 100%;
+  font-size: 14px;
+  width:100%;
 }
 
 .nc-form-group-item {
   display:inline-flex;
   align-items:center;
-  width:380px;
+  //width:380px;
+  width: 100%;
   min-width:120px;
   height:36px;
   border:solid 1px  #999999;
@@ -56,7 +69,7 @@
   box-shadow:none;
   box-sizing:border-box;
   outline:none;
-  padding:0 5px;
+  padding:0 5px 0 20px;
   color:#4d4d4d;
 }
 .nc-form-group-item-disabled:hover {
@@ -132,10 +145,13 @@
 .nc-input-icon {
   color:#a6a6a6;
   margin:0 5px;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
 }
 .nc-form-textarea {
   display: inline-block;
-  width:380px;
+  width:100%;
   height:80px;
   min-width:120px;
   position: relative;
@@ -165,3 +181,32 @@
   font-size: 12px;
 }
 
+.nc-dynamic-delete {
+  display:inline-block;
+  height:18px;
+  width:18px;
+  border:solid 2px #999;
+  border-radius:50%;
+  margin-left:10px;
+  position:relative;
+}
+.nc-dynamic-delete:after {
+  content:"";
+  position:absolute;
+  width:60%;
+  height:2px;
+  background-color:#999;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+}
+.nc-dynamic-add {
+  border:dotted 1px #666;
+  background-color:#fff;
+  color:#999;
+  font-size:16px;
+}
+.nc-dynamic-add:hover {
+  border-color:#33adff;
+  color:#33adff;
+}

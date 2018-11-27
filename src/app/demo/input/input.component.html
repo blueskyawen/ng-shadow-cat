@@ -2,64 +2,86 @@
 <p>输入框，用于日常表单的数据输入</p>
 
 <h3>1. 常用输入框</h3>
-<div style="margin-top: 20px;margin-left: 20px;">
-  <div style="margin: 20px 0;">
+<div style="margin-left: 20px;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="value" [required]="true"></nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'password'" [(modelValue)]="password" [required]="true"></nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="value2"></nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'number'" [(modelValue)]="num" [min]="1" [max]="99" [step]="5" [required]="true">
     </nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="value2" [disabled]="true" [required]="true"></nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="value2" [readon]="true" [required]="true"></nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="value2" [autofocus]="true" [required]="true"></nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="num2" [suffixList]="units" [required]="true"></nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [required]="true"></nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [suffixList]="units" [required]="true">
     </nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true"></nc-input>
   </div>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
-    <textarea style="height:160px;">
-  <nc-input [type]="'text'" [(modelValue)]="value" [required]="true"></nc-input>
-  <nc-input [type]="'password'" [(modelValue)]="password" [required]="true"></nc-input>
-  <nc-input [type]="'text'" [(modelValue)]="value2"></nc-input>
-  <nc-input [type]="'number'" [(modelValue)]="num" [min]="1" [max]="99" [step]="5" [required]="true">
-  </nc-input>
-  <nc-input [type]="'text'" [(modelValue)]="value2" [disabled]="true" [required]="true"></nc-input>
-  <nc-input [type]="'text'" [(modelValue)]="value2" [readon]="true" [required]="true"></nc-input>
-  <nc-input [type]="'text'" [(modelValue)]="value2" [autofocus]="true" [required]="true"></nc-input>
-  <nc-input [type]="'text'" [(modelValue)]="num2" [suffixList]="units" [required]="true"></nc-input>
-  <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [required]="true"></nc-input>
-  <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [suffixList]="units" [required]="true">
-  </nc-input>
-  <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true"></nc-input>
+    <textarea style="height:300px;">
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'text'" [(modelValue)]="value" [required]="true"></nc-input>
+  </div>
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true"></nc-input>
+  </div>
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'text'" [(modelValue)]="value2"></nc-input>
+  </div>
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'number'" [(modelValue)]="num" [min]="1" [max]="99" [step]="5" [required]="true">
+    </nc-input>
+  </div>
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'text'" [(modelValue)]="value2" [disabled]="true" [required]="true"></nc-input>
+  </div>
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'text'" [(modelValue)]="value2" [readon]="true" [required]="true"></nc-input>
+  </div>
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'text'" [(modelValue)]="value2" [autofocus]="true" [required]="true"></nc-input>
+  </div>
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'text'" [(modelValue)]="num2" [suffixList]="units" [required]="true"></nc-input>
+  </div>
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [required]="true"></nc-input>
+  </div>
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [suffixList]="units" [required]="true">
+    </nc-input>
+  </div>
+  <div class="nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true"></nc-input>
+  </div>
     </textarea>
   </div>
   <div *ngIf="currentTab === 'typescript'">
-    <textarea style="height:160px;">
+    <textarea style="height:200px;">
   value : string = 'Jack';
   value2 : string = 'Jack2';
   password : string = '';
@@ -76,13 +98,13 @@
 </nc-tab>
 
 <h3>2. 输入框与图标组合</h3>
-<div style="margin-top: 20px;margin-left: 20px;">
-  <div style="margin: 20px 0;">
+<div style="margin-left: 20px;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
       <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
     </nc-input>
   </div>
-  <div style="margin: 20px 0;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
       <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
     </nc-input>
@@ -92,20 +114,23 @@
 <nc-tab [tabs]="tabItems2" [type]="'line'" [(selectTab)] = "currentTab2">
   <div *ngIf="currentTab2 === 'html'">
     <textarea style="height:150px;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
       <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
     </nc-input>
-
+  </div>
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
       <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
     </nc-input>
+  </div>
     </textarea>
   </div>
 </nc-tab>
 
 <h3>3. 文本域</h3>
-<div style="margin-top: 20px;margin-left: 20px;">
-  <div style="margin: 20px 0;">
+<div style="margin-left: 20px;">
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-text-area [(modelValue)]="textArea"></nc-text-area>
   </div>
 </div>
@@ -113,7 +138,9 @@
 <nc-tab [tabs]="tabItems2" [type]="'line'" [(selectTab)] = "currentTab2">
   <div *ngIf="currentTab2 === 'html'">
     <textarea style="height:100px;">
-    <nc-text-area [(modelValue)]="textArea"></nc-text-area>
+    <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+      <nc-text-area [(modelValue)]="textArea"></nc-text-area>
+    </div>
     </textarea>
   </div>
 </nc-tab>
@@ -236,7 +263,7 @@
   <tr>
     <td>width</td>
     <td>自定义宽度，px或百分比，比如：50%，400px</td>
-    <td>380px</td>
+    <td>100%</td>
   </tr>
   <tr>
     <td>height</td>

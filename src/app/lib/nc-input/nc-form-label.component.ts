@@ -10,13 +10,12 @@ import { Component,OnInit,Input } from '@angular/core';
 })
 export class NcFormLabelComponent implements OnInit {
     @Input() height : string = '36px';
-    @Input() width : string = '100px';
     @Input() required : boolean = false;
     labelStyle : any = {};
 
     constructor() {}
 
     ngOnInit() {
-        this.labelStyle = {'width': this.width,'height':this.height};
+        this.labelStyle = {'height':this.height};
     }
 }

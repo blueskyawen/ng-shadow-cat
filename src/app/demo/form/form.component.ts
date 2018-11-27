@@ -5,7 +5,8 @@ import { Component,OnInit } from '@angular/core';
 
 @Component({
     selector: 'demo-form',
-    templateUrl: './form.component.html'
+    templateUrl: './form.component.html',
+    styleUrls: ['./form.component.css']
 })
 export class FormComponent {
     value : string = 'Jack';

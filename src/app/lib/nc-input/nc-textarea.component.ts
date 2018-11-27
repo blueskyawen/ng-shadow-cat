@@ -13,7 +13,7 @@ export class NcTextAreaComponent implements OnInit {
     @Output() modelValueChange = new EventEmitter();
     @Input() placeHolder : string = '请输入';
     @Input() height : string = '80px';
-    @Input() width : string = '380px';
+    @Input() width : string = '100%';
     inputStyle : any = {};
 
     constructor() {}
