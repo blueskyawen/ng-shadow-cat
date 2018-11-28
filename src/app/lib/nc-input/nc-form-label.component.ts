@@ -11,11 +11,16 @@ import { Component,OnInit,Input } from '@angular/core';
 export class NcFormLabelComponent implements OnInit {
     @Input() height : string = '36px';
     @Input() required : boolean = false;
+    @Input() noShowRequire : boolean = false;
+    @Input() noShowOption : boolean = false;
     labelStyle : any = {};
+    labelClass : any = {};
 
     constructor() {}
 
     ngOnInit() {
+        this.labelClass = {'nc-form-group-require':this.required,'nc-form-noshow-require':this.noShowRequire,
+            'nc-form-noshow-option':this.noShowOption};
         this.labelStyle = {'height':this.height};
     }
 }

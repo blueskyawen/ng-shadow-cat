@@ -1,26 +1,26 @@
 /**
- * Created by liuxuwen on 18-11-20.
+ * Created by liuxuwen on 18-11-28.
  */
 import { Component,OnInit } from '@angular/core';
 
 @Component({
-    selector: 'demo-form',
-    templateUrl: './form.component.html',
+    selector: 'demo-form-instance',
+    templateUrl: './form-instance.component.html',
     styleUrls: ['./form.component.css']
 })
-export class FormComponent {
-    value : string = 'Jack';
-    value2 : string = 'Jack2';
-    password : string = '';
-    num : number = 1;
-    num2 : string = '3';
-    num2s : string = '127.0.0.1';
-    units : any[] = [{label:'GB',value:'gb'}];
-    units3 : any[] = [{label:'GB',value:'gb'},{label:'核',value:'core'}];
-    units2 : any[] = [{label:'http://',value:'http://'}];
-    units4 : any[] = [{label:'http://',value:'http://'},{label:'https://',value:'https://'}];
-    textArea : string = '';
-    sarchValue : string = '';
+export class FormInstanceComponent {
+    loginData : any = {
+        value: '',
+        password: '',
+        checkFlag: 0,
+        loading:false
+    };
+    registerData : any = {
+        value: '',
+        password: '',
+        checkFlag: 0,
+        loading:false
+    };
     tabItems : any[] = [];
     currentTab : string;
     tabItems2 : any[] = [];
@@ -30,7 +30,6 @@ export class FormComponent {
     likes : any[] = [
         {value:'读书',isrequired:true}
     ];
-
 
     constructor() {
         this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
@@ -54,8 +53,20 @@ export class FormComponent {
         return false;
     }
 
-    login() {
+    login(data : any) {
+        data.loading = true;
+        setTimeout(() => {
+            data.loading = false;
+        },5000);
         return false;
     }
 
+    checkIt(checked : number) {
+        if(checked === 1) {
+            checked = 0;
+        }
+        if(checked === 0) {
+            checked = 1;
+        }
+    }
 }

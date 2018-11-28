@@ -13,7 +13,8 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   NavbarComponent,PageHeaderComponent,PagerComponent,ThumbImgComponent,BadgeComponent,
   ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,
   BarChartComponent,PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,
-  SkeletonComponent,NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component} from './demo/index';
+  SkeletonComponent,NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,
+  FormInstanceComponent} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -70,7 +71,8 @@ const appRoutes: Routes = [
       { path: 'menu', component: MenuComponent},
       { path: 'affix', component: AffixComponent},
       { path: 'affix/demo1', component: AffixDemo1Component},
-      { path: 'form', component: FormComponent}
+      { path: 'form', component: FormComponent},
+      { path: 'formInstance', component: FormInstanceComponent}
     ]
   },
   {

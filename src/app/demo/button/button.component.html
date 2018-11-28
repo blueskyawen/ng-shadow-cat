@@ -1,33 +1,72 @@
 <h2 class="title">按钮组</h2>
 <p>按钮用来进行用户操作与交互</p>
 <h3>1. 普通按钮</h3>
-<nc-button (click)="getUsers()">普通按钮</nc-button>
-<nc-button [type]="'cancel'" (click)="addUsers()">取消按钮</nc-button>
-<nc-button [style]="'max'" (click)="delUsers()">普通按钮</nc-button>
-<nc-button [type]="'cancel'" [style]="'max'" (click)="getOneUser()">取消按钮</nc-button>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button (click)="getUsers()">普通按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'cancel'" (click)="addUsers()">取消按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [style]="'max'" (click)="delUsers()">普通按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'cancel'" [style]="'max'" (click)="getOneUser()">取消按钮</nc-button>
+</div>
 
 <h3>2. 添加按钮</h3>
-<nc-button [type]="'add'">添加按钮</nc-button>
-<nc-button [type]="'add'" [style]="'max'">添加按钮</nc-button>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'add'">添加按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'add'" [style]="'max'">添加按钮</nc-button>
+</div>
 
 <h3>3. 重要按钮</h3>
-<nc-button [type]="'major'">重要按钮</nc-button>
-<nc-button [type]="'major'" [style]="'max'">重要按钮</nc-button>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'major'">重要按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'major'" [style]="'max'">重要按钮</nc-button>
+</div>
 
 <h3>4. 禁用按钮</h3>
-<nc-button [disabled]="true">禁用按钮</nc-button>
-<nc-button [type]="'add'" [disabled]="true">禁用按钮</nc-button>
-<nc-button [type]="'major'" [disabled]="true">禁用按钮</nc-button>
-<nc-button [type]="'cancel'" [disabled]="true">禁用按钮</nc-button>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [disabled]="true">禁用按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'add'" [disabled]="true">禁用按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'major'" [disabled]="true">禁用按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'cancel'" [disabled]="true">禁用按钮</nc-button>
+</div>
 
 <h3>5. 状态按钮</h3>
-<nc-button [loading]="true">状态按钮</nc-button>
-<nc-button [type]="'add'" [loading]="true">状态按钮</nc-button>
-<nc-button [type]="'major'" [loading]="true">状态按钮</nc-button>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [loading]="true">状态按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'add'" [loading]="true">状态按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [type]="'major'" [loading]="true">状态按钮</nc-button>
+</div>
 
 <h3>6. 动态按钮</h3>
-<nc-button [dnymic]="true">动态按钮</nc-button>
-<nc-button [dnymic]="true" [suffix]="true">动态按钮</nc-button>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [dnymic]="true">动态按钮</nc-button>
+</div>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [dnymic]="true" [suffix]="true">动态按钮</nc-button>
+</div>
+
+<h3>7. 自定义尺寸</h3>
+<div style="margin-right: 10px;display: inline-block;">
+  <nc-button [style]="'custom'" [width]="'360px'" [height]="'48px'">普通按钮</nc-button>
+</div>
 
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
@@ -43,6 +82,7 @@
       <nc-button [loading]="true">状态按钮</nc-button>
       <nc-button [dnymic]="true">动态按钮</nc-button>
       <nc-button [dnymic]="true" [suffix]="true">动态按钮</nc-button>
+      <nc-button [style]="'custom'" [width]="'360px'" [height]="'48px'">自定义按钮</nc-button>
     </textarea>
   </div>
 </nc-tab>
@@ -86,6 +126,16 @@
     <td>suffix</td>
     <td>是否有后缀，true/false</td>
     <td>false</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义宽度，px或百分比，比如：50%，400px</td>
+    <td>100%</td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>自定义高度，px或百分比，比如：50%，400px</td>
+    <td>36px</td>
   </tr>
   </tbody>
 </table>

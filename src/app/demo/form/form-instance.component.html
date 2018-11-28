@@ -1,0 +1,152 @@
+<h2 class="title">表单实例</h2>
+<p>常用的Form表单例子，用于各种用户交互的场景，比如：用户注册，用户登录...</p>
+
+<h3>1. 用户登录</h3>
+<form style="max-width: 600px;" novalidate>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-input [type]="'text'" [(modelValue)]="loginData.value" [required]="true">
+                <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-input [type]="'password'" [(modelValue)]="loginData.password" [required]="true">
+                <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control
+            class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <div class="nc-flex nc-content-space-between nc-align-item-center">
+                <span style="margin-right:10px;" (click)="checkIt(loginData.checkFlag)">
+                    <nc-checkbox [(checked)]="loginData.checkFlag"></nc-checkbox>
+                    <span>记住我</span>
+                </span>
+                <a>忘记密码</a>
+            </div>
+        </nc-form-control>
+    </nc-form-group>
+
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-button *ngIf="!loginData.loading" (click)="login(loginData)" [style]="'custom'"
+                       [width]="'100%'" [height]="'36px'">登录</nc-button>
+            <nc-button *ngIf="loginData.loading" [style]="'custom'" [width]="'100%'" [height]="'36px'"
+                       [disabled]="true" [loading]="true">登录</nc-button>
+        </nc-form-control>
+    </nc-form-group>
+
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <span>或者<a>现在注册</a></span>
+        </nc-form-control>
+    </nc-form-group>
+</form>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:200px;">
+    <form style="max-width: 600px;" novalidate>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+                <nc-input [type]="'text'" [(modelValue)]="loginData.value" [required]="true">
+                    <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+                <nc-input [type]="'password'" [(modelValue)]="loginData.password" [required]="true">
+                    <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control
+                    class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+                <div class="nc-flex nc-content-space-between nc-align-item-center">
+                    <span style="margin-right:10px;" (click)="checkIt(loginData.checkFlag)">
+                        <nc-checkbox [(checked)]="loginData.checkFlag"></nc-checkbox>
+                        <span>记住我</span>
+                    </span>
+                    <a>忘记密码</a>
+                </div>
+            </nc-form-control>
+        </nc-form-group>
+
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+                <nc-button *ngIf="!loginData.loading" (click)="login(loginData)" [style]="'custom'"
+                           [width]="'100%'" [height]="'36px'">登录</nc-button>
+                <nc-button *ngIf="loginData.loading" [style]="'custom'" [width]="'100%'" [height]="'36px'"
+                           [disabled]="true" [loading]="true">登录</nc-button>
+            </nc-form-control>
+        </nc-form-group>
+
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <span>或者<a>现在注册</a></span>
+            </nc-form-control>
+        </nc-form-group>
+    </form>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:200px;">
+    loginData : any = {
+        value: '',
+        password: '',
+        checkFlag: 0,
+        loading:false
+    };
+
+    login(data : any) {
+        data.loading = true;
+        setTimeout(() => {
+            data.loading = false;
+        },5000);
+        return false;
+    }
+
+    checkIt(checked : number) {
+        if(checked === 1) {
+            checked = 0;
+        }
+        if(checked === 0) {
+            checked = 1;
+        }
+    }
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>2. 用户注册</h3>
+<form style="max-width: 600px;">
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">用户名</nc-form-label>
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+            <nc-input [type]="'text'" [(modelValue)]="registerData.value" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">密码</nc-form-label>
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+            <nc-input [type]="'password'" [(modelValue)]="registerData.password" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control class="nc-xl-offset-3 nc-lg-offset-3 nc-md-offset-3 nc-sm-offset-3 nc-xs-offset-3">
+            <nc-button *ngIf="!registerData.loading" (click)="login(registerData)" [style]="'custom'" [width]="'120px'"
+                       [height]="'36px'">注册</nc-button>
+            <nc-button *ngIf="registerData.loading" [style]="'custom'" [width]="'120px'"
+                       [height]="'36px'" [disabled]="true" [loading]="true">注册</nc-button>
+        </nc-form-control>
+    </nc-form-group>
+</form>

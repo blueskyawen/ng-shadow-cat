@@ -5,3 +5,10 @@
 .nc-content-start >>> .nc-form-group-label {
     justify-content: flex-start;
 }
+
+a {
+    color:#1a8cff;
+    cursor: pointer;
+    margin-left: 5px;
+}
+

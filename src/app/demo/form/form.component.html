@@ -1,12 +1,13 @@
 <h2 class="title">表单</h2>
 <p>Form表单，具有数据收集、校验和提交的功能，包含复选框、单选框、输入框、下拉选择框等元素的集合使用</p>
 
-<h3>1. 行内表单</h3>
+<h3>1. 表单布局</h3>
+<h4>行内表单</h4>
 <form class="nc-form-line">
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4 nc-content-end">用户名</nc-form-label>
         <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
-            <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+            <nc-input [type]="'text'" [(modelValue)]="value">
                 <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
             </nc-input>
         </nc-form-control>
@@ -14,22 +15,69 @@
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">密码</nc-form-label>
         <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
-            <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+            <nc-input [type]="'password'" [(modelValue)]="password">
                 <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
             </nc-input>
         </nc-form-control>
     </nc-form-group>
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-control class="nc-xl-offset-1 nc-lg-offset-1 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
-            <nc-button>登录</nc-button>
+            <nc-button (click)="login()">登录</nc-button>
         </nc-form-control>
     </nc-form-group>
 </form>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:200px;">
+    <form class="nc-form-line">
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4 nc-content-end">用户名</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="value">
+                    <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">密码</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'password'" [(modelValue)]="password">
+                    <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control class="nc-xl-offset-1 nc-lg-offset-1 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
+                <nc-button>登录</nc-button>
+            </nc-form-control>
+        </nc-form-group>
+    </form>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:200px;">
+    value : string = 'Jack';
+    value2 : string = 'Jack2';
+    password : string = '';
+    num : number = 1;
+    num2 : string = '3';
+    num2s : string = '127.0.0.1';
+    units : any[] = [{label:'GB',value:'gb'}];
+    units3 : any[] = [{label:'GB',value:'gb'},{label:'核',value:'core'}];
+    units2 : any[] = [{label:'http://',value:'http://'}];
+    units4 : any[] = [{label:'http://',value:'http://'},{label:'https://',value:'https://'}];
+    textArea : string = '';
+    sarchValue : string = '';
+    </textarea>
+    </div>
+</nc-tab>
 
-<h3>2.垂直表单</h3>
+
+<h4>垂直表单</h4>
 <form style="max-width: 600px;">
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
-        <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">用户名</nc-form-label>
+        <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">用户名</nc-form-label>
         <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
             <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
                 <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
@@ -37,7 +85,7 @@
         </nc-form-control>
     </nc-form-group>
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
-        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">密码</nc-form-label>
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">密码</nc-form-label>
         <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
             <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
                 <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
@@ -46,17 +94,47 @@
     </nc-form-group>
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-control class="nc-xl-offset-4 nc-lg-offset-4 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
-            <nc-button>登录</nc-button>
+            <nc-button (click)="login()">登录</nc-button>
         </nc-form-control>
     </nc-form-group>
 </form>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <form style="max-width: 600px;">
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">用户名</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+                    <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">密码</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+                    <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control class="nc-xl-offset-4 nc-lg-offset-4 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
+                <nc-button>登录</nc-button>
+            </nc-form-control>
+        </nc-form-group>
+    </form>
+    </textarea>
+    </div>
+</nc-tab>
 
-<h3>3.水平表单</h3>
+<h4>水平表单</h4>
 <form>
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12 nc-content-start">用户名</nc-form-label>
         <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
-            <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+            <nc-input [type]="'text'" [(modelValue)]="value">
                 <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
             </nc-input>
         </nc-form-control>
@@ -64,105 +142,320 @@
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12 nc-content-start nc-content-start">密码</nc-form-label>
         <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
-            <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+            <nc-input [type]="'password'" [(modelValue)]="password">
                 <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
             </nc-input>
         </nc-form-control>
     </nc-form-group>
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-control>
-            <nc-button>登录</nc-button>
+            <nc-button (click)="login()">登录</nc-button>
         </nc-form-control>
     </nc-form-group>
 </form>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <form>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12 nc-content-start">用户名</nc-form-label>
+            <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+                <nc-input [type]="'text'" [(modelValue)]="value">
+                    <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12 nc-content-start nc-content-start">密码</nc-form-label>
+            <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+                <nc-input [type]="'password'" [(modelValue)]="password">
+                    <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control>
+                <nc-button>登录</nc-button>
+            </nc-form-control>
+        </nc-form-group>
+    </form>
+    </textarea>
+    </div>
+</nc-tab>
 
-<!--div style="margin-top: 20px;margin-left: 20px;">
-    <nc-form-group>
-        <nc-form-label [required]="true">姓名</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'text'" [(modelValue)]="value" [required]="true"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label [required]="true">密码</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'password'" [(modelValue)]="password" [required]="true"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label>别名(可选)</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'text'" [(modelValue)]="value2"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label [required]="true">数目</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'number'" [(modelValue)]="num" [min]="1" [max]="99" [step]="5" [required]="true"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label [required]="true">禁用</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'text'" [(modelValue)]="value2" [disabled]="true" [required]="true"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label [required]="true">只读</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'text'" [(modelValue)]="value2" [readon]="true" [required]="true"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label [required]="true">自动聚焦</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'text'" [(modelValue)]="value2" [autofocus]="true" [required]="true"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label [required]="true">单位组合</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'text'" [(modelValue)]="num2" [suffixList]="units" [required]="true"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label [required]="true">网址</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [required]="true"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label [required]="true">网址2</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [suffixList]="units" [required]="true"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label>搜索框</nc-form-label>
-        <nc-form-control>
-            <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true"></nc-input>
-        </nc-form-control>
-    </nc-form-group>
-    <nc-form-group>
-        <nc-form-label [required]="true">用户名</nc-form-label>
-        <nc-form-control>
+<h3>2. 表单输入框组</h3>
+<form style="max-width: 600px;">
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">用户名</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
             <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
-                <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
             </nc-input>
         </nc-form-control>
     </nc-form-group>
-    <nc-form-group>
-        <nc-form-label [required]="true">密码</nc-form-label>
-        <nc-form-control>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">密码</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
             <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
-                <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
             </nc-input>
         </nc-form-control>
     </nc-form-group>
-    <nc-form-group>
-        <nc-form-label>文本域</nc-form-label>
-        <nc-form-control>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">可选字段</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="value2">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">数量</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'number'" [(modelValue)]="num" [min]="1" [max]="99" [step]="5">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">自动聚焦</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="value2" [autofocus]="true" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">禁用</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="value2" [disabled]="true" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">只读</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="value2" [readon]="true" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">单位组合</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="num2" [suffixList]="units" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">网址</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">网址2</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [suffixList]="units" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">搜索框</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">文本域</nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
             <nc-text-area [(modelValue)]="textArea"></nc-text-area>
         </nc-form-control>
     </nc-form-group>
-</div>-->
+
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control class="nc-xl-offset-4 nc-lg-offset-4 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
+            <nc-button (click)="login()">登录</nc-button>
+        </nc-form-control>
+    </nc-form-group>
+</form>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:500px;">
+    <form style="max-width: 600px;">
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">用户名</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">密码</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">可选字段</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="value2">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">数量</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'number'" [(modelValue)]="num" [min]="1" [max]="99" [step]="5">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">自动聚焦</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="value2" [autofocus]="true" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">禁用</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="value2" [disabled]="true" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">只读</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="value2" [readon]="true" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">单位组合</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="num2" [suffixList]="units" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">网址</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">网址2</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="num2s" [prefixList]="units2" [suffixList]="units" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">搜索框</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="num2s" [isSearch]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4">文本域</nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-text-area [(modelValue)]="textArea"></nc-text-area>
+            </nc-form-control>
+        </nc-form-group>
+
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control class="nc-xl-offset-4 nc-lg-offset-4 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
+                <nc-button>登录</nc-button>
+            </nc-form-control>
+        </nc-form-group>
+    </form>
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>3. 动态表单输入框</h3>
+<form style="max-width: 600px;">
+    <nc-form-group *ngFor="let item of likes;let i = index;"
+                   class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label *ngIf="i === 0" class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4"
+                       [required]="true">爱好</nc-form-label>
+        <nc-form-label *ngIf="i !== 0" class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4"
+                       [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input [type]="'text'" [(modelValue)]="item.value" [required]="item.isrequired">
+            </nc-input>
+        </nc-form-control>
+        <nc-input-dynamic-delete (click)="deleteLikeItem(item)"></nc-input-dynamic-delete>
+    </nc-form-group>
+
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4"
+                       [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
+        <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+            <nc-input-dynamic-add (click)="addLikeItem()">+ add</nc-input-dynamic-add>
+        </nc-form-control>
+    </nc-form-group>
+
+    <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control class="nc-xl-offset-4 nc-lg-offset-4 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
+            <nc-button (click)="login()">登录</nc-button>
+        </nc-form-control>
+    </nc-form-group>
+</form>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
+    <div *ngIf="currentTab3 === 'html'">
+    <textarea style="height:200px;">
+    <form style="max-width: 600px;">
+        <nc-form-group *ngFor="let item of likes;let i = index;"
+                       class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label *ngIf="i === 0" class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4"
+                           [required]="true">爱好</nc-form-label>
+            <nc-form-label *ngIf="i !== 0" class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4"
+                           [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input [type]="'text'" [(modelValue)]="item.value" [required]="item.isrequired">
+                </nc-input>
+            </nc-form-control>
+            <nc-input-dynamic-delete (click)="deleteLikeItem(item)"></nc-input-dynamic-delete>
+        </nc-form-group>
+
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4"
+                           [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
+            <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
+                <nc-input-dynamic-add (click)="addLikeItem()">+ add</nc-input-dynamic-add>
+            </nc-form-control>
+        </nc-form-group>
+
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control class="nc-xl-offset-4 nc-lg-offset-4 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
+                <nc-button (click)="login()">登录</nc-button>
+            </nc-form-control>
+        </nc-form-group>
+    </form>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab3 === 'typescript'">
+    <textarea style="height:200px;">
+    likes : any[] = [
+        {value:'读书',isrequired:true}
+    ];
+
+    addLikeItem() {
+        this.likes.push({value:'',isrequired:true});
+        return false;
+    }
+
+    deleteLikeItem(item : any) {
+        let index = this.likes.indexOf(item);
+        this.likes.splice(index,1);
+        return false;
+    }
+    </textarea>
+    </div>
+</nc-tab>
+
+<div style="height:30px;"></div>

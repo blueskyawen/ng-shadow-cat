@@ -1,4 +1,4 @@
-<button [ngClass]="spinClasses">
+<button [ngClass]="spinClasses" [ngStyle]="buttonStyles">
   <span *ngIf="(type === 'add') && !loading">+</span>
   <span *ngIf="loading" class="loading"></span>
   <span [class.dynamic1]="suffix">
