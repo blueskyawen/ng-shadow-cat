@@ -3,7 +3,7 @@
 <div style="margin-top: 20px;">
   <span>请选择： </span>
   <span *ngFor="let item of items" style="margin-right:10px;">
-    <nc-checkbox [(checked)]="item.checked"></nc-checkbox>
+    <nc-checkbox [(checked)]="item.checked" [isPartial]="item.partial"></nc-checkbox>
     <span>{{item.label}}</span>
   </span>
 </div>
@@ -19,9 +19,9 @@
   <div *ngIf="currentTab === 'html'">
     <textarea style="height:180px;">
       <span>请选择： </span>
-      <nc-checkbox [(checked)]="item[0].checked"></nc-checkbox>
-      <nc-checkbox [(checked)]="item[1].checked"></nc-checkbox>
-      <nc-checkbox [(checked)]="item[2].checked"></nc-checkbox>
+      <nc-checkbox [(checked)]="item[0].checked" [isPartial]="partial"></nc-checkbox>
+      <nc-checkbox [(checked)]="item[1].checked" [isPartial]="partial"></nc-checkbox>
+      <nc-checkbox [(checked)]="item[2].checked" [isPartial]="partial"></nc-checkbox>
 
       <span>禁止选择：
       <nc-checkbox [disabled]="true" [(checked)]="item[0].checked"></nc-checkbox>
@@ -60,6 +60,11 @@
   <tr>
     <td>disabled</td>
     <td>指定禁止选择,true.false</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>isPartial</td>
+    <td>是否支持部分选择,true.false</td>
     <td>false</td>
   </tr>
   </tbody>

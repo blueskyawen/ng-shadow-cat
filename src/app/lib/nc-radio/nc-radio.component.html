@@ -1,3 +1,6 @@
-<span  class="radio" [ngClass]="{'active': checked,'default':!checked,'disabled':disabled}">
-  <input class="radio" name="sex" type="radio" value="yes" (click)="checkItem()"/>
+<span *ngFor="let option of options" class="radio-group">
+  <span class="radio" [ngClass]="{'active': option.checked,'default':!option.checked,'disabled':option.disabled}">
+    <input class="radio" name="radio" type="radio" value="yes" (click)="checkItem(option)"/>
+  </span>
+  <span>{{option.label}}</span>
 </span>

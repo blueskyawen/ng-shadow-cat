@@ -15,18 +15,18 @@
 <h3>3. 带全选框多项选择器</h3>
 <nc-mutil-select [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions" [allcheck]="true">
 </nc-mutil-select>
-<br/>
+<h5></h5>
 <nc-mutil-select [hasheckbox]="true" [options]="options2" [(selections)]="selectedOptions2" [allcheck]="true">
 </nc-mutil-select>
 <h3>4.  显示选择个数多项选择器</h3>
 <nc-mutil-select [showCheckNum]="true" [options]="options" [(selections)]="selectedOptions"></nc-mutil-select>
-<br/>
+<h5></h5>
 <nc-mutil-select [showCheckNum]="true" [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions">
 </nc-mutil-select>
 <h3>5. 自定义尺寸</h3>
-<nc-mutil-select [options]="options" [(selections)]="selectedOptions" [width]="220"></nc-mutil-select>
-<br/>
-<nc-mutil-select [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions" [width]="620"></nc-mutil-select>
+<nc-mutil-select [options]="options" [(selections)]="selectedOptions" [width]="'220px'"></nc-mutil-select>
+<h5></h5>
+<nc-mutil-select [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions" [width]="'620px'"></nc-mutil-select>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
@@ -49,8 +49,8 @@
     <nc-mutil-select [showCheckNum]="true" [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions">
     </nc-mutil-select>
     <!--h3>5.  自定义尺寸</h3>-->
-    <nc-mutil-select [options]="options" [(selections)]="selectedOptions" [width]="220"></nc-mutil-select>
-    <nc-mutil-select [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions" [width]="620"></nc-mutil-select>
+    <nc-mutil-select [options]="options" [(selections)]="selectedOptions" [width]="'220px'"></nc-mutil-select>
+    <nc-mutil-select [hasheckbox]="true" [options]="options" [(selections)]="selectedOptions" [width]="'620px'"></nc-mutil-select>
     </textarea>
   </div>
   <div *ngIf="currentTab === 'typescript'">
@@ -113,7 +113,7 @@
   <tr>
     <td>width</td>
     <td>自定义选择器宽度，Number</td>
-    <td>420</td>
+    <td>420px</td>
   </tr>
   </tbody>
 </table>

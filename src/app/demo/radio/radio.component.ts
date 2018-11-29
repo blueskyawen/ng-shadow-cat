@@ -9,10 +9,23 @@ import { Component,OnInit } from '@angular/core';
 })
 export class RadioComponent {
   items : any[] = [
-    {label: '何炅', checked: true},
-    {label: '黄磊', checked: false},
-    {label: '大华', checked: false}
+    {label: '何炅', value: 'hejiong',disabled:false},
+    {label: '黄磊', value: 'huanlei',disabled:false},
+    {label: '大华', value: 'dahua',disabled:false}
   ];
+  items2 : any[] = [
+    {label: '何炅', value: 'hejiong',disabled:true},
+    {label: '黄磊', value: 'huanlei',disabled:true},
+    {label: '大华', value: 'dahua',disabled:false}
+  ];
+  items3 : any[] = [
+    {label: '何炅', value: 'hejiong',disabled:true},
+    {label: '黄磊', value: 'huanlei',disabled:false},
+    {label: '大华', value: 'dahua',disabled:false}
+  ];
+  selectItem : any = 'huanlei';
+  selectItem2 : any = 'huanlei';
+  selectItem3 : any = 'huanlei';
   tabItems : any[] = [];
   currentTab : string;
 

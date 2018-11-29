@@ -16,7 +16,7 @@ export class NcMutilSelectComponent  implements OnInit {
   @Input() hasheckbox : boolean = false;
   @Input() allcheck : boolean = false;
   @Input() showCheckNum : boolean = false;
-  @Input() width : number = 420;
+  @Input() width : string = '420px';
   seleWidth : any;
   selOpWidth : any;
   isContentOpen: boolean = false;

@@ -18,6 +18,31 @@ export class FormInstanceComponent {
     registerData : any = {
         value: '',
         password: '',
+        password2: '',
+        sexs:[{label: '男', value: 'man',disabled:false},{label: '女', value: 'women',disabled:false}],
+        sex:'man',
+        name: '锦鲤',
+        age:18,
+        phone:'',
+        phonePreffixs:[{label:'+86',value:'+86'}],
+        webstore:'',
+        webPreffixs:[{label:'http://',value:'http://'}],
+        webSuffixs:[{label:'.com',value:'.com'}],
+        isFirstRegister: true,
+        education:'benke',
+        educationOptions:[{label: '专科',value: 'zhuanke',disable: false},
+            {label: '本科',value: 'benke',disable: false},
+            {label: '硕士',value: 'shuoshi',disable: false},
+            {label: '博士',value: 'boshi',disable: false},
+            {label: '博士后',value: 'boshihou',disable: false}],
+        educatAge:3,
+        likeOptions:[{label: '读书', value: 'dushu',disable: false},{label: '旅游', value: 'lvyou',disable: false},
+            {label: '跑步', value: 'run',disable: false},{label: '徒步', value: 'tubu',disable: false},
+            {label: '爬山',value: 'pashan',disable: false},{label: '投资',value: 'touzhi',disable: false},
+            {label: '美食',value: 'meishi',disable: false},{label: '睡觉', value: 'sleep',disable: false},
+            {label: '音乐', value: 'mousic',disable: false}],
+        likes:[],
+        description:'',
         checkFlag: 0,
         loading:false
     };
@@ -42,15 +67,8 @@ export class FormInstanceComponent {
         this.currentTab3= this.tabItems3[0].label;
     }
 
-    addLikeItem() {
-        this.likes.push({value:'',isrequired:true});
-        return false;
-    }
+    checkSex(item : any) {
 
-    deleteLikeItem(item : any) {
-        let index = this.likes.indexOf(item);
-        this.likes.splice(index,1);
-        return false;
     }
 
     login(data : any) {

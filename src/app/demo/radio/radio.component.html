@@ -2,31 +2,27 @@
 <p>单选-radio，用于表单的单选项目</p>
 <div style="margin-top: 20px;">
   <span>请选择： </span>
-  <span *ngFor="let item of items" style="margin-right:10px;">
-    <nc-radio [(checked)]="item.checked" (checkedChange)="checkItem(item)"></nc-radio>
-    <span>{{item.label}}</span>
-  </span>
+  <nc-radio [options]="items" [(value)]="selectItem"></nc-radio>
 </div>
 <div style="margin-top: 20px;">
   <span>禁止选择： </span>
-  <span *ngFor="let item of items" style="margin-right:10px;">
-    <nc-radio [disabled]="true" [(checked)]="item.checked" (checkedChange)="checkItem(item)"></nc-radio>
-    <span>{{item.label}}</span>
-  </span>
+  <nc-radio [options]="items2" [(value)]="selectItem2"></nc-radio>
+</div>
+<div style="margin-top: 20px;">
+  <span>禁止选择： </span>
+  <nc-radio [options]="items3" [(value)]="selectItem3"></nc-radio>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
     <textarea style="height:180px;">
-      <span>请选择： </span>
-      <nc-radio [(checked)]="item[0].checked" (checkedChange)="checkItem(item)"></nc-radio>
-      <nc-radio [(checked)]="item[1].checked" (checkedChange)="checkItem(item)"></nc-radio>
-      <nc-radio [(checked)]="item[2].checked" (checkedChange)="checkItem(item)"></nc-radio>
+    <span>请选择： </span>
+    <nc-radio [options]="items" [(value)]="selectItem"></nc-radio>
 
-      <span>禁止选择：
-      <nc-radio [disabled]="true" [(checked)]="item[0].checked" (checkedChange)="checkItem(item)"></nc-radio>
-      <nc-radio [disabled]="true" [(checked)]="item[1].checked" (checkedChange)="checkItem(item)"></nc-radio>
-      <nc-radio [disabled]="true" [(checked)]="item[2].checked" (checkedChange)="checkItem(item)"></nc-radio>
+    <span>禁止选择： </span>
+    <nc-radio [options]="items2" [(value)]="selectItem2"></nc-radio>
+    <span>禁止选择： </span>
+    <nc-radio [options]="items3" [(value)]="selectItem3"></nc-radio>
     </textarea>
   </div>
   <div *ngIf="currentTab === 'typescript'">

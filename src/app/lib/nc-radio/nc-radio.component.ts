@@ -9,20 +9,41 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
   styleUrls: ['./nc-radio.component.css']
 })
 export class NcRadioComponent implements OnInit {
-  @Input() checked : boolean = false;
-  @Output() checkedChange = new EventEmitter();
-  @Input() disabled : boolean = false;
+  @Input() options : any[] = [];
+  @Input() value : any;
+  @Output() valueChange = new EventEmitter();
+  isDisable : boolean = false;
 
   constructor() {}
 
   ngOnInit() {
+    this.options.forEach((option) => {
+      option.checked = false;
+    });
+    if(this.value) {
+      for(let option of this.options) {
+        if(option.value === this.value) {
+          option.checked = true;
+          this.isDisable = option.disabled;
+          break;
+        }
+      }
+    }
   }
 
-  checkItem() {
-    if(this.disabled) {
+  checkItem(item : any) {
+    if(item.disabled || this.isDisable) {
       return;
     }
-    this.checked = !this.checked;
-    this.checkedChange.emit(this.checked);
+    this.clearOptions();
+    item.checked = true;
+    this.valueChange.emit(item.value);
   }
+
+  clearOptions() {
+    this.options.forEach((option) => {
+      option.checked = false;
+    });
+  }
+
 }

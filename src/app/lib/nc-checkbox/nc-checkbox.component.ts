@@ -12,6 +12,7 @@ export class NcCheckboxComponent  implements OnInit {
   @Input() checked : number = 0;
   @Output() checkedChange = new EventEmitter();
   @Input() disabled : boolean = false;
+  @Input() isPartial : boolean = false;
 
   constructor() {}
 
@@ -23,13 +24,22 @@ export class NcCheckboxComponent  implements OnInit {
     if(this.disabled) {
       return;
     }
-    if(this.checked === 0) {
-      this.checked = 2;
-    } else if(this.checked === 1) {
-      this.checked = 0;
-    } else if(this.checked === 2) {
-      this.checked = 1;
+    if(this.isPartial) {
+      if(this.checked === 0) {
+        this.checked = 2;
+      } else if(this.checked === 1) {
+        this.checked = 0;
+      } else if(this.checked === 2) {
+        this.checked = 1;
+      }
+    } else {
+      if(this.checked === 0) {
+        this.checked = 1;
+      } else if(this.checked === 1) {
+        this.checked = 0;
+      }
     }
+
     this.checkedChange.emit(this.checked);
   }
 }

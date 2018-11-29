@@ -9,11 +9,11 @@ import { Component,OnInit } from '@angular/core';
 })
 export class CheckboxComponent {
   items : any[] = [
-    {label: '何炅', checked: 1, Disable: true},
-    {label: '黄磊', checked: 0, Disable: true},
-    {label: '大华', checked: 0, Disable: false},
-    {label: '大彭', checked: 2, Disable: true},
-    {label: 'H', checked: 0, Disable: false},
+    {label: '何炅', checked: 1, Disable: true,partial:true},
+    {label: '黄磊', checked: 0, Disable: true,partial:true},
+    {label: '大华', checked: 0, Disable: false,partial:true},
+    {label: '大彭', checked: 2, Disable: true,partial:true},
+    {label: 'H', checked: 0, Disable: false,partial:false},
   ];
   tabItems : any[] = [];
   currentTab : string;
