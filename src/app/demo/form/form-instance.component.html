@@ -250,6 +250,17 @@
         </nc-form-control>
     </nc-form-group>
 
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-control
+                class="nc-xl-offset-3 nc-lg-offset-3 nc-md-offset-3 nc-sm-offset-3 nc-xs-offset-3">
+            <div class="nc-flex nc-content-space-between nc-align-item-center">
+                <span style="margin-right:10px;" (click)="checkIt(registerData.checkFlag)">
+                    <nc-checkbox [(checked)]="registerData.checkFlag"></nc-checkbox>
+                    <span>我已阅读并同意 <a>使用协议</a></span>
+                </span>
+            </div>
+        </nc-form-control>
+    </nc-form-group>
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-control class="nc-xl-offset-3 nc-lg-offset-3 nc-md-offset-3 nc-sm-offset-3 nc-xs-offset-3">
             <nc-button *ngIf="!registerData.loading" (click)="login(registerData)" [style]="'custom'" [width]="'120px'"
@@ -387,6 +398,17 @@
             </nc-form-control>
         </nc-form-group>
 
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control
+                    class="nc-xl-offset-3 nc-lg-offset-3 nc-md-offset-3 nc-sm-offset-3 nc-xs-offset-3">
+                <div class="nc-flex nc-content-space-between nc-align-item-center">
+                    <span style="margin-right:10px;" (click)="checkIt(registerData.checkFlag)">
+                        <nc-checkbox [(checked)]="registerData.checkFlag"></nc-checkbox>
+                        <span>我已阅读并同意 <a>使用协议</a></span>
+                    </span>
+                </div>
+            </nc-form-control>
+        </nc-form-group>
         <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-form-control class="nc-xl-offset-3 nc-lg-offset-3 nc-md-offset-3 nc-sm-offset-3 nc-xs-offset-3">
                 <nc-button *ngIf="!registerData.loading" (click)="login(registerData)" [style]="'custom'" [width]="'120px'"
