@@ -11,9 +11,15 @@
       <div *ngIf="curStepIndex === 4">步骤5</div>
     </div>
     <div class="footer">
-      <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
-      <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
-      <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
+      </span>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
+      </span>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+      </span>
     </div>
   </nc-step>
 </div>
@@ -30,9 +36,15 @@
       <div *ngIf="curStepIndex === 4">步骤5</div>
     </div>
     <div class="footer">
-      <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
-      <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
-      <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
+      </span>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
+      </span>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+      </span>
     </div>
   </nc-step>
     </textarea>
@@ -69,9 +81,15 @@
       <div *ngIf="curStepIndex === 4">步骤5</div>
     </div>
     <div class="footer buttons2">
-      <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
-      <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
-      <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
+      </span>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
+      </span>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+      </span>
     </div>
   </nc-step>
 </div>
@@ -88,9 +106,15 @@
       <div *ngIf="curStepIndex === 4">步骤5</div>
     </div>
     <div class="footer buttons2">
-      <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
-      <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
-      <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex !== 0" [type]="'cancel'" (click)="preStep()">上一步</nc-button>
+      </span>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex < 4" (click)="nextStep()">下一步</nc-button>
+      </span>
+      <span class="form-btn-group">
+        <nc-button *ngIf="curStepIndex === 4" (click)="confirm()">完成</nc-button>
+      </span>
     </div>
   </nc-step>
     </textarea>

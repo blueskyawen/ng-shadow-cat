@@ -63,6 +63,11 @@ form {
 .form-group .group-right input:focus{
   border-color:#0039e6;
 }
+
+.form-btn-group {
+  margin: 0 10px;
+}
+
 .wenzhang{
   margin:30px;
   line-height:30px;

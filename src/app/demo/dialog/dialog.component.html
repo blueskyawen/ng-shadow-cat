@@ -2,8 +2,12 @@
 <p>模态框，用于用户的操作交互</p>
 <h3>1. 普通模态框</h3>
 <div style="margin-top: 20px;">
-  <nc-button (click)="openDialog(0)">标准尺寸</nc-button>
-  <nc-button (click)="openDialog(1)">大尺寸</nc-button>
+  <span style="margin-right: 10px;">
+      <nc-button (click)="openDialog(0)">标准尺寸</nc-button>
+  </span>
+  <span style="margin-right: 10px;">
+    <nc-button (click)="openDialog(1)">大尺寸</nc-button>
+  </span>
 </div>
 <nc-dialog *ngIf="isShows[0]" [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
   <div class="content">
@@ -23,8 +27,12 @@
     </form>
   </div>
   <div class="footer">
-    <nc-button (click)="isShows[0]=flase">确定</nc-button>
-    <nc-button [type]="'cancel'" (click)="isShows[0]=flase">取消</nc-button>
+    <span class="form-btn-group">
+      <nc-button (click)="isShows[0]=flase">确定</nc-button>
+    </span>
+    <span class="form-btn-group">
+      <nc-button [type]="'cancel'" (click)="isShows[0]=flase">取消</nc-button>
+    </span>
   </div>
 </nc-dialog>
 <nc-dialog *ngIf="isShows[1]" [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
@@ -45,8 +53,12 @@
     </div>
   </div>
   <div class="footer">
-    <nc-button (click)="isShows[1]=flase">确定</nc-button>
-    <nc-button [type]="'cancel'" (click)="isShows[1]=flase">取消</nc-button>
+    <span class="form-btn-group">
+      <nc-button (click)="isShows[1]=flase">确定</nc-button>
+    </span>
+    <span class="form-btn-group">
+      <nc-button [type]="'cancel'" (click)="isShows[1]=flase">取消</nc-button>
+    </span>
   </div>
 </nc-dialog>
 <p>使用方式:</p>
@@ -78,8 +90,12 @@
           </form>
         </div>
         <div class="footer">
-          <nc-button (click)="isShows[0]=flase">确定</nc-button>
-          <nc-button [type]="'cancel'" (click)="isShows[0]=flase">取消</nc-button>
+          <span class="form-btn-group">
+            <nc-button (click)="isShows[0]=flase">确定</nc-button>
+          </span>
+          <span class="form-btn-group">
+            <nc-button [type]="'cancel'" (click)="isShows[0]=flase">取消</nc-button>
+          </span>
         </div>
       </nc-dialog>
 
@@ -96,8 +112,12 @@
           </div>
         </div>
         <div class="footer">
-          <nc-button (click)="isShows[1]=flase">确定</nc-button>
-          <nc-button [type]="'cancel'" (click)="isShows[1]=flase">取消</nc-button>
+          <span class="form-btn-group">
+            <nc-button (click)="isShows[1]=flase">确定</nc-button>
+          </span>
+          <span class="form-btn-group">
+            <nc-button [type]="'cancel'" (click)="isShows[1]=flase">取消</nc-button>
+          </span>
         </div>
       </nc-dialog>
     </textarea>
@@ -106,23 +126,35 @@
 
 <h3>2. 操作模态框</h3>
 <div style="margin-top: 20px;">
-  <nc-button (click)="openDialog(2)">确认操作</nc-button>
-  <nc-button (click)="openDialog(3)">删除操作</nc-button>
+  <span style="margin-right: 10px;">
+    <nc-button (click)="openDialog(2)">确认操作</nc-button>
+  </span>
+  <span style="margin-right: 10px;">
+    <nc-button (click)="openDialog(3)">删除操作</nc-button>
+  </span>
 </div>
 <nc-dialog *ngIf="isShows[2]" [header]="'操作名称'" [style]="'confirm'" [operType]="'normal'" [(isShow)]="isShows[2]">
   <div class="content">
   </div>
   <div class="footer">
-    <nc-button (click)="isShows[2]=flase">确定</nc-button>
-    <nc-button [type]="'cancel'" (click)="isShows[2]=flase">取消</nc-button>
+    <span class="form-btn-group">
+      <nc-button (click)="isShows[2]=flase">确定</nc-button>
+    </span>
+    <span class="form-btn-group">
+      <nc-button [type]="'cancel'" (click)="isShows[2]=flase">取消</nc-button>
+    </span>
   </div>
 </nc-dialog>
 <nc-dialog *ngIf="isShows[3]" [header]="'操作名称'" [style]="'confirm'" [operType]="'delete'" [(isShow)]="isShows[3]">
   <div class="content">
   </div>
   <div class="footer">
-    <nc-button [type]="'major'" (click)="isShows[3]=flase">删除</nc-button>
-    <nc-button [type]="'cancel'" (click)="isShows[3]=flase">取消</nc-button>
+    <span class="form-btn-group">
+      <nc-button [type]="'major'" (click)="isShows[3]=flase">删除</nc-button>
+    </span>
+    <span class="form-btn-group">
+      <nc-button [type]="'cancel'" (click)="isShows[3]=flase">取消</nc-button>
+    </span>
   </div>
 </nc-dialog>
 <p>使用方式:</p>
@@ -133,8 +165,12 @@
     <div class="content">
     </div>
     <div class="footer">
-      <nc-button (click)="isShows[2]=flase">确定</nc-button>
-      <nc-button [type]="'cancel'" (click)="isShows[2]=flase">取消</nc-button>
+      <span class="form-btn-group">
+        <nc-button (click)="isShows[2]=flase">确定</nc-button>
+      </span>
+      <span class="form-btn-group">
+        <nc-button [type]="'cancel'" (click)="isShows[2]=flase">取消</nc-button>
+      </span>
     </div>
   </nc-dialog>
 
@@ -142,8 +178,12 @@
     <div class="content">
     </div>
     <div class="footer">
-      <nc-button [type]="'major'" (click)="isShows[3]=flase">删除</nc-button>
-      <nc-button [type]="'cancel'" (click)="isShows[3]=flase">取消</nc-button>
+      <span class="form-btn-group">
+        <nc-button [type]="'major'" (click)="isShows[3]=flase">删除</nc-button>
+      </span>
+      <span class="form-btn-group">
+        <nc-button [type]="'cancel'" (click)="isShows[3]=flase">取消</nc-button>
+      </span>
     </div>
   </nc-dialog>
     </textarea>

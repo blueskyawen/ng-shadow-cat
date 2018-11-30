@@ -1,16 +1,33 @@
 <h2 class="title">帮助</h2>
 <p>帮助，用于在文档或表单中提供帮助信息</p>
-<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
-  <div>
+<div>
+  <div style="display: inline-block;margin: 20px;">
+    <nc-help [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+  </div>
+  <div style="display: inline-block;margin: 20px;">
     <nc-help [style]="'normal'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+  </div>
+  <div style="display: inline-block;margin: 20px;">
     <nc-help [style]="'warn'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+  </div>
+  <div style="display: inline-block;margin: 20px;">
     <nc-help [style]="'error'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
   </div>
-  <div>
+</div>
+<div>
+  <div style="display: inline-block;margin: 20px;">
+    <nc-help [type]="'!'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'">
+    </nc-help>
+  </div>
+  <div style="display: inline-block;margin: 20px;">
     <nc-help [type]="'!'" [style]="'normal'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'">
     </nc-help>
+  </div>
+  <div style="display: inline-block;margin: 20px;">
     <nc-help [type]="'!'" [style]="'warn'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'">
     </nc-help>
+  </div>
+  <div style="display: inline-block;margin: 20px;">
     <nc-help [type]="'!'" [style]="'error'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'">
     </nc-help>
   </div>
@@ -50,8 +67,8 @@
   </tr>
   <tr>
     <td>style</td>
-    <td>指定help的类型，2种取值:normal,warn,error</td>
-    <td>tipContext</td>
+    <td>指定help的类型，2种取值:default,normal,warn,error</td>
+    <td>default</td>
   </tr>
   <tr>
     <td>title</td>

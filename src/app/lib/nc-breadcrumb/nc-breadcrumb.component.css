@@ -21,11 +21,12 @@ ul.breadcrumb li:not(:last-child) a:hover{
   cursor: pointer;
 }
 ul.breadcrumb li.disable a{
-  color: #d9d9d9;
+  color: #a6a6a6;
 }
 ul.breadcrumb li.disable:not(:last-child) a:hover{
-  color: #808080;
+  color: #a6a6a6;
   cursor: not-allowed;
+  text-decoration: none;
 }
 ul.breadcrumb li span{
   margin-left: 10px;

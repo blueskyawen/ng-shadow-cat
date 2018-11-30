@@ -8,7 +8,7 @@
   width: 96%;
   margin:auto;
   position:relative;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 0 20px;
   box-sizing: border-box;
 }
@@ -103,6 +103,8 @@
   box-sizing:border-box;
   border: 1px solid #999;
   border-right:none;
+  justify-content: center;
+  align-items: center;
 }
 .nc-nav-tabs.second-tab ul.tab-bars li.tabItem:last-child {
   border-right: 1px solid #999;

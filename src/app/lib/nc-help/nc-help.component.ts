@@ -10,7 +10,7 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
 })
 export class NcHelpComponent  implements OnInit {
   @Input() type : string = '?';
-  @Input() style : string = 'normal';
+  @Input() style : string = 'default';
   @Input() title : string = 'i am help!';
   colorClasses : any = {};
 
@@ -18,6 +18,6 @@ export class NcHelpComponent  implements OnInit {
 
   ngOnInit() {
     this.colorClasses = {'normal-help': this.style === 'normal','warn-help':this.style === 'warn',
-      'error-help':this.style === 'error'};
+      'error-help':this.style === 'error','default-help':this.style === 'default'};
   }
 }

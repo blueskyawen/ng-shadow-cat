@@ -42,7 +42,9 @@ export class FormInstanceComponent {
             {label: '美食',value: 'meishi',disable: false},{label: '睡觉', value: 'sleep',disable: false},
             {label: '音乐', value: 'mousic',disable: false}],
         likes:[],
+        schools:[{value:'长安大学',isrequired:true}],
         description:'',
+        weight:55,
         checkFlag: 0,
         loading:false
     };
@@ -53,7 +55,7 @@ export class FormInstanceComponent {
     tabItems3 : any[] = [];
     currentTab3 : string;
     likes : any[] = [
-        {value:'读书',isrequired:true}
+        {value:'读书',isrequired:false}
     ];
 
     constructor() {
@@ -61,14 +63,22 @@ export class FormInstanceComponent {
             {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
         this.currentTab= this.tabItems[0].label;
         this.tabItems2 = [{name:'html',label:'html',isActive:true,isDisable:false}];
-        this.currentTab2= this.tabItems2[0].label
+        this.currentTab2= this.tabItems2[0].label;
         this.tabItems3 = [{name:'html',label:'html',isActive:true,isDisable:false},
             {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
         this.currentTab3= this.tabItems3[0].label;
     }
 
-    checkSex(item : any) {
+    deleteSchoolItem(items : any[],item : any) {
+        if(items.length === 1) {return;}
+        let index = items.indexOf(item);
+        items.splice(index,1);
+        return false;
+    }
 
+    addSchoolItem(items : any[]) {
+        items.push({value:'',isrequired:false});
+        return false;
     }
 
     login(data : any) {
@@ -86,5 +96,9 @@ export class FormInstanceComponent {
         if(checked === 0) {
             checked = 1;
         }
+    }
+
+    recanselDefault() {
+        return false;
     }
 }

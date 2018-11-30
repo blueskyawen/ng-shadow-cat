@@ -35,7 +35,7 @@
         <nc-form-control class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-button *ngIf="!loginData.loading" (click)="login(loginData)" [style]="'custom'"
                        [width]="'100%'" [height]="'36px'">登录</nc-button>
-            <nc-button *ngIf="loginData.loading" [style]="'custom'" [width]="'100%'" [height]="'36px'"
+            <nc-button *ngIf="loginData.loading" (click)="recanselDefault()" [style]="'custom'" [width]="'100%'" [height]="'36px'"
                        [disabled]="true" [loading]="true">登录</nc-button>
         </nc-form-control>
     </nc-form-group>
@@ -84,7 +84,7 @@
                 <nc-button *ngIf="!loginData.loading" (click)="login(loginData)" [style]="'custom'"
                            [width]="'100%'" [height]="'36px'">登录</nc-button>
                 <nc-button *ngIf="loginData.loading" [style]="'custom'" [width]="'100%'" [height]="'36px'"
-                           [disabled]="true" [loading]="true">登录</nc-button>
+                           (click)="recanselDefault()" [disabled]="true" [loading]="true">登录</nc-button>
             </nc-form-control>
         </nc-form-group>
 
@@ -126,7 +126,7 @@
 </nc-tab>
 
 <h3>2. 用户注册</h3>
-<form style="max-width: 600px;">
+<form style="max-width: 600px;" novalidate>
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">用户名</nc-form-label>
         <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
@@ -208,11 +208,38 @@
             <nc-number-put [type]="'middle'" [(value)]="registerData.educatAge" [max]="10" [min]="1"></nc-number-put>
         </nc-form-control>
     </nc-form-group>
+    <nc-form-group *ngFor="let school of registerData.schools;let i = index;"
+       class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label *ngIf="i === 0" class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">学校</nc-form-label>
+        <nc-form-label *ngIf="i !== 0" class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3"
+                       [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+            <nc-input [type]="'text'" [(modelValue)]="school.value" [required]="school.isrequired">
+            </nc-input>
+        </nc-form-control>
+        <nc-input-dynamic-delete (click)="deleteSchoolItem(registerData.schools,school)"></nc-input-dynamic-delete>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3"
+                       [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+            <nc-input-dynamic-add (click)="addSchoolItem(registerData.schools)">+ add</nc-input-dynamic-add>
+        </nc-form-control>
+    </nc-form-group>
+
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">爱好</nc-form-label>
         <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
             <nc-mutil-select [options]="registerData.likeOptions" [(selections)]="registerData.likes" [width]="'100%'">
             </nc-mutil-select>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">体重</nc-form-label>
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+            <div class="nc-flex nc-align-item-center" style="height: 100%;">
+                <nc-rangeslide [total]="100" [(value)]="registerData.weight" [width]="400"></nc-rangeslide>
+            </div>
         </nc-form-control>
     </nc-form-group>
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
@@ -227,11 +254,185 @@
         <nc-form-control class="nc-xl-offset-3 nc-lg-offset-3 nc-md-offset-3 nc-sm-offset-3 nc-xs-offset-3">
             <nc-button *ngIf="!registerData.loading" (click)="login(registerData)" [style]="'custom'" [width]="'120px'"
                        [height]="'36px'">注册</nc-button>
-            <nc-button *ngIf="registerData.loading" [style]="'custom'" [width]="'120px'"
+            <nc-button *ngIf="registerData.loading" (click)="recanselDefault()" [style]="'custom'" [width]="'120px'"
                        [height]="'36px'" [disabled]="true" [loading]="true">注册</nc-button>
         </nc-form-control>
     </nc-form-group>
 </form>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:500px;">
+    <form style="max-width: 600px;" novalidate>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">用户名</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'text'" [(modelValue)]="registerData.value" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">密码</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'password'" [(modelValue)]="registerData.password" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">确认密码</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'password'" [(modelValue)]="registerData.password2" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">姓名</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'text'" [(modelValue)]="registerData.name" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">性别</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <div class="nc-flex nc-align-item-center" style="height: 100%;">
+                    <nc-radio [options]="registerData.sexs" [value]="registerData.sex"></nc-radio>
+                </div>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">年龄</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'number'" [(modelValue)]="registerData.age" [min]="1" [max]="99" [step]="2">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">手机号</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'text'" [(modelValue)]="registerData.phone" [prefixList]="registerData.phonePreffixs"
+                          [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">网站</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'text'" [(modelValue)]="registerData.webstore" [prefixList]="registerData.webPreffixs"
+                          [suffixList]="registerData.webSuffixs">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">首次申请</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <div class="nc-flex nc-align-item-center" style="height: 100%;">
+                    <nc-switch [type]="'min'" [tipLabels]="['是','否']" [(switch)]="registerData.isFirstRegister">
+                    </nc-switch>
+                </div>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">学历</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-select [options]="registerData.educationOptions" [(value)]="registerData.education" [width]="'100%'">
+                </nc-select>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">毕业年限</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-number-put [type]="'middle'" [(value)]="registerData.educatAge" [max]="10" [min]="1"></nc-number-put>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group *ngFor="let school of registerData.schools;let i = index;"
+                       class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label *ngIf="i === 0" class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">学校</nc-form-label>
+            <nc-form-label *ngIf="i !== 0" class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3"
+                           [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'text'" [(modelValue)]="school.value" [required]="school.isrequired">
+                </nc-input>
+            </nc-form-control>
+            <nc-input-dynamic-delete (click)="deleteSchoolItem(registerData.schools,school)"></nc-input-dynamic-delete>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3"
+                           [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input-dynamic-add (click)="addSchoolItem(registerData.schools)">+ add</nc-input-dynamic-add>
+            </nc-form-control>
+        </nc-form-group>
 
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">爱好</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-mutil-select [options]="registerData.likeOptions" [(selections)]="registerData.likes" [width]="'100%'">
+                </nc-mutil-select>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">体重</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <div class="nc-flex nc-align-item-center" style="height: 100%;">
+                    <nc-rangeslide [total]="100" [(value)]="registerData.weight" [width]="400"></nc-rangeslide>
+                </div>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">
+                描述</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-text-area [(modelValue)]="registerData.description"></nc-text-area>
+            </nc-form-control>
+        </nc-form-group>
 
-<div style="height:50px;"></div>
+        <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-control class="nc-xl-offset-3 nc-lg-offset-3 nc-md-offset-3 nc-sm-offset-3 nc-xs-offset-3">
+                <nc-button *ngIf="!registerData.loading" (click)="login(registerData)" [style]="'custom'" [width]="'120px'"
+                           [height]="'36px'">注册</nc-button>
+                <nc-button *ngIf="registerData.loading" (click)="recanselDefault()" [style]="'custom'" [width]="'120px'"
+                           [height]="'36px'" [disabled]="true" [loading]="true">注册</nc-button>
+            </nc-form-control>
+        </nc-form-group>
+    </form>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:500px;">
+    registerData : any = {
+        value: '',
+        password: '',
+        password2: '',
+        sexs:[{label: '男', value: 'man',disabled:false},{label: '女', value: 'women',disabled:false}],
+        sex:'man',
+        name: '锦鲤',
+        age:18,
+        phone:'',
+        phonePreffixs:[{label:'+86',value:'+86'}],
+        webstore:'',
+        webPreffixs:[{label:'http://',value:'http://'}],
+        webSuffixs:[{label:'.com',value:'.com'}],
+        isFirstRegister: true,
+        education:'benke',
+        educationOptions:[{label: '专科',value: 'zhuanke',disable: false},
+            {label: '本科',value: 'benke',disable: false},
+            {label: '硕士',value: 'shuoshi',disable: false},
+            {label: '博士',value: 'boshi',disable: false},
+            {label: '博士后',value: 'boshihou',disable: false}],
+        educatAge:3,
+        likeOptions:[{label: '读书', value: 'dushu',disable: false},{label: '旅游', value: 'lvyou',disable: false},
+            {label: '跑步', value: 'run',disable: false},{label: '徒步', value: 'tubu',disable: false},
+            {label: '爬山',value: 'pashan',disable: false},{label: '投资',value: 'touzhi',disable: false},
+            {label: '美食',value: 'meishi',disable: false},{label: '睡觉', value: 'sleep',disable: false},
+            {label: '音乐', value: 'mousic',disable: false}],
+        likes:[],
+        schools:[{value:'长安大学',isrequired:true}],
+        description:'',
+        weight:55,
+        checkFlag: 0,
+        loading:false
+    };
+    </textarea>
+    </div>
+</nc-tab>

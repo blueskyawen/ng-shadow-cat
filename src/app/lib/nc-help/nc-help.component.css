@@ -7,8 +7,6 @@
   border-radius:50%;
   line-height:20px;
   text-align:center;
-  margin:30px;
-  margin-top:10px;
   position: relative;
 }
 .help:hover{
@@ -25,6 +23,10 @@
 .error-help{
   border-color:#ff0000;
   color:#ff0000;
+}
+.default-help{
+  border-color:#808080;
+  color:#808080;
 }
 .helptext {
   display:inline-block;

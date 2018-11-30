@@ -3,7 +3,7 @@
 
 <h3>1. 表单布局</h3>
 <h4>行内表单</h4>
-<form class="nc-form-line">
+<form class="nc-form-line" novalidate>
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4 nc-content-end">用户名</nc-form-label>
         <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
@@ -30,7 +30,7 @@
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
     <div *ngIf="currentTab === 'html'">
     <textarea style="height:200px;">
-    <form class="nc-form-line">
+    <form class="nc-form-line" novalidate>
         <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4 nc-content-end">用户名</nc-form-label>
             <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
@@ -75,7 +75,7 @@
 
 
 <h4>垂直表单</h4>
-<form style="max-width: 600px;">
+<form style="max-width: 600px;" novalidate>
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">用户名</nc-form-label>
         <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
@@ -101,7 +101,7 @@
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
     <div *ngIf="currentTab2 === 'html'">
-    <textarea style="height:200px;">
+    <textarea style="height:200px;" novalidate>
     <form style="max-width: 600px;">
         <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">用户名</nc-form-label>
@@ -130,7 +130,7 @@
 </nc-tab>
 
 <h4>水平表单</h4>
-<form>
+<form novalidate>
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12 nc-content-start">用户名</nc-form-label>
         <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
@@ -157,7 +157,7 @@
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
     <div *ngIf="currentTab2 === 'html'">
     <textarea style="height:200px;">
-    <form>
+    <form novalidate>
         <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-form-label class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12 nc-content-start">用户名</nc-form-label>
             <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
@@ -185,7 +185,7 @@
 </nc-tab>
 
 <h3>2. 表单输入框组</h3>
-<form style="max-width: 600px;">
+<form style="max-width: 600px;" novalidate>
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">用户名</nc-form-label>
         <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
@@ -279,7 +279,7 @@
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
     <div *ngIf="currentTab2 === 'html'">
-    <textarea style="height:500px;">
+    <textarea style="height:500px;" novalidate>
     <form style="max-width: 600px;">
         <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4" [required]="true">用户名</nc-form-label>
@@ -376,7 +376,7 @@
 </nc-tab>
 
 <h3>3. 动态表单输入框</h3>
-<form style="max-width: 600px;">
+<form style="max-width: 600px;" novalidate>
     <nc-form-group *ngFor="let item of likes;let i = index;"
                    class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label *ngIf="i === 0" class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4"
@@ -407,7 +407,7 @@
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
     <div *ngIf="currentTab3 === 'html'">
-    <textarea style="height:200px;">
+    <textarea style="height:200px;" novalidate>
     <form style="max-width: 600px;">
         <nc-form-group *ngFor="let item of likes;let i = index;"
                        class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">

@@ -1,10 +1,18 @@
 <h2 class="title">通知</h2>
 <p>通知用来信息提示，以及操作的结果展示</p>
 <h3>1. 顶部通知</h3>
-<nc-button (click)="alertMsg(0)">成功通知</nc-button>
-<nc-button (click)="alertMsg(1)">警告通知</nc-button>
-<nc-button (click)="alertMsg(2)">错误通知</nc-button>
-<nc-button (click)="alertMsg(3)">5s成功通知</nc-button>
+<span style="margin-right: 10px;">
+  <nc-button (click)="alertMsg(0)">成功通知</nc-button>
+</span>
+<span style="margin-right: 10px;">
+  <nc-button (click)="alertMsg(1)">警告通知</nc-button>
+</span>
+<span style="margin-right: 10px;">
+  <nc-button (click)="alertMsg(2)">错误通知</nc-button>
+</span>
+<span style="margin-right: 10px;">
+  <nc-button (click)="alertMsg(3)">5s成功通知</nc-button>
+</span>
 <nc-message [type]="'success'" [(show)]="isShowList[0]">操作成功,2s后自动消失</nc-message>
 <nc-message [type]="'warn'" [(show)]="isShowList[1]">我是警告消息!</nc-message>
 <nc-message [type]="'error'" [(show)]="isShowList[2]">我是错误消息!</nc-message>
@@ -35,7 +43,9 @@
 </nc-tab>
 
 <h3>2. 右侧通知</h3>
-<nc-button (click)="alertMsg(4)">成功通知</nc-button>
+<span style="margin-right: 10px;">
+  <nc-button (click)="alertMsg(4)">成功通知</nc-button>
+</span>
 <nc-message [(show)]="isShowList[4]" [style]="'right'" [headerTitle]="'创建成功'">
   <div name="content">
     <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千,新特性之一是可以使 HTML 事件触发浏览器中的行为...</p>
@@ -43,7 +53,10 @@
   </div>
   <a class="manage" name="footer" herf="javascript:void(0);" (click)="manage(4)">管理实例</a>
 </nc-message>
-<nc-button (click)="alertMsg(5)">警告消息</nc-button>
+
+<span style="margin-right: 10px;">
+  <nc-button (click)="alertMsg(5)">警告消息</nc-button>
+</span>
 <nc-message [type]="'warn'" [(show)]="isShowList[5]" [style]="'right'" [headerTitle]="'警告消息'">
   <div name="content">
     <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千,新特性之一是可以使 HTML 事件触发浏览器中的行为...</p>
@@ -51,7 +64,10 @@
   </div>
   <a class="manage" name="footer" herf="javascript:void(0);" (click)="manage(5)">忽略</a>
 </nc-message>
-<nc-button (click)="alertMsg(6)">创建失败</nc-button>
+
+<span style="margin-right: 10px;">
+  <nc-button (click)="alertMsg(6)">创建失败</nc-button>
+</span>
 <nc-message [type]="'error'" [(show)]="isShowList[6]" [style]="'right'" [headerTitle]="'创建失败'">
   <div name="content">
     <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千,新特性之一是可以使 HTML 事件触发浏览器中的行为...</p>
