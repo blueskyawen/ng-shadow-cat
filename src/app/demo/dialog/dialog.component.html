@@ -16,13 +16,19 @@
       <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
     </div>
     <form>
-      <nc-form-group>
-        <nc-form-label>姓名</nc-form-label>
-        <nc-input [type]="'text'" [(modelValue)]="name" [required]="true"></nc-input>
+      <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">用户名</nc-form-label>
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+          <nc-input [type]="'text'" [(modelValue)]="name" [required]="true">
+          </nc-input>
+        </nc-form-control>
       </nc-form-group>
-      <nc-form-group>
-        <nc-form-label>技能</nc-form-label>
-        <nc-input [type]="'text'" [(modelValue)]="skill" [required]="false"></nc-input>
+      <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">技能</nc-form-label>
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+          <nc-input [type]="'text'" [(modelValue)]="skill" [required]="true">
+          </nc-input>
+        </nc-form-control>
       </nc-form-group>
     </form>
   </div>

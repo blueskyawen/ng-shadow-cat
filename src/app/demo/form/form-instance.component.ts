@@ -13,7 +13,8 @@ export class FormInstanceComponent {
         value: '',
         password: '',
         checkFlag: 0,
-        loading:false
+        loading:false,
+        disabled:true
     };
     registerData : any = {
         value: '',
@@ -46,7 +47,8 @@ export class FormInstanceComponent {
         description:'',
         weight:55,
         checkFlag: 0,
-        loading:false
+        loading:false,
+        disabled:true
     };
     tabItems : any[] = [];
     currentTab : string;
@@ -57,6 +59,7 @@ export class FormInstanceComponent {
     likes : any[] = [
         {value:'读书',isrequired:false}
     ];
+    isShowMsg : boolean = false;
 
     constructor() {
         this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
@@ -82,9 +85,11 @@ export class FormInstanceComponent {
     }
 
     login(data : any) {
+        if(data.disabled) {return false;}
         data.loading = true;
         setTimeout(() => {
             data.loading = false;
+            this.isShowMsg = true;
         },5000);
         return false;
     }
@@ -100,5 +105,17 @@ export class FormInstanceComponent {
 
     recanselDefault() {
         return false;
+    }
+
+    isDisableLogin() {
+        this.loginData.disabled = (this.loginData.checkFlag == 0) || !this.loginData.value || !this.loginData.password;
+        return this.loginData.disabled;
+    }
+
+    isDisableRegister() {
+        this.registerData.disabled = (this.registerData.checkFlag == 0) || !this.registerData.value ||
+            !this.registerData.password || !this.registerData.password2 || !this.registerData.name ||
+            !this.registerData.sex || !this.registerData.phone;
+        return this.registerData.disabled;
     }
 }

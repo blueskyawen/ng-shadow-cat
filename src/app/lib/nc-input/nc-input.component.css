@@ -64,6 +64,7 @@
   border:solid 1px  #999999;
   border-radius:4px;
   position:relative;
+  max-width: 100%;
 }
 .nc-form-group-item:hover {
   border-color:#3399ff;
@@ -166,6 +167,7 @@
   position: relative;
   border:none;
   height:auto;
+  max-width:100%;
 }
 .nc-form-textarea textarea {
   width:100%;

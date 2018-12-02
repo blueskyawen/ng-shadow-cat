@@ -3,6 +3,7 @@
  */
 import { NgModule }      from '@angular/core';
 import {CommonModule}      from '@angular/common';
+import { FormsModule }   from '@angular/forms';
 import {LibModule} from '../lib/lib.module';
 
 import {LoadingComponent} from './loading/loading.component';
@@ -57,7 +58,7 @@ import {AffixDemo1Component} from './affix/affix-demo1.component';
 import {FormInstanceComponent} from './form/form-instance.component';
 
 @NgModule({
-  imports: [CommonModule,LibModule],
+  imports: [CommonModule,FormsModule,LibModule],
   declarations: [LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,

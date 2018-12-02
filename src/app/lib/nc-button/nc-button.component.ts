@@ -1,14 +1,14 @@
 /**
  * Created by liuxuwen on 18-5-30.
  */
-import { Component,OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'nc-button',
   templateUrl: './nc-button.component.html',
   styleUrls: ['./nc-button.component.css']
 })
-export class NcButtonComponent implements OnInit {
+export class NcButtonComponent implements OnInit,OnChanges {
   @Input() type : string = 'normal';
   @Input() style : string = 'min';
   @Input() disabled : boolean = false;
@@ -39,4 +39,10 @@ export class NcButtonComponent implements OnInit {
     }
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    this.spinClasses = {'button-normal': this.type === 'normal','button-add':this.type === 'add',
+      'button-major':this.type === 'major','button-cancel':this.type === 'cancel',
+      'font-big':this.style === 'max','font-small':this.style === 'min','disabled':this.disabled,
+      'dynamic3':this.dnymic};
+  }
 }

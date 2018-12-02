@@ -2,7 +2,7 @@
 <p>常用的Form表单例子，用于各种用户交互的场景，比如：用户注册，用户登录...</p>
 
 <h3>1. 用户登录</h3>
-<form style="max-width: 600px;" novalidate>
+<form style="max-width: 600px;" #loginform="ngForm" novalidate>
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-input [type]="'text'" [(modelValue)]="loginData.value" [required]="true">
@@ -34,6 +34,7 @@
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-control class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-button *ngIf="!loginData.loading" (click)="login(loginData)" [style]="'custom'"
+                       [disabled]="!loginform.form.valid || isDisableLogin()"
                        [width]="'100%'" [height]="'36px'">登录</nc-button>
             <nc-button *ngIf="loginData.loading" (click)="recanselDefault()" [style]="'custom'" [width]="'100%'" [height]="'36px'"
                        [disabled]="true" [loading]="true">登录</nc-button>
@@ -50,7 +51,7 @@
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
     <div *ngIf="currentTab === 'html'">
     <textarea style="height:200px;">
-    <form style="max-width: 600px;" novalidate>
+    <form style="max-width: 600px;" #loginform="ngForm" novalidate>
         <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-form-control class="nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
                 <nc-input [type]="'text'" [(modelValue)]="loginData.value" [required]="true">
@@ -82,6 +83,7 @@
         <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-form-control class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
                 <nc-button *ngIf="!loginData.loading" (click)="login(loginData)" [style]="'custom'"
+                           [disabled]="!loginform.form.valid || isDisableLogin()"
                            [width]="'100%'" [height]="'36px'">登录</nc-button>
                 <nc-button *ngIf="loginData.loading" [style]="'custom'" [width]="'100%'" [height]="'36px'"
                            (click)="recanselDefault()" [disabled]="true" [loading]="true">登录</nc-button>
@@ -106,6 +108,7 @@
     };
 
     login(data : any) {
+        if(data.disabled) {return false;}
         data.loading = true;
         setTimeout(() => {
             data.loading = false;
@@ -121,12 +124,17 @@
             checked = 1;
         }
     }
+
+    isDisableLogin() {
+        this.loginData.disabled = (this.loginData.checkFlag == 0) || !this.loginData.value || !this.loginData.password;
+        return this.loginData.disabled;
+    }
     </textarea>
     </div>
 </nc-tab>
 
 <h3>2. 用户注册</h3>
-<form style="max-width: 600px;" novalidate>
+<form style="max-width: 600px;" #registerform="ngForm" novalidate>
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">用户名</nc-form-label>
         <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
@@ -264,7 +272,7 @@
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-control class="nc-xl-offset-3 nc-lg-offset-3 nc-md-offset-3 nc-sm-offset-3 nc-xs-offset-3">
             <nc-button *ngIf="!registerData.loading" (click)="login(registerData)" [style]="'custom'" [width]="'120px'"
-                       [height]="'36px'">注册</nc-button>
+                       [disabled]="!registerform.form.valid || isDisableRegister()" [height]="'36px'">注册</nc-button>
             <nc-button *ngIf="registerData.loading" (click)="recanselDefault()" [style]="'custom'" [width]="'120px'"
                        [height]="'36px'" [disabled]="true" [loading]="true">注册</nc-button>
         </nc-form-control>
@@ -412,7 +420,7 @@
         <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-form-control class="nc-xl-offset-3 nc-lg-offset-3 nc-md-offset-3 nc-sm-offset-3 nc-xs-offset-3">
                 <nc-button *ngIf="!registerData.loading" (click)="login(registerData)" [style]="'custom'" [width]="'120px'"
-                           [height]="'36px'">注册</nc-button>
+                           [disabled]="!registerform.form.valid || isDisableRegister()" [height]="'36px'">注册</nc-button>
                 <nc-button *ngIf="registerData.loading" (click)="recanselDefault()" [style]="'custom'" [width]="'120px'"
                            [height]="'36px'" [disabled]="true" [loading]="true">注册</nc-button>
             </nc-form-control>
@@ -455,6 +463,15 @@
         checkFlag: 0,
         loading:false
     };
+
+    isDisableRegister() {
+        this.registerData.disabled = (this.registerData.checkFlag == 0) || !this.registerData.value ||
+            !this.registerData.password || !this.registerData.password2 || !this.registerData.name ||
+            !this.registerData.sex || !this.registerData.phone;
+        return this.registerData.disabled;
+    }
     </textarea>
     </div>
 </nc-tab>
+
+<nc-message [type]="'success'" [(show)]="isShowMsg">操作成功,2s后自动消失</nc-message>
