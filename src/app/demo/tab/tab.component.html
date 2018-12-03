@@ -2,19 +2,19 @@
 <p>Tab用于在不同视图框中根据选择来呈现不同的内容</p>
 <h3>1. 卡片式</h3>
 <nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1" [id]="'tab01'">
-  <div *ngIf="currentTab1 === 'apple'">
+  <div *ngIf="currentTab1 === 'apple'" style="padding-left: 20px;">
     苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
   </div>
-  <div *ngIf="currentTab1 === 'xiaomi'">
+  <div *ngIf="currentTab1 === 'xiaomi'" style="padding-left: 20px;">
     北京小米科技有限责任公司成立2010年4月，是一家专注于智能硬件和电子产品研发的移动互联网公司。“为发烧而生”是小米的产品概念
   </div>
-  <div *ngIf="currentTab1 === 'oppo'">
+  <div *ngIf="currentTab1 === 'oppo'" style="padding-left: 20px;">
     OPPO 更多年轻人选择的拍照手机。十年来，OPPO一直专注手机拍照的技术创新，开创了“手机自拍美颜”时代
   </div>
-  <div *ngIf="currentTab1 === 'vivo'">
+  <div *ngIf="currentTab1 === 'vivo'" style="padding-left: 20px;">
     vivo是一家全球性的移动互联网智能终端公司，致力于为消费者打造拥有极致拍照、畅快游戏、Hi-Fi音乐的智能手机产品。
   </div>
-  <div *ngIf="currentTab1 === 'zte'">
+  <div *ngIf="currentTab1 === 'zte'" style="padding-left: 20px;">
     中兴通讯（ZTE）,全球领先的综合通信解决方案提供商，中国最大的通信设备上市公司
   </div>
 </nc-tab>
@@ -55,13 +55,13 @@
 <br/>
 <h4 class="header">禁止某个tab项</h4>
 <nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3" [id]="'tab02'">
-  <div *ngIf="currentTab3 === 'apple'">
+  <div *ngIf="currentTab3 === 'apple'" style="padding-left: 20px;">
     苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
   </div>
-  <div *ngIf="currentTab3 === 'xiaomi'">
+  <div *ngIf="currentTab3 === 'xiaomi'" style="padding-left: 20px;">
     北京小米科技有限责任公司成立2010年4月，是一家专注于智能硬件和电子产品研发的移动互联网公司。“为发烧而生”是小米的产品概念
   </div>
-  <div *ngIf="currentTab3 === 'oppo'">
+  <div *ngIf="currentTab3 === 'oppo'" style="padding-left: 20px;">
     OPPO 更多年轻人选择的拍照手机。十年来，OPPO一直专注手机拍照的技术创新，开创了“手机自拍美颜”时代
   </div>
 </nc-tab>
@@ -91,13 +91,13 @@
 
 <h3>2. 线条式</h3>
 <nc-tab [tabs]="tabItems5" [type]="'line'" [(selectTab)] = "currentTab5" [id]="'tab03'">
-  <div *ngIf="currentTab5 === 'apple'">
+  <div *ngIf="currentTab5 === 'apple'" style="padding-left: 20px;">
     苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
   </div>
-  <div *ngIf="currentTab5 === 'xiaomi'">
+  <div *ngIf="currentTab5 === 'xiaomi'" style="padding-left: 20px;">
     北京小米科技有限责任公司成立2010年4月，是一家专注于智能硬件和电子产品研发的移动互联网公司。“为发烧而生”是小米的产品概念
   </div>
-  <div *ngIf="currentTab5 === 'oppo'">
+  <div *ngIf="currentTab5 === 'oppo'" style="padding-left: 20px;">
     OPPO 更多年轻人选择的拍照手机。十年来，OPPO一直专注手机拍照的技术创新，开创了“手机自拍美颜”时代
   </div>
 </nc-tab>
@@ -130,19 +130,19 @@
 
 <h3>3. 二级Tab</h3>
 <nc-tab [tabs]="tabItems7" [tabStyle]="'secondTab'" [(selectTab)] = "currentTab7"  [id]="'tab04'">
-  <div *ngIf="currentTab7 === 'apple'">
+  <div *ngIf="currentTab7 === 'apple'" style="padding-left: 20px;">
     苹果公司,由史蒂夫·乔布斯、斯蒂夫·沃兹尼亚克和罗·韦恩(Ron Wayne)等人于1976年4月1日创立，并命名为美国苹果电脑公司.
   </div>
-  <div *ngIf="currentTab7 === 'xiaomi'">
+  <div *ngIf="currentTab7 === 'xiaomi'" style="padding-left: 20px;">
     北京小米科技有限责任公司成立2010年4月，是一家专注于智能硬件和电子产品研发的移动互联网公司。“为发烧而生”是小米的产品概念
   </div>
-  <div *ngIf="currentTab7 === 'oppo'">
+  <div *ngIf="currentTab7 === 'oppo'" style="padding-left: 20px;">
     OPPO 更多年轻人选择的拍照手机。十年来，OPPO一直专注手机拍照的技术创新，开创了“手机自拍美颜”时代
   </div>
-  <div *ngIf="currentTab7 === 'vivo'">
+  <div *ngIf="currentTab7 === 'vivo'" style="padding-left: 20px;">
     vivo是一家全球性的移动互联网智能终端公司，致力于为消费者打造拥有极致拍照、畅快游戏、Hi-Fi音乐的智能手机产品。
   </div>
-  <div *ngIf="currentTab7 === 'zte'">
+  <div *ngIf="currentTab7 === 'zte'" style="padding-left: 20px;">
     中兴通讯（ZTE）,全球领先的综合通信解决方案提供商，中国最大的通信设备上市公司
   </div>
 </nc-tab>
