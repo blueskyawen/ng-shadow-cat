@@ -154,6 +154,7 @@
     border-radius:5px;
     padding:5px 10px;
     z-index:2;
+    opacity:0
 }
 .nc-chart-hover .nc-chart-objs .nc-chart-hover-item {
     margin:0px 0px 5px;

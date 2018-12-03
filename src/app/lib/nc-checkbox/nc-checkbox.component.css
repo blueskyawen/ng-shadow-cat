@@ -23,6 +23,7 @@
   left:6px;
   top:5px;
   box-sizing:border-box;
+  transition: all .5s;
 }
 ._checkbox:not(.disabled) span:hover{
   border-color:#1a75ff;

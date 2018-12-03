@@ -89,10 +89,10 @@
 }
 .select-dropdown:hover .inputItem input,
 .select-dropdown:hover .inputItem .carcat {
-  border-color:#1a53ff;
+  border-color:#33adff;
 }
 .select-dropdown:hover .inputItem .carcat:after{
-  border-color: #1a53ff transparent transparent transparent;
+  border-color: #33adff transparent transparent transparent;
 }
 .select-dropdown .dropdown-content span.disable {
   cursor: not-allowed;

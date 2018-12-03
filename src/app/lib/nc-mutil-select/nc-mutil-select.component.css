@@ -29,7 +29,7 @@
   transform: translateY(-2px);
 }
 .select-dropdown:not(.disable):hover{
-  border-color:#1a53ff;
+  border-color:#33adff;
 }
 .select-dropdown .selectss{
   display:flex;
@@ -177,8 +177,8 @@
   box-sizing: content-box;
 }
 .select-dropdown .dropdown-content .option.selected .checkbox{
-  background:#1a75ff;
-  border-color:#1a75ff;
+  background:#33adff;
+  border-color:#33adff;
 }
 .select-dropdown .dropdown-content .option.selected .checkbox:after{
   content:"✔";
@@ -208,7 +208,7 @@
   left:2px;
 }
 .select-dropdown .dropdown-content .option.unselected:not(.disable) .checkbox:hover{
-  border-color:#1a75ff;
+  border-color:#33adff;
 }
 .select-dropdown .dropdown-content .option .text{
   display:inline-block;

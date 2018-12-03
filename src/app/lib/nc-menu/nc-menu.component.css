@@ -124,6 +124,9 @@ ul.nc-menu li.nc-menu-item .nc-menu-item-title {
     padding: 10px;
     box-sizing: border-box;
 }
+ul.nc-menu-horizontal li.nc-menu-item > .nc-menu-item-title {
+    height: 100%;
+}
 ul.nc-menu li.nc-menu-item .nc-menu-item-title:hover {
     color: #1890ff;
 }

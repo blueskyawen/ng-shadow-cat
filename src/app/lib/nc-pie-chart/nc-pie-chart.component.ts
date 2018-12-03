@@ -24,6 +24,10 @@ export class NcPieChartComponent  implements OnInit {
     rightStyle  : any = {};
     pieClasses : any = {};
     isShow : boolean = false;
+    hoverItemObj : any = undefined;
+    hoverItemStyle : any = {'top':'0px','left':'0px'};
+    timerId : any = undefined;
+
 
     constructor() {
     }
@@ -61,6 +65,25 @@ export class NcPieChartComponent  implements OnInit {
                 this.rightStyle = {'transform':'rotate('+this.data.barusage+'deg)'};
             },300);
         }
+        this.data.data[0].color = this.data.usage <= 50 ? '#4db8ff' :
+            this.data.usage > 50 && this.data.usage <= 80 ? '#ffb366' : '#ff1a1a';
     }
 
+    hoverPieItemOut() {
+        this.hoverItemObj = undefined;
+    }
+
+    hoverPieItem(type : any,event : any) {
+        if(type === 'left') {
+            this.hoverItemObj = {title:'剩余',value:this.data.data[1].value - this.data.data[0].value,color:'#e6e6e6'};
+        } else {
+            this.hoverItemObj = this.data.data[0];
+        }
+        if(!this.timerId ) {
+            this.timerId = setTimeout(() => {
+                this.hoverItemStyle = {'opacity':1,'top':(event.clientY + 5)+'px','left':(event.clientX + 5)+'px'};
+                this.timerId = undefined;
+            },100);
+        }
+    }
 }

@@ -58,36 +58,43 @@
 .carousel .bars span:hover,.carousel .bars span.active{
   border-color:#fff;
 }
-.carousel .left{
+.carousel .carousel-bar-left,
+.carousel .carousel-bar-right {
+  width: 50px;
+  box-sizing: border-box;
+  height: 100%;
+  cursor:pointer;
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:0;
+}
+.carousel .carousel-bar-left .left{
   display:inline-block;
   height:8px;
   width:8px;
   border:solid 4px #666;
   border-color: #666 transparent transparent #666;
   opacity:0.8;
-  position:absolute;
-  top:50%;
-  left:15px;
-  transform: translateY(-50%) rotate(-45deg);
-  cursor:pointer;
+  transform: rotate(-45deg);
 }
-.carousel .left:hover{
+.carousel .carousel-bar-left:hover .left {
   border-color: #fff transparent transparent #fff;
 }
-.carousel .right{
+.carousel .carousel-bar-right {
+  right:0;
+}
+.carousel .carousel-bar-right .right{
   display:inline-block;
   height:8px;
   width:8px;
   border:solid 4px #666;
   border-color: #666 #666 transparent transparent;
   opacity:0.8;
-  position:absolute;
-  top:50%;
-  right:15px;
-  transform: translateY(-50%) rotate(45deg);
-  cursor:pointer;
+  transform: rotate(45deg);
 }
-.carousel .right:hover{
+.carousel .carousel-bar-right:hover .right {
   border-color: #fff  #fff transparent transparent;
 }
 
@@ -141,36 +148,43 @@
 .carousel-fade .bars span:hover,.carousel-fade .bars span.active{
   border-color:#fff;
 }
-.carousel-fade .left{
+.carousel-fade .carousel-bar-left,
+.carousel-fade .carousel-bar-right {
+  width: 50px;
+  box-sizing: border-box;
+  height: 100%;
+  cursor:pointer;
+  position:absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:0;
+}
+.carousel-fade .carousel-bar-left .left{
   display:inline-block;
   height:8px;
   width:8px;
   border:solid 4px #666;
   border-color: #666 transparent transparent #666;
   opacity:0.8;
-  position:absolute;
-  top:50%;
-  left:15px;
-  transform: translateY(-50%) rotate(-45deg);
-  cursor:pointer;
+  transform: rotate(-45deg);
 }
-.carousel-fade .left:hover{
+.carousel-fade .carousel-bar-left:hover .left {
   border-color: #fff transparent transparent #fff;
 }
-.carousel-fade .right{
+.carousel-fade .carousel-bar-right {
+  right:0;
+}
+.carousel-fade .carousel-bar-right .right{
   display:inline-block;
   height:8px;
   width:8px;
   border:solid 4px #666;
   border-color: #666 #666 transparent transparent;
   opacity:0.8;
-  position:absolute;
-  top:50%;
-  right:15px;
-  transform: translateY(-50%) rotate(45deg);
-  cursor:pointer;
+  transform: rotate(45deg);
 }
-.carousel-fade .right:hover{
+.carousel-fade .carousel-bar-right:hover .right {
   border-color: #fff  #fff transparent transparent;
 }
 

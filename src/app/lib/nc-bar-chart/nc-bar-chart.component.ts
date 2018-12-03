@@ -54,11 +54,9 @@ export class NcBarChartComponent  implements OnInit {
 
     mouseOverItem(index : any,event : any) {
         this.hoverItemObj = this.barOptions[index];
-        console.log(this.hoverItemObj);
-        console.log(event);
         if(!this.timerId ) {
             this.timerId = setTimeout(() => {
-                this.hoverItemStyle = {'top':(event.clientY + 5)+'px','left':(event.clientX + 5)+'px'};
+                this.hoverItemStyle = {'opacity':1,'top':(event.clientY + 5)+'px','left':(event.clientX + 5)+'px'};
                 this.timerId = undefined;
             },100);
         }

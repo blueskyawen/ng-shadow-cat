@@ -7,7 +7,10 @@
 .nc-autor {
     color:#fff;
     background:#2952a3;
-    padding:20px;
+    height: 50px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
 }
 ul.backcolor-header {
     background:#d9d9d9;
@@ -17,6 +20,8 @@ ul.backcolor-header {
     width:100%;
     height:100%;
     background:#f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
 }
 .demo-header {
     width:100%;

@@ -11,8 +11,8 @@
           [ngClass]="{'active': activeIndex === i,'noactive': activeIndex !== i}"
           (click)="changePic(i)"></span>
   </div>
-  <div class="left" (click)="pre()"></div>
-  <div class="right" (click)="next()"></div>
+  <div class="carousel-bar-left" (click)="pre()"><div class="left"></div></div>
+  <div class="carousel-bar-right" (click)="next()"><div class="right" (click)="next()"></div></div>
 </div>
 
 <div class="carousel-fade" *ngIf="effect === 'fade'" [ngStyle]="carStyleStr"
@@ -28,6 +28,6 @@
           [ngClass]="{'active': activeIndex === i,'noactive': activeIndex !== i}"
           (click)="changePic(i)"></span>
   </div>
-  <div class="left" (click)="pre()"></div>
-  <div class="right" (click)="next()"></div>
+  <div class="carousel-bar-left" (click)="pre()"><div class="left"></div></div>
+  <div class="carousel-bar-right" (click)="next()"><div class="right" (click)="next()"></div></div>
 </div>

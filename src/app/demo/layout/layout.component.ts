@@ -174,7 +174,8 @@ export class LayoutComponent {
     currentTab : string;
 
     constructor() {
-        this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false}];
+        this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
+            {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
         this.currentTab= this.tabItems[0].label;
     }
 }

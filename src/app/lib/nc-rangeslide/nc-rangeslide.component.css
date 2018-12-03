@@ -51,6 +51,7 @@ div.rangContainer span.range span.before{
   top:2px;
   background:#4da6ff;
   float:left;
+  transition: width 1s;
 }
 div.disable span.range span.before{
   background:#666;
@@ -63,6 +64,7 @@ div.rangContainer span.range span.after{
   border-radius:0 4px 4px 0;
   background:#ccc;
   float:left;
+  transition: width 1s;
 }
 span.text {
   display:inline-block;

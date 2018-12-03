@@ -12,6 +12,7 @@ span.radio{
   left:5px;
   top:4px;
   box-sizing:border-box;
+  transition: all .5s;
 }
 span.radio.active {
   border-width:6px;

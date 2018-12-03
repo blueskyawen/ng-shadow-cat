@@ -3,6 +3,7 @@
     flex-direction:column;
     align-items:center;
     margin:20px;
+    position: relative;
 }
 .nc-pie-chart {
     display:inline-block;
@@ -86,4 +87,55 @@
 }
 .nc-pie-chart .noDisplay {
     display:none;
+}
+
+.nc-chart-objs {
+    display:inline-flex;
+    flex-direction:column;
+    position:absolute;
+    left:calc(100% + 20px);
+}
+.nc-chart-objs .nc-chart-obj {
+    display:inline-flex;
+    align-items:center;
+    font-size:12px;
+    color:#666;
+    position:relative;
+}
+.nc-chart-objs .nc-chart-obj .nc-chart-obj-icon {
+    display:inline-block;
+    height:12px;
+    width:12px;
+    border-radius:50%;
+    background:#70dbdb;
+    margin-right:5px;
+}
+.nc-chart-objs .nc-chart-obj .nc-chart-obj-title {
+    display:inline-block;
+    font-size:12px;
+    color:#666;
+    white-space:nowrap;
+}
+.nc-chart-hover {
+    display:inline-flex;
+    flex-direction:column;
+    background:#f2f2f2;
+    position:fixed;
+    left:0px;
+    top:0px;
+    border:solid 1px #999;
+    border-radius:5px;
+    padding:5px 10px;
+    z-index:2;
+    opacity: 0;
+}
+.nc-chart-hover .nc-chart-objs .nc-chart-hover-item {
+    margin:0px 0px 5px;
+    font-size:14px;
+    color:#666;
+}
+.nc-chart-hover .nc-chart-objs {
+    position: relative;
+    left: 0;
+    top:0;
 }

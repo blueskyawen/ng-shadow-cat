@@ -12,8 +12,11 @@ export class NcMenuComponent implements OnInit {
     @Input() type: string = 'horizontal';
     @Input() place: string = '';
     @Input() navItems : any[] = [];
+    @Input() height : string = '50px';
+    @Input() width : string = '180px';
     menuClasss : any = {};
     menuClasss2 : any = {};
+    menuStyle : any = {};
 
     constructor() {
     }
@@ -23,6 +26,12 @@ export class NcMenuComponent implements OnInit {
             'nc-menu-vertical': this.type === 'vertical',
             'nc-menu-place-down': this.place === 'down',
             'nc-menu-place-right': this.place === 'right'};
+        if(this.type === 'horizontal') {
+            this.menuStyle = {'height':this.height};
+        }
+        if(this.type === 'vertical') {
+            this.menuStyle = {'width':this.width};
+        }
     }
 
     getSubMenuClass(item : any) {
