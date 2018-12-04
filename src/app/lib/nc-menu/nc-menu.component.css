@@ -123,14 +123,15 @@ ul.nc-menu li.nc-menu-item .nc-menu-item-title {
     position: relative;
     padding: 10px;
     box-sizing: border-box;
+    color:#666;
 }
 ul.nc-menu-horizontal li.nc-menu-item > .nc-menu-item-title {
     height: 100%;
 }
-ul.nc-menu li.nc-menu-item .nc-menu-item-title:hover {
+ul.nc-menu li.nc-menu-item:hover > .nc-menu-item-title {
     color: #1890ff;
 }
-ul.nc-menu li.nc-menu-item .nc-menu-item-title.active {
+ul.nc-menu li.nc-menu-item.active > .nc-menu-item-title {
     color: #1890ff;
 }
 ul.nc-menu li.nc-menu-item .nc-menu-item-title .nc-menu-title {
@@ -143,10 +144,11 @@ ul.nc-menu-horizontal {
 }
 ul.nc-menu-horizontal li.nc-menu-item {
     max-width: 20%;
+    height: 100%;
 }
-ul.nc-menu-horizontal > li.nc-menu-item > .nc-menu-item-title.active {
+ul.nc-menu-horizontal > li.nc-menu-item.active {
     border-bottom: solid 3px #1890ff;
-    margin-bottom: -1px;
+    margin-top: -2px;
 }
 ul.nc-menu-horizontal > li.nc-menu-item > ul.nc-sub-menu {
     display: none;
@@ -166,6 +168,7 @@ ul.nc-menu-horizontal > li.nc-menu-item > ul.nc-sub-menu {
     opacity: 1;
     box-shadow: -1px -1px 2px 1px #d9d9d9, 1px 1px 2px 1px #d9d9d9;
     margin-top: 1px;
+    z-index: 1;
 }
 ul.nc-menu-horizontal > li.nc-menu-item:hover > ul.nc-sub-menu {
     display: inline-flex;
@@ -189,9 +192,9 @@ ul.nc-menu-vertical {
 ul.nc-menu-vertical li.nc-menu-item {
     width: 100%;
 }
-ul.nc-menu-vertical li.nc-menu-item.active {
+ul.nc-menu-vertical > li.nc-menu-item.active {
     border: none;
-    color: #1890ff;
+    //color: #1890ff;
     margin-bottom: 0;
 }
 ul.nc-menu-vertical li.nc-menu-item:hover {
@@ -278,5 +281,23 @@ ul.menu-width-auto {
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media (max-width:760px) {
+    ul.nc-menu-horizontal {
+        flex-wrap:wrap;
+        height: auto!important;
+    }
+    ul.nc-menu-horizontal > li.nc-menu-item {
+        width:100%;
+        max-width:100%;
+    }
+    ul.nc-menu > li.nc-menu-item > .nc-menu-item-title {
+        justify-content:flex-start;
+    }
+    ul.nc-menu-horizontal > li.nc-menu-item.active {
+        border:none;
+        border-left:solid 3px #1890ff;
     }
 }

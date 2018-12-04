@@ -172,6 +172,8 @@ export class LayoutComponent {
     };
     tabItems : any[] = [];
     currentTab : string;
+    isShowMenu : boolean = true;
+    isShowMenu2 : boolean = true;
 
     constructor() {
         this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},

@@ -1,4 +1,5 @@
 <div class="nc-form-group-label" [ngClass]="labelClass" [ngStyle]="labelStyle">
+    <span class="nc-form-group-label-require" *ngIf="required">*</span>
     <label>
         <ng-content></ng-content>
     </label>

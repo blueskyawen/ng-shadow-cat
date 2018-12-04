@@ -11,15 +11,20 @@
       display: flex;
       justify-content:center;
       align-items:center;
-      .nc-logo {
+      .nc-header-logo-direc {
         display: flex;
+        justify-content:center;
         align-items:center;
-      }
-      img {
-        display:inline-block;
-        height:28px;
-        width:28px;
-        margin:0 10px;
+        .nc-logo {
+          display: flex;
+          align-items:center;
+        }
+        img {
+          display:inline-block;
+          height:28px;
+          width:28px;
+          margin:0 10px;
+        }
       }
     }
     .nc-header-logo-2 {
@@ -35,7 +40,6 @@
     background:#f2f2f2;
     width:100%;
     box-sizing:border-box;
-    min-height:100px;
     //height: 100%;
   }
   .nc-footer {
@@ -46,5 +50,22 @@
     //display: flex;
     max-width:100%;
     background: #ffffe5;
+  }
+}
+
+@media (max-width: 760px) {
+  .nc-layout .nc-header {
+    flex-wrap:wrap!important;
+  }
+  .nc-layout .nc-header .nc-header-logo {
+    width:100%;
+    display: flex;
+    justify-content:space-between;
+    padding:10px 10px 10px 0;
+    background:#333;
+    color:#fff;
+  }
+  .nc-header .nc-header-logo .nc-anticon-menu {
+    display:inline-block;
   }
 }

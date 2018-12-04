@@ -25,7 +25,10 @@ ul.backcolor-header {
 }
 .demo-header {
     width:100%;
-    padding:20px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .demo-content {
     width:100%;
@@ -33,13 +36,16 @@ ul.backcolor-header {
 }
 .demo-footer {
     width:100%;
-    padding:20px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .demo-side {
     width:160px;
     background:#80aaff;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 214px;
 }

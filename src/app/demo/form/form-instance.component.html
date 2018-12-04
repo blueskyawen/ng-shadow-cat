@@ -236,7 +236,8 @@
     </nc-form-group>
 
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
-        <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">爱好</nc-form-label>
+        <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">
+            <nc-help [title]="'如果提供了一个选择器'"></nc-help>爱好</nc-form-label>
         <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
             <nc-mutil-select [options]="registerData.likeOptions" [(selections)]="registerData.likes" [width]="'100%'">
             </nc-mutil-select>

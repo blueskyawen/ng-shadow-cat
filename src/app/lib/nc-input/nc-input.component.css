@@ -24,23 +24,13 @@
   color: #666;
   position: relative;
 }
- .nc-form-group-label.nc-form-group-require label:before {
-  content:"*";
+ .nc-form-group-label .nc-form-group-label-require {
   margin-left: -10px;
   color:#ff3300;
-  position:absolute;
-  top:50%;
-  display: inline-flex;
-   align-items: center;
-   height: 5px;
-   transform: translateY(50%);
 }
 .nc-form-group-label label:after{
   content:":";
   margin-right: 10px;
-}
-.nc-form-group-label.nc-form-noshow-require label:before {
-  content:"";
 }
 .nc-form-group-label.nc-form-noshow-option label:after {
   content:"";

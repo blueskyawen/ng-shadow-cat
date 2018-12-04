@@ -19,8 +19,7 @@ export class NcFormLabelComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {
-        this.labelClass = {'nc-form-group-require':this.required,'nc-form-noshow-require':this.noShowRequire,
-            'nc-form-noshow-option':this.noShowOption};
+        this.labelClass = {'nc-form-noshow-option':this.noShowOption};
         this.labelStyle = {'height':this.height};
     }
 }
