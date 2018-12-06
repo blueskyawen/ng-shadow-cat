@@ -1,4 +1,132 @@
-<ul class="nc-menu" [ngClass]="menuClasss"  [ngStyle]="menuStyle">
+<div *ngIf="type === 'horizontal'" class="nc-menu nc-menu-horizontal" [ngClass]="menuBackClasss">
+    <div class="nc-menu-item" *ngFor="let navItem of navItems">
+        <span class="nc-menu-item-option" [ngClass]="getMenuActiveClass(navItem)" (click)="clickNavItem(navItem)">
+            <span class="nc-menu-item-title">
+              <span class="{{navItem.icon}}"></span>
+              <span>{{navItem.title}}</span>
+            </span>
+            <span class="nc-carat" *ngIf="navItem.childs && navItem.childs.place === 'down'"
+                  [ngClass]="getCaratClass(navItem.childs)"></span>
+            <span class="nc-carat nc-carat-right" *ngIf="navItem.childs && navItem.childs.place === 'right'"></span>
+        </span>
+        <div *ngIf="navItem.childs" class="nc-side-container">
+            <div class="nc-menu nc-menu-vertical" [ngClass]="menuClasss">
+                <div class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
+                    <span class="nc-menu-item-option" [ngClass]="getMenuActiveClass(navItem2)" (click)="clickNavItem(navItem2)">
+                        <span class="nc-menu-item-title">
+                            <span class="{{navItem2.icon}}"></span>
+                            <span>{{navItem2.title}}</span>
+                        </span>
+                        <span class="nc-carat" *ngIf="navItem2.childs && navItem2.childs.place === 'down'"
+                              [ngClass]="getCaratClass(navItem2.childs)"></span>
+                        <span class="nc-carat nc-carat-right"
+                              *ngIf="navItem2.childs && navItem2.childs.place === 'right'"></span>
+                    </span>
+                    <div *ngIf="navItem2.childs" class="nc-submenu-container nc-secondmenu"
+                         [ngClass]="getSubMenuClass(navItem2.childs)">
+                        <div class="nc-menu nc-submenu" [ngClass]="menuBackClasss">
+                            <div class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
+                                <span class="nc-menu-item-option" [ngClass]="getMenuActiveClass(navItem3)"
+                                      (click)="clickNavItem(navItem3)">
+                                    <span class="nc-menu-item-title">
+                                        <span class="{{navItem3.icon}}"></span>
+                                        <span>{{navItem3.title}}</span>
+                                    </span>
+                                    <span class="nc-carat" *ngIf="navItem3.childs && navItem3.childs.place === 'down'"
+                                          [ngClass]="getCaratClass(navItem3.childs)"></span>
+                                    <span class="nc-carat nc-carat-right"
+                                          *ngIf="navItem3.childs && navItem3.childs.place === 'right'"></span>
+                                </span>
+                                <div *ngIf="navItem3.childs" class="nc-submenu-container nc-secondmenu"
+                                     [ngClass]="getSubMenuClass(navItem3.childs)">
+                                    <div class="nc-menu nc-submenu" [ngClass]="menuBackClasss">
+                                        <div class="nc-menu-item" *ngFor="let navItem4 of navItem3.childs.navItems">
+                                            <span class="nc-menu-item-option" [ngClass]="getMenuActiveClass(navItem4)"
+                                                  (click)="clickNavItem(navItem4)">
+                                                <span class="nc-menu-item-title">
+                                                    <span class="{{navItem4.icon}}"></span>
+                                                    <span>{{navItem4.title}}</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="type === 'vertical'" class="nc-menu nc-menu-vertical" [ngClass]="menuClasss">
+    <div class="nc-menu-item" *ngFor="let navItem of navItems">
+        <span class="nc-menu-item-option" [ngClass]="getMenuActiveClass(navItem)" (click)="clickNavItem(navItem)">
+            <span class="nc-menu-item-title">
+                <span class="{{navItem.icon}}"></span>
+                <span>{{navItem.title}}</span>
+            </span>
+            <span class="nc-carat" *ngIf="navItem.childs && navItem.childs.place === 'down'"
+                [ngClass]="getCaratClass(navItem.childs)"></span>
+            <span class="nc-carat nc-carat-right"
+                *ngIf="navItem.childs && navItem.childs.place === 'right'"></span>
+        </span>
+        <div *ngIf="navItem.childs" class="nc-submenu-container nc-secondmenu"
+             [ngClass]="getSubMenuClass(navItem.childs)">
+            <div class="nc-menu nc-submenu" [ngClass]="menuBackClasss">
+                <div class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
+                    <span class="nc-menu-item-option" style="padding-left:20px;" [ngClass]="getMenuActiveClass(navItem2)"
+                          (click)="clickNavItem(navItem2)">
+                      <span class="nc-menu-item-title">
+                        <span class="{{navItem2.icon}}"></span>
+                        <span>{{navItem2.title}}</span>
+                      </span>
+                      <span class="nc-carat" *ngIf="navItem2.childs && navItem2.childs.place === 'down'"
+                          [ngClass]="getCaratClass(navItem2.childs)"></span>
+                      <span class="nc-carat nc-carat-right"
+                          *ngIf="navItem2.childs && navItem2.childs.place === 'right'"></span>
+                    </span>
+                    <div *ngIf="navItem2.childs" class="nc-submenu-container nc-secondmenu"
+                         [ngClass]="getSubMenuClass(navItem2.childs)">
+                        <div class="nc-menu nc-submenu" [ngClass]="menuBackClasss">
+                            <div class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
+                                <span class="nc-menu-item-option" style="padding-left:20px;"
+                                      [ngClass]="getMenuActiveClass(navItem3)" (click)="clickNavItem(navItem3)">
+                                  <span class="nc-menu-item-title">
+                                    <span class="{{navItem3.icon}}"></span>
+                                    <span>{{navItem3.title}}</span>
+                                  </span>
+                                  <span class="nc-carat" *ngIf="navItem3.childs && navItem3.childs.place === 'down'"
+                                        [ngClass]="getCaratClass(navItem3.childs)"></span>
+                                  <span class="nc-carat nc-carat-right"
+                                        *ngIf="navItem3.childs && navItem3.childs.place === 'right'"></span>
+                                </span>
+                                <div *ngIf="navItem3.childs" class="nc-submenu-container nc-secondmenu"
+                                     [ngClass]="getSubMenuClass(navItem3.childs)">
+                                    <div class="nc-menu nc-submenu" [ngClass]="menuBackClasss">
+                                        <div class="nc-menu-item" *ngFor="let navItem4 of navItem3.childs.navItems">
+                                            <span class="nc-menu-item-option" style="padding-left:20px;"
+                                                  [ngClass]="getMenuActiveClass(navItem4)" (click)="clickNavItem(navItem4)">
+                                              <span class="nc-menu-item-title">
+                                                <span class="{{navItem4.icon}}"></span>
+                                                <span>{{navItem4.title}}</span>
+                                              </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--ul class="nc-menu" [ngClass]="menuClasss"  [ngStyle]="menuStyle">
     <li class="nc-menu-item" *ngFor="let navItem of navItems" [ngClass]="{'active':navItem.isActive}">
 		<span class="nc-menu-item-title" *ngIf="type === 'horizontal'"
               (click)="clickNavItem(navItem)">
@@ -37,5 +165,5 @@
         </ul>
 
     </li>
-</ul>
+</ul>-->
 

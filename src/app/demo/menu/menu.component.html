@@ -2,22 +2,32 @@
 <p>导航菜单,为页面和功能提供导航的菜单列表。</p>
 
 <h1>1. 顶部导航菜单</h1>
-<div style="margin-bottom: 120px;">
-	<nc-menu [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
+<div style="height: 60px;margin-bottom: 60px;">
+	<nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+</div>
+<div style="height: 60px;margin-bottom: 60px;">
+    <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems" [backColor]="'dark'"></nc-menu>
 </div>
 
 <h1></h1>
 
 <h1>2. 垂直导航菜单,展开/缩起</h1>
-<div style="margin-top: 30px;margin-bottom: 30px;">
-	<nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
+<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+    <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
+</div>
+<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+    <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems" [backColor]="'dark'"></nc-menu>
 </div>
 <h1></h1>
 
 <h1>3. 垂直导航菜单,浮动呈现</h1>
-<div style="margin-top: 30px;margin-bottom: 30px;">
-	<nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems" [width]="'200px'"></nc-menu>
+<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+    <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"></nc-menu>
 </div>
+<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+    <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems" [backColor]="'dark'"></nc-menu>
+</div>
+<h1></h1>
 <!--div style="margin:10px;">
 	<div class="nc-anticon-menu" (click)="antionUser('2')">
 		<div class="nc-anticon"></div>
@@ -27,11 +37,11 @@
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
 	<div *ngIf="currentTab === 'html'">
     <textarea style="height:240px;">
-  	<nc-menu [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
+  	<!--nc-menu [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
 
   	<nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
 
-	<nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems" [width]="'200px'"></nc-menu>
+	<nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems" [width]="'200px'"></nc-menu>-->
     </textarea>
 	</div>
 	<div *ngIf="currentTab === 'typescript'">

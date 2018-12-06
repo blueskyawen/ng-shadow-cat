@@ -12,34 +12,30 @@ export class NcMenuComponent implements OnInit {
     @Input() type: string = 'horizontal';
     @Input() place: string = '';
     @Input() navItems : any[] = [];
-    @Input() height : string = '50px';
-    @Input() width : string = '180px';
+    //@Input() height : string = '50px';
+    //@Input() width : string = '180px';
+    @Input() backColor : string = 'light';
     menuClasss : any = {};
-    menuClasss2 : any = {};
+    menuBackClasss : any = {};
     menuStyle : any = {};
 
     constructor() {
     }
 
     ngOnInit() {
-        this.menuClasss = {'nc-menu-horizontal': this.type === 'horizontal',
-            'nc-menu-vertical': this.type === 'vertical',
-            'nc-menu-place-down': this.place === 'down',
-            'nc-menu-place-right': this.place === 'right'};
-        if(this.type === 'horizontal') {
-            this.menuStyle = {'height':this.height};
-        }
-        if(this.type === 'vertical') {
-            this.menuStyle = {'width':this.width};
-        }
+        this.menuClasss = {'nc-menu-place-down': this.place === 'down',
+            'nc-menu-place-right': this.place === 'right','nc-menu-dark':this.backColor === 'dark'};
+        this.menuBackClasss = {'nc-menu-dark':this.backColor === 'dark'};
     }
 
     getSubMenuClass(item : any) {
-        return {'nc-menu-horizontal': item.type === 'horizontal',
-            'nc-menu-vertical': item.type === 'vertical',
-            'nc-menu-place-down': item.place === 'down',
-            'nc-menu-place-right': item.place === 'right',
-            'sub-menu-show':item.isShow};
+        return {'nc-menu-place-down': item.place === 'down','nc-secondmenu':item.place === 'down',
+            'nc-menu-place-right': item.place === 'right','nc-secondmenu-right':item.place === 'right',
+            'nc-sub-menu-show': item.isShow};
+    }
+
+    getBackClass() {
+        return {'nc-menu-dark':this.backColor === 'dark'};
     }
 
     getCaratClass(item : any) {
@@ -47,15 +43,19 @@ export class NcMenuComponent implements OnInit {
             'nc-carat-up': item.isShow};
     }
 
+    getMenuActiveClass(item : any) {
+        return {'active':item.isActive && !item.childs,'child-active':item.isActive && item.childs};
+    }
+
     clickNavItem(item : any) {
-        if(this.type === 'horizontal' && !this.place) {
+        if(this.type === 'horizontal') {
             return this.clickNavItem1(item);
         }
         if(this.type === 'vertical' && this.place === 'down') {
             return this.clickNavItem2(item);
         }
         if(this.type === 'vertical' && this.place === 'right') {
-            return this.clickNavItem3(item);
+            return this.clickNavItem1(item);
         }
     }
 
