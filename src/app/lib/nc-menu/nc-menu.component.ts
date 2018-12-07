@@ -15,17 +15,20 @@ export class NcMenuComponent implements OnInit {
     //@Input() height : string = '50px';
     //@Input() width : string = '180px';
     @Input() backColor : string = 'light';
+    @Input() isScroll : boolean = false;
+    @Input() color : string = '#f2f2f2';
     menuClasss : any = {};
     menuBackClasss : any = {};
-    menuStyle : any = {};
+    menuColorStyle : any = {};
 
     constructor() {
     }
 
     ngOnInit() {
-        this.menuClasss = {'nc-menu-place-down': this.place === 'down',
-            'nc-menu-place-right': this.place === 'right','nc-menu-dark':this.backColor === 'dark'};
+        this.menuClasss = {'nc-menu-place-down': this.place === 'down', 'nc-menu-place-right': this.place === 'right',
+            'nc-menu-scroll': this.isScroll,'nc-menu-dark':this.backColor === 'dark'};
         this.menuBackClasss = {'nc-menu-dark':this.backColor === 'dark'};
+        this.menuColorStyle = {'background':this.color};
     }
 
     getSubMenuClass(item : any) {

@@ -7,7 +7,7 @@
     height:100%;
     padding:0;
     margin:0px;
-    background:#fff;
+    background:#f2f2f2;
     position:relative;
     display:flex;
     align-items:center;
@@ -27,7 +27,7 @@
 .nc-menu-horizontal > .nc-menu-item > .nc-menu-item-option.active,
 .nc-menu-horizontal > .nc-menu-item > .nc-menu-item-option.child-active {
     border-bottom:solid 3px #1890ff;
-    margin-top:2px;
+    margin-bottom:-3px;
 }
 .nc-menu .nc-menu-item > .nc-menu-item-option {
     width:100%;
@@ -57,7 +57,7 @@
 }
 .nc-menu .nc-menu-item > .nc-side-container {
     position:absolute;
-    background:#fff;
+    background:#f2f2f2;
     z-index:1;
     top:100%;
     left:0;
@@ -74,6 +74,11 @@
 .nc-menu-vertical {
     border-right:solid 1px #999;
     flex-direction:column;
+    display: inline-block;
+    z-index: 1;
+}
+.nc-menu-vertical.nc-menu-place-down.nc-menu-scroll {
+    overflow-y: auto;
 }
 .nc-menu-vertical > .nc-menu-item {
     width:100%;
@@ -112,7 +117,6 @@
     width:100%;
     box-sizing:border-box;
     flex-direction:column;
-    background:#fff;
     z-index:1;
     padding:0 10px;
     opacity:1;
@@ -129,7 +133,7 @@
     padding-right:0;
     cursor:pointer;
     color:#666;
-    background:#fff;
+    background:inherit;
 }
 .nc-secondmenu .nc-submenu {
     padding:0;
@@ -155,6 +159,7 @@ span.nc-carat {
     border-left-color: transparent;
     opacity:0.8;
     transform-origin:center center;
+    box-sizing: content-box;
 }
 span.nc-carat-down {
     transform: rotate(45deg);
@@ -179,7 +184,7 @@ span.nc-carat-left {
 .nc-menu.nc-menu-dark > .nc-menu-item > .nc-menu-item-option.active,
 .nc-menu.nc-menu-dark > .nc-menu-item > .nc-menu-item-option.child-active {
     border-bottom:none;
-    margin-top:0px;
+    margin-bottom:0;
     background:#1a75ff;
 }
 .nc-menu-vertical.nc-menu-dark .nc-menu-item > .nc-menu-item-option.child-active {
@@ -217,6 +222,9 @@ span.nc-carat-left {
 }
 .nc-menu-dark .nc-submenu > .nc-menu-item {
     color:#d9d9d9;
+    background:#00264d;
+}
+.nc-menu.nc-menu-dark .nc-menu-item > .nc-side-container {
     background:#00264d;
 }
 

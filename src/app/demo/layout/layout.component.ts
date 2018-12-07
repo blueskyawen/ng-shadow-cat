@@ -9,44 +9,44 @@ import { Component,OnInit } from '@angular/core';
 @Component({
     selector: 'demo-layout',
     templateUrl: './layout.component.html',
-    styleUrls: ['./layout.component.css']
+    styleUrls: ['./layout.component.css','./layout_2.component.css']
 })
 export class LayoutComponent {
     menuItems : any = {
         type: 'horizontal',
-        place: '',
+        place: 'down',
         navItems: [
             {title:'Navigation One',
-                icon:'nc-icon fa fa-car',
+                icon:'fa fa-car',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Two',
-                icon:'nc-icon fa fa-camera',
+                icon:'fa fa-camera',
                 isActive:true,
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation There',
-                icon:'nc-icon fa fa-coffee',
+                icon:'fa fa-coffee',
                 isActive:false,
                 callback: () => {console.log('click menu item!');},
                 childs: {
-                    type:'vertical',place: 'down',
+                    place: 'down',
                     navItems: [
-                        {title:'option5',icon:'',isActive:false,
+                        {title:'option5',icon:'fa fa-car',isActive:false,
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'',isActive:false,
+                        {title:'option6',icon:'fa fa-camera',isActive:false,
                             callback: () => {console.log('click menu item!');}}
                     ]
                 }
             },
             {title:'Navigation Four',
-                icon:'nc-icon fa fa-cubes',
+                icon:'fa fa-cubes',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Five',
-                icon:'nc-icon fa fa-wifi',
+                icon:'fa fa-wifi',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             }
@@ -57,22 +57,22 @@ export class LayoutComponent {
         place: 'down',
         navItems: [
             {title:'Navigation One',
-                icon:'nc-icon fa fa-car',
+                icon:'fa fa-car',
                 isActive:false,
                 callback: () => {console.log('click menu item!');},
                 childs: {
-                    type:'vertical',place: 'down',isShow:false,
+                    place: 'down',isShow:false,
                     navItems: [
-                        {title:'option1',icon:'',isActive:false,type:'vertical',place: 'down',
+                        {title:'option1',icon:'fa fa-wifi',isActive:false,place: 'down',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option2',icon:'',isActive:false,type:'vertical',place: 'down',
+                        {title:'option2',icon:'fa fa-wifi',isActive:false,place: 'down',
                             callback: () => {console.log('click menu item!');},
                             childs: {
                                 type:'vertical',place: 'down',isShow:false,
                                 navItems: [
-                                    {title:'option3',icon:'',isActive:false,
+                                    {title:'option3',icon:'fa fa-wifi',isActive:false,place: 'down',
                                         callback: () => {console.log('click menu item!');}},
-                                    {title:'option4',icon:'',isActive:false,
+                                    {title:'option4',icon:'fa fa-wifi',isActive:false,place: 'down',
                                         callback: () => {console.log('click menu item!');}}
                                 ]
                             }
@@ -81,31 +81,31 @@ export class LayoutComponent {
                 }
             },
             {title:'Navigation Two',
-                icon:'nc-icon fa fa-camera',
+                icon:'fa fa-camera',
                 isActive:false,
                 callback: () => {console.log('click menu item!');},
                 childs: {
-                    type:'vertical',place: 'down',isShow:false,
+                    place: 'down',isShow:false,
                     navItems: [
-                        {title:'option5',icon:'',isActive:false,
+                        {title:'option5',icon:'fa fa-wifi',isActive:false,place: 'down',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'',isActive:false,
+                        {title:'option6',icon:'fa fa-wifi',isActive:false,place: 'down',
                             callback: () => {console.log('click menu item!');}}
                     ]
                 }
             },
             {title:'Navigation There',
-                icon:'nc-icon fa fa-coffee',
+                icon:'fa fa-coffee',
                 isActive:true,
                 callback: () => {console.log('click menu item!');},
             },
             {title:'Navigation Four',
-                icon:'nc-icon fa fa-cubes',
+                icon:'fa fa-cubes',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Five',
-                icon:'nc-icon fa fa-wifi',
+                icon:'fa fa-wifi',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             }
@@ -116,22 +116,22 @@ export class LayoutComponent {
         place: 'right',
         navItems: [
             {title:'Navigation One',
-                icon:'nc-icon fa fa-car',
+                icon:'fa fa-car',
                 isActive:false,
                 callback: () => {console.log('click menu item!');},
                 childs: {
-                    type:'vertical',place: 'down',
+                    place: 'right',
                     navItems: [
-                        {title:'option1',icon:'',isActive:false,type:'vertical',place: 'down',
+                        {title:'option1',icon:'fa fa-car',isActive:false,place: 'right',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option2',icon:'',isActive:false,type:'vertical',place: 'down',
+                        {title:'option2',icon:'fa fa-car',isActive:false,place: 'right',
                             callback: () => {console.log('click menu item!');},
                             childs: {
-                                type:'vertical',place: 'down',
+                                place: 'right',
                                 navItems: [
-                                    {title:'option3',icon:'',isActive:false,
+                                    {title:'option3',icon:'fa fa-car',isActive:false,place: 'right',
                                         callback: () => {console.log('click menu item!');}},
-                                    {title:'option4',icon:'',isActive:false,
+                                    {title:'option4',icon:'fa fa-car',isActive:false,place: 'right',
                                         callback: () => {console.log('click menu item!');}}
                                 ]
                             }
@@ -140,31 +140,31 @@ export class LayoutComponent {
                 }
             },
             {title:'Navigation Two',
-                icon:'nc-icon fa fa-camera',
+                icon:'fa fa-camera',
                 isActive:true,
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation There',
-                icon:'nc-icon fa fa-coffee',
+                icon:'fa fa-coffee',
                 isActive:false,
                 callback: () => {console.log('click menu item!');},
                 childs: {
-                    type:'vertical',place: 'down',
+                    place: 'right',
                     navItems: [
-                        {title:'option5',icon:'',isActive:false,
+                        {title:'option5',icon:'fa fa-camera',isActive:false,place: 'right',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'',isActive:false,
+                        {title:'option6',icon:'fa fa-camera',isActive:false,place: 'right',
                             callback: () => {console.log('click menu item!');}}
                     ]
                 }
             },
             {title:'Navigation Four',
-                icon:'nc-icon fa fa-cubes',
+                icon:'a fa-cubes',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Five',
-                icon:'nc-icon fa fa-wifi',
+                icon:'fa fa-wifi',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             }

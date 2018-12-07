@@ -1,0 +1,128 @@
+.nc-layout {
+    width: 100%;
+}
+.nc-layout > .nc-header {
+    background:#f2f2f2;
+    width:100%;
+    box-sizing:border-box;
+}
+.nc-layout > .nc-header .nc-header-logo-area {
+    width:100%;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    height: 100%;
+    position: relative;
+}
+.nc-layout > .nc-header .nc-header-logo-area:after {
+    content: "";
+    display: inline-block;
+    height:40%;
+    width:2px;
+    background: #999;
+    position: absolute;
+    left:100%;
+    top:50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.nc-layout > .nc-header .nc-header-logo-area .nc-header-logo {
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+    width:80%;
+}
+.nc-layout > .nc-header .nc-header-logo-area .nc-header-logo img {
+    display:inline-block;
+    height:28px;
+    width:28px;
+    margin:0 10px;
+}
+.nc-layout > .nc-header .nc-header-menu {
+    width: 100%;
+    height: 100%;
+}
+.nc-layout > .nc-content {
+    background:#fff;
+    width:100%;
+    box-sizing:border-box;
+}
+.nc-layout > .nc-footer {
+    background: #668cff;
+    width:100%;
+    box-sizing:border-box;
+}
+.nc-layout > .nc-sider {
+    background: #5c85d6;
+    max-width:100%;
+    box-sizing:border-box;
+}
+
+.nc-flex,
+.nc-row {
+    display: flex !important;
+}
+.nc-content-center {
+    justify-content: center !important;
+}
+.nc-align-item-center {
+    align-items: center !important;
+}
+
+.nc-anticon-menu {
+    height:20px;
+    width:30px;
+    border-radius:4px;
+    position:relative;
+}
+.nc-anticon-menu .nc-anticon {
+    display:inline-block;
+    height:2px;
+    width: 60%;
+    border-radius:1px;
+    background:#666;
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%) translateX(-50%);
+    left:50%;
+}
+.nc-anticon-menu:before {
+    content:"";
+    display:inline-block;
+    height:2px;
+    width: 60%;
+    border-radius:1px;
+    background:#666;
+    position:absolute;
+    top:10%;
+    transform: translateX(-50%);
+    left:50%;
+}
+.nc-anticon-menu:after {
+    content:"";
+    display:inline-block;
+    height:2px;
+    width: 60%;
+    border-radius:1px;
+    background:#666;
+    position:absolute;
+    bottom:10%;
+    transform: translateX(-50%);
+    left:50%;
+}
+.nc-anticon-menu:hover {
+    border-color:#1890ff;
+    cursor:pointer;
+}
+.nc-anticon-menu:hover .nc-anticon,
+.nc-anticon-menu:hover:before,
+.nc-anticon-menu:hover:after {
+    background:#1890ff;
+}
+
+.nc-header-menu >>> .nc-menu-horizontal {
+    border-bottom:none;
+}
+.nc-header >>> .nc-menu-horizontal {
+    border-bottom:none;
+}

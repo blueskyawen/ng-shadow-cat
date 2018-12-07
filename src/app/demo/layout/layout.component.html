@@ -2,98 +2,97 @@
 <p>Flex布局,常用的页面布局</p>
 <br/>
 <h3>1.常用布局方式</h3>
-<div class="nc-layout">
-    <div class="nc-header nc-content-center nc-align-item-center">
-        <div class="demo-header">header</div>
+<div class="nc-layout" style="border: solid 1px #999;">
+    <div class="nc-header nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        header
     </div>
-    <div class="nc-content nc-content-center nc-align-item-center">
-        <div class="demo-content">content</div>
+    <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100px;">
+        content
     </div>
-    <div class="nc-footer nc-content-center nc-align-item-center">
-        <div class="demo-footer">footer</div>
-    </div>
-</div>
-<br/>
-<div class="nc-layout">
-    <div class="nc-header nc-content-center nc-align-item-center">
-        <div class="demo-header">header</div>
-    </div>
-    <div class="nc-layout nc-row">
-        <div class="nc-sider nc-content-center nc-align-item-center">
-            <div class="demo-side">sider</div>
-        </div>
-        <div class="nc-content nc-content-center nc-align-item-center">
-            <div class="demo-content">content</div>
-        </div>
-    </div>
-    <div class="nc-footer nc-content-center nc-align-item-center">
-        <div class="demo-footer">footer</div>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
     </div>
 </div>
 <br/>
-<div class="nc-layout nc-row">
-    <div class="nc-sider nc-content-center nc-align-item-center">
-        <div class="demo-side">sider</div>
+<div class="nc-layout" style="border: solid 1px #999;">
+    <div class="nc-header nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        header
+    </div>
+    <div class="nc-layout nc-flex nc-row" style="height:100px;">
+        <div class="nc-sider nc-flex nc-content-center nc-align-item-center" style="width:200px;height:100%;">
+            sider
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+            content
+        </div>
+    </div>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
+    </div>
+</div>
+<br/>
+<div class="nc-layout nc-flex nc-row" style="height:180px;border: solid 1px #999;">
+    <div class="nc-sider nc-flex nc-content-center nc-align-item-center" style="width:200px;height:100%;">
+        sider
     </div>
     <div class="nc-layout">
-        <div class="nc-header nc-content-center nc-align-item-center">
-            <div class="demo-header">header</div>
+        <div class="nc-header nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            header
         </div>
-        <div class="nc-content nc-content-center nc-align-item-center" style="height: calc(100% - 120px)">
-            <div class="demo-content">content</div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
+            content
         </div>
-        <div class="nc-footer nc-content-center nc-align-item-center">
-            <div class="demo-footer">footer</div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
         </div>
     </div>
 </div>
-
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
     <div *ngIf="currentTab === 'html'">
     <textarea style="height:300px;">
     <div class="nc-layout">
-        <div class="nc-header nc-content-center nc-align-item-center">
-            <div class="demo-header">header</div>
+        <div class="nc-header nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            header
         </div>
-        <div class="nc-content nc-content-center nc-align-item-center">
-            <div class="demo-content">content</div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100px;">
+            content
         </div>
-        <div class="nc-footer nc-content-center nc-align-item-center">
-            <div class="demo-footer">footer</div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
         </div>
     </div>
     <br/>
     <div class="nc-layout">
-        <div class="nc-header nc-content-center nc-align-item-center">
-            <div class="demo-header">header</div>
+        <div class="nc-header nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            header
         </div>
-        <div class="nc-layout nc-row">
-            <div class="nc-sider nc-content-center nc-align-item-center">
-                <div class="demo-side">sider</div>
+        <div class="nc-layout nc-flex nc-row" style="height:100px;">
+            <div class="nc-sider nc-flex nc-content-center nc-align-item-center" style="width:200px;height:100%;">
+                sider
             </div>
-            <div class="nc-content nc-content-center nc-align-item-center">
-                <div class="demo-content">content</div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+                content
             </div>
         </div>
-        <div class="nc-footer nc-content-center nc-align-item-center">
-            <div class="demo-footer">footer</div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
         </div>
     </div>
     <br/>
-    <div class="nc-layout nc-row">
-        <div class="nc-sider nc-content-center nc-align-item-center">
-            <div class="demo-side">sider</div>
+    <div class="nc-layout nc-flex nc-row" style="height:180px;">
+        <div class="nc-sider nc-flex nc-content-center nc-align-item-center" style="width:200px;height:100%;">
+            sider
         </div>
         <div class="nc-layout">
-            <div class="nc-header nc-content-center nc-align-item-center">
-                <div class="demo-header">header</div>
+            <div class="nc-header nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+                header
             </div>
-            <div class="nc-content nc-content-center nc-align-item-center" style="height: calc(100% - 120px)">
-                <div class="demo-content">content</div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
+                content
             </div>
-            <div class="nc-footer nc-content-center nc-align-item-center">
-                <div class="demo-footer">footer</div>
+            <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+                footer@Ng-Cat By Angular
             </div>
         </div>
     </div>
@@ -102,79 +101,177 @@
 </nc-tab>
 
 <h3>2.常用布局和导航菜单组合</h3>
-<!--div class="nc-layout">
-    <div class="nc-header nc-flex nc-content-center nc-align-item-center backcolor-header">
-        <div class="nc-header-logo">
-            <span class="nc-header-logo-direc">
-                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
-                <span>Logo</span>
-            </span>
-            <div class="nc-anticon-menu" (click)="isShowMenu = !isShowMenu">
-                <div class="nc-anticon"></div>
-            </div>
-        </div>
-        <div class="nc-header-menu" *ngIf="isShowMenu">
-            <nc-menu class="nc-header-menu-nav" [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
-        </div>
-    </div>
-    <div class="nc-content nc-content-center nc-align-item-center">
-        <div class="nc-content-inner">content</div>
-    </div>
-    <div class="nc-footer nc-content-center nc-align-item-center">
-        <div class="nc-autor">footer@Ng-Cat By Angular</div>
-    </div>
-</div>
-
-<br/>
-
+<h1>上中下</h1>
 <div class="nc-layout">
-    <div class="nc-header nc-flex nc-content-center nc-align-item-center">
-        <div class="nc-header-logo nc-header-logo-2">
-            <span class="nc-header-logo-direc">
+    <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+        <div class="nc-header-logo-area" style="width:200px;">
+            <span class="nc-header-logo">
                 <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
                 <span>Logo</span>
             </span>
-            <div class="nc-anticon-menu" (click)="isShowMenu2 = !isShowMenu2">
+        </div>
+        <div class="nc-header-menu">
+            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+        </div>
+    </div>
+    <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:120px;">
+        content
+    </div>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
+    </div>
+</div>
+<br/>
+<h1>上-中(左右)-下</h1>
+<div class="nc-layout">
+    <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+        <div class="nc-header-logo-area" style="width:240px;">
+            <span class="nc-header-logo">
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                <span>Logo</span>
+            </span>
+            <div class="nc-anticon-menu">
                 <div class="nc-anticon"></div>
             </div>
         </div>
-        <div class="nc-header-menu" *ngIf="isShowMenu2">
-            <nc-menu class="nc-header-menu-nav" [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
+        <div class="nc-header-menu">
+            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
         </div>
     </div>
-    <div class="nc-layout nc-row">
-        <div class="nc-sider nc-content-center nc-align-item-center">
-            <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
+    <div class="nc-layout nc-flex nc-row">
+        <div class="nc-sider" style="width:240px;">
+            <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems" [color]="'#d9d9d9'"></nc-menu>
         </div>
-        <div class="nc-content nc-content-center nc-align-item-center">
-            <div class="nc-content-inner">content</div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+            content
         </div>
     </div>
-    <div class="nc-footer nc-content-center nc-align-item-center">
-        <div class="nc-autor">footer@Ng-Cat By Angular</div>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
     </div>
 </div>
-
 <br/>
-
-<div class="nc-layout nc-row">
-    <div class="nc-sider nc-content-center nc-align-item-center">
-        <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems" [width]="'200px'"></nc-menu>
+<h1>左-右(上中下)</h1>
+<div class="nc-layout nc-flex nc-row">
+    <div class="nc-sider" style="height: 100%;width: 260px;">
+        <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems" [color]="'#d9d9d9'"></nc-menu>
     </div>
     <div class="nc-layout">
-        <div class="nc-header" style="display: block;">
-            <nc-menu class="nc-header-menu-nav" [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
+        <div class="nc-header" style="height:50px;">
+            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
         </div>
-        <div class="nc-content nc-content-center nc-align-item-center" style="height: calc(100% - 100px)">
-            <div class="nc-content-inner">content</div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
+            content
         </div>
-        <div class="nc-footer nc-content-center nc-align-item-center">
-            <div class="nc-autor">footer@Ng-Cat By Angular</div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+</div>
+<br/>
+<h1>带滚动条</h1>
+<div class="nc-layout" style="height:360px;">
+    <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+        <div class="nc-header-logo-area" style="width:240px;">
+            <span class="nc-header-logo">
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                <span>Logo</span>
+            </span>
+            <div class="nc-anticon-menu">
+                <div class="nc-anticon"></div>
+            </div>
+        </div>
+        <div class="nc-header-menu">
+            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+        </div>
+    </div>
+    <div class="nc-layout nc-flex nc-row" style="height:calc(100% - 100px);">
+        <div class="nc-sider" style="width:240px;">
+            <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"
+                     [color]="'#d9d9d9'" [isScroll]="true"></nc-menu>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+            content
+        </div>
+    </div>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
+    </div>
+</div>
+<br/>
+
+<div class="nc-layout nc-flex nc-row" style="height: 300px;">
+    <div class="nc-sider" style="height: 100%;width: 260px;">
+        <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"
+                 [color]="'#d9d9d9'" [isScroll]="true"></nc-menu>
+    </div>
+    <div class="nc-layout">
+        <div class="nc-header" style="height:50px;">
+            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
+            content
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
         </div>
     </div>
 </div>
 
-<p>使用方式:</p>
+<h1>带滚动条</h1>
+
+
+<h1>侧边栏浮动</h1>
+<div class="nc-layout">
+    <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+        <div class="nc-header-logo-area" style="width:240px;">
+            <span class="nc-header-logo">
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                <span>Logo</span>
+            </span>
+            <div class="nc-anticon-menu">
+                <div class="nc-anticon"></div>
+            </div>
+        </div>
+        <div class="nc-header-menu">
+            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+        </div>
+    </div>
+    <div class="nc-layout nc-flex nc-row">
+        <div class="nc-sider" style="width:240px;">
+            <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"
+                     [color]="'#d9d9d9'"></nc-menu>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+            content
+        </div>
+    </div>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
+    </div>
+</div>
+<br/>
+
+<div class="nc-layout nc-flex nc-row">
+    <div class="nc-sider" style="height: 100%;width: 260px;">
+        <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"
+                 [color]="'#d9d9d9'"></nc-menu>
+    </div>
+    <div class="nc-layout">
+        <div class="nc-header" style="height:50px;">
+            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
+            content
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+</div>
+
+
+<!--p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
     <div *ngIf="currentTab === 'html'">
     <textarea style="height:500px;">
