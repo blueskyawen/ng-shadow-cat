@@ -12,8 +12,6 @@ export class NcMenuComponent implements OnInit {
     @Input() type: string = 'horizontal';
     @Input() place: string = '';
     @Input() navItems : any[] = [];
-    //@Input() height : string = '50px';
-    //@Input() width : string = '180px';
     @Input() backColor : string = 'light';
     @Input() isScroll : boolean = false;
     @Input() color : string = '#f2f2f2';
@@ -28,7 +26,13 @@ export class NcMenuComponent implements OnInit {
         this.menuClasss = {'nc-menu-place-down': this.place === 'down', 'nc-menu-place-right': this.place === 'right',
             'nc-menu-scroll': this.isScroll,'nc-menu-dark':this.backColor === 'dark'};
         this.menuBackClasss = {'nc-menu-dark':this.backColor === 'dark'};
-        this.menuColorStyle = {'background':this.color};
+        if(this.backColor === 'manual') {
+            this.menuColorStyle = {'background':this.color};
+        }
+        if(this.backColor === 'light') {
+            this.menuColorStyle = {'background':'#fff'};
+        }
+
     }
 
     getSubMenuClass(item : any) {

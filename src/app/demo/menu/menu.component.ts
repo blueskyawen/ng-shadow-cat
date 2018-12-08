@@ -48,6 +48,8 @@ export class MenuComponent {
             }
         ]
     };
+    menuItems4 : any = JSON.parse(JSON.stringify(this.menuItems));
+    menuItems5 : any = JSON.parse(JSON.stringify(this.menuItems));
     menuItems2 : any = {
         type: 'vertical',
         place: 'down',
@@ -107,6 +109,8 @@ export class MenuComponent {
             }
         ]
     };
+    menuItems6 : any = JSON.parse(JSON.stringify(this.menuItems2));
+    menuItems7 : any = JSON.parse(JSON.stringify(this.menuItems2));
     menuItems3 : any = {
         type: 'vertical',
         place: 'right',
@@ -166,15 +170,25 @@ export class MenuComponent {
             }
         ]
     };
-    isShowSide1 : boolean = true;
-    isShowSide2 : boolean = true;
+    menuItems8 : any = JSON.parse(JSON.stringify(this.menuItems3));
+    menuItems9 : any = JSON.parse(JSON.stringify(this.menuItems3));
     tabItems : any[] = [];
     currentTab : string;
+    tabItems2 : any[] = [];
+    currentTab2 : string;
+    tabItems3 : any[] = [];
+    currentTab3 : string;
 
     constructor() {
         this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
             {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
         this.currentTab= this.tabItems[0].label;
+        this.tabItems2 = [{name:'html',label:'html',isActive:true,isDisable:false},
+            {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
+        this.currentTab2= this.tabItems2[0].label;
+        this.tabItems3 = [{name:'html',label:'html',isActive:true,isDisable:false},
+            {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
+        this.currentTab3= this.tabItems3[0].label;
     }
 
 }

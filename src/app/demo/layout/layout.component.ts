@@ -170,14 +170,34 @@ export class LayoutComponent {
             }
         ]
     };
+    menuItems4 : any = JSON.parse(JSON.stringify(this.menuItems));
+    menuItems5 : any = JSON.parse(JSON.stringify(this.menuItems));
+    menuItems6 : any = JSON.parse(JSON.stringify(this.menuItems));
+    menuItems7 : any = JSON.parse(JSON.stringify(this.menuItems));
+    menuItems8 : any = JSON.parse(JSON.stringify(this.menuItems));
+    menuItems9 : any = JSON.parse(JSON.stringify(this.menuItems));
+    menuItems10 : any = JSON.parse(JSON.stringify(this.menuItems));
+    menuItems17 : any = JSON.parse(JSON.stringify(this.menuItems));
+    menuItems18 : any = JSON.parse(JSON.stringify(this.menuItems));
+
+    menuItems11 : any = JSON.parse(JSON.stringify(this.menuItems2));
+    menuItems12 : any = JSON.parse(JSON.stringify(this.menuItems2));
+    menuItems13 : any = JSON.parse(JSON.stringify(this.menuItems2));
+    menuItems14 : any = JSON.parse(JSON.stringify(this.menuItems2));
+    menuItems15 : any = JSON.parse(JSON.stringify(this.menuItems2));
+
+    menuItems21 : any = JSON.parse(JSON.stringify(this.menuItems3));
     tabItems : any[] = [];
     currentTab : string;
-    isShowMenu : boolean = true;
-    isShowMenu2 : boolean = true;
+    showSideMenus: any[] = [true,true,true,true,true,true];
 
     constructor() {
         this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
             {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
         this.currentTab= this.tabItems[0].label;
+    }
+
+    extendSideMenu(index : number) {
+        //this.showSideMenus[index] = !this.showSideMenus[index];
     }
 }

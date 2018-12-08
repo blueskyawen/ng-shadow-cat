@@ -1,9 +1,6 @@
 /**
  * Created by liuxuwen on 18-8-21.
  */
-/**
- * Created by liuxuwen on 18-5-27.
- */
 import { Component, Input, OnInit } from '@angular/core';
 import { Router }  from '@angular/router';
 
@@ -27,7 +24,7 @@ export class SidebarPatternComponent implements OnInit {
       {'name':'缩略图','label':'thumbnail','isActive':false,'url':'/thumbimg'},
       {'name':'列表组','label':'listGroup','isActive':false,'url':'/listGroup'},
       {'name':'卡片','label':'card','isActive':false,'url':'/card'},
-      {'name':'Flex布局','label':'flex','isActive':false,'url':'/flexLayout'},
+      {'name':'页面布局','label':'flexLayout','isActive':false,'url':'/flexLayout'},
       {'name':'导航菜单','label':'menu','isActive':false,'url':'/menu'},
       //{'name':'锚点书签','label':'affix','isActive':false,'url':'/affix'},
       {'name':'表单','label':'form','isActive':false,'url':'/form'},

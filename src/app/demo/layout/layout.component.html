@@ -1,7 +1,8 @@
-<h2 class="title">Flex布局</h2>
-<p>Flex布局,常用的页面布局</p>
-<br/>
-<h3>1.常用布局方式</h3>
+<h2 class="title">导航菜单</h2>
+<p>导航菜单,常用于网页的首页布局等</p>
+
+<h1>1.常用布局方式</h1>
+<h4>类型一</h4>
 <div class="nc-layout" style="border: solid 1px #999;">
     <div class="nc-header nc-flex nc-content-center nc-align-item-center" style="height:50px;">
         header
@@ -13,7 +14,7 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
-<br/>
+<h4>类型二</h4>
 <div class="nc-layout" style="border: solid 1px #999;">
     <div class="nc-header nc-flex nc-content-center nc-align-item-center" style="height:50px;">
         header
@@ -30,7 +31,7 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
-<br/>
+<h4>类型三</h4>
 <div class="nc-layout nc-flex nc-row" style="height:180px;border: solid 1px #999;">
     <div class="nc-sider nc-flex nc-content-center nc-align-item-center" style="width:200px;height:100%;">
         sider
@@ -50,8 +51,9 @@
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
     <div *ngIf="currentTab === 'html'">
-    <textarea style="height:300px;">
-    <div class="nc-layout">
+    <textarea style="height:500px;">
+    <h4>类型一</h4>
+    <div class="nc-layout" style="border: solid 1px #999;">
         <div class="nc-header nc-flex nc-content-center nc-align-item-center" style="height:50px;">
             header
         </div>
@@ -62,8 +64,8 @@
             footer@Ng-Cat By Angular
         </div>
     </div>
-    <br/>
-    <div class="nc-layout">
+    <h4>类型二</h4>
+    <div class="nc-layout" style="border: solid 1px #999;">
         <div class="nc-header nc-flex nc-content-center nc-align-item-center" style="height:50px;">
             header
         </div>
@@ -79,8 +81,8 @@
             footer@Ng-Cat By Angular
         </div>
     </div>
-    <br/>
-    <div class="nc-layout nc-flex nc-row" style="height:180px;">
+    <h4>类型三</h4>
+    <div class="nc-layout nc-flex nc-row" style="height:180px;border: solid 1px #999;">
         <div class="nc-sider nc-flex nc-content-center nc-align-item-center" style="width:200px;height:100%;">
             sider
         </div>
@@ -100,8 +102,8 @@
     </div>
 </nc-tab>
 
-<h3>2.常用布局和导航菜单组合</h3>
-<h1>上中下</h1>
+<h1>2.常用布局和导航菜单组合</h1>
+<h4>类型-1-基础类型</h4>
 <div class="nc-layout">
     <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
         <div class="nc-header-logo-area" style="width:200px;">
@@ -111,7 +113,8 @@
             </span>
         </div>
         <div class="nc-header-menu">
-            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"
+                     [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
         </div>
     </div>
     <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:120px;">
@@ -121,8 +124,8 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
-<br/>
-<h1>上-中(左右)-下</h1>
+
+<h4>类型-2-点击展开</h4>
 <div class="nc-layout">
     <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
         <div class="nc-header-logo-area" style="width:240px;">
@@ -130,16 +133,17 @@
                 <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
                 <span>Logo</span>
             </span>
-            <div class="nc-anticon-menu">
+            <div class="nc-anticon-menu" (click)="extendSideMenu(0)">
                 <div class="nc-anticon"></div>
             </div>
         </div>
         <div class="nc-header-menu">
-            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+            <nc-menu [type]="menuItems4.type" [place]="menuItems4.place" [navItems]="menuItems4.navItems"
+                     [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
         </div>
     </div>
     <div class="nc-layout nc-flex nc-row">
-        <div class="nc-sider" style="width:240px;">
+        <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[0]">
             <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems" [color]="'#d9d9d9'"></nc-menu>
         </div>
         <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
@@ -150,78 +154,8 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
-<br/>
-<h1>左-右(上中下)</h1>
-<div class="nc-layout nc-flex nc-row">
-    <div class="nc-sider" style="height: 100%;width: 260px;">
-        <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems" [color]="'#d9d9d9'"></nc-menu>
-    </div>
-    <div class="nc-layout">
-        <div class="nc-header" style="height:50px;">
-            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
-        </div>
-        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
-            content
-        </div>
-        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
-            footer@Ng-Cat By Angular
-        </div>
-    </div>
-</div>
-<br/>
-<h1>带滚动条</h1>
-<div class="nc-layout" style="height:360px;">
-    <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
-        <div class="nc-header-logo-area" style="width:240px;">
-            <span class="nc-header-logo">
-                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
-                <span>Logo</span>
-            </span>
-            <div class="nc-anticon-menu">
-                <div class="nc-anticon"></div>
-            </div>
-        </div>
-        <div class="nc-header-menu">
-            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
-        </div>
-    </div>
-    <div class="nc-layout nc-flex nc-row" style="height:calc(100% - 100px);">
-        <div class="nc-sider" style="width:240px;">
-            <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"
-                     [color]="'#d9d9d9'" [isScroll]="true"></nc-menu>
-        </div>
-        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
-            content
-        </div>
-    </div>
-    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
-        footer@Ng-Cat By Angular
-    </div>
-</div>
-<br/>
 
-<div class="nc-layout nc-flex nc-row" style="height: 300px;">
-    <div class="nc-sider" style="height: 100%;width: 260px;">
-        <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"
-                 [color]="'#d9d9d9'" [isScroll]="true"></nc-menu>
-    </div>
-    <div class="nc-layout">
-        <div class="nc-header" style="height:50px;">
-            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
-        </div>
-        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
-            content
-        </div>
-        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
-            footer@Ng-Cat By Angular
-        </div>
-    </div>
-</div>
-
-<h1>带滚动条</h1>
-
-
-<h1>侧边栏浮动</h1>
+<h4>类型-3-浮动展开</h4>
 <div class="nc-layout">
     <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
         <div class="nc-header-logo-area" style="width:240px;">
@@ -229,16 +163,17 @@
                 <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
                 <span>Logo</span>
             </span>
-            <div class="nc-anticon-menu">
+            <div class="nc-anticon-menu" (click)="extendSideMenu(1)">
                 <div class="nc-anticon"></div>
             </div>
         </div>
         <div class="nc-header-menu">
-            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+            <nc-menu [type]="menuItems5.type" [place]="menuItems5.place" [navItems]="menuItems5.navItems"
+                     [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
         </div>
     </div>
     <div class="nc-layout nc-flex nc-row">
-        <div class="nc-sider" style="width:240px;">
+        <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[1]">
             <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"
                      [color]="'#d9d9d9'"></nc-menu>
         </div>
@@ -250,16 +185,17 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
-<br/>
 
+<h4>类型-4-点击展开</h4>
 <div class="nc-layout nc-flex nc-row">
     <div class="nc-sider" style="height: 100%;width: 260px;">
-        <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"
+        <nc-menu [type]="menuItems11.type" [place]="menuItems11.place" [navItems]="menuItems11.navItems"
                  [color]="'#d9d9d9'"></nc-menu>
     </div>
     <div class="nc-layout">
         <div class="nc-header" style="height:50px;">
-            <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+            <nc-menu [type]="menuItems6.type" [place]="menuItems6.place" [navItems]="menuItems6.navItems"
+                     [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
         </div>
         <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
             content
@@ -270,275 +206,194 @@
     </div>
 </div>
 
-
-<!--p>使用方式:</p>
-<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
-    <div *ngIf="currentTab === 'html'">
-    <textarea style="height:500px;">
+<h4>类型-5-浮动展开</h4>
+<div class="nc-layout nc-flex nc-row" style="height:300px;">
+    <div class="nc-sider" style="height: 100%;width: 260px;">
+        <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"
+                 [color]="'#d9d9d9'"></nc-menu>
+    </div>
     <div class="nc-layout">
-        <div class="nc-header nc-flex nc-content-center nc-align-item-center backcolor-header">
-            <div class="nc-header-logo">
+        <div class="nc-header" style="height:50px;">
+            <nc-menu [type]="menuItems7.type" [place]="menuItems7.place" [navItems]="menuItems7.navItems"
+                     [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
+            content
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+</div>
+
+<h1>3.常用布局和导航菜单组合-带滚动条</h1>
+<h4>类型-1-带滚动条</h4>
+<div class="nc-layout" style="height:360px;">
+    <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+        <div class="nc-header-logo-area" style="width:240px;">
+            <span class="nc-header-logo">
                 <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
                 <span>Logo</span>
-            </div>
-            <div class="nc-header-menu">
-                <nc-menu class="nc-header-menu-nav" [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
+            </span>
+            <div class="nc-anticon-menu" (click)="extendSideMenu(2)">
+                <div class="nc-anticon"></div>
             </div>
         </div>
-        <div class="nc-content nc-content-center nc-align-item-center">
-            <div class="nc-content-inner">content</div>
-        </div>
-        <div class="nc-footer nc-content-center nc-align-item-center">
-            <div class="nc-autor">footer@Ng-Cat By Angular</div>
+        <div class="nc-header-menu">
+            <nc-menu [type]="menuItems8.type" [place]="menuItems8.place" [navItems]="menuItems8.navItems"
+                     [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
         </div>
     </div>
+    <div class="nc-layout nc-flex nc-row" style="height:calc(100% - 100px);">
+        <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[2]">
+            <nc-menu [type]="menuItems12.type" [place]="menuItems12.place" [navItems]="menuItems12.navItems"
+                     [color]="'#d9d9d9'" [isScroll]="true"></nc-menu>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+            content
+        </div>
+    </div>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
+    </div>
+</div>
 
-    <br/>
-
+<h4>类型-2-带滚动条</h4>
+<div class="nc-layout nc-flex nc-row" style="height: 300px;">
+    <div class="nc-sider" style="height: 100%;width: 260px;">
+        <nc-menu [type]="menuItems13.type" [place]="menuItems13.place" [navItems]="menuItems13.navItems"
+                 [color]="'#d9d9d9'" [isScroll]="true"></nc-menu>
+    </div>
     <div class="nc-layout">
-        <div class="nc-header nc-flex nc-content-center nc-align-item-center">
-            <div class="nc-header-logo nc-header-logo-2">
-                <span class="nc-logo">
-                  <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
-                  <span>Logo</span>
-                </span>
-            </div>
-            <div class="nc-header-menu">
-                <nc-menu class="nc-header-menu-nav" [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
-            </div>
+        <div class="nc-header" style="height:50px;">
+            <nc-menu [type]="menuItems9.type" [place]="menuItems9.place" [navItems]="menuItems9.navItems"
+                     [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
         </div>
-        <div class="nc-layout nc-row">
-            <div class="nc-sider nc-content-center nc-align-item-center">
-                <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
-            </div>
-            <div class="nc-content nc-content-center nc-align-item-center">
-                <div class="nc-content-inner">content</div>
-            </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
+            content
         </div>
-        <div class="nc-footer nc-content-center nc-align-item-center">
-            <div class="nc-autor">footer@Ng-Cat By Angular</div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
         </div>
     </div>
+</div>
 
-    <br/>
-
-    <div class="nc-layout nc-row">
-        <div class="nc-sider nc-content-center nc-align-item-center">
-            <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems" [width]="'200px'"></nc-menu>
+<h1>4.常用布局和导航菜单组合-dark颜色类型</h1>
+<h4>类型-1</h4>
+<div class="nc-layout">
+    <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;background: #00264d;color:#fff;">
+        <div class="nc-header-logo-area" style="width:200px;">
+            <span class="nc-header-logo">
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                <span>Logo</span>
+            </span>
         </div>
-        <div class="nc-layout">
-            <div class="nc-header" style="display: block;">
-                <nc-menu class="nc-header-menu-nav" [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
-            </div>
-            <div class="nc-content nc-content-center nc-align-item-center" style="height: calc(100% - 100px)">
-                <div class="nc-content-inner">content</div>
-            </div>
-            <div class="nc-footer nc-content-center nc-align-item-center">
-                <div class="nc-autor">footer@Ng-Cat By Angular</div>
-            </div>
+        <div class="nc-header-menu">
+            <nc-menu [type]="menuItems10.type" [place]="menuItems10.place" [navItems]="menuItems10.navItems"
+                     [backColor]="'dark'"></nc-menu>
         </div>
     </div>
-    </textarea>
+    <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:120px;">
+        content
     </div>
-
-    <div *ngIf="currentTab === 'typescript'">
-    <textarea style="height:500px;">
-    menuItems : any = {
-        type: 'horizontal',
-        place: '',
-        navItems: [
-            {title:'Navigation One',
-                icon:'nc-icon fa fa-car',
-                isActive:false,
-                callback: () => {console.log('click menu item!');}
-            },
-            {title:'Navigation Two',
-                icon:'nc-icon fa fa-camera',
-                isActive:true,
-                callback: () => {console.log('click menu item!');}
-            },
-            {title:'Navigation There',
-                icon:'nc-icon fa fa-coffee',
-                isActive:false,
-                callback: () => {console.log('click menu item!');},
-                childs: {
-                    type:'vertical',place: 'down',
-                    navItems: [
-                        {title:'option5',icon:'',isActive:false,
-                            callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'',isActive:false,
-                            callback: () => {console.log('click menu item!');}}
-                    ]
-                }
-            },
-            {title:'Navigation Four',
-                icon:'nc-icon fa fa-cubes',
-                isActive:false,
-                callback: () => {console.log('click menu item!');}
-            },
-            {title:'Navigation Five',
-                icon:'nc-icon fa fa-wifi',
-                isActive:false,
-                callback: () => {console.log('click menu item!');}
-            }
-        ]
-    };
-    menuItems2 : any = {
-        type: 'vertical',
-        place: 'down',
-        navItems: [
-            {title:'Navigation One',
-                icon:'nc-icon fa fa-car',
-                isActive:false,
-                callback: () => {console.log('click menu item!');},
-                childs: {
-                    type:'vertical',place: 'down',isShow:false,
-                    navItems: [
-                        {title:'option1',icon:'',isActive:false,type:'vertical',place: 'down',
-                            callback: () => {console.log('click menu item!');}},
-                        {title:'option2',icon:'',isActive:false,type:'vertical',place: 'down',
-                            callback: () => {console.log('click menu item!');},
-                            childs: {
-                                type:'vertical',place: 'down',isShow:false,
-                                navItems: [
-                                    {title:'option3',icon:'',isActive:false,
-                                        callback: () => {console.log('click menu item!');}},
-                                    {title:'option4',icon:'',isActive:false,
-                                        callback: () => {console.log('click menu item!');}}
-                                ]
-                            }
-                        }
-                    ]
-                }
-            },
-            {title:'Navigation Two',
-                icon:'nc-icon fa fa-camera',
-                isActive:false,
-                callback: () => {console.log('click menu item!');},
-                childs: {
-                    type:'vertical',place: 'down',isShow:false,
-                    navItems: [
-                        {title:'option5',icon:'',isActive:false,
-                            callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'',isActive:false,
-                            callback: () => {console.log('click menu item!');}}
-                    ]
-                }
-            },
-            {title:'Navigation There',
-                icon:'nc-icon fa fa-coffee',
-                isActive:true,
-                callback: () => {console.log('click menu item!');},
-            },
-            {title:'Navigation Four',
-                icon:'nc-icon fa fa-cubes',
-                isActive:false,
-                callback: () => {console.log('click menu item!');}
-            },
-            {title:'Navigation Five',
-                icon:'nc-icon fa fa-wifi',
-                isActive:false,
-                callback: () => {console.log('click menu item!');}
-            }
-        ]
-    };
-    menuItems3 : any = {
-        type: 'vertical',
-        place: 'right',
-        navItems: [
-            {title:'Navigation One',
-                icon:'nc-icon fa fa-car',
-                isActive:false,
-                callback: () => {console.log('click menu item!');},
-                childs: {
-                    type:'vertical',place: 'down',
-                    navItems: [
-                        {title:'option1',icon:'',isActive:false,type:'vertical',place: 'down',
-                            callback: () => {console.log('click menu item!');}},
-                        {title:'option2',icon:'',isActive:false,type:'vertical',place: 'down',
-                            callback: () => {console.log('click menu item!');},
-                            childs: {
-                                type:'vertical',place: 'down',
-                                navItems: [
-                                    {title:'option3',icon:'',isActive:false,
-                                        callback: () => {console.log('click menu item!');}},
-                                    {title:'option4',icon:'',isActive:false,
-                                        callback: () => {console.log('click menu item!');}}
-                                ]
-                            }
-                        }
-                    ]
-                }
-            },
-            {title:'Navigation Two',
-                icon:'nc-icon fa fa-camera',
-                isActive:true,
-                callback: () => {console.log('click menu item!');}
-            },
-            {title:'Navigation There',
-                icon:'nc-icon fa fa-coffee',
-                isActive:false,
-                callback: () => {console.log('click menu item!');},
-                childs: {
-                    type:'vertical',place: 'down',
-                    navItems: [
-                        {title:'option5',icon:'',isActive:false,
-                            callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'',isActive:false,
-                            callback: () => {console.log('click menu item!');}}
-                    ]
-                }
-            },
-            {title:'Navigation Four',
-                icon:'nc-icon fa fa-cubes',
-                isActive:false,
-                callback: () => {console.log('click menu item!');}
-            },
-            {title:'Navigation Five',
-                icon:'nc-icon fa fa-wifi',
-                isActive:false,
-                callback: () => {console.log('click menu item!');}
-            }
-        ]
-    };
-    </textarea>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
     </div>
-</nc-tab>-->
+</div>
 
-<h3>nc-menu--参数</h3>
-<table>
-    <thead>
-    <tr>
-        <th>参数</th>
-        <th>说明</th>
-        <th>默认值</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>type</td>
-        <td>导航类型，horizontal/vertical</td>
-        <td>horizontal</td>
-    </tr>
-    <tr>
-        <td>place</td>
-        <td>菜单展开方式,down/right</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>navItems</td>
-        <td>导航菜单项</td>
-        <td>[]</td>
-    </tr>
-    <tr>
-        <td>height</td>
-        <td>导航高度</td>
-        <td>50px</td>
-    </tr>
-    <tr>
-        <td>width</td>
-        <td>导航宽</td>
-        <td>180px</td>
-    </tr>
-    </tbody>
-</table>
+<h4>类型-2</h4>
+<div class="nc-layout">
+    <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+        <div class="nc-header-logo-area" style="width:240px;">
+            <span class="nc-header-logo">
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                <span>Logo</span>
+            </span>
+            <div class="nc-anticon-menu" (click)="extendSideMenu(3)">
+                <div class="nc-anticon"></div>
+            </div>
+        </div>
+        <div class="nc-header-menu">
+            <nc-menu [type]="menuItems17.type" [place]="menuItems17.place" [navItems]="menuItems17.navItems"
+                     [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+        </div>
+    </div>
+    <div class="nc-layout nc-flex nc-row">
+        <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[3]">
+            <nc-menu [type]="menuItems14.type" [place]="menuItems14.place" [navItems]="menuItems14.navItems"
+                     [backColor]="'dark'"></nc-menu>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+            content
+        </div>
+    </div>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
+    </div>
+</div>
+
+<h4>类型-3</h4>
+<div class="nc-layout">
+    <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;background: #00264d;color:#fff;">
+        <div class="nc-header-logo-area" style="width:240px;">
+            <span class="nc-header-logo">
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                <span>Logo</span>
+            </span>
+            <div class="nc-anticon-menu" (click)="extendSideMenu(4)">
+                <div class="nc-anticon"></div>
+            </div>
+        </div>
+        <div class="nc-header-menu">
+            <nc-menu [type]="menuItems18.type" [place]="menuItems18.place" [navItems]="menuItems18.navItems"
+                     [backColor]="'dark'"></nc-menu>
+        </div>
+    </div>
+    <div class="nc-layout nc-flex nc-row">
+        <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[4]">
+            <nc-menu [type]="menuItems15.type" [place]="menuItems15.place" [navItems]="menuItems15.navItems"
+                     [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+            content
+        </div>
+    </div>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
+    </div>
+</div>
+
+<h4>类型-4</h4>
+<div class="nc-layout">
+    <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+        <div class="nc-header-logo-area" style="width:240px;">
+            <span class="nc-header-logo">
+                <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                <span>Logo</span>
+            </span>
+            <div class="nc-anticon-menu"  (click)="extendSideMenu(5)">
+                <div class="nc-anticon"></div>
+            </div>
+        </div>
+        <div class="nc-header-menu">
+            <nc-menu [type]="menuItems17.type" [place]="menuItems17.place" [navItems]="menuItems17.navItems"
+                     [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+        </div>
+    </div>
+    <div class="nc-layout nc-flex nc-row">
+        <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[5]">
+            <nc-menu [type]="menuItems21.type" [place]="menuItems21.place" [navItems]="menuItems21.navItems"
+                     [backColor]="'dark'"></nc-menu>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+            content
+        </div>
+    </div>
+    <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+        footer@Ng-Cat By Angular
+    </div>
+</div>
+
+<div style="height: 50px;"></div>
+
+<nc-toTop [type]="'rocket'" [parentId]="'nc-content'"></nc-toTop>

@@ -56,6 +56,12 @@
     background: #5c85d6;
     max-width:100%;
     box-sizing:border-box;
+    position: relative;
+    transition: margin-left 500ms,display 500ms;
+}
+.nc-layout > .nc-sider.nc-sidemenu-hidden {
+    margin-left: -100%;
+    display:none;
 }
 
 .nc-flex,

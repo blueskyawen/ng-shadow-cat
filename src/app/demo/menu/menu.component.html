@@ -1,108 +1,147 @@
 <h2 class="title">Menu导航菜单</h2>
 <p>导航菜单,为页面和功能提供导航的菜单列表。</p>
 
-<h1>1. 顶部导航菜单</h1>
+<h1>1. 水平导航菜单</h1>
+<h3>默认设置</h3>
 <div style="height: 60px;margin-bottom: 60px;">
 	<nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
 </div>
+<h3>背景颜色设置-dark</h3>
 <div style="height: 60px;margin-bottom: 60px;">
-    <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems" [backColor]="'dark'"></nc-menu>
+    <nc-menu [type]="menuItems4.type" [place]="menuItems4.place" [navItems]="menuItems4.navItems" [backColor]="'dark'"></nc-menu>
 </div>
-
-<h1></h1>
-
-<h1>2. 垂直导航菜单,展开/缩起</h1>
-<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
-    <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
+<h3>自定义背景颜色设置</h3>
+<div style="height: 60px;margin-bottom: 60px;">
+    <nc-menu [type]="menuItems5.type" [place]="menuItems5.place" [navItems]="menuItems5.navItems"
+             [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
 </div>
-<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
-    <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems" [backColor]="'dark'"></nc-menu>
-</div>
-<h1></h1>
-
-<h1>3. 垂直导航菜单,浮动呈现</h1>
-<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
-    <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"></nc-menu>
-</div>
-<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
-    <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems" [backColor]="'dark'"></nc-menu>
-</div>
-<h1></h1>
-
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
-	<div *ngIf="currentTab === 'html'">
-    <textarea style="height:240px;">
-  	<!--nc-menu [type]="menuItems.type" [navItems]="menuItems.navItems"></nc-menu>
-
-  	<nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
-
-	<nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems" [width]="'200px'"></nc-menu>-->
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:360px;">
+    <h3>默认设置</h3>
+    <div style="height: 60px;margin-bottom: 60px;">
+        <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+    </div>
+    <h3>背景颜色设置-dark</h3>
+    <div style="height: 60px;margin-bottom: 60px;">
+        <nc-menu [type]="menuItems4.type" [place]="menuItems4.place" [navItems]="menuItems4.navItems" [backColor]="'dark'"></nc-menu>
+    </div>
+    <h3>自定义背景颜色设置</h3>
+    <div style="height: 60px;margin-bottom: 60px;">
+        <nc-menu [type]="menuItems5.type" [place]="menuItems5.place" [navItems]="menuItems5.navItems"
+                 [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+    </div>
     </textarea>
-	</div>
-	<div *ngIf="currentTab === 'typescript'">
-    <textarea style="height:240px;">
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:360px;">
     menuItems : any = {
         type: 'horizontal',
-        place: '',
+        place: 'down',
         navItems: [
             {title:'Navigation One',
-                 icon:'nc-icon fa fa-car',
-                 isActive:false,
-                 callback: () => {console.log('click menu item!');}
+             icon:'fa fa-car',
+             isActive:false,
+             callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Two',
-                icon:'nc-icon fa fa-camera',
-                isActive:true,
-                callback: () => {console.log('click menu item!');}
+             icon:'fa fa-camera',
+             isActive:true,
+             callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation There',
-                icon:'nc-icon fa fa-coffee',
-                isActive:false,
-                callback: () => {console.log('click menu item!');},
-                childs: {
-                    type:'vertical',place: 'down',
-                    navItems: [
-                        {title:'option5',icon:'',isActive:false,
-                            callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'',isActive:false,
-                            callback: () => {console.log('click menu item!');}}
-                    ]
-                }
+             icon:'fa fa-coffee',
+             isActive:false,
+             callback: () => {console.log('click menu item!');},
+             childs: {
+                place: 'down',
+                navItems: [
+                    {title:'option5',icon:'fa fa-car',isActive:false,
+                        callback: () => {console.log('click menu item!');}},
+                    {title:'option6',icon:'fa fa-camera',isActive:false,
+                        callback: () => {console.log('click menu item!');}}
+                ]
+             }
             },
             {title:'Navigation Four',
-                icon:'nc-icon fa fa-cubes',
-                isActive:false,
-                callback: () => {console.log('click menu item!');}
+             icon:'fa fa-cubes',
+             isActive:false,
+             callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Five',
-                icon:'nc-icon fa fa-wifi',
-                isActive:false,
-                callback: () => {console.log('click menu item!');}
+             icon:'fa fa-wifi',
+             isActive:false,
+             callback: () => {console.log('click menu item!');}
             }
         ]
     };
+    menuItems4 : any = JSON.parse(JSON.stringify(this.menuItems));
+    menuItems5 : any = JSON.parse(JSON.stringify(this.menuItems));
+    </textarea>
+    </div>
+</nc-tab>
+
+<br/>
+
+<h1>2. 垂直导航菜单-点击展开/缩起</h1>
+<h3>默认设置</h3>
+<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+    <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
+</div>
+<h3>背景颜色设置-dark</h3>
+<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+    <nc-menu [type]="menuItems6.type" [place]="menuItems6.place" [navItems]="menuItems6.navItems"
+             [backColor]="'dark'"></nc-menu>
+</div>
+<h3>自定义背景颜色设置</h3>
+<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+    <nc-menu [type]="menuItems7.type" [place]="menuItems7.place" [navItems]="menuItems7.navItems"
+             [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:360px;">
+    <h3>默认设置</h3>
+    <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+        <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
+    </div>
+    <h3>背景颜色设置-dark</h3>
+    <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+        <nc-menu [type]="menuItems6.type" [place]="menuItems6.place" [navItems]="menuItems6.navItems"
+                 [backColor]="'dark'"></nc-menu>
+    </div>
+    <h3>自定义背景颜色设置</h3>
+    <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+        <nc-menu [type]="menuItems7.type" [place]="menuItems7.place" [navItems]="menuItems7.navItems"
+                 [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+    </div>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab2 === 'typescript'">
+    <textarea style="height:360px;">
     menuItems2 : any = {
         type: 'vertical',
         place: 'down',
         navItems: [
             {title:'Navigation One',
-                icon:'nc-icon fa fa-car',
+                icon:'fa fa-car',
                 isActive:false,
                 callback: () => {console.log('click menu item!');},
                 childs: {
-                    type:'vertical',place: 'down',isShow:false,
+                    place: 'down',isShow:false,
                     navItems: [
-                        {title:'option1',icon:'',isActive:false,type:'vertical',place: 'down',
+                        {title:'option1',icon:'fa fa-wifi',isActive:false,place: 'down',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option2',icon:'',isActive:false,type:'vertical',place: 'down',
+                        {title:'option2',icon:'fa fa-wifi',isActive:false,place: 'down',
                             callback: () => {console.log('click menu item!');},
                             childs: {
                                 type:'vertical',place: 'down',isShow:false,
                                 navItems: [
-                                    {title:'option3',icon:'',isActive:false,
+                                    {title:'option3',icon:'fa fa-wifi',isActive:false,place: 'down',
                                         callback: () => {console.log('click menu item!');}},
-                                    {title:'option4',icon:'',isActive:false,
+                                    {title:'option4',icon:'fa fa-wifi',isActive:false,place: 'down',
                                         callback: () => {console.log('click menu item!');}}
                                 ]
                             }
@@ -111,57 +150,101 @@
                 }
             },
             {title:'Navigation Two',
-                icon:'nc-icon fa fa-camera',
+                icon:'fa fa-camera',
                 isActive:false,
                 callback: () => {console.log('click menu item!');},
                 childs: {
-                    type:'vertical',place: 'down',isShow:false,
+                    place: 'down',isShow:false,
                     navItems: [
-                        {title:'option5',icon:'',isActive:false,
+                        {title:'option5',icon:'fa fa-wifi',isActive:false,place: 'down',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'',isActive:false,
+                        {title:'option6',icon:'fa fa-wifi',isActive:false,place: 'down',
                             callback: () => {console.log('click menu item!');}}
                     ]
                 }
             },
             {title:'Navigation There',
-                icon:'nc-icon fa fa-coffee',
+                icon:'fa fa-coffee',
                 isActive:true,
                 callback: () => {console.log('click menu item!');},
             },
             {title:'Navigation Four',
-                icon:'nc-icon fa fa-cubes',
+                icon:'fa fa-cubes',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Five',
-                icon:'nc-icon fa fa-wifi',
+                icon:'fa fa-wifi',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             }
         ]
     };
+    menuItems6 : any = JSON.parse(JSON.stringify(this.menuItems2));
+    menuItems7 : any = JSON.parse(JSON.stringify(this.menuItems2));
+    </textarea>
+    </div>
+</nc-tab>
+<br/>
+
+<h1>3. 垂直导航菜单-浮动展开/缩起</h1>
+<h3>默认设置</h3>
+<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+    <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"></nc-menu>
+</div>
+<h3>背景颜色设置-dark</h3>
+<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+    <nc-menu [type]="menuItems8.type" [place]="menuItems8.place" [navItems]="menuItems8.navItems"
+             [backColor]="'dark'"></nc-menu>
+</div>
+<h3>自定义背景颜色设置</h3>
+<div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+    <nc-menu [type]="menuItems9.type" [place]="menuItems9.place" [navItems]="menuItems9.navItems"
+             [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
+    <div *ngIf="currentTab3 === 'html'">
+    <textarea style="height:360px;">
+    <h3>默认设置</h3>
+    <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+        <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"></nc-menu>
+    </div>
+    <h3>背景颜色设置-dark</h3>
+    <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+        <nc-menu [type]="menuItems8.type" [place]="menuItems8.place" [navItems]="menuItems8.navItems"
+                 [backColor]="'dark'"></nc-menu>
+    </div>
+    <h3>自定义背景颜色设置</h3>
+    <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
+        <nc-menu [type]="menuItems9.type" [place]="menuItems9.place" [navItems]="menuItems9.navItems"
+                 [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+    </div>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab3 === 'typescript'">
+    <textarea style="height:360px;">
     menuItems3 : any = {
         type: 'vertical',
         place: 'right',
         navItems: [
             {title:'Navigation One',
-                icon:'nc-icon fa fa-car',
+                icon:'fa fa-car',
                 isActive:false,
                 callback: () => {console.log('click menu item!');},
                 childs: {
-                    type:'vertical',place: 'down',
+                    place: 'right',
                     navItems: [
-                        {title:'option1',icon:'',isActive:false,type:'vertical',place: 'down',
+                        {title:'option1',icon:'fa fa-car',isActive:false,place: 'right',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option2',icon:'',isActive:false,type:'vertical',place: 'down',
+                        {title:'option2',icon:'fa fa-car',isActive:false,place: 'right',
                             callback: () => {console.log('click menu item!');},
                             childs: {
-                                type:'vertical',place: 'down',
+                                place: 'right',
                                 navItems: [
-                                    {title:'option3',icon:'',isActive:false,
+                                    {title:'option3',icon:'fa fa-car',isActive:false,place: 'right',
                                         callback: () => {console.log('click menu item!');}},
-                                    {title:'option4',icon:'',isActive:false,
+                                    {title:'option4',icon:'fa fa-car',isActive:false,place: 'right',
                                         callback: () => {console.log('click menu item!');}}
                                 ]
                             }
@@ -170,64 +253,84 @@
                 }
             },
             {title:'Navigation Two',
-                icon:'nc-icon fa fa-camera',
+                icon:'fa fa-camera',
                 isActive:true,
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation There',
-                icon:'nc-icon fa fa-coffee',
+                icon:'fa fa-coffee',
                 isActive:false,
                 callback: () => {console.log('click menu item!');},
                 childs: {
-                    type:'vertical',place: 'down',
+                    place: 'right',
                     navItems: [
-                        {title:'option5',icon:'',isActive:false,
+                        {title:'option5',icon:'fa fa-camera',isActive:false,place: 'right',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'',isActive:false,
+                        {title:'option6',icon:'fa fa-camera',isActive:false,place: 'right',
                             callback: () => {console.log('click menu item!');}}
                     ]
                 }
             },
             {title:'Navigation Four',
-                icon:'nc-icon fa fa-cubes',
+                icon:'a fa-cubes',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Five',
-                icon:'nc-icon fa fa-wifi',
+                icon:'fa fa-wifi',
                 isActive:false,
                 callback: () => {console.log('click menu item!');}
             }
         ]
     };
+    menuItems8 : any = JSON.parse(JSON.stringify(this.menuItems3));
+    menuItems9 : any = JSON.parse(JSON.stringify(this.menuItems3));
     </textarea>
-	</div>
+    </div>
 </nc-tab>
+<br/>
 
-<h3>参数</h3>
+<h3>nc-menu--参数</h3>
 <table>
-	<thead>
-	<tr>
-		<th>参数</th>
-		<th>说明</th>
-		<th>默认值</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tr>
-		<td>type</td>
-		<td>类型，2种取值：horizontal/vertical,水平/垂直</td>
-		<td>horizontal</td>
-	</tr>
-	<tr>
-		<td>place</td>
-		<td>子菜单呈现位置，down/right,向下/向右</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>navItems</td>
-		<td>菜单项目数组</td>
-		<td>[]</td>
-	</tr>
-	</tbody>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>type</td>
+        <td>导航类型，horizontal/vertical</td>
+        <td>horizontal</td>
+    </tr>
+    <tr>
+        <td>place</td>
+        <td>菜单展开方式,down/right</td>
+        <td>down</td>
+    </tr>
+    <tr>
+        <td>navItems</td>
+        <td>导航菜单项</td>
+        <td>[]</td>
+    </tr>
+    <tr>
+        <td>backColor</td>
+        <td>导航菜单背景颜色设置,light/dark/manual</td>
+        <td>light</td>
+    </tr>
+    <tr>
+        <td>color</td>
+        <td>导航菜单颜色</td>
+        <td>#f2f2f2</td>
+    </tr>
+    <tr>
+        <td>isScroll</td>
+        <td>导航菜单是否带滚动条</td>
+        <td>false</td>
+    </tr>
+    </tbody>
 </table>
+
+<nc-toTop [type]="'rocket'" [parentId]="'nc-content'"></nc-toTop>
