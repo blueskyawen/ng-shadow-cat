@@ -124,6 +124,33 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout">
+        <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+            <div class="nc-header-logo-area" style="width:200px;">
+                <span class="nc-header-logo">
+                    <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                    <span>Logo</span>
+                </span>
+            </div>
+            <div class="nc-header-menu">
+                <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"
+                         [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+            </div>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:120px;">
+            content
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h4>类型-2-点击展开</h4>
 <div class="nc-layout">
@@ -154,6 +181,41 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout">
+        <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+            <div class="nc-header-logo-area" style="width:240px;">
+                <span class="nc-header-logo">
+                    <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                    <span>Logo</span>
+                </span>
+                <div class="nc-anticon-menu" (click)="extendSideMenu(0)">
+                    <div class="nc-anticon"></div>
+                </div>
+            </div>
+            <div class="nc-header-menu">
+                <nc-menu [type]="menuItems4.type" [place]="menuItems4.place" [navItems]="menuItems4.navItems"
+                         [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+            </div>
+        </div>
+        <div class="nc-layout nc-flex nc-row">
+            <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[0]">
+                <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems" [color]="'#d9d9d9'"></nc-menu>
+            </div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+                content
+            </div>
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h4>类型-3-浮动展开</h4>
 <div class="nc-layout">
@@ -185,6 +247,42 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout">
+        <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+            <div class="nc-header-logo-area" style="width:240px;">
+                <span class="nc-header-logo">
+                    <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                    <span>Logo</span>
+                </span>
+                <div class="nc-anticon-menu" (click)="extendSideMenu(1)">
+                    <div class="nc-anticon"></div>
+                </div>
+            </div>
+            <div class="nc-header-menu">
+                <nc-menu [type]="menuItems5.type" [place]="menuItems5.place" [navItems]="menuItems5.navItems"
+                         [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+            </div>
+        </div>
+        <div class="nc-layout nc-flex nc-row">
+            <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[1]">
+                <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"
+                         [color]="'#d9d9d9'"></nc-menu>
+            </div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+                content
+            </div>
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h4>类型-4-点击展开</h4>
 <div class="nc-layout nc-flex nc-row">
@@ -205,6 +303,31 @@
         </div>
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout nc-flex nc-row">
+        <div class="nc-sider" style="height: 100%;width: 260px;">
+            <nc-menu [type]="menuItems11.type" [place]="menuItems11.place" [navItems]="menuItems11.navItems"
+                     [color]="'#d9d9d9'"></nc-menu>
+        </div>
+        <div class="nc-layout">
+            <div class="nc-header" style="height:50px;">
+                <nc-menu [type]="menuItems6.type" [place]="menuItems6.place" [navItems]="menuItems6.navItems"
+                         [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+            </div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
+                content
+            </div>
+            <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+                footer@Ng-Cat By Angular
+            </div>
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h4>类型-5-浮动展开</h4>
 <div class="nc-layout nc-flex nc-row" style="height:300px;">
@@ -225,6 +348,31 @@
         </div>
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout nc-flex nc-row" style="height:300px;">
+        <div class="nc-sider" style="height: 100%;width: 260px;">
+            <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"
+                     [color]="'#d9d9d9'"></nc-menu>
+        </div>
+        <div class="nc-layout">
+            <div class="nc-header" style="height:50px;">
+                <nc-menu [type]="menuItems7.type" [place]="menuItems7.place" [navItems]="menuItems7.navItems"
+                         [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+            </div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
+                content
+            </div>
+            <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+                footer@Ng-Cat By Angular
+            </div>
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h1>3.常用布局和导航菜单组合-带滚动条</h1>
 <h4>类型-1-带滚动条</h4>
@@ -257,6 +405,42 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout" style="height:360px;">
+        <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+            <div class="nc-header-logo-area" style="width:240px;">
+                <span class="nc-header-logo">
+                    <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                    <span>Logo</span>
+                </span>
+                <div class="nc-anticon-menu" (click)="extendSideMenu(2)">
+                    <div class="nc-anticon"></div>
+                </div>
+            </div>
+            <div class="nc-header-menu">
+                <nc-menu [type]="menuItems8.type" [place]="menuItems8.place" [navItems]="menuItems8.navItems"
+                         [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+            </div>
+        </div>
+        <div class="nc-layout nc-flex nc-row" style="height:calc(100% - 100px);">
+            <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[2]">
+                <nc-menu [type]="menuItems12.type" [place]="menuItems12.place" [navItems]="menuItems12.navItems"
+                         [color]="'#d9d9d9'" [isScroll]="true"></nc-menu>
+            </div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+                content
+            </div>
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h4>类型-2-带滚动条</h4>
 <div class="nc-layout nc-flex nc-row" style="height: 300px;">
@@ -277,6 +461,31 @@
         </div>
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout nc-flex nc-row" style="height: 300px;">
+        <div class="nc-sider" style="height: 100%;width: 260px;">
+            <nc-menu [type]="menuItems13.type" [place]="menuItems13.place" [navItems]="menuItems13.navItems"
+                     [color]="'#d9d9d9'" [isScroll]="true"></nc-menu>
+        </div>
+        <div class="nc-layout">
+            <div class="nc-header" style="height:50px;">
+                <nc-menu [type]="menuItems9.type" [place]="menuItems9.place" [navItems]="menuItems9.navItems"
+                         [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+            </div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:calc(100% - 100px);">
+                content
+            </div>
+            <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+                footer@Ng-Cat By Angular
+            </div>
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h1>4.常用布局和导航菜单组合-dark颜色类型</h1>
 <h4>类型-1</h4>
@@ -300,6 +509,33 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout">
+        <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;background: #00264d;color:#fff;">
+            <div class="nc-header-logo-area" style="width:200px;">
+                <span class="nc-header-logo">
+                    <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                    <span>Logo</span>
+                </span>
+            </div>
+            <div class="nc-header-menu">
+                <nc-menu [type]="menuItems10.type" [place]="menuItems10.place" [navItems]="menuItems10.navItems"
+                         [backColor]="'dark'"></nc-menu>
+            </div>
+        </div>
+        <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:120px;">
+            content
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h4>类型-2</h4>
 <div class="nc-layout">
@@ -331,6 +567,42 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout">
+        <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+            <div class="nc-header-logo-area" style="width:240px;">
+                <span class="nc-header-logo">
+                    <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                    <span>Logo</span>
+                </span>
+                <div class="nc-anticon-menu" (click)="extendSideMenu(3)">
+                    <div class="nc-anticon"></div>
+                </div>
+            </div>
+            <div class="nc-header-menu">
+                <nc-menu [type]="menuItems17.type" [place]="menuItems17.place" [navItems]="menuItems17.navItems"
+                         [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+            </div>
+        </div>
+        <div class="nc-layout nc-flex nc-row">
+            <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[3]">
+                <nc-menu [type]="menuItems14.type" [place]="menuItems14.place" [navItems]="menuItems14.navItems"
+                         [backColor]="'dark'"></nc-menu>
+            </div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+                content
+            </div>
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h4>类型-3</h4>
 <div class="nc-layout">
@@ -362,6 +634,42 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout">
+        <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;background: #00264d;color:#fff;">
+            <div class="nc-header-logo-area" style="width:240px;">
+                <span class="nc-header-logo">
+                    <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                    <span>Logo</span>
+                </span>
+                <div class="nc-anticon-menu" (click)="extendSideMenu(4)">
+                    <div class="nc-anticon"></div>
+                </div>
+            </div>
+            <div class="nc-header-menu">
+                <nc-menu [type]="menuItems18.type" [place]="menuItems18.place" [navItems]="menuItems18.navItems"
+                         [backColor]="'dark'"></nc-menu>
+            </div>
+        </div>
+        <div class="nc-layout nc-flex nc-row">
+            <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[4]">
+                <nc-menu [type]="menuItems15.type" [place]="menuItems15.place" [navItems]="menuItems15.navItems"
+                         [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+            </div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+                content
+            </div>
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h4>类型-4</h4>
 <div class="nc-layout">
@@ -393,6 +701,42 @@
         footer@Ng-Cat By Angular
     </div>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <div class="nc-layout">
+        <div class="nc-header nc-flex nc-align-item-center" style="width:100%;height:60px;">
+            <div class="nc-header-logo-area" style="width:240px;">
+                <span class="nc-header-logo">
+                    <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3168844475,3126873961&fm=26&gp=0.jpg" />
+                    <span>Logo</span>
+                </span>
+                <div class="nc-anticon-menu"  (click)="extendSideMenu(5)">
+                    <div class="nc-anticon"></div>
+                </div>
+            </div>
+            <div class="nc-header-menu">
+                <nc-menu [type]="menuItems17.type" [place]="menuItems17.place" [navItems]="menuItems17.navItems"
+                         [backColor]="'manual'" [color]="'#f2f2f2'"></nc-menu>
+            </div>
+        </div>
+        <div class="nc-layout nc-flex nc-row">
+            <div class="nc-sider" style="width:240px;" [class.nc-sidemenu-hidden]="!showSideMenus[5]">
+                <nc-menu [type]="menuItems21.type" [place]="menuItems21.place" [navItems]="menuItems21.navItems"
+                         [backColor]="'dark'"></nc-menu>
+            </div>
+            <div class="nc-content nc-flex nc-content-center nc-align-item-center" style="height:100%;">
+                content
+            </div>
+        </div>
+        <div class="nc-footer nc-flex nc-content-center nc-align-item-center" style="height:50px;">
+            footer@Ng-Cat By Angular
+        </div>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
 <div style="height: 50px;"></div>
 

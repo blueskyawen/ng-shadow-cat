@@ -1,0 +1,121 @@
+.nc-layout {
+  width: 100%;
+  & > .nc-header {
+    background:#f2f2f2;
+    width:100%;
+    box-sizing:border-box;
+    .nc-header-logo-area {
+      width:100%;
+      display: flex;
+      justify-content:space-between;
+      align-items:center;
+      height: 100%;
+      position: relative;
+      &:after {
+        content: "";
+        display: inline-block;
+        height:40%;
+        width:2px;
+        background: #999;
+        position: absolute;
+        left:100%;
+        top:50%;
+        transform: translateY(-50%);
+        z-index: 1;
+      }
+      .nc-header-logo {
+        display: flex;
+        justify-content:flex-start;
+        align-items:center;
+        width:80%;
+        img {
+          display:inline-block;
+          height:28px;
+          width:28px;
+          margin:0 10px;
+        }
+      }
+    }
+    .nc-header-menu {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  & > .nc-content {
+    background:#fff;
+    width:100%;
+    box-sizing:border-box;
+  }
+  & > .nc-footer {
+    background: #668cff;
+    width:100%;
+    box-sizing:border-box;
+  }
+  & > .nc-sider {
+    background: #5c85d6;
+    max-width:100%;
+    box-sizing:border-box;
+    position: relative;
+    transition: margin-left 500ms,display 500ms;
+    &.nc-sidemenu-hidden {
+      margin-left: -100%;
+      display:none;
+    }
+  }
+}
+
+.nc-anticon-menu {
+  height:20px;
+  width:30px;
+  border-radius:4px;
+  position:relative;
+  .nc-anticon {
+    display:inline-block;
+    height:2px;
+    width: 60%;
+    border-radius:1px;
+    background:#666;
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%) translateX(-50%);
+    left:50%;
+  }
+  &:before {
+    content:"";
+    display:inline-block;
+    height:2px;
+    width: 60%;
+    border-radius:1px;
+    background:#666;
+    position:absolute;
+    top:10%;
+    transform: translateX(-50%);
+    left:50%;
+  }
+  &:after {
+    content:"";
+    display:inline-block;
+    height:2px;
+    width: 60%;
+    border-radius:1px;
+    background:#666;
+    position:absolute;
+    bottom:10%;
+    transform: translateX(-50%);
+    left:50%;
+  }
+  &:hover {
+    border-color:#1890ff;
+    cursor:pointer;
+    .nc-anticon {
+      background:#1890ff;
+    }
+    &:before {
+      background:#1890ff;
+    }
+    &:after {
+      background:#1890ff;
+    }
+  }
+}
+

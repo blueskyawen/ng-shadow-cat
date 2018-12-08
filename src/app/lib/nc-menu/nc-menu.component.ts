@@ -32,7 +32,23 @@ export class NcMenuComponent implements OnInit {
         if(this.backColor === 'light') {
             this.menuColorStyle = {'background':'#fff'};
         }
+        if(this.type === 'vertical' && this.place === 'down') {
+            this.setMenuItemsLevel(this.navItems,1);
+        }
 
+    }
+
+    setMenuItemsLevel(items : any[],level : number) {
+        if(!items || items.length === 0) {
+            return;
+        }
+
+        for(let item of items) {
+            if(item.childs) {
+                item.childs.level =  level;
+                this.setMenuItemsLevel(item.childs.navItems,level + 1);
+            }
+        }
     }
 
     getSubMenuClass(item : any) {

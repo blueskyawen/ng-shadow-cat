@@ -2,7 +2,7 @@
     <div class="nc-menu-item" *ngFor="let navItem of navItems">
         <span class="nc-menu-item-option" [ngClass]="getMenuActiveClass(navItem)" (click)="clickNavItem(navItem)">
             <span class="nc-menu-item-title">
-              <span class="{{navItem.icon}}"></span>
+              <span class="nc-icon {{navItem.icon}}"></span>
               <span>{{navItem.title}}</span>
             </span>
             <span class="nc-carat" *ngIf="navItem.childs && navItem.childs.place === 'down'"
@@ -14,7 +14,7 @@
                 <div class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
                     <span class="nc-menu-item-option" [ngClass]="getMenuActiveClass(navItem2)" (click)="clickNavItem(navItem2)">
                         <span class="nc-menu-item-title">
-                            <span class="{{navItem2.icon}}"></span>
+                            <span class="nc-icon {{navItem2.icon}}"></span>
                             <span>{{navItem2.title}}</span>
                         </span>
                         <span class="nc-carat" *ngIf="navItem2.childs && navItem2.childs.place === 'down'"
@@ -29,7 +29,7 @@
                                 <span class="nc-menu-item-option" [ngClass]="getMenuActiveClass(navItem3)"
                                       (click)="clickNavItem(navItem3)">
                                     <span class="nc-menu-item-title">
-                                        <span class="{{navItem3.icon}}"></span>
+                                        <span class="nc-icon {{navItem3.icon}}"></span>
                                         <span>{{navItem3.title}}</span>
                                     </span>
                                     <span class="nc-carat" *ngIf="navItem3.childs && navItem3.childs.place === 'down'"
@@ -44,7 +44,7 @@
                                             <span class="nc-menu-item-option" [ngClass]="getMenuActiveClass(navItem4)"
                                                   (click)="clickNavItem(navItem4)">
                                                 <span class="nc-menu-item-title">
-                                                    <span class="{{navItem4.icon}}"></span>
+                                                    <span class="nc-icon {{navItem4.icon}}"></span>
                                                     <span>{{navItem4.title}}</span>
                                                 </span>
                                             </span>
@@ -64,7 +64,7 @@
     <div class="nc-menu-item" *ngFor="let navItem of navItems">
         <span class="nc-menu-item-option" [ngClass]="getMenuActiveClass(navItem)" (click)="clickNavItem(navItem)">
             <span class="nc-menu-item-title">
-                <span class="{{navItem.icon}}"></span>
+                <span class="nc-icon {{navItem.icon}}"></span>
                 <span>{{navItem.title}}</span>
             </span>
             <span class="nc-carat" *ngIf="navItem.childs && navItem.childs.place === 'down'"
@@ -76,10 +76,10 @@
              [ngClass]="getSubMenuClass(navItem.childs)">
             <div class="nc-menu nc-submenu" [ngClass]="menuBackClasss" [ngStyle]="menuColorStyle">
                 <div class="nc-menu-item" *ngFor="let navItem2 of navItem.childs.navItems">
-                    <span class="nc-menu-item-option" style="padding-left:20px;" [ngClass]="getMenuActiveClass(navItem2)"
-                          (click)="clickNavItem(navItem2)">
+                    <span class="nc-menu-item-option" [ngStyle]="{'padding-left':(navItem.childs.level*20)+'px'}"
+                          [ngClass]="getMenuActiveClass(navItem2)" (click)="clickNavItem(navItem2)">
                       <span class="nc-menu-item-title">
-                        <span class="{{navItem2.icon}}"></span>
+                        <span class="nc-icon {{navItem2.icon}}"></span>
                         <span>{{navItem2.title}}</span>
                       </span>
                       <span class="nc-carat" *ngIf="navItem2.childs && navItem2.childs.place === 'down'"
@@ -91,10 +91,10 @@
                          [ngClass]="getSubMenuClass(navItem2.childs)">
                         <div class="nc-menu nc-submenu" [ngClass]="menuBackClasss" [ngStyle]="menuColorStyle">
                             <div class="nc-menu-item" *ngFor="let navItem3 of navItem2.childs.navItems">
-                                <span class="nc-menu-item-option" style="padding-left:20px;"
+                                <span class="nc-menu-item-option" [ngStyle]="{'padding-left':(navItem2.childs.level*20)+'px'}"
                                       [ngClass]="getMenuActiveClass(navItem3)" (click)="clickNavItem(navItem3)">
                                   <span class="nc-menu-item-title">
-                                    <span class="{{navItem3.icon}}"></span>
+                                    <span class="nc-icon {{navItem3.icon}}"></span>
                                     <span>{{navItem3.title}}</span>
                                   </span>
                                   <span class="nc-carat" *ngIf="navItem3.childs && navItem3.childs.place === 'down'"
@@ -106,10 +106,10 @@
                                      [ngClass]="getSubMenuClass(navItem3.childs)">
                                     <div class="nc-menu nc-submenu" [ngClass]="menuBackClasss" [ngStyle]="menuColorStyle">
                                         <div class="nc-menu-item" *ngFor="let navItem4 of navItem3.childs.navItems">
-                                            <span class="nc-menu-item-option" style="padding-left:20px;"
+                                            <span class="nc-menu-item-option" [ngStyle]="{'padding-left':(navItem3.childs.level*20)+'px'}"
                                                   [ngClass]="getMenuActiveClass(navItem4)" (click)="clickNavItem(navItem4)">
                                               <span class="nc-menu-item-title">
-                                                <span class="{{navItem4.icon}}"></span>
+                                                <span class="nc-icon {{navItem4.icon}}"></span>
                                                 <span>{{navItem4.title}}</span>
                                               </span>
                                             </span>

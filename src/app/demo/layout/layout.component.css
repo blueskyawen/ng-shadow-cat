@@ -1,5 +1,7 @@
-.nc-header-menu-nav >>> .nc-menu-horizontal {
-    background:#d9d9d9;
+.nc-header-menu >>> .nc-menu-horizontal {
+    border-bottom:none;
+}
+.nc-header >>> .nc-menu-horizontal {
     border-bottom:none;
 }
 

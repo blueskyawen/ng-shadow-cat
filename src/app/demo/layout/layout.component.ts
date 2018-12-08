@@ -9,7 +9,7 @@ import { Component,OnInit } from '@angular/core';
 @Component({
     selector: 'demo-layout',
     templateUrl: './layout.component.html',
-    styleUrls: ['./layout.component.css','./layout_2.component.css']
+    styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent {
     menuItems : any = {
@@ -189,12 +189,16 @@ export class LayoutComponent {
     menuItems21 : any = JSON.parse(JSON.stringify(this.menuItems3));
     tabItems : any[] = [];
     currentTab : string;
+    tabItems2 : any[] = [];
+    currentTab2 : string;
     showSideMenus: any[] = [true,true,true,true,true,true];
 
     constructor() {
         this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
             {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
         this.currentTab= this.tabItems[0].label;
+        this.tabItems2 = [{name:'html',label:'html',isActive:true,isDisable:false}];
+        this.currentTab2= this.tabItems2[0].label;
     }
 
     extendSideMenu(index : number) {
