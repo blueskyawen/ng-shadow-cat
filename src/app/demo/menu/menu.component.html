@@ -3,15 +3,15 @@
 
 <h1>1. 水平导航菜单</h1>
 <h3>默认设置</h3>
-<div style="height: 60px;margin-bottom: 60px;">
+<div class="menu-header" style="margin-bottom: 60px;">
 	<nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
 </div>
 <h3>背景颜色设置-dark</h3>
-<div style="height: 60px;margin-bottom: 60px;">
+<div class="menu-header" style="margin-bottom: 60px;">
     <nc-menu [type]="menuItems4.type" [place]="menuItems4.place" [navItems]="menuItems4.navItems" [backColor]="'dark'"></nc-menu>
 </div>
 <h3>自定义背景颜色设置</h3>
-<div style="height: 60px;margin-bottom: 60px;">
+<div class="menu-header" style="margin-bottom: 60px;">
     <nc-menu [type]="menuItems5.type" [place]="menuItems5.place" [navItems]="menuItems5.navItems"
              [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
 </div>
@@ -20,15 +20,15 @@
     <div *ngIf="currentTab === 'html'">
     <textarea style="height:360px;">
     <h3>默认设置</h3>
-    <div style="height: 60px;margin-bottom: 60px;">
+    <div class="menu-header" style="margin-bottom: 60px;">
         <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
     </div>
     <h3>背景颜色设置-dark</h3>
-    <div style="height: 60px;margin-bottom: 60px;">
+    <div class="menu-header" style="margin-bottom: 60px;">
         <nc-menu [type]="menuItems4.type" [place]="menuItems4.place" [navItems]="menuItems4.navItems" [backColor]="'dark'"></nc-menu>
     </div>
     <h3>自定义背景颜色设置</h3>
-    <div style="height: 60px;margin-bottom: 60px;">
+    <div class="menu-header" style="margin-bottom: 60px;">
         <nc-menu [type]="menuItems5.type" [place]="menuItems5.place" [navItems]="menuItems5.navItems"
                  [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
     </div>

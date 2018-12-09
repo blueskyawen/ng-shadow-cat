@@ -1099,7 +1099,7 @@ span.nc-carat.nc-carat-left {
   max-width: 100%;
   box-sizing: border-box;
   position: relative;
-  transition: margin-left 500ms, display 500ms;
+  transition: all 500ms;
 }
 .nc-layout > .nc-sider.nc-sidemenu-hidden {
   margin-left: -100%;
@@ -1158,4 +1158,18 @@ span.nc-carat.nc-carat-left {
 }
 .nc-anticon-menu:hover:after {
   background: #1890ff;
+}
+@media (max-width: 760px) {
+  .nc-layout > .nc-header {
+    flex-wrap: wrap;
+  }
+  .nc-layout > .nc-header .nc-header-logo-area {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #999;
+  }
+  .nc-layout > .nc-header .nc-header-logo-area:after {
+    display: none;
+  }
 }

@@ -9,13 +9,7 @@ ul.backcolor-header {
     background:#f2f2f2;
     border-bottom:none;
 }
-.demo-header {
-    width:100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .demo-content {
     width:100%;
     padding:20px;
@@ -54,4 +48,21 @@ ul.backcolor-header {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.nc-sidebars-hidden {
+    margin-left: -240px;
+    overflow-x: hidden;
+    visibility: hidden;
+}
+.menu-header {
+    height: 60px;
+}
+@media (max-width:760px) {
+    .menu-header {
+        height: auto;
+    }
+    .menu-header2 {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 }

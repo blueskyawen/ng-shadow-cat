@@ -233,19 +233,18 @@ span.nc-carat-left {
 
 
 @media (max-width:760px) {
-    ul.nc-menu-horizontal {
+    .nc-menu-horizontal {
         flex-wrap:wrap;
-        height: auto!important;
+        //height: 50px !important;
     }
-    ul.nc-menu-horizontal > li.nc-menu-item {
+    .nc-menu-horizontal > .nc-menu-item {
         width:100%;
         max-width:100%;
     }
-    ul.nc-menu > li.nc-menu-item > .nc-menu-item-title {
-        justify-content:flex-start;
-    }
-    ul.nc-menu-horizontal > li.nc-menu-item.active {
+    .nc-menu-horizontal > .nc-menu-item > .nc-menu-item-option.active,
+    .nc-menu-horizontal > .nc-menu-item > .nc-menu-item-option.child-active {
         border:none;
         border-left:solid 3px #1890ff;
+        margin-bottom:0px;
     }
 }

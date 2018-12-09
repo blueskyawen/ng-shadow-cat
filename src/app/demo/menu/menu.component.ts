@@ -5,7 +5,8 @@ import { Component,OnInit } from '@angular/core';
 
 @Component({
     selector: 'demo-menu',
-    templateUrl: './menu.component.html'
+    templateUrl: './menu.component.html',
+    styleUrls: ['../layout/layout.component.css']
 })
 export class MenuComponent {
     menuItems : any = {

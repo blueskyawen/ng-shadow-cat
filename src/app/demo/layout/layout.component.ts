@@ -202,6 +202,6 @@ export class LayoutComponent {
     }
 
     extendSideMenu(index : number) {
-        //this.showSideMenus[index] = !this.showSideMenus[index];
+        this.showSideMenus[index] = !this.showSideMenus[index];
     }
 }
