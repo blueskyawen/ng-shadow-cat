@@ -50,6 +50,18 @@ export class FormInstanceComponent {
         loading:false,
         disabled:true
     };
+    registerData2 : any = {
+        value: '',
+        patternName : /^[a-zA-Z0-9_]+$/,
+        password: '',
+        patternPw : /^[a-zA-Z0-9_]{6}$/,
+        phone:'',
+        patternPhone : /^1[3-8]{1}([0-9]{9})$/,
+        phonePreffixs:[{label:'+86',value:'+86'}],
+        checkFlag: 0,
+        loading:false,
+        disabled:true
+    };
     tabItems : any[] = [];
     currentTab : string;
     tabItems2 : any[] = [];

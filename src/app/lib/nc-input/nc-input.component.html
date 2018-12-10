@@ -1,4 +1,5 @@
-<div class="nc-form-group-item" [ngClass]="afixClasses" [ngStyle]="inputStyle">
+<div class="nc-form-group-item" [ngClass]="afixClasses" [ngStyle]="inputStyle"
+     [class.nc-form-group-item-error]="isShowError">
   <span *ngIf="prefixList.length == 1" class="input-affix input-preffix">{{prefixList[0].label}}</span>
   <ng-content select="nc-input-icon"></ng-content>
 
@@ -17,14 +18,16 @@
          [class.hasSuffix]="suffixList.length !== 0"
          [class.hasPrefix]="prefixList.length !== 0"
          autocomplete="on"
+         (focus)="focusInput()"
+         (blur)="blurInput()"
   />
 
   <span class="nc-form-group-search" *ngIf="isSearch"></span>
   <span *ngIf="suffixList.length == 1" class="input-affix input-subffix">{{suffixList[0].label}}</span>
 </div>
 <div class="nc-form-group-hint nc-form-group-explain" *ngIf="isShowHint">
-  请输入中文或者英文
+  {{inputLintText}}
 </div>
 <div class="nc-form-group-hint nc-form-group-error" *ngIf="isShowError">
-  请输入中文或者英文
+  {{errorText}}
 </div>

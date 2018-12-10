@@ -79,7 +79,6 @@
   cursor:not-allowed;
 }
 .nc-form-group-hint {
-  display:none;
   height:100%;
   width:100%;
   font-size:12px;
@@ -89,7 +88,10 @@
   color:#666;
 }
 .nc-form-group-error {
-  color:#ff471a;
+  color:#ff0000;
+}
+.nc-form-group-item-error {
+  border-color:#ff0000;
 }
 .nc-form-group-item.input-with-preffix input,
 .nc-form-group-item.input-with-subffix input {

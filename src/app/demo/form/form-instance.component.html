@@ -247,7 +247,7 @@
         <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">体重</nc-form-label>
         <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
             <div class="nc-flex nc-align-item-center" style="height: 100%;">
-                <nc-rangeslide [total]="100" [(value)]="registerData.weight" [width]="400"></nc-rangeslide>
+                <nc-rangeslide [total]="100" [(value)]="registerData.weight" [width]="350"></nc-rangeslide>
             </div>
         </nc-form-control>
     </nc-form-group>
@@ -280,8 +280,8 @@
     </nc-form-group>
 </form>
 <p>使用方式:</p>
-<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
-    <div *ngIf="currentTab === 'html'">
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
     <textarea style="height:500px;">
     <form style="max-width: 600px;" novalidate>
         <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
@@ -429,7 +429,7 @@
     </form>
     </textarea>
     </div>
-    <div *ngIf="currentTab === 'typescript'">
+    <div *ngIf="currentTab2 === 'typescript'">
     <textarea style="height:500px;">
     registerData : any = {
         value: '',
@@ -471,6 +471,85 @@
             !this.registerData.sex || !this.registerData.phone;
         return this.registerData.disabled;
     }
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>3. 表单输入提示和校验</h3>
+<form style="max-width: 600px;" #registerform2="ngForm" novalidate>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">用户名</nc-form-label>
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+            <nc-input [type]="'text'" [(modelValue)]="registerData2.value" [pattern]="registerData2.patternName"
+                      [inputLintText]="'请输入字母/数字或下划线'"
+                      [inputErrorText]="'输入错误，要求字母/数字或下划线!'" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label  class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">密码</nc-form-label>
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+            <nc-input [type]="'password'" [(modelValue)]="registerData2.password" [pattern]="registerData2.patternPw"
+                      [inputLintText]="'请输入字母/数字，最长6位'" [inputErrorText]="'输入错误，输入字母/数字，最长6位!'" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+    <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+        <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">手机号</nc-form-label>
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+            <nc-input [type]="'text'" [(modelValue)]="registerData2.phone" [prefixList]="registerData2.phonePreffixs"
+                      [pattern]="registerData2.patternPhone" [inputErrorText]="'输入错误，输入正确手机号!'" [required]="true">
+            </nc-input>
+        </nc-form-control>
+    </nc-form-group>
+</form>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
+    <div *ngIf="currentTab3 === 'html'">
+    <textarea style="height:200px;">
+    <form style="max-width: 600px;" #registerform2="ngForm" novalidate>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">用户名</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'text'" [(modelValue)]="registerData2.value" [pattern]="registerData2.patternName"
+                          [inputLintText]="'请输入字母/数字或下划线'"
+                          [inputErrorText]="'输入错误，要求字母/数字或下划线!'" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label  class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">密码</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'password'" [(modelValue)]="registerData2.password" [pattern]="registerData2.patternPw"
+                          [inputLintText]="'请输入字母/数字，最长6位'" [inputErrorText]="'输入错误，输入字母/数字，最长6位!'" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+        <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">手机号</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+                <nc-input [type]="'text'" [(modelValue)]="registerData2.phone" [prefixList]="registerData2.phonePreffixs"
+                          [pattern]="registerData2.patternPhone" [inputErrorText]="'输入错误，输入正确手机号!'" [required]="true">
+                </nc-input>
+            </nc-form-control>
+        </nc-form-group>
+    </form>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab3 === 'typescript'">
+    <textarea style="height:200px;">
+    registerData2 : any = {
+        value: '',
+        patternName : /^[a-zA-Z0-9_]+$/,
+        password: '',
+        patternPw : /^[a-zA-Z0-9_]{6}$/,
+        phone:'',
+        patternPhone : /^1[3-8]{1}([0-9]{9})$/,
+        phonePreffixs:[{label:'+86',value:'+86'}],
+        checkFlag: 0,
+        loading:false,
+        disabled:true
+    };
     </textarea>
     </div>
 </nc-tab>
