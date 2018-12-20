@@ -31,6 +31,21 @@
   </div>
 </nc-tab>
 
+<h3>3. 水平加载等待</h3>
+<nc-loading [type]="'horizontal'" [loadSize]="'max'" style="margin:10px 30px;"></nc-loading>
+<nc-loading [type]="'horizontal'" [loadSize]="'medium'" style="margin:10px 30px;"></nc-loading>
+<nc-loading [type]="'horizontal'" [loadSize]="'min'" style="margin:10px 30px;"></nc-loading>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:80px;">
+    <nc-loading [type]="'horizontal'" [loadSize]="'max'"></nc-loading>
+    <nc-loading [type]="'horizontal'" [loadSize]="'medium'"></nc-loading>
+    <nc-loading [type]="'horizontal'" [loadSize]="'min'"></nc-loading>
+    </textarea>
+  </div>
+</nc-tab>
+
 
 <h3>参数</h3>
 <table>
@@ -44,7 +59,7 @@
   <tbody>
     <tr>
       <td>type</td>
-      <td>代表形状类型，两种取值：normal（一般），clover（四叶形状）</td>
+      <td>代表形状类型，两种取值：normal（一般），clover（四叶形状）,horizontal(水平)</td>
       <td>normal</td>
     </tr>
     <tr>

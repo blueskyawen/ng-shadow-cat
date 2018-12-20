@@ -1,4 +1,4 @@
-<div class="nc-loading">
+<div class="nc-loading" *ngIf="type === 'normal' || type === 'clover'">
   <span *ngIf="type === 'normal'" class="load-spin normal-load" [ngClass]="spinClasses"></span>
   <span *ngIf="type === 'clover'" class="load-spin clover-load"  [ngClass]="spinClasses">
 				<span></span>
@@ -6,4 +6,12 @@
 				<span></span>
 				<span></span>
   </span>
+</div>
+<div class="nc-loading-container" *ngIf="type === 'horizontal'" [ngClass]="spinClasses">
+	<div class="nc-loading-item">
+	</div>
+	<div class="nc-loading-item">
+	</div>
+	<div class="nc-loading-item">
+	</div>
 </div>
