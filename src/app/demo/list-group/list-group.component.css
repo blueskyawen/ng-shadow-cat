@@ -1,0 +1,101 @@
+ul.nc-list-group.list-group-vertical {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+ul.nc-list-group.list-group-vertical li.nc-list-group-item {
+    display: inline-block;
+    padding: 10px 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+ul.nc-list-group.list-group-vertical li.nc-list-group-item:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+ul.nc-list-group.list-group-vertical li.nc-list-group-item:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+ul.nc-list-group.list-group-vertical li.nc-list-group-item.active {
+    background: #0099ff;
+    color: #fff;
+}
+ul.nc-list-group.list-group-vertical li.nc-list-group-item:not(.active):hover {
+    background: #e5ffff;
+}
+ul.nc-list-group.list-group-vertical li.nc-list-group-item:not(:last-child) {
+    border-bottom: solid 1px #999;
+}
+ul.nc-list-group.list-group-vertical li.nc-list-group-item img {
+    height: 200px;
+    margin-left: 30px;
+}
+
+ ul.nc-list-group.list-group-horizontal {
+    display: block;
+    white-space: nowrap;
+    margin-left: 0;
+}
+ul.nc-list-group.list-group-horizontal li.nc-list-group-item {
+    display: inline-block;
+}
+
+.nc-list-button {
+    border:0.5px solid rgb(216, 216, 216);
+    border-radius:3px;
+    box-shadow:rgba(0, 0, 0, 0.15) 0px 1px 2px;
+    min-width:120px;
+    text-align:center;
+    padding:15px 30px;
+    font-size:16px;
+    font-weight:600;
+    outline:none;
+    transition:box-shadow 0.5s ease 0s;
+    cursor:pointer;
+    background:#fff;
+    margin:10px 0;
+}
+.nc-list-button:hover {
+    box-shadow:rgba(0, 0, 0, 0.15) 0px 2px 2px;
+}
+.nc-list-group .nc-list-group-item:not(:last-child) .nc-list-button {
+    margin-right:10px;
+}
+.nc-list-button.active {
+    background:#1aa3ff;
+    border-color:#1aa3ff;
+    color:#fff;
+    box-shadow:none;
+    box-shadow:#cce0ff 0px 2px 2px;
+}
+
+.img-item {
+    display: inline-flex;
+    align-items: center;
+    border:solid 1px #ccc;
+    padding: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.nc-list-group .nc-list-group-item:last-child .img-item {
+    margin-right: 0;
+}
+.img-item .img-item-img {
+    display: inline-block;
+}
+.img-item .img-item-img img {
+    display: block;
+    height: 100px;
+    width: 120px;
+}
+.img-item .img-item-description {
+    width: 170px;
+    margin-left: 10px;
+}
+.img-item .img-item-description .img-item-description-head {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 800;
+}

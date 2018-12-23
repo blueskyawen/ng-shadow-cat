@@ -1,7 +1,7 @@
 /**
  * Created by liuxuwen on 18-6-14.
  */
-import { Component,OnInit,Input,OnDestroy,EventEmitter,OnChanges,SimpleChanges } from '@angular/core';
+import { Component,OnInit,Input,Output,OnDestroy,EventEmitter,OnChanges,SimpleChanges } from '@angular/core';
 //import {clearInterval,setInterval} from "timers";
 
 @Component({
@@ -16,6 +16,7 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
   @Input() height : string = '650px';
   @Input() width : string = '100%';
   @Input() isPause : boolean = false;
+  @Output() carouselChange = new EventEmitter();
   activeIndex : number = 0;
   isCanClick : boolean = true;
   oldIndex : number = 0;
@@ -100,6 +101,7 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       }
       this.captions[this.activeIndex].moveStyle = {'opacity':'1'};
     }
+    this.carouselChange.emit(this.activeIndex);
   }
 
   next() {
@@ -121,6 +123,7 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       }
       this.captions[this.activeIndex].moveStyle = {'opacity':'1'};
     }
+    this.carouselChange.emit(this.activeIndex);
   }
 
   changeleft(curIndex : number) {

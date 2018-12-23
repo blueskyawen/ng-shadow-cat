@@ -1,24 +1,43 @@
 /**
  * Created by liuxuwen on 18-8-27.
  */
-import { Component,OnInit } from '@angular/core';
+import { Component,AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'demo-list-group',
-  templateUrl: './list-group.component.html'
+  templateUrl: './list-group.component.html',
+  styleUrls: ['./list-group.component.css']
 })
 export class ListGroupComponent {
-  titles : any[] = [{text:'成功！很好地完成了提交。',type: 'success'},
-    {text:'信息！请注意这个信息。',type: 'info'},
-    {text:'警告！请不要提交。',type: 'warn'},
-    {text:'错误！请进行一些更改。',type: 'danger'}];
-  callbackFun : any = () => {alert('错误！请进行一些更改');};
+  listItems : any[] = [{title:'免费域名注册',active:false},
+    {title:'免费 Window 空间托管',active:false},
+    {title:'图像的数量',active:true},
+    {title:'24*7 支持',active:false},
+    {title:'每年更新成本',active:false}];
+  listItems2 : any[] = [{title:'上海',active:false},{title:'北京',active:false},{title:'杭州',active:true},
+    {title:'成都',active:false},{title:'西安',active:false},{title:'南京',active:false},{title:'重庆',active:false},
+    {title:'广州',active:false},{title:'上饶',active:false},{title:'苏州',active:false},{title:'哈尔滨',active:false},
+    {title:'长沙',active:false},{title:'深圳',active:false}];
+  listItems3 : any[] = [{title:'上海',active:false},{title:'北京',active:false},{title:'杭州',active:true},
+    {title:'成都',active:false},{title:'西安',active:false},{title:'南京',active:false},{title:'重庆',active:false},
+    {title:'广州',active:false},{title:'上饶',active:false},{title:'苏州',active:false},{title:'哈尔滨',active:false},
+    {title:'长沙',active:false},{title:'深圳',active:false}];
   tabItems : any[] = [];
   currentTab : string;
+  tabItems1 : any[] = [];
+  currentTab1 : string;
 
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
       {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
     this.currentTab= this.tabItems[0].label;
+    this.tabItems1 = [{name:'html',label:'html',isActive:true,isDisable:false}];
+    this.currentTab1= this.tabItems1[0].label;
   }
+
+  selectItem(item : any,items : any[]) {
+    items.forEach((listItem) => {listItem.active = false;});
+    item.active = true;
+  }
+
 }

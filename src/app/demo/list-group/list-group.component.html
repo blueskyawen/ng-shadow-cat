@@ -1,208 +1,533 @@
 <h2 class="title">列表组</h2>
 <p>列表组件用于以列表形式呈现复杂的和自定义的内容</p>
-<h3>正常列表组</h3>
-<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
-  <ul class="nc-list-group">
-    <li class="nc-list-group-item">免费域名注册</li>
-    <li class="nc-list-group-item">免费 Window 空间托管</li>
-    <li class="nc-list-group-item">图像的数量</li>
-    <li class="nc-list-group-item">24*7 支持</li>
-    <li class="nc-list-group-item">每年更新成本</li>
-  </ul>
-</div>
-<p>使用方式:</p>
-<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
-  <div *ngIf="currentTab === 'html'">
-    <textarea style="height:180px;">
-    <ul class="nc-list-group">
-      <li class="nc-list-group-item">免费域名注册</li>
-      <li class="nc-list-group-item">免费 Window 空间托管</li>
-      <li class="nc-list-group-item">图像的数量</li>
-      <li class="nc-list-group-item">24*7 支持</li>
-      <li class="nc-list-group-item">每年更新成本</li>
-    </ul>
-    </textarea>
-  </div>
-</nc-tab>
-
-<h3>带徽章的列表组</h3>
-<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
-  <ul class="nc-list-group">
-    <li class="nc-list-group-item nc-content-space-between">免费域名注册
-      <span class="nc-badge nc-badge-info">11</span></li>
-    <li class="nc-list-group-item">免费 Window 空间托管</li>
-    <li class="nc-list-group-item nc-content-space-between">图像的数量
-      <span class="nc-badge nc-badge-warning">12</span></li>
-    <li class="nc-list-group-item ">24*7 支持</li>
-    <li class="nc-list-group-item nc-align-item-baseline">
-      <span class="nc-badge nc-badge-success">13</span>每年更新成本
-    </li>
-  </ul>
-</div>
-<p>使用方式:</p>
-<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
-  <div *ngIf="currentTab === 'html'">
-    <textarea style="height:180px;">
-    <ul class="nc-list-group">
-      <li class="nc-list-group-item nc-content-space-between">免费域名注册
-        <span class="nc-badge nc-badge-info">11</span></li>
-      <li class="nc-list-group-item">免费 Window 空间托管</li>
-      <li class="nc-list-group-item nc-content-space-between">图像的数量
-        <span class="nc-badge nc-badge-warning">12</span></li>
-      <li class="nc-list-group-item ">24*7 支持</li>
-      <li class="nc-list-group-item nc-align-item-baseline">
-        <span class="nc-badge nc-badge-success">13</span>每年更新成本
+<h3>1.垂直列表组</h3>
+<h4>垂直列表组-正常</h4>
+<div style="width:100%;padding-left: 20px;">
+  <nc-list-group-vertical>
+    <ul class="nc-list-group list-group-vertical">
+      <li *ngFor="let item of listItems" class="nc-list-group-item nc-flex nc-align-item-center">
+        {{item?.title}}
       </li>
     </ul>
-    </textarea>
-  </div>
-</nc-tab>
-
-<h3>激活列表组</h3>
-<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
-  <ul class="nc-list-group" style="width:90%;">
-    <li class="nc-list-group-item">免费域名注册</li>
-    <li class="nc-list-group-item active">免费 Window 空间托管</li>
-    <li class="nc-list-group-item">图像的数量</li>
-    <li class="nc-list-group-item">24*7 支持</li>
-    <li class="nc-list-group-item">每年更新成本</li>
-  </ul>
+  </nc-list-group-vertical>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
-    <textarea style="height:180px;">
-    <ul class="nc-list-group" style="width:90%;">
-      <li class="nc-list-group-item">免费域名注册</li>
-      <li class="nc-list-group-item active">免费 Window 空间托管</li>
-      <li class="nc-list-group-item">图像的数量</li>
-      <li class="nc-list-group-item">24*7 支持</li>
-      <li class="nc-list-group-item">每年更新成本</li>
-    </ul>
+    <textarea style="height:120px;">
+    <nc-list-group-vertical>
+      <ul class="nc-list-group list-group-vertical">
+        <li *ngFor="let item of listItems" class="nc-list-group-item nc-flex nc-align-item-center">
+          {{item?.title}}
+        </li>
+      </ul>
+    </nc-list-group-vertical>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:120px;">
+    listItems : any[] = [{title:'免费域名注册',active:false},
+                        {title:'免费 Window 空间托管',active:false},
+                        {title:'图像的数量',active:true},
+                        {title:'24*7 支持',active:false},
+                        {title:'每年更新成本',active:false}];
     </textarea>
   </div>
 </nc-tab>
 
-<h3>图文列表组</h3>
-<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
-  <ul class="nc-list-group" style="width:95%;">
-    <li class="nc-list-group-item">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-        <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-        <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-        <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-        <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-        <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-  </ul>
+<h4>垂直列表组-带徽章</h4>
+<div style="width:100%;padding-left: 20px;">
+  <nc-list-group-vertical>
+    <ul class="nc-list-group list-group-vertical">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
+        <span>免费域名注册</span><nc-badge [type]="'default'" [count]="5"></nc-badge>
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
+        <span>免费 Window 空间托管</span><nc-badge [type]="'success'" [count]="9"></nc-badge>
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
+        <span>图像的数量</span><nc-badge [type]="'warn'" [count]="16"></nc-badge>
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
+        <nc-badge [type]="'success'" [count]="0"></nc-badge><span>24*7 支持</span>
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
+        <nc-badge [type]="'error'" [count]="99"></nc-badge><span>每年更新成本</span>
+      </li>
+    </ul>
+  </nc-list-group-vertical>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:160px;">
+    <nc-list-group-vertical>
+      <ul class="nc-list-group list-group-vertical">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
+          <span>免费域名注册</span><nc-badge [type]="'default'" [count]="5"></nc-badge>
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
+          <span>免费 Window 空间托管</span><nc-badge [type]="'success'" [count]="9"></nc-badge>
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
+          <span>图像的数量</span><nc-badge [type]="'warn'" [count]="16"></nc-badge>
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
+          <nc-badge [type]="'success'" [count]="0"></nc-badge><span>24*7 支持</span>
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
+          <nc-badge [type]="'error'" [count]="99"></nc-badge><span>每年更新成本</span>
+        </li>
+      </ul>
+    </nc-list-group-vertical>
+    </textarea>
+  </div>
+</nc-tab>
 
-<h3>滚动列表组</h3>
-<div class="width:100%;height:80px;padding-left: 20px;display:flex;align-items:center;">
-  <ul class="nc-list-group nc-unfinite-list-group" style="width:95%;">
-    <li class="nc-list-group-item">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-        <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-        <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-        <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-        <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-        <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-  </ul>
+<h4>垂直列表组-激活</h4>
+<div style="width:100%;padding-left: 20px;">
+  <nc-list-group-vertical>
+    <ul class="nc-list-group list-group-vertical">
+      <li *ngFor="let item of listItems" (click)="selectItem(item,listItems)"
+          class="nc-list-group-item nc-flex nc-align-item-center" [class.active]="item.active">
+        {{item?.title}}
+      </li>
+    </ul>
+  </nc-list-group-vertical>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:180px;">
+    <nc-list-group-vertical>
+      <ul class="nc-list-group list-group-vertical">
+        <li *ngFor="let item of listItems" (click)="selectItem(item,listItems)"
+            class="nc-list-group-item nc-flex nc-align-item-center" [class.active]="item.active">
+          {{item?.title}}
+        </li>
+      </ul>
+    </nc-list-group-vertical>
+    </textarea>
+  </div>
+</nc-tab>
 
-<h3>水平列表组</h3>
-<div style="width:98%;padding-left: 20px;display:flex;align-items:center;justify-content:center;position: relative;">
-  <ul class="nc-list-group" style="width:100%;white-space: nowrap;border:solid 1px #999;overflow-x: auto;">
-    <li class="nc-list-group-item" style="width:30%;display: inline-block;border:none;">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item" style="width:30%;display: inline-block;border:none;">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item" style="width:30%;display: inline-block;border:none;">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item" style="width:30%;display: inline-block;border:none;">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-    <li class="nc-list-group-item" style="width:30%;display: inline-block;border:none;">
-      <div class="list-description">
-        <h5>第三碗面</h5>
-      </div>
-      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
-    </li>
-  </ul>
-  <span class="list-prev"
-        style="position:absolute;top:50%;left:0%;transform: translateY(-50%);display: inline-flex;justify-content:center;align-items:center;height:36px;width:36px;border:solid 1px #666;border-radius:50%;background:#fff;font-size: 24px;">&lt;</span>
-  <span class="list-next"
-        style="position:absolute;top:50%;left:100%;transform: translateX(-50%) translateY(-50%);display: inline-flex;justify-content:center;align-items:center;height:36px;width:36px;border:solid 1px #666;border-radius:50%;background:#fff;font-size: 24px;">&gt;</span>
+<h4>垂直列表组-激活图文列表</h4>
+<div style="width:80%;padding-left: 20px;">
+  <nc-list-group-vertical>
+    <ul class="nc-list-group list-group-vertical">
+      <li class="nc-list-group-item nc-flex nc-align-item-center">
+        <div class="list-description">
+          <h5>第三碗面</h5>
+          <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+        </div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center">
+        <div class="list-description">
+          <h5>第三碗面</h5>
+          <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+        </div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center">
+        <div class="list-description">
+          <h5>第三碗面</h5>
+          <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+        </div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center">
+        <div class="list-description">
+          <h5>第三碗面</h5>
+          <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+        </div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center">
+        <div class="list-description">
+          <h5>第三碗面</h5>
+          <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+        </div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+      </li>
+    </ul>
+  </nc-list-group-vertical>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:200px;">
+    <nc-list-group-vertical>
+      <ul class="nc-list-group list-group-vertical">
+        <li class="nc-list-group-item nc-flex nc-align-item-center">
+          <div class="list-description">
+            <h5>第三碗面</h5>
+            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+          </div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center">
+          <div class="list-description">
+            <h5>第三碗面</h5>
+            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+          </div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center">
+          <div class="list-description">
+            <h5>第三碗面</h5>
+            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+          </div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center">
+          <div class="list-description">
+            <h5>第三碗面</h5>
+            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+          </div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center">
+          <div class="list-description">
+            <h5>第三碗面</h5>
+            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+          </div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </li>
+      </ul>
+    </nc-list-group-vertical>
+    </textarea>
+  </div>
+</nc-tab>
 
-<div style="height: 100px;"></div>
+<h4>垂直列表组-滚动列表</h4>
+<div style="width:100%;padding-left: 20px;">
+  <nc-list-group-vertical [scroll]="true">
+    <ul class="nc-list-group list-group-vertical">
+      <li class="nc-list-group-item nc-flex nc-align-item-center">
+        <div class="list-description">
+          <h5>第三碗面</h5>
+          <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+        </div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center">
+        <div class="list-description">
+          <h5>第三碗面</h5>
+          <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+        </div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center">
+        <div class="list-description">
+          <h5>第三碗面</h5>
+          <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+        </div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center">
+        <div class="list-description">
+          <h5>第三碗面</h5>
+          <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+        </div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+      </li>
+      <li class="nc-list-group-item nc-flex nc-align-item-center">
+        <div class="list-description">
+          <h5>第三碗面</h5>
+          <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+        </div>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+      </li>
+    </ul>
+  </nc-list-group-vertical>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:200px;">
+    <nc-list-group-vertical [scroll]="true">
+      <ul class="nc-list-group list-group-vertical">
+        <li class="nc-list-group-item nc-flex nc-align-item-center">
+          <div class="list-description">
+            <h5>第三碗面</h5>
+            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+          </div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center">
+          <div class="list-description">
+            <h5>第三碗面</h5>
+            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+          </div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center">
+          <div class="list-description">
+            <h5>第三碗面</h5>
+            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+          </div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center">
+          <div class="list-description">
+            <h5>第三碗面</h5>
+            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+          </div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </li>
+        <li class="nc-list-group-item nc-flex nc-align-item-center">
+          <div class="list-description">
+            <h5>第三碗面</h5>
+            <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
+          </div>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </li>
+      </ul>
+    </nc-list-group-vertical>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>2.水平列表组</h3>
+<h4>水平列表组-正常</h4>
+<div style="width:100%;padding-left: 20px;">
+  <nc-list-group-horizontal>
+    <ul class="nc-list-group list-group-horizontal">
+      <li class="nc-list-group-item" *ngFor="let item of listItems2">
+        <button class="nc-list-button" (click)="selectItem(item,listItems2)" [class.active]="item.active">{{item?.title}}</button>
+      </li>
+    </ul>
+  </nc-list-group-horizontal>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:120px;">
+    <nc-list-group-horizontal>
+      <ul class="nc-list-group list-group-horizontal">
+        <li class="nc-list-group-item" *ngFor="let item of listItems2">
+          <button class="nc-list-button" (click)="selectItem(item,listItems2)" [class.active]="item.active">{{item?.title}}</button>
+        </li>
+      </ul>
+    </nc-list-group-horizontal>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h4>水平列表组-可隐藏操作按钮</h4>
+<div style="width:100%;padding-left: 20px;">
+  <nc-list-group-horizontal [stepWidth]="150" [hideOper]="true">
+    <ul class="nc-list-group list-group-horizontal">
+      <li class="nc-list-group-item" *ngFor="let item of listItems3">
+        <button class="nc-list-button" (click)="selectItem(item,listItems3)" [class.active]="item.active">{{item?.title}}</button>
+      </li>
+    </ul>
+  </nc-list-group-horizontal>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:120px;">
+    <nc-list-group-horizontal>
+      <ul class="nc-list-group list-group-horizontal">
+        <li class="nc-list-group-item" *ngFor="let item of listItems3">
+          <button class="nc-list-button" (click)="selectItem(item,listItems3)" [class.active]="item.active">{{item?.title}}</button>
+        </li>
+      </ul>
+    </nc-list-group-horizontal>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h4>水平列表组-自定义宽度和内容</h4>
+<div style="width:100%;padding-left: 20px;">
+  <nc-list-group-horizontal [stepWidth]="160" [hideOper]="true">
+    <ul class="nc-list-group list-group-horizontal">
+      <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+        <div class="img-item">
+          <div class="img-item-img">
+            <img src="https://z1.muscache.cn/im/pictures/be26f03d-9e58-4f1a-8148-522ec884149c.jpg?aki_policy=large">
+          </div>
+          <div class="img-item-description">
+            <div class="img-item-description-head">曼谷</div>
+            <div class="img-item-description-text">跨年首选：￥323 / 晚</div>
+          </div>
+        </div>
+      </li>
+      <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+        <div class="img-item">
+          <div class="img-item-img">
+            <img src="https://z1.muscache.cn/im/pictures/06dc3556-1b31-4a8f-93f5-a47e4cb964aa.jpg?aki_policy=large">
+          </div>
+          <div class="img-item-description">
+            <div class="img-item-description-head">三亚</div>
+            <div class="img-item-description-text">春节热门：￥523 / 晚</div>
+          </div>
+        </div>
+      </li>
+      <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+        <div class="img-item">
+          <div class="img-item-img">
+            <img src="https://z1.muscache.cn/im/pictures/f1d63a08-25ac-4b53-ad5e-8d2198b73cc8.jpg?aki_policy=large">
+          </div>
+          <div class="img-item-description">
+            <div class="img-item-description-head">香港</div>
+            <div class="img-item-description-text">跨年首选：￥723 / 晚</div>
+          </div>
+        </div>
+      </li>
+      <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+        <div class="img-item">
+          <div class="img-item-img">
+            <img src="https://z1.muscache.cn/im/pictures/3166809a-616e-4583-8e2a-d8964df9a415.jpg?aki_policy=large">
+          </div>
+          <div class="img-item-description">
+            <div class="img-item-description-head">台北</div>
+            <div class="img-item-description-text">跨年首选：￥503 / 晚</div>
+          </div>
+        </div>
+      </li>
+      <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+        <div class="img-item">
+          <div class="img-item-img">
+            <img src="https://z1.muscache.cn/im/pictures/38531e37-e7c2-489e-9ad7-5003a965a8d2.jpg?aki_policy=large">
+          </div>
+          <div class="img-item-description">
+            <div class="img-item-description-head">重庆</div>
+            <div class="img-item-description-text">跨年首选：￥323 / 晚</div>
+          </div>
+        </div>
+      </li>
+      <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+        <div class="img-item">
+          <div class="img-item-img">
+            <img src="https://z1.muscache.cn/im/pictures/4442bda1-87db-4989-94fc-cfa46ee1e6c6.jpg?aki_policy=large">
+          </div>
+          <div class="img-item-description">
+            <div class="img-item-description-head">普吉岛</div>
+            <div class="img-item-description-text">跨年首选：￥623 / 晚</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nc-list-group-horizontal>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
+  <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:300px;">
+    <nc-list-group-horizontal [stepWidth]="150" [hideOper]="true">
+      <ul class="nc-list-group list-group-horizontal">
+        <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+          <div class="img-item">
+            <div class="img-item-img">
+              <img src="https://z1.muscache.cn/im/pictures/be26f03d-9e58-4f1a-8148-522ec884149c.jpg?aki_policy=large">
+            </div>
+            <div class="img-item-description">
+              <div class="img-item-description-head">曼谷</div>
+              <div class="img-item-description-text">跨年首选：￥323 / 晚</div>
+            </div>
+          </div>
+        </li>
+        <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+          <div class="img-item">
+            <div class="img-item-img">
+              <img src="https://z1.muscache.cn/im/pictures/06dc3556-1b31-4a8f-93f5-a47e4cb964aa.jpg?aki_policy=large">
+            </div>
+            <div class="img-item-description">
+              <div class="img-item-description-head">三亚</div>
+              <div class="img-item-description-text">春节热门：￥523 / 晚</div>
+            </div>
+          </div>
+        </li>
+        <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+          <div class="img-item">
+            <div class="img-item-img">
+              <img src="https://z1.muscache.cn/im/pictures/f1d63a08-25ac-4b53-ad5e-8d2198b73cc8.jpg?aki_policy=large">
+            </div>
+            <div class="img-item-description">
+              <div class="img-item-description-head">香港</div>
+              <div class="img-item-description-text">跨年首选：￥723 / 晚</div>
+            </div>
+          </div>
+        </li>
+        <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+          <div class="img-item">
+            <div class="img-item-img">
+              <img src="https://z1.muscache.cn/im/pictures/3166809a-616e-4583-8e2a-d8964df9a415.jpg?aki_policy=large">
+            </div>
+            <div class="img-item-description">
+              <div class="img-item-description-head">台北</div>
+              <div class="img-item-description-text">跨年首选：￥503 / 晚</div>
+            </div>
+          </div>
+        </li>
+        <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+          <div class="img-item">
+            <div class="img-item-img">
+              <img src="https://z1.muscache.cn/im/pictures/38531e37-e7c2-489e-9ad7-5003a965a8d2.jpg?aki_policy=large">
+            </div>
+            <div class="img-item-description">
+              <div class="img-item-description-head">重庆</div>
+              <div class="img-item-description-text">跨年首选：￥323 / 晚</div>
+            </div>
+          </div>
+        </li>
+        <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
+          <div class="img-item">
+            <div class="img-item-img">
+              <img src="https://z1.muscache.cn/im/pictures/4442bda1-87db-4989-94fc-cfa46ee1e6c6.jpg?aki_policy=large">
+            </div>
+            <div class="img-item-description">
+              <div class="img-item-description-head">普吉岛</div>
+              <div class="img-item-description-text">跨年首选：￥623 / 晚</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nc-list-group-horizontal>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>nc-list-group-vertical-参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>scroll</td>
+    <td>是否带滚动条显示</td>
+    <td>false</td>
+  </tr>
+  </tbody>
+</table>
+
+<h3>nc-list-group-horizontal-参数</h3>
+<table>
+  <thead>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+    <th>默认值</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>stepWidth</td>
+    <td>每次点击滑动的距离</td>
+    <td>120</td>
+  </tr>
+  <tr>
+    <td>hideOper</td>
+    <td>是否在内容滑到尽头后隐藏按钮</td>
+    <td>false</td>
+  </tr>
+  </tbody>
+</table>

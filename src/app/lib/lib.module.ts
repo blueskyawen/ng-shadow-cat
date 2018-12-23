@@ -50,6 +50,8 @@ import {NcInputIconComponent} from './nc-input/nc-input-icon.component';
 import {NcTextAreaComponent} from './nc-input/nc-textarea.component';
 import {NcInputDynamicAddComponent} from './nc-input/nc-input-dynamic-add.component';
 import {NcInputDynamicDeleteComponent} from './nc-input/nc-input-dynamic-delete.component';
+import {NcListGroupVerticalComponent} from './nc-list-group/nc-list-group-vertical.component';
+import {NcListGroupHorizontalComponent} from './nc-list-group/nc-list-group-horizontal.component';
 
 import { InputNumberDirective } from './nc-num-put/input-number.directive';
 
@@ -64,7 +66,8 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent,NcBarChartComponent,
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
     NcNumberPutComponent,InputNumberDirective,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
-    NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent],
+    NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
+    NcListGroupVerticalComponent,NcListGroupHorizontalComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
@@ -74,6 +77,7 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcLabelComponent,NcFormGroupComponent,NcFormLabelComponent,NcPagerComponent,NcBarChartComponent,
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
     NcNumberPutComponent,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
-    NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent]
+    NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
+    NcListGroupVerticalComponent,NcListGroupHorizontalComponent]
 })
 export class LibModule { }
