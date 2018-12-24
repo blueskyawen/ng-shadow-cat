@@ -14,8 +14,6 @@
 }
 .nc-list-group-horizontal {
     position: relative;
-    width: 60%;
-    margin: 20px auto;
 }
 .nc-list-group-horizontal .nc-list-group-container {
     display: flex;
