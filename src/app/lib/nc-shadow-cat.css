@@ -245,40 +245,40 @@ pre {
 
 }*/
 .nc-xs-col-12 {
-  width: 100%;
+  width: 100% !important;
 }
 .nc-xs-col-11 {
-  width: 91.66666667%;
+  width: 91.66666667% !important;
 }
 .nc-xs-col-10 {
-  width: 83.33333333%;
+  width: 83.33333333% !important;
 }
 .nc-xs-col-9 {
-  width: 75%;
+  width: 75% !important;
 }
 .nc-xs-col-8 {
-  width: 66.66666667%;
+  width: 66.66666667% !important;
 }
 .nc-xs-col-7 {
-  width: 58.33333333%;
+  width: 58.33333333% !important;
 }
 .nc-xs-col-6 {
-  width: 50%;
+  width: 50% !important;
 }
 .nc-xs-col-5 {
-  width: 41.66666667%;
+  width: 41.66666667% !important;
 }
 .nc-xs-col-4 {
-  width: 33.33333333%;
+  width: 33.33333333% !important;
 }
 .nc-xs-col-3 {
-  width: 25%;
+  width: 25% !important;
 }
 .nc-xs-col-2 {
-  width: 16.66666667%;
+  width: 16.66666667% !important;
 }
 .nc-xs-col-1 {
-  width: 8.33333333%;
+  width: 8.33333333% !important;
 }
 .nc-xs-offset-12 {
   margin-left: 100%;
@@ -355,40 +355,40 @@ pre {
 /*小型桌面,平板*/
 @media (min-width: 576px) {
   .nc-sm-col-12 {
-    width: 100%;
+    width: 100% !important;
   }
   .nc-sm-col-11 {
-    width: 91.66666667%;
+    width: 91.66666667% !important;
   }
   .nc-sm-col-10 {
-    width: 83.33333333%;
+    width: 83.33333333% !important;
   }
   .nc-sm-col-9 {
-    width: 75%;
+    width: 75% !important;
   }
   .nc-sm-col-8 {
-    width: 66.66666667%;
+    width: 66.66666667% !important;
   }
   .nc-sm-col-7 {
-    width: 58.33333333%;
+    width: 58.33333333% !important;
   }
   .nc-sm-col-6 {
-    width: 50%;
+    width: 50% !important;
   }
   .nc-sm-col-5 {
-    width: 41.66666667%;
+    width: 41.66666667% !important;
   }
   .nc-sm-col-4 {
-    width: 33.33333333%;
+    width: 33.33333333% !important;
   }
   .nc-sm-col-3 {
-    width: 25%;
+    width: 25% !important;
   }
   .nc-sm-col-2 {
-    width: 16.66666667%;
+    width: 16.66666667% !important;
   }
   .nc-sm-col-1 {
-    width: 8.33333333%;
+    width: 8.33333333% !important;
   }
   .nc-sm-offset-12 {
     margin-left: 100%;
@@ -466,40 +466,40 @@ pre {
 /*中型桌面屏幕*/
 @media (min-width: 768px) {
   .nc-md-col-12 {
-    width: 100%;
+    width: 100% !important;
   }
   .nc-md-col-11 {
-    width: 91.66666667%;
+    width: 91.66666667% !important;
   }
   .nc-md-col-10 {
-    width: 83.33333333%;
+    width: 83.33333333% !important;
   }
   .nc-md-col-9 {
-    width: 75%;
+    width: 75% !important;
   }
   .nc-md-col-8 {
-    width: 66.66666667%;
+    width: 66.66666667% !important;
   }
   .nc-md-col-7 {
-    width: 58.33333333%;
+    width: 58.33333333% !important;
   }
   .nc-md-col-6 {
-    width: 50%;
+    width: 50% !important;
   }
   .nc-md-col-5 {
-    width: 41.66666667%;
+    width: 41.66666667% !important;
   }
   .nc-md-col-4 {
-    width: 33.33333333%;
+    width: 33.33333333% !important;
   }
   .nc-md-col-3 {
-    width: 25%;
+    width: 25% !important;
   }
   .nc-md-col-2 {
-    width: 16.66666667%;
+    width: 16.66666667% !important;
   }
   .nc-md-col-1 {
-    width: 8.33333333%;
+    width: 8.33333333% !important;
   }
   .nc-md-offset-12 {
     margin-left: 100%;
@@ -577,40 +577,40 @@ pre {
 /*大型桌面屏幕*/
 @media (min-width: 992px) {
   .nc-lg-col-12 {
-    width: 100%;
+    width: 100% !important;
   }
   .nc-lg-col-11 {
-    width: 91.66666667%;
+    width: 91.66666667% !important;
   }
   .nc-lg-col-10 {
-    width: 83.33333333%;
+    width: 83.33333333% !important;
   }
   .nc-lg-col-9 {
-    width: 75%;
+    width: 75% !important;
   }
   .nc-lg-col-8 {
-    width: 66.66666667%;
+    width: 66.66666667% !important;
   }
   .nc-lg-col-7 {
-    width: 58.33333333%;
+    width: 58.33333333% !important;
   }
   .nc-lg-col-6 {
-    width: 50%;
+    width: 50% !important;
   }
   .nc-lg-col-5 {
-    width: 41.66666667%;
+    width: 41.66666667% !important;
   }
   .nc-lg-col-4 {
-    width: 33.33333333%;
+    width: 33.33333333% !important;
   }
   .nc-lg-col-3 {
-    width: 25%;
+    width: 25% !important;
   }
   .nc-lg-col-2 {
-    width: 16.66666667%;
+    width: 16.66666667% !important;
   }
   .nc-lg-col-1 {
-    width: 8.33333333%;
+    width: 8.33333333% !important;
   }
   .nc-lg-offset-12 {
     margin-left: 100%;
@@ -688,40 +688,40 @@ pre {
 /*超大型桌面屏幕*/
 @media (min-width: 1200px) {
   .nc-xl-col-12 {
-    width: 100%;
+    width: 100% !important;
   }
   .nc-xl-col-11 {
-    width: 91.66666667%;
+    width: 91.66666667% !important;
   }
   .nc-xl-col-10 {
-    width: 83.33333333%;
+    width: 83.33333333% !important;
   }
   .nc-xl-col-9 {
-    width: 75%;
+    width: 75% !important;
   }
   .nc-xl-col-8 {
-    width: 66.66666667%;
+    width: 66.66666667% !important;
   }
   .nc-xl-col-7 {
-    width: 58.33333333%;
+    width: 58.33333333% !important;
   }
   .nc-xl-col-6 {
-    width: 50%;
+    width: 50% !important;
   }
   .nc-xl-col-5 {
-    width: 41.66666667%;
+    width: 41.66666667% !important;
   }
   .nc-xl-col-4 {
-    width: 33.33333333%;
+    width: 33.33333333% !important;
   }
   .nc-xl-col-3 {
-    width: 25%;
+    width: 25% !important;
   }
   .nc-xl-col-2 {
-    width: 16.66666667%;
+    width: 16.66666667% !important;
   }
   .nc-xl-col-1 {
-    width: 8.33333333%;
+    width: 8.33333333% !important;
   }
   .nc-xl-offset-12 {
     margin-left: 100%;
@@ -862,18 +862,13 @@ pre {
 .nc-list-group-vertical ul.nc-list-group li.nc-list-group-item:not(:last-child) {
   border-bottom: solid 1px #999;
 }
-.nc-list-group-vertical ul.nc-list-group li.nc-list-group-item img {
-  height: 200px;
-  margin-left: 30px;
-}
 .nc-list-group-vertical.nc-unfinite-list-group {
   max-height: 600px;
   overflow-y: auto;
 }
 .nc-list-group-horizontal {
   position: relative;
-  width: 60%;
-  margin: 20px auto;
+  width: 100%;
 }
 .nc-list-group-horizontal .nc-list-group-container {
   display: flex;
