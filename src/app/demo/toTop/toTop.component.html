@@ -11,6 +11,8 @@
       <nc-toTop [parentId]="'nc-content'"></nc-toTop>
 
       <nc-toTop [type]="'rocket'" [parentId]="'nc-content'"></nc-toTop>
+      
+      <nc-toTop [type]="'rocket'" [parentId]="'nc-content'" [scrollStep]="120"></nc-toTop>
     </textarea>
   </div>
 </nc-tab>
@@ -33,6 +35,11 @@
     <td>parentId</td>
     <td>返回顶部组件侦测的父文档Id,不设默认为window</td>
     <td></td>
+  </tr>
+  <tr>
+    <td>scrollStep</td>
+    <td>返回顶部滚动速度,N/100ms</td>
+    <td>60</td>
   </tr>
   </tbody>
 </table>
