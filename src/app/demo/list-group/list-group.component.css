@@ -30,7 +30,7 @@ ul.nc-list-group.list-group-vertical li.nc-list-group-item:not(:last-child) {
 }
 ul.nc-list-group.list-group-vertical li.nc-list-group-item img {
     height: 200px;
-    margin-left: 30px;
+    margin-left: 0;
 }
 
  ul.nc-list-group.list-group-horizontal {
@@ -98,4 +98,14 @@ ul.nc-list-group.list-group-horizontal li.nc-list-group-item {
     width: 100%;
     font-size: 20px;
     font-weight: 800;
+}
+
+.list-demo {
+    width:100%;
+    padding: 10px;
+    box-sizing:border-box;
+}
+.list-image {
+    display: inline-flex;
+    justify-content: center;
 }
