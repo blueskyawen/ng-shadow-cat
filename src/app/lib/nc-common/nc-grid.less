@@ -43,7 +43,7 @@
 }*/
 .calc-flex-grid-columns(@index,@class,@type) when (@type = width) and (@index > 0) {
   .nc-@{class}-col-@{index} {
-    width: percentage((@index / @max-grid-num));
+    width: percentage((@index / @max-grid-num)) !important;
   }
 }
 .calc-flex-grid-columns(@index,@class,@type) when (@type = offset-left) and (@index > 0) {
