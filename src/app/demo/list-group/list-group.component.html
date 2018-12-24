@@ -2,7 +2,7 @@
 <p>列表组件用于以列表形式呈现复杂的和自定义的内容</p>
 <h3>1.垂直列表组</h3>
 <h4>垂直列表组-正常</h4>
-<div style="width:100%;padding-left: 20px;">
+<div class="list-demo">
   <nc-list-group-vertical>
     <ul class="nc-list-group list-group-vertical">
       <li *ngFor="let item of listItems" class="nc-list-group-item nc-flex nc-align-item-center">
@@ -36,7 +36,7 @@
 </nc-tab>
 
 <h4>垂直列表组-带徽章</h4>
-<div style="width:100%;padding-left: 20px;">
+<div class="list-demo">
   <nc-list-group-vertical>
     <ul class="nc-list-group list-group-vertical">
       <li class="nc-list-group-item nc-flex nc-align-item-center nc-content-space-between">
@@ -85,7 +85,7 @@
 </nc-tab>
 
 <h4>垂直列表组-激活</h4>
-<div style="width:100%;padding-left: 20px;">
+<div class="list-demo">
   <nc-list-group-vertical>
     <ul class="nc-list-group list-group-vertical">
       <li *ngFor="let item of listItems" (click)="selectItem(item,listItems)"
@@ -112,43 +112,53 @@
 </nc-tab>
 
 <h4>垂直列表组-激活图文列表</h4>
-<div style="width:80%;padding-left: 20px;">
+<div class="list-demo">
   <nc-list-group-vertical>
     <ul class="nc-list-group list-group-vertical">
-      <li class="nc-list-group-item nc-flex nc-align-item-center">
-        <div class="list-description">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+        <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
           <h5>第三碗面</h5>
           <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
         </div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </div>
       </li>
-      <li class="nc-list-group-item nc-flex nc-align-item-center">
-        <div class="list-description">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+        <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
           <h5>第三碗面</h5>
           <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
         </div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </div>
       </li>
-      <li class="nc-list-group-item nc-flex nc-align-item-center">
-        <div class="list-description">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+        <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
           <h5>第三碗面</h5>
           <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
         </div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </div>
       </li>
-      <li class="nc-list-group-item nc-flex nc-align-item-center">
-        <div class="list-description">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+        <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
           <h5>第三碗面</h5>
           <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
         </div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </div>
       </li>
-      <li class="nc-list-group-item nc-flex nc-align-item-center">
-        <div class="list-description">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+        <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
           <h5>第三碗面</h5>
           <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
         </div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </div>
       </li>
     </ul>
   </nc-list-group-vertical>
@@ -159,40 +169,50 @@
     <textarea style="height:200px;">
     <nc-list-group-vertical>
       <ul class="nc-list-group list-group-vertical">
-        <li class="nc-list-group-item nc-flex nc-align-item-center">
-          <div class="list-description">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+          <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
             <h5>第三碗面</h5>
             <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
           </div>
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          </div>
         </li>
-        <li class="nc-list-group-item nc-flex nc-align-item-center">
-          <div class="list-description">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+          <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
             <h5>第三碗面</h5>
             <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
           </div>
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          </div>
         </li>
-        <li class="nc-list-group-item nc-flex nc-align-item-center">
-          <div class="list-description">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+          <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
             <h5>第三碗面</h5>
             <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
           </div>
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          </div>
         </li>
-        <li class="nc-list-group-item nc-flex nc-align-item-center">
-          <div class="list-description">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+          <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
             <h5>第三碗面</h5>
             <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
           </div>
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          </div>
         </li>
-        <li class="nc-list-group-item nc-flex nc-align-item-center">
-          <div class="list-description">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+          <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
             <h5>第三碗面</h5>
             <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
           </div>
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          </div>
         </li>
       </ul>
     </nc-list-group-vertical>
@@ -201,43 +221,53 @@
 </nc-tab>
 
 <h4>垂直列表组-滚动列表</h4>
-<div style="width:100%;padding-left: 20px;">
+<div class="list-demo">
   <nc-list-group-vertical [scroll]="true">
     <ul class="nc-list-group list-group-vertical">
-      <li class="nc-list-group-item nc-flex nc-align-item-center">
-        <div class="list-description">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+        <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
           <h5>第三碗面</h5>
           <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
         </div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </div>
       </li>
-      <li class="nc-list-group-item nc-flex nc-align-item-center">
-        <div class="list-description">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+        <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
           <h5>第三碗面</h5>
           <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
         </div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </div>
       </li>
-      <li class="nc-list-group-item nc-flex nc-align-item-center">
-        <div class="list-description">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+        <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
           <h5>第三碗面</h5>
           <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
         </div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </div>
       </li>
-      <li class="nc-list-group-item nc-flex nc-align-item-center">
-        <div class="list-description">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+        <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
           <h5>第三碗面</h5>
           <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
         </div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </div>
       </li>
-      <li class="nc-list-group-item nc-flex nc-align-item-center">
-        <div class="list-description">
+      <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+        <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
           <h5>第三碗面</h5>
           <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
         </div>
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+        </div>
       </li>
     </ul>
   </nc-list-group-vertical>
@@ -248,40 +278,50 @@
     <textarea style="height:200px;">
     <nc-list-group-vertical [scroll]="true">
       <ul class="nc-list-group list-group-vertical">
-        <li class="nc-list-group-item nc-flex nc-align-item-center">
-          <div class="list-description">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+          <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
             <h5>第三碗面</h5>
             <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
           </div>
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          </div>
         </li>
-        <li class="nc-list-group-item nc-flex nc-align-item-center">
-          <div class="list-description">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+          <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
             <h5>第三碗面</h5>
             <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
           </div>
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          </div>
         </li>
-        <li class="nc-list-group-item nc-flex nc-align-item-center">
-          <div class="list-description">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+          <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
             <h5>第三碗面</h5>
             <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
           </div>
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          </div>
         </li>
-        <li class="nc-list-group-item nc-flex nc-align-item-center">
-          <div class="list-description">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+          <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
             <h5>第三碗面</h5>
             <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
           </div>
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          </div>
         </li>
-        <li class="nc-list-group-item nc-flex nc-align-item-center">
-          <div class="list-description">
+        <li class="nc-list-group-item nc-flex nc-align-item-center nc-flex-wrap">
+          <div class="list-description nc-xl-col-9 nc-lg-col-7 nc-sm-col-6 nc-xs-col-12">
             <h5>第三碗面</h5>
             <p>第三碗面是源自京都本地的一种拉面，好像没有中文名，也在京都车站伊势丹大厦十层，你看碗面上又是双喜又是腾龙，就知道与依长安而建的京都某种程度受到的文化影响。味道中等。</p>
           </div>
-          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          <div class="list-image nc-xl-col-3 nc-lg-col-5 nc-sm-col-6 nc-xs-col-12">
+            <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536324649165&di=cb64f610117c32b76d70bea0ff51d2fe&imgtype=0&src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fa77f10ffjw1f7m2vs0y5rj20rs0ij108.jpg">
+          </div>
         </li>
       </ul>
     </nc-list-group-vertical>
@@ -291,7 +331,7 @@
 
 <h3>2.水平列表组</h3>
 <h4>水平列表组-正常</h4>
-<div style="width:100%;padding-left: 20px;">
+<div class="list-demo nc-xs-col-12 nc-sm-col-12" style="width:70%;margin:20px auto;">
   <nc-list-group-horizontal>
     <ul class="nc-list-group list-group-horizontal">
       <li class="nc-list-group-item" *ngFor="let item of listItems2">
@@ -316,7 +356,7 @@
 </nc-tab>
 
 <h4>水平列表组-可隐藏操作按钮</h4>
-<div style="width:100%;padding-left: 20px;">
+<div class="list-demo nc-xs-col-12 nc-sm-col-12" style="width:70%;margin:20px auto;">
   <nc-list-group-horizontal [stepWidth]="150" [hideOper]="true">
     <ul class="nc-list-group list-group-horizontal">
       <li class="nc-list-group-item" *ngFor="let item of listItems3">
@@ -341,7 +381,7 @@
 </nc-tab>
 
 <h4>水平列表组-自定义宽度和内容</h4>
-<div style="width:100%;padding-left: 20px;">
+<div class="list-demo nc-xs-col-12 nc-sm-col-12" style="width:70%;margin:20px auto;">
   <nc-list-group-horizontal [stepWidth]="160" [hideOper]="true">
     <ul class="nc-list-group list-group-horizontal">
       <li class="nc-list-group-item nc-inline-flex nc-align-item-center">
@@ -531,3 +571,5 @@
   </tr>
   </tbody>
 </table>
+
+<nc-toTop [type]="'rocket'" [parentId]="'nc-content'"></nc-toTop>
