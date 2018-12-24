@@ -11,6 +11,7 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
 export class NcToTopComponent implements OnInit {
   @Input() type : string = 'circle';
   @Input() parentId : string;
+  @Input() scrollStep : number = 60;
   typeClasses : any = {};
   timer : any = null;
   displayType : string;
@@ -48,9 +49,9 @@ export class NcToTopComponent implements OnInit {
       this.timer = setInterval(() => {
         let backtop = this.isWindows ? this.contentDom.pageYOffset : this.contentDom.scrollTop;
         if(this.isWindows) {
-          this.contentDom.scrollBy(0,-60);
+          this.contentDom.scrollBy(0,0 - this.scrollStep);
         } else {
-          this.contentDom.scrollTop -= 60;
+          this.contentDom.scrollTop -= this.scrollStep;
         }
         if(backtop < 1){
           clearInterval(this.timer);
