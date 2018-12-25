@@ -5,7 +5,8 @@ import { Component,OnInit } from '@angular/core';
 
 @Component({
   selector: 'demo-thumb-img',
-  templateUrl: './thumb-img.component.html'
+  templateUrl: './thumb-img.component.html',
+  styleUrls: ['./thumb-img.component.css']
 })
 export class ThumbImgComponent {
   images : any[] = [
@@ -54,6 +55,68 @@ export class ThumbImgComponent {
   isShow : boolean = false;
   tabItems : any[] = [];
   currentTab : string;
+    images2 : any[] = [
+    {id:'2',
+      src:'https://z1.muscache.cn/im/pictures/1098f911-a27b-4075-8fad-90c184fbb66e.jpg?aki_policy=large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}},
+    {id:'3',
+      src:'https://z1.muscache.cn/im/pictures/56d7f836-150f-497f-9043-b12abde1a8b3.jpg?aki_policy=large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}},
+    {id:'4',
+      src:'https://z1.muscache.cn/im/pictures/dda1a265-5c27-44aa-bc06-07e5aef915ad.jpg?aki_policy=large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}},
+    {id:'5',
+      src:'https://z1.muscache.cn/im/pictures/4a1f9411-fef7-4cfe-9743-d797c445233e.jpg?aki_policy=large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}}
+  ];
+  images3 : any[] = [
+    {id:'1',src:'https://z1.muscache.cn/im/pictures/4fe31a5a-41fb-490f-9aa0-e0b7ce1f706f.jpg?aki_policy=xx_large',
+      alt: '1',
+      title:'',
+      callback: () => {this.goDetail()}},
+    {id:'2',src:'https://z1.muscache.cn/im/pictures/1098f911-a27b-4075-8fad-90c184fbb66e.jpg?aki_policy=large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}},
+    {id:'3',
+      src:'https://z1.muscache.cn/im/pictures/56d7f836-150f-497f-9043-b12abde1a8b3.jpg?aki_policy=large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}},
+    { id:'4',
+      src:'https://z1.muscache.cn/im/pictures/dda1a265-5c27-44aa-bc06-07e5aef915ad.jpg?aki_policy=large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}},
+    {id:'5',
+      src:'https://z1.muscache.cn/im/pictures/4a1f9411-fef7-4cfe-9743-d797c445233e.jpg?aki_policy=large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}},
+    {id:'6',
+      src:'https://z1.muscache.cn/im/pictures/4a1f9411-fef7-4cfe-9743-d797c445233e.jpg?aki_policy=large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}},
+    { id:'7',
+      src:'https://z1.muscache.cn/im/pictures/2e1ccf9f-c91b-46f7-acf4-b7396dee225e.jpg?aki_policy=x_large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}},
+    {id:'8',
+      src:'https://z1.muscache.cn/im/pictures/09af23e6-1395-4b72-87f0-a7728ad8cb31.jpg?aki_policy=x_large',
+      alt: '',
+      title:'',
+      callback: () => {this.goDetail()}}
+  ];
 
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
