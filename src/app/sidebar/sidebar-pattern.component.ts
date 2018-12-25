@@ -28,7 +28,8 @@ export class SidebarPatternComponent implements OnInit {
       {'name':'导航菜单','label':'menu','isActive':false,'url':'/menu'},
       //{'name':'锚点书签','label':'affix','isActive':false,'url':'/affix'},
       {'name':'表单','label':'form','isActive':false,'url':'/form'},
-      {'name':'表单实例','label':'formInstance','isActive':false,'url':'/formInstance'}];
+      {'name':'表单实例','label':'formInstance','isActive':false,'url':'/formInstance'},
+      {'name':'照片浏览','label':'photoView','isActive':false,'url':'/photoView'}];
   }
 
   ngOnInit() {

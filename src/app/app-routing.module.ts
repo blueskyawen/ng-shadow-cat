@@ -14,7 +14,7 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,
   BarChartComponent,PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,
   SkeletonComponent,NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,
-  FormInstanceComponent} from './demo/index';
+  FormInstanceComponent,PhotoViewComponent} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -72,7 +72,8 @@ const appRoutes: Routes = [
       { path: 'affix', component: AffixComponent},
       { path: 'affix/demo1', component: AffixDemo1Component},
       { path: 'form', component: FormComponent},
-      { path: 'formInstance', component: FormInstanceComponent}
+      { path: 'formInstance', component: FormInstanceComponent},
+      { path: 'photoView', component: PhotoViewComponent}
     ]
   },
   {

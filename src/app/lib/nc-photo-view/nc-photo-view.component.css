@@ -1,0 +1,41 @@
+.photo-view-container {
+    position: fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    display:block;
+//z-index: 2000;
+    overflow-y: auto;
+    background:#999;
+}
+.shade{
+    height:100%;
+    width:100%;
+    background:#ccc;
+    opacity: 0.5;
+    position: fixed;
+}
+.photo-view-container .photo-header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+.photo-view-container .photo-header .view-close {
+    display: inline-block;
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 60px;
+}
+.photo-view-container .photo-content {
+    height: 70%;
+    width: 100%;
+    background: #fff;
+}
+.photo-view-container .photo-footer {
+    height: 20%;
+    width: 100%;
+    background: yellow;
+}

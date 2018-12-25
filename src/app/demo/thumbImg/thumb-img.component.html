@@ -69,12 +69,12 @@
 <div class="nc-container" style="border:none;">
   <div class="nc-row nc-image-container">
     <div class="nc-thumb-picture nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
-      <img [src]="images3[0].src" [alt]="images3[0].alt" />
+      <img (click)="openModal(images3[0])" [src]="images3[0].src" [alt]="images3[0].alt" />
     </div>
     <div class="nc-flex nc-flex-wrap nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
       <div class="nc-thumb-picture nc-col nc-xs-col-6 nc-sm-col-6 nc-md-col-6 nc-lg-col-6 nc-xl-col-6"
            *ngFor="let image of images2">
-        <img [src]="image.src" [alt]="image.alt" />
+        <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
       </div>
     </div>
   </div>
