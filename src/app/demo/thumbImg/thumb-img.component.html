@@ -1,11 +1,20 @@
+<h3>1. 带文字的图片组</h3>
 <div class="nc-container" style="border:none;">
   <div class="nc-row nc-image-container">
-    <div class="nc-col nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2" *ngFor="let image of images">
-      <div class="nc-e-image">
+    <div class="nc-e-image nc-thumb-img nc-col nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2"
+         *ngFor="let image of images">
+      <div class="e-image">
         <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
-        <div class="nc-img-footer">
+      </div>
+      <div class="e-description">
+        <div class="e-desc-header">
           <div class="nc-img-name">{{image.alt}}</div>
-          <div class="nc-img-description" title="查看更多" (click)="image.callback()">{{image.title}}</div>
+        </div>
+        <div class="e-desc-content">
+          <div class="nc-img-description">{{image.title}}</div>
+        </div>
+        <div class="e-desc-footer">
+          <div class="nc-img-description-more" (click)="image.callback()">查看更多</div>
         </div>
       </div>
     </div>
@@ -20,19 +29,26 @@
     <nc-button [type]="'cancel'" (click)="closeModal()">取消</nc-button>
   </div>
 </nc-dialog>
-
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [type]="'card'" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
-    <textarea style="height:500px;">
+    <textarea style="height:300px;">
     <div class="nc-container" style="border:none;">
       <div class="nc-row nc-image-container">
-        <div class="nc-col nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2" *ngFor="let image of images">
-          <div class="nc-e-image">
-            <img (click)="openModal(image)" [src]="src" [alt]="'alt'" />
-            <div class="nc-img-footer">
-              <div class="nc-img-name">{{alt}}</div>
-              <div class="nc-img-description" title="查看更多" (click)="image.callback()">{{title}}</div>
+        <div class="nc-e-image nc-thumb-img nc-col nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2"
+             *ngFor="let image of images">
+          <div class="e-image">
+            <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
+          </div>
+          <div class="e-description">
+            <div class="e-desc-header">
+              <div class="nc-img-name">image.alt</div>
+            </div>
+            <div class="e-desc-content">
+              <div class="nc-img-description">image.title</div>
+            </div>
+            <div class="e-desc-footer">
+              <div class="nc-img-description-more" (click)="image.callback()">查看更多</div>
             </div>
           </div>
         </div>
@@ -44,6 +60,67 @@
     <textarea style="height:500px;">
     images : any[] = [
       {src:'111',alt: '222',title:'333',callback: () => {..}}
+      ];
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>2. 纯图片组</h3>
+<div class="nc-container" style="border:none;">
+  <div class="nc-row nc-image-container">
+    <div class="nc-thumb-picture nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
+      <img [src]="images3[0].src" [alt]="images3[0].alt" />
+    </div>
+    <div class="nc-flex nc-flex-wrap nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
+      <div class="nc-thumb-picture nc-col nc-xs-col-6 nc-sm-col-6 nc-md-col-6 nc-lg-col-6 nc-xl-col-6"
+           *ngFor="let image of images2">
+        <img [src]="image.src" [alt]="image.alt" />
+      </div>
+    </div>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [type]="'card'" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:300px;">
+    <div class="nc-container" style="border:none;">
+      <div class="nc-row nc-image-container">
+        <div class="nc-thumb-picture nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
+          <img [src]="images3[0].src" [alt]="images3[0].alt" />
+        </div>
+        <div class="nc-flex nc-flex-wrap nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
+          <div class="nc-thumb-picture nc-col nc-xs-col-6 nc-sm-col-6 nc-md-col-6 nc-lg-col-6 nc-xl-col-6"
+               *ngFor="let image of images2">
+            <img [src]="image.src" [alt]="image.alt" />
+          </div>
+        </div>
+      </div>
+    </div>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:300px;">
+      images2 : any[] = [
+        {id:'2',
+          src:'https://z1.muscache.cn/im/pictures/1098f911-a27b-4075-8fad-90c184fbb66e.jpg?aki_policy=large',
+          alt: '',
+          title:'',
+          callback: () => {this.goDetail()}},
+        {id:'3',
+          src:'https://z1.muscache.cn/im/pictures/56d7f836-150f-497f-9043-b12abde1a8b3.jpg?aki_policy=large',
+          alt: '',
+          title:'',
+          callback: () => {this.goDetail()}},
+        {id:'4',
+          src:'https://z1.muscache.cn/im/pictures/dda1a265-5c27-44aa-bc06-07e5aef915ad.jpg?aki_policy=large',
+          alt: '',
+          title:'',
+          callback: () => {this.goDetail()}},
+        {id:'5',
+          src:'https://z1.muscache.cn/im/pictures/4a1f9411-fef7-4cfe-9743-d797c445233e.jpg?aki_policy=large',
+          alt: '',
+          title:'',
+          callback: () => {this.goDetail()}}
       ];
     </textarea>
   </div>
