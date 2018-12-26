@@ -71,7 +71,7 @@
 </nc-tab>
 
 <h3>4. 照片浏览和纯图片组联合使用</h3>
-<div class="nc-container" style="border:none;" *ngIf="!isShowPhotos4">
+<div class="nc-container" style="border:none;position:relative;" *ngIf="!isShowPhotos4">
     <div class="nc-row nc-image-container">
         <div class="nc-thumb-picture nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
             <img (click)="openPhotoView(0)" [src]="photos[0].src" [alt]="photos[0].alt" />
@@ -83,6 +83,9 @@
             </div>
         </div>
     </div>
+    <div style="position: absolute;bottom:25px;right:25px;">
+        <nc-button [type]="'cancel'" (click)="openPhotoView(0)">查看全部</nc-button>
+    </div>
 </div>
 <nc-photo-view *ngIf="isShowPhotos4" [photos]="photos" [(isShow)]="isShowPhotos4" [curIndex]="curImgIndex">
 </nc-photo-view>
@@ -90,7 +93,7 @@
 <nc-tab [tabs]="tabItems" [type]="'card'" [(selectTab)] = "currentTab">
     <div *ngIf="currentTab === 'html'">
     <textarea style="height:300px;">
-    <div class="nc-container" style="border:none;" *ngIf="!isShowPhotos4">
+    <div class="nc-container" style="border:none;:relative;" *ngIf="!isShowPhotos4">
         <div class="nc-row nc-image-container">
             <div class="nc-thumb-picture nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
                 <img (click)="openPhotoView(0)" [src]="photos[0].src" [alt]="photos[0].alt" />
@@ -101,6 +104,9 @@
                     <img (click)="openPhotoView(image.id)" [src]="image.src" [alt]="image.alt" />
                 </div>
             </div>
+        </div>
+        <div style="position: absolute;bottom:25px;right:25px;">
+            <nc-button [type]="'cancel'" (click)="openPhotoView(0)">查看全部</nc-button>
         </div>
     </div>
     <nc-photo-view *ngIf="isShowPhotos4" [photos]="photos" [(isShow)]="isShowPhotos4" [curIndex]="curImgIndex">
