@@ -26,6 +26,8 @@ export class ListGroupComponent {
   currentTab : string;
   tabItems1 : any[] = [];
   currentTab1 : string;
+  items3Oper : string;
+  curIndex3 = 2;
 
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
@@ -38,6 +40,24 @@ export class ListGroupComponent {
   selectItem(item : any,items : any[]) {
     items.forEach((listItem) => {listItem.active = false;});
     item.active = true;
+  }
+  
+  selectItem3(item : any) {
+    this.listItems3.forEach((listItem) => {listItem.active = false;});
+    item.active = true;
+    let itemIndex = this.listItems3.indexOf(item);
+    this.items3Oper = '';
+    if(itemIndex > this.curIndex3) {
+      setTimeout(() => {
+        this.items3Oper = 'prev';
+      },100);
+    }
+    if(itemIndex < this.curIndex3) {
+      setTimeout(() => {
+        this.items3Oper = 'next';
+      },100);
+    }
+    this.curIndex3 = itemIndex;
   }
 
 }
