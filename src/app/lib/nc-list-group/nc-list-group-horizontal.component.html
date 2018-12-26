@@ -1,6 +1,6 @@
 <div class="nc-list-group-horizontal">
-    <div class="nc-list-oper nc-list-prev" *ngIf="!isHideLeftOper" (click)="clickPrev()"></div>
-    <div class="nc-list-oper nc-list-next" *ngIf="!isHideRightOper" (click)="clickNext()"></div>
+    <div class="nc-list-oper nc-list-prev" *ngIf="isShowOperation && !isHideLeftOper" (click)="clickPrev()"></div>
+    <div class="nc-list-oper nc-list-next" *ngIf="isShowOperation && !isHideRightOper" (click)="clickNext()"></div>
     <div class="nc-list-group-container">
         <div class="nc-list-container" [ngStyle]="groupStyles">
             <ng-content select=".nc-list-group"></ng-content>
