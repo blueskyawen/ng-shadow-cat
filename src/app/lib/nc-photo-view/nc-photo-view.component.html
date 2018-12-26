@@ -1,7 +1,31 @@
 <div class="photo-view-container">
     <div class="photo-header">
-        <span class="view-close" (click)="closeView()">x</span>
+        <span class="view-close" (click)="closeView()"></span>
     </div>
-    <div class="photo-content">photo-content</div>
-    <div class="photo-footer">photo-footer</div>
+    <div class="photo-view">
+        <div class="photo-view-oper photo-view-left" (click)="swithPhoto('prev')"></div>
+        <div class="photo-view-content">
+            <img [ngClass]="{'photo-view-slide':isSlide,'photo-view-out':isSwithSelection}"
+                 [src]="selectedPhoto.src" [alt]="selectedPhoto.alt" />
+        </div>
+        <div class="photo-view-oper photo-view-right" (click)="swithPhoto('next')"></div>
+    </div>
+    <div class="photo-footer">
+        <div class="photo-list">
+            <div class="photo-list-title" [class.photo-list-hided]="!isShowPhotoList">
+                <div class="select-photo-title">{{curIndex}}/{{photoNum}}:{{selectedPhoto.title}}</div>
+                <div class="photo-list-hide" (click)="hidePhotoList()">隐藏照片列表</div>
+            </div>
+            <div class="photo-list-content" *ngIf="isShowPhotoList">
+                <nc-list-group-horizontal [stepWidth]="120" [operation]="listOper">
+                    <ul class="nc-list-group">
+                        <li class="nc-list-group-item"
+                            *ngFor="let photo of photos;let i=index" (click)="selectPhoto(photo,i)">
+                            <img [class.selected]="i == curIndex" [src]="photo.src" [alt]="photo.alt" />
+                        </li>
+                    </ul>
+                </nc-list-group-horizontal>
+            </div>
+        </div>
+    </div>
 </div>
