@@ -9,37 +9,83 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
     styleUrls: ['./nc-photo-view.component.css']
 })
 export class NcPhotoViewComponent implements OnInit {
-    @Input() photos : any[] = [
-        {id:0,src:'https://z1.muscache.cn/im/pictures/4fe31a5a-41fb-490f-9aa0-e0b7ce1f706f.jpg?aki_policy=xx_large',
-            alt: '1',title:''},
-        {id:1,src:'https://z1.muscache.cn/im/pictures/1098f911-a27b-4075-8fad-90c184fbb66e.jpg?aki_policy=large',
-            alt: '',title:''},
-        {id:2,src:'https://z1.muscache.cn/im/pictures/56d7f836-150f-497f-9043-b12abde1a8b3.jpg?aki_policy=large',
-            alt: '',title:''},
-        { id:3,src:'https://z1.muscache.cn/im/pictures/dda1a265-5c27-44aa-bc06-07e5aef915ad.jpg?aki_policy=large',
-            alt: '',title:''},
-        {id:4,src:'https://z1.muscache.cn/im/pictures/4a1f9411-fef7-4cfe-9743-d797c445233e.jpg?aki_policy=large',
-            alt: '',title:''},
-        {id:5,src:'https://z1.muscache.cn/im/pictures/4a1f9411-fef7-4cfe-9743-d797c445233e.jpg?aki_policy=large',
-            alt: '',title:''},
-        { id:6,src:'https://z1.muscache.cn/im/pictures/2e1ccf9f-c91b-46f7-acf4-b7396dee225e.jpg?aki_policy=x_large',
-            alt: '',title:''},
-        {id:7,src:'https://z1.muscache.cn/im/pictures/09af23e6-1395-4b72-87f0-a7728ad8cb31.jpg?aki_policy=x_large',
-            alt: '',title:''}
-    ];
+    @Input() photos : any[] = [];
     @Input() isShow : boolean = false;
     @Output() isShowChange = new EventEmitter();
+    @Input() isSlide : boolean = false;
+    @Input() curIndex : number = 0;
     photoNum : number = 0;
-    curIndex : number = 0;
+    selectedPhoto : any = {};
+    isShowPhotoList : boolean = true;
+    isSwithSelection : boolean = false;
+    listOper : string = '';
 
     constructor() {}
 
     ngOnInit() {
         this.photoNum = this.photos.length;
+        this.selectDefaulPhoto();
+        this.isSwithSelection = this.isSlide;
+    }
+
+    selectDefaulPhoto() {
+        if(this.photoNum !== 0) {
+            this.selectedPhoto = this.photos[this.curIndex];
+        }
     }
 
     closeView() {
         this.isShow = false;
         this.isShowChange.emit(this.isShow);
+    }
+
+    hidePhotoList() {
+        this.isShowPhotoList = !this.isShowPhotoList;
+    }
+
+    selectPhoto(item : any,index : number) {
+        this.setSlideSwith();
+        if(this.curIndex > index) {
+            this.setListGroupOper('next');
+        } else {
+            this.setListGroupOper('prev');
+        }
+        this.selectedPhoto = item;
+        this.curIndex = index;
+    }
+
+    swithPhoto(type : string) {
+        if(type === 'prev') {
+            if(this.curIndex > 0) {
+                this.curIndex--;
+                this.selectedPhoto = this.photos[this.curIndex];
+                this.setSlideSwith();
+                this.setListGroupOper('next');
+            }
+        }
+        if(type === 'next') {
+            if(this.curIndex < this.photoNum - 1) {
+                this.curIndex++;
+                this.selectedPhoto = this.photos[this.curIndex];
+                this.setSlideSwith();
+                this.setListGroupOper('prev');
+            }
+        }
+    }
+
+    setSlideSwith() {
+        if(this.isSlide) {
+            this.isSwithSelection = false;
+            setTimeout(() => {
+                this.isSwithSelection = true;
+            },100);
+        }
+    }
+
+    setListGroupOper(type : string) {
+        this.listOper = '';
+        setTimeout(() => {
+            this.listOper = type;
+        },100);
     }
 }
