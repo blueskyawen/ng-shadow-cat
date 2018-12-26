@@ -1,16 +1,18 @@
 /**
  * Created by liuxuwen on 18-12-23.
  */
-import { Component, Input,ElementRef,Renderer2,AfterViewInit } from '@angular/core';
+import { Component, Input,ElementRef,Renderer2,AfterViewInit,OnChanges,SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'nc-list-group-horizontal',
     templateUrl: './nc-list-group-horizontal.component.html',
     styleUrls: ['./nc-list-group.component.css']
 })
-export class NcListGroupHorizontalComponent implements AfterViewInit {
+export class NcListGroupHorizontalComponent implements AfterViewInit,OnChanges {
     @Input() stepWidth : number = 120;
     @Input() hideOper : boolean = false;
+    @Input() operation : string = '';
+    @Input() isShowOperation : boolean = true;
     groupStyles : any = {};
     marginLeft : number = 0;
     groupContainerWidth : number = 0;
@@ -23,6 +25,16 @@ export class NcListGroupHorizontalComponent implements AfterViewInit {
 
     ngAfterViewInit() {
         this.getWidths();
+    }
+
+    ngOnChanges(changes: SimpleChanges) {
+        let usrOper = changes['operation'];
+        if(usrOper && usrOper.previousValue === '' && usrOper.currentValue === 'next') {
+            this.clickNext();
+        }
+        if(usrOper && usrOper.previousValue === '' && usrOper.currentValue === 'prev') {
+            this.clickPrev();
+        }
     }
 
     getWidths() {
@@ -41,7 +53,7 @@ export class NcListGroupHorizontalComponent implements AfterViewInit {
             this.checkHideOper('prev',true);
         }
         this.checkHideOper('next',false);
-        this.groupStyles = {'transform':'translateX(-'+this.marginLeft+'px)'};
+        this.groupStyles = {'margin-left':'-'+this.marginLeft+'px'};
     }
 
     clickNext() {
@@ -55,7 +67,7 @@ export class NcListGroupHorizontalComponent implements AfterViewInit {
             this.checkHideOper('next',true);
         }
         this.checkHideOper('prev',false);
-        this.groupStyles = {'transform':'translateX(-'+this.marginLeft+'px)'};
+        this.groupStyles = {'margin-left':'-'+this.marginLeft+'px'};
     }
 
     checkHideOper(type : string,bflag: boolean) {
