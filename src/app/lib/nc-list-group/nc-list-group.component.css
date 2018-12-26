@@ -22,7 +22,8 @@
     position: relative;
 }
 .nc-list-group-horizontal .nc-list-group-container .nc-list-container {
-    transition: transform 1s;
+    margin-left: 0;
+    transition: all 1s;
 }
 .nc-list-group-horizontal .nc-list-oper {
     display: inline-block;
