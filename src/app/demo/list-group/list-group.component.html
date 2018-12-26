@@ -357,10 +357,10 @@
 
 <h4>水平列表组-可隐藏操作按钮</h4>
 <div class="list-demo nc-xs-col-12 nc-sm-col-12 nc-lg-col-9 nc-xl-col-9" style="margin:20px auto;">
-  <nc-list-group-horizontal [stepWidth]="150" [hideOper]="true">
+  <nc-list-group-horizontal [stepWidth]="150" [hideOper]="true" [operation]="items3Oper">
     <ul class="nc-list-group list-group-horizontal">
       <li class="nc-list-group-item" *ngFor="let item of listItems3">
-        <button class="nc-list-button" (click)="selectItem(item,listItems3)" [class.active]="item.active">{{item?.title}}</button>
+        <button class="nc-list-button" (click)="selectItem3(item)" [class.active]="item.active">{{item?.title}}</button>
       </li>
     </ul>
   </nc-list-group-horizontal>
@@ -369,10 +369,10 @@
 <nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
   <div *ngIf="currentTab1 === 'html'">
     <textarea style="height:120px;">
-    <nc-list-group-horizontal>
+    <nc-list-group-horizontal [stepWidth]="150" [hideOper]="true" [operation]="items3Oper">
       <ul class="nc-list-group list-group-horizontal">
         <li class="nc-list-group-item" *ngFor="let item of listItems3">
-          <button class="nc-list-button" (click)="selectItem(item,listItems3)" [class.active]="item.active">{{item?.title}}</button>
+          <button class="nc-list-button" (click)="selectItem3(item)" [class.active]="item.active">{{item?.title}}</button>
         </li>
       </ul>
     </nc-list-group-horizontal>
@@ -568,6 +568,16 @@
     <td>hideOper</td>
     <td>是否在内容滑到尽头后隐藏按钮</td>
     <td>false</td>
+  </tr>
+  <tr>
+    <td>operation</td>
+    <td>指定滑动方向,next/prev</td>
+    <td>''</td>
+  </tr>
+  <tr>
+    <td>isShowOperation</td>
+    <td>显示操作按钮</td>
+    <td>true</td>
   </tr>
   </tbody>
 </table>
