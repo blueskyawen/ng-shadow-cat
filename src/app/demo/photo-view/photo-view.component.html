@@ -1,4 +1,172 @@
 <h2 class="title">照片浏览</h2>
 
-<nc-photo-view *ngIf="isShowPhotos" [(isShow)]="isShowPhotos"></nc-photo-view>
+<h3>1. 普通照片浏览组</h3>
+<nc-photo-view *ngIf="isShowPhotos" [photos]="photos" [(isShow)]="isShowPhotos">
+</nc-photo-view>
 <nc-button (click)="showPhotoView()">照片浏览</nc-button>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [type]="'card'" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:300px;">
+    <nc-photo-view *ngIf="isShowPhotos" [photos]="photos" [(isShow)]="isShowPhotos">
+    </nc-photo-view>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:300px;">
+    photos : any[] = [
+        {id:0,src:'https://z1.muscache.cn/im/pictures/4fe31a5a-41fb-490f-9aa0-e0b7ce1f706f.jpg?aki_policy=xx_large',
+            alt: '1',title:'温馨舒适全海景套房1'},
+        {id:1,src:'https://z1.muscache.cn/im/pictures/1098f911-a27b-4075-8fad-90c184fbb66e.jpg?aki_policy=large',
+            alt: '',title:'温馨舒适全海景套房2'},
+        {id:2,src:'https://z1.muscache.cn/im/pictures/56d7f836-150f-497f-9043-b12abde1a8b3.jpg?aki_policy=large',
+            alt: '',title:'温馨舒适全海景套房3'},
+        { id:3,src:'https://z1.muscache.cn/im/pictures/dda1a265-5c27-44aa-bc06-07e5aef915ad.jpg?aki_policy=large',
+            alt: '',title:'温馨舒适全海景套房4'},
+        {id:4,src:'https://z1.muscache.cn/im/pictures/4a1f9411-fef7-4cfe-9743-d797c445233e.jpg?aki_policy=large',
+            alt: '',title:'温馨舒适全海景套房5'},
+        {id:5,src:'https://z1.muscache.cn/im/pictures/4a1f9411-fef7-4cfe-9743-d797c445233e.jpg?aki_policy=large',
+            alt: '',title:'温馨舒适全海景套房6'},
+        { id:6,src:'https://z1.muscache.cn/im/pictures/2e1ccf9f-c91b-46f7-acf4-b7396dee225e.jpg?aki_policy=x_large',
+            alt: '',title:'温馨舒适全海景套房7'},
+        {id:7,src:'https://z1.muscache.cn/im/pictures/09af23e6-1395-4b72-87f0-a7728ad8cb31.jpg?aki_policy=x_large',
+            alt: '',title:'温馨舒适全海景套房8'}
+    ];
+    isShowPhotos : boolean = false;
+
+    showPhotoView() {
+        this.isShowPhotos = true;
+    }
+    </textarea>
+    </div>
+</nc-tab>
+
+
+<h3>2. 滑动照片浏览组</h3>
+<nc-photo-view *ngIf="isShowPhotos2" [photos]="photos" [(isShow)]="isShowPhotos2" [isSlide]="true">
+</nc-photo-view>
+<nc-button (click)="showPhotoView2()">照片浏览</nc-button>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [type]="'card'" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:60px;">
+    <nc-photo-view *ngIf="isShowPhotos" [photos]="photos" [isSlide]="true" [(isShow)]="isShowPhotos">
+    </nc-photo-view>
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>3. 设置默认显示照片</h3>
+<nc-photo-view *ngIf="isShowPhotos3" [photos]="photos" [(isShow)]="isShowPhotos3" [curIndex]="3">
+</nc-photo-view>
+<nc-button (click)="showPhotoView3()">照片浏览</nc-button>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [type]="'card'" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:60px;">
+    <nc-photo-view *ngIf="isShowPhotos" [photos]="photos" [curIndex]="3" [(isShow)]="isShowPhotos">
+    </nc-photo-view>
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>4. 照片浏览和纯图片组联合使用</h3>
+<div class="nc-container" style="border:none;" *ngIf="!isShowPhotos4">
+    <div class="nc-row nc-image-container">
+        <div class="nc-thumb-picture nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
+            <img (click)="openPhotoView(0)" [src]="photos[0].src" [alt]="photos[0].alt" />
+        </div>
+        <div class="nc-flex nc-flex-wrap nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
+            <div class="nc-thumb-picture nc-col nc-xs-col-6 nc-sm-col-6 nc-md-col-6 nc-lg-col-6 nc-xl-col-6"
+                 *ngFor="let image of images;let i=index;">
+                <img (click)="openPhotoView(image.id)" [src]="image.src" [alt]="image.alt" />
+            </div>
+        </div>
+    </div>
+</div>
+<nc-photo-view *ngIf="isShowPhotos4" [photos]="photos" [(isShow)]="isShowPhotos4" [curIndex]="curImgIndex">
+</nc-photo-view>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [type]="'card'" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:300px;">
+    <div class="nc-container" style="border:none;" *ngIf="!isShowPhotos4">
+        <div class="nc-row nc-image-container">
+            <div class="nc-thumb-picture nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
+                <img (click)="openPhotoView(0)" [src]="photos[0].src" [alt]="photos[0].alt" />
+            </div>
+            <div class="nc-flex nc-flex-wrap nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
+                <div class="nc-thumb-picture nc-col nc-xs-col-6 nc-sm-col-6 nc-md-col-6 nc-lg-col-6 nc-xl-col-6"
+                     *ngFor="let image of images;let i=index;">
+                    <img (click)="openPhotoView(image.id)" [src]="image.src" [alt]="image.alt" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <nc-photo-view *ngIf="isShowPhotos4" [photos]="photos" [(isShow)]="isShowPhotos4" [curIndex]="curImgIndex">
+    </nc-photo-view>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:300px;">
+    photos : any[] = [
+        {id:0,src:'https://z1.muscache.cn/im/pictures/4fe31a5a-41fb-490f-9aa0-e0b7ce1f706f.jpg?aki_policy=xx_large',
+            alt: '1',title:'温馨舒适全海景套房1'},
+        {id:1,src:'https://z1.muscache.cn/im/pictures/1098f911-a27b-4075-8fad-90c184fbb66e.jpg?aki_policy=large',
+            alt: '',title:'温馨舒适全海景套房2'},
+        {id:2,src:'https://z1.muscache.cn/im/pictures/56d7f836-150f-497f-9043-b12abde1a8b3.jpg?aki_policy=large',
+            alt: '',title:'温馨舒适全海景套房3'},
+        { id:3,src:'https://z1.muscache.cn/im/pictures/dda1a265-5c27-44aa-bc06-07e5aef915ad.jpg?aki_policy=large',
+            alt: '',title:'温馨舒适全海景套房4'},
+        {id:4,src:'https://z1.muscache.cn/im/pictures/4a1f9411-fef7-4cfe-9743-d797c445233e.jpg?aki_policy=large',
+            alt: '',title:'温馨舒适全海景套房5'},
+        {id:5,src:'https://z1.muscache.cn/im/pictures/4a1f9411-fef7-4cfe-9743-d797c445233e.jpg?aki_policy=large',
+            alt: '',title:'温馨舒适全海景套房6'},
+        { id:6,src:'https://z1.muscache.cn/im/pictures/2e1ccf9f-c91b-46f7-acf4-b7396dee225e.jpg?aki_policy=x_large',
+            alt: '',title:'温馨舒适全海景套房7'},
+        {id:7,src:'https://z1.muscache.cn/im/pictures/09af23e6-1395-4b72-87f0-a7728ad8cb31.jpg?aki_policy=x_large',
+            alt: '',title:'温馨舒适全海景套房8'}
+    ];
+    isShowPhotos4 : boolean = false;
+    images : any[] = this.photos.slice(1,5);
+
+    showPhotoView(index : number) {
+        this.curImgIndex = index;
+        this.isShowPhotos4 = true;
+    }
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>nc-photo-view-参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>photos</td>
+        <td>照片组</td>
+        <td>[]</td>
+    </tr>
+    <tr>
+        <td>isShow</td>
+        <td>是否显示</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>isSlide</td>
+        <td>是否滑动</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>curIndex</td>
+        <td>默认显示照片编号,0,1,2,3...</td>
+        <td>0</td>
+    </tr>
+    </tbody>
+</table>
