@@ -1,5 +1,7 @@
 <h2 class="title">数字输入框</h2>
 <p>数字输入框,通过鼠标或键盘，输入范围内的数值</p>
+
+<h3>1.数字输入框-一般样式</h3>
 <div style="margin-top: 20px;">
     <nc-number-put [(value)]="values[0]"></nc-number-put>
     <nc-number-put [type]="'middle'" [(value)]="values[1]"></nc-number-put>
@@ -7,7 +9,6 @@
     <nc-number-put [max]="50" [min]="10" [(value)]="values[3]"></nc-number-put>
     <nc-number-put [(value)]="values[4]" [step]="5"></nc-number-put>
 </div>
-
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
     <div *ngIf="currentTab === 'html'">
@@ -17,6 +18,40 @@
     <nc-number-put [type]="'small'" [(value)]="values[2]"></nc-number-put>
     <nc-number-put [max]="50" [min]="10" [(value)]="values[3]"></nc-number-put>
     <nc-number-put [(value)]="values[4]" [step]="5"></nc-number-put>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:100px;">
+    values : number[] = [36,54,78,30,20];
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>2.数字输入框-水平样式</h3>
+<div style="display:inline-block;margin: 10px;">
+    <nc-number-put [mode]="'horizontal'" [(value)]="values[0]" (valueChange)="valueChanges()"></nc-number-put>
+</div>
+<div style="display:inline-block;margin: 10px;">
+    <nc-number-put [mode]="'horizontal'" [type]="'middle'" [(value)]="values[1]"></nc-number-put>
+</div>
+<div style="display:inline-block;margin: 10px;">
+    <nc-number-put [mode]="'horizontal'" [type]="'small'" [(value)]="values[2]"></nc-number-put>
+</div>
+<div style="display:inline-block;margin: 10px;">
+    <nc-number-put [mode]="'horizontal'" [max]="50" [min]="10" [(value)]="values[3]"></nc-number-put>
+</div>
+<div style="display:inline-block;margin: 10px;">
+    <nc-number-put [mode]="'horizontal'" [(value)]="values[4]" [step]="5"></nc-number-put>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:100px;">
+    <nc-number-put [mode]="'horizontal'" [(value)]="values[0]" (valueChange)="valueChanges()"></nc-number-put>
+    <nc-number-put [mode]="'horizontal'" [type]="'middle'" [(value)]="values[1]"></nc-number-put>
+    <nc-number-put [mode]="'horizontal'" [type]="'small'" [(value)]="values[2]"></nc-number-put>
+    <nc-number-put [mode]="'horizontal'" [max]="50" [min]="10" [(value)]="values[3]"></nc-number-put>
+    <nc-number-put [mode]="'horizontal'" [(value)]="values[4]" [step]="5"></nc-number-put>
     </textarea>
     </div>
     <div *ngIf="currentTab === 'typescript'">
@@ -60,6 +95,11 @@
         <td>step</td>
         <td>每步数目</td>
         <td>1</td>
+    </tr>
+    <tr>
+        <td>mode</td>
+        <td>样式,normal/horizontal</td>
+        <td>normal</td>
     </tr>
     </tbody>
 </table>
