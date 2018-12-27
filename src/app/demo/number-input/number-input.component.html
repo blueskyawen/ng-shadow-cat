@@ -29,7 +29,7 @@
 
 <h3>2.数字输入框-水平样式</h3>
 <div style="display:inline-block;margin: 10px;">
-    <nc-number-put [mode]="'horizontal'" [(value)]="values[0]" (valueChange)="valueChanges()"></nc-number-put>
+    <nc-number-put [mode]="'horizontal'" [(value)]="values[0]"></nc-number-put>
 </div>
 <div style="display:inline-block;margin: 10px;">
     <nc-number-put [mode]="'horizontal'" [type]="'middle'" [(value)]="values[1]"></nc-number-put>
@@ -47,7 +47,7 @@
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
     <div *ngIf="currentTab === 'html'">
     <textarea style="height:100px;">
-    <nc-number-put [mode]="'horizontal'" [(value)]="values[0]" (valueChange)="valueChanges()"></nc-number-put>
+    <nc-number-put [mode]="'horizontal'" [(value)]="values[0]"></nc-number-put>
     <nc-number-put [mode]="'horizontal'" [type]="'middle'" [(value)]="values[1]"></nc-number-put>
     <nc-number-put [mode]="'horizontal'" [type]="'small'" [(value)]="values[2]"></nc-number-put>
     <nc-number-put [mode]="'horizontal'" [max]="50" [min]="10" [(value)]="values[3]"></nc-number-put>
