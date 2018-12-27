@@ -1,7 +1,11 @@
 <span class="input-container" [ngClass]="numPutClasses">
-	<span class="input-opers">
-		<span class="input-oper oper-add" (click)="inputAdd()"></span>
-		<span class="input-oper oper-del" (click)="inputDesc()"></span>
+	<span class="input-opers" *ngIf="mode === 'normal'">
+		<span class="input-oper oper-add" [class.disable]="isDisableAdd" (click)="inputAdd()"></span>
+		<span class="input-oper oper-del" [class.disable]="isDisableDel" (click)="inputDesc()"></span>
 	</span>
-	<input [value] = "value" [inputNumber]="max" (change)="valueChanges()" />
+	<span *ngIf="mode === 'horizontal'" class="input-oper"
+		  [class.disable]="isDisableDel" (click)="inputDesc()">-</span>
+	<input #numInput [value]="value" (change)="valueChanges()" />
+	<span *ngIf="mode === 'horizontal'" class="input-oper"
+		  [class.disable]="isDisableAdd" (click)="inputAdd()">+</span>
 </span>
