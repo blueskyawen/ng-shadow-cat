@@ -1,0 +1,28 @@
+<div class="nc-time-selector">
+    <div class="nc-time-columns">
+        <div class="nc-time-column" #hourCols>
+            <div class="nc-time-rows">
+                <span class="nc-time-row" *ngFor="let hour of hours"
+                      (click)="pickTime('hour',hour)"
+                      [ngClass]="{'disable':hour.disable,'active':hour.active}">{{hour.value}}</span>
+            </div>
+        </div>
+        <div class="nc-time-column" #minuteCols>
+            <div class="nc-time-rows">
+                <span class="nc-time-row" *ngFor="let minute of minutes"
+                      (click)="pickTime('minute',minute)"
+                      [ngClass]="{'disable':minute.disable,'active':minute.active}">{{minute.value}}</span>
+            </div>
+        </div>
+        <div class="nc-time-column" #secondCols>
+            <div class="nc-time-rows">
+                <span  class="nc-time-row" *ngFor="let second of seconds"
+                      (click)="pickTime('second',second)"
+                      [ngClass]="{'disable':second.disable,'active':second.active}">{{second.value}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="nc-time-oper">
+        <span class="nc-time-confirm" (click)="pickTimeOk()">确认</span>
+    </div>
+</div>

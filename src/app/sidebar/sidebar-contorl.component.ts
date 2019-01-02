@@ -41,6 +41,7 @@ export class SidebarContorlComponent implements OnInit {
       {'name':'多项选择器','label':'mutilselect','isActive':false,'url':'/mutilselect'},
       {'name':'轮播','label':'carousel','isActive':false,'url':'/carousel'},
       {'name':'穿梭选择框','label':'transfer','isActive':false,'url':'/transfer'},
+      {'name':'日期时间选择器','label':'datetime-selector','isActive':false,'url':'/datetime-selector'},
       //{'name':'树型控件','label':'tree','isActive':false,'url':'/tree'},
       {'name':'输入框','label':'input','isActive':false,'url':'/input'},
       {'name':'数字输入框','label':'numberInput','isActive':false,'url':'/numberInput'},

@@ -53,7 +53,7 @@ import {NcInputDynamicDeleteComponent} from './nc-input/nc-input-dynamic-delete.
 import {NcListGroupVerticalComponent} from './nc-list-group/nc-list-group-vertical.component';
 import {NcListGroupHorizontalComponent} from './nc-list-group/nc-list-group-horizontal.component';
 import {NcPhotoViewComponent} from './nc-photo-view/nc-photo-view.component';
-
+import {NcTimeSelectorComponent} from './nc-date-time-selector/nc-time-selector.component';
 import { InputNumberDirective } from './nc-num-put/input-number.directive';
 
 @NgModule({
@@ -68,7 +68,7 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
     NcNumberPutComponent,InputNumberDirective,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
-    NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent],
+    NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
@@ -79,6 +79,6 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
     NcNumberPutComponent,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
-    NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent]
+    NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent]
 })
 export class LibModule { }

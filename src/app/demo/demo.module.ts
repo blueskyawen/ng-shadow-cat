@@ -57,6 +57,7 @@ import {FormComponent} from './form/form.component';
 import {AffixDemo1Component} from './affix/affix-demo1.component';
 import {FormInstanceComponent} from './form/form-instance.component';
 import {PhotoViewComponent} from './photo-view/photo-view.component';
+import {DateTimeSelectorComponent} from './date-time-selector/date-time-selector.component';
 
 @NgModule({
   imports: [CommonModule,FormsModule,LibModule],
@@ -70,7 +71,7 @@ import {PhotoViewComponent} from './photo-view/photo-view.component';
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
     NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,FormInstanceComponent,
-    PhotoViewComponent],
+    PhotoViewComponent,DateTimeSelectorComponent],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -81,6 +82,6 @@ import {PhotoViewComponent} from './photo-view/photo-view.component';
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
     NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,FormInstanceComponent,
-    PhotoViewComponent]
+    PhotoViewComponent,DateTimeSelectorComponent]
 })
 export class DemoModule { }
