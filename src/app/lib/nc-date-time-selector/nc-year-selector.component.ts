@@ -3,26 +3,16 @@ import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterVi
 @Component({
     selector: 'nc-year-selector',
     templateUrl: './nc-year-selector.component.html',
-    styleUrls: ['./nc-year-selector.component.css']
+    styleUrls: ['./nc-year-selector.component.css','./nc-date-time-selector.component.css']
 })
-export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
+export class NcYearSelectorComponent implements OnInit {
     @Input() type : string = 'single';
-    @Input() date : any = {};
-    @Output() dateChange = new EventEmitter();
-    @Input() disableHours : number[] = [3];
-    @Input() disableMinutes : number[] = [];
-    @Input() disableSeconds : number[] = [];
+    @Input() year : number = 2019;
+    @Output() yearChange = new EventEmitter();
+    @Input() disableYears : number[] = [2014];
     @Input() width : string = '300px';
-    dialogClass : any = {};
-    hours : any[] = [];
-    minutes : any[] = [];
-    seconds : any[] = [];
-    secondNativeEl : any;
-    selectTime : any = {};
-    hourTimer : any;
-    minuteTimer : any;
-    secondTimer : any;
-    oldSelectTime : any = {};
+    years : any[] = [];
+    minYear : number;
     value : string;
     selectorStyle : any = {};
     isHiddenSelector : boolean = true;
@@ -32,5 +22,68 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
     }
 
     ngOnInit() {
+        this.selectorStyle = {'width':this.width};
+        this.setYearValue();
+        this.minYear = this.year - 5;
+        this.years = this.initYearData();
+    }
+
+    setYearValue() {
+        if(this.type === 'input') {
+            this.value = this.year.toString();
+        }
+    }
+
+    initYearData() {
+        let tmpYears : any[] = [];
+        for(let i = 0;i < 12;i++) {
+            tmpYears.push({value:this.minYear + i,
+                disable:this.disableYears.includes(i),
+                active:this.year == this.minYear + i});
+
+        }
+        return tmpYears;
+    }
+
+    prevPage() {
+        this.minYear -= 12;
+        this.years = this.initYearData();
+    }
+
+    nextPage() {
+        this.minYear += 12;
+        this.years = this.initYearData();
+    }
+
+    selectYear(item : any) {
+        if(item.disable || item.active) {
+            return;
+        }
+        this.clearItems();
+        item.active = true;
+        this.year = item.value;
+        this.yearChange.emit(this.year);
+        this.setYearValue();
+        this.closeSelector();
+    }
+
+    clearItems() {
+        this.years.forEach((item) => {
+            if(!item.disable) {
+                item.active = false;
+            }
+        });
+    }
+
+    openSelector() {
+        if(this.type === 'input') {
+            this.isHiddenSelector = false;
+        }
+    }
+
+    closeSelector() {
+        if(this.type === 'input') {
+            this.isHiddenSelector = true;
+        }
     }
 }
