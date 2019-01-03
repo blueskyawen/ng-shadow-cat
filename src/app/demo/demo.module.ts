@@ -57,6 +57,9 @@ import {FormComponent} from './form/form.component';
 import {AffixDemo1Component} from './affix/affix-demo1.component';
 import {FormInstanceComponent} from './form/form-instance.component';
 import {PhotoViewComponent} from './photo-view/photo-view.component';
+import {YearSelectorComponent} from './date-time-selector/year-selector.component';
+import {TimeSelectorComponent} from './date-time-selector/time-selector.component';
+import {MonthSelectorComponent} from './date-time-selector/month-selector.component';
 import {DateTimeSelectorComponent} from './date-time-selector/date-time-selector.component';
 
 @NgModule({
@@ -71,7 +74,8 @@ import {DateTimeSelectorComponent} from './date-time-selector/date-time-selector
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
     NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,FormInstanceComponent,
-    PhotoViewComponent,DateTimeSelectorComponent],
+    PhotoViewComponent,YearSelectorComponent,TimeSelectorComponent,MonthSelectorComponent,
+    DateTimeSelectorComponent],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -82,6 +86,7 @@ import {DateTimeSelectorComponent} from './date-time-selector/date-time-selector
     ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,BarChartComponent,
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
     NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,FormInstanceComponent,
-    PhotoViewComponent,DateTimeSelectorComponent]
+    PhotoViewComponent,YearSelectorComponent,TimeSelectorComponent,MonthSelectorComponent,
+    DateTimeSelectorComponent]
 })
 export class DemoModule { }

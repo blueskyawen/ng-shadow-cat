@@ -53,7 +53,12 @@ export * from './form/form.component';
 export * from './affix/affix-demo1.component';
 export * from './form/form-instance.component';
 export * from './photo-view/photo-view.component';
+export * from './date-time-selector/time-selector.component';
+export * from './date-time-selector/year-selector.component';
+export * from './date-time-selector/month-selector.component';
 export * from './date-time-selector/date-time-selector.component';
+
+
 
 
 

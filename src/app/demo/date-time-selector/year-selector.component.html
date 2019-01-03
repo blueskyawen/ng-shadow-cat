@@ -1,0 +1,112 @@
+<h2 class="title">YearSelector-年份选择器</h2>
+<p>年份选择器，用于选择年份的控件</p>
+
+<h3>1. 普通模式</h3>
+<nc-year-selector [(year)]="year"></nc-year-selector>
+<p>选择的年份: {{year}}</p>
+
+<h3>2. 年份选择输入框</h3>
+<nc-year-selector [type]="'input'" [(year)]="year" [disableYears]="disableYears"></nc-year-selector>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:60px;">
+    <nc-year-selector [type]="'input'" [(year)]="year" [disableYears]="disableYears"></nc-year-selector>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:60px;">
+    year : number = 2019;
+    disableYears : number[] = [2015];
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>3. 年份选择和按钮联合使用</h3>
+<div class="nc-selector-container">
+    <nc-button (click)="openSelector()">普通按钮</nc-button>
+    <nc-year-selector *ngIf="isShow" class="nc-selector"
+                      [(year)]="year2" (yearChange)="yearChange()" ></nc-year-selector>
+</div>
+<p>选择的年份: {{year2}}</p>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems3" [type]="'line'" [(selectTab)] = "currentTab3">
+    <div *ngIf="currentTab3 === 'html'">
+    <textarea style="height:60px;">
+    <div class="nc-selector-container">
+        <nc-button (click)="openSelector()">普通按钮</nc-button>
+        <nc-year-selector *ngIf="isShow" class="nc-selector"
+                          [(year)]="year2" (yearChange)="yearChange()" ></nc-year-selector>
+    </div>
+    <p>选择的年份: {{year2}}</p>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab3 === 'typescript'">
+    <textarea style="height:60px;">
+    year2 : number = 2019;
+    isShow : boolean = false;
+
+    openSelector() {
+        this.isShow = !this.isShow;
+    }
+    yearChange() {
+        this.isShow = false;
+    }
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>4. 自定义宽度</h3>
+<div>
+    <div style="display: inline-block;float: left;">
+        <nc-year-selector [type]="'input'" [(year)]="year" [width]="'200px'"></nc-year-selector>
+    </div>
+    <div style="display: inline-block;float: left;width:50px;height:30px;"></div>
+    <div style="display: inline-block;float: left;">
+        <nc-year-selector [type]="'input'" [(year)]="year" [width]="'400px'"></nc-year-selector>
+    </div>
+</div>
+<p style="clear: both;">使用方式:</p>
+<nc-tab [tabs]="tabItems2" [type]="'line'" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:60px;">
+    <nc-year-selector [type]="'input'" [(year)]="year" [width]="'200px'"></nc-year-selector>
+    <nc-year-selector [type]="'input'" [(year)]="year" [width]="'400px'"></nc-year-selector>
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>nc-year-selector-参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>type</td>
+        <td>类型,single/input</td>
+        <td>single</td>
+    </tr>
+    <tr>
+        <td>year</td>
+        <td>年份</td>
+        <td>2019</td>
+    </tr>
+    <tr>
+        <td>disableYears</td>
+        <td>禁止选取的year列表</td>
+        <td>[]</td>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td>自定义宽度，px或百分比，比如：50%，400px</td>
+        <td>100%</td>
+    </tr>
+    </tbody>
+</table>
+
+

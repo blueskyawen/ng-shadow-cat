@@ -9,7 +9,7 @@ export class NcYearSelectorComponent implements OnInit {
     @Input() type : string = 'single';
     @Input() year : number = 2019;
     @Output() yearChange = new EventEmitter();
-    @Input() disableYears : number[] = [2014];
+    @Input() disableYears : number[] = [];
     @Input() width : string = '300px';
     years : any[] = [];
     minYear : number;
@@ -22,6 +22,13 @@ export class NcYearSelectorComponent implements OnInit {
     }
 
     ngOnInit() {
+        if(this.type == 'input') {
+            document.addEventListener('click', () => {
+                if (!this.isOverSelector) {
+                    this.isHiddenSelector = true;
+                }
+            });
+        }
         this.selectorStyle = {'width':this.width};
         this.setYearValue();
         this.minYear = this.year - 5;
@@ -38,7 +45,7 @@ export class NcYearSelectorComponent implements OnInit {
         let tmpYears : any[] = [];
         for(let i = 0;i < 12;i++) {
             tmpYears.push({value:this.minYear + i,
-                disable:this.disableYears.includes(i),
+                disable:this.disableYears.includes(this.minYear + i),
                 active:this.year == this.minYear + i});
 
         }

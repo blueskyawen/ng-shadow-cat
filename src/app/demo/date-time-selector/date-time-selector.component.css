@@ -1,0 +1,9 @@
+.nc-selector-container {
+    position: relative;
+}
+.nc-selector-container .nc-selector {
+    position: absolute;
+    left:0;
+    top:100%;
+    z-index:10;
+}

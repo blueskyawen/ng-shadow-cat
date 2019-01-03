@@ -4,11 +4,11 @@
 import { Component,OnInit } from '@angular/core';
 
 @Component({
-    selector: 'demo-date-time-selector',
-    templateUrl: './date-time-selector.component.html',
+    selector: 'demo-month-selector',
+    templateUrl: './month-selector.component.html',
     styleUrls: ['./date-time-selector.component.css']
 })
-export class DateTimeSelectorComponent {
+export class MonthSelectorComponent {
     date : any = new Date();
     date2 : any = new Date();
     tabItems : any[] = [];

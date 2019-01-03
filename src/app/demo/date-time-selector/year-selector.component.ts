@@ -1,16 +1,17 @@
 /**
- * Created by liuxuwen on 19-1-3.
+ * Created by liuxuwen on 19-1-2.
  */
 import { Component,OnInit } from '@angular/core';
 
 @Component({
-    selector: 'demo-date-time-selector',
-    templateUrl: './date-time-selector.component.html',
+    selector: 'demo-year-selector',
+    templateUrl: './year-selector.component.html',
     styleUrls: ['./date-time-selector.component.css']
 })
-export class DateTimeSelectorComponent {
-    date : any = new Date();
-    date2 : any = new Date();
+export class YearSelectorComponent {
+    year : number = 2019;
+    year2 : number = 2019;
+    disableYears : number[] = [2015];
     tabItems : any[] = [];
     currentTab : string;
     tabItems2 : any[] = [];
@@ -35,7 +36,7 @@ export class DateTimeSelectorComponent {
         this.isShow = !this.isShow;
     }
 
-    dateChange() {
+    yearChange() {
         this.isShow = false;
     }
 }

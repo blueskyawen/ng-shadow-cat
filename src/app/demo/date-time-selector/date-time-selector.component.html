@@ -1,106 +1,12 @@
-<h2 class="title">DateTimeSelector日期和时间选择器</h2>
-<p>日期和时间选择器，用于选择日期和时间的控件</p>
+<h2 class="title">DateTimeSelector-日期和时间选择器</h2>
+<p>日期和时间选择器，综合其他的时间选择器构造的控件，用于日期和时间的选择</p>
 
-<h3>1. 时间选择器</h3>
-<h4>1-1. 普通模式</h4>
-<nc-time-selector [(date)]="date"></nc-time-selector>
-<p>选择的时间: {{date.toTimeString()}}</p>
+<h3>1. 普通模式</h3>
+<nc-date-time-selector [(date)]="date"></nc-date-time-selector>
+<p>选择的月份: {{date.toString()}}</p>
 
-<h4>1-2. 时间选择输入框</h4>
-<nc-time-selector  [(date)]="date" [type]="'input'"></nc-time-selector>
-<p>使用方式:</p>
-<nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
-    <div *ngIf="currentTab === 'html'">
-    <textarea style="height:60px;">
-    <nc-time-selector  [(date)]="date" [type]="'input'"></nc-time-selector>
-    </textarea>
-    </div>
-    <div *ngIf="currentTab === 'typescript'">
-    <textarea style="height:60px;">
-    date : any = new Date();
-    </textarea>
-    </div>
-</nc-tab>
+<h3>2. 日期时间选择输入框</h3>
+<nc-date-time-selector [(date)]="date" [type]="'input'"></nc-date-time-selector>
 
-<h4>1-3. 时间选择器和按钮联合使用</h4>
-<div style="position: relative;">
-    <nc-button (click)="openSelector()">普通按钮</nc-button>
-    <nc-time-selector *ngIf="isShow" style="position: absolute;left:0;top:100%;z-index:10;"
-                      [(date)]="date2" (dateChange)="dateChange()"></nc-time-selector>
-</div>
-<p>选择的时间: {{date2.toTimeString()}}</p>
-<p>使用方式:</p>
-<nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
-    <div *ngIf="currentTab === 'html'">
-    <textarea style="height:60px;">
-    <div style="position: relative;">
-        <nc-button (click)="openSelector()">普通按钮</nc-button>
-        <nc-time-selector *ngIf="isShow" style="position: absolute;left:0;top:100%;z-index:10;"
-                          [(date)]="date2" (dateChange)="dateChange()"></nc-time-selector>
-    </div>
-    <p>选择的时间: {{date2.toTimeString()}}</p>
-    </textarea>
-    </div>
-    <div *ngIf="currentTab === 'typescript'">
-    <textarea style="height:60px;">
-    date2 : any = new Date();
-    isShow : boolean = false;
 
-    openSelector() {
-        this.isShow = !this.isShow;
-    }
-    dateChange() {
-        this.isShow = false;
-    }
-    </textarea>
-    </div>
-</nc-tab>
-
-<h3>nc-time-selector-参数</h3>
-<table>
-    <thead>
-    <tr>
-        <th>参数</th>
-        <th>说明</th>
-        <th>默认值</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>type</td>
-        <td>类型,single/input</td>
-        <td>single</td>
-    </tr>
-    <tr>
-        <td>date</td>
-        <td>日期对象</td>
-        <td>object()</td>
-    </tr>
-    <tr>
-        <td>disableHours</td>
-        <td>禁止选取的Hour列表</td>
-        <td>[]</td>
-    </tr>
-    <tr>
-        <td>disableMinutes</td>
-        <td>禁止选取的Minute列表</td>
-        <td>[]</td>
-    </tr>
-    <tr>
-        <td>disableSeconds</td>
-        <td>禁止选取的Second列表</td>
-        <td>[]</td>
-    </tr>
-    <tr>
-        <td>width</td>
-        <td>自定义宽度，px或百分比，比如：50%，400px</td>
-        <td>100%</td>
-    </tr>
-    </tbody>
-</table>
-
-<h4>1-3. 时间选择器和按钮联合使用</h4>
-<nc-year-selector></nc-year-selector>
-
-<h4>1-3. 时间选择器和按钮联合使用</h4>
-<nc-year-selector [type]="'input'"></nc-year-selector>
+<div style="height: 600px;"></div>

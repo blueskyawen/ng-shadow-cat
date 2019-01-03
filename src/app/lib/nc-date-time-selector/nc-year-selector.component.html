@@ -1,4 +1,4 @@
-<div class="nc-date-selector nc-year-selector" *ngIf="type === 'single'" [ngStyle]="selectorStyle">
+<div class="nc-date-selector" *ngIf="type === 'single'" [ngStyle]="selectorStyle">
     <div class="nc-date-year-month-row">
         <span class="nc-date-year-month-oper">
           <span class="nc-date-year-oper prev-year" title="上一页" (click)="prevPage()">
@@ -26,7 +26,7 @@
         <nc-input-icon class="nc-input-icon-subffix">
             <span class="fa fa-calendar" style="color:#999;font-size: 20px;"></span></nc-input-icon>
     </nc-input>
-    <div class="nc-date-selector nc-year-selector" style="position: absolute;left:0;top:100%;"
+    <div class="nc-date-selector" style="position: absolute;left:0;top:100%;"
          [ngStyle]="selectorStyle">
         <div class="nc-date-year-month-row">
             <span class="nc-date-year-month-oper">
@@ -42,10 +42,10 @@
             </span>
         </div>
         <div class="nc-year-rows">
-        <span *ngFor="let year of years" class="nc-year-row" (click)="selectYear(year)"
-              [ngClass]="{'disable':year.disable,'active':year.active}">
-            <span>{{year.value}}</span>
-        </span>
+            <span *ngFor="let year of years" class="nc-year-row" (click)="selectYear(year)"
+                  [ngClass]="{'disable':year.disable,'active':year.active}">
+                <span>{{year.value}}</span>
+            </span>
         </div>
     </div>
 </div>

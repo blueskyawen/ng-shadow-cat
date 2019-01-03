@@ -1,0 +1,50 @@
+<div class="nc-date-selector" *ngIf="type === 'single'" [ngStyle]="selectorStyle">
+    <div class="nc-date-year-month-row">
+        <span class="nc-date-year-month-oper">
+          <span class="nc-date-year-oper prev-month" title="上一页" (click)="prevPage()">
+            &#8249;&#8249;</span>
+        </span>
+        <div class="nc-date-year-month">
+            <span class="nc-date-year">{{curYear}}</span>
+        </div>
+        <span class="nc-date-year-month-oper">
+          <span class="nc-date-year-oper next-month" title="下一页" (click)="nextPage()">
+            &#8250;&#8250;</span>
+        </span>
+    </div>
+    <div class="nc-month-rows">
+        <span *ngFor="let month of months" class="nc-month-row"
+              [ngClass]="{'disable':month.disable,'active':month.active}" (click)="selectMonth(month)">
+            <span>{{month.label}}</span>
+        </span>
+    </div>
+</div>
+<div class="nc-month-input-selector" *ngIf="type === 'input'" [class.nc-month-input-hidden]="isHiddenSelector"
+     (mouseover)="isOverSelector = true" (mouseout)="isOverSelector = false">
+    <nc-input [type]="'text'" [(modelValue)]="value" [width]="width" [showHint]="false"
+              [placeHolder]="'请选择月份'" (click)="openSelector()">
+        <nc-input-icon class="nc-input-icon-subffix">
+            <span class="fa fa-calendar" style="color:#999;font-size: 20px;"></span></nc-input-icon>
+    </nc-input>
+    <div class="nc-date-selector" style="position: absolute;left:0;top:100%;" [ngStyle]="selectorStyle">
+        <div class="nc-date-year-month-row">
+            <span class="nc-date-year-month-oper">
+              <span class="nc-date-year-oper prev-month" title="上一页" (click)="prevPage()">
+                &#8249;&#8249;</span>
+            </span>
+                <div class="nc-date-year-month">
+                    <span class="nc-date-year">{{curYear}}</span>
+                </div>
+                <span class="nc-date-year-month-oper">
+              <span class="nc-date-year-oper next-month" title="下一页" (click)="nextPage()">
+                &#8250;&#8250;</span>
+            </span>
+        </div>
+        <div class="nc-month-rows">
+            <span *ngFor="let month of months" class="nc-month-row"
+                  [ngClass]="{'disable':month.disable,'active':month.active}" (click)="selectMonth(month)">
+                <span>{{month.label}}</span>
+            </span>
+        </div>
+    </div>
+</div>

@@ -14,7 +14,8 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   ListGroupComponent,AboutNgCatComponent,LayoutComponent,QuickStartComponent,
   BarChartComponent,PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,
   SkeletonComponent,NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,
-  FormInstanceComponent,PhotoViewComponent,DateTimeSelectorComponent} from './demo/index';
+  FormInstanceComponent,PhotoViewComponent,YearSelectorComponent,TimeSelectorComponent,
+  MonthSelectorComponent,DateTimeSelectorComponent} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -43,7 +44,10 @@ const appRoutes: Routes = [
       { path: 'mutilselect', component: MutilSelectComponent },
       { path: 'carousel', component: CarouselComponent },
       { path: 'transfer', component: TransferComponent },
-      { path: 'datetime-selector', component: DateTimeSelectorComponent },
+      { path: 'yearSelector', component: YearSelectorComponent },
+      { path: 'monthSelector', component: MonthSelectorComponent },
+      { path: 'timeSelector', component: TimeSelectorComponent },
+      { path: 'datetimeSelector', component: DateTimeSelectorComponent },
       { path: 'tree', component: TreeComponent },
       { path: 'input', component: InputComponent },
       { path: 'dropdown', component: DropdownComponent},

@@ -6,6 +6,9 @@
     flex-direction:column;
     width:300px;
     box-shadow:1px 1px 2px 2px #ccc;
+    background: #fff;
+    z-index: 10;
+    min-width: 180px;
 }
 .nc-date-year-month-row {
     display:flex;
@@ -14,8 +17,13 @@
     height:40px;
     border-bottom:solid 1px #ccc;
 }
-.nc-year-selector .nc-date-year-month .nc-date-year {
-    cursor:default;
+.nc-date-year-month .nc-date-year,
+.nc-date-year-month .nc-date-month {
+    cursor:pointer;
+}
+.nc-date-year-month .nc-date-year:hover,
+.nc-date-year-month .nc-date-month:hover {
+    color:#0047b3;
 }
 .nc-date-year-month-oper span {
     display:inline-block;
@@ -28,4 +36,57 @@
 }
 .nc-date-year-month-oper span:hover {
     color:#0047b3;
+}
+.nc-date-week-rows,
+.nc-date-day-rows {
+    display:flex;
+    flex:1 1 auto;
+    justify-content:space-around;
+    align-items:center;
+}
+.nc-date-day-rows {
+    flex-wrap:wrap;
+    flex:0 0 auto;
+}
+.nc-date-week,
+.nc-date-day {
+    display:inline-flex;
+    width:14.28%;
+    justify-content:center;
+    align-items:center;
+    height:36px;
+}
+.nc-date-day span {
+    display:inline-block;
+    height:24px;
+    width:24px;
+    border-radius:50%;
+    border:solid 1px transparent;
+    text-align:center;
+    line-height:24px;
+    cursor:pointer;
+    font-size:14px;
+}
+.nc-date-day.today span {
+    background:#d9d9d9;
+}
+.nc-date-day:not(.disable):hover span {
+    background:#b3d1ff;
+}
+.nc-date-day.active span {
+    border-color:#0066ff;
+    background:#e5f0ff;
+    color:#0047b3;
+    font-weight:600;
+}
+.nc-date-day.disable span {
+    color:#666;
+}
+
+.nc-date-time-input-selector {
+    position: relative;
+    display: inline-block;
+}
+.nc-date-time-input-selector.nc-date-time-input-hidden {
+    overflow: hidden;
 }

@@ -1,14 +1,11 @@
-.nc-year-selector .nc-date-year-month .nc-date-year {
-    cursor:default;
-}
-.nc-year-rows {
+.nc-month-rows {
     display:flex;
     flex-wrap:wrap;
     flex:0 0 auto;
     justify-content:space-around;
     align-items:center;
 }
-.nc-year-rows .nc-year-row {
+.nc-month-rows .nc-month-row {
     display:inline-flex;
     width:33.33%;
     justify-content:center;
@@ -16,11 +13,11 @@
     height:50px;
     cursor:pointer;
 }
-.nc-year-rows .nc-year-row span {
+.nc-month-rows .nc-month-row span {
     display:inline-block;
     height:36px;
     width:70%;
-    border-radius:3px;
+    border-radius:5px;
     border:solid 1px transparent;
     text-align:center;
     line-height:36px;
@@ -28,22 +25,22 @@
     font-size:14px;
     color:#595959;
 }
-.nc-year-rows .nc-year-row.active span {
+.nc-month-rows .nc-month-row.active span {
     color:#fff;
     background:#008ae6;
 }
-.nc-year-rows .nc-year-row:not(.disable):not(.active):hover span {
+.nc-month-rows .nc-month-row:not(.disable):not(.active):hover span {
     background:#b3d9ff;
 }
-.nc-year-rows .nc-year-row.disable span {
+.nc-month-rows .nc-month-row.disable span {
     background:#d9d9d9;
     cursor:not-allowed;
 }
 
-.nc-year-input-selector {
+.nc-month-input-selector {
     position: relative;
     display: inline-block;
 }
-.nc-year-input-selector.nc-year-input-hidden {
+.nc-month-input-selector.nc-month-input-hidden {
     overflow: hidden;
 }
