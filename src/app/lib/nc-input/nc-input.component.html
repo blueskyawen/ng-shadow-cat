@@ -1,7 +1,7 @@
 <div class="nc-form-group-item" [ngClass]="afixClasses" [ngStyle]="inputStyle"
      [class.nc-form-group-item-error]="isShowError">
   <span *ngIf="prefixList.length == 1" class="input-affix input-preffix">{{prefixList[0].label}}</span>
-  <ng-content select="nc-input-icon"></ng-content>
+  <ng-content select=".nc-input-icon-preffix"></ng-content>
 
   <input name="input" #myInput
          [type]="type"
@@ -22,10 +22,11 @@
          (blur)="blurInput()"
   />
 
+  <ng-content select=".nc-input-icon-subffix"></ng-content>
   <span class="nc-form-group-search" *ngIf="isSearch"></span>
   <span *ngIf="suffixList.length == 1" class="input-affix input-subffix">{{suffixList[0].label}}</span>
 </div>
-<div class="nc-form-group-hint nc-form-group-explain" *ngIf="isShowHint">
+<div class="nc-form-group-hint nc-form-group-explain" *ngIf="showHint && isShowHint">
   {{inputLintText}}
 </div>
 <div class="nc-form-group-hint nc-form-group-error" *ngIf="isShowError">
