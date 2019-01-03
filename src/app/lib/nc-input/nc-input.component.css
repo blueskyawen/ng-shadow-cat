@@ -55,6 +55,7 @@
   border-radius:4px;
   position:relative;
   max-width: 100%;
+  box-sizing: border-box;
 }
 .nc-form-group-item:hover {
   border-color:#3399ff;
@@ -69,7 +70,7 @@
   box-shadow:none;
   box-sizing:border-box;
   outline:none;
-  padding:0 5px 0 20px;
+  padding:0 5px 0 10px;
   color:#4d4d4d;
 }
 .nc-form-group-item-disabled:hover {
@@ -147,7 +148,6 @@
 .nc-input-icon {
   color:#a6a6a6;
   margin:0 5px;
-  position: absolute;
   top:50%;
   transform: translateY(-50%);
 }
