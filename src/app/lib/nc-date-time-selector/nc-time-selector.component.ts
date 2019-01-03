@@ -9,7 +9,8 @@ import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterVi
     styleUrls: ['./nc-time-selector.component.css']
 })
 export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
-    @Input() date : any = new Date();
+    @Input() type : string = 'single';
+    @Input() date : any = {};
     @Output() dateChange = new EventEmitter();
     @Input() disableHours : number[] = [3];
     @Input() disableMinutes : number[] = [];
@@ -30,18 +31,28 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
     minuteTimer : any;
     secondTimer : any;
     oldSelectTime : any = {};
+    value : string;
+    selectorStyle : any = {};
+    isHiddenSelector : boolean = true;
+    isOverSelector : boolean = false;
 
     constructor() {
     }
 
     ngOnInit() {
+        if(this.type == 'input') {
+            document.addEventListener('click', () => {
+                if (!this.isOverSelector) {
+                    this.isHiddenSelector = true;
+                    this.recoverTimeData();
+                }
+            });
+        }
+        this.selectorStyle = {'width':this.width};
         this.initData();
     }
 
     ngAfterViewInit() {
-        this.hourNativeEl = this.hourColEle.nativeElement;
-        this.minuteNativeEl = this.minuteColEle.nativeElement;
-        this.secondNativeEl = this.secondColEle.nativeElement;
         this.initActivePosition();
     }
 
@@ -65,6 +76,26 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
             this.seconds.push({value:i,
                 disable:this.disableSeconds.includes(i),
                 active:this.selectTime.second == i});
+        }
+        this.setTimeValue();
+    }
+
+    setTimeValue() {
+        if(this.type === 'input') {
+            this.value = this.date.toTimeString().split(" ")[0];
+        }
+    }
+
+    openSelector() {
+        if(this.type === 'input') {
+            this.isHiddenSelector = false;
+            this.setActivePosition();
+        }
+    }
+
+    closeSelector() {
+        if(this.type === 'input') {
+            this.isHiddenSelector = true;
         }
     }
 
@@ -101,17 +132,24 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
         this.date.setHours(this.selectTime.hour);
         this.date.setMinutes(this.selectTime.minute);
         this.date.setSeconds(this.selectTime.second);
+        this.setTimeValue();
         this.dateChange.emit(this.date);
-        console.log(this.date.toString());
+        this.closeSelector();
     }
 
     initActivePosition() {
-        this.selectTime.hour = this.date.getHours();
-        this.selectTime.minute = this.date.getMinutes();
-        this.selectTime.second = this.date.getSeconds();
+        this.hourNativeEl = this.hourColEle.nativeElement;
+        this.minuteNativeEl = this.minuteColEle.nativeElement;
+        this.secondNativeEl = this.secondColEle.nativeElement;
         this.oldSelectTime.hour = this.selectTime.hour;
         this.oldSelectTime.minute = this.selectTime.minute;
         this.oldSelectTime.second = this.selectTime.second;
+        this.hourNativeEl.scrollTop = this.selectTime.hour * 30;
+        this.minuteNativeEl.scrollTop = this.selectTime.minute * 30;
+        this.secondNativeEl.scrollTop = this.selectTime.second * 30;
+    }
+
+    setActivePosition() {
         this.hourNativeEl.scrollTop = this.selectTime.hour * 30;
         this.minuteNativeEl.scrollTop = this.selectTime.minute * 30;
         this.secondNativeEl.scrollTop = this.selectTime.second * 30;
@@ -178,5 +216,38 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
                 }
             },50);
         }
+    }
+
+    recoverTimeData() {
+        this.selectTime.hour = this.date.getHours();
+        this.selectTime.minute = this.date.getMinutes();
+        this.selectTime.second = this.date.getSeconds();
+        this.oldSelectTime.hour = this.selectTime.hour;
+        this.oldSelectTime.minute = this.selectTime.minute;
+        this.oldSelectTime.second = this.selectTime.second;
+        this.hours.forEach((item) => {
+            if(item.active) {
+                item.active = false;
+            }
+            if(item.value == this.selectTime.hour) {
+                item.active = true;
+            }
+        });
+        this.minutes.forEach((item) => {
+            if(item.active) {
+                item.active = false;
+            }
+            if(item.value == this.selectTime.minute) {
+                item.active = true;
+            }
+        });
+        this.seconds.forEach((item) => {
+            if(item.active) {
+                item.active = false;
+            }
+            if(item.value == this.selectTime.second) {
+                item.active = true;
+            }
+        });
     }
 }
