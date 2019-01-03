@@ -28,6 +28,7 @@ export class NcInputComponent  implements OnInit {
   @Input() inputLintText : string = '请输入中文或者英文';
   @Input() inputErrorText : string = '输入错误，请检查！';
   @Input() pattern : any;
+  @Input() showHint : boolean = true;
   errorText : string = '';
   afixClasses : any = {}
   isShowHint : boolean = false;
