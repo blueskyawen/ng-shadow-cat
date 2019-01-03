@@ -7,7 +7,7 @@
     <nc-input [type]="'text'" [(modelValue)]="value" [required]="true"></nc-input>
   </div>
   <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
-    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true"></nc-input>
+    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true" [showHint]="false"></nc-input>
   </div>
   <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="value2"></nc-input>
@@ -101,29 +101,49 @@
 <div style="margin-left: 20px;">
   <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
-      <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+      <nc-input-icon class="nc-input-icon-preffix"><span class="fa fa-user"></span></nc-input-icon>
     </nc-input>
   </div>
   <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
     <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
-      <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+      <nc-input-icon class="nc-input-icon-preffix"><span class="fa fa-lock"></span></nc-input-icon>
+    </nc-input>
+  </div>
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+      <nc-input-icon class="nc-input-icon-subffix"><span class="fa fa-user"></span></nc-input-icon>
+    </nc-input>
+  </div>
+  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+      <nc-input-icon class="nc-input-icon-subffix"><span class="fa fa-lock"></span></nc-input-icon>
     </nc-input>
   </div>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems2" [type]="'line'" [(selectTab)] = "currentTab2">
   <div *ngIf="currentTab2 === 'html'">
-    <textarea style="height:150px;">
-  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
-    <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
-      <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
-    </nc-input>
-  </div>
-  <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
-    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
-      <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
-    </nc-input>
-  </div>
+    <textarea style="height:160px;">
+    <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+      <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+        <nc-input-icon><span class="fa fa-user"></span></nc-input-icon>
+      </nc-input>
+    </div>
+    <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+      <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+        <nc-input-icon><span class="fa fa-lock"></span></nc-input-icon>
+      </nc-input>
+    </div>
+    <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+      <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+        <nc-input-icon class="nc-input-icon-subffix"><span class="fa fa-user"></span></nc-input-icon>
+      </nc-input>
+    </div>
+    <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
+      <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+        <nc-input-icon class="nc-input-icon-subffix"><span class="fa fa-lock"></span></nc-input-icon>
+      </nc-input>
+    </div>
     </textarea>
   </div>
 </nc-tab>
