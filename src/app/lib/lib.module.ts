@@ -54,6 +54,7 @@ import {NcListGroupVerticalComponent} from './nc-list-group/nc-list-group-vertic
 import {NcListGroupHorizontalComponent} from './nc-list-group/nc-list-group-horizontal.component';
 import {NcPhotoViewComponent} from './nc-photo-view/nc-photo-view.component';
 import {NcTimeSelectorComponent} from './nc-date-time-selector/nc-time-selector.component';
+import {NcYearSelectorComponent} from './nc-date-time-selector/nc-year-selector.component';
 import { InputNumberDirective } from './nc-num-put/input-number.directive';
 
 @NgModule({
@@ -68,7 +69,8 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
     NcNumberPutComponent,InputNumberDirective,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
-    NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent],
+    NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent,
+    NcYearSelectorComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
@@ -79,6 +81,7 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcPieChartComponent,NcBadgeComponent,NcAvaterComponent,NcMsgEifComponent,NcSkeletonComponent,
     NcNumberPutComponent,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
-    NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent]
+    NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent,
+    NcYearSelectorComponent]
 })
 export class LibModule { }
