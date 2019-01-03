@@ -1,1 +1,51 @@
-<h1>s</h1>
+<div class="nc-date-selector nc-year-selector" *ngIf="type === 'single'" [ngStyle]="selectorStyle">
+    <div class="nc-date-year-month-row">
+        <span class="nc-date-year-month-oper">
+          <span class="nc-date-year-oper prev-year" title="上一页" (click)="prevPage()">
+            &#8249;&#8249;</span>
+        </span>
+    <div class="nc-date-year-month">
+        <span class="nc-date-year">{{minYear}}-{{minYear+1}}</span>
+    </div>
+    <span class="nc-date-year-month-oper">
+      <span class="nc-date-year-oper next-year" title="下一页" (click)="nextPage()">
+        &#8250;&#8250;</span>
+    </span>
+    </div>
+    <div class="nc-year-rows">
+        <span *ngFor="let year of years" class="nc-year-row" (click)="selectYear(year)"
+              [ngClass]="{'disable':year.disable,'active':year.active}">
+            <span>{{year.value}}</span>
+        </span>
+    </div>
+</div>
+<div class="nc-year-input-selector" *ngIf="type === 'input'" [class.nc-year-input-hidden]="isHiddenSelector"
+     (mouseover)="isOverSelector = true" (mouseout)="isOverSelector = false">
+    <nc-input [type]="'text'" [(modelValue)]="value" [width]="width" [showHint]="false"
+              [placeHolder]="'请选择年份'" (click)="openSelector()">
+        <nc-input-icon class="nc-input-icon-subffix">
+            <span class="fa fa-calendar" style="color:#999;font-size: 20px;"></span></nc-input-icon>
+    </nc-input>
+    <div class="nc-date-selector nc-year-selector" style="position: absolute;left:0;top:100%;"
+         [ngStyle]="selectorStyle">
+        <div class="nc-date-year-month-row">
+            <span class="nc-date-year-month-oper">
+              <span class="nc-date-year-oper prev-year" title="上一页" (click)="prevPage()">
+                &#8249;&#8249;</span>
+            </span>
+            <div class="nc-date-year-month">
+                <span class="nc-date-year">{{minYear}}-{{minYear+1}}</span>
+            </div>
+            <span class="nc-date-year-month-oper">
+              <span class="nc-date-year-oper next-year" title="下一页" (click)="nextPage()">
+                &#8250;&#8250;</span>
+            </span>
+        </div>
+        <div class="nc-year-rows">
+        <span *ngFor="let year of years" class="nc-year-row" (click)="selectYear(year)"
+              [ngClass]="{'disable':year.disable,'active':year.active}">
+            <span>{{year.value}}</span>
+        </span>
+        </div>
+    </div>
+</div>
