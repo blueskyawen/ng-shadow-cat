@@ -8,17 +8,28 @@ import { Component,OnInit } from '@angular/core';
     templateUrl: './date-time-selector.component.html'
 })
 export class DateTimeSelectorComponent {
-    tabItems1 : any[] = [];
-    currentTab1 : string;
+    date : any = new Date();
+    date2 : any = new Date();
+    tabItems : any[] = [];
+    currentTab : string;
     tabItems2 : any[] = [];
     currentTab2 : string;
-    isShows : boolean[] = [false,false,false,false];
+    isShow : boolean = false;
     name : string = 'Jack';
 
     constructor() {
-        this.tabItems1 = [{name:'html',label:'html',isActive:true,isDisable:false}];
-        this.currentTab1 = this.tabItems1[0].label;
+        this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
+            {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
+        this.currentTab= this.tabItems[0].label;
         this.tabItems2 = [{name:'html',label:'html',isActive:true,isDisable:false}];
         this.currentTab2 = this.tabItems2[0].label;
+    }
+
+    openSelector() {
+        this.isShow = !this.isShow;
+    }
+
+    dateChange() {
+        this.isShow = false;
     }
 }
