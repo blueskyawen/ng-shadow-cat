@@ -57,6 +57,7 @@ export * from './date-time-selector/time-selector.component';
 export * from './date-time-selector/year-selector.component';
 export * from './date-time-selector/month-selector.component';
 export * from './date-time-selector/date-time-selector.component';
+export * from './date-time-selector/date-selector.component';
 
 
 
