@@ -10,6 +10,9 @@
     z-index: 10;
     min-width: 180px;
 }
+.nc-date-time-selector {
+    min-width: 240px;
+}
 .nc-date-year-month-row {
     display:flex;
     align-items:center;
@@ -83,10 +86,29 @@
     color:#666;
 }
 
-.nc-date-time-input-selector {
+.nc-date-time-footer {
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    height:36px;
+    border-top: solid 1px #ccc;
+}
+.nc-date-time-footer .nc-date-today {
+    cursor: pointer;
+    color:#0066ff;
+    margin-right:10px;
+    font-size: 14px;
+}
+
+.nc-date-select-container {
     position: relative;
     display: inline-block;
 }
-.nc-date-time-input-selector.nc-date-time-input-hidden {
+.nc-date-select-container.nc-date-input-hidden {
     overflow: hidden;
+}
+.nc-date-select-container .nc-date-selector-dropdown {
+    position: absolute;
+    left:0;
+    top:100%;
 }
