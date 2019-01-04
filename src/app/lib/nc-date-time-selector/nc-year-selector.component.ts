@@ -26,6 +26,7 @@ export class NcYearSelectorComponent implements OnInit {
             document.addEventListener('click', () => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
+                    this.recoverData();
                 }
             });
         }
@@ -63,7 +64,12 @@ export class NcYearSelectorComponent implements OnInit {
     }
 
     selectYear(item : any) {
-        if(item.disable || item.active) {
+        if(item.disable) {
+            return;
+        }
+        if(item.active) {
+            this.yearChange.emit(this.year);
+            this.closeSelector();
             return;
         }
         this.clearItems();
@@ -91,6 +97,23 @@ export class NcYearSelectorComponent implements OnInit {
     closeSelector() {
         if(this.type === 'input') {
             this.isHiddenSelector = true;
+        }
+    }
+
+    recoverData() {
+        this.minYear = this.year - 5;
+        this.years = this.initYearData();
+    }
+
+    mouseover() {
+        if(this.type === 'input') {
+            this.isOverSelector = true;
+        }
+    }
+
+    mouseout() {
+        if(this.type === 'input') {
+            this.isOverSelector = false;
         }
     }
 }
