@@ -6,37 +6,48 @@
             <span class="fa fa-calendar" style="color:#999;font-size: 20px;"></span></nc-input-icon>
     </nc-input>
 
-    <div class="nc-date-selector nc-date-time-selector" [ngClass]="{'nc-date-selector-dropdown':type === 'input'}"
+    <div class="nc-date-selector nc-date-time-selector"
+         [ngClass]="{'nc-date-selector-dropdown':type === 'input','nc-selector-noshadow':hideShadow,'nc-insert-selector':insert}"
          [ngStyle]="selectorStyle">
-        <div class="nc-date-year-month-row">
+        <div class="date-picker" *ngIf="isShowDatePicker">
+            <div class="nc-date-year-month-row">
             <span class="nc-date-year-month-oper">
                 <span class="nc-date-year-oper prev-year" title="上一年" (click)="prevYear()">
                 &#8249;&#8249;</span>
                 <span class="nc-date-month-oper prev-month" title="上一月" (click)="prevMonth()">
                 &#8249;</span>
             </span>
-            <div class="nc-date-year-month">
-                <span class="nc-date-year" title="选择年份">{{yearMonthDate.year}}年</span>
-                <span class="nc-date-month" title="选择月份">{{yearMonthDate.month + 1}}月</span>
-            </div>
+                <div class="nc-date-year-month">
+                    <span class="nc-date-year" title="选择年份" (click)="pickYear()">{{yearMonthDate.year}}年</span>
+                    <span class="nc-date-month" title="选择月份" (click)="pickMonth()">{{yearMonthDate.month + 1}}月</span>
+                </div>
             <span class="nc-date-year-month-oper">
                 <span class="nc-date-month-oper next-month" title="下一月" (click)="nextMonth()">
                 &#8250;</span>
                 <span class="nc-date-year-oper next-year" title="下一年" (click)="nextYear()">
                 &#8250;&#8250;</span>
             </span>
+            </div>
+            <div class="nc-date-week-rows">
+                <span class="nc-date-week" *ngFor="let week of weeks">{{week}}</span>
+            </div>
+            <div class="nc-date-day-rows">
+                <span class="nc-date-day" *ngFor="let day of yearMonthDate.dayDatas"
+                      [ngClass]="{'disable':day.disable,'active':day.active,'today':day.today}" (click)="selectDay(day)">
+                    <span>{{day.date}}</span>
+                </span>
+            </div>
+            <div class="nc-date-time-footer" *ngIf="!insert">
+                <span class="nc-date-today" (click)="selectToday()">今日</span>
+            </div>
         </div>
-        <div class="nc-date-week-rows">
-            <span class="nc-date-week" *ngFor="let week of weeks">{{week}}</span>
+        <div class="date-picker" *ngIf="isShowYearPicker">
+            <nc-year-selector [(year)]="yearMonthDate.year" (yearChange)="backDatePicker('year')" [hideShadow]="true">
+            </nc-year-selector>
         </div>
-        <div class="nc-date-day-rows">
-            <span class="nc-date-day" *ngFor="let day of yearMonthDate.dayDatas"
-                  [ngClass]="{'disable':day.disable,'active':day.active,'today':day.today}" (click)="selectDay(day)">
-                <span>{{day.date}}</span>
-            </span>
-        </div>
-        <div class="nc-date-time-footer">
-            <span class="nc-date-today" (click)="selectToday()">今日</span>
+        <div class="date-picker" *ngIf="isShowMonthPicker">
+            <nc-month-selector [(date)]="monthPickerDate" (dateChange)="backDatePicker('month')" [hideShadow]="true">
+            </nc-month-selector>
         </div>
     </div>
 </div>
