@@ -1,1 +1,28 @@
-<h1>AAA</h1>
+<div class="nc-date-select-container" (mouseover)="mouseover()" (mouseout)="mouseout()"
+     [ngClass]="{'nc-date-input-hidden':type === 'input' && isHiddenSelector}">
+    <nc-input *ngIf="type === 'input'" [type]="'text'" [(modelValue)]="value" [width]="width"
+              [showHint]="false" [placeHolder]="'请选择'" (click)="openSelector()">
+        <nc-input-icon class="nc-input-icon-subffix">
+            <span class="fa fa-calendar" style="color:#999;font-size: 20px;"></span></nc-input-icon>
+    </nc-input>
+
+    <div class="nc-date-selector nc-date-time-selector"
+         [ngClass]="{'nc-date-selector-dropdown':type === 'input'}"
+         [ngStyle]="selectorStyle">
+        <div class="date-picker" *ngIf="isShowDatePicker">
+            <nc-date-selector [(date)]="date" [insert]="true" (dateChange)="dateSelectChange()">
+            </nc-date-selector>
+        </div>
+        <div class="date-picker" *ngIf="!isShowDatePicker">
+            <div class="nc-time-picker-day-title">{{timePickDayTitle}}</div>
+            <nc-time-selector [(date)]="date" [insert]="true">
+            </nc-time-selector>
+        </div>
+        <div class="nc-date-time-oper">
+            <span class="nc-date-time-picker" (click)="pickDateOrTime()">{{getPickTitle()}}</span>
+            <span class="nc-date-time-confirm" (click)="pickOk()">确认</span>
+        </div>
+    </div>
+</div>
+
+
