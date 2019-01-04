@@ -9,12 +9,19 @@
     z-index: 10;
     min-width: 180px;
 }
+.nc-time-selector.nc-selector-noshadow {
+    box-shadow:none;
+}
+.nc-time-selector.nc-insert-selector {
+    border-radius:0;
+    border:none;
+    box-shadow:none;
+}
 .nc-time-columns {
     display:flex;
     flex-wrap:wrap;
     flex:0 0 auto;
     align-items:center;
-    border-bottom:solid 1px #ccc;
 }
 .nc-time-columns .nc-time-column {
     display:flex;
@@ -62,6 +69,7 @@
     justify-content:flex-end;
     height:36px;
     align-items:center;
+    border-top:solid 1px #ccc;
 }
 .nc-time-oper .nc-time-confirm {
     display:inline-block;
