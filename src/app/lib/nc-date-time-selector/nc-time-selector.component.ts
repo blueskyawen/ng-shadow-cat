@@ -6,7 +6,7 @@ import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterVi
 @Component({
     selector: 'nc-time-selector',
     templateUrl: './nc-time-selector.component.html',
-    styleUrls: ['./nc-time-selector.component.css']
+    styleUrls: ['./nc-time-selector.component.css','./nc-date-time-selector.component.css']
 })
 export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
     @Input() type : string = 'single';
@@ -16,6 +16,7 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
     @Input() disableMinutes : number[] = [];
     @Input() disableSeconds : number[] = [];
     @Input() width : string = '300px';
+    @Input() ncFormat : string = 'hh:mm:ss';
     dialogClass : any = {};
     hours : any[] = [];
     minutes : any[] = [];
@@ -35,6 +36,7 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
     selectorStyle : any = {};
     isHiddenSelector : boolean = true;
     isOverSelector : boolean = false;
+    formatLabel : string;
 
     constructor() {
     }
@@ -48,6 +50,7 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
                 }
             });
         }
+        this.formatLabel = this.ncFormat[2];
         this.selectorStyle = {'width':this.width};
         this.initData();
     }
@@ -82,7 +85,8 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
 
     setTimeValue() {
         if(this.type === 'input') {
-            this.value = this.date.toTimeString().split(" ")[0];
+            this.value = this.date.getHours() + this.formatLabel + this.date.getMinutes() +
+                this.formatLabel + this.date.getSeconds();
         }
     }
 
@@ -249,5 +253,17 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
                 item.active = true;
             }
         });
+    }
+
+    mouseover() {
+        if(this.type === 'input') {
+            this.isOverSelector = true;
+        }
+    }
+
+    mouseout() {
+        if(this.type === 'input') {
+            this.isOverSelector = false;
+        }
     }
 }
