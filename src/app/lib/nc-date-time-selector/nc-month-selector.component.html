@@ -6,7 +6,8 @@
             <span class="fa fa-calendar" style="color:#999;font-size: 20px;"></span></nc-input-icon>
     </nc-input>
 
-    <div class="nc-date-selector" [ngClass]="{'nc-date-selector-dropdown':type === 'input'}"
+    <div class="nc-date-selector"
+         [ngClass]="{'nc-date-selector-dropdown':type === 'input','nc-selector-noshadow':hideShadow,'nc-insert-selector':insert}"
          [ngStyle]="selectorStyle">
         <div class="nc-date-year-month-row">
             <span class="nc-date-year-month-oper">
