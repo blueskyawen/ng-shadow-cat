@@ -3,3 +3,12 @@
 
 
 <h3>1. 普通模式</h3>
+<nc-date-time-selector [(date)]="date"></nc-date-time-selector>
+<p>选择的日期和时间: {{date.toString()}}</p>
+
+<h3>2. 日期时间选择输入框</h3>
+<nc-date-time-selector [(date)]="date" [type]="'input'"></nc-date-time-selector>
+
+
+
+<div style="height:300px;"></div>
