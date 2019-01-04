@@ -11,6 +11,8 @@ export class NcYearSelectorComponent implements OnInit {
     @Output() yearChange = new EventEmitter();
     @Input() disableYears : number[] = [];
     @Input() width : string = '300px';
+    @Input() insert : boolean = false;
+    @Input() hideShadow : boolean = false;
     years : any[] = [];
     minYear : number;
     value : string;
