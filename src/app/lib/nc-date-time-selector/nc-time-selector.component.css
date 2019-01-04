@@ -76,11 +76,3 @@
     margin-right:10px;
     cursor:pointer;
 }
-
-.nc-time-input-selector {
-    position: relative;
-    display: inline-block;
-}
-.nc-time-input-selector.nc-time-input-hidden {
-    overflow: hidden;
-}
