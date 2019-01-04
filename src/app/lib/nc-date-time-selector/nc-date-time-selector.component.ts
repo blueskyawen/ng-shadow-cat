@@ -12,9 +12,10 @@ export class NcDateTimeSelectorComponent implements OnInit {
     @Input() type : string = 'single';
     @Input() date : any;
     @Output() dateChange = new EventEmitter();
-    @Input() disableMonths : number[] = [];
     @Input() width : string = '300px';
+    @Input() ncFormat : string = 'yyyy/mm/dd';
 
+    formatLabel : string;
     today : any = new Date();
     year : number;
     month : number;
@@ -39,9 +40,11 @@ export class NcDateTimeSelectorComponent implements OnInit {
             document.addEventListener('click', () => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
+                    this.recoverData();
                 }
             });
         }
+        this.formatLabel = this.ncFormat[4];
         this.selectorStyle = {'width':this.width};
         this.initDate();
         this.getYearMonthDate();
@@ -52,9 +55,7 @@ export class NcDateTimeSelectorComponent implements OnInit {
         if(!this.date) {
             this.date = this.today;
         }
-        this.year = this.date.getFullYear();
-        this.month = this.date.getMonth();
-        this.day = this.date.getDate();
+        this.setSelectedDate();
         this.yearMonthDate.year = this.year;
         this.yearMonthDate.month = this.month;
     }
@@ -121,7 +122,8 @@ export class NcDateTimeSelectorComponent implements OnInit {
 
     setDateValue() {
         if(this.type === 'input') {
-            this.value = this.date.toDateString();
+            this.value = this.date.getFullYear() + this.formatLabel + (this.date.getMonth()+1) +
+                this.formatLabel + this.date.getDate();
         }
     }
 
@@ -134,9 +136,16 @@ export class NcDateTimeSelectorComponent implements OnInit {
         this.date.setFullYear(this.yearMonthDate.year);
         this.date.setMonth(this.yearMonthDate.month);
         this.date.setDate(item.date);
+        this.setSelectedDate();
         this.setDateValue();
         this.dateChange.emit(this.date);
         this.closeSelector();
+    }
+
+    setSelectedDate() {
+        this.year = this.date.getFullYear();
+        this.month = this.date.getMonth();
+        this.day = this.date.getDate();
     }
 
     clearItems() {
@@ -186,6 +195,50 @@ export class NcDateTimeSelectorComponent implements OnInit {
     closeSelector() {
         if(this.type === 'input') {
             this.isHiddenSelector = true;
+        }
+    }
+
+    recoverData() {
+        this.yearMonthDate.year = this.year;
+        this.yearMonthDate.month = this.month;
+        this.getYearMonthDate();
+    }
+
+    selectToday() {
+        let todayYear = this.today.getFullYear();
+        let todayMonth = this.today.getMonth();
+        let todayDay = this.today.getDate();
+        if(todayYear !== this.yearMonthDate.year || todayMonth !== this.yearMonthDate.month) {
+            this.yearMonthDate.year = todayYear;
+            this.yearMonthDate.month = todayMonth;
+            this.getYearMonthDate();
+        } else {
+            this.clearItems();
+        }
+        for(let day of this.yearMonthDate.dayDatas) {
+            if(!day.disable && day.date == todayDay) {
+                day.active = true;
+                break;
+            }
+        }
+        this.date.setFullYear(this.yearMonthDate.year);
+        this.date.setMonth(this.yearMonthDate.month);
+        this.date.setDate(todayDay);
+        this.setSelectedDate();
+        this.setDateValue();
+        this.dateChange.emit(this.date);
+        this.closeSelector();
+    }
+
+    mouseover() {
+        if(this.type === 'input') {
+            this.isOverSelector = true;
+        }
+    }
+
+    mouseout() {
+        if(this.type === 'input') {
+            this.isOverSelector = false;
         }
     }
 }
