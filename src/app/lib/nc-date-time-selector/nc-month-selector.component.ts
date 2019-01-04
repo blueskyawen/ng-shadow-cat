@@ -11,6 +11,7 @@ export class NcMonthSelectorComponent implements OnInit {
     @Output() dateChange = new EventEmitter();
     @Input() disableMonths : number[] = [];
     @Input() width : string = '300px';
+    @Input() ncFormat : string = 'yyyy/mm';
     months : any[] = [{value:0,label:'1月'},{value:1,label:'1月'},{value:2,label:'3月'},{value:3,label:'4月'},
         {value:4,label:'5月'},{value:5,label:'6月'},{value:6,label:'7月'},{value:7,label:'8月'},
         {value:8,label:'9月'},{value:9,label:'10月'},{value:10,label:'11月'},{value:11,label:'12月'}];
@@ -19,6 +20,7 @@ export class NcMonthSelectorComponent implements OnInit {
     isHiddenSelector : boolean = true;
     isOverSelector : boolean = false;
     curYear : any;
+    formatLabel : string;
 
     constructor() {
     }
@@ -28,9 +30,11 @@ export class NcMonthSelectorComponent implements OnInit {
             document.addEventListener('click', () => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
+                    this.recoverData();
                 }
             });
         }
+        this.formatLabel = this.ncFormat[4];
         this.selectorStyle = {'width':this.width};
         this.curYear = this.date.getFullYear();
         this.months.forEach((month) => {
@@ -42,7 +46,7 @@ export class NcMonthSelectorComponent implements OnInit {
 
     setMonthValue() {
         if(this.type === 'input') {
-            this.value = this.date.getFullYear() + '/' + (this.date.getMonth()+1);
+            this.value = this.date.getFullYear() + this.formatLabel + (this.date.getMonth()+1);
         }
     }
 
@@ -55,7 +59,12 @@ export class NcMonthSelectorComponent implements OnInit {
     }
 
     selectMonth(item : any) {
-        if(item.disable || item.active) {
+        if(item.disable) {
+            return;
+        }
+        if(item.active) {
+            this.dateChange.emit(this.date);
+            this.closeSelector();
             return;
         }
         this.clearItems();
@@ -84,6 +93,22 @@ export class NcMonthSelectorComponent implements OnInit {
     closeSelector() {
         if(this.type === 'input') {
             this.isHiddenSelector = true;
+        }
+    }
+
+    recoverData() {
+        this.curYear = this.date.getFullYear();
+    }
+
+    mouseover() {
+        if(this.type === 'input') {
+            this.isOverSelector = true;
+        }
+    }
+
+    mouseout() {
+        if(this.type === 'input') {
+            this.isOverSelector = false;
         }
     }
 }
