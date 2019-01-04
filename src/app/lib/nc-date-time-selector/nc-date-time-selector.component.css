@@ -10,6 +10,14 @@
     z-index: 10;
     min-width: 180px;
 }
+.nc-date-selector.nc-selector-noshadow {
+    box-shadow:none;
+}
+.nc-date-selector.nc-insert-selector {
+    border-radius:0;
+    border:none;
+    box-shadow:none;
+}
 .nc-date-time-selector {
     min-width: 240px;
 }
@@ -52,4 +60,38 @@
     position: absolute;
     left:0;
     top:100%;
+}
+
+.nc-date-time-oper {
+    display:flex;
+    justify-content:flex-end;
+    height:36px;
+    align-items:center;
+    border-top: solid 1px #ccc;
+}
+.nc-date-time-oper .nc-date-time-confirm {
+    display:inline-block;
+    width:50px;
+    height:24px;
+    font-size:14px;
+    background:#0066ff;
+    color:#fff;
+    text-align:center;
+    line-height:24px;
+    border-radius:3px;
+    margin-right:10px;
+    margin-left:10px;
+    cursor:pointer;
+}
+.nc-date-time-oper .nc-date-time-picker {
+    color:#0066ff;
+    cursor: pointer;
+}
+.nc-time-picker-day-title {
+    display: inline-block;
+    height:36px;
+    line-height: 36px;
+    text-align: center;
+    width: 100%;
+    border-bottom: solid 1px #ccc;
 }
