@@ -57,6 +57,7 @@ import {NcTimeSelectorComponent} from './nc-date-time-selector/nc-time-selector.
 import {NcYearSelectorComponent} from './nc-date-time-selector/nc-year-selector.component';
 import {NcMonthSelectorComponent} from './nc-date-time-selector/nc-month-selector.component';
 import {NcDateTimeSelectorComponent} from './nc-date-time-selector/nc-date-time-selector.component';
+import {NcDateSelectorComponent} from './nc-date-time-selector/nc-date-selector.component';
 import { InputNumberDirective } from './nc-num-put/input-number.directive';
 
 @NgModule({
@@ -72,7 +73,7 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcNumberPutComponent,InputNumberDirective,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
     NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent,
-    NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent],
+    NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent,NcDateSelectorComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
@@ -84,6 +85,6 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcNumberPutComponent,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
     NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent,
-    NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent]
+    NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent,NcDateSelectorComponent]
 })
 export class LibModule { }
