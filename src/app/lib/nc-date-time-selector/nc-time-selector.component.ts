@@ -17,6 +17,8 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
     @Input() disableSeconds : number[] = [];
     @Input() width : string = '300px';
     @Input() ncFormat : string = 'hh:mm:ss';
+    @Input() insert : boolean = false;
+    @Input() hideShadow : boolean = false;
     dialogClass : any = {};
     hours : any[] = [];
     minutes : any[] = [];
@@ -121,6 +123,12 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
             item.active = true;
             this.selectTime.second = item.value;
             this.scrollSecondActivePosition();
+        }
+        if(this.insert) {
+            this.date.setHours(this.selectTime.hour);
+            this.date.setMinutes(this.selectTime.minute);
+            this.date.setSeconds(this.selectTime.second);
+            this.dateChange.emit(this.date);
         }
     }
 
