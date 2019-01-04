@@ -58,6 +58,7 @@ import {NcYearSelectorComponent} from './nc-date-time-selector/nc-year-selector.
 import {NcMonthSelectorComponent} from './nc-date-time-selector/nc-month-selector.component';
 import {NcDateTimeSelectorComponent} from './nc-date-time-selector/nc-date-time-selector.component';
 import {NcDateSelectorComponent} from './nc-date-time-selector/nc-date-selector.component';
+import {NcRangeDateSelectorComponent} from './nc-date-time-selector/nc-range-date-selector.component';
 import { InputNumberDirective } from './nc-num-put/input-number.directive';
 
 @NgModule({
@@ -73,7 +74,8 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcNumberPutComponent,InputNumberDirective,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
     NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent,
-    NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent,NcDateSelectorComponent],
+    NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent,NcDateSelectorComponent,
+    NcRangeDateSelectorComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
@@ -85,6 +87,7 @@ import { InputNumberDirective } from './nc-num-put/input-number.directive';
     NcNumberPutComponent,NcMenuComponent,NcAffixComponent,NcFormControlComponent,
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
     NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent,
-    NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent,NcDateSelectorComponent]
+    NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent,NcDateSelectorComponent,
+    NcRangeDateSelectorComponent]
 })
 export class LibModule { }

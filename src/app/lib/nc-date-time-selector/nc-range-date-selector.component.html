@@ -1,1 +1,47 @@
+<div class="nc-date-select-container" (mouseover)="mouseover()" (mouseout)="mouseout()"
+     [ngClass]="{'nc-date-input-hidden':type === 'input' && isHiddenSelector}">
+    <nc-input *ngIf="type === 'input'" [type]="'text'" [(modelValue)]="value" [width]="width"
+              [showHint]="false" [placeHolder]="'请选择'" (click)="openSelector()">
+        <nc-input-icon class="nc-input-icon-subffix">
+            <span class="fa fa-calendar" style="color:#999;font-size: 20px;"></span></nc-input-icon>
+    </nc-input>
+
+    <div class="nc-range-date-selector">
+        <div class="nc-date-selector-container">
+            <div class="nc-date-selector nc-date-time-selector" *ngFor="let dateR of yearMonthDateRange;let i=index;"
+                 [ngClass]="{'nc-date-selector-dropdown':type === 'input','nc-selector-noshadow':hideShadow,'nc-insert-selector':insert}"
+                 [ngStyle]="selectorStyle">
+                <div class="date-picker">
+                    <div class="nc-date-year-month-row">
+                        <span class="nc-date-year-month-oper">
+                            <span *ngIf="i == 0" class="nc-date-year-oper prev-year" title="上一页" (click)="prevPage()">
+                            &#8249;&#8249;</span>
+                        </span>
+                        <div class="nc-date-year-month">
+                            <span class="nc-date-year" title="选择年份" (click)="pickYear()">{{dateR.year}}年</span>
+                            <span class="nc-date-month" title="选择月份" (click)="pickMonth()">{{dateR.month + 1}}月</span>
+                        </div>
+                        <span class="nc-date-year-month-oper">
+                            <span *ngIf="i == 1" class="nc-date-year-oper next-year" title="下一页" (click)="nextPage()">
+                            &#8250;&#8250;</span>
+                        </span>
+                    </div>
+                    <div class="nc-date-week-rows">
+                        <span class="nc-date-week" *ngFor="let week of weeks">{{week}}</span>
+                    </div>
+                    <div class="nc-date-day-rows">
+                        <span class="nc-date-day" *ngFor="let day of dateR.dayDatas"
+                              [ngClass]="{'disable':day.disable,'active':day.active}" (click)="selectDay(day)">
+                            <span>{{day.date}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nc-date-time-oper">
+            <span class="nc-date-time-confirm" (click)="pickOk()">确认</span>
+        </div>
+    </div>
+</div>
+
 

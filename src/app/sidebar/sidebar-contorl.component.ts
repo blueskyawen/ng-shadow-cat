@@ -46,6 +46,7 @@ export class SidebarContorlComponent implements OnInit {
       {'name':'时间选择器','label':'timeSelector','isActive':false,'url':'/timeSelector'},
       {'name':'日期选择器','label':'dateSelector','isActive':false,'url':'/dateSelector'},
       {'name':'日期时间选择器','label':'datetimeSelector','isActive':false,'url':'/datetimeSelector'},
+      {'name':'日期范围选择器','label':'rangedateSelector','isActive':false,'url':'/rangedateSelector'},
       //{'name':'树型控件','label':'tree','isActive':false,'url':'/tree'},
       {'name':'输入框','label':'input','isActive':false,'url':'/input'},
       {'name':'数字输入框','label':'numberInput','isActive':false,'url':'/numberInput'},

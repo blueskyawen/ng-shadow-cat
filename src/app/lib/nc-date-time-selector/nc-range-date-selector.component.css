@@ -1,1 +1,63 @@
+.nc-date-week-rows,
+.nc-date-day-rows {
+    display:flex;
+    flex:1 1 auto;
+    justify-content:space-around;
+    align-items:center;
+}
+.nc-date-day-rows {
+    flex-wrap:wrap;
+    flex:0 0 auto;
+}
+.nc-date-week,
+.nc-date-day {
+    display:inline-flex;
+    width:14.28%;
+    justify-content:center;
+    align-items:center;
+    height:36px;
+}
+.nc-date-day span {
+    display:inline-block;
+    height:24px;
+    width:24px;
+    border-radius:50%;
+    border:solid 1px transparent;
+    text-align:center;
+    line-height:24px;
+    cursor:pointer;
+    font-size:14px;
+}
+.nc-date-day.today span {
+    background:#d9d9d9;
+}
+.nc-date-day:not(.disable):hover span {
+    background:#b3d1ff;
+}
+.nc-date-day.active span {
+    border-color:#0066ff;
+    background:#e5f0ff;
+    color:#0047b3;
+    font-weight:600;
+}
+.nc-date-day.disable span {
+    color:#666;
+}
 
+.nc-range-date-selector {
+    border:solid 1px #ccc;
+    border-radius:3px;
+    width:630px;
+    box-shadow:1px 1px 2px 2px #ccc;
+    background: #fff;
+    display:inline-flex;
+    flex-direction: column;
+}
+.nc-range-date-selector .nc-date-selector {
+    border:none;
+    box-shadow:none;
+}
+.nc-range-date-selector .nc-date-selector-container {
+    display:inline-flex;
+    justify-content: space-between;
+}
