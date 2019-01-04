@@ -57,4 +57,10 @@
     margin-right:10px;
     font-size: 14px;
 }
-
+.date-picker-show {
+    visibility: visible;
+}
+.date-picker-hide {
+    position: absolute;
+    visibility: hidden;
+}
