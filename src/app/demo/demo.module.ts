@@ -61,6 +61,7 @@ import {YearSelectorComponent} from './date-time-selector/year-selector.componen
 import {TimeSelectorComponent} from './date-time-selector/time-selector.component';
 import {MonthSelectorComponent} from './date-time-selector/month-selector.component';
 import {DateTimeSelectorComponent} from './date-time-selector/date-time-selector.component';
+import {DateSelectorComponent} from './date-time-selector/date-selector.component';
 
 @NgModule({
   imports: [CommonModule,FormsModule,LibModule],
@@ -75,7 +76,7 @@ import {DateTimeSelectorComponent} from './date-time-selector/date-time-selector
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
     NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,FormInstanceComponent,
     PhotoViewComponent,YearSelectorComponent,TimeSelectorComponent,MonthSelectorComponent,
-    DateTimeSelectorComponent],
+    DateTimeSelectorComponent,DateSelectorComponent],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -87,6 +88,6 @@ import {DateTimeSelectorComponent} from './date-time-selector/date-time-selector
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
     NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,FormInstanceComponent,
     PhotoViewComponent,YearSelectorComponent,TimeSelectorComponent,MonthSelectorComponent,
-    DateTimeSelectorComponent]
+    DateTimeSelectorComponent,DateSelectorComponent]
 })
 export class DemoModule { }
