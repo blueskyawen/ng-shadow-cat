@@ -1,33 +1,11 @@
-<div class="nc-time-selector" *ngIf="type === 'single'" [ngStyle]="selectorStyle">
-    <div class="nc-time-columns">
-        <div class="nc-time-column" #hourCols>
-            <span class="nc-time-row" *ngFor="let hour of hours"
-                  (click)="pickTime('hour',hour)"
-                  [ngClass]="{'disable':hour.disable,'active':hour.active}">{{hour.value}}</span>
-        </div>
-        <div class="nc-time-column" #minuteCols>
-            <span class="nc-time-row" *ngFor="let minute of minutes"
-                  (click)="pickTime('minute',minute)"
-                  [ngClass]="{'disable':minute.disable,'active':minute.active}">{{minute.value}}</span>
-        </div>
-        <div class="nc-time-column" #secondCols>
-            <span  class="nc-time-row" *ngFor="let second of seconds"
-                   (click)="pickTime('second',second)"
-                   [ngClass]="{'disable':second.disable,'active':second.active}">{{second.value}}</span>
-        </div>
-    </div>
-    <div class="nc-time-oper">
-        <span class="nc-time-confirm" (click)="pickTimeOk()">确认</span>
-    </div>
-</div>
-<div class="nc-time-input-selector" *ngIf="type === 'input'" [class.nc-time-input-hidden]="isHiddenSelector"
-     (mouseover)="isOverSelector = true" (mouseout)="isOverSelector = false">
-    <nc-input [type]="'text'" [(modelValue)]="value" [width]="width" [showHint]="false"
-              [placeHolder]="'请选择时间'" (click)="openSelector()">
+<div class="nc-date-select-container" (mouseover)="mouseover()" (mouseout)="mouseout()"
+     [ngClass]="{'nc-date-input-hidden':type === 'input' && isHiddenSelector}">
+    <nc-input *ngIf="type === 'input'" [type]="'text'" [(modelValue)]="value" [width]="width"
+              [showHint]="false" [placeHolder]="'请选择时间'" (click)="openSelector()">
         <nc-input-icon class="nc-input-icon-subffix">
             <span class="fa fa-clock-o" style="color:#999;font-size: 20px;"></span></nc-input-icon>
     </nc-input>
-    <div class="nc-time-selector" style="position: absolute;left:0;top:100%;"
+    <div class="nc-time-selector" [ngClass]="{'nc-date-selector-dropdown':type === 'input'}"
          [ngStyle]="selectorStyle">
         <div class="nc-time-columns">
             <div class="nc-time-column" #hourCols>
