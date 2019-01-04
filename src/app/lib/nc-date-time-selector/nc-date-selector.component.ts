@@ -14,7 +14,8 @@ export class NcDateSelectorComponent implements OnInit {
     @Output() dateChange = new EventEmitter();
     @Input() width : string = '300px';
     @Input() ncFormat : string = 'yyyy/mm/dd';
-
+    @Input() insert : boolean = false;
+    @Input() hideShadow : boolean = false;
     formatLabel : string;
     today : any = new Date();
     year : number;
@@ -26,11 +27,14 @@ export class NcDateSelectorComponent implements OnInit {
         month: 0,
         dayDatas: []
     };
-
     value : string;
     selectorStyle : any = {};
     isHiddenSelector : boolean = true;
     isOverSelector : boolean = false;
+    isShowDatePicker : boolean = true;
+    isShowYearPicker : boolean = false;
+    isShowMonthPicker : boolean = false;
+    monthPickerDate : any = new Date();
 
     constructor() {
     }
@@ -53,7 +57,7 @@ export class NcDateSelectorComponent implements OnInit {
 
     initDate() {
         if(!this.date) {
-            this.date = this.today;
+            this.date = new Date();
         }
         this.setSelectedDate();
         this.yearMonthDate.year = this.year;
@@ -228,6 +232,39 @@ export class NcDateSelectorComponent implements OnInit {
         this.setDateValue();
         this.dateChange.emit(this.date);
         this.closeSelector();
+    }
+
+    pickYear() {
+        this.clearPickerFlag();
+        this.isShowYearPicker = true;
+    }
+
+    pickMonth() {
+        this.monthPickerDate.setFullYear(this.yearMonthDate.year);
+        this.monthPickerDate.setMonth(this.yearMonthDate.month);
+        this.clearPickerFlag();
+        this.isShowMonthPicker = true;
+    }
+
+    backDatePicker(type : any) {
+        if(type === 'year') {
+            this.clearPickerFlag();
+            this.getYearMonthDate();
+            this.isShowDatePicker = true;
+        }
+        if(type === 'month') {
+            this.clearPickerFlag();
+            this.yearMonthDate.year = this.monthPickerDate.getFullYear();
+            this.yearMonthDate.month = this.monthPickerDate.getMonth();
+            this.getYearMonthDate();
+            this.isShowDatePicker = true;
+        }
+    }
+
+    clearPickerFlag() {
+        this.isShowDatePicker = false;
+        this.isShowMonthPicker = false;
+        this.isShowYearPicker = false;
     }
 
     mouseover() {
