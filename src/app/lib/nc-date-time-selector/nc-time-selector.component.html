@@ -5,7 +5,8 @@
         <nc-input-icon class="nc-input-icon-subffix">
             <span class="fa fa-clock-o" style="color:#999;font-size: 20px;"></span></nc-input-icon>
     </nc-input>
-    <div class="nc-time-selector" [ngClass]="{'nc-date-selector-dropdown':type === 'input'}"
+    <div class="nc-time-selector"
+         [ngClass]="{'nc-date-selector-dropdown':type === 'input','nc-selector-noshadow':hideShadow,'nc-insert-selector':insert}"
          [ngStyle]="selectorStyle">
         <div class="nc-time-columns">
             <div class="nc-time-column" #hourCols>
@@ -24,7 +25,7 @@
                    [ngClass]="{'disable':second.disable,'active':second.active}">{{second.value}}</span>
             </div>
         </div>
-        <div class="nc-time-oper">
+        <div class="nc-time-oper" *ngIf="!insert">
             <span class="nc-time-confirm" (click)="pickTimeOk()">确认</span>
         </div>
     </div>
