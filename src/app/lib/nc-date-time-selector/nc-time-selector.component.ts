@@ -49,6 +49,7 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
                     this.recoverTimeData();
+                    this.setTimeValue();
                 }
             });
         }

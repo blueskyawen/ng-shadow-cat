@@ -45,6 +45,7 @@ export class NcDateSelectorComponent implements OnInit {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
                     this.recoverData();
+                    this.setDateValue();
                 }
             });
         }

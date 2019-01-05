@@ -32,6 +32,7 @@ export class NcDateTimeSelectorComponent implements OnInit {
             document.addEventListener('click', () => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
+                    this.setDateValue();
                 }
             });
         }

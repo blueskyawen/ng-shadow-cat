@@ -33,6 +33,7 @@ export class NcMonthSelectorComponent implements OnInit {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
                     this.recoverData();
+                    this.setMonthValue();
                 }
             });
         }
