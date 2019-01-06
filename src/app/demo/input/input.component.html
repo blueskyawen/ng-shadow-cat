@@ -100,22 +100,22 @@
 <h3>2. 输入框与图标组合</h3>
 <div style="margin-left: 20px;">
   <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
-    <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+    <nc-input [type]="'text'" [(modelValue)]="value" [required]="true" [iconffix]="'pre'">
       <nc-input-icon class="nc-input-icon-preffix"><span class="fa fa-user"></span></nc-input-icon>
     </nc-input>
   </div>
   <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
-    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true" [iconffix]="'pre'">
       <nc-input-icon class="nc-input-icon-preffix"><span class="fa fa-lock"></span></nc-input-icon>
     </nc-input>
   </div>
   <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
-    <nc-input [type]="'text'" [(modelValue)]="value" [required]="true">
+    <nc-input [type]="'text'" [(modelValue)]="value" [required]="true" [iconffix]="'sub'">
       <nc-input-icon class="nc-input-icon-subffix"><span class="fa fa-user"></span></nc-input-icon>
     </nc-input>
   </div>
   <div class="input-margin nc-xl-col-4 nc-lg-col-4 nc-md-col-6 nc-sm-col-12 nc-xs-col-12">
-    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true">
+    <nc-input [type]="'password'" [(modelValue)]="password" [required]="true" [iconffix]="'sub'">
       <nc-input-icon class="nc-input-icon-subffix"><span class="fa fa-lock"></span></nc-input-icon>
     </nc-input>
   </div>
@@ -289,6 +289,11 @@
     <td>height</td>
     <td>自定义高度，px或百分比，比如：50%，400px</td>
     <td>36px</td>
+  </tr>
+  <tr>
+    <td>iconffix</td>
+    <td>是否带前后缀图标，pre/sub</td>
+    <td></td>
   </tr>
   </tbody>
 </table>

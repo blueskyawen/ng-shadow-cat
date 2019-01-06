@@ -1223,3 +1223,11 @@ span.nc-carat.nc-carat-left {
     display: none;
   }
 }
+.nc-input-icon-preffix {
+  position: absolute;
+  left: 0;
+}
+.nc-input-icon-subffix {
+  position: absolute;
+  right: 0;
+}

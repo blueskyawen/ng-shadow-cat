@@ -14,6 +14,8 @@ export class NcDateTimeSelectorComponent implements OnInit {
     @Output() dateChange = new EventEmitter();
     @Input() width : string = '300px';
     @Input() ncFormat : string = 'yyyy/mm/dd hh:mm:ss';
+    dateFormat : string = '/';
+    timeFormat : string = ':';
     value : string;
     selectorStyle : any = {};
     isHiddenSelector : boolean = true;
@@ -36,6 +38,8 @@ export class NcDateTimeSelectorComponent implements OnInit {
                 }
             });
         }
+        this.dateFormat = this.ncFormat.split(' ')[0].charAt(4);
+        this.timeFormat = this.ncFormat.split(' ')[1].charAt(2);
         this.selectorStyle = {'width':this.width};
         this.getTimePickDayTitle();
         this.setDateValue();
@@ -90,7 +94,9 @@ export class NcDateTimeSelectorComponent implements OnInit {
 
     setDateValue() {
         if(this.type === 'input') {
-            this.value = this.date.toString();
+            this.value = this.date.getFullYear() + this.dateFormat + (this.date.getMonth() + 1) + this.dateFormat
+                + this.date.getDate() + ' ' + this.date.getHours() + this.timeFormat + this.date.getMinutes() +
+                this.timeFormat + this.date.getSeconds();
         }
     }
 }

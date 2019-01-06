@@ -3,15 +3,13 @@
     position:relative;
     height:42px;
     width:100px;
-    border:solid 1px #999;
-    border-radius:6px;
     transition:all .5s;
     margin:5px;
 }
 .input-container input {
     height:100%;
     width:100%;
-    border:none;
+    border:solid 1px #999;
     border-radius:6px;
     padding:0;
     outline: none;
@@ -41,7 +39,7 @@
 .input-container .input-opers .oper-del {
     border-top:solid 1px #999;
 }
-.input-container:hover {
+.input-container input:hover {
     border-color:#1aa3ff;
 }
 .input-container .input-opers:hover {
@@ -114,9 +112,10 @@
 }
 .input-container-horizontal input {
     width:40%;
-    border-radius:0;
+    border-radius:6px;
     text-align: center;
     cursor: pointer;
+    border: none;
 }
 .input-container-horizontal input:hover {
     border: solid 1px #1aa3ff;

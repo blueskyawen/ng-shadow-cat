@@ -7,7 +7,7 @@
     box-shadow:1px 1px 2px 2px #ccc;
     background: #fff;
     z-index: 10;
-    min-width: 180px;
+    min-width: 240px;
 }
 .nc-date-selector.nc-selector-noshadow {
     box-shadow:none;
@@ -16,9 +16,6 @@
     border-radius:0;
     border:none;
     box-shadow:none;
-}
-.nc-date-time-selector {
-    min-width: 240px;
 }
 .nc-date-year-month-row {
     display:flex;
