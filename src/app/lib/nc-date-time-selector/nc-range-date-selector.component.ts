@@ -51,6 +51,7 @@ export class NcRangeDateSelectorComponent implements OnInit {
     isDisableOk : boolean = false;
     timePickDayTitle : string[] = [];
     isShowDatePicker : boolean = true;
+    rangeSelectorStyle : any = {};
 
     constructor() {
     }
@@ -66,6 +67,7 @@ export class NcRangeDateSelectorComponent implements OnInit {
         this.dateFormat = this.ncFormat.split(' ')[0].charAt(4);
         this.timeFormat = this.ncFormat.split(' ')[1].charAt(2);
         this.selectorStyle = {'width':this.width};
+        this.rangeSelectorStyle = {'width':(Number(this.width.split('px')[0]) * 2 + 50) + 'px'};
         this.initData();
     }
 

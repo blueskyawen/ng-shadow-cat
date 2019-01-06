@@ -6,7 +6,7 @@
 <p>选择的日期: {{date.toLocaleString()}}</p>
 
 <h3>2. 日期选择输入框</h3>
-<nc-date-selector [(date)]="date" [type]="'input'"></nc-date-selector>
+<nc-date-selector [(date)]="date2" [type]="'input'"></nc-date-selector>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
     <div *ngIf="currentTab === 'html'">
@@ -25,9 +25,9 @@
 <div class="nc-selector-container">
     <nc-button (click)="openSelector()">普通按钮</nc-button>
     <nc-date-selector *ngIf="isShow" class="nc-selector"
-                           [(date)]="date2" (dateChange)="dateChange()"></nc-date-selector>
+                           [(date)]="date3" (dateChange)="dateChange()"></nc-date-selector>
 </div>
-<p>选择的时间: {{date.toLocaleString()}}</p>
+<p>选择的时间: {{date3.toLocaleString()}}</p>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems3" [type]="'line'" [(selectTab)] = "currentTab3">
     <div *ngIf="currentTab3 === 'html'">
@@ -58,11 +58,11 @@
 <h3>4. 自定义宽度和显示格式</h3>
 <div>
     <div style="display: inline-block;float: left;">
-        <nc-date-selector [(date)]="date" [type]="'input'" [width]="'200px'"></nc-date-selector>
+        <nc-date-selector [(date)]="date4" [type]="'input'" [width]="'200px'"></nc-date-selector>
     </div>
     <div style="display: inline-block;float: left;width:50px;height:30px;"></div>
     <div style="display: inline-block;float: left;">
-        <nc-date-selector [(date)]="date" [type]="'input'" [width]="'400px'" [ncFormat]="'yyyy-mm-dd'"></nc-date-selector>
+        <nc-date-selector [(date)]="date4" [type]="'input'" [width]="'400px'" [ncFormat]="'yyyy-mm-dd'"></nc-date-selector>
     </div>
 </div>
 <p style="clear: both;">使用方式:</p>

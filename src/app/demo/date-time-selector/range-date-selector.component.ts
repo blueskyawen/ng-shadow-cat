@@ -13,8 +13,9 @@ import { Component,OnInit } from '@angular/core';
 })
 export class RangeDateSelectorComponent {
     dateRange : any[] = [];
-    date : any = new Date();
-    date2 : any = new Date();
+    dateRange2 : any[] = [];
+    dateRange3 : any[] = [];
+    dateRange4 : any[] = [];
     tabItems : any[] = [];
     currentTab : string;
     tabItems2 : any[] = [];
@@ -34,10 +35,18 @@ export class RangeDateSelectorComponent {
         this.tabItems2 = [{name:'html',label:'html',isActive:true,isDisable:false}];
         this.currentTab2 = this.tabItems2[0].label;
 
+        this.setDateRange(this.dateRange);
+        this.setDateRange(this.dateRange2);
+        this.setDateRange(this.dateRange3);
+        this.setDateRange(this.dateRange4);
+    }
+
+    setDateRange(range : any[]) {
         let startDate : any = new Date();
         let endDate : any = new Date();
         endDate.setMonth(startDate.getMonth() + 1);
-        this.dateRange = [startDate,endDate];
+        range.push(startDate);
+        range.push(endDate);
     }
 
     openSelector() {

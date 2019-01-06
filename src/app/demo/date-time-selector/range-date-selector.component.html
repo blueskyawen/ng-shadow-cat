@@ -5,18 +5,85 @@
 <nc-range-date-selector [(dateRange)]="dateRange"></nc-range-date-selector>
 <p>选择的日期范围: {{dateRange[0]?.toLocaleString()}} - {{dateRange[1]?.toLocaleString()}}</p>
 
-<h3>2. 月份选择输入框</h3>
-<nc-range-date-selector [(dateRange)]="dateRange" [type]="'input'"></nc-range-date-selector>
+<h3>2. 日期范围选择输入框</h3>
+<nc-range-date-selector [(dateRange)]="dateRange2" [type]="'input'"></nc-range-date-selector>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
     <div *ngIf="currentTab === 'html'">
     <textarea style="height:60px;">
-    <nc-month-selector  [(date)]="date" [type]="'input'" [disableMonths]="[6]"></nc-month-selector>
+    <nc-range-date-selector [(dateRange)]="dateRange" [type]="'input'"></nc-range-date-selector>
     </textarea>
     </div>
     <div *ngIf="currentTab === 'typescript'">
     <textarea style="height:60px;">
-    date : any = new Date();
+    dateRange : any[] = [];
     </textarea>
     </div>
 </nc-tab>
+
+<h3>3. 日期范围选择和按钮联合使用</h3>
+<div class="nc-selector-container">
+    <nc-button (click)="openSelector()">普通按钮</nc-button>
+    <nc-range-date-selector *ngIf="isShow" class="nc-selector" [(dateRange)]="dateRange3"
+                            (dateRangeChange)="dateChange()"></nc-range-date-selector>
+</div>
+<p>选择的日期范围: {{dateRange3[0]?.toLocaleString()}} - {{dateRange3[1]?.toLocaleString()}}</p>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems3" [type]="'line'" [(selectTab)] = "currentTab3">
+    <div *ngIf="currentTab3 === 'html'">
+    <textarea style="height:60px;">
+    <div class="nc-selector-container">
+        <nc-button (click)="openSelector()">普通按钮</nc-button>
+        <nc-range-date-selector *ngIf="isShow" class="nc-selector" [(dateRange)]="dateRange"
+                                (dateRangeChange)="dateChange()"></nc-range-date-selector>
+    </div>
+    <p>选择的日期范围: {{dateRange[0]?.toLocaleString()}} - {{dateRange[1]?.toLocaleString()}}</p>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab3 === 'typescript'">
+    <textarea style="height:60px;">
+    dateRange : any[] = [];
+    isShow : boolean = false;
+
+    openSelector() {
+        this.isShow = !this.isShow;
+    }
+    dateChange() {
+        this.isShow = false;
+    }
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>nc-range-date-selector-参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>type</td>
+        <td>类型,single/input</td>
+        <td>single</td>
+    </tr>
+    <tr>
+        <td>dateRange</td>
+        <td>日期对象组</td>
+        <td>[]</td>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td>自定义日期时间宽度，px或百分比，比如：50%，400px</td>
+        <td>100%</td>
+    </tr>
+    <tr>
+        <td>ncFormat</td>
+        <td>自定义显示格式</td>
+        <td>yyyy/mm/dd hh:mm:ss</td>
+    </tr>
+    </tbody>
+</table>

@@ -11,6 +11,8 @@ import { Component,OnInit } from '@angular/core';
 export class TimeSelectorComponent {
     date : any = new Date();
     date2 : any = new Date();
+    date3 : any = new Date();
+    date4 : any = new Date();
     tabItems : any[] = [];
     currentTab : string;
     tabItems2 : any[] = [];
