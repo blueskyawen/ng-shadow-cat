@@ -23,6 +23,7 @@
     justify-content:space-between;
     height:40px;
     border-bottom:solid 1px #ccc;
+    position: relative;
 }
 .nc-date-year-month .nc-date-year,
 .nc-date-year-month .nc-date-month {
@@ -56,6 +57,7 @@
     position: absolute;
     left:0;
     top:100%;
+    z-index: 11;
 }
 
 .nc-date-time-oper {
@@ -79,6 +81,11 @@
     margin-left:10px;
     cursor:pointer;
 }
+.nc-date-time-oper .nc-date-time-confirm.disable {
+    cursor: not-allowed;
+    background: #ccc;
+    opacity: 0.8;
+}
 .nc-date-time-oper .nc-date-time-picker {
     color:#0066ff;
     cursor: pointer;
@@ -90,4 +97,5 @@
     text-align: center;
     width: 100%;
     border-bottom: solid 1px #ccc;
+    position: relative;
 }

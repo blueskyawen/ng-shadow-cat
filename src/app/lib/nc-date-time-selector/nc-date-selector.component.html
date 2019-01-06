@@ -43,12 +43,12 @@
         </div>
         <div class="date-picker" *ngIf="isShowYearPicker">
             <nc-year-selector [(year)]="yearMonthDate.year" (yearChange)="backDatePicker('year')"
-                              [width]="width" [hideShadow]="true">
+                              [width]="width" [hideShadow]="true" [insert]="insert">
             </nc-year-selector>
         </div>
         <div class="date-picker" *ngIf="isShowMonthPicker">
             <nc-month-selector [(date)]="monthPickerDate" (dateChange)="backDatePicker('month')"
-                               [width]="width" [hideShadow]="true">
+                               [width]="width" [hideShadow]="true" [insert]="insert">
             </nc-month-selector>
         </div>
     </div>

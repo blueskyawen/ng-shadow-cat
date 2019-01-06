@@ -43,11 +43,14 @@
 .nc-date-day.disable span {
     color:#666;
 }
+.nc-date-day.inRange span {
+    background:#e5f0ff;
+}
 
 .nc-range-date-selector {
     border:solid 1px #ccc;
     border-radius:3px;
-    width:630px;
+    width:650px;
     box-shadow:1px 1px 2px 2px #ccc;
     background: #fff;
     display:inline-flex;
@@ -60,4 +63,21 @@
 .nc-range-date-selector .nc-date-selector-container {
     display:inline-flex;
     justify-content: space-between;
+}
+.nc-range-date-selector .nc-date-selector:first-child .nc-date-year-month-row:after {
+    content: "";
+    position: absolute;
+    height:100%;
+    width: 50px;
+    border-top:solid 1px transparent;
+    border-bottom:solid 1px #ccc;
+    left: 100%;
+}
+.nc-range-date-selector .nc-date-selector:first-child .nc-time-picker-day-title:after {
+    content: "";
+    position: absolute;
+    height:100%;
+    width: 50px;
+    border-bottom:solid 1px #ccc;
+    left: 100%;
 }

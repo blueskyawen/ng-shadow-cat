@@ -3,7 +3,7 @@
 
 <h3>1. 普通模式</h3>
 <nc-month-selector [(date)]="date"></nc-month-selector>
-<p>选择的月份: {{date.toString()}}</p>
+<p>选择的月份: {{date.toLocaleString()}}</p>
 
 <h3>2. 月份选择输入框</h3>
 <nc-month-selector  [(date)]="date" [type]="'input'" [disableMonths]="[6]"></nc-month-selector>
@@ -28,7 +28,7 @@
                        [(date)]="date2" (dateChange)="dateChange()">
     </nc-month-selector>
 </div>
-<p>选择的月份: {{date2.toString()}}</p>
+<p>选择的月份: {{date2.toLocaleString()}}</p>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems3" [type]="'line'" [(selectTab)] = "currentTab3">
     <div *ngIf="currentTab3 === 'html'">
@@ -39,7 +39,7 @@
                            [(date)]="date2" (dateChange)="dateChange()" [type]="'input'" [disableMonths]="[6]">
         </nc-month-selector>
     </div>
-    <p>选择的月份: {{date2.toString()}}</p>
+    <p>选择的月份: {{date2.toLocaleString()}}</p>
     </textarea>
     </div>
     <div *ngIf="currentTab3 === 'typescript'">

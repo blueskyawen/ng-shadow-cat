@@ -2,4 +2,21 @@
 <p>日期范围选择器，用于选择日期范围</p>
 
 <h3>1. 普通模式</h3>
-<nc-range-date-selector></nc-range-date-selector>
+<nc-range-date-selector [(dateRange)]="dateRange"></nc-range-date-selector>
+<p>选择的日期范围: {{dateRange[0]?.toLocaleString()}} - {{dateRange[1]?.toLocaleString()}}</p>
+
+<h3>2. 月份选择输入框</h3>
+<nc-range-date-selector [(dateRange)]="dateRange" [type]="'input'"></nc-range-date-selector>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:60px;">
+    <nc-month-selector  [(date)]="date" [type]="'input'" [disableMonths]="[6]"></nc-month-selector>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:60px;">
+    date : any = new Date();
+    </textarea>
+    </div>
+</nc-tab>

@@ -12,6 +12,7 @@ import { Component,OnInit } from '@angular/core';
     styleUrls: ['./date-time-selector.component.css']
 })
 export class RangeDateSelectorComponent {
+    dateRange : any[] = [];
     date : any = new Date();
     date2 : any = new Date();
     tabItems : any[] = [];
@@ -32,6 +33,11 @@ export class RangeDateSelectorComponent {
         this.currentTab3= this.tabItems3[0].label;
         this.tabItems2 = [{name:'html',label:'html',isActive:true,isDisable:false}];
         this.currentTab2 = this.tabItems2[0].label;
+
+        let startDate : any = new Date();
+        let endDate : any = new Date();
+        endDate.setMonth(startDate.getMonth() + 1);
+        this.dateRange = [startDate,endDate];
     }
 
     openSelector() {

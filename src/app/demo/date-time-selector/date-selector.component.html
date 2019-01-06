@@ -3,7 +3,7 @@
 
 <h3>1. 普通模式</h3>
 <nc-date-selector [(date)]="date"></nc-date-selector>
-<p>选择的日期: {{date.toString()}}</p>
+<p>选择的日期: {{date.toLocaleString()}}</p>
 
 <h3>2. 日期选择输入框</h3>
 <nc-date-selector [(date)]="date" [type]="'input'"></nc-date-selector>
@@ -27,7 +27,7 @@
     <nc-date-selector *ngIf="isShow" class="nc-selector"
                            [(date)]="date2" (dateChange)="dateChange()"></nc-date-selector>
 </div>
-<p>选择的时间: {{date.toString()}}</p>
+<p>选择的时间: {{date.toLocaleString()}}</p>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems3" [type]="'line'" [(selectTab)] = "currentTab3">
     <div *ngIf="currentTab3 === 'html'">
@@ -37,7 +37,7 @@
         <nc-date-selector *ngIf="isShow" class="nc-selector"
                                [(date)]="date2" (dateChange)="dateChange()"></nc-date-selector>
     </div>
-    <p>选择的时间: {{date2.toString()}}</p>
+    <p>选择的时间: {{date2.toLocaleString()}}</p>
     </textarea>
     </div>
     <div *ngIf="currentTab3 === 'typescript'">
