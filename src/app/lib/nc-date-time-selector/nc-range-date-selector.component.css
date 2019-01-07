@@ -35,8 +35,8 @@
     background:#b3d1ff;
 }
 .nc-date-day.active span {
-    border-color:#0066ff;
-    background:#e5f0ff;
+    border-color:#0056cc;
+    background:#b3d3ff;
     color:#0047b3;
     font-weight:600;
 }
@@ -44,7 +44,7 @@
     color:#666;
 }
 .nc-date-day.inRange span {
-    background:#e5f0ff;
+    background:#ccebff;
 }
 
 .nc-range-date-selector {
