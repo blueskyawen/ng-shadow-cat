@@ -1,14 +1,14 @@
 /**
  * Created by liuxuwen on 19-1-3.
  */
-import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterViewInit } from '@angular/core';
+import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterViewInit,OnChanges,SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'nc-date-selector',
     templateUrl: './nc-date-selector.component.html',
     styleUrls: ['./nc-date-selector.component.css','./nc-date-time-selector.component.css']
 })
-export class NcDateSelectorComponent implements OnInit {
+export class NcDateSelectorComponent implements OnInit,OnChanges {
     @Input() type : string = 'single';
     @Input() date : any;
     @Output() dateChange = new EventEmitter();
@@ -39,7 +39,27 @@ export class NcDateSelectorComponent implements OnInit {
     constructor() {
     }
 
+    ngOnChanges(changes: SimpleChanges) {
+        if(changes['date'] && !changes['date'].firstChange) {
+            this.date = changes['date'].currentValue;
+            this.setSelectedDate();
+            this.yearMonthDate.year = this.year;
+            this.yearMonthDate.month = this.month;
+            this.getYearMonthDate();
+            this.setDateValue();
+        }
+    }
+
     ngOnInit() {
+        this.listenDocuClick();
+        this.getFormat();
+        this.setStyleAndClass();
+        this.initData();
+        this.getYearMonthDate();
+        this.setDateValue();
+    }
+
+    listenDocuClick() {
         if(this.type == 'input') {
             document.addEventListener('click', () => {
                 if (!this.isOverSelector) {
@@ -49,14 +69,17 @@ export class NcDateSelectorComponent implements OnInit {
                 }
             });
         }
-        this.formatLabel = this.ncFormat[4];
-        this.selectorStyle = {'width':this.width};
-        this.initDate();
-        this.getYearMonthDate();
-        this.setDateValue();
     }
 
-    initDate() {
+    getFormat() {
+        this.formatLabel = this.ncFormat[4];
+    }
+
+    setStyleAndClass() {
+        this.selectorStyle = {'width':this.width};
+    }
+
+    initData() {
         if(!this.date) {
             this.date = new Date();
         }
@@ -127,9 +150,14 @@ export class NcDateSelectorComponent implements OnInit {
 
     setDateValue() {
         if(this.type === 'input') {
-            this.value = this.date.getFullYear() + this.formatLabel + (this.date.getMonth()+1) +
-                this.formatLabel + this.date.getDate();
+            this.value = this.formatValue(this.date.getFullYear()) + this.formatLabel +
+                this.formatValue(this.date.getMonth() + 1) + this.formatLabel +
+                this.formatValue(this.date.getDate());
         }
+    }
+
+    formatValue(value : number) {
+        return value < 10 ? '0'+value : value.toString();
     }
 
     selectDay(item : any) {
@@ -138,13 +166,7 @@ export class NcDateSelectorComponent implements OnInit {
         }
         this.clearItems();
         item.active = true;
-        this.date.setFullYear(this.yearMonthDate.year);
-        this.date.setMonth(this.yearMonthDate.month);
-        this.date.setDate(item.date);
-        this.setSelectedDate();
-        this.setDateValue();
-        this.dateChange.emit(this.date);
-        this.closeSelector();
+        this.emitDateChange(item.date);
     }
 
     setSelectedDate() {
@@ -226,9 +248,13 @@ export class NcDateSelectorComponent implements OnInit {
                 break;
             }
         }
+        this.emitDateChange(todayDay);
+    }
+
+    emitDateChange(day : any) {
         this.date.setFullYear(this.yearMonthDate.year);
         this.date.setMonth(this.yearMonthDate.month);
-        this.date.setDate(todayDay);
+        this.date.setDate(day);
         this.setSelectedDate();
         this.setDateValue();
         this.dateChange.emit(this.date);
