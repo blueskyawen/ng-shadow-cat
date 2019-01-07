@@ -1,7 +1,7 @@
 /**
  * Created by liuxuwen on 19-1-3.
  */
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,Input } from '@angular/core';
 
 @Component({
     selector: 'demo-date-time-selector',
@@ -9,6 +9,7 @@ import { Component,OnInit } from '@angular/core';
     styleUrls: ['./date-time-selector.component.css']
 })
 export class DateTimeSelectorComponent {
+    @Input() insert : boolean = false;
     date : any = new Date();
     date2 : any = new Date();
     date3 : any = new Date();
@@ -19,6 +20,8 @@ export class DateTimeSelectorComponent {
     currentTab2 : string;
     tabItems3 : any[] = [];
     currentTab3 : string;
+    tabItems4 : any[] = [];
+    currentTab4 : string;
     isShow : boolean = false;
     name : string = 'Jack';
 
@@ -31,6 +34,8 @@ export class DateTimeSelectorComponent {
         this.currentTab3= this.tabItems3[0].label;
         this.tabItems2 = [{name:'html',label:'html',isActive:true,isDisable:false}];
         this.currentTab2 = this.tabItems2[0].label;
+        this.tabItems4 = [{name:'html',label:'html',isActive:true,isDisable:false}];
+        this.currentTab4= this.tabItems2[0].label;
     }
 
     openSelector() {
