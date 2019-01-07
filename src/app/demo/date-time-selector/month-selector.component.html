@@ -1,11 +1,20 @@
-<h2 class="title">MonthSelector-月份选择器</h2>
-<p>月份选择器，用于选择月份的控件</p>
+<h2 class="title" *ngIf="!insert">MonthSelector-月份选择器</h2>
+<p>用于选择月份的控件</p>
 
-<h3>1. 普通模式</h3>
+<h4>单独面板</h4>
 <nc-month-selector [(date)]="date"></nc-month-selector>
-<p>选择的月份: {{date.toLocaleString()}}</p>
+<p>选择的月份: {{date.toJSON()}}</p>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems4" [(selectTab)] = "currentTab4">
+    <div *ngIf="currentTab4 === 'html'">
+    <textarea style="height:50px;">
+    <nc-month-selector [(date)]="date"></nc-month-selector>
+    <p>选择的月份: {{date.toJSON()}}</p>
+    </textarea>
+    </div>
+</nc-tab>
 
-<h3>2. 月份选择输入框</h3>
+<h4>月份选择输入框</h4>
 <nc-month-selector  [(date)]="date2" [type]="'input'" [disableMonths]="[6]"></nc-month-selector>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
@@ -21,18 +30,18 @@
     </div>
 </nc-tab>
 
-<h3>3. 月份选择和按钮联合使用</h3>
+<h4>月份选择和按钮联合使用</h4>
 <div class="nc-selector-container">
     <nc-button (click)="openSelector()">普通按钮</nc-button>
     <nc-month-selector *ngIf="isShow" class="nc-selector"
                        [(date)]="date3" (dateChange)="dateChange()">
     </nc-month-selector>
 </div>
-<p>选择的月份: {{date3.toLocaleString()}}</p>
+<p>选择的月份: {{date3.toJSON()}}</p>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems3" [type]="'line'" [(selectTab)] = "currentTab3">
     <div *ngIf="currentTab3 === 'html'">
-    <textarea style="height:60px;">
+    <textarea style="height:100px;">
     <div class="nc-selector-container">
         <nc-button (click)="openSelector()">普通按钮</nc-button>
         <nc-month-selector *ngIf="isShow" class="nc-selector"
@@ -57,7 +66,7 @@
     </div>
 </nc-tab>
 
-<h3>4. 自定义宽度和显示格式</h3>
+<h4>自定义宽度和显示格式</h4>
 <div>
     <div style="display: inline-block;float: left;">
         <nc-month-selector  [(date)]="date4" [type]="'input'" [width]="'200px'"></nc-month-selector>
@@ -77,8 +86,8 @@
     </div>
 </nc-tab>
 
-<h3>nc-month-selector-参数</h3>
-<table>
+<h3 *ngIf="!insert">nc-month-selector-参数</h3>
+<table *ngIf="!insert">
     <thead>
     <tr>
         <th>参数</th>
