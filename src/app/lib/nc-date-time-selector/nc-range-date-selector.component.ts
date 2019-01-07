@@ -32,12 +32,14 @@ export class NcRangeDateSelectorComponent implements OnInit {
         {
             year: 2019,
             month: 0,
-            day:1
+            day:1,
+            date:new Date
         },
         {
             year: 2019,
             month: 1,
-            day:1
+            day:1,
+            date:new Date
         }
     ];
 
@@ -47,7 +49,6 @@ export class NcRangeDateSelectorComponent implements OnInit {
     selectorStyle : any = {};
     isHiddenSelector : boolean = true;
     isOverSelector : boolean = false;
-    curYear : any;
     isDisableOk : boolean = false;
     timePickDayTitle : string[] = [];
     isShowDatePicker : boolean = true;
@@ -57,18 +58,31 @@ export class NcRangeDateSelectorComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.listenDocuClick();
+        this.getFormat();
+        this.setStyleAndClass();
+        this.initData();
+    }
+
+    listenDocuClick() {
         if(this.type == 'input') {
             document.addEventListener('click', () => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
+                    this.recoverData();
                 }
             });
         }
+    }
+
+    getFormat() {
         this.dateFormat = this.ncFormat.split(' ')[0].charAt(4);
         this.timeFormat = this.ncFormat.split(' ')[1].charAt(2);
+    }
+
+    setStyleAndClass() {
         this.selectorStyle = {'width':this.width};
         this.rangeSelectorStyle = {'width':(Number(this.width.split('px')[0]) * 2 + 50) + 'px'};
-        this.initData();
     }
 
     initData() {
@@ -89,22 +103,32 @@ export class NcRangeDateSelectorComponent implements OnInit {
         }
         this.dateRange[0] = startMonthDate;
         this.dateRange[1] = endMonthDate;
-        this.yearMonthDateRange[0].year = startMonthDate.getFullYear();
-        this.yearMonthDateRange[0].month = startMonthDate.getMonth();
-        this.yearMonthDateRange[0].day = startMonthDate.getDate();
-        this.yearMonthDateRange[1].year = endMonthDate.getFullYear();
-        this.yearMonthDateRange[1].month = endMonthDate.getMonth();
-        this.yearMonthDateRange[1].day = endMonthDate.getDate();
-        this.curDateRange[0].year = this.yearMonthDateRange[0].year;
-        this.curDateRange[0].month = this.yearMonthDateRange[0].month;
-        this.curDateRange[0].day = this.yearMonthDateRange[0].day;
-        this.curDateRange[1].year = this.yearMonthDateRange[1].year;
-        this.curDateRange[1].month = this.yearMonthDateRange[1].month;
-        this.curDateRange[1].day = this.yearMonthDateRange[1].day;
+        this.saveDateInfo(startMonthDate,this.yearMonthDateRange[0]);
+        this.saveDateInfo(endMonthDate,this.yearMonthDateRange[1]);
+        this.saveCurDateInfo(startMonthDate,this.curDateRange[0]);
+        this.saveCurDateInfo(endMonthDate,this.curDateRange[1]);
         for(let i=0;i < 2;i++) {
             this.getYearMonthDate(this.yearMonthDateRange[i]);
         }
         this.setDateValue();
+    }
+
+    saveDateInfo(sourDate : any,targDate : any) {
+        targDate.year = sourDate.getFullYear();
+        targDate.month = sourDate.getMonth();
+        targDate.day = sourDate.getDate();
+    }
+
+    saveCurDateInfo(sourDate : any,targDate : any) {
+        targDate.year = sourDate.getFullYear();
+        targDate.month = sourDate.getMonth();
+        targDate.day = sourDate.getDate();
+        targDate.date.setFullYear(targDate.year);
+        targDate.date.setMonth(targDate.month);
+        targDate.date.setDate(targDate.day);
+        targDate.date.setHours(sourDate.getHours());
+        targDate.date.setMinutes(sourDate.getMinutes());
+        targDate.date.setSeconds(sourDate.getSeconds());
     }
 
     getYearMonthDate(yearMonthDate : any) {
@@ -216,21 +240,17 @@ export class NcRangeDateSelectorComponent implements OnInit {
             year:this.yearMonthDateRange[index].year,
             month:this.yearMonthDateRange[index].month,
             day:item.date};
-        this.clearItems(this.yearMonthDateRange[0].dayDatas);
-        this.clearItems(this.yearMonthDateRange[1].dayDatas);
         if(this.compareDate(selectedDate,this.curDateRange[0]) == 1) {
             this.curDateRange[0].year = selectedDate.year;
             this.curDateRange[0].month = selectedDate.month;
             this.curDateRange[0].day = selectedDate.day;
-            this.getYearMonthDate(this.yearMonthDateRange[0]);
-            this.getYearMonthDate(this.yearMonthDateRange[1]);
+            this.setYearMonthDate();
             this.isDisableOk = false;
         } else if(this.compareDate(selectedDate,this.curDateRange[1]) == 2) {
             this.curDateRange[1].year = selectedDate.year;
             this.curDateRange[1].month = selectedDate.month;
             this.curDateRange[1].day = selectedDate.day;
-            this.getYearMonthDate(this.yearMonthDateRange[0]);
-            this.getYearMonthDate(this.yearMonthDateRange[1]);
+            this.setYearMonthDate();
             this.isDisableOk = false;
         } else {
             this.curDateRange[0].year = selectedDate.year;
@@ -239,31 +259,52 @@ export class NcRangeDateSelectorComponent implements OnInit {
             this.curDateRange[1].year = 0;
             this.curDateRange[1].month = 0;
             this.curDateRange[1].day = 0;
-            this.getYearMonthDate(this.yearMonthDateRange[0]);
-            this.getYearMonthDate(this.yearMonthDateRange[1]);
+            this.setYearMonthDate();
             this.isDisableOk = true;
 
         }
     }
 
-    clearItems(dayDatas : any[]) {
-        dayDatas.forEach((item) => {
-            if(!item.disable) {
-                item.active = false;
-                item.rangeSelect = false;
-            }
+    clearDateRange() {
+        this.yearMonthDateRange.forEach((dateRange) => {
+            dateRange.dayDatas = null;
+        });
+    }
+
+    setYearMonthDate() {
+        this.yearMonthDateRange.forEach((dateRange) => {
+            dateRange.dayDatas.forEach((day) => {
+                if(!day.disable) {
+                    let tmpDate = {year:dateRange.year,month:dateRange.month,day:day.date};
+                    if(this.isDateActive(tmpDate)) {
+                        day.active = true;
+                    } else if(this.isDateInSelectedRange(tmpDate)) {
+                        day.rangeSelect = true;
+                        day.active = false;
+                    } else {
+                        day.active = false;
+                        day.rangeSelect = false;
+                    }
+                }
+            });
         });
     }
 
     setDateValue() {
         if(this.type === 'input') {
-            this.value = this.dateRange[0].getFullYear() + this.dateFormat + (this.dateRange[0].getMonth() + 1) + this.dateFormat
-                + this.dateRange[0].getDate() + ' ' + this.dateRange[0].getHours() + this.timeFormat + this.dateRange[0].getMinutes() +
-                this.timeFormat + this.dateRange[0].getSeconds() + ' ~ ' + this.dateRange[1].getFullYear() + this.dateFormat +
-                (this.dateRange[1].getMonth() + 1) + this.dateFormat + this.dateRange[1].getDate() + ' ' +
-                this.dateRange[1].getHours() + this.timeFormat + this.dateRange[1].getMinutes() +
-                this.timeFormat + this.dateRange[1].getSeconds();
+            this.value = this.formatValue(this.dateRange[0].getFullYear()) + this.dateFormat +
+                this.formatValue(this.dateRange[0].getMonth()+1) + this.dateFormat +
+                this.formatValue(this.dateRange[0].getDate()) + ' ' +
+                this.dateRange[0].toString().split(' ')[4].split(':').join(this.timeFormat) + ' ~ ' +
+                this.formatValue(this.dateRange[1].getFullYear()) + this.dateFormat +
+                this.formatValue(this.dateRange[1].getMonth()+1) + this.dateFormat +
+                this.formatValue(this.dateRange[1].getDate()) + ' ' +
+                this.dateRange[1].toString().split(' ')[4].split(':').join(this.timeFormat);
         }
+    }
+
+    formatValue(value : number) {
+        return value < 10 ? '0'+value : value.toString();
     }
 
     pickOk() {
@@ -274,6 +315,9 @@ export class NcRangeDateSelectorComponent implements OnInit {
             this.dateRange[index].setFullYear(this.curDateRange[index].year);
             this.dateRange[index].setMonth(this.curDateRange[index].month);
             this.dateRange[index].setDate(this.curDateRange[index].day);
+            this.dateRange[index].setHours(this.curDateRange[index].date.getHours());
+            this.dateRange[index].setMinutes(this.curDateRange[index].date.getMinutes());
+            this.dateRange[index].setSeconds(this.curDateRange[index].date.getSeconds());
         }
         this.checkOrExchangeDate();
         this.setDateValue();
@@ -287,29 +331,9 @@ export class NcRangeDateSelectorComponent implements OnInit {
         }
     }
 
-     /*backDatePicker(date : any,type : any) {
-        if(type === 'year') {
-            this.clearPickerFlag(date);
-            //this.getYearMonthDate();
-            date.isShowDatePicker = true;
-        }
-        if(type === 'month') {
-            this.clearPickerFlag(date);
-            //this.yearMonthDate.year = this.monthPickerDate.getFullYear();
-            //this.yearMonthDate.month = this.monthPickerDate.getMonth();
-            //this.getYearMonthDate();
-            date.isShowDatePicker = true;
-        }
-    }
-
-    clearPickerFlag(date : any) {
-        date.isShowDatePicker = false;
-        date.isShowMonthPicker = false;
-        date.isShowYearPicker = false;
-    }*/
-
     openSelector() {
         if(this.type === 'input') {
+            this.isShowDatePicker = true;
             this.isHiddenSelector = false;
         }
     }
@@ -317,6 +341,17 @@ export class NcRangeDateSelectorComponent implements OnInit {
     closeSelector() {
         if(this.type === 'input') {
             this.isHiddenSelector = true;
+        }
+    }
+
+    recoverData() {
+        this.saveDateInfo(this.dateRange[0],this.yearMonthDateRange[0]);
+        this.saveDateInfo(this.dateRange[1],this.yearMonthDateRange[1]);
+        this.saveCurDateInfo(this.dateRange[0],this.curDateRange[0]);
+        this.saveCurDateInfo(this.dateRange[1],this.curDateRange[1]);
+        this.clearDateRange();
+        for(let i=0;i < 2;i++) {
+            this.getYearMonthDate(this.yearMonthDateRange[i]);
         }
     }
 
