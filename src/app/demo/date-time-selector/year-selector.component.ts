@@ -1,7 +1,7 @@
 /**
  * Created by liuxuwen on 19-1-2.
  */
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,Input } from '@angular/core';
 
 @Component({
     selector: 'demo-year-selector',
@@ -9,6 +9,7 @@ import { Component,OnInit } from '@angular/core';
     styleUrls: ['./date-time-selector.component.css']
 })
 export class YearSelectorComponent {
+    @Input() insert : boolean = false;
     year : number = 2019;
     year2 : number = 2019;
     disableYears : number[] = [2015];
@@ -18,8 +19,9 @@ export class YearSelectorComponent {
     currentTab2 : string;
     tabItems3 : any[] = [];
     currentTab3 : string;
+    tabItems4 : any[] = [];
+    currentTab4 : string;
     isShow : boolean = false;
-    name : string = 'Jack';
 
     constructor() {
         this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
@@ -30,6 +32,8 @@ export class YearSelectorComponent {
         this.currentTab3= this.tabItems3[0].label;
         this.tabItems2 = [{name:'html',label:'html',isActive:true,isDisable:false}];
         this.currentTab2 = this.tabItems2[0].label;
+        this.tabItems4 = [{name:'html',label:'html',isActive:true,isDisable:false}];
+        this.currentTab4= this.tabItems2[0].label;
     }
 
     openSelector() {
