@@ -28,29 +28,50 @@ export class NcMonthSelectorComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.listenDocuClick();
+        this.getFormat();
+        this.setStyleAndClass();
+        this.initData();
+    }
+
+    listenDocuClick() {
         if(this.type == 'input') {
             document.addEventListener('click', () => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
                     this.recoverData();
-                    this.setMonthValue();
+                    this.setDateValue();
                 }
             });
         }
+    }
+
+    getFormat() {
         this.formatLabel = this.ncFormat[4];
+    }
+
+    setStyleAndClass() {
         this.selectorStyle = {'width':this.width};
+    }
+
+    initData() {
         this.curYear = this.date.getFullYear();
         this.months.forEach((month) => {
             month.disable = this.disableMonths.includes(month.value);
             month.active = month.value == this.date.getMonth();
         });
-        this.setMonthValue();
+        this.setDateValue();
     }
 
-    setMonthValue() {
+    setDateValue() {
         if(this.type === 'input') {
-            this.value = this.date.getFullYear() + this.formatLabel + (this.date.getMonth()+1);
+            this.value = this.formatValue(this.date.getFullYear()) + this.formatLabel +
+                this.formatValue(this.date.getMonth()+1);
         }
+    }
+
+    formatValue(value : number) {
+        return value < 10 ? '0'+value : value.toString();
     }
 
     prevPage() {
@@ -74,7 +95,7 @@ export class NcMonthSelectorComponent implements OnInit {
         item.active = true;
         this.date.setFullYear(this.curYear);
         this.date.setMonth(item.value);
-        this.setMonthValue();
+        this.setDateValue();
         this.dateChange.emit(this.date);
         this.closeSelector();
     }
