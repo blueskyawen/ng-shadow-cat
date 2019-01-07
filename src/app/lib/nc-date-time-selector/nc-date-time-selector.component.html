@@ -10,12 +10,12 @@
          [ngClass]="{'nc-date-selector-dropdown':type === 'input'}"
          [ngStyle]="selectorStyle">
         <div class="date-picker" *ngIf="isShowDatePicker">
-            <nc-date-selector [(date)]="curDate" [insert]="true" [width]="width" (dateChange)="dateSelectChange()">
+            <nc-date-selector [(date)]="curDate" [insert]="true" [width]="width">
             </nc-date-selector>
         </div>
         <div class="date-picker" *ngIf="!isShowDatePicker">
             <div class="nc-time-picker-day-title">{{timePickDayTitle}}</div>
-            <nc-time-selector [(date)]="curDate" [insert]="true" [width]="width" (dateChange)="dateSelectChange()">
+            <nc-time-selector [(date)]="curDate" [insert]="true" [width]="width">
             </nc-time-selector>
         </div>
         <div class="nc-date-time-oper">
