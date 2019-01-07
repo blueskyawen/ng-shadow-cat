@@ -23,7 +23,6 @@ export class NcDateTimeSelectorComponent implements OnInit {
     isShowDatePicker : boolean = true;
     timePickDayTitle : string;
     curDate : any = new Date();
-    oldDate : any = new Date();
 
     constructor() {
     }
@@ -32,6 +31,13 @@ export class NcDateTimeSelectorComponent implements OnInit {
         if(!this.date) {
             this.date = new Date();
         }
+        this.listenDocuClick();
+        this.getFormat();
+        this.setStyleAndClass();
+        this.initData();
+    }
+
+    listenDocuClick() {
         if(this.type == 'input') {
             document.addEventListener('click', () => {
                 if (!this.isOverSelector) {
@@ -41,31 +47,24 @@ export class NcDateTimeSelectorComponent implements OnInit {
                 }
             });
         }
-        this.dateFormat = this.ncFormat.split(' ')[0].charAt(4);
-        this.timeFormat = this.ncFormat.split(' ')[1].charAt(2);
-        this.selectorStyle = {'width':this.width};
-        this.initDate();
     }
 
-    initDate() {
-        let year = this.date.getFullYear();
-        let month = this.date.getMonth();
-        let day = this.date.getDate();
-        let hour = this.date.getHours();
-        let minute = this.date.getMinutes();
-        let second = this.date.getSeconds();
-        this.curDate.setFullYear(year);
-        this.curDate.setMonth(month);
-        this.curDate.setDate(day);
-        this.curDate.setHours(hour);
-        this.curDate.setMinutes(minute);
-        this.curDate.setSeconds(second);
-        this.oldDate.setFullYear(year);
-        this.oldDate.setMonth(month);
-        this.oldDate.setDate(day);
-        this.oldDate.setHours(hour);
-        this.oldDate.setMinutes(minute);
-        this.oldDate.setSeconds(second);
+    getFormat() {
+        this.dateFormat = this.ncFormat.split(' ')[0].charAt(4);
+        this.timeFormat = this.ncFormat.split(' ')[1].charAt(2);
+    }
+
+    setStyleAndClass() {
+        this.selectorStyle = {'width':this.width};
+    }
+
+    initData() {
+        this.curDate.setFullYear(this.date.getFullYear());
+        this.curDate.setMonth(this.date.getMonth());
+        this.curDate.setDate(this.date.getDate());
+        this.curDate.setHours(this.date.getHours());
+        this.curDate.setMinutes(this.date.getMinutes());
+        this.curDate.setSeconds(this.date.getSeconds());
         this.getTimePickDayTitle();
         this.setDateValue();
     }
@@ -95,21 +94,13 @@ export class NcDateTimeSelectorComponent implements OnInit {
         }
     }
 
-    dateSelectChange() {
-        console.log('dateSelectChange');
-        console.log(this.date);
-        console.log(this.oldDate);
-        console.log(this.curDate);
-        console.log('dateSelectChange');
-        this.getTimePickDayTitle();
-    }
-
     getTimePickDayTitle() {
         this.timePickDayTitle = this.curDate.getFullYear() + '年 ' + (this.curDate.getMonth()+1) +
             '月 ' + this.curDate.getDate() + '日';
     }
 
     pickDateOrTime() {
+        this.getTimePickDayTitle();
         this.isShowDatePicker = !this.isShowDatePicker;
     }
 
@@ -125,47 +116,36 @@ export class NcDateTimeSelectorComponent implements OnInit {
 
     setDateValue() {
         if(this.type === 'input') {
-            this.value = this.date.getFullYear() + this.dateFormat + (this.date.getMonth() + 1) + this.dateFormat
-                + this.date.getDate() + ' ' + this.date.getHours() + this.timeFormat + this.date.getMinutes() +
-                this.timeFormat + this.date.getSeconds();
+            this.value = this.formatValue(this.date.getFullYear()) + this.dateFormat +
+                this.formatValue(this.date.getMonth() + 1) + this.dateFormat +
+                this.formatValue(this.date.getDate()) + ' ' +
+                this.date.toString().split(' ')[4].split(':').join(this.timeFormat);
         }
     }
 
+    formatValue(value : number) {
+        return value < 10 ? '0'+value : value.toString();
+    }
+
     setDateDataAndValue() {
-        let year = this.curDate.getFullYear();
-        let month = this.curDate.getMonth();
-        let day = this.curDate.getDate();
-        let hour = this.curDate.getHours();
-        let minute = this.curDate.getMinutes();
-        let second = this.curDate.getSeconds();
-        this.date.setFullYear(year);
-        this.date.setMonth(month);
-        this.date.setDate(day);
-        this.date.setHours(hour);
-        this.date.setMinutes(minute);
-        this.date.setSeconds(second);
+        this.date.setFullYear(this.curDate.getFullYear());
+        this.date.setMonth(this.curDate.getMonth());
+        this.date.setDate(this.curDate.getDate());
+        this.date.setHours(this.curDate.getHours());
+        this.date.setMinutes(this.curDate.getMinutes());
+        this.date.setSeconds(this.curDate.getSeconds());
         this.setDateValue();
     }
 
     recoverData() {
-        console.log('recoverData');
-        console.log(this.date);
-        console.log(this.oldDate);
-        console.log(this.curDate);
-        console.log('recoverData');
-        let year = this.oldDate.getFullYear();
-        let month = this.oldDate.getMonth();
-        let day = this.oldDate.getDate();
-        let hour = this.oldDate.getHours();
-        let minute = this.oldDate.getMinutes();
-        let second = this.oldDate.getSeconds();
-        this.curDate.setFullYear(year);
-        this.curDate.setMonth(month);
-        this.curDate.setDate(day);
-        this.curDate.setHours(hour);
-        this.curDate.setMinutes(minute);
-        this.curDate.setSeconds(second);
-        this.isShowDatePicker = false;
+        let tmpDate = new Date();
+        tmpDate.setFullYear(this.date.getFullYear());
+        tmpDate.setMonth(this.date.getMonth());
+        tmpDate.setDate(this.date.getDate());
+        tmpDate.setHours(this.date.getHours());
+        tmpDate.setMinutes(this.date.getMinutes());
+        tmpDate.setSeconds(this.date.getSeconds());
+        this.curDate = tmpDate;
     }
 }
 
