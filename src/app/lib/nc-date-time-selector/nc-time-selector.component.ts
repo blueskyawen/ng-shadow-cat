@@ -19,7 +19,6 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
     @Input() ncFormat : string = 'hh:mm:ss';
     @Input() insert : boolean = false;
     @Input() hideShadow : boolean = false;
-    dialogClass : any = {};
     hours : any[] = [];
     minutes : any[] = [];
     seconds : any[] = [];
@@ -44,22 +43,34 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
     }
 
     ngOnInit() {
-        if(this.type == 'input') {
-            document.addEventListener('click', () => {
-                if (!this.isOverSelector) {
-                    this.isHiddenSelector = true;
-                    this.recoverTimeData();
-                    this.setTimeValue();
-                }
-            });
-        }
-        this.formatLabel = this.ncFormat[2];
-        this.selectorStyle = {'width':this.width};
+        this.listenDocuClick();
+        this.getFormat();
+        this.setStyleAndClass();
         this.initData();
     }
 
     ngAfterViewInit() {
         this.initActivePosition();
+    }
+
+    listenDocuClick() {
+        if(this.type == 'input') {
+            document.addEventListener('click', () => {
+                if (!this.isOverSelector) {
+                    this.isHiddenSelector = true;
+                    this.recoverData();
+                    this.setDateValue();
+                }
+            });
+        }
+    }
+
+    getFormat() {
+        this.formatLabel = this.ncFormat[2];
+    }
+
+    setStyleAndClass() {
+        this.selectorStyle = {'width':this.width};
     }
 
     initData() {
@@ -83,13 +94,12 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
                 disable:this.disableSeconds.includes(i),
                 active:this.selectTime.second == i});
         }
-        this.setTimeValue();
+        this.setDateValue();
     }
 
-    setTimeValue() {
+    setDateValue() {
         if(this.type === 'input') {
-            this.value = this.date.getHours() + this.formatLabel + this.date.getMinutes() +
-                this.formatLabel + this.date.getSeconds();
+            this.value = this.date.toString().split(' ')[4].split(':').join(this.formatLabel);
         }
     }
 
@@ -145,7 +155,7 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
         this.date.setHours(this.selectTime.hour);
         this.date.setMinutes(this.selectTime.minute);
         this.date.setSeconds(this.selectTime.second);
-        this.setTimeValue();
+        this.setDateValue();
         this.dateChange.emit(this.date);
         this.closeSelector();
     }
@@ -231,7 +241,7 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
         }
     }
 
-    recoverTimeData() {
+    recoverData() {
         this.selectTime.hour = this.date.getHours();
         this.selectTime.minute = this.date.getMinutes();
         this.selectTime.second = this.date.getSeconds();
