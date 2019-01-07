@@ -1,9 +1,18 @@
 <h2 class="title">RangeDateSelector-日期范围选择器</h2>
 <p>日期范围选择器，用于选择日期范围</p>
 
-<h3>1. 普通模式</h3>
+<h3>1. 单独面板</h3>
 <nc-range-date-selector [(dateRange)]="dateRange"></nc-range-date-selector>
-<p>选择的日期范围: {{dateRange[0]?.toLocaleString()}} - {{dateRange[1]?.toLocaleString()}}</p>
+<p>选择的日期范围: {{dateRange[0]?.toJSON()}} - {{dateRange[1]?.toJSON()}}</p>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems4" [(selectTab)] = "currentTab4">
+    <div *ngIf="currentTab4 === 'html'">
+    <textarea style="height:50px;">
+    <nc-range-date-selector [(dateRange)]="dateRange"></nc-range-date-selector>
+    <p>选择的日期范围: {{dateRange[0]?.toJSON()}} - {{dateRange[1]?.toJSON()}}</p>
+    </textarea>
+    </div>
+</nc-tab>
 
 <h3>2. 日期范围选择输入框</h3>
 <nc-range-date-selector [(dateRange)]="dateRange2" [type]="'input'"></nc-range-date-selector>
@@ -27,17 +36,17 @@
     <nc-range-date-selector *ngIf="isShow" class="nc-selector" [(dateRange)]="dateRange3"
                             (dateRangeChange)="dateChange()"></nc-range-date-selector>
 </div>
-<p>选择的日期范围: {{dateRange3[0]?.toLocaleString()}} - {{dateRange3[1]?.toLocaleString()}}</p>
+<p>选择的日期范围: {{dateRange3[0]?.toJSON()}} - {{dateRange3[1]?.toJSON()}}</p>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems3" [type]="'line'" [(selectTab)] = "currentTab3">
     <div *ngIf="currentTab3 === 'html'">
-    <textarea style="height:60px;">
+    <textarea style="height:100px;">
     <div class="nc-selector-container">
         <nc-button (click)="openSelector()">普通按钮</nc-button>
         <nc-range-date-selector *ngIf="isShow" class="nc-selector" [(dateRange)]="dateRange"
                                 (dateRangeChange)="dateChange()"></nc-range-date-selector>
     </div>
-    <p>选择的日期范围: {{dateRange[0]?.toLocaleString()}} - {{dateRange[1]?.toLocaleString()}}</p>
+    <p>选择的日期范围: {{dateRange[0]?.toJSON()}} - {{dateRange[1]?.toJSON()}}</p>
     </textarea>
     </div>
     <div *ngIf="currentTab3 === 'typescript'">
