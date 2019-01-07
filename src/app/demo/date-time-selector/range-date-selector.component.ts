@@ -22,8 +22,9 @@ export class RangeDateSelectorComponent {
     currentTab2 : string;
     tabItems3 : any[] = [];
     currentTab3 : string;
+    tabItems4 : any[] = [];
+    currentTab4 : string;
     isShow : boolean = false;
-    name : string = 'Jack';
 
     constructor() {
         this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
@@ -34,6 +35,8 @@ export class RangeDateSelectorComponent {
         this.currentTab3= this.tabItems3[0].label;
         this.tabItems2 = [{name:'html',label:'html',isActive:true,isDisable:false}];
         this.currentTab2 = this.tabItems2[0].label;
+        this.tabItems4 = [{name:'html',label:'html',isActive:true,isDisable:false}];
+        this.currentTab4= this.tabItems2[0].label;
 
         this.setDateRange(this.dateRange);
         this.setDateRange(this.dateRange2);
