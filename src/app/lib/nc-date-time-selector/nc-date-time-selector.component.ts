@@ -39,12 +39,13 @@ export class NcDateTimeSelectorComponent implements OnInit {
 
     listenDocuClick() {
         if(this.type == 'input') {
-            document.addEventListener('click', () => {
+            document.addEventListener('click', (event) => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
                     console.log('addEventListener');
-                    this.recoverData();
+                    //this.recoverData();
                 }
+                event.stopPropagation();
             });
         }
     }
@@ -71,6 +72,7 @@ export class NcDateTimeSelectorComponent implements OnInit {
 
     openSelector() {
         if(this.type === 'input') {
+            this.recoverData();
             this.isShowDatePicker = true;
             this.isHiddenSelector = false;
         }

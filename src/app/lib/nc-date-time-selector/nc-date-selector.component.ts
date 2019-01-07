@@ -61,12 +61,12 @@ export class NcDateSelectorComponent implements OnInit,OnChanges {
 
     listenDocuClick() {
         if(this.type == 'input') {
-            document.addEventListener('click', () => {
+            document.addEventListener('click', (event) => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
-                    this.recoverData();
-                    this.setDateValue();
+                    //this.recoverData();
                 }
+                event.stopPropagation();
             });
         }
     }
@@ -215,6 +215,7 @@ export class NcDateSelectorComponent implements OnInit,OnChanges {
 
     openSelector() {
         if(this.type === 'input') {
+            this.recoverData();
             this.isHiddenSelector = false;
         }
     }

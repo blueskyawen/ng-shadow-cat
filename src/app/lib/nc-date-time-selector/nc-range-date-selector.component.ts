@@ -69,7 +69,6 @@ export class NcRangeDateSelectorComponent implements OnInit {
             document.addEventListener('click', () => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
-                    this.recoverData();
                 }
             });
         }
@@ -333,6 +332,7 @@ export class NcRangeDateSelectorComponent implements OnInit {
 
     openSelector() {
         if(this.type === 'input') {
+            this.recoverData();
             this.isShowDatePicker = true;
             this.isHiddenSelector = false;
         }

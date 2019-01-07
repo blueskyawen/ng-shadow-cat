@@ -33,12 +33,13 @@ export class NcYearSelectorComponent implements OnInit {
 
     listenDocuClick() {
         if(this.type == 'input') {
-            document.addEventListener('click', () => {
+            document.addEventListener('click', (event) => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
-                    this.recoverData();
-                    this.setDateValue();
+                    //this.recoverData();
+                    //this.setDateValue();
                 }
+                event.stopPropagation();
             });
         }
     }
@@ -110,6 +111,7 @@ export class NcYearSelectorComponent implements OnInit {
 
     openSelector() {
         if(this.type === 'input') {
+            this.recoverData();
             this.isHiddenSelector = false;
         }
     }
