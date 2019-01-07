@@ -40,7 +40,7 @@
                 </div>
                 <div class="date-picker" *ngIf="!isShowDatePicker">
                     <div class="nc-time-picker-day-title">{{timePickDayTitle[i]}}</div>
-                    <nc-time-selector [(date)]="dateRange[i]" [insert]="true" [width]="width">
+                    <nc-time-selector [(date)]="curDateRange[i].date" [insert]="true" [width]="width">
                     </nc-time-selector>
                 </div>
             </div>
