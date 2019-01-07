@@ -24,22 +24,39 @@ export class NcYearSelectorComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.listenDocuClick();
+        this.setStyleAndClass();
+        this.initData();
+        this.setDateValue();
+        this.initData();
+    }
+
+    listenDocuClick() {
         if(this.type == 'input') {
             document.addEventListener('click', () => {
                 if (!this.isOverSelector) {
                     this.isHiddenSelector = true;
                     this.recoverData();
-                    this.setYearValue();
+                    this.setDateValue();
                 }
             });
         }
+    }
+
+    getFormat() {
+        return;
+    }
+
+    setStyleAndClass() {
         this.selectorStyle = {'width':this.width};
-        this.setYearValue();
+    }
+
+    initData() {
         this.minYear = this.year - 5;
         this.years = this.initYearData();
     }
 
-    setYearValue() {
+    setDateValue() {
         if(this.type === 'input') {
             this.value = this.year.toString();
         }
@@ -79,7 +96,7 @@ export class NcYearSelectorComponent implements OnInit {
         item.active = true;
         this.year = item.value;
         this.yearChange.emit(this.year);
-        this.setYearValue();
+        this.setDateValue();
         this.closeSelector();
     }
 
