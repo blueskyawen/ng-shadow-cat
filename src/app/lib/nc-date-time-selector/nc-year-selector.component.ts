@@ -1,11 +1,12 @@
 import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterViewInit } from '@angular/core';
+import { NcDateSelectorBase } from './nc-date-selector.base';
 
 @Component({
     selector: 'nc-year-selector',
     templateUrl: './nc-year-selector.component.html',
     styleUrls: ['./nc-year-selector.component.css','./nc-date-time-selector.component.css']
 })
-export class NcYearSelectorComponent implements OnInit {
+export class NcYearSelectorComponent extends NcDateSelectorBase implements OnInit {
     @Input() type : string = 'single';
     @Input() year : number = 2019;
     @Output() yearChange = new EventEmitter();
@@ -15,37 +16,18 @@ export class NcYearSelectorComponent implements OnInit {
     @Input() hideShadow : boolean = false;
     years : any[] = [];
     minYear : number;
-    value : string;
-    selectorStyle : any = {};
-    isHiddenSelector : boolean = true;
-    isOverSelector : boolean = false;
 
     constructor() {
+        super();
     }
 
     ngOnInit() {
+        this.selectorType = this.type;
         this.listenDocuClick();
         this.setStyleAndClass();
         this.initData();
         this.setDateValue();
         this.initData();
-    }
-
-    listenDocuClick() {
-        if(this.type == 'input') {
-            document.addEventListener('click', (event) => {
-                if (!this.isOverSelector) {
-                    this.isHiddenSelector = true;
-                    //this.recoverData();
-                    //this.setDateValue();
-                }
-                event.stopPropagation();
-            });
-        }
-    }
-
-    getFormat() {
-        return;
     }
 
     setStyleAndClass() {
@@ -93,20 +75,12 @@ export class NcYearSelectorComponent implements OnInit {
             this.closeSelector();
             return;
         }
-        this.clearItems();
+        this.clearItems(this.years);
         item.active = true;
         this.year = item.value;
         this.yearChange.emit(this.year);
         this.setDateValue();
         this.closeSelector();
-    }
-
-    clearItems() {
-        this.years.forEach((item) => {
-            if(!item.disable) {
-                item.active = false;
-            }
-        });
     }
 
     openSelector() {
@@ -116,26 +90,8 @@ export class NcYearSelectorComponent implements OnInit {
         }
     }
 
-    closeSelector() {
-        if(this.type === 'input') {
-            this.isHiddenSelector = true;
-        }
-    }
-
     recoverData() {
         this.minYear = this.year - 5;
         this.years = this.initYearData();
-    }
-
-    mouseover() {
-        if(this.type === 'input') {
-            this.isOverSelector = true;
-        }
-    }
-
-    mouseout() {
-        if(this.type === 'input') {
-            this.isOverSelector = false;
-        }
     }
 }
