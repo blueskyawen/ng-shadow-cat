@@ -2,52 +2,36 @@
  * Created by liuxuwen on 19-1-3.
  */
 import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } from '@angular/core';
+import { NcDateSelectorBase } from './nc-date-selector.base';
 
 @Component({
     selector: 'nc-date-time-selector',
     templateUrl: './nc-date-time-selector.component.html',
     styleUrls: ['./nc-date-time-selector.component.css']
 })
-export class NcDateTimeSelectorComponent implements OnInit {
+export class NcDateTimeSelectorComponent extends NcDateSelectorBase implements OnInit {
     @Input() type : string = 'single';
     @Input() date : any;
     @Output() dateChange = new EventEmitter();
     @Input() width : string = '300px';
     @Input() ncFormat : string = 'yyyy/mm/dd hh:mm:ss';
-    dateFormat : string = '/';
-    timeFormat : string = ':';
-    value : string;
-    selectorStyle : any = {};
-    isHiddenSelector : boolean = true;
-    isOverSelector : boolean = false;
     isShowDatePicker : boolean = true;
     timePickDayTitle : string;
     curDate : any = new Date();
 
     constructor() {
+        super();
     }
 
     ngOnInit() {
         if(!this.date) {
             this.date = new Date();
         }
+        this.selectorType = this.type;
         this.listenDocuClick();
         this.getFormat();
         this.setStyleAndClass();
         this.initData();
-    }
-
-    listenDocuClick() {
-        if(this.type == 'input') {
-            document.addEventListener('click', (event) => {
-                if (!this.isOverSelector) {
-                    this.isHiddenSelector = true;
-                    console.log('addEventListener');
-                    //this.recoverData();
-                }
-                event.stopPropagation();
-            });
-        }
     }
 
     getFormat() {
@@ -78,24 +62,6 @@ export class NcDateTimeSelectorComponent implements OnInit {
         }
     }
 
-    closeSelector() {
-        if(this.type === 'input') {
-            this.isHiddenSelector = true;
-        }
-    }
-
-    mouseover() {
-        if(this.type === 'input') {
-            this.isOverSelector = true;
-        }
-    }
-
-    mouseout() {
-        if(this.type === 'input') {
-            this.isOverSelector = false;
-        }
-    }
-
     getTimePickDayTitle() {
         this.timePickDayTitle = this.curDate.getFullYear() + '年 ' + (this.curDate.getMonth()+1) +
             '月 ' + this.curDate.getDate() + '日';
@@ -123,10 +89,6 @@ export class NcDateTimeSelectorComponent implements OnInit {
                 this.formatValue(this.date.getDate()) + ' ' +
                 this.date.toString().split(' ')[4].split(':').join(this.timeFormat);
         }
-    }
-
-    formatValue(value : number) {
-        return value < 10 ? '0'+value : value.toString();
     }
 
     setDateDataAndValue() {
