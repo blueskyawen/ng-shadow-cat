@@ -1,18 +1,17 @@
 import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterViewInit } from '@angular/core';
+import { NcDateSelectorBase } from './nc-date-selector.base';
 
 @Component({
     selector: 'nc-range-date-selector',
     templateUrl: './nc-range-date-selector.component.html',
     styleUrls: ['./nc-range-date-selector.component.css','./nc-date-time-selector.component.css']
 })
-export class NcRangeDateSelectorComponent implements OnInit {
+export class NcRangeDateSelectorComponent extends NcDateSelectorBase implements OnInit {
     @Input() type : string = 'single';
     @Input() dateRange : any[] = [];
     @Output() dateRangeChange = new EventEmitter();
     @Input() ncFormat : string = 'yyyy/mm/dd hh:mm:ss';
     @Input() width : string = '300px';
-    dateFormat : string = '/';
-    timeFormat : string = ':';
     weeks = ['日','一','二','三','四','五','六'];
     yearMonthDateRange : any[] = [
         {
@@ -45,33 +44,21 @@ export class NcRangeDateSelectorComponent implements OnInit {
 
     @Input() insert : boolean = false;
     @Input() hideShadow : boolean = false;
-    value : string;
-    selectorStyle : any = {};
-    isHiddenSelector : boolean = true;
-    isOverSelector : boolean = false;
     isDisableOk : boolean = false;
     timePickDayTitle : string[] = [];
     isShowDatePicker : boolean = true;
     rangeSelectorStyle : any = {};
 
     constructor() {
+        super();
     }
 
     ngOnInit() {
+        this.selectorType = this.type;
         this.listenDocuClick();
         this.getFormat();
         this.setStyleAndClass();
         this.initData();
-    }
-
-    listenDocuClick() {
-        if(this.type == 'input') {
-            document.addEventListener('click', () => {
-                if (!this.isOverSelector) {
-                    this.isHiddenSelector = true;
-                }
-            });
-        }
     }
 
     getFormat() {
@@ -302,10 +289,6 @@ export class NcRangeDateSelectorComponent implements OnInit {
         }
     }
 
-    formatValue(value : number) {
-        return value < 10 ? '0'+value : value.toString();
-    }
-
     pickOk() {
         if(this.isDisableOk) {
             return;
@@ -338,32 +321,23 @@ export class NcRangeDateSelectorComponent implements OnInit {
         }
     }
 
-    closeSelector() {
-        if(this.type === 'input') {
-            this.isHiddenSelector = true;
-        }
-    }
-
     recoverData() {
         this.saveDateInfo(this.dateRange[0],this.yearMonthDateRange[0]);
         this.saveDateInfo(this.dateRange[1],this.yearMonthDateRange[1]);
         this.saveCurDateInfo(this.dateRange[0],this.curDateRange[0]);
         this.saveCurDateInfo(this.dateRange[1],this.curDateRange[1]);
         this.clearDateRange();
+        this.checkRangeInOneMonth();
         for(let i=0;i < 2;i++) {
             this.getYearMonthDate(this.yearMonthDateRange[i]);
         }
     }
 
-    mouseover() {
-        if(this.type === 'input') {
-            this.isOverSelector = true;
-        }
-    }
-
-    mouseout() {
-        if(this.type === 'input') {
-            this.isOverSelector = false;
+    checkRangeInOneMonth() {
+        if(this.yearMonthDateRange[0].year === this.yearMonthDateRange[1].year &&
+            this.yearMonthDateRange[0].month === this.yearMonthDateRange[1].month) {
+            this.yearMonthDateRange[1].month = this.yearMonthDateRange[0].month + 1;
+            this.yearMonthDateRange[1].day = 0;
         }
     }
 
