@@ -16,7 +16,7 @@ import { LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopCom
   SkeletonComponent,NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,
   FormInstanceComponent,PhotoViewComponent,YearSelectorComponent,TimeSelectorComponent,
   MonthSelectorComponent,DateTimeSelectorComponent,DateSelectorComponent,
-  RangeDateSelectorComponent} from './demo/index';
+  RangeDateSelectorComponent,DropDrawerComponent} from './demo/index';
 
 const appRoutes: Routes = [
   { path: 'components',
@@ -63,7 +63,8 @@ const appRoutes: Routes = [
       { path: 'avater', component: AvaterComponent},
       { path: 'msgEif', component: MsgEifComponent},
       { path: 'skeleton', component: SkeletonComponent},
-      { path: 'numberInput', component: NumberInputComponent}
+      { path: 'numberInput', component: NumberInputComponent},
+      { path: 'drawer', component: DropDrawerComponent}
     ]
   },
   {

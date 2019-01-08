@@ -1,0 +1,111 @@
+<h2 class="title">抽屉</h2>
+<p>下拉抽屉，用于用户的动态展示和表单交互</p>
+
+<div style="margin-top: 20px;">
+    <span style="margin-right: 10px;">
+      <nc-button (click)="openDrawer(0)">右边展现</nc-button>
+    </span>
+    <span style="margin-right: 10px;">
+      <nc-button (click)="openDrawer(1)">左边展现</nc-button>
+    </span>
+    <span style="margin-right: 10px;">
+      <nc-button (click)="openDrawer(2)">上边展现</nc-button>
+    </span>
+    <span style="margin-right: 10px;">
+        <nc-button (click)="openDrawer(3)">下边展现</nc-button>
+    </span>
+</div>
+
+<nc-drawer [(isShow)]="isShows[0]">
+    <div nc-drawer-content class="content">
+        倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+    </div>
+</nc-drawer>
+
+<nc-drawer [(isShow)]="isShows[1]" [place]="'left'">
+    <div nc-drawer-content class="content">
+        倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+    </div>
+</nc-drawer>
+
+<nc-drawer [(isShow)]="isShows[2]" [place]="'top'">
+    <div nc-drawer-content class="content-vertify">
+        倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+    </div>
+</nc-drawer>
+
+<nc-drawer [(isShow)]="isShows[3]" [place]="'down'">
+    <div nc-drawer-content class="content-vertify">
+        倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+    </div>
+</nc-drawer>
+
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+    <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:500px;">
+    <div style="margin-top: 20px;">
+        <nc-button (click)="openDrawer(0)">右边展现</nc-button>
+        <nc-button (click)="openDrawer(1)">左边展现</nc-button>
+        <nc-button (click)="openDrawer(2)">上边展现</nc-button>
+        <nc-button (click)="openDrawer(3)">下边展现</nc-button>
+    </div>
+
+    <nc-drawer [(isShow)]="isShows[0]">
+        <div nc-drawer-content class="content">
+            倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+        </div>
+    </nc-drawer>
+
+    <nc-drawer [(isShow)]="isShows[1]" [place]="'left'">
+        <div nc-drawer-content class="content">
+            倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+        </div>
+    </nc-drawer>
+
+    <nc-drawer [(isShow)]="isShows[2]" [place]="'top'">
+        <div nc-drawer-content class="content-vertify">
+            倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+        </div>
+    </nc-drawer>
+
+    <nc-drawer [(isShow)]="isShows[3]" [place]="'down'">
+        <div nc-drawer-content class="content-vertify">
+            倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+        </div>
+    </nc-drawer>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab2 === 'typescript'">
+    <textarea style="height:500px;">
+    isShows : boolean[] = [false,false,false,false];
+
+    openDrawer(index: number) {
+        this.isShows[index] = true;
+    }
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>nc-drawer--参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>isShow</td>
+        <td>指定抽屉是否呈现</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>place</td>
+        <td>指定抽屉呈现方式,left/right/top/down</td>
+        <td>right</td>
+    </tr>
+    </tbody>
+</table>

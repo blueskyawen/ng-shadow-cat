@@ -1235,3 +1235,29 @@ span.nc-carat.nc-carat-left {
   top: 50%;
   transform: translateY(-50%);
 }
+.nc-dropdown-item-divider {
+  display: inline-block !important;
+  height: 1px !important;
+  background: #ccc;
+  line-height: 0;
+  margin: 5px 0;
+}
+.nc-sub-dropdown {
+  position: relative;
+}
+.nc-sub-dropdown ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+.nc-sub-dropdown:hover ul {
+  display: inline-block;
+}
+.nc-sub-dropdown > span {
+  display: inline-flex;
+  height: inherit;
+  width: inherit;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,6 @@
+<div class="drawer-container" [style.display]="isShow ? 'block' : 'none'">
+    <div class="shade" (click)="close()"></div>
+    <div class="drawer-content" [ngClass]="placeClasses" [ngStyle]="{'transform':placeTraslate}">
+        <ng-content select="[nc-drawer-content]"></ng-content>
+    </div>
+</div>

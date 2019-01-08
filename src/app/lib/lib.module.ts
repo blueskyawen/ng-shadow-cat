@@ -59,9 +59,11 @@ import {NcMonthSelectorComponent} from './nc-date-time-selector/nc-month-selecto
 import {NcDateTimeSelectorComponent} from './nc-date-time-selector/nc-date-time-selector.component';
 import {NcDateSelectorComponent} from './nc-date-time-selector/nc-date-selector.component';
 import {NcRangeDateSelectorComponent} from './nc-date-time-selector/nc-range-date-selector.component';
+import {NcDrawerComponent} from './nc-drawer/nc-drawer.component';
+
 import { InputNumberDirective } from './nc-num-put/input-number.directive';
-import {NcItemDividerDirective} from './nc-dropdown/nc-item-divider.directive';
-import {NcSubDropdownDirective} from './nc-dropdown/nc-sub-dropdown.directive';
+import {NcItemDividerDirective} from './nc-directive/nc-item-divider.directive';
+import {NcSubDropdownDirective} from './nc-directive/nc-sub-dropdown.directive';
 
 @NgModule({
   imports: [CommonModule],
@@ -77,7 +79,7 @@ import {NcSubDropdownDirective} from './nc-dropdown/nc-sub-dropdown.directive';
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
     NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent,
     NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent,NcDateSelectorComponent,
-    NcRangeDateSelectorComponent,NcItemDividerDirective,NcSubDropdownDirective],
+    NcRangeDateSelectorComponent,NcItemDividerDirective,NcSubDropdownDirective,NcDrawerComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
@@ -90,6 +92,6 @@ import {NcSubDropdownDirective} from './nc-dropdown/nc-sub-dropdown.directive';
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
     NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent,
     NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent,NcDateSelectorComponent,
-    NcRangeDateSelectorComponent,NcItemDividerDirective,NcSubDropdownDirective]
+    NcRangeDateSelectorComponent,NcItemDividerDirective,NcSubDropdownDirective,NcDrawerComponent]
 })
 export class LibModule { }
