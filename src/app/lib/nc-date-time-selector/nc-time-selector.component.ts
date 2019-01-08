@@ -2,13 +2,14 @@
  * Created by liuxuwen on 19-1-2.
  */
 import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterViewInit } from '@angular/core';
+import { NcDateSelectorBase } from './nc-date-selector.base';
 
 @Component({
     selector: 'nc-time-selector',
     templateUrl: './nc-time-selector.component.html',
     styleUrls: ['./nc-time-selector.component.css','./nc-date-time-selector.component.css']
 })
-export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
+export class NcTimeSelectorComponent extends NcDateSelectorBase implements OnInit,AfterViewInit {
     @Input() type : string = 'single';
     @Input() date : any = {};
     @Output() dateChange = new EventEmitter();
@@ -33,16 +34,13 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
     minuteTimer : any;
     secondTimer : any;
     oldSelectTime : any = {};
-    value : string;
-    selectorStyle : any = {};
-    isHiddenSelector : boolean = true;
-    isOverSelector : boolean = false;
-    formatLabel : string;
 
     constructor() {
+        super();
     }
 
     ngOnInit() {
+        this.selectorType = this.type;
         this.listenDocuClick();
         this.getFormat();
         this.setStyleAndClass();
@@ -51,19 +49,6 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
 
     ngAfterViewInit() {
         this.initActivePosition();
-    }
-
-    listenDocuClick() {
-        if(this.type == 'input') {
-            document.addEventListener('click', (event) => {
-                if (!this.isOverSelector) {
-                    this.isHiddenSelector = true;
-                    //this.recoverData();
-                    //this.setDateValue();
-                }
-                event.stopPropagation();
-            });
-        }
     }
 
     getFormat() {
@@ -112,12 +97,6 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
         }
     }
 
-    closeSelector() {
-        if(this.type === 'input') {
-            this.isHiddenSelector = true;
-        }
-    }
-
     pickTime(type : string,item : any) {
         if(type === 'hour' && !item.disable && !item.active) {
             this.clearItems(this.hours);
@@ -143,14 +122,6 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
             this.date.setSeconds(this.selectTime.second);
             this.dateChange.emit(this.date);
         }
-    }
-
-    clearItems(items : any[]) {
-        items.forEach((item) => {
-            if(!item.disable) {
-                item.active = false;
-            }
-        });
     }
 
     pickTimeOk() {
@@ -274,17 +245,5 @@ export class NcTimeSelectorComponent implements OnInit,AfterViewInit {
                 item.active = true;
             }
         });
-    }
-
-    mouseover() {
-        if(this.type === 'input') {
-            this.isOverSelector = true;
-        }
-    }
-
-    mouseout() {
-        if(this.type === 'input') {
-            this.isOverSelector = false;
-        }
     }
 }
