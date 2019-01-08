@@ -2,13 +2,14 @@
  * Created by liuxuwen on 19-1-3.
  */
 import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterViewInit,OnChanges,SimpleChanges } from '@angular/core';
+import { NcDateSelectorBase } from './nc-date-selector.base';
 
 @Component({
     selector: 'nc-date-selector',
     templateUrl: './nc-date-selector.component.html',
     styleUrls: ['./nc-date-selector.component.css','./nc-date-time-selector.component.css']
 })
-export class NcDateSelectorComponent implements OnInit,OnChanges {
+export class NcDateSelectorComponent extends NcDateSelectorBase implements OnInit,OnChanges {
     @Input() type : string = 'single';
     @Input() date : any;
     @Output() dateChange = new EventEmitter();
@@ -16,7 +17,6 @@ export class NcDateSelectorComponent implements OnInit,OnChanges {
     @Input() ncFormat : string = 'yyyy/mm/dd';
     @Input() insert : boolean = false;
     @Input() hideShadow : boolean = false;
-    formatLabel : string;
     today : any = new Date();
     year : number;
     month : number;
@@ -27,16 +27,13 @@ export class NcDateSelectorComponent implements OnInit,OnChanges {
         month: 0,
         dayDatas: []
     };
-    value : string;
-    selectorStyle : any = {};
-    isHiddenSelector : boolean = true;
-    isOverSelector : boolean = false;
     isShowDatePicker : boolean = true;
     isShowYearPicker : boolean = false;
     isShowMonthPicker : boolean = false;
     monthPickerDate : any = new Date();
 
     constructor() {
+        super();
     }
 
     ngOnChanges(changes: SimpleChanges) {
@@ -51,24 +48,13 @@ export class NcDateSelectorComponent implements OnInit,OnChanges {
     }
 
     ngOnInit() {
+        this.selectorType = this.type;
         this.listenDocuClick();
         this.getFormat();
         this.setStyleAndClass();
         this.initData();
         this.getYearMonthDate();
         this.setDateValue();
-    }
-
-    listenDocuClick() {
-        if(this.type == 'input') {
-            document.addEventListener('click', (event) => {
-                if (!this.isOverSelector) {
-                    this.isHiddenSelector = true;
-                    //this.recoverData();
-                }
-                event.stopPropagation();
-            });
-        }
     }
 
     getFormat() {
@@ -156,15 +142,11 @@ export class NcDateSelectorComponent implements OnInit,OnChanges {
         }
     }
 
-    formatValue(value : number) {
-        return value < 10 ? '0'+value : value.toString();
-    }
-
     selectDay(item : any) {
         if(item.disable || item.active) {
             return;
         }
-        this.clearItems();
+        this.clearItems(this.yearMonthDate.dayDatas);
         item.active = true;
         this.emitDateChange(item.date);
     }
@@ -173,14 +155,6 @@ export class NcDateSelectorComponent implements OnInit,OnChanges {
         this.year = this.date.getFullYear();
         this.month = this.date.getMonth();
         this.day = this.date.getDate();
-    }
-
-    clearItems() {
-        this.yearMonthDate.dayDatas.forEach((item) => {
-            if(!item.disable) {
-                item.active = false;
-            }
-        });
     }
 
     prevYear() {
@@ -220,12 +194,6 @@ export class NcDateSelectorComponent implements OnInit,OnChanges {
         }
     }
 
-    closeSelector() {
-        if(this.type === 'input') {
-            this.isHiddenSelector = true;
-        }
-    }
-
     recoverData() {
         this.yearMonthDate.year = this.year;
         this.yearMonthDate.month = this.month;
@@ -241,7 +209,7 @@ export class NcDateSelectorComponent implements OnInit,OnChanges {
             this.yearMonthDate.month = todayMonth;
             this.getYearMonthDate();
         } else {
-            this.clearItems();
+            this.clearItems(this.yearMonthDate.dayDatas);
         }
         for(let day of this.yearMonthDate.dayDatas) {
             if(!day.disable && day.date == todayDay) {
@@ -293,18 +261,6 @@ export class NcDateSelectorComponent implements OnInit,OnChanges {
         this.isShowDatePicker = false;
         this.isShowMonthPicker = false;
         this.isShowYearPicker = false;
-    }
-
-    mouseover() {
-        if(this.type === 'input') {
-            this.isOverSelector = true;
-        }
-    }
-
-    mouseout() {
-        if(this.type === 'input') {
-            this.isOverSelector = false;
-        }
     }
 }
 
