@@ -1,0 +1,26 @@
+.nc-dropdown-item-divider {
+  display: inline-block !important;
+  height: 1px !important;
+  background: #ccc;
+  line-height: 0;
+  margin: 5px 0;
+}
+.nc-sub-dropdown {
+  position: relative;
+  ul {
+    display: none;
+    position: absolute;
+    top:0;
+    left:100%;
+  }
+  &:hover ul {
+    display: inline-block;
+  }
+  & > span {
+    display: inline-flex;
+    height:inherit;
+    width:inherit;
+    justify-content: center;
+    align-items: center;
+  }
+}
