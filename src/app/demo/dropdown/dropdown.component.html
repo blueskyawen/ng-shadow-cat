@@ -1,64 +1,311 @@
 <h2 class="title">下拉菜单</h2>
 <p>下拉菜单，用于以列表格式显示链接的上下文菜单</p>
-<div style="width:100%;height:80px;padding-left: 20px;display:block;margin-top:30px;">
-  <div style="margin:5px 20px;display: inline-block;">
-    <nc-dropdown [options]="options"></nc-dropdown>
-  </div>
-  <div style="margin:5px 20px;display: inline-block;">
-    <nc-dropdown [options]="options" [place]="'right'"></nc-dropdown>
-  </div>
-  <div style="margin:5px 20px;display: inline-block;">
-    <nc-dropdown [options]="options" [place]="'up'"></nc-dropdown>
-  </div>
-  <div style="margin:5px 20px;display: inline-block;">
-    <nc-dropdown [options]="options" [place]="'left'"></nc-dropdown>
-  </div>
+
+<h3>1. 点击展开</h3>
+<div class="dropdown-dome">
+  <nc-dropdown>
+    <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li *ngFor="let option of options" (click)="option.callback()">
+        {{option.name}}
+      </li>
+    </ul>
+  </nc-dropdown>
 </div>
-<div style="width:100%;height:80px;padding-left: 20px;display:block;margin-top:30px;margin-bottom:20px;">
-  <div style="margin:5px 20px;display: inline-block;">
-    <nc-dropdown [options]="options" [type]="'hover'" [title]="'我的菜单'"></nc-dropdown>
-  </div>
-  <div style="margin:5px 20px;display: inline-block;">
-    <nc-dropdown [options]="options" [place]="'right'" [type]="'hover'" [title]="'我的菜单'"></nc-dropdown>
-  </div>
-  <div style="margin:5px 20px;display: inline-block;">
-    <nc-dropdown [options]="options" [place]="'up'" [type]="'hover'" [title]="'我的菜单'"></nc-dropdown>
-  </div>
-  <div style="margin:5px 20px;display: inline-block;">
-    <nc-dropdown [options]="options" [place]="'left'" [type]="'hover'" [title]="'我的菜单'"></nc-dropdown>
-  </div>
+<div class="dropdown-dome">
+  <nc-dropdown [place]="'top'">
+    <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li *ngFor="let option of options" (click)="option.callback()">
+        {{option.name}}
+      </li>
+    </ul>
+  </nc-dropdown>
 </div>
-<!--div style="width:100%;height:80px;padding-left: 20px;display:block;margin-top:30px;">
-  <div style="margin:5px 20px;display: inline-block;">
-    <nc-dropdown [options]="options" [type]="'click'" [divider]="true"></nc-dropdown>
-  </div>
-  <div style="margin:5px 20px;display: inline-block;">
-    <nc-dropdown [options]="options" [place]="'right'" [type]="'hover'" [divider]="true"></nc-dropdown>
-  </div>
-</div>-->
+<div class="dropdown-dome">
+  <nc-dropdown [place]="'left'">
+    <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li *ngFor="let option of options" (click)="option.callback()">
+        {{option.name}}
+      </li>
+    </ul>
+  </nc-dropdown>
+</div>
+<div class="dropdown-dome">
+  <nc-dropdown [place]="'right'">
+    <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li *ngFor="let option of options" (click)="option.callback()">
+        {{option.name}}
+      </li>
+    </ul>
+  </nc-dropdown>
+</div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
-    <textarea style="height:160px;">
-      <nc-dropdown [options]="options"></nc-dropdown>
-      <nc-dropdown [options]="options" [place]="'right'"></nc-dropdown>
-      <nc-dropdown [options]="options" [place]="'up'"></nc-dropdown>
-      <nc-dropdown [options]="options" [place]="'left'"></nc-dropdown>
-
-      <nc-dropdown [options]="options" [type]="'hover'"></nc-dropdown>
-      <nc-dropdown [options]="options" [place]="'right'" [type]="'hover'"></nc-dropdown>
-      <nc-dropdown [options]="options" [place]="'up'" [type]="'hover'"></nc-dropdown>
-      <nc-dropdown [options]="options" [place]="'left'" [type]="'hover'"></nc-dropdown>
+    <textarea style="height:200px;">
+    <nc-dropdown>
+      <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li *ngFor="let option of options" (click)="option.callback()">
+          {{option?.name}}
+        </li>
+      </ul>
+    </nc-dropdown>
+    <nc-dropdown [place]="'top'">
+      <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li *ngFor="let option of options" (click)="option.callback()">
+          {{option?.name}}
+        </li>
+      </ul>
+    </nc-dropdown>
+    <nc-dropdown [place]="'left'">
+      <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li *ngFor="let option of options" (click)="option.callback()">
+          {{option?.name}}
+        </li>
+      </ul>
+    </nc-dropdown>
+    <nc-dropdown [place]="'right'">
+      <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li *ngFor="let option of options" (click)="option.callback()">
+          {{option?.name}}
+        </li>
+      </ul>
+    </nc-dropdown>
     </textarea>
   </div>
   <div *ngIf="currentTab === 'typescript'">
     <textarea style="height:180px;">
     options : any[] = [{name:'阿里巴巴',disable:false,callback: () => {console.log('阿里巴巴');}},
-                      {name:'百度',disable:true},
-                      {name:'下拉菜单标题',divider:true,
-                        children:[{name:'小米',disable:false,callback: () => {console.log('小米');}},
-                          {name:'网易',disable:false,callback: () => {console.log('腾讯');}}]},
-                      {name:'新浪',disable:false,callback: () => {console.log('网易');}}];
+      {name:'百度',disable:false,callback: () => {console.log('百度');}},
+      {name:'小米',disable:false,callback: () => {console.log('小米');}},
+      {name:'新浪',disable:false,callback: () => {console.log('网易');}}];
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>2. 浮动展开</h3>
+<div class="dropdown-dome">
+  <nc-dropdown [type]="'hover'">
+    <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li *ngFor="let option of options" (click)="option.callback()">
+        {{option.name}}
+      </li>
+    </ul>
+  </nc-dropdown>
+</div>
+<div class="dropdown-dome">
+  <nc-dropdown [type]="'hover'" [place]="'top'">
+    <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li *ngFor="let option of options" (click)="option.callback()">
+        {{option.name}}
+      </li>
+    </ul>
+  </nc-dropdown>
+</div>
+<div class="dropdown-dome">
+  <nc-dropdown [type]="'hover'" [place]="'left'">
+    <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li *ngFor="let option of options" (click)="option.callback()">
+        {{option.name}}
+      </li>
+    </ul>
+  </nc-dropdown>
+</div>
+<div class="dropdown-dome">
+  <nc-dropdown [type]="'hover'" [place]="'right'">
+    <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li *ngFor="let option of options" (click)="option.callback()">
+        {{option.name}}
+      </li>
+    </ul>
+  </nc-dropdown>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:200px;">
+    <nc-dropdown [type]="'hover'">
+      <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li *ngFor="let option of options" (click)="option.callback()">
+          {{option?.name}}
+        </li>
+      </ul>
+    </nc-dropdown>
+    <nc-dropdown [type]="'hover'" [place]="'top'">
+      <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li *ngFor="let option of options" (click)="option.callback()">
+          {{option?.name}}
+        </li>
+      </ul>
+    </nc-dropdown>
+    <nc-dropdown [type]="'hover'" [place]="'left'">
+      <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li *ngFor="let option of options" (click)="option.callback()">
+          {{option?.name}}
+        </li>
+      </ul>
+    </nc-dropdown>
+    <nc-dropdown [type]="'hover'" [place]="'right'">
+      <nc-button nc-dropdown-btn>下拉菜单</nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li *ngFor="let option of options" (click)="option.callback()">
+          {{option?.name}}
+        </li>
+      </ul>
+    </nc-dropdown>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab2 === 'typescript'">
+    <textarea style="height:180px;">
+    options : any[] = [{name:'阿里巴巴',disable:false,callback: () => {console.log('阿里巴巴');}},
+      {name:'百度',disable:false,callback: () => {console.log('百度');}},
+      {name:'小米',disable:false,callback: () => {console.log('小米');}},
+      {name:'新浪',disable:false,callback: () => {console.log('网易');}}];
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>3. 带图标</h3>
+<div class="dropdown-dome">
+  <nc-dropdown>
+    <nc-button nc-dropdown-btn>
+      下拉菜单<span class="fa fa-chevron-down carcat-icon"></span>
+    </nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li *ngFor="let option of options" (click)="option.callback()">
+        {{option.name}}
+      </li>
+    </ul>
+  </nc-dropdown>
+</div>
+<div class="dropdown-dome">
+  <nc-dropdown>
+    <nc-button nc-dropdown-btn>
+      下拉菜单<span class="fa fa-cubes carcat-icon"></span></nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li *ngFor="let option of options" (click)="option.callback()">
+        {{option.name}}
+      </li>
+    </ul>
+  </nc-dropdown>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:200px;">
+    <nc-dropdown>
+      <nc-button nc-dropdown-btn>
+        下拉菜单<span class="fa fa-chevron-down carcat-icon"></span>
+      </nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li *ngFor="let option of options" (click)="option.callback()">
+          {{option?.name}}
+        </li>
+      </ul>
+    </nc-dropdown>
+    <nc-dropdown>
+      <nc-button nc-dropdown-btn>
+        下拉菜单<span class="fa fa-cubes carcat-icon"></span></nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li *ngFor="let option of options" (click)="option.callback()">
+          {{option?.name}}
+        </li>
+      </ul>
+    </nc-dropdown>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>4. 带分割线和禁用项</h3>
+<div class="dropdown-dome">
+  <nc-dropdown>
+    <nc-button nc-dropdown-btn>
+      下拉菜单<span class="fa fa-chevron-down carcat-icon"></span>
+    </nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li>阿里巴巴</li>
+      <li>百度</li>
+      <li>小米</li>
+      <li nc-item-divider></li>
+      <li class="disable">新浪</li>
+      <li>网易</li>
+    </ul>
+  </nc-dropdown>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:200px;">
+    <nc-dropdown>
+      <nc-button nc-dropdown-btn>
+        下拉菜单<span class="fa fa-chevron-down carcat-icon"></span>
+      </nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li>阿里巴巴</li>
+        <li>百度</li>
+        <li>小米</li>
+        <li nc-item-divider></li>
+        <li class="disable">新浪</li>
+        <li>网易</li>
+      </ul>
+    </nc-dropdown>
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>5. 多级菜单</h3>
+<div class="dropdown-dome">
+  <nc-dropdown>
+    <nc-button nc-dropdown-btn>
+      多级菜单<span class="fa fa-chevron-down carcat-icon"></span>
+    </nc-button>
+    <ul nc-dropdown-menu class="dropdown-items">
+      <li>阿里巴巴</li>
+      <li>百度</li>
+      <li nc-sub-dropdown>
+        <span>小米<span class="fa fa-chevron-right sub-carcat-icon"></span></span>
+        <ul class="dropdown-items">
+          <li>新浪</li>
+          <li>网易</li>
+        </ul>
+      </li>
+    </ul>
+  </nc-dropdown>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:200px;">
+    <nc-dropdown>
+      <nc-button nc-dropdown-btn>
+        多级菜单<span class="fa fa-chevron-down carcat-icon"></span>
+      </nc-button>
+      <ul nc-dropdown-menu class="dropdown-items">
+        <li>阿里巴巴</li>
+        <li>百度</li>
+        <li nc-sub-dropdown>
+          <span>小米<span class="fa fa-chevron-right sub-carcat-icon"></span></span>
+          <ul class="dropdown-items">
+            <li>新浪</li>
+            <li>网易</li>
+          </ul>
+        </li>
+      </ul>
+    </nc-dropdown>
     </textarea>
   </div>
 </nc-tab>
@@ -74,11 +321,6 @@
   </thead>
   <tbody>
   <tr>
-    <td>options</td>
-    <td>菜单列表项</td>
-    <td>[]</td>
-  </tr>
-  <tr>
     <td>type</td>
     <td>菜单展开方式,click/hover</td>
     <td>click</td>
@@ -87,11 +329,6 @@
     <td>place</td>
     <td>菜单显示位置,down/up/left/right</td>
     <td>down</td>
-  </tr>
-  <tr>
-    <td>title</td>
-    <td>菜单名称</td>
-    <td>下拉菜单</td>
   </tr>
   </tbody>
 </table>
