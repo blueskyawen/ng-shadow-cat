@@ -1,6 +1,7 @@
 <h2 class="title">抽屉</h2>
-<p>下拉抽屉，用于用户的动态展示和表单交互</p>
+<p>抽屉，用于用户的动态展示和表单交互,从父窗体边缘滑入，覆盖住部分父窗体内容</p>
 
+<h3>1. 普通抽屉</h3>
 <div style="margin-top: 20px;">
     <span style="margin-right: 10px;">
       <nc-button (click)="openDrawer(0)">右边展现</nc-button>
@@ -87,6 +88,57 @@
     </div>
 </nc-tab>
 
+<h3>2. 自定义抽屉</h3>
+<div style="margin-top: 20px;">
+    <span style="margin-right: 10px;">
+      <nc-button (click)="openDrawer(4)">不呈现遮罩</nc-button>
+    </span>
+    <span style="margin-right: 10px;">
+      <nc-button (click)="openDrawer(5)">点击遮罩不关闭</nc-button>
+    </span>
+    <span style="margin-right: 10px;">
+      <nc-button (click)="openDrawer(6)">不显示关闭按钮</nc-button>
+    </span>
+</div>
+<nc-drawer [(isShow)]="isShows[4]" [place]="'left'" [isShade]="false">
+    <div nc-drawer-content class="content">
+        倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+    </div>
+</nc-drawer>
+<nc-drawer [(isShow)]="isShows[5]" [place]="'left'" [isShadeClose]="false">
+    <div nc-drawer-content class="content">
+        倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+    </div>
+</nc-drawer>
+<nc-drawer [(isShow)]="isShows[6]" [place]="'left'" [isClosable]="false">
+    <div nc-drawer-content class="content">
+        倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+    </div>
+</nc-drawer>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:80px;">
+    <nc-drawer [(isShow)]="isShows[4]" [place]="'left'" [isShade]="false">
+        <div nc-drawer-content class="content">
+            倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+        </div>
+    </nc-drawer>
+    <nc-drawer [(isShow)]="isShows[5]" [place]="'left'" [isShadeClose]="false">
+        <div nc-drawer-content class="content">
+            倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+        </div>
+    </nc-drawer>
+    <nc-drawer [(isShow)]="isShows[6]" [place]="'left'" [isClosable]="false">
+        <div nc-drawer-content class="content">
+            倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。
+        </div>
+    </nc-drawer>
+    </textarea>
+    </div>
+</nc-tab>
+
+
 <h3>nc-drawer--参数</h3>
 <table>
     <thead>
@@ -106,6 +158,21 @@
         <td>place</td>
         <td>指定抽屉呈现方式,left/right/top/down</td>
         <td>right</td>
+    </tr>
+    <tr>
+        <td>isShade</td>
+        <td>是否呈现遮罩</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>isShadeClose</td>
+        <td>指定是否允许点击遮罩关闭</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>isClosable</td>
+        <td>指定是否显示关闭按钮</td>
+        <td>true</td>
     </tr>
     </tbody>
 </table>
