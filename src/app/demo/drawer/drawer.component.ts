@@ -1,9 +1,6 @@
 /**
  * Created by liuxuwen on 19-1-8.
  */
-/**
- * Created by liuxuwen on 18-8-20.
- */
 import { Component,OnInit } from '@angular/core';
 
 @Component({
@@ -16,7 +13,7 @@ export class DropDrawerComponent {
     currentTab : string;
     tabItems2 : any[] = [];
     currentTab2 : string;
-    isShows : boolean[] = [false,false,false,false];
+    isShows : boolean[] = [false,false,false,false,false,false,false];
 
     constructor() {
         this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false}];
