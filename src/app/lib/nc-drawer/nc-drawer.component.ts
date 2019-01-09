@@ -12,12 +12,17 @@ export class NcDrawerComponent implements OnInit,OnChanges {
     @Input() place : string = 'right';
     @Input() isShow : boolean = false;
     @Output() isShowChange = new EventEmitter();
+    @Input() isShade : boolean = true;
+    @Input() isShadeClose : boolean = true;
+    @Input() isClosable : boolean = true;
     placeClasses : any = {};
-    placeTraslate : any = 'translateX(100%)';
-    placeTraslateObj : any = {'right':'translateX(100%)','left':'translateX(-100%)',
-        'top':'translateY(-100%)','down':'translateY(100%)'};
-    showTraslateObj : any = {'right':'translateX(0%)','left':'translateX(0%)',
-        'top':'translateY(0%)','down':'translateY(0%)'};
+    placeStyles : any = {};
+    placeStylesObj : any = {
+        'right':{'right':'0%'},
+        'left':{'left':'0%'},
+        'top':{'top':'0%'},
+        'down':{'bottom':'0%'}
+    };
 
     constructor() {}
 
@@ -25,33 +30,42 @@ export class NcDrawerComponent implements OnInit,OnChanges {
         this.placeClasses = {'drawer-place-right': this.place === 'right','drawer-place-left': this.place === 'left',
             'drawer-place-top': this.place === 'top','drawer-place-down': this.place === 'down'};
         if(this.isShow) {
-            this.placeTraslate = this.showTraslateObj[this.place];
+            this.placeStyles = this.placeStylesObj[this.place];
         } else {
-            this.placeTraslate = this.placeTraslateObj[this.place];
+            this.placeStyles = {};
         }
     }
 
     ngOnChanges(changes: SimpleChanges) {
         if(!changes['isShow'].firstChange) {
             this.isShow = changes['isShow'].currentValue;
-            if(this.isShow) {
-                this.setPlaceTraslate(this.showTraslateObj);
-            }
+            this.setPlaceTraslate(this.isShow);
         }
     }
 
     close() {
-        this.setPlaceTraslate(this.placeTraslateObj);
+        this.placeStyles = {};
         setTimeout(() => {
             this.isShow = false;
             this.isShowChange.emit(this.isShow);
-        },600);
+        },200);
     }
 
-    setPlaceTraslate(tranlateObj : any) {
-        setTimeout(() => {
-            this.placeTraslate = tranlateObj[this.place];
-        },50);
+    shadeClose() {
+        if(this.isShadeClose) {
+            this.close();
+        }
+    }
 
+    setPlaceTraslate(show : boolean) {
+        if(show) {
+            setTimeout(() => {
+                this.placeStyles = this.placeStylesObj[this.place];
+            },10);
+        } else {
+            setTimeout(() => {
+                this.placeStyles = {};
+            },10);
+        }
     }
 }
