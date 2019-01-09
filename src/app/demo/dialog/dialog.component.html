@@ -9,7 +9,7 @@
     <nc-button (click)="openDialog(1)">大尺寸</nc-button>
   </span>
 </div>
-<nc-dialog *ngIf="isShows[0]" [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
+<nc-dialog [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
   <div class="content">
     <div class="description">
       <span class="grade">!</span>
@@ -41,7 +41,7 @@
     </span>
   </div>
 </nc-dialog>
-<nc-dialog *ngIf="isShows[1]" [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
+<nc-dialog [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
   <div class="content">
     <div class="description">
       <span class="grade">!</span>
@@ -72,7 +72,7 @@
   <div *ngIf="currentTab1 === 'html'">
     <textarea style="height:400px;">
       //标准尺寸
-      <nc-dialog *ngIf="isShows[0]" [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
+      <nc-dialog [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
         <div class="content">
           <div class="description">
             <span class="grade">!</span>
@@ -106,7 +106,7 @@
       </nc-dialog>
 
       //大尺寸
-      <nc-dialog *ngIf="isShows[1]" [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
+      <nc-dialog [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
         <div class="content">
           <div class="description">
             <span class="grade">!</span>
@@ -139,7 +139,7 @@
     <nc-button (click)="openDialog(3)">删除操作</nc-button>
   </span>
 </div>
-<nc-dialog *ngIf="isShows[2]" [header]="'操作名称'" [style]="'confirm'" [operType]="'normal'" [(isShow)]="isShows[2]">
+<nc-dialog [header]="'操作名称'" [style]="'confirm'" [operType]="'normal'" [(isShow)]="isShows[2]">
   <div class="content">
   </div>
   <div class="footer">
@@ -151,7 +151,7 @@
     </span>
   </div>
 </nc-dialog>
-<nc-dialog *ngIf="isShows[3]" [header]="'操作名称'" [style]="'confirm'" [operType]="'delete'" [(isShow)]="isShows[3]">
+<nc-dialog [header]="'操作名称'" [style]="'confirm'" [operType]="'delete'" [(isShow)]="isShows[3]">
   <div class="content">
   </div>
   <div class="footer">
@@ -167,7 +167,7 @@
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
   <div *ngIf="currentTab2 === 'html'">
     <textarea style="height:340px;">
-  <nc-dialog *ngIf="isShows[2]" [header]="'操作名称'" [style]="'confirm'" [operType]="'normal'" [(isShow)]="isShows[2]">
+  <nc-dialog [header]="'操作名称'" [style]="'confirm'" [operType]="'normal'" [(isShow)]="isShows[2]">
     <div class="content">
     </div>
     <div class="footer">
@@ -180,7 +180,7 @@
     </div>
   </nc-dialog>
 
-  <nc-dialog *ngIf="isShows[3]" [header]="'操作名称'" [style]="'confirm'" [operType]="'delete'" [(isShow)]="isShows[3]">
+  <nc-dialog [header]="'操作名称'" [style]="'confirm'" [operType]="'delete'" [(isShow)]="isShows[3]">
     <div class="content">
     </div>
     <div class="footer">
