@@ -23,25 +23,46 @@
     border:solid 1px #ccc;
     border-radius:3px;
     max-width: 100%;
-    transition: transform .5s;
+    transition: all .5s;
 }
 .drawer-container .drawer-content.drawer-place-right {
     height:100%;
     top:0%;
-    right:0%;
+    right:-100%;
 }
 .drawer-container .drawer-content.drawer-place-left {
     height:100%;
     top:0%;
-    left:0%;
+    left:-100%;
 }
 .drawer-container .drawer-content.drawer-place-top {
     width:100%;
-    top:0%;
+    top:-100%;
     left:0%;
 }
 .drawer-container .drawer-content.drawer-place-down {
     width:100%;
-    bottom:0%;
+    bottom:-100%;
     left:0%;
+}
+.drawer-container .drawer-content .nc-drawer-header {
+    width: 100%;
+    height:36px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.drawer-container .drawer-content .nc-drawer-header span {
+    display: inline-block;
+    height:28px;
+    width:28px;
+    border-radius:50%;
+    font-size: 24px;
+    text-align: center;
+    line-height: 28px;
+    margin:0 10px;
+    cursor: pointer;
+}
+.drawer-container .drawer-content .nc-drawer-header span:hover {
+    background: #e6e6e6;
 }
