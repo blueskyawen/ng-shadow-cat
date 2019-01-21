@@ -4,16 +4,18 @@
 <h1>1. 水平导航菜单</h1>
 <h3>默认设置</h3>
 <div class="menu-header" style="margin-bottom: 60px;">
-	<nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+	<nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"
+             [url]="'/Navigation-Two'"></nc-menu>
 </div>
 <h3>背景颜色设置-dark</h3>
 <div class="menu-header" style="margin-bottom: 60px;">
-    <nc-menu [type]="menuItems4.type" [place]="menuItems4.place" [navItems]="menuItems4.navItems" [backColor]="'dark'"></nc-menu>
+    <nc-menu [type]="menuItems4.type" [place]="menuItems4.place" [navItems]="menuItems4.navItems"
+             [backColor]="'dark'" [url]="'/Navigation-Two'"></nc-menu>
 </div>
 <h3>自定义背景颜色设置</h3>
 <div class="menu-header" style="margin-bottom: 60px;">
     <nc-menu [type]="menuItems5.type" [place]="menuItems5.place" [navItems]="menuItems5.navItems"
-             [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+             [backColor]="'manual'" [color]="'#d9d9d9'" [url]="'/Navigation-Two'"></nc-menu>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
@@ -21,16 +23,18 @@
     <textarea style="height:360px;">
     <h3>默认设置</h3>
     <div class="menu-header" style="margin-bottom: 60px;">
-        <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"></nc-menu>
+        <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"
+                 [url]="'/Navigation-Two'"></nc-menu>
     </div>
     <h3>背景颜色设置-dark</h3>
     <div class="menu-header" style="margin-bottom: 60px;">
-        <nc-menu [type]="menuItems4.type" [place]="menuItems4.place" [navItems]="menuItems4.navItems" [backColor]="'dark'"></nc-menu>
+        <nc-menu [type]="menuItems4.type" [place]="menuItems4.place" [navItems]="menuItems4.navItems"
+                 [backColor]="'dark'" [url]="'/Navigation-Two'"></nc-menu>
     </div>
     <h3>自定义背景颜色设置</h3>
     <div class="menu-header" style="margin-bottom: 60px;">
         <nc-menu [type]="menuItems5.type" [place]="menuItems5.place" [navItems]="menuItems5.navItems"
-                 [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+                 [backColor]="'manual'" [color]="'#d9d9d9'" [url]="'/Navigation-Two'"></nc-menu>
     </div>
     </textarea>
     </div>
@@ -42,12 +46,12 @@
         navItems: [
             {title:'Navigation One',
              icon:'fa fa-car',
-             isActive:false,
+             url:'',
              callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Two',
              icon:'fa fa-camera',
-             isActive:true,
+             url:'/Navigation-Two',
              callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation There',
@@ -57,21 +61,21 @@
              childs: {
                 place: 'down',
                 navItems: [
-                    {title:'option5',icon:'fa fa-car',isActive:false,
+                    {title:'option5',icon:'fa fa-car',url:'',
                         callback: () => {console.log('click menu item!');}},
-                    {title:'option6',icon:'fa fa-camera',isActive:false,
+                    {title:'option6',icon:'fa fa-camera',url:'',
                         callback: () => {console.log('click menu item!');}}
                 ]
              }
             },
             {title:'Navigation Four',
              icon:'fa fa-cubes',
-             isActive:false,
+             url:'',
              callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Five',
              icon:'fa fa-wifi',
-             isActive:false,
+             url:'',
              callback: () => {console.log('click menu item!');}
             }
         ]
@@ -87,17 +91,18 @@
 <h1>2. 垂直导航菜单-点击展开/缩起</h1>
 <h3>默认设置</h3>
 <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
-    <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
+    <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"
+             [url]="'/Navigation-3'"></nc-menu>
 </div>
 <h3>背景颜色设置-dark</h3>
 <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
     <nc-menu [type]="menuItems6.type" [place]="menuItems6.place" [navItems]="menuItems6.navItems"
-             [backColor]="'dark'"></nc-menu>
+             [backColor]="'dark'" [url]="'/Navigation-3'"></nc-menu>
 </div>
 <h3>自定义背景颜色设置</h3>
 <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
     <nc-menu [type]="menuItems7.type" [place]="menuItems7.place" [navItems]="menuItems7.navItems"
-             [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+             [backColor]="'manual'" [color]="'#d9d9d9'" [url]="'/Navigation-3'"></nc-menu>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
@@ -105,17 +110,18 @@
     <textarea style="height:360px;">
     <h3>默认设置</h3>
     <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
-        <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"></nc-menu>
+        <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"
+                 [url]="'/Navigation-3'"></nc-menu>
     </div>
     <h3>背景颜色设置-dark</h3>
     <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
         <nc-menu [type]="menuItems6.type" [place]="menuItems6.place" [navItems]="menuItems6.navItems"
-                 [backColor]="'dark'"></nc-menu>
+                 [backColor]="'dark'" [url]="'/Navigation-3'"></nc-menu>
     </div>
     <h3>自定义背景颜色设置</h3>
     <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
         <nc-menu [type]="menuItems7.type" [place]="menuItems7.place" [navItems]="menuItems7.navItems"
-                 [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+                 [backColor]="'manual'" [color]="'#d9d9d9'" [url]="'/Navigation-3'"></nc-menu>
     </div>
     </textarea>
     </div>
@@ -127,21 +133,21 @@
         navItems: [
             {title:'Navigation One',
                 icon:'fa fa-car',
-                isActive:false,
+                url:'',
                 callback: () => {console.log('click menu item!');},
                 childs: {
                     place: 'down',isShow:false,
                     navItems: [
-                        {title:'option1',icon:'fa fa-wifi',isActive:false,place: 'down',
+                        {title:'option1',icon:'fa fa-wifi',url:'',place: 'down',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option2',icon:'fa fa-wifi',isActive:false,place: 'down',
+                        {title:'option2',icon:'fa fa-wifi',url:'',place: 'down',
                             callback: () => {console.log('click menu item!');},
                             childs: {
                                 type:'vertical',place: 'down',isShow:false,
                                 navItems: [
-                                    {title:'option3',icon:'fa fa-wifi',isActive:false,place: 'down',
+                                    {title:'option3',icon:'fa fa-wifi',url:'',place: 'down',
                                         callback: () => {console.log('click menu item!');}},
-                                    {title:'option4',icon:'fa fa-wifi',isActive:false,place: 'down',
+                                    {title:'option4',icon:'fa fa-wifi',url:'',place: 'down',
                                         callback: () => {console.log('click menu item!');}}
                                 ]
                             }
@@ -151,31 +157,31 @@
             },
             {title:'Navigation Two',
                 icon:'fa fa-camera',
-                isActive:false,
+                url:'',
                 callback: () => {console.log('click menu item!');},
                 childs: {
                     place: 'down',isShow:false,
                     navItems: [
-                        {title:'option5',icon:'fa fa-wifi',isActive:false,place: 'down',
+                        {title:'option5',icon:'fa fa-wifi',url:'',place: 'down',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'fa fa-wifi',isActive:false,place: 'down',
+                        {title:'option6',icon:'fa fa-wifi',url:'',place: 'down',
                             callback: () => {console.log('click menu item!');}}
                     ]
                 }
             },
             {title:'Navigation There',
                 icon:'fa fa-coffee',
-                isActive:true,
+                url:'/Navigation-3',
                 callback: () => {console.log('click menu item!');},
             },
             {title:'Navigation Four',
                 icon:'fa fa-cubes',
-                isActive:false,
+                url:'',
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Five',
                 icon:'fa fa-wifi',
-                isActive:false,
+                url:'',
                 callback: () => {console.log('click menu item!');}
             }
         ]
@@ -190,17 +196,18 @@
 <h1>3. 垂直导航菜单-浮动展开/缩起</h1>
 <h3>默认设置</h3>
 <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
-    <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"></nc-menu>
+    <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"
+             [url]="'/Navigation-3/option5'"></nc-menu>
 </div>
 <h3>背景颜色设置-dark</h3>
 <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
     <nc-menu [type]="menuItems8.type" [place]="menuItems8.place" [navItems]="menuItems8.navItems"
-             [backColor]="'dark'"></nc-menu>
+             [backColor]="'dark'" [url]="'/Navigation-3/option5'"></nc-menu>
 </div>
 <h3>自定义背景颜色设置</h3>
 <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
     <nc-menu [type]="menuItems9.type" [place]="menuItems9.place" [navItems]="menuItems9.navItems"
-             [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+             [backColor]="'manual'" [color]="'#d9d9d9'" [url]="'/Navigation-3/option5'"></nc-menu>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
@@ -208,17 +215,18 @@
     <textarea style="height:360px;">
     <h3>默认设置</h3>
     <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
-        <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"></nc-menu>
+        <nc-menu [type]="menuItems3.type" [place]="menuItems3.place" [navItems]="menuItems3.navItems"
+                 [url]="'/Navigation-3/option5'"></nc-menu>
     </div>
     <h3>背景颜色设置-dark</h3>
     <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
         <nc-menu [type]="menuItems8.type" [place]="menuItems8.place" [navItems]="menuItems8.navItems"
-                 [backColor]="'dark'"></nc-menu>
+                 [backColor]="'dark'" [url]="'/Navigation-3/option5'"></nc-menu>
     </div>
     <h3>自定义背景颜色设置</h3>
     <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
         <nc-menu [type]="menuItems9.type" [place]="menuItems9.place" [navItems]="menuItems9.navItems"
-                 [backColor]="'manual'" [color]="'#d9d9d9'"></nc-menu>
+                 [backColor]="'manual'" [color]="'#d9d9d9'" [url]="'/Navigation-3/option5'"></nc-menu>
     </div>
     </textarea>
     </div>
@@ -230,21 +238,21 @@
         navItems: [
             {title:'Navigation One',
                 icon:'fa fa-car',
-                isActive:false,
+                url:'',
                 callback: () => {console.log('click menu item!');},
                 childs: {
                     place: 'right',
                     navItems: [
-                        {title:'option1',icon:'fa fa-car',isActive:false,place: 'right',
+                        {title:'option1',icon:'fa fa-car',url:'',place: 'right',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option2',icon:'fa fa-car',isActive:false,place: 'right',
+                        {title:'option2',icon:'fa fa-car',url:'',place: 'right',
                             callback: () => {console.log('click menu item!');},
                             childs: {
                                 place: 'right',
                                 navItems: [
-                                    {title:'option3',icon:'fa fa-car',isActive:false,place: 'right',
+                                    {title:'option3',icon:'fa fa-car',url:'',place: 'right',
                                         callback: () => {console.log('click menu item!');}},
-                                    {title:'option4',icon:'fa fa-car',isActive:false,place: 'right',
+                                    {title:'option4',icon:'fa fa-car',url:'',place: 'right',
                                         callback: () => {console.log('click menu item!');}}
                                 ]
                             }
@@ -254,31 +262,31 @@
             },
             {title:'Navigation Two',
                 icon:'fa fa-camera',
-                isActive:true,
+                url:'',
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation There',
                 icon:'fa fa-coffee',
-                isActive:false,
+                url:'',
                 callback: () => {console.log('click menu item!');},
                 childs: {
                     place: 'right',
                     navItems: [
-                        {title:'option5',icon:'fa fa-camera',isActive:false,place: 'right',
+                        {title:'option5',icon:'fa fa-camera',url:'/Navigation-3/option5',place: 'right',
                             callback: () => {console.log('click menu item!');}},
-                        {title:'option6',icon:'fa fa-camera',isActive:false,place: 'right',
+                        {title:'option6',icon:'fa fa-camera',url:'',place: 'right',
                             callback: () => {console.log('click menu item!');}}
                     ]
                 }
             },
             {title:'Navigation Four',
                 icon:'a fa-cubes',
-                isActive:false,
+                url:'',
                 callback: () => {console.log('click menu item!');}
             },
             {title:'Navigation Five',
                 icon:'fa fa-wifi',
-                isActive:false,
+                url:'',
                 callback: () => {console.log('click menu item!');}
             }
         ]
@@ -329,6 +337,11 @@
         <td>isScroll</td>
         <td>导航菜单是否带滚动条</td>
         <td>false</td>
+    </tr>
+    <tr>
+        <td>url</td>
+        <td>默认激活的url</td>
+        <td></td>
     </tr>
     </tbody>
 </table>

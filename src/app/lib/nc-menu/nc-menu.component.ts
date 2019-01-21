@@ -15,6 +15,7 @@ export class NcMenuComponent implements OnInit {
     @Input() backColor : string = 'light';
     @Input() isScroll : boolean = false;
     @Input() color : string = '#f2f2f2';
+    @Input() url : string = '';
     menuClasss : any = {};
     menuBackClasss : any = {};
     menuColorStyle : any = {};
@@ -32,10 +33,44 @@ export class NcMenuComponent implements OnInit {
         if(this.backColor === 'light') {
             this.menuColorStyle = {'background':'#fff'};
         }
+        this.addMenuItemActive(this.navItems);
+        this.setDefultMenuItemActive(this.navItems);
         if(this.type === 'vertical' && this.place === 'down') {
             this.setMenuItemsLevel(this.navItems,1);
         }
 
+    }
+
+    addMenuItemActive(items : any[]) {
+        if(!items || items.length === 0) {
+            return;
+        }
+
+        for(let item of items) {
+            item.isActive =  false;
+            if(item.childs && item.childs.navItems.length !== 0) {
+                this.addMenuItemActive(item.childs.navItems);
+            }
+        }
+    }
+
+    setDefultMenuItemActive(items : any[]) {
+        if(!this.url || items.length === 0) {
+            return false;
+        }
+
+        for(let item of items) {
+            if(item.url && item.url === this.url) {
+                item.isActive =  true;
+                return true;
+            } else {
+                if(item.childs && this.setDefultMenuItemActive(item.childs.navItems)) {
+                    item.isActive =  true;
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     setMenuItemsLevel(items : any[],level : number) {
