@@ -16,6 +16,7 @@ export class NcMenuComponent implements OnInit {
     @Input() isScroll : boolean = false;
     @Input() color : string = '#f2f2f2';
     @Input() url : string = '';
+    @Output() menuSelectChange = new EventEmitter();
     menuClasss : any = {};
     menuBackClasss : any = {};
     menuColorStyle : any = {};
@@ -125,6 +126,7 @@ export class NcMenuComponent implements OnInit {
         item.isActive = true;
         this.setMenuItemsActive({navItems:this.navItems});
         item.callback();
+        this.menuSelectChange.emit(item.url);
     }
 
     clickNavItem2(item : any) {
@@ -133,19 +135,10 @@ export class NcMenuComponent implements OnInit {
             item.isActive = true;
             this.setMenuItemsActive({navItems:this.navItems});
             item.callback();
+            this.menuSelectChange.emit(item.url);
         } else {
             item.childs.isShow = !item.childs.isShow;
         }
-    }
-
-    clickNavItem3(item : any) {
-        if(item.childs && item.childs.navItems.length !== 0) {
-            return;
-        }
-        this.clearMenuItemsActive({navItems:this.navItems});
-        item.isActive = true;
-        this.setMenuItemsActive({navItems:this.navItems});
-        item.callback();
     }
 
     clearMenuItemsActive(menuNav : any) {

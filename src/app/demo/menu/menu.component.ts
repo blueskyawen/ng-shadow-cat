@@ -192,4 +192,7 @@ export class MenuComponent {
         this.currentTab3= this.tabItems3[0].label;
     }
 
+    menuSelected(url : any) {
+        console.log('seleced Url: '+url);
+    }
 }

@@ -5,7 +5,7 @@
 <h3>默认设置</h3>
 <div class="menu-header" style="margin-bottom: 60px;">
 	<nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"
-             [url]="'/Navigation-Two'"></nc-menu>
+             [url]="'/Navigation-Two'" (menuSelectChange)="menuSelected($event)"></nc-menu>
 </div>
 <h3>背景颜色设置-dark</h3>
 <div class="menu-header" style="margin-bottom: 60px;">
@@ -24,7 +24,7 @@
     <h3>默认设置</h3>
     <div class="menu-header" style="margin-bottom: 60px;">
         <nc-menu [type]="menuItems.type" [place]="menuItems.place" [navItems]="menuItems.navItems"
-                 [url]="'/Navigation-Two'"></nc-menu>
+                 [url]="'/Navigation-Two'" (menuSelectChange)="menuSelected($event)"></nc-menu>
     </div>
     <h3>背景颜色设置-dark</h3>
     <div class="menu-header" style="margin-bottom: 60px;">
@@ -82,6 +82,10 @@
     };
     menuItems4 : any = JSON.parse(JSON.stringify(this.menuItems));
     menuItems5 : any = JSON.parse(JSON.stringify(this.menuItems));
+
+    menuSelected(url : any) {
+        console.log('seleced Url: '+url);
+    }
     </textarea>
     </div>
 </nc-tab>
@@ -92,7 +96,7 @@
 <h3>默认设置</h3>
 <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
     <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"
-             [url]="'/Navigation-3'"></nc-menu>
+             [url]="'/Navigation-3'" (menuSelectChange)="menuSelected($event)"></nc-menu>
 </div>
 <h3>背景颜色设置-dark</h3>
 <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
@@ -111,7 +115,7 @@
     <h3>默认设置</h3>
     <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
         <nc-menu [type]="menuItems2.type" [place]="menuItems2.place" [navItems]="menuItems2.navItems"
-                 [url]="'/Navigation-3'"></nc-menu>
+                 [url]="'/Navigation-3'" (menuSelectChange)="menuSelected($event)"></nc-menu>
     </div>
     <h3>背景颜色设置-dark</h3>
     <div style="margin-top: 30px;margin-bottom: 30px;width:200px;">
@@ -188,6 +192,10 @@
     };
     menuItems6 : any = JSON.parse(JSON.stringify(this.menuItems2));
     menuItems7 : any = JSON.parse(JSON.stringify(this.menuItems2));
+
+    menuSelected(url : any) {
+        console.log('seleced Url: '+url);
+    }
     </textarea>
     </div>
 </nc-tab>
@@ -341,6 +349,11 @@
     <tr>
         <td>url</td>
         <td>默认激活的url</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>menuSelectChange</td>
+        <td>输出事件,事件实体为选择的</td>
         <td></td>
     </tr>
     </tbody>
