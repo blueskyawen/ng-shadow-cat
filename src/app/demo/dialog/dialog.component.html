@@ -71,61 +71,65 @@
 <nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
   <div *ngIf="currentTab1 === 'html'">
     <textarea style="height:400px;">
-      //标准尺寸
-      <nc-dialog [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
-        <div class="content">
-          <div class="description">
-            <span class="grade">!</span>
-            <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
-          </div>
-          <form>
-            <div class="form-group">
-              <label>姓名</label>
-              <div class="group-right">
-                <input type="text" name="_name" value="Jack" maxlength="8"
-                       autocomplete="on"  required />
-              </div>
-            </div>
-            <div class="form-group">
-              <label>技能</label>
-              <div class="group-right">
-                <input type="text" name="_skill" value="" autocomplete="on" />
-                <span>(可选)</span>
-              </div>
-            </div>
-          </form>
+    <nc-dialog [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
+      <div class="content">
+        <div class="description">
+          <span class="grade">!</span>
+          <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
         </div>
-        <div class="footer">
-          <span class="form-btn-group">
-            <nc-button (click)="isShows[0]=false">确定</nc-button>
-          </span>
-          <span class="form-btn-group">
-            <nc-button [type]="'cancel'" (click)="isShows[0]=false">取消</nc-button>
-          </span>
-        </div>
-      </nc-dialog>
+        <form>
+          <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">用户名</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+              <nc-input [type]="'text'" [(modelValue)]="name" [required]="true">
+              </nc-input>
+            </nc-form-control>
+          </nc-form-group>
+          <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
+            <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">技能</nc-form-label>
+            <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+              <nc-input [type]="'text'" [(modelValue)]="skill" [required]="true">
+              </nc-input>
+            </nc-form-control>
+          </nc-form-group>
+        </form>
+      </div>
+      <div class="footer">
+        <span class="form-btn-group">
+          <nc-button (click)="isShows[0]=false">确定</nc-button>
+        </span>
+        <span class="form-btn-group">
+          <nc-button [type]="'cancel'" (click)="isShows[0]=false">取消</nc-button>
+        </span>
+      </div>
+    </nc-dialog>
 
-      //大尺寸
-      <nc-dialog [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
-        <div class="content">
-          <div class="description">
-            <span class="grade">!</span>
-            <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
-          </div>
-          <div class="wenzhang">
-            <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。以一身晶莹，绽放独特魅力；以一分柔媚，征服万物生灵；
-              以一缕素洁，攫获万心宠爱。如蝶飞舞，如梦唯美，如烟轻柔，如雾飘缈，如心纯净，如水澄澈。</p>
-          </div>
+    <nc-dialog [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
+      <div class="content">
+        <div class="description">
+          <span class="grade">!</span>
+          <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
         </div>
-        <div class="footer">
-          <span class="form-btn-group">
-            <nc-button (click)="isShows[1]=false">确定</nc-button>
-          </span>
-          <span class="form-btn-group">
-            <nc-button [type]="'cancel'" (click)="isShows[1]=false">取消</nc-button>
-          </span>
+        <div class="wenzhang">
+          <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。以一身晶莹，绽放独特魅力；以一分柔媚，征服万物生灵；
+            以一缕素洁，攫获万心宠爱。如蝶飞舞，如梦唯美，如烟轻柔，如雾飘缈，如心纯净，如水澄澈。</p>
+          <p>忧郁的愁丝晕染了流年的底色，孤寒的素洁染白了寒冬的萧瑟。凛冽的寒风呼啸而来，残瘦的枯枝在风中摇曳。清冷的浩空好似在酝酿一场盛
+            大的群舞盛宴，天边仿佛飞来白茫茫一片素洁，那是雪精灵在炫舞翩跹。曼妙的舞姿，灵动的舞步，飘逸的神韵，优雅地绽放，美而不艳，媚而不俗，
+            令人沉醉，不能自拔……</p>
+          <p>“晚来天欲雪，能饮一杯无？”——期盼了一个冬季的雪花，终于纷纷扬扬地飘洒在苍穹的天宇。隔着透明的玻璃窗，看着一片片雪花轻盈飘落，心底
+            情不自禁地奔涌出一股抑制不住的惊喜。迫不及待地推开门，只见千千万万片飞絮，犹如一片片雪白的鹅毛，洋洋洒洒地从天而降，穿越浩渺星空，
+            飞向苍茫大地。</p>
         </div>
-      </nc-dialog>
+      </div>
+      <div class="footer">
+        <span class="form-btn-group">
+          <nc-button (click)="isShows[1]=false">确定</nc-button>
+        </span>
+        <span class="form-btn-group">
+          <nc-button [type]="'cancel'" (click)="isShows[1]=false">取消</nc-button>
+        </span>
+      </div>
+    </nc-dialog>
     </textarea>
   </div>
 </nc-tab>
