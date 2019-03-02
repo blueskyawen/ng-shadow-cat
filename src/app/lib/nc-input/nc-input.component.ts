@@ -35,7 +35,7 @@ export class NcInputComponent  implements OnInit {
   isShowHint : boolean = false;
   isShowError : boolean = false;
   inputStyle : any = {};
-  inputClasses : any = {}
+  inputClasses : any = {};
 
   constructor() {}
 

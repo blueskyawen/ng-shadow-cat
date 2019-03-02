@@ -10,6 +10,7 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
 })
 export class NcProgressComponent  implements OnInit,OnChanges {
   @Input() width: string = '360px';
+  @Input() height: number;
   @Input() style: string = 'big';
   @Input() total: number = 100;
   @Input() value: number = 30;
@@ -31,7 +32,10 @@ export class NcProgressComponent  implements OnInit,OnChanges {
       'urgent': !this.isDynamic && this.valueShow >= 80,
       'percent100': !this.isDynamic && this.valueShow == 100
     };
-    this.progStyleStr = {'width': this.width};
+    let sizeHeight = !isNaN(this.height) && Number(this.height) > 1 ? Number(this.height) :
+        (this.style === 'big' || this.style === 'small') ? undefined : 12;
+    this.progStyleStr = sizeHeight ? {'width': this.width,'height': sizeHeight+'px'} :
+        {'width': this.width};
     this.widthStyle = {'width': `${this.valueShow}%`};
   }
 

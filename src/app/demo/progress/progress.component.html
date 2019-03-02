@@ -35,6 +35,12 @@
   <div>
     <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'800px'"></nc-progress>
   </div>
+  <div>
+    <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'250px'" [height]="30"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'150px'"  [height]="6"></nc-progress>
+  </div>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
@@ -49,6 +55,8 @@
       <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'60%'"></nc-progress>
       <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'200px'"></nc-progress>
       <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'800px'"></nc-progress>
+      <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'250px'" [height]="30"></nc-progress>
+      <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'150px'"  [height]="6"></nc-progress>
     </textarea>
   </div>
 </nc-tab>
@@ -66,6 +74,9 @@
   <div>
     <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'"></nc-progress>
   </div>
+  <div>
+    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'150px'" [height]="6"></nc-progress>
+  </div>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
@@ -76,6 +87,7 @@
 
       <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'200px'"></nc-progress>
       <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'"></nc-progress>
+      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'150px'" [height]="6"></nc-progress>
     </textarea>
   </div>
   <div *ngIf="currentTab2 === 'typescript'">
@@ -134,6 +146,11 @@
     <td>width</td>
     <td>自定义比例条的宽度，px或百分比，比如：50%，400px</td>
     <td>360px</td>
+  </tr>
+  <tr>
+    <td>height</td>
+    <td>自定义高度，number，比如：10</td>
+    <td></td>
   </tr>
   <tr>
     <td>isDynamic</td>
