@@ -58,25 +58,21 @@ export class NcProgressComponent  implements OnInit,OnChanges {
   }
 
   setDynamicValue() {
-    if(this.showProcValue) {
-      setTimeout(() => {
-        this.value += 20;
-        this.handleValueChange();
-        if(this.value < this.total) {
-          this.setDynamicValue();
-        } else {
-          this.subDynStyle = this.style !== 'small' ? {'border-radius': '12px'} : {'border-radius': '6px'};
-        }
-      }, this.intvalTime * 80 / 100);
-    }
+    setTimeout(() => {
+      this.value += 20;
+      this.handleValueChange();
+      if(this.value < this.total) {
+        this.setDynamicValue();
+      } else {
+        this.subDynStyle = this.style !== 'small' ? {'border-radius': '12px'} : {'border-radius': '6px'};
+      }
+    }, this.intvalTime * 80 / 100);
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes['value'] && changes['value'].currentValue) {
       setTimeout(() => {
-        if(this.showProcValue) {
-          this.handleValueChange();
-        }
+        this.handleValueChange();
       },50);
     }
   }
