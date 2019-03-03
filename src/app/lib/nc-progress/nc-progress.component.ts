@@ -81,6 +81,7 @@ export class NcProgressComponent  implements OnInit,OnChanges {
       },50);
     }
     if(changes['isDynamic'] && !changes['isDynamic'].firstChange) {
+      this.isSubDynamic = this.isDynamic && this.isSubDynamic;
       if(this.isDynamic) {
         this.colorClass = {'normal': this.isDynamic,'dyna': this.isDynamic};
         this.widthStyle = this.style !== 'small' ? {'animation': `mydyna ${this.dynaTimelen}s`} :
