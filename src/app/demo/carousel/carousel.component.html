@@ -12,6 +12,9 @@
 <nc-carousel [captions]="captions4" [timerlen]="4000" [width]="'80%'" [height]="'420px'"></nc-carousel>
 <p>鼠标放置停止播放</p>
 <nc-carousel [captions]="captions5" [timerlen]="4000" [isPause]="true" [width]="'80%'" [height]="'420px'"></nc-carousel>
+<h3>5. 轮播切换事件(输出当前显示图的索引)</h3>
+<nc-carousel [captions]="captions4" [timerlen]="6000" [width]="'80%'"
+             [height]="'420px'" (carouselChange)="handleCarouselChange($event)"></nc-carousel>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
@@ -26,6 +29,9 @@
     <h3>4. 自动播放</h3>
     <nc-carousel [captions]="captions2" [timerlen]="4000" [width]="'80%'" [height]="'420px'"></nc-carousel>
     <nc-carousel [captions]="captions2" [timerlen]="4000" [isPause]="true" [width]="'80%'" [height]="'420px'"></nc-carousel>
+    <h3>5. 轮播切换事件(输出当前显示图的索引)</h3>
+    <nc-carousel [captions]="captions4" [timerlen]="6000" [width]="'80%'"
+                 [height]="'420px'" (carouselChange)="handleCarouselChange($event)"></nc-carousel>
     </textarea>
   </div>
   <div *ngIf="currentTab === 'typescript'">

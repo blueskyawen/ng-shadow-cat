@@ -53,4 +53,7 @@ export class CarouselComponent {
     this.currentTab= this.tabItems[0].label;
   }
 
+  handleCarouselChange(index : number) {
+    console.log('current carousel index: '+index);
+  }
 }

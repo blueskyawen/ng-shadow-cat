@@ -73,6 +73,7 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       this.hideItems();
       this.activeIndex = index;
       this.captions[this.activeIndex].moveStyle = {'opacity':'1'};
+      this.carouselChange.emit(this.activeIndex);
     }
   }
 
@@ -100,8 +101,8 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
         this.activeIndex = this.captions.length - 1;
       }
       this.captions[this.activeIndex].moveStyle = {'opacity':'1'};
+      this.carouselChange.emit(this.activeIndex);
     }
-    this.carouselChange.emit(this.activeIndex);
   }
 
   next() {
@@ -121,9 +122,9 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       } else {
         this.activeIndex = 0;
       }
-      this.captions[this.activeIndex].moveStyle = {'opacity':'1'};
+      this.captions[this.activeIndex].moveStyle = {'opacity': '1'};
+      this.carouselChange.emit(this.activeIndex);
     }
-    this.carouselChange.emit(this.activeIndex);
   }
 
   changeleft(curIndex : number) {
@@ -134,6 +135,7 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       this.captions[this.activeIndex].moveStyle = {'transition':'left 1s ease-out','top':'0%','left':'100%'};
       this.oldIndex = this.activeIndex;
       this.activeIndex = curIndex;
+      this.carouselChange.emit(this.activeIndex);
       setTimeout(() => {
         this.recoverImgState();
       },1000);
@@ -147,6 +149,7 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       this.captions[this.activeIndex].moveStyle = {'transition':'left 1s ease-out','top':'0%','left':'-100%'};
       this.oldIndex = this.activeIndex;
       this.activeIndex = curIndex;
+      this.carouselChange.emit(this.activeIndex);
       setTimeout(() => {
         this.recoverImgState();
       },1000);
