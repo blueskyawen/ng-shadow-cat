@@ -16,6 +16,8 @@ export class ProgressComponent implements OnInit {
   tabItems2 : any[] = [];
   currentTab2 : string;
   curValue2 : number = 0;
+  isproDynamic: boolean = true;
+  curValue3 : number = 0;
 
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false}];
@@ -41,5 +43,13 @@ export class ProgressComponent implements OnInit {
     setTimeout(() => {
       this.progressing();
     },1000);
+  }
+
+  confirmDyna() {
+    this.isproDynamic = true;
+  }
+
+  cancelDyna() {
+    this.isproDynamic = false;
   }
 }

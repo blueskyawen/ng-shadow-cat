@@ -40,16 +40,17 @@ export class NcProgressComponent  implements OnInit,OnChanges {
       this.subDynStyle = this.isSubDynamic ? {'animation': 'mydyna2 500ms infinite'} : {};
       this.value = 0;
       this.total = 100;
+      this.valueShow = this.value * 100 / this.total;
       this.intvalTime = this.dynaTimelen * 1000 / 5;
       this.setDynamicValue();
     } else {
+      this.valueShow = this.value * 100 / this.total;
       this.colorClass = {'normal': this.valueShow <= 50,
         'warn': this.valueShow > 50 && this.valueShow < 80,
         'urgent': this.valueShow >= 80,
         'percent100': this.valueShow == 100};
       this.widthStyle = {'width': `${this.valueShow}%`};
     }
-    this.valueShow = this.value * 100 / this.total;
     let sizeHeight = !isNaN(this.height) && Number(this.height) > 1 ? Number(this.height) :
         (this.style === 'big' || this.style === 'small') ? undefined : 12;
     this.progStyleStr = sizeHeight ? {'width': this.width, 'height': sizeHeight+'px'} :
@@ -58,22 +59,40 @@ export class NcProgressComponent  implements OnInit,OnChanges {
   }
 
   setDynamicValue() {
-    setTimeout(() => {
-      this.value += 20;
-      this.handleValueChange();
-      if(this.value < this.total) {
-        this.setDynamicValue();
-      } else {
-        this.subDynStyle = this.style !== 'small' ? {'border-radius': '12px'} : {'border-radius': '6px'};
-      }
-    }, this.intvalTime * 80 / 100);
+    if(this.isDynamic) {
+      setTimeout(() => {
+        if(this.isDynamic) {
+          this.value += 20;
+          this.handleValueChange();
+        }
+        if(this.value < this.total) {
+          this.setDynamicValue();
+        } else {
+          this.subDynStyle = this.style !== 'small' ? {'border-radius': '12px'} : {'border-radius': '6px'};
+        }
+      }, this.intvalTime * 80 / 100);
+    }
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if(changes['value'] && changes['value'].currentValue) {
+    if(changes['value'] && !changes['value'].firstChange) {
       setTimeout(() => {
         this.handleValueChange();
       },50);
+    }
+    if(changes['isDynamic'] && !changes['isDynamic'].firstChange) {
+      if(this.isDynamic) {
+        this.colorClass = {'normal': this.isDynamic,'dyna': this.isDynamic};
+        this.widthStyle = this.style !== 'small' ? {'animation': `mydyna ${this.dynaTimelen}s`} :
+            {'animation': `mydyna3 ${this.dynaTimelen}s`, 'width': '0%'};
+        this.subDynStyle = this.isSubDynamic ? {'animation': 'mydyna2 500ms infinite'} : {};
+        this.setDynamicValue();
+      } else {
+        this.colorClass = {'normal': this.isDynamic,'dyna': this.isDynamic};
+        this.value = 0;
+        this.valueShow = 0;
+        this.widthStyle = {'width': '0%'};
+      }
     }
   }
 

@@ -139,6 +139,43 @@
     </textarea>
   </div>
 </nc-tab>
+<h3>3. 动态进度切换</h3>
+<div>
+  <div style="margin-right: 10px;display: inline-block;">
+    <nc-button (click)="confirmDyna()">进入动态</nc-button>
+  </div>
+  <div style="margin-right: 10px;display: inline-block;">
+    <nc-button [type]="'cancel'" (click)="cancelDyna()">取消动态</nc-button>
+  </div>
+  <nc-progress [value]="curValue3" [total]="total" [isDynamic]="isproDynamic"></nc-progress>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
+  <div *ngIf="currentTab2 === 'html'">
+    <textarea style="height:120px;">
+    <div style="margin-right: 10px;display: inline-block;">
+      <nc-button (click)="confirmDyna()">进入动态</nc-button>
+    </div>
+    <div style="margin-right: 10px;display: inline-block;">
+      <nc-button [type]="'cancel'" (click)="cancelDyna()">取消动态</nc-button>
+    </div>
+    <nc-progress [value]="curValue3" [total]="total" [isDynamic]="isproDynamic"></nc-progress>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab2 === 'typescript'">
+    <textarea style="height:350px;">
+    curValue3 : number = 0;
+
+    confirmDyna() {
+        this.isproDynamic = true;
+    }
+
+    cancelDyna() {
+        this.isproDynamic = false;
+    }
+    </textarea>
+  </div>
+</nc-tab>
 
 <h3>参数</h3>
 <table>
