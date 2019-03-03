@@ -106,10 +106,10 @@
   opacity: 0.5;
   animation:mydyna2 500ms 1;
 }
-.process.big .processing .dyna {
+.process.big .processing-container .processing .dyna {
   border-radius:12px 0 0 12px/12px 0 0 12px;
 }
-.process.small .processing .dyna {
+.process.small .processing-container .processing .dyna {
   border-radius:6px 0 0 6px/6px 0 0 6px;
 }
 @keyframes mydyna2

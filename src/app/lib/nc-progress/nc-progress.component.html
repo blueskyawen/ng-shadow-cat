@@ -1,7 +1,7 @@
 <span class="process" [ngClass]="sizeClass" [ngStyle]="progStyleStr">
   <span class="processing-container" [ngStyle]="proceConStyle">
     <span class="processing" [ngClass]="colorClass" [ngStyle]="widthStyle">
-      <span class="dyna" *ngIf="isSubDynamic" [ngStyle]="subDynStyle"></span>
+      <span class="dyna" *ngIf="isDynamic && isSubDynamic" [ngStyle]="subDynStyle"></span>
     </span>
   </span>
   <span *ngIf="showProcValue" class="description">{{valueShow}}%</span>

@@ -31,7 +31,6 @@ export class NcProgressComponent  implements OnInit,OnChanges {
   }
 
   ngOnInit() {
-    this.isSubDynamic = this.isDynamic && this.isSubDynamic;
     this.sizeClass = {'big': this.style !== 'small','small': this.style === 'small'};
     if(this.isDynamic) {
       this.colorClass = {'normal': this.isDynamic,'dyna': this.isDynamic};
@@ -82,11 +81,11 @@ export class NcProgressComponent  implements OnInit,OnChanges {
     }
     if(changes['isDynamic'] && !changes['isDynamic'].firstChange) {
       if(this.isDynamic) {
-        this.isSubDynamic = this.isDynamic && this.isSubDynamic;
         this.colorClass = {'normal': this.isDynamic, 'dyna': this.isDynamic};
         this.widthStyle = this.style !== 'small' ? {'animation': `mydyna ${this.dynaTimelen}s`} :
             {'animation': `mydyna3 ${this.dynaTimelen}s`, 'width': '0%'};
         this.subDynStyle = this.isSubDynamic ? {'animation': 'mydyna2 500ms infinite'} : {};
+        this.intvalTime = this.dynaTimelen * 1000 / 5;
         this.setDynamicValue();
       } else {
         this.colorClass = {'normal': this.isDynamic,'dyna': this.isDynamic};
