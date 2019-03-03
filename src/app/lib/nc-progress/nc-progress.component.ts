@@ -15,6 +15,8 @@ export class NcProgressComponent  implements OnInit,OnChanges {
   @Input() total: number = 100;
   @Input() value: number = 30;
   @Input() isDynamic : boolean = false;
+  @Input() isSubDynamic : boolean = true;
+  @Input() dynaTimelen : number = 10;
   @Input() showProcValue : boolean = true;
   valueShow : number = 0;
   sizeClass : any = {};
@@ -22,44 +24,71 @@ export class NcProgressComponent  implements OnInit,OnChanges {
   widthStyle : any = {};
   progStyleStr : any;
   proceConStyle : any = {};
+  intvalTime : number = 0;
+  subDynStyle: any = {};
 
   constructor() {
   }
 
   ngOnInit() {
+    this.isSubDynamic = this.isDynamic && this.isSubDynamic;
+    this.sizeClass = {'big': this.style !== 'small','small': this.style === 'small'};
+    if(this.isDynamic) {
+      this.colorClass = {'normal': this.isDynamic,'dyna': this.isDynamic};
+      this.widthStyle = this.style !== 'small' ? {'animation': `mydyna ${this.dynaTimelen}s`} :
+          {'animation': `mydyna3 ${this.dynaTimelen}s`};
+      this.subDynStyle = this.isSubDynamic ? {'animation': 'mydyna2 500ms infinite'} : {};
+      this.value = 0;
+      this.total = 100;
+      this.intvalTime = this.dynaTimelen * 1000 / 5;
+      this.setDynamicValue();
+    } else {
+      this.colorClass = {'normal': this.valueShow <= 50,
+        'warn': this.valueShow > 50 && this.valueShow < 80,
+        'urgent': this.valueShow >= 80,
+        'percent100': this.valueShow == 100};
+      this.widthStyle = {'width': `${this.valueShow}%`};
+    }
     this.valueShow = this.value * 100 / this.total;
-    this.sizeClass = {'big': this.style === 'big','small': this.style === 'small'};
-    this.colorClass = {'normal': !this.isDynamic && this.valueShow <= 50,
-      'warn': !this.isDynamic && (this.valueShow > 50 && this.valueShow < 80),
-      'urgent': !this.isDynamic && this.valueShow >= 80,
-      'percent100': !this.isDynamic && this.valueShow == 100
-    };
     let sizeHeight = !isNaN(this.height) && Number(this.height) > 1 ? Number(this.height) :
         (this.style === 'big' || this.style === 'small') ? undefined : 12;
-    this.progStyleStr = sizeHeight ? {'width': this.width,'height': sizeHeight+'px'} :
+    this.progStyleStr = sizeHeight ? {'width': this.width, 'height': sizeHeight+'px'} :
         {'width': this.width};
-    this.widthStyle = {'width': `${this.valueShow}%`};
     if (!this.showProcValue) { this.proceConStyle = {'width': '100%'}; }
+  }
+
+  setDynamicValue() {
+    if(this.showProcValue) {
+      setTimeout(() => {
+        this.value += 20;
+        this.handleValueChange();
+        if(this.value < this.total) {
+          this.setDynamicValue();
+        } else {
+          this.subDynStyle = this.style !== 'small' ? {'border-radius': '12px'} : {'border-radius': '6px'};
+        }
+      }, this.intvalTime * 80 / 100);
+    }
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if(changes['value'] && changes['value'].currentValue) {
       setTimeout(() => {
-        this.handleValueChange();
+        if(this.showProcValue) {
+          this.handleValueChange();
+        }
       },50);
     }
   }
 
   handleValueChange() {
     this.valueShow = this.value * 100 / this.total;
-    if(this.isDynamic) {
-      this.colorClass = {'normal': this.isDynamic,'dyna': this.isDynamic};
-    } else {
+    if(!this.isDynamic) {
       this.colorClass = {'normal': !this.isDynamic && this.valueShow <= 50,
         'warn': !this.isDynamic && (this.valueShow > 50 && this.valueShow < 80),
         'urgent': !this.isDynamic && this.valueShow >= 80,
         'percent100': !this.isDynamic && this.valueShow == 100};
     }
-    this.widthStyle = {'width': `${this.valueShow}%`};
+    this.widthStyle['width'] = `${this.valueShow}%`;
   }
 }

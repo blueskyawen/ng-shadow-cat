@@ -15,6 +15,7 @@ export class ProportionComponent implements OnInit {
   tabItems2 : any[] = [];
   currentTab2 : string;
   timer : any = undefined;
+  timer2 : any = undefined;
 
   itemList1 : any[] = [
     {label: '选项1',color: '#009933',value: 30},
@@ -55,7 +56,7 @@ export class ProportionComponent implements OnInit {
   }
 
   startDong2() {
-    this.timer = setInterval(() => {
+    this.timer2 = setInterval(() => {
       this.itemList = [
         {label: '选项1',color: '#009933',value: Math.round(Math.random() * 100 / 3)},
         {label: '选项2',color: '#ffa31a',value: Math.round(Math.random() * 100 / 3)},
@@ -65,7 +66,7 @@ export class ProportionComponent implements OnInit {
   }
 
   stopDong2() {
-    clearInterval(this.timer);
-    this.timer = undefined;
+    clearInterval(this.timer2);
+    this.timer2 = undefined;
   }
 }

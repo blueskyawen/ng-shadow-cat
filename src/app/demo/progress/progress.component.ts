@@ -15,6 +15,7 @@ export class ProgressComponent implements OnInit {
   timelen : number = 10;
   tabItems2 : any[] = [];
   currentTab2 : string;
+  curValue2 : number = 0;
 
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false}];
@@ -32,10 +33,10 @@ export class ProgressComponent implements OnInit {
 
   progressing() {
     let step = this.total / this.timelen;
-    if(this.curValue === this.total) {
-      this.curValue = 0;
+    if(this.curValue2 === this.total) {
+      this.curValue2 = 0;
     } else {
-      this.curValue += step;
+      this.curValue2 += step;
     }
     setTimeout(() => {
       this.progressing();

@@ -82,7 +82,16 @@
     <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'150px'" [height]="6"></nc-progress>
   </div>
   <div>
+    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [dynaTimelen]="5"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [dynaTimelen]="20" [isSubDynamic]="false"></nc-progress>
+  </div>
+  <div>
     <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'" [showProcValue]="false"></nc-progress>
+  </div>
+  <div>
+    <nc-progress [value]="curValue2" [total]="total" [width]="'200px'"></nc-progress>
   </div>
 </div>
 <p>使用方式:</p>
@@ -96,7 +105,11 @@
       <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'"></nc-progress>
       <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'150px'" [height]="6"></nc-progress>
 
+      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [dynaTimelen]="5"></nc-progress>
+      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [dynaTimelen]="20" [isSubDynamic]="false"></nc-progress>
+
       <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'" [showProcValue]="false"></nc-progress>
+      <nc-progress [value]="curValue2" [total]="total" [width]="'200px'"></nc-progress>
     </textarea>
   </div>
   <div *ngIf="currentTab2 === 'typescript'">
@@ -104,19 +117,20 @@
       curValue : number = 0;
       total : number = 100;
       timelen : number = 10;
+      curValue2 : number = 0;
 
       ngOnInit() {
-        setTimeout(() => {
+          setTimeout(() => {
           this.progressing();
         },1000);
       }
 
       progressing() {
-        let step = this.total / this.timelen;
-        if(this.curValue === this.total) {
-          this.curValue = 0;
+          let step = this.total / this.timelen;
+          if(this.curValue2 === this.total) {
+          this.curValue2 = 0;
         } else {
-          this.curValue += step;
+          this.curValue2 += step;
         }
         setTimeout(() => {
           this.progressing();
@@ -170,6 +184,16 @@
     <td>showProcValue</td>
     <td>是否展示当前进度百分比,true/false</td>
     <td>true</td>
+  </tr>
+  <tr>
+    <td>isSubDynamic</td>
+    <td>是否展示进度子动画,true/false</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>dynaTimelen</td>
+    <td>动态进度时长,单位s</td>
+    <td>10s</td>
   </tr>
   </tbody>
 </table>
