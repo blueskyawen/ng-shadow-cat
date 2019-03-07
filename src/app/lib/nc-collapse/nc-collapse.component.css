@@ -52,13 +52,13 @@
   border-top:none;
   box-sizing:border-box;
   padding:0px;
-  visibility: hidden;
   border-radius: 0 0 4px 4px;
   max-height: 0px;
   opacity:0;
+  display: none;
 }
 .collapse.active article {
-  visibility: visible;
+  display: block;
   padding:10px;
   opacity:1;
   max-height:1000px;
