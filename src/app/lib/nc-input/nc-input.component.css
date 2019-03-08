@@ -99,6 +99,9 @@
 .nc-form-group-item input.hasPreIcon {
   padding-left: 25px;
 }
+.nc-form-group-item input.hasNoBorder {
+  border: none !important;
+}
 .nc-form-group-item .input-affix {
   display:inline-flex;
   height:100%;

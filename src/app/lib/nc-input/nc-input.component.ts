@@ -30,6 +30,7 @@ export class NcInputComponent  implements OnInit {
   @Input() pattern : any;
   @Input() showHint : boolean = true;
   @Input() iconffix : string = '';
+  @Input() noBorder : boolean = false;
   errorText : string = '';
   afixClasses : any = {};
   isShowHint : boolean = false;
@@ -43,7 +44,7 @@ export class NcInputComponent  implements OnInit {
     this.afixClasses = {'nc-form-group-item-disabled':this.disabled};
     this.inputStyle = {'width':this.width,'height':this.height};
     this.inputClasses = {'hasSuffix':this.suffixList.length !== 0,'hasPrefix':this.prefixList.length !== 0,
-      'hasSubIcon':this.iconffix === 'sub','hasPreIcon':this.iconffix === 'pre'};
+      'hasSubIcon':this.iconffix === 'sub','hasPreIcon':this.iconffix === 'pre','hasNoBorder':this.noBorder};
   }
 
   inputChange(value : string) {
