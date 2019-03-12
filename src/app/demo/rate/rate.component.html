@@ -23,6 +23,9 @@
 <div style="margin-top: 20px;margin-bottom: 20px;">
   <nc-rate [color]="'#bf00ff'" [totalRate]="8" [(curRate)]="curRate" [title]="'分'"></nc-rate>
 </div>
+<div style="margin-top: 20px;margin-bottom: 20px;">
+  <nc-rate [color]="'#ff1a1a'" [showTitle]="false"></nc-rate>
+</div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
@@ -30,6 +33,7 @@
     <nc-rate [color]="'#ff1a1a'"></nc-rate>
     <nc-rate [size]="'42px'" [color]="'#1a1aff'"></nc-rate>
     <nc-rate [color]="'#bf00ff'" [totalRate]="8" [(curRate)]="curRate" [title]="'分'"></nc-rate>
+    <nc-rate [color]="'#ff1a1a'" [showTitle]="false"></nc-rate>
     </textarea>
   </div>
 </nc-tab>
@@ -68,6 +72,11 @@
     <td>title</td>
     <td>评分文本</td>
     <td>星</td>
+  </tr>
+  <tr>
+    <td>showTitle</td>
+    <td>是否显示文本,true/false</td>
+    <td>true</td>
   </tr>
   </tbody>
 </table>

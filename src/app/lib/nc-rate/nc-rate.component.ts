@@ -15,9 +15,11 @@ export class NcRateComponent  implements OnInit {
   @Input() title : string = '星';
   @Input() size : string = '28px';
   @Input() color : string = '#ff8000';
+  @Input() showTitle: boolean = true;
   rateItems : any[] = [];
   rateClasses : any = {};
   rateStyle : any = {};
+  rateStyle2 : any = {};
 
   constructor() {}
 

@@ -6,5 +6,5 @@
          [ngStyle]="rateStyle">
     </div>
   </div>
-  <div class="rate-description">{{curRate}} {{title}}</div>
+  <div class="rate-description" [ngStyle]="rateStyle2" *ngIf="showTitle">{{curRate}} {{title}}</div>
 </div>

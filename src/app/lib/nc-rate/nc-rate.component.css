@@ -1,6 +1,5 @@
 .rating {
   position: relative;
-  padding:10px;
   display: inline-block;
 }
 .rating .stars {
@@ -10,7 +9,7 @@
   display: inline-block;
   float:left;
   font-size:28px;
-  margin:0 5px;
+  margin:0 1px;
   color:#ff8000;
   cursor:pointer;
 }
@@ -46,6 +45,7 @@
   margin-left:5px;
   top:0;
   left:100%;
+  color: #666;;
 }
 .rate-color-normal .rate-description {
   color:#ff8000;
