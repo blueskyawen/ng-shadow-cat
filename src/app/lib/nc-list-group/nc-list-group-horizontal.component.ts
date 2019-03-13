@@ -13,6 +13,7 @@ export class NcListGroupHorizontalComponent implements AfterViewInit,OnChanges {
     @Input() hideOper : boolean = false;
     @Input() operation : string = '';
     @Input() isShowOperation : boolean = true;
+    @Input() resetGroup: boolean = false;
     groupStyles : any = {};
     marginLeft : number = 0;
     groupContainerWidth : number = 0;
@@ -34,6 +35,10 @@ export class NcListGroupHorizontalComponent implements AfterViewInit,OnChanges {
         }
         if(usrOper && usrOper.previousValue === '' && usrOper.currentValue === 'prev') {
             this.clickPrev();
+        }
+        let usrReset = changes['resetGroup'];
+        if(usrReset && !usrReset.firstChange && usrReset.currentValue) {
+            this.getWidths();
         }
     }
 
