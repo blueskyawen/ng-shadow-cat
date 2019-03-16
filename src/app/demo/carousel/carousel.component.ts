@@ -10,39 +10,39 @@ import { Component,OnInit } from '@angular/core';
 export class CarouselComponent {
   timerlen : number = 1000;
   captions : any[] = [
-    {url: 'http://upload.shunwang.com/2014/0625/1403670070972.JPG',disable: false,callback: () => {console.log('callback1');}},
-    {url: 'http://f4.topitme.com/4/b3/e5/1118294546054e5b34o.jpg',disable: false,callback: () => {console.log('callback2');}},
-    {url: 'http://pic1.win4000.com/wallpaper/4/561cade9bbfd6.jpg',disable: false,callback: () => {console.log('callback3');}},
-    {url: 'http://img17.3lian.com/d/file/201701/19/fd92ea2409b6b157c247b78ce4eda95a.jpg',disable: false,
-      callback: () => {console.log('callback4');}}
+    {url: '/assets/image/carousel-photo01.jpg',disable: false,callback: () => {console.log('callback1');}},
+    {url: '/assets/image/carousel-photo02.jpg',disable: false,callback: () => {console.log('callback2');}},
+    {url: '/assets/image/carousel-photo03.jpg',disable: false,callback: () => {console.log('callback3');}},
+    {url: '/assets/image/carousel-photo04.jpg',disable: false,callback: () => {console.log('callback4');}},
+    {url: '/assets/image/carousel-photo05.jpg',disable: false,callback: () => {console.log('callback5');}}
   ];
   captions2 : any[] = [
-    {url: 'http://upload.shunwang.com/2014/0625/1403670070972.JPG',disable: false,callback: () => {console.log('callback1');}},
-    {url: 'http://f4.topitme.com/4/b3/e5/1118294546054e5b34o.jpg',disable: false,callback: () => {console.log('callback2');}},
-    {url: 'http://pic1.win4000.com/wallpaper/4/561cade9bbfd6.jpg',disable: false,callback: () => {console.log('callback3');}},
-    {url: 'http://img17.3lian.com/d/file/201701/19/fd92ea2409b6b157c247b78ce4eda95a.jpg',disable: false,
-      callback: () => {console.log('callback4');}}
+    {url: '/assets/image/carousel-photo01.jpg',disable: false,callback: () => {console.log('callback1');}},
+    {url: '/assets/image/carousel-photo02.jpg',disable: false,callback: () => {console.log('callback2');}},
+    {url: '/assets/image/carousel-photo03.jpg',disable: false,callback: () => {console.log('callback3');}},
+    {url: '/assets/image/carousel-photo04.jpg',disable: false,callback: () => {console.log('callback4');}},
+    {url: '/assets/image/carousel-photo05.jpg',disable: false,callback: () => {console.log('callback5');}}
   ];
   captions3 : any[] = [
-    {url: 'http://upload.shunwang.com/2014/0625/1403670070972.JPG',disable: false,callback: () => {console.log('callback1');}},
-    {url: 'http://f4.topitme.com/4/b3/e5/1118294546054e5b34o.jpg',disable: false,callback: () => {console.log('callback2');}},
-    {url: 'http://pic1.win4000.com/wallpaper/4/561cade9bbfd6.jpg',disable: false,callback: () => {console.log('callback3');}},
-    {url: 'http://img17.3lian.com/d/file/201701/19/fd92ea2409b6b157c247b78ce4eda95a.jpg',disable: false,
-      callback: () => {console.log('callback4');}}
+    {url: '/assets/image/carousel-photo01.jpg',disable: false,callback: () => {console.log('callback1');}},
+    {url: '/assets/image/carousel-photo02.jpg',disable: false,callback: () => {console.log('callback2');}},
+    {url: '/assets/image/carousel-photo03.jpg',disable: false,callback: () => {console.log('callback3');}},
+    {url: '/assets/image/carousel-photo04.jpg',disable: false,callback: () => {console.log('callback4');}},
+    {url: '/assets/image/carousel-photo05.jpg',disable: false,callback: () => {console.log('callback5');}}
   ];
   captions4 : any[] = [
-    {url: 'http://upload.shunwang.com/2014/0625/1403670070972.JPG',disable: false,callback: () => {console.log('callback1');}},
-    {url: 'http://f4.topitme.com/4/b3/e5/1118294546054e5b34o.jpg',disable: false,callback: () => {console.log('callback2');}},
-    {url: 'http://pic1.win4000.com/wallpaper/4/561cade9bbfd6.jpg',disable: false,callback: () => {console.log('callback3');}},
-    {url: 'http://img17.3lian.com/d/file/201701/19/fd92ea2409b6b157c247b78ce4eda95a.jpg',disable: false,
-      callback: () => {console.log('callback4');}}
+    {url: '/assets/image/carousel-photo01.jpg',disable: false,callback: () => {console.log('callback1');}},
+    {url: '/assets/image/carousel-photo02.jpg',disable: false,callback: () => {console.log('callback2');}},
+    {url: '/assets/image/carousel-photo03.jpg',disable: false,callback: () => {console.log('callback3');}},
+    {url: '/assets/image/carousel-photo04.jpg',disable: false,callback: () => {console.log('callback4');}},
+    {url: '/assets/image/carousel-photo05.jpg',disable: false,callback: () => {console.log('callback5');}}
   ];
   captions5 : any[] = [
-    {url: 'http://upload.shunwang.com/2014/0625/1403670070972.JPG',disable: false,callback: () => {console.log('callback1');}},
-    {url: 'http://f4.topitme.com/4/b3/e5/1118294546054e5b34o.jpg',disable: false,callback: () => {console.log('callback2');}},
-    {url: 'http://pic1.win4000.com/wallpaper/4/561cade9bbfd6.jpg',disable: false,callback: () => {console.log('callback3');}},
-    {url: 'http://img17.3lian.com/d/file/201701/19/fd92ea2409b6b157c247b78ce4eda95a.jpg',disable: false,
-      callback: () => {console.log('callback4');}}
+    {url: '/assets/image/carousel-photo01.jpg',disable: false,callback: () => {console.log('callback1');}},
+    {url: '/assets/image/carousel-photo02.jpg',disable: false,callback: () => {console.log('callback2');}},
+    {url: '/assets/image/carousel-photo03.jpg',disable: false,callback: () => {console.log('callback3');}},
+    {url: '/assets/image/carousel-photo04.jpg',disable: false,callback: () => {console.log('callback4');}},
+    {url: '/assets/image/carousel-photo05.jpg',disable: false,callback: () => {console.log('callback5');}}
   ];
   tabItems : any[] = [];
   currentTab : string;
