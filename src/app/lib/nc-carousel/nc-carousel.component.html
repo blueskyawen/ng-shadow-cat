@@ -8,7 +8,7 @@
   </ul>
   <div class="bars">
     <span *ngFor="let caption of captions;let i=index"
-          [ngClass]="{'active': activeIndex === i,'noactive': activeIndex !== i}"
+          [ngClass]="{'active': showIndex === i,'noactive': showIndex !== i}"
           (click)="changePic(i)"></span>
   </div>
   <div class="carousel-bar-left" (click)="pre()"><div class="left"></div></div>
@@ -25,7 +25,7 @@
   </ul>
   <div class="bars">
     <span *ngFor="let caption of captions;let i=index"
-          [ngClass]="{'active': activeIndex === i,'noactive': activeIndex !== i}"
+          [ngClass]="{'active': showIndex === i,'noactive': showIndex !== i}"
           (click)="changePic(i)"></span>
   </div>
   <div class="carousel-bar-left" (click)="pre()"><div class="left"></div></div>

@@ -22,13 +22,9 @@
   width:100%;
   display:inline-block;
   position:absolute;
-  transition: left 1s ease-out;
-}
-.carousel ul li:first-child{
   left:0%;
-}
-.carousel ul li:not(:first-child){
   top:100%;
+  transition: left 1s ease-out;
 }
 .carousel ul li img{
   height:100%;
@@ -119,7 +115,8 @@
   position:absolute;
   transition: opacity 1s ease-out;
   height:100%;
-  width:100%
+  width:100%;
+  opacity:0;
 }
 .carousel-fade ul li img{
   height:100%;

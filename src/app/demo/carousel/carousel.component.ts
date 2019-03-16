@@ -30,6 +30,7 @@ export class CarouselComponent {
     {url: '/assets/image/carousel-photo04.jpg',disable: false,callback: () => {console.log('callback4');}},
     {url: '/assets/image/carousel-photo05.jpg',disable: false,callback: () => {console.log('callback5');}}
   ];
+  showIndex3: number = 1;
   captions4 : any[] = [
     {url: '/assets/image/carousel-photo01.jpg',disable: false,callback: () => {console.log('callback1');}},
     {url: '/assets/image/carousel-photo02.jpg',disable: false,callback: () => {console.log('callback2');}},
@@ -38,6 +39,13 @@ export class CarouselComponent {
     {url: '/assets/image/carousel-photo05.jpg',disable: false,callback: () => {console.log('callback5');}}
   ];
   captions5 : any[] = [
+    {url: '/assets/image/carousel-photo01.jpg',disable: false,callback: () => {console.log('callback1');}},
+    {url: '/assets/image/carousel-photo02.jpg',disable: false,callback: () => {console.log('callback2');}},
+    {url: '/assets/image/carousel-photo03.jpg',disable: false,callback: () => {console.log('callback3');}},
+    {url: '/assets/image/carousel-photo04.jpg',disable: false,callback: () => {console.log('callback4');}},
+    {url: '/assets/image/carousel-photo05.jpg',disable: false,callback: () => {console.log('callback5');}}
+  ];
+  captions6 : any[] = [
     {url: '/assets/image/carousel-photo01.jpg',disable: false,callback: () => {console.log('callback1');}},
     {url: '/assets/image/carousel-photo02.jpg',disable: false,callback: () => {console.log('callback2');}},
     {url: '/assets/image/carousel-photo03.jpg',disable: false,callback: () => {console.log('callback3');}},

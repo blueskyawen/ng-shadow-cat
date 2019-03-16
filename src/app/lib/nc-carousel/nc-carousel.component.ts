@@ -16,8 +16,8 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
   @Input() height : string = '650px';
   @Input() width : string = '100%';
   @Input() isPause : boolean = false;
-  @Output() carouselChange = new EventEmitter();
-  activeIndex : number = 0;
+  @Input() showIndex : number = 0;
+  @Output() showIndexChange = new EventEmitter<number>();
   isCanClick : boolean = true;
   oldIndex : number = 0;
   carStyleStr : any;
@@ -26,11 +26,20 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
   constructor() {}
 
   ngOnInit() {
+    this.initCarousel();
+    this.carStyleStr = {'height':this.height,'width' :this.width};
+    this.setAutoTimer();
+  }
+
+  initCarousel() {
     for(let caption of this.captions) {
       caption.moveStyle = {};
     }
-    this.carStyleStr = {'height':this.height,'width' :this.width};
-    this.setAutoTimer();
+    if(this.effect === 'scroll') {
+      this.captions[this.showIndex].moveStyle = {'top': '0%', 'left': '0%'};
+    } else {
+      this.captions[this.showIndex].moveStyle = {'opacity':'1'};
+    }
   }
 
   ngOnDestroy() {
@@ -64,16 +73,16 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       return;
     }
     if(this.effect === 'scroll') {
-      if(this.activeIndex < index) {
+      if(this.showIndex < index) {
         this.changeRight(index);
       } else {
         this.changeleft(index);
       }
     } else {
       this.hideItems();
-      this.activeIndex = index;
-      this.captions[this.activeIndex].moveStyle = {'opacity':'1'};
-      this.carouselChange.emit(this.activeIndex);
+      this.showIndex = index;
+      this.captions[this.showIndex].moveStyle = {'opacity':'1'};
+      this.showIndexChange.emit(this.showIndex);
     }
   }
 
@@ -88,20 +97,20 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       return;
     }
     if(this.effect === 'scroll') {
-      if(this.activeIndex > 0) {
-        this.changeleft(this.activeIndex - 1);
+      if(this.showIndex > 0) {
+        this.changeleft(this.showIndex - 1);
       } else {
         this.changeleft(this.captions.length - 1);
       }
     } else {
       this.hideItems();
-      if(this.activeIndex > 0) {
-        this.activeIndex--;
+      if(this.showIndex > 0) {
+        this.showIndex--;
       } else {
-        this.activeIndex = this.captions.length - 1;
+        this.showIndex = this.captions.length - 1;
       }
-      this.captions[this.activeIndex].moveStyle = {'opacity':'1'};
-      this.carouselChange.emit(this.activeIndex);
+      this.captions[this.showIndex].moveStyle = {'opacity':'1'};
+      this.showIndexChange.emit(this.showIndex);
     }
   }
 
@@ -110,20 +119,20 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       return;
     }
     if(this.effect === 'scroll') {
-      if(this.activeIndex < this.captions.length - 1) {
-        this.changeRight(this.activeIndex + 1);
+      if(this.showIndex < this.captions.length - 1) {
+        this.changeRight(this.showIndex + 1);
       } else {
         this.changeRight(0);
       }
     } else {
       this.hideItems();
-      if(this.activeIndex < this.captions.length - 1) {
-        this.activeIndex++;
+      if(this.showIndex < this.captions.length - 1) {
+        this.showIndex++;
       } else {
-        this.activeIndex = 0;
+        this.showIndex = 0;
       }
-      this.captions[this.activeIndex].moveStyle = {'opacity': '1'};
-      this.carouselChange.emit(this.activeIndex);
+      this.captions[this.showIndex].moveStyle = {'opacity': '1'};
+      this.showIndexChange.emit(this.showIndex);
     }
   }
 
@@ -132,10 +141,10 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
     this.isCanClick = false;
     setTimeout(() => {
       this.captions[curIndex].moveStyle = {'transition':'left 1s ease-out','top':'0%','left':'0%'};
-      this.captions[this.activeIndex].moveStyle = {'transition':'left 1s ease-out','top':'0%','left':'100%'};
-      this.oldIndex = this.activeIndex;
-      this.activeIndex = curIndex;
-      this.carouselChange.emit(this.activeIndex);
+      this.captions[this.showIndex].moveStyle = {'transition':'left 1s ease-out','top':'0%','left':'100%'};
+      this.oldIndex = this.showIndex;
+      this.showIndex = curIndex;
+      this.showIndexChange.emit(this.showIndex);
       setTimeout(() => {
         this.recoverImgState();
       },1000);
@@ -146,10 +155,10 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
     this.isCanClick = false;
     setTimeout(() => {
       this.captions[curIndex].moveStyle = {'transition':'left 1s ease-out','top':'0%','left':'0%'};
-      this.captions[this.activeIndex].moveStyle = {'transition':'left 1s ease-out','top':'0%','left':'-100%'};
-      this.oldIndex = this.activeIndex;
-      this.activeIndex = curIndex;
-      this.carouselChange.emit(this.activeIndex);
+      this.captions[this.showIndex].moveStyle = {'transition':'left 1s ease-out','top':'0%','left':'-100%'};
+      this.oldIndex = this.showIndex;
+      this.showIndex = curIndex;
+      this.showIndexChange.emit(this.showIndex);
       setTimeout(() => {
         this.recoverImgState();
       },1000);
