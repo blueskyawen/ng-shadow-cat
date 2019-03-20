@@ -10,7 +10,8 @@ import { Component,OnInit } from '@angular/core';
 export class PaginationComponent {
   tabItems : any[] = [];
   currentTab : string;
-
+  curNum: number = 6;
+  curNum2: number = 16;
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false}];
     this.currentTab= this.tabItems[0].label;

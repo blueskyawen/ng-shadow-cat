@@ -1,10 +1,11 @@
 <ul class="pagination" [class.has_border]="haveBorder">
-  <li><a href="javascript:void(0)" (click)="prePage()">❮</a></li>
-  <li *ngFor="let item of items">
-    <a [class.active]="item.isActive"
-       href="javascript:void(0)" (click)="selectPage(item)">
+  <li [class.disable]="curIndex === 1">
+    <a href="javascript:void(0)" (click)="prePage()">❮</a></li>
+  <li *ngFor="let item of items" [ngClass]="{'active':item.label === curIndex}">
+    <a href="javascript:void(0)" (click)="selectPage(item)">
       {{item.label}}
     </a>
   </li>
-  <li><a href="javascript:void(0)" (click)="nextPage()">❯</a></li>
+  <li [class.disable]="curIndex === pageNum">
+    <a href="javascript:void(0)" (click)="nextPage()">❯</a></li>
 </ul>
