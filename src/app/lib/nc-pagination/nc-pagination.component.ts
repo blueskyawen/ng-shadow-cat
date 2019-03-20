@@ -48,6 +48,7 @@ export class NcPaginationComponent  implements OnInit {
     } else {
       this.curIndex--;
     }
+    this.curIndexChange.emit(this.curIndex);
   }
 
   nextPage() {
@@ -64,6 +65,7 @@ export class NcPaginationComponent  implements OnInit {
     } else {
       this.curIndex++;
     }
+    this.curIndexChange.emit(this.curIndex);
   }
 
 }
