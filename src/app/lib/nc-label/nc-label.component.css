@@ -2,19 +2,19 @@ span.label {
   display:inline-flex;
   justify-content:center;
   align-items:center;
-  padding: 5px 10px;
-  margin:5px;
+  padding: 5px;
+  margin:2px;
   color:#fff;
-  border-radius:10px;
+  border-radius:8px;
 }
 .label-default {
-  background:#808080;
+  background:#999;
 }
 .label-primary {
-  background:#0000ff;
+  background:#0066ff;
 }
 .label-success {
-  background:#00e64d;
+  background:#40bf40;
 }
 .label-info {
   background:#6699ff;

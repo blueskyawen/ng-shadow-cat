@@ -132,6 +132,7 @@
   bottom:5%;
   left:50%;
   transform: translateX(-50%);
+  z-index: 2;
 }
 .carousel-fade .bars span{
   display:inline-block;
@@ -156,6 +157,7 @@
   justify-content: center;
   align-items: center;
   top:0;
+  z-index: 2;
 }
 .carousel-fade .carousel-bar-left .left{
   display:inline-block;

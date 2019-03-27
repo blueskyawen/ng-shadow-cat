@@ -1,23 +1,50 @@
 <h2 class="title">标签</h2>
 <p>标签，可用于计数、提示或页面上其他的标记显示</p>
 <div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
-  <nc-label></nc-label>
-  <nc-label [type]="'primary'" [title]="'主要标签'"></nc-label>
-  <nc-label [type]="'success'" [title]="'成功标签'"></nc-label>
-  <nc-label [type]="'info'" [title]="'信息标签'"></nc-label>
-  <nc-label [type]="'warn'" [title]="'警告标签'"></nc-label>
-  <nc-label [type]="'danger'" [title]="'危险标签'"></nc-label>
+  <nc-label>标签</nc-label>
+  <nc-label [type]="'primary'">主要标签</nc-label>
+  <nc-label [type]="'success'">成功标签</nc-label>
+  <nc-label [type]="'info'">信息标签</nc-label>
+  <nc-label [type]="'warn'">警告标签</nc-label>
+  <nc-label [type]="'danger'">危险标签</nc-label>
+</div>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+  <nc-label [backColor]="'#999'">
+    <span style="font-size: 24px;font-weight: 500;">自定义标签</span>
+  </nc-label>
+  <nc-label [type]="'primary'" [backColor]="'#666699'">
+    <span style="font-size: 14px;">自定义标签</span>
+  </nc-label>
+  <nc-label [type]="'primary'" [backColor]="'#006600'">
+    <span style="font-size: 12px;">自定义标签</span>
+  </nc-label>
+  <nc-label [type]="'primary'" [backColor]="'#ffffe5'" [hasborder]="true">
+    <span style="font-size: 14px;color:#666;">自定义标签</span>
+  </nc-label>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
     <textarea style="height:160px;">
-    <nc-label></nc-label>
-    <nc-label [type]="'primary'" [title]="'主要标签'"></nc-label>
-    <nc-label [type]="'success'" [title]="'成功标签'"></nc-label>
-    <nc-label [type]="'info'" [title]="'信息标签'"></nc-label>
-    <nc-label [type]="'warn'" [title]="'警告标签'"></nc-label>
-    <nc-label [type]="'danger'" [title]="'危险标签'"></nc-label>
+    <nc-label>标签</nc-label>
+    <nc-label [type]="'primary'">主要标签</nc-label>
+    <nc-label [type]="'success'">成功标签</nc-label>
+    <nc-label [type]="'info'">信息标签</nc-label>
+    <nc-label [type]="'warn'">警告标签</nc-label>
+    <nc-label [type]="'danger'">危险标签</nc-label>
+
+    <nc-label [backColor]="'#999'">
+      <span style="font-size: 24px;font-weight: 500;">自定义标签</span>
+    </nc-label>
+    <nc-label [type]="'primary'" [backColor]="'#666699'">
+      <span style="font-size: 14px;">自定义标签</span>
+    </nc-label>
+    <nc-label [type]="'primary'" [backColor]="'#006600'">
+      <span style="font-size: 12px;">自定义标签</span>
+    </nc-label>
+    <nc-label [type]="'primary'" [backColor]="'#ffffe5'" [hasborder]="true">
+      <span style="font-size: 14px;color:#666;">自定义标签</span>
+    </nc-label>
     </textarea>
   </div>
 </nc-tab>
@@ -33,14 +60,19 @@
   </thead>
   <tbody>
   <tr>
-    <td>title</td>
-    <td>标签文本</td>
+    <td>backColor</td>
+    <td>标签底色</td>
     <td></td>
   </tr>
   <tr>
     <td>type</td>
     <td>标签类型</td>
     <td>default</td>
+  </tr>
+  <tr>
+    <td>hasborder</td>
+    <td>是否带边框</td>
+    <td>false</td>
   </tr>
   </tbody>
 </table>

@@ -10,14 +10,26 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
 })
 export class NcLabelComponent  implements OnInit {
   @Input() type : string = 'default';
-  @Input() title : string = '默认标签';
-  colorClasses : any = {};
+  @Input() backColor : string;
+  @Input() hasborder: boolean = false;
+  color: any = {
+    'default': '#999','primary':'#0066ff','success':'#40bf40','info':'#6699ff','warn':'#ffad33','danger':'#ff1a1a'
+  };
+  labelStyles : any = {};
+  types: string[] = ['default','primary','success','info','warn','danger'];
 
   constructor() {}
 
   ngOnInit() {
-    this.colorClasses = {'label-default': this.type === 'default','label-primary': this.type === 'primary',
-      'label-success': this.type === 'success','label-info': this.type === 'info',
-      'label-warning': this.type === 'warn','label-danger': this.type === 'danger'};
+    if(!this.types.includes(this.type)) {
+      this.type = 'default';
+    }
+    if(this.backColor) {
+      this.labelStyles = {'background-color':this.backColor,'border':this.hasborder ? 'solid 1px #ccc' : 'none'};
+    } else {
+      this.labelStyles = {'background-color':this.color[this.type],'border':this.hasborder ? 'solid 1px #ccc' : 'none'};
+    }
   }
+
 }
+

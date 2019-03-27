@@ -38,7 +38,7 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
     if(this.effect === 'scroll') {
       this.captions[this.showIndex].moveStyle = {'top': '0%', 'left': '0%'};
     } else {
-      this.captions[this.showIndex].moveStyle = {'opacity':'1'};
+      this.captions[this.showIndex].moveStyle = {'opacity':'1','z-index':'1'};
     }
   }
 
@@ -81,14 +81,14 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
     } else {
       this.hideItems();
       this.showIndex = index;
-      this.captions[this.showIndex].moveStyle = {'opacity':'1'};
+      this.captions[this.showIndex].moveStyle = {'opacity':'1','z-index':'1'};
       this.showIndexChange.emit(this.showIndex);
     }
   }
 
   hideItems() {
     for(let option of this.captions) {
-      option.moveStyle = {'opacity':'0'};
+      option.moveStyle = {'opacity':'0','z-index':'0'};
     }
   }
 
@@ -109,7 +109,7 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       } else {
         this.showIndex = this.captions.length - 1;
       }
-      this.captions[this.showIndex].moveStyle = {'opacity':'1'};
+      this.captions[this.showIndex].moveStyle = {'opacity':'1','z-index':'1'};
       this.showIndexChange.emit(this.showIndex);
     }
   }
@@ -131,7 +131,7 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       } else {
         this.showIndex = 0;
       }
-      this.captions[this.showIndex].moveStyle = {'opacity': '1'};
+      this.captions[this.showIndex].moveStyle = {'opacity': '1','z-index':'1'};
       this.showIndexChange.emit(this.showIndex);
     }
   }
