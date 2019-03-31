@@ -3,13 +3,13 @@
 <h3>1. 左右滑动</h3>
 <nc-carousel [captions]="captions"></nc-carousel>
 <h3>2. 渐显</h3>
-<nc-carousel [captions]="captions2" [effect]="'fade'"></nc-carousel>
+<nc-carousel [captions]="captions2" [effect]="'fade'" [circularBead]="'6px'"></nc-carousel>
 <h3>3. 自定义尺寸</h3>
 <nc-carousel [captions]="captions3" [effect]="'fade'" [(showIndex)]="showIndex3" [width]="'60%'" [height]="'360px'">
 </nc-carousel>
 <h3>4. 启动/停止自动播放</h3>
 <p>自动播放</p>
-<nc-carousel [captions]="captions4" [timerlen]="4000" [width]="'80%'" [height]="'420px'"></nc-carousel>
+<nc-carousel [captions]="captions4" [timerlen]="4000" [width]="'80%'" [height]="'420px'" [circularBead]="'6px'"></nc-carousel>
 <p>鼠标放置停止播放</p>
 <nc-carousel [captions]="captions5" [timerlen]="4000" [isPause]="true" [width]="'80%'" [height]="'420px'"></nc-carousel>
 <h3>5. 轮播切换事件(输出当前显示图的索引)</h3>
@@ -22,12 +22,12 @@
     <h3>1. 左右滑动</h3>
     <nc-carousel [captions]="captions"></nc-carousel>
     <h3>2. 渐显</h3>
-    <nc-carousel [captions]="captions2" [effect]="'fade'"></nc-carousel>
+    <nc-carousel [captions]="captions2" [effect]="'fade'" [circularBead]="'6px'"></nc-carousel>
     <h3>3. 自定义尺寸</h3>
     <nc-carousel [captions]="captions2" [effect]="'fade'" [(showIndex)]="showIndex3" [width]="'60%'" [height]="'360px'">
     </nc-carousel>
     <h3>4. 自动播放</h3>
-    <nc-carousel [captions]="captions2" [timerlen]="4000" [width]="'80%'" [height]="'420px'"></nc-carousel>
+    <nc-carousel [captions]="captions2" [timerlen]="4000" [width]="'80%'" [height]="'420px'" [circularBead]="'6px'"></nc-carousel>
     <nc-carousel [captions]="captions2" [timerlen]="4000" [isPause]="true" [width]="'80%'" [height]="'420px'"></nc-carousel>
     <h3>5. 轮播切换事件(输出当前显示图的索引)</h3>
     <nc-carousel [captions]="captions4" [timerlen]="6000" [width]="'80%'"
@@ -94,6 +94,11 @@
     <td>showIndex</td>
     <td>默认显示的轮播图索引，number, 事件:showIndexChange</td>
     <td>0</td>
+  </tr>
+  <tr>
+    <td>circularBead</td>
+    <td>圆角尺寸</td>
+    <td>none</td>
   </tr>
   </tbody>
 </table>

@@ -1,9 +1,9 @@
 <div class="carousel" *ngIf="effect === 'scroll'" [ngStyle]="carStyleStr"
      (mouseover)="moveCarousel('over')" (mouseout)="moveCarousel('out')">
-  <ul>
+  <ul [ngStyle]="imgStyleStr">
     <li *ngFor="let caption of captions;let i=index" (click)="callBack(caption)"
       [ngStyle]="caption.moveStyle">
-      <img [src]="caption.url" alt="image_{{i}}"/>
+      <img [src]="caption.url" alt="image_{{i}}" [ngStyle]="imgStyleStr" />
     </li>
   </ul>
   <div class="bars">
@@ -17,10 +17,10 @@
 
 <div class="carousel-fade" *ngIf="effect === 'fade'" [ngStyle]="carStyleStr"
      (mouseover)="moveCarousel('over')" (mouseout)="moveCarousel('out')">
-  <ul>
+  <ul [ngStyle]="imgStyleStr">
     <li *ngFor="let caption of captions;let i=index" (click)="callBack(caption)"
         [ngStyle]="caption.moveStyle">
-      <img [src]="caption.url" alt="image_{{i}}"/>
+      <img [src]="caption.url" alt="image_{{i}}" [ngStyle]="imgStyleStr" />
     </li>
   </ul>
   <div class="bars">

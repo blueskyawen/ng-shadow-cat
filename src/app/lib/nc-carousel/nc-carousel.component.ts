@@ -17,17 +17,22 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
   @Input() width : string = '100%';
   @Input() isPause : boolean = false;
   @Input() showIndex : number = 0;
+  @Input() circularBead : string = '';
   @Output() showIndexChange = new EventEmitter<number>();
   isCanClick : boolean = true;
   oldIndex : number = 0;
   carStyleStr : any;
   autoTimerId : any = undefined;
+  imgStyleStr : any;
+  imgRadius: string = 'none';
 
   constructor() {}
 
   ngOnInit() {
     this.initCarousel();
-    this.carStyleStr = {'height':this.height,'width' :this.width};
+    this.carStyleStr = {'height': this.height, 'width': this.width};
+    this.imgRadius = this.circularBead ? this.circularBead : 'none';
+    this.imgStyleStr = {'border-radius': this.imgRadius};
     this.setAutoTimer();
   }
 
@@ -36,7 +41,7 @@ export class NcCarouselComponent implements OnInit, OnDestroy {
       caption.moveStyle = {};
     }
     if(this.effect === 'scroll') {
-      this.captions[this.showIndex].moveStyle = {'top': '0%', 'left': '0%'};
+      this.captions[this.showIndex].moveStyle = {'top': '0%', 'left': '0%', 'border-radius': this.imgRadius};
     } else {
       this.captions[this.showIndex].moveStyle = {'opacity':'1','z-index':'1'};
     }
