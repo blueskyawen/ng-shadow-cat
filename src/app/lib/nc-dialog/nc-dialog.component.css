@@ -30,7 +30,6 @@
   min-height:120px;
   transform: translateX(-50%);
   box-shadow:2px 2px 2px #a3a375;
-  overflow: hidden;
 }
 .dialog-container .myDialog.normal-dialog {
   top:60px;
