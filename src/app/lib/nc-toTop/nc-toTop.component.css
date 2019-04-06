@@ -3,6 +3,7 @@
   bottom:10%;
   right:10%;
   display:none;
+  z-index: 9999;
 }
 .nc-backTop-rocket:hover{
   cursor:pointer;
@@ -86,8 +87,9 @@
 }
 .nc-backTop-circle .nc-backTop-body {
   width:40%;
-  display:flex;
+  display:inline-flex;
   flex-direction:column;
+  align-items: center;
 }
 .nc-backTop-circle .nc-backTop-body .nc-back-head {
   width:100%;
@@ -101,7 +103,6 @@
   border:solid 8px;
   border-color:transparent transparent #fff transparent;
   position:relative;
-  left:2px;
   top:-6px;
 }
 .nc-backTop-circle .nc-backTop-body .nc-back-content:after {

@@ -4,7 +4,7 @@
   left:0;
   height:100%;
   width:100%;
-  display:block;
+  display:none;
   z-index: 2000;
   overflow-y: auto;
 }
