@@ -26,9 +26,10 @@ export class NcInputComponent  implements OnInit {
   @Input() max : number = 99;
   @Input() step : number = 1;
   @Input() inputLintText : string = '请输入中文或者英文';
-  @Input() inputErrorText : string = '输入错误，请检查！';
+  @Input() inputErrorText : string;
   @Input() pattern : any;
   @Input() showHint : boolean = true;
+  @Input() showError : boolean = false;
   @Input() iconffix : string = '';
   @Input() noBorder : boolean = false;
   errorText : string = '';
@@ -62,8 +63,12 @@ export class NcInputComponent  implements OnInit {
       this.errorText = '必填，不能为空！';
       return this.isShowError = true;
     }
+    if(this.showError) {
+      this.errorText = this.inputErrorText || '输入错误，请检查！';
+      return this.isShowError = true;
+    }
     if(this.pattern && !this.pattern.test(this.modelValue)) {
-      this.errorText = this.inputErrorText;
+      this.errorText = this.inputErrorText || '输入错误，请检查！';
       return this.isShowError = true;
     }
     return this.isShowError = false;

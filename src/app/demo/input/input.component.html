@@ -185,6 +185,13 @@
     </nc-input>
   </div>
   <div style="margin: 20px 0;">
+    <nc-input [type]="'text'" [(modelValue)]="value" [width]="'500px'"
+              [showError]="isShowErrInput" [inputErrorText]="ShowErrMsg"></nc-input>
+    <div style="margin-top: 10px;">
+      <nc-button (click)="isShowErrInput = !isShowErrInput;">输入错误</nc-button>
+    </div>
+  </div>
+  <div style="margin: 20px 0;">
     <nc-text-area [(modelValue)]="textArea" [width]="'900px'" [height]="'130px'"></nc-text-area>
   </div>
 </div>
@@ -307,7 +314,30 @@
     <td>是否不带边框，false/true</td>
     <td>false</td>
   </tr>
+  <tr>
+    <td>inputLintText</td>
+    <td>提示内容</td>
+    <td>请输入中文或者英文</td>
+  </tr>
+  <tr>
+    <td>inputErrorText</td>
+    <td>错误提示内容</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>showError</td>
+    <td>是否提示错误，false/true</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>pattern</td>
+    <td>检查正则对象</td>
+    <td></td>
+  </tr>
   </tbody>
 </table>
 <br/>
 <br/>
+
+
+

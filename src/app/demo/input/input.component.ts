@@ -25,7 +25,8 @@ export class InputComponent {
   currentTab : string;
   tabItems2 : any[] = [];
   currentTab2 : string;
-
+  isShowErrInput: boolean = false;
+  ShowErrMsg: string = '输入有重复!!!';
 
   constructor() {
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
