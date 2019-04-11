@@ -11,6 +11,7 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
 export class NcDropdownComponent  implements OnInit {
   @Input() type : string = 'click';
   @Input() place : string = 'down';
+  @Input() subPlace : string = 'left';
   isOverIt : boolean = false;
   items : any[] = [];
   placeClasses : any = {};
@@ -19,8 +20,7 @@ export class NcDropdownComponent  implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.placeClasses = {'nc-dropPlace-down': this.place === 'down','nc-dropPlace-up':this.place === 'top',
-      'nc-dropPlace-left':this.place === 'left','nc-dropPlace-right':this.place === 'right'};
+    this.setPlaceClasses();
     if(this.type == 'click') {
       document.addEventListener('click', (event) => {
         if (!this.isOverIt) {
@@ -29,6 +29,20 @@ export class NcDropdownComponent  implements OnInit {
         event.stopPropagation();
       });
     }
+  }
+
+  setPlaceClasses() {
+    this.placeClasses = {'nc-dropPlace-down': this.place === 'down','nc-dropPlace-up':this.place === 'top',
+      'nc-dropPlace-left':this.place === 'left','nc-dropPlace-right':this.place === 'right',
+      'nc-subPlace-left':this.isShowSubPlace('left', ['down','top']),
+      'nc-subPlace-right':this.isShowSubPlace('right', ['down','top']),
+      'nc-subPlace-up':this.isShowSubPlace('top', ['left','right']),
+      'nc-subPlace-down':this.isShowSubPlace('down', ['left','right'])
+    };
+  }
+
+  isShowSubPlace(place: string, placeItems: string[]) {
+    return placeItems.includes(this.place) && this.subPlace === place;
   }
 
   clickDown() {
