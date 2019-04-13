@@ -12,7 +12,7 @@ export class NcToolTipComponent  implements OnInit {
   @Input() tipTitle : string = 'tipTitle';
   @Input() tipContext : string = 'tipContext';
   @Input() place : string = 'right';
-  placeClasses : any = {}
+  placeClasses : any = {};
 
   constructor() {}
 

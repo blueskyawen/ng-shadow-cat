@@ -1,5 +1,6 @@
 <h2 class="title">帮助</h2>
 <p>帮助，用于在文档或表单中提供帮助信息</p>
+<h3>1. 普通模式</h3>
 <div>
   <div style="display: inline-block;margin: 20px;">
     <nc-help [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
@@ -50,6 +51,33 @@
   </div>
 </nc-tab>
 
+<h3>2. 不同显示位置</h3>
+<div>
+  <div style="display: inline-block;margin: 20px;">
+    <nc-help [place]="'right'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+  </div>
+  <div style="display: inline-block;margin: 20px;">
+    <nc-help  [place]="'top'" [style]="'normal'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+  </div>
+  <div style="display: inline-block;margin: 20px;">
+    <nc-help [place]="'bottom'" [style]="'warn'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+  </div>
+  <div style="display: inline-block;margin: 20px;">
+    <nc-help [place]="'left'" [style]="'error'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:220px;">
+    <nc-help [place]="'right'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+    <nc-help  [place]="'top'" [style]="'normal'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+    <nc-help [place]="'bottom'" [style]="'warn'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+    <nc-help [place]="'left'" [style]="'error'" [title]="'如果提供了一个选择器，提示工具对象将被委派到指定的目标'"></nc-help>
+    </textarea>
+  </div>
+</nc-tab>
+
 <h3>参数</h3>
 <table>
   <thead>
@@ -74,6 +102,11 @@
     <td>title</td>
     <td>指定help的类型的内容</td>
     <td></td>
+  </tr>
+  <tr>
+    <td>place</td>
+    <td>提示内容的显示方向，4种取值：top,right,bottom,left</td>
+    <td>right</td>
   </tr>
   </tbody>
 </table>
