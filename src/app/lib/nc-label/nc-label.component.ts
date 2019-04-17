@@ -1,14 +1,15 @@
 /**
  * Created by liuxuwen on 18-8-22.
  */
-import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } from '@angular/core';
+import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges,
+    ElementRef, AfterViewInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'nc-label',
   templateUrl: './nc-label.component.html',
   styleUrls: ['./nc-label.component.css']
 })
-export class NcLabelComponent  implements OnInit {
+export class NcLabelComponent  implements OnInit, OnChanges {
   @Input() type : string = 'default';
   @Input() backColor : string;
   @Input() hasborder: boolean = false;
@@ -20,10 +21,20 @@ export class NcLabelComponent  implements OnInit {
 
   constructor() {}
 
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['backColor'] && !changes['backColor']['firstChange']) {
+      this.setBackColor();
+    }
+  }
+
   ngOnInit() {
     if(!this.types.includes(this.type)) {
       this.type = 'default';
     }
+    this.setBackColor();
+  }
+
+  setBackColor() {
     if(this.backColor) {
       this.labelStyles = {'background-color':this.backColor,'border':this.hasborder ? 'solid 1px #ccc' : 'none'};
     } else {

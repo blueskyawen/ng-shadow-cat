@@ -15,10 +15,22 @@ export class LabelComponent {
   callbackFun : any = () => {alert('错误！请进行一些更改');};
   tabItems : any[] = [];
   currentTab : string;
+  backColors: string[] = ['#d9d9d9','#ffaa80','#80aaff','#8cd9b3','#ff80ff',
+    '#b3b3cc','#bfff80','#d4ff80','#d4d4aa','#df9fdf'];
+  myBackColor: string;
 
   constructor() {
+    this.myBackColor = this.backColors[0];
     this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
       {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
     this.currentTab= this.tabItems[0].label;
+  }
+
+  changeBackColor() {
+    this.myBackColor = this.backColors[this.getRandomNum()];
+  }
+
+  getRandomNum() {
+    return Math.ceil(Math.random() * 10);
   }
 }

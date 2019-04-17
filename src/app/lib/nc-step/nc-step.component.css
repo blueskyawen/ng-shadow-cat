@@ -125,7 +125,7 @@
   clear:both;
   margin:auto;
   width:90%;
-  height:80px;
+  min-height:80px;
   padding:20px;
 }
 .step-container .step-footer {

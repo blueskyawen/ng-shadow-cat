@@ -22,6 +22,14 @@
     <span style="font-size: 14px;color:#666;">自定义标签</span>
   </nc-label>
 </div>
+<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+  <nc-label [backColor]="myBackColor" [hasborder]="true">
+    <span style="font-size: 16px;font-weight: 400;color:#666;">自定义标签</span>
+  </nc-label>
+  <span style="margin-left:20px;">
+      <nc-button (click)="changeBackColor()">切换背景色</nc-button>
+  </span>
+</div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
