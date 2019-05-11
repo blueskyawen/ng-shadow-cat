@@ -60,6 +60,8 @@ import {NcDateTimeSelectorComponent} from './nc-date-time-selector/nc-date-time-
 import {NcDateSelectorComponent} from './nc-date-time-selector/nc-date-selector.component';
 import {NcRangeDateSelectorComponent} from './nc-date-time-selector/nc-range-date-selector.component';
 import {NcDrawerComponent} from './nc-drawer/nc-drawer.component';
+import {NcCascaderComponent} from './nc-cascader/nc-cascader.component';
+import {NcDragableAreaComponent} from './nc-dragable-area/nc-dragable-area.component';
 
 import { InputNumberDirective } from './nc-num-put/input-number.directive';
 import {NcItemDividerDirective} from './nc-directive/nc-item-divider.directive';
@@ -79,7 +81,8 @@ import {NcSubDropdownDirective} from './nc-directive/nc-sub-dropdown.directive';
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
     NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent,
     NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent,NcDateSelectorComponent,
-    NcRangeDateSelectorComponent,NcItemDividerDirective,NcSubDropdownDirective,NcDrawerComponent],
+    NcRangeDateSelectorComponent,NcItemDividerDirective,NcSubDropdownDirective,NcDrawerComponent,
+    NcCascaderComponent,NcDragableAreaComponent],
   exports:    [ NcTabComponent,NcLoadingComponent,NcButtonComponent,NcMessageComponent,
     NcToTopComponent,NcToolTipComponent,NcHelpComponent,NcBreadcrumbComponent,NcPaginationComponent,
     NcCheckboxComponent,NcRadioComponent,NcSwitchComponent,NcRateComponent,NcCollapseComponent,
@@ -92,6 +95,7 @@ import {NcSubDropdownDirective} from './nc-directive/nc-sub-dropdown.directive';
     NcInputIconComponent,NcTextAreaComponent,NcInputDynamicAddComponent,NcInputDynamicDeleteComponent,
     NcListGroupVerticalComponent,NcListGroupHorizontalComponent,NcPhotoViewComponent,NcTimeSelectorComponent,
     NcYearSelectorComponent,NcMonthSelectorComponent,NcDateTimeSelectorComponent,NcDateSelectorComponent,
-    NcRangeDateSelectorComponent,NcItemDividerDirective,NcSubDropdownDirective,NcDrawerComponent]
+    NcRangeDateSelectorComponent,NcItemDividerDirective,NcSubDropdownDirective,NcDrawerComponent,
+    NcCascaderComponent,NcDragableAreaComponent]
 })
 export class LibModule { }
