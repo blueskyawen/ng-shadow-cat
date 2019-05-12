@@ -1,0 +1,15 @@
+.exhibit-container {
+    width: 90%;
+    display: block;
+    margin: 20px auto;
+    background-color: #f2f2f2;
+}
+.exhibit-container .exhibit-option {
+    display: inline-block;
+    padding: 10px 20px;
+}
+.exhibit-container .exhibit-option img {
+    height: 300px;
+    width:240px;
+    background-color: #f2f2f2;
+}

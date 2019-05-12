@@ -60,6 +60,7 @@ export * from './date-time-selector/date-time-selector.component';
 export * from './date-time-selector/date-selector.component';
 export * from './date-time-selector/range-date-selector.component';
 export * from './drawer/drawer.component';
+export * from './exhibit/exhibit.component';
 
 
 

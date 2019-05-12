@@ -64,6 +64,7 @@ import {DateTimeSelectorComponent} from './date-time-selector/date-time-selector
 import {DateSelectorComponent} from './date-time-selector/date-selector.component';
 import {RangeDateSelectorComponent} from './date-time-selector/range-date-selector.component';
 import {DropDrawerComponent} from './drawer/drawer.component';
+import {ExhibitComponent} from './exhibit/exhibit.component';
 
 @NgModule({
   imports: [CommonModule,FormsModule,LibModule],
@@ -78,7 +79,8 @@ import {DropDrawerComponent} from './drawer/drawer.component';
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
     NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,FormInstanceComponent,
     PhotoViewComponent,YearSelectorComponent,TimeSelectorComponent,MonthSelectorComponent,
-    DateTimeSelectorComponent,DateSelectorComponent,RangeDateSelectorComponent,DropDrawerComponent],
+    DateTimeSelectorComponent,DateSelectorComponent,RangeDateSelectorComponent,DropDrawerComponent,
+    ExhibitComponent],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -90,6 +92,7 @@ import {DropDrawerComponent} from './drawer/drawer.component';
     PieChartComponent,MenuComponent,AvaterComponent,MsgEifComponent,SkeletonComponent,
     NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,FormInstanceComponent,
     PhotoViewComponent,YearSelectorComponent,TimeSelectorComponent,MonthSelectorComponent,
-    DateTimeSelectorComponent,DateSelectorComponent,RangeDateSelectorComponent,DropDrawerComponent]
+    DateTimeSelectorComponent,DateSelectorComponent,RangeDateSelectorComponent,DropDrawerComponent,
+    ExhibitComponent]
 })
 export class DemoModule { }

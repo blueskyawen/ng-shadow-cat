@@ -60,7 +60,8 @@ export class SidebarContorlComponent implements OnInit {
       {'name':'徽章','label':'badge','isActive':false,'url':'/badge'},
       {'name':'头像','label':'avater','isActive':false,'url':'/avater'},
       {'name':'消息表情','label':'msgEif','isActive':false,'url':'/msgEif'},
-      {'name':'加载占位','label':'skeleton','isActive':false,'url':'/skeleton'}];
+      {'name':'加载占位','label':'skeleton','isActive':false,'url':'/skeleton'},
+      {'name':'展示会','label':'exhibit','isActive':false,'url':'/exhibit'}];
   }
 
   ngOnInit() {
