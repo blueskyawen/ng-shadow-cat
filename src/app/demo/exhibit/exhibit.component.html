@@ -1,1 +1,83 @@
-<nc-exhibit [options]="exhibitOptions" [(curIndex)]="defaltIndex"></nc-exhibit>
+<h2 class="title">展示台</h2>
+<p>展示台，用于事物的展示，比如：商品的展示</p>
+<h3>1. 普通模式</h3>
+<div style="width: 100%;overflow-x: auto;">
+    <nc-exhibit [options]="exhibitOptions" [(curIndex)]="defaltIndex"></nc-exhibit>
+</div>
+
+<h3>2. 自定义尺寸</h3>
+<nc-exhibit [options]="exhibitOptions" [(curIndex)]="defaltIndex2" (curIndexChange)="curIndexChange()"
+            [width]="800"></nc-exhibit>
+<p>defaltIndex: {{defaltIndex2}}</p>
+
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [type]="'line'" [(selectTab)] = "currentTab">
+    <div *ngIf="currentTab === 'html'">
+    <textarea style="height:300px;">
+        <nc-exhibit [options]="exhibitOptions" [(curIndex)]="defaltIndex"></nc-exhibit>
+
+        <nc-exhibit [options]="exhibitOptions" [(curIndex)]="defaltIndex" (curIndexChange)="curIndexChange()"
+                    [width]="800"></nc-exhibit>
+    </textarea>
+    </div>
+    <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:300px;">
+        exhibitOptions: any[] = [
+            {
+            name: 'X27',
+            title: 'X27',
+            src: 'https://wwwstatic.vivo.com.cn/vivoportal/files/image/detail/20190318/4c2f35b1ac1a27e2d962b59e2ab33c81.png'
+            },
+            {
+            name: 'X27 Pro',
+            title: 'X27 Pro',
+            src: 'https://wwwstatic.vivo.com.cn/vivoportal/files/image/detail/20190409/5c9702b6e67362472a3c1bd6d1ecd089.png'
+            },
+            {
+            name: 'X27 8GB+128GB版',
+            title: 'X27 8GB+128GB版',
+            src: 'https://wwwstatic.vivo.com.cn/vivoportal/files/image/detail/20190325/ca72d1132db26f764705fb3ba3ca5c8d.png'
+            },
+            {
+            name: 'X21s',
+            title: 'X21s',
+            src: 'https://wwwstatic.vivo.com.cn/vivoportal/files/image/detail/20181029/6d276a4cb84a2d55cbba56cf808706d8.jpg'
+            },
+            {
+            name: 'X23',
+            title: 'X23',
+            src: 'https://wwwstatic.vivo.com.cn/vivoportal/files/image/detail/20180831/bd9b5c3f5fdee7282749b4986d4e38b3.png'
+            }
+        ];
+        defaltIndex : number = 2;
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>options</td>
+        <td>展示项目列表</td>
+        <td>[]</td>
+    </tr>
+    <tr>
+        <td>curIndex</td>
+        <td>当前默认展示的项目索引</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>width</td>
+        <td>展示台宽度</td>
+        <td>1000</td>
+    </tr>
+    </tbody>
+</table>

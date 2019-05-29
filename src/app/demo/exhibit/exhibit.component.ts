@@ -34,6 +34,16 @@ export class ExhibitComponent {
         }
     ];
     defaltIndex : number = 2;
+    defaltIndex2 : number = 2;
+    tabItems : any[] = [];
+    currentTab : string;
     constructor() {
+        this.tabItems = [{name:'html',label:'html',isActive:true,isDisable:false},
+            {name:'typescript',label:'typescript',isActive:false,isDisable:false}];
+        this.currentTab= this.tabItems[0].label;
+    }
+
+    curIndexChange() {
+        console.log(this.defaltIndex);
     }
 }

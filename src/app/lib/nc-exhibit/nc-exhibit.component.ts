@@ -10,7 +10,7 @@ import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterVi
 })
 export class NcExhibitComponent  implements OnInit, AfterViewInit {
     @Input() options : any[] = [];
-    @Input() width : number = 1200;
+    @Input() width : number = 1000;
     @Input() curIndex : number = 1;
     @Output() curIndexChange = new EventEmitter<number>();
     imageWidth: number = 0;
@@ -37,6 +37,9 @@ export class NcExhibitComponent  implements OnInit, AfterViewInit {
     }
 
     init() {
+        if (this.width < 800) {
+            this.width = 800;
+        }
         this.imageWidth = Math.round(this.width / 4);
         let trans_x = Math.round(this.imageWidth*15/14 + this.imageWidth);
         let trans_xx = Math.round(this.width*3/4 + this.imageWidth);
