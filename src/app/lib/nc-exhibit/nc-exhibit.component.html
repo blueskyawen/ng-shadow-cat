@@ -1,0 +1,8 @@
+<div class="exbihit-container" #exhibitCont>
+    <div class="oper-btn oper-prev" (click)="operPrev()"></div>
+    <div class="oper-btn oper-next" (click)="operNext()"></div>
+    <div class="exbihit-list" #exhibit>
+        <img *ngFor="let item of options;let i=index;" [src]="item.src"
+             [alt]="item.name" (click)="selectImage(i)" />
+    </div>
+</div>

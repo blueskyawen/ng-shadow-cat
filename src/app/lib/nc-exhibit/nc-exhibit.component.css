@@ -1,0 +1,65 @@
+.exbihit-container {
+    min-width:800px;
+    height: 600px;
+    margin:10px auto;
+    overflow:hidden;
+    position:relative;
+}
+.exbihit-container .oper-btn {
+    height:30px;
+    width:30px;
+    border:solid 1px #999;
+    border-radius:50%;
+    position:absolute;
+    z-index:5;
+}
+.exbihit-container .oper-btn:after {
+    content:"";
+    height:10px;
+    width:10px;
+    position:absolute;
+    border:solid 2px #666;
+}
+.exbihit-container .oper-prev:after {
+    border-color: #666 transparent transparent #666;
+    top:8px;
+    left:11px;
+    transform: rotate(-45deg);
+}
+.exbihit-container .oper-next:after {
+    border-color: #666 #666 transparent transparent;
+    top:8px;
+    left:5px;
+    transform: rotate(45deg);
+}
+.exbihit-container .oper-btn:hover {
+    cursor:pointer;
+    background-color:#e6e6e6;
+}
+.exbihit-container .oper-prev {
+    top:50%;
+    transform:translateY(-50%);
+}
+.exbihit-container .oper-next {
+    top:50%;
+    right:0;
+    transform:translateY(-50%);
+}
+.exbihit-container .exbihit-list {
+    position:relative;
+    perspective: 1000px;
+    transform-style:preserve-3d;
+    height:300px;
+    width:300px;
+    margin:140px auto;
+}
+.exbihit-container .exbihit-list img {
+    height:100%;
+    width:100%;
+    box-sizing:border-box;
+    position:absolute;
+    transition:all 1s linear;
+}
+.exbihit-container .exbihit-list img:hover {
+    cursor:pointer;
+}

@@ -1,5 +1,1 @@
-<div class="exhibit-container">
-    <div class="exhibit-option" *ngFor="let exhibitItem of exhibitList">
-        <img [src]="exhibitItem.image" [alt]="exhibitItem.name" [title]="exhibitItem.title" />
-    </div>
-</div>
+<nc-exhibit [options]="exhibitOptions" [(curIndex)]="defaltIndex"></nc-exhibit>
