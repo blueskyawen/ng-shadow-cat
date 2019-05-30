@@ -35,6 +35,7 @@ export class ExhibitComponent {
     ];
     defaltIndex : number = 2;
     defaltIndex2 : number = 2;
+    defaltIndex3 : number = 2;
     tabItems : any[] = [];
     currentTab : string;
     constructor() {

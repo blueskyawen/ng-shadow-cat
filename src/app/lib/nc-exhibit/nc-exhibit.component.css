@@ -1,6 +1,6 @@
 .exbihit-container {
-    min-width:800px;
-    height: 600px;
+    width:1200px;
+    height: 400px;
     margin:10px auto;
     overflow:hidden;
     position:relative;
@@ -46,12 +46,14 @@
     transform:translateY(-50%);
 }
 .exbihit-container .exbihit-list {
-    position:relative;
+    position:absolute;
     perspective: 1000px;
     transform-style:preserve-3d;
     height:300px;
     width:300px;
-    margin:140px auto;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
 }
 .exbihit-container .exbihit-list img {
     height:100%;

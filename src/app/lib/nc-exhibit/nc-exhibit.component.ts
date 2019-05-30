@@ -10,10 +10,12 @@ import { Component,OnInit,Input,Output,EventEmitter,ViewChild,ElementRef,AfterVi
 })
 export class NcExhibitComponent  implements OnInit, AfterViewInit {
     @Input() options : any[] = [];
-    @Input() width : number = 1000;
+    @Input() width : number = 1200;
+    @Input() height : number = 500;
     @Input() curIndex : number = 1;
     @Output() curIndexChange = new EventEmitter<number>();
     imageWidth: number = 0;
+    showImageLen: number = 0;
     trans_x_left: string = '';
     trans_x_right: string = '';
     trans_xx_left: string = '';
@@ -33,15 +35,18 @@ export class NcExhibitComponent  implements OnInit, AfterViewInit {
     ngAfterViewInit() {
         this.nativeEl = this.exhibitRef.nativeElement;
         this.exhibitContRef.nativeElement.style.width = `${this.width}px`;
+        if(this.height >= this.showImageLen + 60) {
+            this.exhibitContRef.nativeElement.style.height = `${this.height}px`;
+        } else {
+            this.exhibitContRef.nativeElement.style.height = `${this.showImageLen+100}px`;
+        }
         this.initLocation();
     }
 
     init() {
-        if (this.width < 800) {
-            this.width = 800;
-        }
-        this.imageWidth = Math.round(this.width / 4);
-        let trans_x = Math.round(this.imageWidth*15/14 + this.imageWidth);
+        this.imageWidth = Math.round((9*this.width - 180)/35);
+        this.showImageLen = Math.round(this.imageWidth*5/3);
+        let trans_x = Math.round(this.imageWidth*25/12);
         let trans_xx = Math.round(this.width*3/4 + this.imageWidth);
         this.trans_x_left = `translateX(-${trans_x}px) translateZ(-500px)`;
         this.trans_x_right = `translateX(${trans_x}px) translateZ(-500px)`;

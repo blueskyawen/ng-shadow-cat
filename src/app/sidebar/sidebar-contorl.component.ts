@@ -7,7 +7,7 @@ import { Router }  from '@angular/router';
 @Component({
   selector: 'sidebar-contorl',
   template: `<div class="side-bar">
-                <div class="side-item" [class.selected]="sideItem.isActive" *ngFor="let sideItem of sideTypes" 
+                <div class="side-item" [class.selected]="sideItem.isActive" *ngFor="let sideItem of sideTypes"
                 (click)="selectSide(sideItem)">
                 {{sideItem.name}}</div>
               </div>`,
@@ -59,9 +59,9 @@ export class SidebarContorlComponent implements OnInit {
       {'name':'翻页','label':'pager','isActive':false,'url':'/pager'},
       {'name':'徽章','label':'badge','isActive':false,'url':'/badge'},
       {'name':'头像','label':'avater','isActive':false,'url':'/avater'},
+      {'name':'展示台','label':'exhibit','isActive':false,'url':'/exhibit'},
       {'name':'消息表情','label':'msgEif','isActive':false,'url':'/msgEif'},
-      {'name':'加载占位','label':'skeleton','isActive':false,'url':'/skeleton'},
-      {'name':'展示台','label':'exhibit','isActive':false,'url':'/exhibit'}];
+      {'name':'加载占位','label':'skeleton','isActive':false,'url':'/skeleton'}];
   }
 
   ngOnInit() {
