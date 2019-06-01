@@ -1,6 +1,7 @@
-<h2 class="title">评分星星</h2>
-<p>评分，用于评价体验分数</p>
-<h3>1. 默认设置</h3>
+<h2 class="title">可拖拽区间</h2>
+<p>可拖拽区间，用于区域的动态伸缩以及可拖拽布局</p>
+<h3>1. 双边可拖拽区间</h3>
+<h4>1.1 无边缘间隔</h4>
 <div style="width:100%;height:300px;margin: 20px 0;">
     <nc-resize-area>
         <nc-left-size-area>
@@ -15,8 +16,92 @@
         </nc-right-size-area>
     </nc-resize-area>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab1">
+    <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:150px;">
+    <div style="width:100%;height:300px;">
+        <nc-resize-area>
+            <nc-left-size-area>
+                <span *ngFor="let numz of nums" class="area-icon">numz</span>
+            </nc-left-size-area>
+            <nc-right-size-area>
+                <span *ngFor="let numz of nums" class="area-icon">numz</span>
+            </nc-right-size-area>
+        </nc-resize-area>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
 
+<h4>1.2 有边缘间隔</h4>
 <div style="width:100%;height:300px;margin: 20px 0;">
+    <nc-resize-area [noBorder]="false">
+        <nc-left-size-area>
+            <span *ngFor="let numz of nums" class="area-icon">
+                {{numz}}
+            </span>
+        </nc-left-size-area>
+        <nc-right-size-area>
+            <span *ngFor="let numz of nums" class="area-icon">
+                {{numz}}
+            </span>
+        </nc-right-size-area>
+    </nc-resize-area>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab1">
+    <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:150px;">
+    <div style="width:100%;height:300px;">
+        <nc-resize-area [noBorder]="false">
+            <nc-left-size-area>
+                <span *ngFor="let numz of nums" class="area-icon">numz</span>
+            </nc-left-size-area>
+            <nc-right-size-area>
+                <span *ngFor="let numz of nums" class="area-icon">numz</span>
+            </nc-right-size-area>
+        </nc-resize-area>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
+
+<h4>1.3 禁止拖拽</h4>
+<div style="width:100%;height:300px;margin: 20px 0;">
+    <nc-resize-area [noBorder]="false" [resizeAble]="false">
+        <nc-left-size-area>
+            <span *ngFor="let numz of nums" class="area-icon">
+                {{numz}}
+            </span>
+        </nc-left-size-area>
+        <nc-right-size-area>
+            <span *ngFor="let numz of nums" class="area-icon">
+                {{numz}}
+            </span>
+        </nc-right-size-area>
+    </nc-resize-area>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab1">
+    <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:150px;">
+    <div style="width:100%;height:300px;">
+        <nc-resize-area [noBorder]="false" [resizeAble]="false">
+            <nc-left-size-area>
+                <span *ngFor="let numz of nums" class="area-icon">numz</span>
+            </nc-left-size-area>
+            <nc-right-size-area>
+                <span *ngFor="let numz of nums" class="area-icon">numz</span>
+            </nc-right-size-area>
+        </nc-resize-area>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>2. 单个可拖拽区间</h3>
+<div style="width:100%;height:240px;margin: 20px 0;">
     <nc-resize-area [singleArea]="true">
         <nc-left-size-area>
             <span *ngFor="let numz of nums" class="area-icon">
@@ -25,3 +110,93 @@
         </nc-left-size-area>
     </nc-resize-area>
 </div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab1">
+    <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:150px;">
+    <div style="width:100%;height:240px;">
+        <nc-resize-area [singleArea]="true">
+            <nc-left-size-area>
+                <span *ngFor="let numz of nums" class="area-icon">numz</span>
+            </nc-left-size-area>
+        </nc-resize-area>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>3. 自定义参数</h3>
+<div style="width:100%;height:300px;margin: 20px 0;">
+    <nc-resize-area [noBorder]="false" [leftWidth]="'60%'" [minLeftWidth]="300" [minRightWidth]="200">
+        <nc-left-size-area>
+            <span *ngFor="let numz of nums" class="area-icon">
+                {{numz}}
+            </span>
+        </nc-left-size-area>
+        <nc-right-size-area>
+            <span *ngFor="let numz of nums" class="area-icon">
+                {{numz}}
+            </span>
+        </nc-right-size-area>
+    </nc-resize-area>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab1">
+    <div *ngIf="currentTab1 === 'html'">
+    <textarea style="height:150px;">
+    <div style="width:100%;height:300px;">
+        <nc-resize-area [noBorder]="false" [leftWidth]="'60%'" [minLeftWidth]="300" [minRightWidth]="200">
+            <nc-left-size-area>
+                <span *ngFor="let numz of nums" class="area-icon">numz</span>
+            </nc-left-size-area>
+            <nc-right-size-area>
+                <span *ngFor="let numz of nums" class="area-icon">numz</span>
+            </nc-right-size-area>
+        </nc-resize-area>
+    </div>
+    </textarea>
+    </div>
+</nc-tab>
+
+<h3>参数</h3>
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>leftWidth</td>
+        <td>左区间宽度, px或%</td>
+        <td>50%</td>
+    </tr>
+    <tr>
+        <td>minLeftWidth</td>
+        <td>左区间最小宽度，px</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>minRightWidth</td>
+        <td>右区间最小宽度，px</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>resizeAble</td>
+        <td>是否可拖拽，true/false</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>noBorder</td>
+        <td>是否没有拖拽间隔，true/false</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>singleArea</td>
+        <td>是否单区间，true/false</td>
+        <td>false</td>
+    </tr>
+    </tbody>
+</table>
