@@ -65,6 +65,7 @@ import {DateSelectorComponent} from './date-time-selector/date-selector.componen
 import {RangeDateSelectorComponent} from './date-time-selector/range-date-selector.component';
 import {DropDrawerComponent} from './drawer/drawer.component';
 import {ExhibitComponent} from './exhibit/exhibit.component';
+import {ResizeAreaComponent} from './resize-area/resize-area.component';
 
 @NgModule({
   imports: [CommonModule,FormsModule,LibModule],
@@ -80,7 +81,7 @@ import {ExhibitComponent} from './exhibit/exhibit.component';
     NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,FormInstanceComponent,
     PhotoViewComponent,YearSelectorComponent,TimeSelectorComponent,MonthSelectorComponent,
     DateTimeSelectorComponent,DateSelectorComponent,RangeDateSelectorComponent,DropDrawerComponent,
-    ExhibitComponent],
+    ExhibitComponent,ResizeAreaComponent],
   exports:    [ LoadingComponent,TabComponent,ButtonComponent,MessageComponent,ToTopComponent,
     ToolTipComponent,HelpComponent,BreadCrumbComponent,PaginationComponent,SwitchComponent,
     RateComponent,RadioComponent,CheckboxComponent,CollapseComponent,RangeslideComponent,
@@ -93,6 +94,6 @@ import {ExhibitComponent} from './exhibit/exhibit.component';
     NumberInputComponent,AffixComponent,FormComponent,AffixDemo1Component,FormInstanceComponent,
     PhotoViewComponent,YearSelectorComponent,TimeSelectorComponent,MonthSelectorComponent,
     DateTimeSelectorComponent,DateSelectorComponent,RangeDateSelectorComponent,DropDrawerComponent,
-    ExhibitComponent]
+    ExhibitComponent,ResizeAreaComponent]
 })
 export class DemoModule { }

@@ -1,0 +1,27 @@
+<h2 class="title">评分星星</h2>
+<p>评分，用于评价体验分数</p>
+<h3>1. 默认设置</h3>
+<div style="width:100%;height:300px;margin: 20px 0;">
+    <nc-resize-area>
+        <nc-left-size-area>
+            <span *ngFor="let numz of nums" class="area-icon">
+                {{numz}}
+            </span>
+        </nc-left-size-area>
+        <nc-right-size-area>
+            <span *ngFor="let numz of nums" class="area-icon">
+                {{numz}}
+            </span>
+        </nc-right-size-area>
+    </nc-resize-area>
+</div>
+
+<div style="width:100%;height:300px;margin: 20px 0;">
+    <nc-resize-area [singleArea]="true">
+        <nc-left-size-area>
+            <span *ngFor="let numz of nums" class="area-icon">
+                {{numz}}
+            </span>
+        </nc-left-size-area>
+    </nc-resize-area>
+</div>

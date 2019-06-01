@@ -1,0 +1,9 @@
+<div #resizeContainer class="resize-area-container" [ngClass]="{'has-border':!noBorder,'single':singleArea}">
+    <div #leftArea class="left-resize-area" [style.width]="leftAreaWidth">
+        <ng-content select="nc-left-size-area"></ng-content>
+    </div>
+    <div #resizeBorder class="resize-border" [class.disable]="!resizeAble" [style.left]="leftAreaWidth"></div>
+    <div #rightArea class="right-resize-area" [class.hide]="singleArea">
+        <ng-content select="nc-right-size-area"></ng-content>
+    </div>
+</div>
