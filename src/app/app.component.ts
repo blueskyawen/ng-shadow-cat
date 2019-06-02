@@ -1,12 +1,12 @@
-import { Component,OnInit } from '@angular/core';
-import { Router }  from '@angular/router';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
+import { Router, Scroll }  from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   menuTypes : any[] = [{'name':'组件','value':'components','isActive':true},
     {'name':'模式','value':'pattern','isActive':false},
     {'name':'关于','value':'about','isActive':false}];
@@ -16,6 +16,8 @@ export class AppComponent {
   urls : string[] = [];
   activeMenu : string;
   activeSideItem : string;
+  @ViewChild('appContainer')
+    appContainerRef: ElementRef;
 
   constructor(private router : Router) {
     this.urls = location.href.split('/');
@@ -25,6 +27,12 @@ export class AppComponent {
     if(!this.currentMenu) {
       this.currentMenu = this.menuTypes[0];
     }
+  }
+
+  ngOnInit(): void {
+    this.router.events.subscribe(event => {
+      this.appContainerRef.nativeElement.scrollTop = 0;
+    });
   }
 
   chickMenu(menuType : any) {
