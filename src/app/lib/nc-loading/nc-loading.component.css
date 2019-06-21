@@ -6,7 +6,6 @@
   display:inline-block;
   border-radius:50%;
   animation:myloading 1s infinite;
-  margin-left:30px;
 }
 .nc-loading .normal-load {
   border:solid 1px #0099ff;
