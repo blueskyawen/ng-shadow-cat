@@ -65,23 +65,40 @@
   .loop-flex-grid-columns(@max-grid-num,@class,offset-left);
   .loop-flex-grid-columns(@max-grid-num,@class,offset-right);
 }
+.nc-make-display(@class) {
+  .calc-display-grid-types(@class,none);
+  .calc-display-grid-types(@class,flex);
+  .calc-display-grid-types(@class,block);
+  .calc-display-grid-types(@class,inline-block);
+  .calc-display-grid-types(@class,inline-flex);
+}
+.calc-display-grid-types(@class,@type) {
+  .nc-@{class}-display-@{type} {
+    display: @type !important;
+  }
+}
 
 .nc-make-grid(xs);
+.nc-make-display(xs);
 /*小型桌面,平板*/
 @media (min-width: @nc-screen-sm-min) {
   .nc-make-grid(sm);
+  .nc-make-display(sm);
 }
 /*中型桌面屏幕*/
 @media (min-width: @nc-screen-md-min) {
   .nc-make-grid(md);
+  .nc-make-display(md);
 }
 /*大型桌面屏幕*/
 @media (min-width: @nc-screen-lg-min) {
   .nc-make-grid(lg);
+  .nc-make-display(lg);
 }
 /*超大型桌面屏幕*/
 @media (min-width: @nc-screen-xl-min) {
   .nc-make-grid(xl);
+  .nc-make-display(xl);
 }
 
 
