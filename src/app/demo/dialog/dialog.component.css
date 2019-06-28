@@ -73,3 +73,9 @@ form {
   line-height:30px;
   text-indent:50px;
 }
+@media (max-width: 767px) {
+  .wenzhang {
+    max-height: 500px;
+    overflow-y: auto;
+  }
+}

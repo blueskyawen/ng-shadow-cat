@@ -12,6 +12,7 @@ export class NcSwitchComponent  implements OnInit {
   @Input() type : string = 'max';
   @Input() tipLabels : string[] = [];
   @Input() switch : boolean = true;
+  @Input() disabled : boolean = false;
   @Output() switchChange = new EventEmitter();
   isHasLabel : boolean = false;
   label : string = '';
@@ -27,6 +28,7 @@ export class NcSwitchComponent  implements OnInit {
   }
 
   change() {
+    if(this.disabled) return;
     this.switch = !this.switch;
     if(this.switch) {
       this.label = this.tipLabels[0];

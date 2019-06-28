@@ -20,16 +20,17 @@
       </a>
     </div>
   </header>
-  <article *ngIf="isShowActicle">
-    <div class="side-bars" [class.side-bars-hidden]="!isExtend">
+  <article *ngIf="isShowActicle" [class.side-bars-hidden]="!appService.isExpand">
+    <div class="side-bars">
       <div>
         <sidebar-about *ngIf="currentMenu.value === 'about'" [activeSide]="activeSideItem"></sidebar-about>
         <sidebar-pattern *ngIf="currentMenu.value === 'pattern'" [activeSide]="activeSideItem"></sidebar-pattern>
         <sidebar-contorl *ngIf="currentMenu.value === 'components'" [activeSide]="activeSideItem"></sidebar-contorl>
       </div>
     </div>
+    <div class="mobile-shade" (click)="appService.setExpand(false)"></div>
 
-    <div class="content" [class.content2]="!isExtend" id="nc-content" #appContainer>
+    <div class="content" id="nc-content" #appContainer>
       <router-outlet></router-outlet>
     </div>
   </article>

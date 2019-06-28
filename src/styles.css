@@ -2,3 +2,7 @@
 table {
     margin: 10px 0;
 }
+table tbody tr td:nth-of-type(2)
+{
+    word-break: break-all;
+}

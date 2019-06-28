@@ -12,6 +12,11 @@
   <nc-switch [type]="'min'" [tipLabels]="['开','关']"></nc-switch>
   <nc-switch [type]="'min'" [tipLabels]="['是','否']"></nc-switch>
 </div>
+<div style="margin-top: 20px;">
+  <nc-switch [disabled]="true"></nc-switch>
+  <nc-switch [switch]="false" [disabled]="true"></nc-switch>
+  <nc-switch [tipLabels]="['开','关']" [switch]="false" [disabled]="true"></nc-switch>
+</div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
@@ -25,6 +30,10 @@
       <nc-switch [type]="'min'" [switch]="false"></nc-switch>
       <nc-switch [type]="'min'" [tipLabels]="['开','关']"></nc-switch>
       <nc-switch [type]="'min'" [tipLabels]="['是','否']"></nc-switch>
+
+      <nc-switch [disabled]="true"></nc-switch>
+      <nc-switch [switch]="false" [disabled]="true"></nc-switch>
+      <nc-switch [tipLabels]="['开','关']" [switch]="false" [disabled]="true"></nc-switch>
     </textarea>
   </div>
 </nc-tab>
@@ -53,6 +62,11 @@
     <td>tipLabels</td>
     <td>指定个性化开关显示文本,默认无</td>
     <td>[]</td>
+  </tr>
+  <tr>
+    <td>disabled</td>
+    <td>指定禁止选择,true.false</td>
+    <td>false</td>
   </tr>
   </tbody>
 </table>

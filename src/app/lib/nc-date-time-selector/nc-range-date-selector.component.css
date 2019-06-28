@@ -55,29 +55,26 @@
     background: #fff;
     display:inline-flex;
     flex-direction: column;
+    max-width: 100%;
+    overflow-x: auto;
 }
 .nc-range-date-selector .nc-date-selector {
     border:none;
     box-shadow:none;
 }
+.nc-range-date-selector .nc-date-selector .date-picker {
+    border-bottom:solid 1px #ccc;
+}
 .nc-range-date-selector .nc-date-selector-container {
     display:inline-flex;
     justify-content: space-between;
 }
-.nc-range-date-selector .nc-date-selector:first-child .nc-date-year-month-row:after {
-    content: "";
-    position: absolute;
-    height:100%;
-    width: 50px;
-    border-top:solid 1px transparent;
-    border-bottom:solid 1px #ccc;
-    left: 100%;
+.nc-range-date-selector .nc-date-time-range-oper {
+    border: none;
 }
-.nc-range-date-selector .nc-date-selector:first-child .nc-time-picker-day-title:after {
-    content: "";
-    position: absolute;
-    height:100%;
-    width: 50px;
-    border-bottom:solid 1px #ccc;
-    left: 100%;
+@media (max-width: 767px) {
+    .nc-range-date-selector .nc-date-time-range-oper {
+        justify-content: flex-start;
+        margin-left: 20px;
+    }
 }

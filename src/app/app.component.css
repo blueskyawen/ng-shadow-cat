@@ -3,8 +3,6 @@
   padding: 0;
   width: 100%;
   height: 100%;
-  //display: flex;
-  //flex-direction: column;
 }
 .main-app header {
   width: inherit;
@@ -13,7 +11,7 @@
   display: flex;
   flex-direction: row;
   box-shadow: 0 1px 6px #0072e6;
-  z-index: 10;
+  z-index: 5000;
 }
 .main-app header .app-icon {
   display: flex;
@@ -141,8 +139,6 @@
 .main-app article {
   width: 100%;
   height: 100%;
-  //display: flex;
-  //padding-top: 5px;
   opacity: 1;
   animation:article_out 1.5s;
   -moz-animation:article_out 1.5s; /* Firefox */
@@ -159,18 +155,36 @@
   overflow-y: scroll;
   position:fixed;
   top:65px;
-  margin-left: 0;
-  transition: margin-left 500ms;
+  transform: translateX(0%);
+  transition: transform 500ms;
+}
+.main-app article.side-bars-hidden .side-bars {
+  transform: translateX(-100%);
 }
 .main-app article .content {
-  padding: 40px;
+  padding: 30px;
   box-sizing: border-box;
   height: calc(100% - 65px);
   max-height: calc(100% - 65px);
   overflow-y: scroll;
   overflow-x: hidden;
   position: fixed;
-  transition: width 500ms,left 500ms;
+  transition: all 500ms;
+}
+.main-app article.side-bars-hidden .content {
+  width: 100%;
+  left:0%;
+}
+.main-app article .mobile-shade {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f2f2f2;
+  opacity: 0.5;
+  z-index: 90;
+  display: none;
 }
 
 @keyframes article_out
@@ -185,6 +199,8 @@
   .main-app header {
     height: auto;
     flex-direction: column;
+    position: fixed;
+    top: 0;
   }
   .main-app header .app-icon {
     width: 100%;
@@ -204,25 +220,30 @@
   .main-app header .app-menu a.github-item {
     height: 45px;
   }
-  .main-app article .side-bars {
-    width: 100%;
-    top:0;
-    position: relative;
-    transition: margin-left 500ms,display 500ms;
+  .main-app article {
+    margin-top: 100px;
   }
-  .main-app article .side-bars-hidden {
-    margin-left: -100%;
-    display:none;
+  .main-app article .side-bars {
+    width: 70%;
+    top:0;
+    height: 100%;
+    z-index: 10000;
   }
   .main-app article .content {
+    padding: 20px;
     width: 100%;
     left:0;
-    padding: 10px;
-    padding-top: 30px;
+    overflow-y: auto;
     position: relative;
   }
   .app-icon:after {
     display:none;
+  }
+  .main-app article .mobile-shade {
+    display: block;
+  }
+  .main-app article.side-bars-hidden .mobile-shade {
+    display: none;
   }
 }
 /* 小型设备（平板电脑，768px 起） */
@@ -235,9 +256,6 @@
   }
   .main-app article .side-bars {
     width: 30%;
-  }
-  .main-app article .side-bars-hidden {
-    margin-left: -30%;
   }
   .main-app article .content {
     width: 70%;
@@ -256,9 +274,6 @@
   .main-app article .side-bars {
     width: 25%;
   }
-  .main-app article .side-bars-hidden {
-    margin-left: -25%;
-  }
   .main-app article .content {
     width: 75%;
     left:25%;
@@ -276,18 +291,10 @@
   .main-app article .side-bars {
     width: 20%;
   }
-  .main-app article .side-bars-hidden {
-    margin-left: -20%;
-  }
   .main-app article .content {
     width: 80%;
     left:20%;
   }
-}
-
-.main-app article .content2 {
-  width: 100%;
-  left:0%;
 }
 
 .main-app footer {

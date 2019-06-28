@@ -8,6 +8,7 @@
     background: #fff;
     z-index: 10;
     min-width: 240px;
+    max-width: 100%;
 }
 .nc-date-selector.nc-selector-noshadow {
     box-shadow:none;
@@ -49,9 +50,13 @@
 .nc-date-select-container {
     position: relative;
     display: inline-block;
+    max-width: 100%;
 }
 .nc-date-select-container.nc-date-input-hidden {
     overflow: hidden;
+}
+.nc-date-select-container.nc-date-input-hidden .nc-date-selector {
+    box-shadow: none;
 }
 .nc-date-select-container .nc-date-selector-dropdown {
     position: absolute;

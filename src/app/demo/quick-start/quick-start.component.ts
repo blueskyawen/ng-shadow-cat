@@ -5,7 +5,8 @@ import { Component,OnInit } from '@angular/core';
 
 @Component({
     selector: 'demo-quick-start',
-    templateUrl: './quick-start.component.html'
+    templateUrl: './quick-start.component.html',
+    styles: ['pre {white-space: pre-wrap;}']
 })
 export class QuickStartComponent {
     constructor() {

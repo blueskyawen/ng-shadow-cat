@@ -1,73 +1,73 @@
 <h2 class="title">按钮组</h2>
 <p>按钮用来进行用户操作与交互</p>
 <h3>1. 普通按钮</h3>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button (click)="getUsers()">普通按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'cancel'" (click)="addUsers()">取消按钮</nc-button>
 </div>
 <div style="margin-right: 10px;display: inline-block;">
   <nc-button [style]="'max'" (click)="delUsers()">普通按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'cancel'" [style]="'max'" (click)="getOneUser()">取消按钮</nc-button>
 </div>
 
 <h3>2. 添加按钮</h3>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'add'">添加按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'add'" [style]="'max'">添加按钮</nc-button>
 </div>
 
 <h3>3. 重要按钮</h3>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'major'">重要按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'major'" [style]="'max'">重要按钮</nc-button>
 </div>
 
 <h3>4. 禁用按钮</h3>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [disabled]="true">禁用按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'add'" [disabled]="true">禁用按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'major'" [disabled]="true">禁用按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'cancel'" [disabled]="true">禁用按钮</nc-button>
 </div>
 
 <h3>5. 状态按钮</h3>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [loading]="true">状态按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'add'" [loading]="true">状态按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [type]="'major'" [loading]="true">状态按钮</nc-button>
 </div>
 
 <h3>6. 动态按钮</h3>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [dnymic]="true">动态按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [dnymic]="true" [suffix]="true">动态按钮</nc-button>
 </div>
 
 <h3>7. 自定义</h3>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [style]="'custom'" [width]="'360px'" [height]="'48px'">自定义按钮</nc-button>
 </div>
-<div style="margin-right: 10px;display: inline-block;">
+<div class="demo-btn">
   <nc-button [style]="'custom'" [width]="'360px'" [height]="'48px'">
     自定义按钮<span class="fa fa-chevron-right" style="color:#fff;margin-left: 10px;"></span></nc-button>
 </div>

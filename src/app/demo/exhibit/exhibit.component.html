@@ -6,8 +6,10 @@
 </div>
 
 <h3>2. 自定义尺寸</h3>
-<nc-exhibit [options]="exhibitOptions" [(curIndex)]="defaltIndex2" (curIndexChange)="curIndexChange()"
-            [width]="800" [height]="300"></nc-exhibit>
+<div style="max-width: 100%;overflow-x: auto;">
+    <nc-exhibit [options]="exhibitOptions" [(curIndex)]="defaltIndex2" (curIndexChange)="curIndexChange()"
+                [width]="800" [height]="300"></nc-exhibit>
+</div>
 <p style="margin-left: 200px;">聚焦的项目序号: {{defaltIndex2}}</p>
 
 <p>使用方式:</p>

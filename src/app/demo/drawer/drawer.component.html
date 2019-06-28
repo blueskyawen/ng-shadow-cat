@@ -3,16 +3,16 @@
 
 <h3>1. 普通抽屉</h3>
 <div style="margin-top: 20px;">
-    <span style="margin-right: 10px;">
+    <span class="demo-btn">
       <nc-button (click)="openDrawer(0)">右边展现</nc-button>
     </span>
-    <span style="margin-right: 10px;">
+    <span class="demo-btn">
       <nc-button (click)="openDrawer(1)">左边展现</nc-button>
     </span>
-    <span style="margin-right: 10px;">
+    <span class="demo-btn">
       <nc-button (click)="openDrawer(2)">上边展现</nc-button>
     </span>
-    <span style="margin-right: 10px;">
+    <span class="demo-btn">
         <nc-button (click)="openDrawer(3)">下边展现</nc-button>
     </span>
 </div>
@@ -46,10 +46,10 @@
     <div *ngIf="currentTab2 === 'html'">
     <textarea style="height:500px;">
     <div style="margin-top: 20px;">
-        <nc-button (click)="openDrawer(0)">右边展现</nc-button>
-        <nc-button (click)="openDrawer(1)">左边展现</nc-button>
-        <nc-button (click)="openDrawer(2)">上边展现</nc-button>
-        <nc-button (click)="openDrawer(3)">下边展现</nc-button>
+        <nc-button class="demo-btn" (click)="openDrawer(0)">右边展现</nc-button>
+        <nc-button class="demo-btn" (click)="openDrawer(1)">左边展现</nc-button>
+        <nc-button class="demo-btn" (click)="openDrawer(2)">上边展现</nc-button>
+        <nc-button class="demo-btn" (click)="openDrawer(3)">下边展现</nc-button>
     </div>
 
     <nc-drawer [(isShow)]="isShows[0]">
@@ -90,13 +90,13 @@
 
 <h3>2. 自定义抽屉</h3>
 <div style="margin-top: 20px;">
-    <span style="margin-right: 10px;">
+    <span class="demo-btn">
       <nc-button (click)="openDrawer(4)">不呈现遮罩</nc-button>
     </span>
-    <span style="margin-right: 10px;">
+    <span class="demo-btn">
       <nc-button (click)="openDrawer(5)">点击遮罩不关闭</nc-button>
     </span>
-    <span style="margin-right: 10px;">
+    <span class="demo-btn">
       <nc-button (click)="openDrawer(6)">不显示关闭按钮</nc-button>
     </span>
 </div>

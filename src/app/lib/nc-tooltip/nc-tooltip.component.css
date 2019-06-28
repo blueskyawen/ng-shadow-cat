@@ -5,7 +5,7 @@
 .tooltip .tooltiptext {
   position: absolute;
   z-index: 1;
-  visibility: hidden;
+  opacity: 0;
   width: 120px;
   height:50px;
   color: #333;
@@ -25,17 +25,17 @@
   -ms-transform: translateY(10px);
   -o-transform: translateY(10px);
   transform: translateY(10px);
-  -webkit-transition: transform .2s ease-out;
-  -moz-transition: transform .2s ease-out;
-  -ms-transition: transform .2s ease-out;
-  -o-transition: transform .2s ease-out;
-  transition: transform .2s ease-out;
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;
 }
 .tooltip:hover {
   cursor:pointer;
 }
 .tooltip:hover  .tooltiptext {
-  visibility: visible;
+  opacity: 1;
   -webkit-transform: translateY(0px);
   -moz-transform: translateY(0px);
   -ms-transform: translateY(0px);

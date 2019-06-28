@@ -60,7 +60,7 @@ export class NcResizeAreaComponent implements OnInit,AfterViewInit {
             this.leftAreaWidth = '100%';
         } else {
             if (!!this.leftWidth) {
-                this.leftAreaWidth = this.noBorder ? this.leftWidth : `calc(${this.leftWidth} - 10px)`;
+                this.leftAreaWidth = this.noBorder ? this.leftWidth.toString() : `calc(${this.leftWidth} - 10px)`;
             }
         }
 

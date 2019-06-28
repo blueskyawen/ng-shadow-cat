@@ -8,6 +8,10 @@
     background: #fff;
     z-index: 10;
     min-width: 240px;
+    max-width: 100%;
+}
+.nc-date-input-hidden .nc-time-selector {
+    box-shadow: none;
 }
 .nc-time-selector.nc-selector-noshadow {
     box-shadow:none;

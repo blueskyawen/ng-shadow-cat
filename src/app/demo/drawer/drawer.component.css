@@ -3,10 +3,16 @@
     width:500px;
     max-width: 100%;
     padding: 20px;
+    box-sizing: border-box;
 }
 .content-vertify {
     width: 100%;
     height:120px;
     max-width: 100%;
     padding: 20px;
+}
+.demo-btn {
+    display: inline-block;
+    margin: 10px;
+    max-width: 100%;
 }

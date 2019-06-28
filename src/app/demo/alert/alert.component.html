@@ -1,12 +1,12 @@
 <h2 class="title">告警信息</h2>
 <p>告警信息，向用户提供了一种定义消息样式的方式</p>
 <h3>1. 仅提示</h3>
-<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+<div style="width:100%;display:block;margin-top:30px;">
   <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type">
   </nc-alert>
 </div>
 <h3>2. 带操作的可关闭提示</h3>
-<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+<div style="width:100%;display:block;margin-top:30px;">
   <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type"
             [callback]="callbackFun" [dims]="true">
   </nc-alert>
@@ -34,7 +34,7 @@
   </div>
 </nc-tab>
 <h3>3. 宽度自定义</h3>
-<div style="width:100%;padding-left: 20px;display:block;margin-top:30px;">
+<div style="width:100%;display:block;margin-top:30px;">
   <nc-alert *ngFor="let title of titles" [title]="title.text" [type]="title.type" [width]="'70%'"
             [callback]="callbackFun">
   </nc-alert>

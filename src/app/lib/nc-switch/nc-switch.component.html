@@ -1,7 +1,7 @@
 <div class="container">
   <div class="swicth-container" [ngClass]="{'switch-start': !isHasLabel && !switch,'switch-end':!isHasLabel && switch,
       'switch-row':isHasLabel && !switch,'switch-reverse':isHasLabel && switch,'container-max':type === 'max',
-      'container-min':type === 'min'}" (click)="change()">
+      'container-min':type === 'min', 'disabled': disabled}" (click)="change()">
     <div class="switch" [ngClass]="{'swicth-max':type === 'max','swicth-min':type === 'min'}"></div>
     <span *ngIf="isHasLabel">{{label}}</span>
   </div>

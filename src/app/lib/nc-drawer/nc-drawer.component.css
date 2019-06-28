@@ -5,7 +5,7 @@
     height:100%;
     width:100%;
     display:block;
-    z-index: 1000;
+    z-index: 9000;
     overflow-y: auto;
 }
 .drawer-container .shade{
@@ -22,18 +22,19 @@
     background:#fff;
     border:solid 1px #ccc;
     border-radius:3px;
-    max-width: 100%;
     transition: all .5s;
 }
 .drawer-container .drawer-content.drawer-place-right {
     height:100%;
     top:0%;
     right:-100%;
+    max-width: 90%;
 }
 .drawer-container .drawer-content.drawer-place-left {
     height:100%;
     top:0%;
     left:-100%;
+    max-width: 90%;
 }
 .drawer-container .drawer-content.drawer-place-top {
     width:100%;

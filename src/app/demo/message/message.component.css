@@ -9,3 +9,8 @@ a.manage:hover{
   cursor:pointer;
   text-decoration:underline;
 }
+.demo-btn {
+  display: inline-block;
+  margin: 10px;
+  max-width: 100%;
+}

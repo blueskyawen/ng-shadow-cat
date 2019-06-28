@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import { Router, Scroll }  from '@angular/router';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ export class AppComponent implements OnInit {
   @ViewChild('appContainer')
     appContainerRef: ElementRef;
 
-  constructor(private router : Router) {
+  constructor(private router : Router, public appService : AppService) {
     this.urls = location.href.split('/');
     this.activeMenu = this.urls[this.urls.length - 2];
     this.activeSideItem = this.urls[this.urls.length - 1];
@@ -27,6 +28,7 @@ export class AppComponent implements OnInit {
     if(!this.currentMenu) {
       this.currentMenu = this.menuTypes[0];
     }
+    this.appService.initExpand();
   }
 
   ngOnInit(): void {
@@ -51,6 +53,6 @@ export class AppComponent implements OnInit {
   }
 
   changeExtend() {
-    this.isExtend = !this.isExtend;
+    this.appService.isExpand = !this.appService.isExpand;
   }
 }

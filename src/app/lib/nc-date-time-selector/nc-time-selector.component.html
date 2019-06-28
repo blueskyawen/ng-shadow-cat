@@ -1,7 +1,7 @@
 <div class="nc-date-select-container" (mouseover)="mouseover()" (mouseout)="mouseout()"
      [ngClass]="{'nc-date-input-hidden':type === 'input' && isHiddenSelector}">
     <nc-input *ngIf="type === 'input'" [type]="'text'" [(modelValue)]="value" [width]="width" [iconffix]="'sub'"
-              [showHint]="false" [placeHolder]="'请选择时间'" (click)="openSelector()">
+              [readon]="true" [showHint]="false" [placeHolder]="'请选择时间'" (click)="openSelector()">
         <nc-input-icon class="nc-input-icon-subffix">
             <span class="fa fa-clock-o" style="color:#999;font-size: 20px;"></span></nc-input-icon>
     </nc-input>

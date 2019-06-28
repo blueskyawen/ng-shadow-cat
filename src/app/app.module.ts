@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PageNorFoundComponent} from './page-not-found.component';
+import { AppService } from './app.service';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { PageNorFoundComponent} from './page-not-found.component';
   declarations: [
     AppComponent,PageNorFoundComponent
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

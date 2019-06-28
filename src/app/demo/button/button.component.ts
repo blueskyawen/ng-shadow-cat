@@ -6,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'demo-button',
-  templateUrl: './button.component.html'
+  templateUrl: './button.component.html',
+  styles: ['.demo-btn {display: inline-block;margin: 10px;max-width: 100%;}']
 })
 export class ButtonComponent {
   tabItems2 : any[] = [];
