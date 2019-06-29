@@ -352,6 +352,21 @@ pre {
 .nc-xs-right-offset-1 {
   margin-left: 8.33333333%;
 }
+.nc-xs-display-none {
+  display: none !important;
+}
+.nc-xs-display-flex {
+  display: flex !important;
+}
+.nc-xs-display-block {
+  display: block !important;
+}
+.nc-xs-display-inline-block {
+  display: inline-block !important;
+}
+.nc-xs-display-inline-flex {
+  display: inline-flex !important;
+}
 /*小型桌面,平板*/
 @media (min-width: 576px) {
   .nc-sm-col-12 {
@@ -461,6 +476,21 @@ pre {
   }
   .nc-sm-right-offset-1 {
     margin-left: 8.33333333%;
+  }
+  .nc-sm-display-none {
+    display: none !important;
+  }
+  .nc-sm-display-flex {
+    display: flex !important;
+  }
+  .nc-sm-display-block {
+    display: block !important;
+  }
+  .nc-sm-display-inline-block {
+    display: inline-block !important;
+  }
+  .nc-sm-display-inline-flex {
+    display: inline-flex !important;
   }
 }
 /*中型桌面屏幕*/
@@ -573,6 +603,21 @@ pre {
   .nc-md-right-offset-1 {
     margin-left: 8.33333333%;
   }
+  .nc-md-display-none {
+    display: none !important;
+  }
+  .nc-md-display-flex {
+    display: flex !important;
+  }
+  .nc-md-display-block {
+    display: block !important;
+  }
+  .nc-md-display-inline-block {
+    display: inline-block !important;
+  }
+  .nc-md-display-inline-flex {
+    display: inline-flex !important;
+  }
 }
 /*大型桌面屏幕*/
 @media (min-width: 992px) {
@@ -684,6 +729,21 @@ pre {
   .nc-lg-right-offset-1 {
     margin-left: 8.33333333%;
   }
+  .nc-lg-display-none {
+    display: none !important;
+  }
+  .nc-lg-display-flex {
+    display: flex !important;
+  }
+  .nc-lg-display-block {
+    display: block !important;
+  }
+  .nc-lg-display-inline-block {
+    display: inline-block !important;
+  }
+  .nc-lg-display-inline-flex {
+    display: inline-flex !important;
+  }
 }
 /*超大型桌面屏幕*/
 @media (min-width: 1200px) {
@@ -794,6 +854,21 @@ pre {
   }
   .nc-xl-right-offset-1 {
     margin-left: 8.33333333%;
+  }
+  .nc-xl-display-none {
+    display: none !important;
+  }
+  .nc-xl-display-flex {
+    display: flex !important;
+  }
+  .nc-xl-display-block {
+    display: block !important;
+  }
+  .nc-xl-display-inline-block {
+    display: inline-block !important;
+  }
+  .nc-xl-display-inline-flex {
+    display: inline-flex !important;
   }
 }
 .nc-page-header {

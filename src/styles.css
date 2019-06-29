@@ -6,3 +6,8 @@ table tbody tr td:nth-of-type(2)
 {
     word-break: break-all;
 }
+@media (min-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+}
