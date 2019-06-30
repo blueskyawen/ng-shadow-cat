@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     this.activeSideItem = this.urls[this.urls.length - 1];
     this.currentMenu = this.menuTypes.find((item) => {return item.value === this.activeMenu;});
     if(!this.currentMenu) {
-      this.currentMenu = this.menuTypes[0];
+      this.currentMenu = this.menuTypes[2];
     }
     this.appService.initExpand();
   }

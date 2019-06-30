@@ -96,7 +96,7 @@ const appRoutes: Routes = [
       { path: 'grid', component: GridComponent}
     ]
   },
-  { path: '',   redirectTo: '/components/loading', pathMatch: 'full' },
+  { path: '',   redirectTo: '/about/about', pathMatch: 'full' },
   { path: '**', component: PageNorFoundComponent }
 ];
 
