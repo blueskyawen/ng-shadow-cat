@@ -1,20 +1,43 @@
 <h3>1. 带文字的图片组</h3>
 <div class="nc-container" style="border:none;">
-  <div class="nc-row nc-image-container">
-    <div class="nc-e-image nc-thumb-img nc-col nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2"
+  <div class="nc-row nc-image-container nc-xs-display-none nc-sm-display-flex nc-md-display-flex">
+    <div class="nc-thumb-show nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2"
          *ngFor="let image of images">
-      <div class="e-image">
-        <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
+      <div class="nc-e-image nc-thumb-img nc-col">
+        <div class="e-image">
+          <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
+        </div>
+        <div class="e-description">
+          <div class="e-desc-header">
+            <div class="nc-img-name">{{image.alt}}</div>
+          </div>
+          <div class="e-desc-content">
+            <div class="nc-img-description">{{image.title}}</div>
+          </div>
+          <div class="e-desc-footer">
+            <div class="nc-img-description-more" (click)="image.callback()">查看更多</div>
+          </div>
+        </div>
       </div>
-      <div class="e-description">
-        <div class="e-desc-header">
-          <div class="nc-img-name">{{image.alt}}</div>
+    </div>
+  </div>
+  <div class="nc-row nc-image-container nc-xs-display-flex nc-sm-display-none">
+    <div class="nc-thumb-show nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2"
+         *ngFor="let image of imagesss">
+      <div class="nc-e-image nc-thumb-img nc-col">
+        <div class="e-image">
+          <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
         </div>
-        <div class="e-desc-content">
-          <div class="nc-img-description">{{image.title}}</div>
-        </div>
-        <div class="e-desc-footer">
-          <div class="nc-img-description-more" (click)="image.callback()">查看更多</div>
+        <div class="e-description">
+          <div class="e-desc-header">
+            <div class="nc-img-name">{{image.alt}}</div>
+          </div>
+          <div class="e-desc-content">
+            <div class="nc-img-description">{{image.title}}</div>
+          </div>
+          <div class="e-desc-footer">
+            <div class="nc-img-description-more" (click)="image.callback()">查看更多</div>
+          </div>
         </div>
       </div>
     </div>
@@ -35,20 +58,22 @@
     <textarea style="height:300px;">
     <div class="nc-container" style="border:none;">
       <div class="nc-row nc-image-container">
-        <div class="nc-e-image nc-thumb-img nc-col nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2"
+        <div class="nc-thumb-show nc-xs-col-12 nc-sm-col-6 nc-md-col-4 nc-lg-col-3 nc-xl-col-2"
              *ngFor="let image of images">
-          <div class="e-image">
-            <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
-          </div>
-          <div class="e-description">
-            <div class="e-desc-header">
-              <div class="nc-img-name">image.alt</div>
+          <div class="nc-e-image nc-thumb-img nc-col">
+            <div class="e-image">
+              <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />
             </div>
-            <div class="e-desc-content">
-              <div class="nc-img-description">image.title</div>
-            </div>
-            <div class="e-desc-footer">
-              <div class="nc-img-description-more" (click)="image.callback()">查看更多</div>
+            <div class="e-description">
+              <div class="e-desc-header">
+                <div class="nc-img-name">image.alt</div>
+              </div>
+              <div class="e-desc-content">
+                <div class="nc-img-description">image.title</div>
+              </div>
+              <div class="e-desc-footer">
+                <div class="nc-img-description-more" (click)="image.callback()">查看更多</div>
+              </div>
             </div>
           </div>
         </div>
@@ -68,10 +93,10 @@
 <h3>2. 纯图片组</h3>
 <div class="nc-container" style="border:none;">
   <div class="nc-row nc-image-container">
-    <div class="nc-thumb-picture nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
+    <div class="nc-thumb-picture nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-6 nc-lg-col-6 nc-xl-col-6">
       <img (click)="openModal(images3[0])" [src]="images3[0].src" [alt]="images3[0].alt" />
     </div>
-    <div class="nc-flex nc-flex-wrap nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-8 nc-lg-col-6 nc-xl-col-6">
+    <div class="nc-flex nc-flex-wrap nc-col nc-xs-col-12 nc-sm-col-12 nc-md-col-6 nc-lg-col-6 nc-xl-col-6">
       <div class="nc-thumb-picture nc-col nc-xs-col-6 nc-sm-col-6 nc-md-col-6 nc-lg-col-6 nc-xl-col-6"
            *ngFor="let image of images2">
         <img (click)="openModal(image)" [src]="image.src" [alt]="image.alt" />

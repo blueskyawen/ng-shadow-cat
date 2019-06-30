@@ -9,11 +9,12 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
   styleUrls: ['./nc-rangeslide.component.css']
 })
 export class NcRangeSlideComponent  implements OnInit {
-  @Input() width: number = 500;
+  @Input() width: number;
   @Input() total: number = 100;
   @Input() value: number = 30;
   @Output() valueChange = new EventEmitter();
   @Input() disable : boolean = false;
+  isPercent : boolean = true;
   beforeStyle : any = {};
   anniuStyle : any = {};
   afterStyle : any = {};
@@ -23,6 +24,7 @@ export class NcRangeSlideComponent  implements OnInit {
   }
 
   ngOnInit() {
+    this.isPercent = !this.width;
     this.setRang(this.value);
   }
 
@@ -34,10 +36,11 @@ export class NcRangeSlideComponent  implements OnInit {
 
   setRang(value : number) {
     this.value = value;
-    this.slideStyle = {'width': `${this.width}px`};
-    this.beforeStyle = {'width': `${this.value * this.width / this.total}px`};
-    this.anniuStyle = {'left': `${this.value * this.width / this.total}px`};
-    this.afterStyle = {'width': `${this.width - this.value * this.width / this.total}px`};
+    this.slideStyle = {'width': this.isPercent ? '100%' : `${this.width}px`};
+    this.beforeStyle = {'width': this.isPercent ? `${this.value * 100 / this.total}%` : `${this.value * this.width / this.total}px`};
+    this.anniuStyle = {'left': this.isPercent ? `${this.value * 100 / this.total}%` : `${this.value * this.width / this.total}px`};
+    this.afterStyle = {'width': this.isPercent ?
+          `${100 - this.value * 100 / this.total}%` : `${this.width - this.value * this.width / this.total}px`};
     this.valueChange.emit(this.value);
   }
 

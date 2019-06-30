@@ -1,6 +1,6 @@
 div.rangContainer {
   display:inline-block;
-  width:500px;
+  width:100%;
   height:30px;
   position:relative;
   max-width: 100%;

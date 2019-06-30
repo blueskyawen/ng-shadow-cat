@@ -407,4 +407,46 @@
 </ul>
 <p style="border-left:solid 3px blue;padding-left: 15px;">.nc-align-self-类效果与.nc-align-item-..类似，可覆盖之</p>
 
+<h4>7.内容display类</h4>
+<p>type: none/block/inline-block/flex/inline-flex</p>
+<ul class="list-demo">
+  <li>.nc-xs-display-:type</li>
+  <li>.nc-sm-display-:type</li>
+  <li>.nc-md-display-:type</li>
+  <li>.nc-lg-display-:type</li>
+  <li>.nc-xl-display-:type</li>
+</ul>
+<div class="nc-container nc-xs-display-none nc-sm-display-block nc-md-display-none nc-lg-display-block nc-xl-display-block">
+  <div class="nc-row nc-row2">
+    <div class="nc-col nc-xs-col-4"><div>1/3-A</div></div>
+    <div class="nc-col nc-xs-col-4"><div>1/3-B</div></div>
+    <div class="nc-col nc-xs-col-4"><div>1/3-C</div></div>
+  </div>
+  <div class="nc-row nc-row2">
+    <div class="nc-col nc-xs-col-4 nc-flex-order-3"><div>1/3-A</div></div>
+    <div class="nc-col nc-xs-col-4 nc-flex-order-1"><div>1/3-B</div></div>
+    <div class="nc-col nc-xs-col-4 nc-flex-order-2"><div>1/3-C</div></div>
+  </div>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:220px;">
+    <div class="nc-container nc-xs-display-none nc-sm-display-block nc-md-display-none nc-lg-display-block nc-xl-display-block">
+      <div class="nc-row nc-row2">
+        <div class="nc-col nc-xs-col-4"><div>1/3-A</div></div>
+        <div class="nc-col nc-xs-col-4"><div>1/3-B</div></div>
+        <div class="nc-col nc-xs-col-4"><div>1/3-C</div></div>
+      </div>
+      <div class="nc-row nc-row2">
+        <div class="nc-col nc-xs-col-4 nc-flex-order-3"><div>1/3-A</div></div>
+        <div class="nc-col nc-xs-col-4 nc-flex-order-1"><div>1/3-B</div></div>
+        <div class="nc-col nc-xs-col-4 nc-flex-order-2"><div>1/3-C</div></div>
+      </div>
+    </div>
+    </textarea>
+  </div>
+</nc-tab>
+
 <nc-toTop [type]="'rocket'" [parentId]="'nc-content'"></nc-toTop>
+

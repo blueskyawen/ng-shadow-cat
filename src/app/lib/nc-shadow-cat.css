@@ -1091,7 +1091,7 @@ pre {
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
 }
 .nc-image-container .nc-e-image .e-image {
   width: 100%;

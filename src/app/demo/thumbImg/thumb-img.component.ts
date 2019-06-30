@@ -51,6 +51,7 @@ export class ThumbImgComponent {
       title:'镰仓高校前站是一由江之岛电铁（江之电）所经营的铁路车站，位于日本神奈川县镰仓市境内，是江之岛电铁线沿线的一个无人车站',
       callback: () => {this.goDetail()}}
   ];
+  imagesss : any[] = this.images.slice(5);
   selectImg : any;
   isShow : boolean = false;
   tabItems : any[] = [];

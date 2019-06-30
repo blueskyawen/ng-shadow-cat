@@ -221,7 +221,7 @@
         <nc-form-label *ngIf="i === 0" class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">学校</nc-form-label>
         <nc-form-label *ngIf="i !== 0" class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3"
                        [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
-        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-8">
             <nc-input [type]="'text'" [(modelValue)]="school.value" [required]="school.isrequired">
             </nc-input>
         </nc-form-control>
@@ -230,7 +230,7 @@
     <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3"
                        [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
-        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
+        <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-8">
             <nc-input-dynamic-add (click)="addSchoolItem(registerData.schools)">+ add</nc-input-dynamic-add>
         </nc-form-control>
     </nc-form-group>
@@ -247,7 +247,7 @@
         <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">体重</nc-form-label>
         <nc-form-control class="nc-xl-col-9 nc-lg-col-9 nc-md-col-9 nc-sm-col-9 nc-xs-col-9">
             <div class="nc-flex nc-align-item-center" style="height: 100%;">
-                <nc-rangeslide [total]="100" [(value)]="registerData.weight" [width]="350"></nc-rangeslide>
+                <nc-rangeslide [total]="100" [(value)]="registerData.weight" style="width: 90%;"></nc-rangeslide>
             </div>
         </nc-form-control>
     </nc-form-group>

@@ -379,9 +379,9 @@
 <form style="max-width: 600px;" novalidate>
     <nc-form-group *ngFor="let item of likes;let i = index;"
                    class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
-        <nc-form-label *ngIf="i === 0" class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4"
+        <nc-form-label *ngIf="i === 0" class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3"
                        [required]="true">爱好</nc-form-label>
-        <nc-form-label *ngIf="i !== 0" class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4"
+        <nc-form-label *ngIf="i !== 0" class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3"
                        [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
         <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
             <nc-input [type]="'text'" [(modelValue)]="item.value" [required]="item.isrequired">
@@ -391,7 +391,7 @@
     </nc-form-group>
 
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
-        <nc-form-label class="nc-xl-col-4 nc-lg-col-4 nc-md-col-4 nc-sm-col-4 nc-xs-col-4"
+        <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3"
                        [noShowOption]="true" [noShowRequire]="true"></nc-form-label>
         <nc-form-control class="nc-xl-col-8 nc-lg-col-8 nc-md-col-8 nc-sm-col-8 nc-xs-col-8">
             <nc-input-dynamic-add (click)="addLikeItem()">+ add</nc-input-dynamic-add>
@@ -399,7 +399,7 @@
     </nc-form-group>
 
     <nc-form-group class="nc-form-item nc-xl-col-3 nc-lg-col-3 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
-        <nc-form-control class="nc-xl-offset-4 nc-lg-offset-4 nc-md-offset-4 nc-sm-offset-4 nc-xs-offset-4">
+        <nc-form-control class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3">
             <nc-button (click)="login()">登录</nc-button>
         </nc-form-control>
     </nc-form-group>

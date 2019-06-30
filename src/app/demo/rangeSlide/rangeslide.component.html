@@ -1,25 +1,33 @@
 <h2 class="title">滑动输入条</h2>
 <p>滑动输入条，用于方便的输入数值</p>
-<div style="margin-top: 20px;">
+<div style="margin-top: 20px;width: 100%;">
+  <nc-rangeslide></nc-rangeslide>
+</div>
+<div style="margin-top: 20px;width: 50%;">
   <nc-rangeslide></nc-rangeslide>
 </div>
 <div style="margin-top: 20px;">
-  <nc-rangeslide [total]="50" [value]="30"></nc-rangeslide>
+  <nc-rangeslide [total]="50" [value]="30" [width]="500"></nc-rangeslide>
 </div>
 <div style="margin-top: 20px;">
-  <nc-rangeslide [total]="100" [value]="36" [width]="1000"></nc-rangeslide>
+  <nc-rangeslide [total]="100" [value]="36" [width]="700"></nc-rangeslide>
 </div>
 <div style="margin-top: 20px;">
-  <nc-rangeslide [disable]="true"></nc-rangeslide>
+  <nc-rangeslide [disable]="true" [width]="360"></nc-rangeslide>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
     <textarea style="height:80px;">
-      <nc-rangeslide></nc-rangeslide>
-      <nc-rangeslide [total]="50" [value]="30"></nc-rangeslide>
+      <div style="width: 100%;">
+        <nc-rangeslide></nc-rangeslide>
+      </div>
+      <div style="width: 50%;">
+        <nc-rangeslide></nc-rangeslide>
+      </div>
+      <nc-rangeslide [total]="50" [value]="30" [width]="500"></nc-rangeslide>
       <nc-rangeslide [total]="100" [value]="36" [width]="1000"></nc-rangeslide>
-      <nc-rangeslide [disable]="true"></nc-rangeslide>
+      <nc-rangeslide [disable]="true" [width]="360"></nc-rangeslide>
     </textarea>
   </div>
 </nc-tab>
