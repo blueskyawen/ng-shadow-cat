@@ -22,6 +22,14 @@
   width:20px;
   background: #fff;
   z-index: 2;
+  justify-content: center;
+}
+.nc-nav-tabs .tabbars-container .tab-oper > span {
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+  border: solid 2px #999;
+  transform: rotate(45deg);
 }
 .nc-nav-tabs .tabbars-container .tab-oper:hover {
   background: #f2f2f2;
@@ -33,11 +41,15 @@
 }
 .nc-nav-tabs .tabbars-container .tab-prev {
   left:0;
-  justify-content: flex-start;
+}
+.nc-nav-tabs .tabbars-container .tab-prev > span {
+  border-color: transparent transparent #999 #999;
 }
 .nc-nav-tabs .tabbars-container .tab-next {
   right:0;
-  justify-content: flex-end;
+}
+.nc-nav-tabs .tabbars-container .tab-next > span {
+  border-color: #999 #999 transparent transparent;
 }
 .nc-nav-tabs ul.tab-bars {
   list-style:none;

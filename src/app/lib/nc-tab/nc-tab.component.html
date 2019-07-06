@@ -1,8 +1,8 @@
 <div class="nc-nav-tabs"
      [ngClass]="{'tab-top':tabStyle === 'firstTab','tab-down':type === 'line','second-tab':tabStyle === 'secondTab'}">
   <div class="tabbars-container" [id]="id">
-    <span class="tab-oper tab-prev">&lt;</span>
-    <span class="tab-oper tab-next">&gt;</span>
+    <span class="tab-oper tab-prev"><span></span></span>
+    <span class="tab-oper tab-next"><span></span></span>
     <ul class="tab-bars">
       <li *ngFor="let tab of tabs" (click)="select(tab)" class="tabItem"
           [ngClass]="{'active':tab.isActive,'noactive':!tab.isActive,'disabled':tab.isDisable}" [title]="tab.name">
