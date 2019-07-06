@@ -20,6 +20,14 @@
   width:20px;
   background: #fff;
   z-index: 2;
+  justify-content: center;
+}
+.step-container .steps-container .step-oper > span {
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+  border: solid 2px #999;
+  transform: rotate(45deg);
 }
 .step-container .steps-container .step-oper:hover {
   background: #f2f2f2;
@@ -31,11 +39,15 @@
 }
 .step-container .steps-container .step-prev {
   left:0;
-  justify-content: flex-start;
+}
+.step-container .steps-container .step-prev > span {
+  border-color: transparent transparent #999 #999;
 }
 .step-container .steps-container .step-next {
   right:0;
-  justify-content: flex-end;
+}
+.step-container .steps-container .step-next > span {
+  border-color: #999 #999 transparent transparent;
 }
 .step-container .steps {
   width:100%;

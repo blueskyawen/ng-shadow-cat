@@ -1,7 +1,7 @@
 <div class="step-container">
   <div class="steps-container" [id]="id">
-    <span class="step-oper step-prev">&lt;</span>
-    <span class="step-oper step-next">&gt;</span>
+    <span class="step-oper step-prev"><span></span></span>
+    <span class="step-oper step-next"><span></span></span>
     <div class="steps">
       <div class="step"
            *ngFor="let stepItem of stepItems;let i=index" (click)="onClickStep(i)"
