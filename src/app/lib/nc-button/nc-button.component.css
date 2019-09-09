@@ -11,6 +11,7 @@ button{
   cursor: pointer;
   min-width: 60px;
   min-height: 20px;
+  max-width: 100%;
 }
 .button-add{
   background-color: #4db251;
