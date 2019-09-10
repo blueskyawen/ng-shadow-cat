@@ -13,5 +13,5 @@
 .side-bar .side-item.selected {
   background: #fff;
   color: #4d4dff;
-  border-left: solid 5px #1a1aff;
+  border-right: solid 5px #1a1aff;
 }

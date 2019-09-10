@@ -11,6 +11,8 @@
   display: flex;
   flex-direction: row;
   box-shadow: 0 1px 6px #0072e6;
+  position: fixed;
+  z-index: 10;
 }
 .main-app header .app-icon {
   display: flex;
@@ -151,7 +153,7 @@
   flex-direction: column;
   border-right: solid 1px #e6e6e6;
   background: #e6e6e6;
-  overflow-y: scroll;
+  overflow-y: auto;
   position:fixed;
   top:65px;
   transform: translateX(0%);
@@ -161,7 +163,7 @@
   transform: translateX(-100%);
 }
 .main-app article .content {
-  padding: 30px;
+  padding: 70px 30px 30px;
   box-sizing: border-box;
   height: 100%;
   max-height: 100%;
