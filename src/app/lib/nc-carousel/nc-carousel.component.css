@@ -103,6 +103,8 @@
   width:100%;
   position:relative;
   padding:0;
+  max-width: 100%;
+  border: none;
 }
 .carousel-fade ul{
   height:100%;
@@ -118,10 +120,13 @@
   width:100%;
   opacity:0;
 }
-.carousel-fade ul li img{
+.carousel-fade ul li img {
   height:100%;
   width:100%;
   background-color: #f2f2f2;
+}
+.carousel-fade ul li img:hover {
+  cursor: pointer;
 }
 @keyframes modal-out {
   0% {opacity:0;}
@@ -188,11 +193,35 @@
   border-color: #fff  #fff transparent transparent;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .carousel {
-    height:240px !important;
+    height:250px;
   }
   .carousel-fade {
-    height:240px !important;
+    height:250px;
+  }
+}
+@media (min-width: 768px) {
+  .carousel {
+    height:450px;
+  }
+  .carousel-fade {
+    height:450px;
+  }
+}
+@media (min-width: 992px) {
+  .carousel {
+    height:550px;
+  }
+  .carousel-fade {
+    height:550px;
+  }
+}
+@media (min-width: 1200px) {
+  .carousel {
+    height:650px;
+  }
+  .carousel-fade {
+    height:650px;
   }
 }

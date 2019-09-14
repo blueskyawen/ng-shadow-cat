@@ -11,18 +11,18 @@
 }
 
 .collapse header {
-  border:solid 1px #999;
+  border:solid 1px #ccc;
   width:100%;
   height:40px;
   line-height:40px;
   padding-left:15px;
-  background:#e6e6e6;
+  background:#f2f2f2;
   box-sizing:border-box;
   cursor:pointer;
   border-radius: 4px;
   display: flex;
   align-items: center;
-  color:#666;
+  color:#808080;
 }
 
 .collapse.active header {
@@ -48,7 +48,7 @@
 }
 .collapse article {
   width:100%;
-  border:solid 1px #999;
+  border:solid 1px #ccc;
   border-top:none;
   box-sizing:border-box;
   padding:0px;
@@ -65,11 +65,10 @@
   transition:max-height 1s ease-out,opacity 0.5s ease-out;
 }
 .collapse.active {
-  box-shadow: 0px 0px 2px;
   border-radius: 4px;
 }
 .collapse.disable header {
-  color:#1a1a1a;
+  color:#808080;
   opacity: 0.5;
   cursor: not-allowed;
 }

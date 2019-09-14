@@ -1,14 +1,15 @@
 <h2 class="title">提示工具</h2>
-<p>提示工具，用直观的方式在两栏中移动元素，完成选择行为</p>
+<p>简单的文字提示气泡框，鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作</p>
 <div class="container">
   <div class="sub-con">
-    <nc-tooltip class="top" [tipTitle]="'上边'" [tipContext]="'我在上边'" [place]="'top'">
+    <nc-tooltip class="top" [tipTitle]="'上边提示'" [tipContext]="'我在上边'" [place]="'top'">
     </nc-tooltip>
-    <nc-tooltip class="right" [tipTitle]="'右边'" [tipContext]="'我在右边'" [place]="'right'">
+    <nc-tooltip class="right" [tipTitle]="'右边提示'" [tipContext]="'我在右边'" [place]="'right'">
     </nc-tooltip>
-    <nc-tooltip class="bottom" [tipTitle]="'下边'" [tipContext]="'我在下边'" [place]="'bottom'">
+    <nc-tooltip class="bottom" [tipTitle]="'下边提示'" [tipContext]="'我在下边'" [place]="'bottom'">
     </nc-tooltip>
-    <nc-tooltip class="left" [tipTitle]="'左边'" [tipContext]="'我在左边'" [place]="'left'">
+    <nc-tooltip class="left" [tipTitle]="'左边提示'"
+                [tipContext]="'我在左边,我在左边,我在左边,我在左边,我在左边,我在左边,我在左边'" [place]="'left'">
     </nc-tooltip>
   </div>
 </div>
@@ -16,13 +17,13 @@
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
     <textarea style="height:160px;">
-    <nc-tooltip [tipTitle]="'上边'" [tipContext]="'我在上边'" [place]="'top'">
+    <nc-tooltip [tipTitle]="'上边提示'" [tipContext]="'我在上边'" [place]="'top'">
     </nc-tooltip>
-    <nc-tooltip [tipTitle]="'右边'" [tipContext]="'我在右边'" [place]="'right'">
+    <nc-tooltip [tipTitle]="'右边提示'" [tipContext]="'我在右边'" [place]="'right'">
     </nc-tooltip>
-    <nc-tooltip [tipTitle]="'下边'" [tipContext]="'我在下边'" [place]="'bottom'">
+    <nc-tooltip [tipTitle]="'下边提示'" [tipContext]="'我在下边'" [place]="'bottom'">
     </nc-tooltip>
-    <nc-tooltip [tipTitle]="'左边'" [tipContext]="'我在左边'" [place]="'left'">
+    <nc-tooltip [tipTitle]="'左边提示'" [tipContext]="'我在左边'" [place]="'left'">
     </nc-tooltip>
     </textarea>
   </div>
