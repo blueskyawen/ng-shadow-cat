@@ -40,6 +40,9 @@ ul.pagination.has_border li:first-child a{
 ul.pagination.has_border li:last-child a{
   border-radius:0 4px 4px 0;
 }
+ul.pagination.has_border li:not(:last-child) a{
+  border-right:none;
+}
 ul.pagination.has_border li.active a {
   background-color: #1a75ff;
   color: white;
