@@ -1,33 +1,87 @@
 <h2 class="title">滑动输入条</h2>
 <p>滑动输入条，用于方便的输入数值</p>
-<div style="margin-top: 20px;width: 100%;">
-  <nc-rangeslide></nc-rangeslide>
+
+<h3>1. 基本样式</h3>
+<div class="slide-demo" style="width: 100%;">
+  <p>正常:</p>
+  <nc-rangeslide [(value)]="curValue1"></nc-rangeslide>
+  <p class="aaa">输入值: {{curValue1}}</p>
 </div>
-<div style="margin-top: 20px;width: 50%;">
-  <nc-rangeslide></nc-rangeslide>
+<div class="slide-demo" style="width: 50%;">
+  <nc-rangeslide [(value)]="curValue2"></nc-rangeslide>
+  <p class="aaa">输入值: {{curValue2}}</p>
 </div>
-<div style="margin-top: 20px;">
-  <nc-rangeslide [total]="50" [value]="30" [width]="500"></nc-rangeslide>
+<div class="slide-demo">
+  <p>禁止输入:</p>
+  <nc-rangeslide [disable]="true" [(value)]="curValue3"></nc-rangeslide>
 </div>
-<div style="margin-top: 20px;">
-  <nc-rangeslide [total]="100" [value]="36" [width]="700"></nc-rangeslide>
-</div>
-<div style="margin-top: 20px;">
-  <nc-rangeslide [disable]="true" [width]="360"></nc-rangeslide>
+<div class="slide-demo">
+  <p>自定义宽度:</p>
+  <nc-rangeslide [total]="150" [(value)]="curValue4" [width]="'700px'"></nc-rangeslide>
+  <p class="aaa">输入值: {{curValue4}}</p>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
+    <textarea style="height:120px;">
+    <div class="slide-demo" style="width: 100%;">
+      <p>正常</p>
+      <nc-rangeslide [(value)]="curValue1"></nc-rangeslide>
+      <p>输入值: {{curValue1}}</p>
+    </div>
+    <div class="slide-demo" style="width: 50%;">
+      <nc-rangeslide [(value)]="curValue2"></nc-rangeslide>
+      <p>输入值: {{curValue2}}</p>
+    </div>
+    <div class="slide-demo">
+      <nc-rangeslide [disable]="true" [(value)]="curValue3"></nc-rangeslide>
+    </div>
+    <div class="slide-demo">
+      <nc-rangeslide [total]="150" [(value)]="curValue4"  [width]="'700px'"></nc-rangeslide>
+      <p>输入值: {{curValue4}}</p>
+    </div>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
     <textarea style="height:80px;">
-      <div style="width: 100%;">
-        <nc-rangeslide></nc-rangeslide>
-      </div>
-      <div style="width: 50%;">
-        <nc-rangeslide></nc-rangeslide>
-      </div>
-      <nc-rangeslide [total]="50" [value]="30" [width]="500"></nc-rangeslide>
-      <nc-rangeslide [total]="100" [value]="36" [width]="1000"></nc-rangeslide>
-      <nc-rangeslide [disable]="true" [width]="360"></nc-rangeslide>
+      curValue1: number = 30;
+      curValue2: number = 30;
+      curValue3: number = 50;
+      curValue4: number = 80;
+    </textarea>
+  </div>
+</nc-tab>
+
+<h3>2. 带输入数值</h3>
+<div class="slide-demo" style="width: 100%;">
+  <nc-rangeslide [(value)]="curValue5" [withTitle]="true"></nc-rangeslide>
+</div>
+<div class="slide-demo" style="width: 50%;">
+  <nc-rangeslide [(value)]="curValue6" [withTitle]="true"></nc-rangeslide>
+</div>
+<div class="slide-demo">
+  <nc-rangeslide [total]="120" [(value)]="curValue7"  [width]="'600px'"></nc-rangeslide>
+</div>
+<p>使用方式:</p>
+<nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
+  <div *ngIf="currentTab === 'html'">
+    <textarea style="height:120px;">
+    <div class="slide-demo" style="width: 100%;">
+      <nc-rangeslide [(value)]="curValue5" [withTitle]="true"></nc-rangeslide>
+    </div>
+    <div class="slide-demo" style="width: 50%;">
+      <nc-rangeslide [(value)]="curValue6" [withTitle]="true"></nc-rangeslide>
+    </div>
+    <div class="slide-demo">
+      <nc-rangeslide [total]="120" [(value)]="curValue7"  [width]="'600px'"></nc-rangeslide>
+    </div>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:80px;">
+      curValue5: number = 50;
+      curValue6: number = 30;
+      curValue7: number = 36;
     </textarea>
   </div>
 </nc-tab>
@@ -60,7 +114,12 @@
   <tr>
     <td>width</td>
     <td>自定义宽度</td>
-    <td>500px</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>withTitle</td>
+    <td>带数值</td>
+    <td>false</td>
   </tr>
   </tbody>
 </table>

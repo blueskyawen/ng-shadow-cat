@@ -17,7 +17,6 @@ export class NcMessageComponent implements OnInit,OnChanges {
   @Input() headerTitle : string = '';
   spinClasses : any = {};
   spinClasses2 : any = {};
-  iocnType : string = '✔';
 
   constructor() {
   }
@@ -27,12 +26,10 @@ export class NcMessageComponent implements OnInit,OnChanges {
       'error':this.type === 'error'};
     this.spinClasses2 = {'icon-green': this.type === 'success','icon-yellow':this.type === 'warn',
       'icon-red':this.type === 'error'};
-    this.iocnType = this.type === 'success' ? '✔' : this.type === 'warn' ? '!' : '×';
   }
 
-  ngOnChanges(changes: SimpleChanges) {;
+  ngOnChanges(changes: SimpleChanges) {
     if(changes['show'] && changes['show'].currentValue && this.type === 'success') {
-      console.log('eee')
       setTimeout(() => {
         this.cancel();
       },this.timerLen);

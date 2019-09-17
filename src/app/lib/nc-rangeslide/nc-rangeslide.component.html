@@ -1,4 +1,4 @@
-<div class="rangContainer" [class.disable]="disable" [ngStyle]="slideStyle">
+<div class="rangContainer" [ngClass]="{'withTitle':withTitle,'disable':disable}" [ngStyle]="slideStyle">
   <input type="range" #range name="points" min="0" [max]="total" [value]="value"
          (change)="rangeChange(range.value)" [disabled]="disable">
   <span class="range">
@@ -6,5 +6,5 @@
     <span class="anniu" [ngStyle]="anniuStyle"></span>
     <span class="after" [ngStyle]="afterStyle"></span>
   </span>
-  <span class="text">{{value}}</span>
+  <span class="text" *ngIf="withTitle">{{value}}</span>
 </div>

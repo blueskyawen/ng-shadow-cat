@@ -1,16 +1,18 @@
 div.rangContainer {
-  display:inline-block;
+  display:inline-flex;
   width:100%;
   height:30px;
   position:relative;
   max-width: 100%;
+  min-width: 100px;
 }
 div.rangContainer input {
   width:100%;
   height:100%;
-  border:solid 0px;
+  border:none;
   opacity:0;
   margin:0;
+  outline: none;
   cursor:pointer;
 }
 div.rangContainer span.range {
@@ -19,7 +21,7 @@ div.rangContainer span.range {
   width:100%;
   height:100%;
   position:absolute;
-  top:0px;
+  top:0;
   padding:0;
   z-index:-12;
   cursor:pointer;
@@ -66,13 +68,19 @@ div.rangContainer span.range span.after{
   float:left;
   transition: width 1s;
 }
+div.rangContainer.withTitle > input {
+  width:calc(100% - 30px);
+}
+div.rangContainer.withTitle > .range {
+  width:calc(100% - 30px);
+}
 span.text {
   display:inline-block;
-  height:30px;
-  position:absolute;
-  left:0;
-  top:5px;
-  left:105%;
+  height:100%;
+  width: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 14px;
 }
 div.rangContainer.disable,
 div.rangContainer.disable input,

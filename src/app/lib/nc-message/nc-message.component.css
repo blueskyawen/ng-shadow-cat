@@ -11,6 +11,7 @@
   display:flex;
   color:#fff;
   justify-content: center;
+  align-items: center;
   z-index: 9000;
 }
 .success{
@@ -26,28 +27,23 @@
   flex:1 1 auto;
 }
 .warn .oper-cancel,.error .oper-cancel{
-  width:100%;
-  flex:0 0 45px;
-  display:flex;
+  width:22px;
+  height: 22px;
+  border: solid 1px transparent;
+  border-radius: 100%;
+  display:inline-flex;
   justify-content:center;
   align-items:center;
+  margin-right: 10px;
 }
-.warn .oper-cancel span,.error .oper-cancel span {
-  height:50%;
-  width:50%;
-  line-height:22.5px;
-  text-align:center;
-  border-radius:50%;
-  font-size:14px;
-}
-.warn .oper-cancel span:hover{
+.warn .oper-cancel:hover{
   background:#b35900;
   cursor:pointer;
 }
 .error{
   background:#cc0000;
 }
-.error .oper-cancel span:hover{
+.error .oper-cancel:hover{
   background:#800000;
   cursor:pointer;
 }
@@ -55,7 +51,7 @@
 
 .info-container {
   display:flex;
-  width:400px;
+  width:450px;
   min-height:180px;
   max-width: 70%;
   position:fixed;
@@ -121,7 +117,9 @@
   width:20px;
   line-height:20px;
   text-align:center;
-  border-radius:50%;
+  justify-content: center;
+  align-items: center;
+  border-radius:100%;
   background:#fff;
 }
 .icon-green{
