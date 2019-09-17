@@ -1,34 +1,39 @@
+.confirm {
+  padding: 10px 0;
+}
 .description{
-  width:90%;
   display:flex;
   margin:auto;
   border:solid 1px #66ccff;
   border-radius:4px;
   background:#e5f7ff;
   padding:8px;
+  align-items: center;
 }
-.description .grade{
+.description .grade {
   width:20px;
   height:20px;
   text-align:center;
   line-height:20px;
   border-radius:50%;
+  font-size: 14px;
+}
+.description .grade.normal {
   border:solid 1px #0040ff;
   color:#0040ff;
-  margin-top:5px;
-  margin-left:5px
+}
+.description .grade.major {
+  border:solid 1px #ff0000;
+  color:#ff0000;
 }
 .description .text{
-  width:90%;
-  font-size:12px;
+  font-size:14px;
   text-align:left;
   margin-left:10px;;
 }
 form {
   width:90%;
-  margin:auto;
-  margin-top:30px;
-  margin-bottom:30px;
+  margin:15px auto 15px;
 }
 
 .form-group{
@@ -38,7 +43,7 @@ form {
   margin-bottom:20px;
 }
 .form-group label{
-  width:120px;
+  width:80px;
   text-align:center;
   height:100%;
   font-size:18px;
@@ -65,11 +70,11 @@ form {
 }
 
 .form-btn-group {
-  margin: 0 10px;
+  margin: 10px;
 }
 
 .wenzhang{
-  margin:30px;
+  margin:10px;
   line-height:30px;
   text-indent:50px;
 }

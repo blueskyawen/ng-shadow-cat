@@ -83,14 +83,18 @@
   word-wrap: normal;
   text-overflow: ellipsis;
 }
-.select-dropdown .dropdown-content span:hover{
-  background:#ccc;
+.select-dropdown .dropdown-content span.selected {
+  background-color: #e5f5ff;
+  font-weight: bold;
+}
+.select-dropdown .dropdown-content span:not(.selected):hover{
+  background:#e6e6e6;
 }
 .select-dropdown:hover .inputItem input,
 .select-dropdown:hover .inputItem .carcat {
   border-color:#33adff;
 }
-.select-dropdown:hover .inputItem .carcat:after{
+.select-dropdown:not(.disable):hover .inputItem .carcat:after{
   border-color: #33adff transparent transparent transparent;
 }
 .select-dropdown .dropdown-content span.disable {

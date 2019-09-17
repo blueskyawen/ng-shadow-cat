@@ -11,8 +11,8 @@
 .shade{
   height:100%;
   width:100%;
-  background:#ccc;
-  opacity: 0.5;
+  background:#666;
+  opacity: 0.6;
   position: fixed;
 }
 .dialog-container .myDialog {
@@ -20,40 +20,27 @@
   flex-direction:column;
   position: absolute;
   z-index: 9001;
-  opacity: 1;
   left:50%;
   background:#fff;
   border:solid 1px #999;
-  border-radius:8px;
+  border-radius:6px;
   width:760px;
   max-width: 90%;
-  min-height:120px;
+  min-height:80px;
+  min-width: 120px;
   transform: translateX(-50%);
-  box-shadow:2px 2px 2px #a3a375;
-}
-.dialog-container .myDialog.normal-dialog {
-  top:60px;
-  -webkit-animation: modal-out  200ms;
-  animation: modal-out  200ms;
-  -moz-animation: modal-out 200ms;
-}
-.dialog-container .myDialog.confirm-dialog {
-  top:160px;
-  -webkit-animation: modal-out-2  200ms;
-  animation: modal-out-2  200ms;
-  -moz-animation: modal-out-2 200ms;
-}
-.dialog-container .myDialog.big {
-  width:70%;
-  min-height:500px;
+  box-shadow:0 0 5px 0px #999;
+  -webkit-animation: modal-out  500ms;
+  animation: modal-out  500ms;
+  -moz-animation: modal-out 500ms;
 }
 @keyframes modal-out {
-  0% {top:0px;}
-  100% {top:60px;}
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
-@keyframes modal-out-2 {
-  0% {top:0px;}
-  100% {top:160px;}
+.dialog-container .myDialog.large {
+  width:70%;
+  min-height:500px;
 }
 .myDialog header{
   border:solid 0px;
@@ -69,79 +56,27 @@
   font-size:14px;
 }
 .myDialog header span:last-child{
-  height:23px;
-  width:23px;
-  line-height:23px;
+  height:24px;
+  width:24px;
+  line-height:24px;
   text-align:center;
-  border-radius:50%;
+  border-radius:100%;
   margin-right:15px;
 }
 .myDialog header span:last-child:hover{
-  background:#a6a6a6;
+  background:#e6e6e6;
   cursor:pointer;
 }
 .myDialog article{
   display:inline-block;
   width:90%;
-  border:solid 0px;
   margin:auto;
-  margin-top:10px;
+  padding: 10px 0 10px;
 }
 .myDialog footer{
   width:90%;
-  margin:auto;
-  margin-top:10px;
-  margin-bottom:20px;
+  margin: auto;
+  padding: 10px 0 10px;
   display:flex;
   justify-content:center;
-}
-.big{
-  width:70%;
-  min-height:500px;
-}
-.dialog-container .myDialog.confirm-dialog article {
-  margin-top:30px;
-  margin-bottom:30px;
-}
-
-.description{
-  display:flex;
-  flex-direction:column;
-  border:none;
-  background:#fff;
-  border:solid 0px
-}
-.description .gradetitle{
-  display:flex;
-  height:36px;
-  line-height:36px;
-  border:solid 0px;
-}
-.description .gradetitle .icon{
-  display:inline-block;
-  height:24px;
-  width:24px;
-  border-radius:50%;
-  line-height:24px;
-  text-align:center;
-  color:#fff;
-  margin-top:6px;
-}
-.back-blue{
-  background:#0040ff;
-}
-.back-red{
-  background:#ff1a1a;
-}
-.description .gradetitle .title{
-  display:inline-block;
-  font-size:16px;
-  font-weight:bold;
-  margin-left:10px;
-}
-.description .text p{
-  display:inline-block;
-  font-size:12px;
-  border:solid 0px;
-  margin-left:24px;
 }

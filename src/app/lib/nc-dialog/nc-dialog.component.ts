@@ -9,23 +9,25 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
   styleUrls: ['./nc-dialog.component.css']
 })
 export class NcDialogComponent implements OnInit {
-  @Input() style : string = 'normal';
-  @Input() operType : string = '';
-  @Input() size : string = 'normal';
+  @Input() type : string = 'normal';
+  @Input() zIndex : number = 9000;
   @Input() header : string = '操作名称';
+  @Input() top: string = '80px';
+  @Input() width: string = '';
   @Input() isShow : boolean = false;
   @Output() isShowChange = new EventEmitter();
-  dialogClass : any = {};
-  operColor : any = {};
+  shadeStyle : any = {};
+  dialogStyle : any = {};
 
   constructor() {
   }
 
   ngOnInit() {
-    this.dialogClass = {'normal-dialog': this.style === 'normal','confirm-dialog': this.style === 'confirm',
-    'big': this.size === 'big'};
-    if(this.operType) {
-      this.operColor = {'back-blue': this.operType === 'normal','back-red': this.operType === 'delete'};
+    this.shadeStyle = {'z-index': this.zIndex};
+    if (this.width) {
+      this.dialogStyle = {'top': this.top, 'z-index': this.zIndex + 1, 'width': this.width};
+    } else {
+      this.dialogStyle = {'top': this.top, 'z-index': this.zIndex + 1};
     }
   }
 

@@ -30,6 +30,9 @@
 .select-dropdown:not(.disable):hover{
   border-color:#33adff;
 }
+.select-dropdown:not(.disable):hover:after{
+  border-color: #33adff transparent transparent transparent;
+}
 .select-dropdown .selectss{
   display:flex;
   align-items:center;
@@ -112,7 +115,6 @@
   width:100%;
   height:120px;
   border-top:solid 1px #bfbfbf;
-  overflow-y:auto;
 }
 .select-dropdown .dropdown-content > span.item {
   display:block;

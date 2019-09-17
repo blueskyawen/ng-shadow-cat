@@ -1,6 +1,6 @@
 <h2 class="title">模态框</h2>
 <p>模态框，用于用户的操作交互</p>
-<h3>1. 普通模态框</h3>
+<h3>1. 基本样式</h3>
 <div style="margin-top: 20px;">
   <span style="margin-right: 10px;">
       <nc-button (click)="openDialog(0)">标准尺寸</nc-button>
@@ -9,12 +9,8 @@
     <nc-button (click)="openDialog(1)">大尺寸</nc-button>
   </span>
 </div>
-<nc-dialog [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
+<nc-dialog [header]="'操作名称'" [type]="'normal'" [(isShow)]="isShows[0]">
   <div class="content">
-    <div class="description">
-      <span class="grade">!</span>
-      <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
-    </div>
     <form>
       <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
         <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">用户名</nc-form-label>
@@ -41,12 +37,8 @@
     </span>
   </div>
 </nc-dialog>
-<nc-dialog [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
+<nc-dialog [header]="'文章名称'" [type]="'large'" [(isShow)]="isShows[1]">
   <div class="content">
-    <div class="description">
-      <span class="grade">!</span>
-      <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
-    </div>
     <div class="wenzhang">
       <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。以一身晶莹，绽放独特魅力；以一分柔媚，征服万物生灵；
         以一缕素洁，攫获万心宠爱。如蝶飞舞，如梦唯美，如烟轻柔，如雾飘缈，如心纯净，如水澄澈。</p>
@@ -71,12 +63,8 @@
 <nc-tab [tabs]="tabItems1" [(selectTab)] = "currentTab1">
   <div *ngIf="currentTab1 === 'html'">
     <textarea style="height:400px;">
-    <nc-dialog [header]="'操作名称'" [style]="'normal'" [(isShow)]="isShows[0]">
+    <nc-dialog [header]="'操作名称'" [type]="'normal'" [(isShow)]="isShows[0]">
       <div class="content">
-        <div class="description">
-          <span class="grade">!</span>
-          <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
-        </div>
         <form>
           <nc-form-group class="nc-form-item nc-xl-col-12 nc-lg-col-12 nc-md-col-12 nc-sm-col-12 nc-xs-col-12">
             <nc-form-label class="nc-xl-col-3 nc-lg-col-3 nc-md-col-3 nc-sm-col-3 nc-xs-col-3" [required]="true">用户名</nc-form-label>
@@ -104,12 +92,8 @@
       </div>
     </nc-dialog>
 
-    <nc-dialog [header]="'操作名称'" [style]="'normal'" [size]="'big'" [(isShow)]="isShows[1]">
+    <nc-dialog [header]="'文章名称'" [type]="'large'" [(isShow)]="isShows[1]">
       <div class="content">
-        <div class="description">
-          <span class="grade">!</span>
-          <span class="text">HTML 4 的新特性之一是可以使 HTML 事件触发浏览器中的行为，比方说当用户点击某个 HTML 元素时启动一段 JavaScript.</span>
-        </div>
         <div class="wenzhang">
           <p>倚在冬的门楣，静心遥盼雪天使的降临。娉娉婷婷，风姿绰约，飘飘扬扬，曼妙万千。以一身晶莹，绽放独特魅力；以一分柔媚，征服万物生灵；
             以一缕素洁，攫获万心宠爱。如蝶飞舞，如梦唯美，如烟轻柔，如雾飘缈，如心纯净，如水澄澈。</p>
@@ -134,17 +118,26 @@
   </div>
 </nc-tab>
 
-<h3>2. 操作模态框</h3>
+<h3>2. 自定义参数</h3>
 <div style="margin-top: 20px;">
   <span style="margin-right: 10px;">
-    <nc-button (click)="openDialog(2)">确认操作</nc-button>
+    <nc-button (click)="openDialog(2)">自定义top距离</nc-button>
   </span>
   <span style="margin-right: 10px;">
-    <nc-button (click)="openDialog(3)">删除操作</nc-button>
+    <nc-button (click)="openDialog(3)">自定义宽度</nc-button>
   </span>
 </div>
-<nc-dialog [header]="'操作名称'" [style]="'confirm'" [operType]="'normal'" [(isShow)]="isShows[2]">
+<nc-dialog [header]="'操作名称'" [type]="'normal'" [top]="'150px'" [(isShow)]="isShows[2]">
   <div class="content">
+    <div class="confirm">
+      <div class="description">
+        <span class="grade normal">!</span>
+        <span class="text">我是副标题</span>
+      </div>
+      <p>
+        忧郁的愁丝晕染了流年的底色，孤寒的素洁染白了寒冬的萧瑟。凛冽的寒风呼啸而来，残瘦的枯枝在风中摇曳。清冷的浩空好似在酝酿一场盛
+      </p>
+    </div>
   </div>
   <div class="footer">
     <span class="form-btn-group">
@@ -155,8 +148,17 @@
     </span>
   </div>
 </nc-dialog>
-<nc-dialog [header]="'操作名称'" [style]="'confirm'" [operType]="'delete'" [(isShow)]="isShows[3]">
+<nc-dialog [header]="'操作名称'" [type]="'normal'" [width]="'500px'" [(isShow)]="isShows[3]">
   <div class="content">
+    <div class="confirm">
+      <div class="description">
+        <span class="grade major">!</span>
+        <span class="text">我是副标题</span>
+      </div>
+      <p>
+        忧郁的愁丝晕染了流年的底色，孤寒的素洁染白了寒冬的萧瑟。凛冽的寒风呼啸而来，残瘦的枯枝在风中摇曳。清冷的浩空好似在酝酿一场盛
+      </p>
+    </div>
   </div>
   <div class="footer">
     <span class="form-btn-group">
@@ -171,31 +173,49 @@
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
   <div *ngIf="currentTab2 === 'html'">
     <textarea style="height:340px;">
-  <nc-dialog [header]="'操作名称'" [style]="'confirm'" [operType]="'normal'" [(isShow)]="isShows[2]">
-    <div class="content">
-    </div>
-    <div class="footer">
-      <span class="form-btn-group">
-        <nc-button (click)="isShows[2]=false">确定</nc-button>
-      </span>
-      <span class="form-btn-group">
-        <nc-button [type]="'cancel'" (click)="isShows[2]=false">取消</nc-button>
-      </span>
-    </div>
-  </nc-dialog>
-
-  <nc-dialog [header]="'操作名称'" [style]="'confirm'" [operType]="'delete'" [(isShow)]="isShows[3]">
-    <div class="content">
-    </div>
-    <div class="footer">
-      <span class="form-btn-group">
-        <nc-button [type]="'major'" (click)="isShows[3]=false">删除</nc-button>
-      </span>
-      <span class="form-btn-group">
-        <nc-button [type]="'cancel'" (click)="isShows[3]=false">取消</nc-button>
-      </span>
-    </div>
-  </nc-dialog>
+    <nc-dialog [header]="'操作名称'" [type]="'normal'" [top]="'150px'" [(isShow)]="isShows[2]">
+      <div class="content">
+        <div class="confirm">
+          <div class="description">
+            <span class="grade normal">!</span>
+            <span class="text">我是副标题</span>
+          </div>
+          <p>
+            忧郁的愁丝晕染了流年的底色，孤寒的素洁染白了寒冬的萧瑟。凛冽的寒风呼啸而来，残瘦的枯枝在风中摇曳。清冷的浩空好似在酝酿一场盛
+          </p>
+        </div>
+      </div>
+      <div class="footer">
+        <span class="form-btn-group">
+          <nc-button (click)="isShows[2]=false">确定</nc-button>
+        </span>
+        <span class="form-btn-group">
+          <nc-button [type]="'cancel'" (click)="isShows[2]=false">取消</nc-button>
+        </span>
+      </div>
+    </nc-dialog>
+      
+    <nc-dialog [header]="'操作名称'" [type]="'normal'" [width]="'500px'" [(isShow)]="isShows[3]">
+      <div class="content">
+        <div class="confirm">
+          <div class="description">
+            <span class="grade major">!</span>
+            <span class="text">我是副标题</span>
+          </div>
+          <p>
+            忧郁的愁丝晕染了流年的底色，孤寒的素洁染白了寒冬的萧瑟。凛冽的寒风呼啸而来，残瘦的枯枝在风中摇曳。清冷的浩空好似在酝酿一场盛
+          </p>
+        </div>
+      </div>
+      <div class="footer">
+        <span class="form-btn-group">
+          <nc-button [type]="'major'" (click)="isShows[3]=false">删除</nc-button>
+        </span>
+        <span class="form-btn-group">
+          <nc-button [type]="'cancel'" (click)="isShows[3]=false">取消</nc-button>
+        </span>
+      </div>
+    </nc-dialog>
     </textarea>
   </div>
 </nc-tab>
@@ -212,7 +232,7 @@
   <tbody>
   <tr>
     <td>isShow</td>
-    <td>指定模态框是否呈现</td>
+    <td>是否呈现</td>
     <td>false</td>
   </tr>
   <tr>
@@ -221,19 +241,24 @@
     <td></td>
   </tr>
   <tr>
-    <td>style</td>
-    <td>指定模态框的类型，2种取值:normal普通,confirm操作确认</td>
+    <td>type</td>
+    <td>模态框的类型，2种取值:normal,large</td>
     <td>normal</td>
   </tr>
   <tr>
-    <td>size</td>
-    <td>指定模态框的大小,normal,big</td>
-    <td>normal</td>
+    <td>zIndex</td>
+    <td>模态框层级</td>
+    <td>9000</td>
   </tr>
   <tr>
-    <td>operType</td>
-    <td>指定操作确认模态框的类型,normal,delete</td>
-    <td>normal</td>
+    <td>top</td>
+    <td>模态框到上边框的距离,px</td>
+    <td>80px</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>自定义模态框的宽度,px</td>
+    <td></td>
   </tr>
   </tbody>
 </table>

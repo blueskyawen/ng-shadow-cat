@@ -2,11 +2,11 @@
      (mouseover)="moveOn()" (mouseout)="moveOn()" (click)="clickSelect()" [class.disable]="isDisable">
   <div class="inputItem">
   <input type="text" placeholder="请选择" [value]="getSelectOption().label" title="{{getSelectOption().label}}"
-         [attr.disabled]="isDisable" [style.height]="height"/><span class="carcat"></span>
+         [attr.disabled]="isDisable" [style.height]="height" readonly /><span class="carcat"></span>
   </div>
   <div class="dropdown-content" [style.display]="isContentOpen ? 'inline-block' : 'none'">
-    <span  *ngFor="let option of options" (click)="selectOption(option,$event)" [class.disable]="option.disable"
-           title="{{option.label}}">
+    <span  *ngFor="let option of options" (click)="selectOption(option,$event)"
+           title="{{option.label}}" [ngClass]="{'disable': option.disable, 'selected': option.value === value}">
       {{option.label}}</span>
   </div>
 </div>
