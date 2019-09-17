@@ -1,6 +1,6 @@
 <div class="dialog-container" [style.display]="isShow ? 'block' : 'none'">
   <div class="shade" [ngStyle]="shadeStyle"></div>
-  <div class="myDialog" [ngClass]="{'large': this.type === 'large'}" [ngStyle]="dialogStyle">
+  <div class="myDialog" [ngClass]="{'large': type === 'large'}" [ngStyle]="dialogStyle">
     <header>
       <span>{{header}}</span>
       <span (click)="close()">

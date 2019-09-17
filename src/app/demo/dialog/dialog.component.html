@@ -3,7 +3,7 @@
 <h3>1. 基本样式</h3>
 <div style="margin-top: 20px;">
   <span style="margin-right: 10px;">
-      <nc-button (click)="openDialog(0)">标准尺寸</nc-button>
+    <nc-button (click)="openDialog(0)">正常尺寸</nc-button>
   </span>
   <span style="margin-right: 10px;">
     <nc-button (click)="openDialog(1)">大尺寸</nc-button>
@@ -194,7 +194,7 @@
         </span>
       </div>
     </nc-dialog>
-      
+
     <nc-dialog [header]="'操作名称'" [type]="'normal'" [width]="'500px'" [(isShow)]="isShows[3]">
       <div class="content">
         <div class="confirm">
