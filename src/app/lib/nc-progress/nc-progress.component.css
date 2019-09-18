@@ -1,28 +1,36 @@
-.process{
+.process {
   display:inline-flex;
-  width:360px;
-  margin:10px;
-  text-align:right;
+  width:420px;
+  margin:5px 0;
   max-width: 100%;
 }
-.big{
-  height: 24px;
+.process.big {
+  height: 16px;
 }
-.small{
-  height:12px;
+.process.medium {
+  height: 10px;
+}
+.process.small {
+  height:6px;
 }
 .process .processing-container {
-  width: calc(100% - 50px);
+  width: 100%;
   height:100%;
   display: inline-block;
   position: relative;
-  background:#d9d9d9;
+  background: #e6e6e6;
+}
+.process.showInfo .processing-container {
+  width: calc(100% - 50px);
 }
 .process.big .processing-container {
-  border-radius:12px;
+  border-radius:8px;
+}
+.process.medium .processing-container {
+  border-radius:5px;
 }
 .process.small .processing-container {
-  border-radius:6px;
+  border-radius:3px;
 }
 .process .processing-container .processing {
   display:inline-block;
@@ -30,73 +38,28 @@
   width: 30%;
   position:absolute;
   left:0;
+  background:#3399ff;
+  transition: all .5s linear;
 }
 .process.big .processing-container .processing {
-  border-radius:12px 0 0 12px/12px 0 0 12px;
+  border-radius:8px 0 0 8px/8px 0 0 8px;
 }
-.process.big .processing-container .processing.percent100 {
-  border-radius:12px;
+.process.medium .processing-container .processing {
+  border-radius:5px 0 0 5px/5px 0 0 5px;
 }
 .process.small .processing-container .processing {
-  border-radius:6px 0 0 6px/6px 0 0 6px;
+  border-radius:3px 0 0 3px/3px 0 0 3px;
+}
+.process.big .processing-container .processing.percent100 {
+  border-radius:8px;
+}
+.process.medium .processing-container .processing.percent100 {
+  border-radius:5px;
 }
 .process.small .processing-container .processing.percent100 {
-  border-radius:6px;
+  border-radius:3px;
 }
-.process .processing.normal {
-  background:#3399ff;
-}
-.process .processing.warn {
-  background:#ffa31a;
-}
-.process .processing.urgent {
-  background:#ff3300;
-}
-.process span.description {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 5px;
-}
-.process.big span.description{
-  font-size: 14px;
-}
-.process.small span.description {
-  font-size: 12px;
-}
-.process.big .processing-container .processing:not(.dyna) {
-  transition: width 500ms linear;
-}
-.process.big .processing-container .processing.dyna {
-  width:100%;
-  border-radius:12px;
-  background:#3399ff;
-  animation:mydyna 10s;
-}
-.process.small .processing-container .processing.dyna {
-  width:100%;
-  border-radius:6px;
-  background:#3399ff;
-  animation:mydyna3 10s;
-}
-@keyframes mydyna
-{
-  0%   {width:10%;border-radius:12px 0 0 12px/12px 0 0 12px;}
-  20%  {width:20%;border-radius:12px 0 0 12px/12px 0 0 12px;}
-  40% {width:40%;border-radius:12px 0 0 12px/12px 0 0 12px;}
-  60%   {width:60%;border-radius:12px 0 0 12px/12px 0 0 12px;}
-  80%  {width:80%;border-radius:12px 0 0 12px/12px 0 0 12px;}
-  100% {width:100%;border-radius:12px;}
-}
-@keyframes mydyna3
-{
-  0%   {width:10%;border-radius:6px 0 0 6px/6px 0 0 6px;}
-  20%  {width:20%;border-radius:6px 0 0 6px/6px 0 0 6px;}
-  40% {width:40%;border-radius:6px 0 0 6px/6px 0 0 6px;}
-  60%   {width:60%;border-radius:6px 0 0 6px/6px 0 0 6px;}
-  80%  {width:80%;border-radius:6px 0 0 6px/6px 0 0 6px;}
-  100% {width:100%;border-radius:6px;}
-}
-.process .processing .dyna{
+.process .processing-container .processing .subDynamic {
   position:absolute;
   left:0;
   display:inline-block;
@@ -104,20 +67,33 @@
   width:100%;
   background:#99d6ff;
   opacity: 0.5;
-  animation:mydyna2 500ms 1;
+  animation:subDynAnimat .5s linear infinite;
 }
-.process.big .processing-container .processing .dyna {
-  border-radius:12px 0 0 12px/12px 0 0 12px;
+.process.big .processing-container .processing .subDynamic {
+  border-radius:8px 0 0 8px/8px 0 0 8px;
 }
-.process.small .processing-container .processing .dyna {
-  border-radius:6px 0 0 6px/6px 0 0 6px;
+.process.medium .processing-container .processing .subDynamic {
+  border-radius:5px 0 0 5px/5px 0 0 5px;
 }
-@keyframes mydyna2
+.process.small .processing-container .processing .subDynamic {
+  border-radius:3px 0 0 3px/3px 0 0 3px;
+}
+@keyframes subDynAnimat
 {
-  0%   {width:50%;}
-  20%  {width:60%;}
-  40% {width:70%;}
-  60%   {width:80%;}
-  80%  {width:90%;}
+  0%   {width:0%;}
   100% {width:100%;}
+}
+.process .description {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+}
+.process.big .description{
+  font-size: 14px;
+}
+.process.medium .description {
+  font-size: 12px;
+}
+.process.small .description {
+  font-size: 8px;
 }

@@ -9,67 +9,36 @@ import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChanges } fr
   styleUrls: ['./nc-progress.component.css']
 })
 export class NcProgressComponent  implements OnInit,OnChanges {
-  @Input() width: string = '360px';
-  @Input() height: number;
-  @Input() style: string = 'big';
+  @Input() type: string = 'normal';
+  @Input() size: string = 'big';
   @Input() total: number = 100;
   @Input() value: number = 30;
-  @Input() isDynamic : boolean = false;
-  @Input() isSubDynamic : boolean = true;
-  @Input() dynaTimelen : number = 10;
-  @Input() showProcValue : boolean = true;
+  @Input() color : string = '#3399ff';
+  @Input() subDynamic : boolean = false;
+  @Input() subColor : string = '#99d6ff';
+  @Input() showInfo : boolean = true;
+  @Input() width: string = '420px';
+  typeClass : any = {};
+  progressStyle : any = {};
+  processingStyle : any = {};
+  subDyncStyle : any = {};
   valueShow : number = 0;
-  sizeClass : any = {};
-  colorClass : any = {};
-  widthStyle : any = {};
-  progStyleStr : any;
-  proceConStyle : any = {};
-  intvalTime : number = 0;
-  subDynStyle: any = {};
 
   constructor() {
   }
 
   ngOnInit() {
-    this.sizeClass = {'big': this.style !== 'small','small': this.style === 'small'};
-    if(this.isDynamic) {
-      this.colorClass = {'normal': this.isDynamic,'dyna': this.isDynamic};
-      this.widthStyle = this.style !== 'small' ? {'animation': `mydyna ${this.dynaTimelen}s`} :
-          {'animation': `mydyna3 ${this.dynaTimelen}s`};
-      this.subDynStyle = this.isSubDynamic ? {'animation': 'mydyna2 500ms infinite'} : {};
-      this.value = 0;
-      this.total = 100;
-      this.valueShow = this.value * 100 / this.total;
-      this.intvalTime = this.dynaTimelen * 1000 / 5;
-      this.setDynamicValue();
+    this.typeClass = {'big': this.size === 'big','medium': this.size === 'medium',
+      'small': this.size === 'small','showInfo': this.showInfo};
+    this.progressStyle = {'width': this.width};
+    if(this.type === 'dynamic') {
+      this.value = this.total;
+      this.processingStyle = {'width': '100%', 'background': this.color};
+      this.subDyncStyle = {'background': this.subColor};
     } else {
-      this.valueShow = this.value * 100 / this.total;
-      this.colorClass = {'normal': this.valueShow <= 50,
-        'warn': this.valueShow > 50 && this.valueShow < 80,
-        'urgent': this.valueShow >= 80,
-        'percent100': this.valueShow == 100};
-      this.widthStyle = {'width': `${this.valueShow}%`};
-    }
-    let sizeHeight = !isNaN(this.height) && Number(this.height) > 1 ? Number(this.height) :
-        (this.style === 'big' || this.style === 'small') ? undefined : 12;
-    this.progStyleStr = sizeHeight ? {'width': this.width, 'height': sizeHeight+'px'} :
-        {'width': this.width};
-    if (!this.showProcValue) { this.proceConStyle = {'width': '100%'}; }
-  }
-
-  setDynamicValue() {
-    if(this.isDynamic) {
-      setTimeout(() => {
-        if(this.isDynamic) {
-          this.value += 20;
-          this.handleValueChange();
-        }
-        if(this.value < this.total) {
-          this.setDynamicValue();
-        } else {
-          this.subDynStyle = this.style !== 'small' ? {'border-radius': '12px'} : {'border-radius': '6px'};
-        }
-      }, this.intvalTime * 80 / 100);
+      this.valueShow = Math.round(this.value * 100 / this.total);
+      this.processingStyle = {'width': `${this.valueShow}%`, 'background': this.color};
+      this.subDyncStyle = {'background': this.subColor};
     }
   }
 
@@ -77,33 +46,16 @@ export class NcProgressComponent  implements OnInit,OnChanges {
     if(changes['value'] && !changes['value'].firstChange) {
       setTimeout(() => {
         this.handleValueChange();
-      },50);
-    }
-    if(changes['isDynamic'] && !changes['isDynamic'].firstChange) {
-      if(this.isDynamic) {
-        this.colorClass = {'normal': this.isDynamic, 'dyna': this.isDynamic};
-        this.widthStyle = this.style !== 'small' ? {'animation': `mydyna ${this.dynaTimelen}s`} :
-            {'animation': `mydyna3 ${this.dynaTimelen}s`, 'width': '0%'};
-        this.subDynStyle = this.isSubDynamic ? {'animation': 'mydyna2 500ms infinite'} : {};
-        this.intvalTime = this.dynaTimelen * 1000 / 5;
-        this.setDynamicValue();
-      } else {
-        this.colorClass = {'normal': this.isDynamic,'dyna': this.isDynamic};
-        this.value = 0;
-        this.valueShow = 0;
-        this.widthStyle = {'width': '0%'};
-      }
+      },20);
     }
   }
 
   handleValueChange() {
-    this.valueShow = this.value * 100 / this.total;
-    if(!this.isDynamic) {
-      this.colorClass = {'normal': !this.isDynamic && this.valueShow <= 50,
-        'warn': !this.isDynamic && (this.valueShow > 50 && this.valueShow < 80),
-        'urgent': !this.isDynamic && this.valueShow >= 80,
-        'percent100': !this.isDynamic && this.valueShow == 100};
+    this.valueShow = Math.round(this.value * 100 / this.total);
+    if(this.type === 'normal') {
+      this.processingStyle = {'width': `${this.valueShow}%`, 'background': this.color};
+    } else {
+      this.value = this.total;
     }
-    this.widthStyle['width'] = `${this.valueShow}%`;
   }
 }

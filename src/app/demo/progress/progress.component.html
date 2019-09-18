@@ -1,178 +1,152 @@
 <h2 class="title">进度条</h2>
 <p>进度条，用于展示操作或任务的进度情况</p>
-<h3>1. 正常进度</h3>
-<div style="margin-top: 20px;">
-  <div>
-    <nc-progress [value]="35" [total]="100"></nc-progress>
+<h3>1. 基本样式</h3>
+<div class="precDemo">
+  <h5>正常状态</h5>
+  <div class="precItem">
+    <nc-progress [value]="curValue"></nc-progress>
   </div>
-  <div>
-    <nc-progress [value]="70" [total]="100"></nc-progress>
+  <h5>带动画子状态</h5>
+  <div class="precItem">
+    <nc-progress [value]="curValue" [subDynamic]="true" [total]="total"></nc-progress>
   </div>
-  <div>
-    <nc-progress [value]="90" [total]="100"></nc-progress>
+  <h5>不显示进度百分比</h5>
+  <div class="precItem">
+    <nc-progress [value]="curValue" [showInfo]="false"></nc-progress>
   </div>
-  <div>
-    <nc-progress [value]="100" [total]="100"></nc-progress>
+  <h5>动态进度条</h5>
+  <div class="precItem">
+    <nc-progress [type]="'dynamic'"></nc-progress>
   </div>
-  <div>
-    <nc-progress [value]="60" [total]="200" [style]="'small'"></nc-progress>
-  </div>
-  <div>
-    <nc-progress [value]="150" [total]="200" [style]="'small'"></nc-progress>
-  </div>
-  <div>
-    <nc-progress [value]="190" [total]="200" [style]="'small'"></nc-progress>
-  </div>
-  <div>
-    <nc-progress [value]="200" [total]="200" [style]="'small'"></nc-progress>
-  </div>
-  <div>
-    <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'60%'"></nc-progress>
-  </div>
-  <div>
-    <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'200px'"></nc-progress>
-  </div>
-  <div>
-    <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'800px'"></nc-progress>
-  </div>
-  <div>
-    <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'250px'" [height]="30"></nc-progress>
-  </div>
-  <div>
-    <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'150px'" [height]="6"></nc-progress>
-  </div>
-  <div>
-    <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'150px'" [height]="6" [showProcValue]="false"></nc-progress>
+  <div class="precItem">
+    <span style="margin-right: 15px;">
+      <nc-button (click)="decValue()">-</nc-button>
+    </span>
+    <span style="margin-right: 15px;">
+      <nc-button (click)="addValue()">+</nc-button>
+    </span>
   </div>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems" [(selectTab)] = "currentTab">
   <div *ngIf="currentTab === 'html'">
-    <textarea style="height:120px;">
-      <nc-progress [value]="35" [total]="100"></nc-progress>
-      <nc-progress [value]="70" [total]="100"></nc-progress>
-      <nc-progress [value]="90" [total]="100"></nc-progress>
-      <nc-progress [value]="60" [total]="200" [style]="'small'"></nc-progress>
-      <nc-progress [value]="150" [total]="200" [style]="'small'"></nc-progress>
-      <nc-progress [value]="190" [total]="200" [style]="'small'"></nc-progress>
-      <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'60%'"></nc-progress>
-      <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'200px'"></nc-progress>
-      <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'800px'"></nc-progress>
-      <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'250px'" [height]="30"></nc-progress>
-      <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'150px'" [height]="6"></nc-progress>
-      <nc-progress [value]="100" [total]="200" [style]="'small'" [width]="'150px'" [height]="6" [showProcValue]="false"></nc-progress>
+    <textarea style="height:150px;">
+    <h5>正常状态</h5>
+    <div class="precItem">
+      <nc-progress [value]="curValue"></nc-progress>
+    </div>
+    <h5>带动画子状态</h5>
+    <div class="precItem">
+      <nc-progress [value]="curValue" [subDynamic]="true" [total]="total"></nc-progress>
+    </div>
+    <h5>不显示进度百分比</h5>
+    <div class="precItem">
+      <nc-progress [value]="curValue" [showInfo]="false"></nc-progress>
+    </div>
+    <h5>动态进度条</h5>
+    <div class="precItem">
+      <nc-progress [type]="'dynamic'"></nc-progress>
+    </div>
+    </textarea>
+  </div>
+  <div *ngIf="currentTab === 'typescript'">
+    <textarea style="height:150px;">
+    curValue : number = 30;
+    total : number = 100;
     </textarea>
   </div>
 </nc-tab>
-<h3>2. 动态进度</h3>
-<div style="margin-top: 20px;">
-  <div>
-    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
+
+<h3>2. 不同尺寸的进度条</h3>
+<div class="precDemo">
+  <h5>中等尺寸</h5>
+  <div class="precItem">
+    <nc-progress [value]="curValue2" [size]="'medium'"></nc-progress>
   </div>
-  <div>
-    <nc-progress [style]="'small'" [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
+  <div class="precItem">
+    <nc-progress [value]="curValue2" [size]="'medium'" [subDynamic]="true"></nc-progress>
   </div>
-  <div>
-    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'200px'"></nc-progress>
+  <div class="precItem">
+    <nc-progress [value]="curValue2" [size]="'medium'" [showInfo]="false"></nc-progress>
   </div>
-  <div>
-    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'"></nc-progress>
+  <div class="precItem">
+    <nc-progress [value]="curValue2" [type]="'dynamic'" [size]="'medium'"></nc-progress>
   </div>
-  <div>
-    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'150px'" [height]="6"></nc-progress>
+  <h5>小尺寸</h5>
+  <div class="precItem">
+    <nc-progress [value]="curValue2" [size]="'small'"></nc-progress>
   </div>
-  <div>
-    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [dynaTimelen]="5"></nc-progress>
+  <div class="precItem">
+    <nc-progress [value]="curValue2" [size]="'small'" [subDynamic]="true"></nc-progress>
   </div>
-  <div>
-    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [dynaTimelen]="20" [isSubDynamic]="false"></nc-progress>
+  <div class="precItem">
+    <nc-progress [value]="curValue2" [size]="'small'" [showInfo]="false"></nc-progress>
   </div>
-  <div>
-    <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'" [showProcValue]="false"></nc-progress>
-  </div>
-  <div>
-    <nc-progress [value]="curValue2" [total]="total" [width]="'200px'"></nc-progress>
+  <div class="precItem">
+    <nc-progress [value]="curValue2" [type]="'dynamic'" [size]="'small'"></nc-progress>
   </div>
 </div>
 <p>使用方式:</p>
 <nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
   <div *ngIf="currentTab2 === 'html'">
-    <textarea style="height:120px;">
-      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
-      <nc-progress [style]="'small'" [value]="curValue" [total]="total" [isDynamic]="true"></nc-progress>
-
-      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'200px'"></nc-progress>
-      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'"></nc-progress>
-      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'150px'" [height]="6"></nc-progress>
-
-      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [dynaTimelen]="5"></nc-progress>
-      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [dynaTimelen]="20" [isSubDynamic]="false"></nc-progress>
-
-      <nc-progress [value]="curValue" [total]="total" [isDynamic]="true" [width]="'60%'" [showProcValue]="false"></nc-progress>
-      <nc-progress [value]="curValue2" [total]="total" [width]="'200px'"></nc-progress>
+    <textarea style="height:150px;">
+    <h5>中等尺寸</h5>
+    <nc-progress [value]="curValue2" [size]="'medium'"></nc-progress>
+    <nc-progress [value]="curValue2" [size]="'medium'" [subDynamic]="true"></nc-progress>
+    <nc-progress [value]="curValue2" [size]="'medium'" [showInfo]="false"></nc-progress>
+    <nc-progress [value]="curValue2" [type]="'dynamic'" [size]="'medium'"></nc-progress>
+    <h5>小尺寸</h5>
+    <nc-progress [value]="curValue2" [size]="'small'"></nc-progress>
+    <nc-progress [value]="curValue2" [size]="'small'" [subDynamic]="true"></nc-progress>
+    <nc-progress [value]="curValue2" [size]="'small'" [showInfo]="false"></nc-progress>
+    <nc-progress [value]="curValue2" [type]="'dynamic'" [size]="'small'"></nc-progress>
     </textarea>
   </div>
   <div *ngIf="currentTab2 === 'typescript'">
-    <textarea style="height:350px;">
-      curValue : number = 0;
-      total : number = 100;
-      timelen : number = 10;
-      curValue2 : number = 0;
-
-      ngOnInit() {
-          setTimeout(() => {
-          this.progressing();
-        },1000);
-      }
-
-      progressing() {
-          let step = this.total / this.timelen;
-          if(this.curValue2 === this.total) {
-          this.curValue2 = 0;
-        } else {
-          this.curValue2 += step;
-        }
-        setTimeout(() => {
-          this.progressing();
-        },1000);
-      }
+    <textarea style="height:150px;">
+    curValue2 : number = 50;
     </textarea>
   </div>
 </nc-tab>
-<h3>3. 动态进度切换</h3>
-<div>
-  <div style="margin-right: 10px;display: inline-block;">
-    <nc-button (click)="confirmDyna()">进入动态</nc-button>
+
+<h3>3. 自定义样式</h3>
+<div class="precDemo">
+  <h5>自定义宽度</h5>
+  <div class="precItem">
+    <nc-progress [value]="curValue3" [size]="'medium'" [width]="'240px'"></nc-progress>
   </div>
-  <div style="margin-right: 10px;display: inline-block;">
-    <nc-button [type]="'cancel'" (click)="cancelDyna()">取消动态</nc-button>
+  <h5>自定义进度颜色</h5>
+  <div class="precItem">
+    <nc-progress [value]="curValue3" [size]="'medium'" [color]="'#ffa31a'"></nc-progress>
   </div>
-  <nc-progress [value]="curValue3" [total]="total" [isDynamic]="isproDynamic"></nc-progress>
+  <h5>自定义子状态颜色</h5>
+  <div class="precItem">
+    <nc-progress [value]="curValue3" [size]="'medium'" [color]="'#ffa31a'"
+                 [subDynamic]="true" [subColor]="'#ff66ff'"></nc-progress>
+  </div>
+  <h5>自定义total总数</h5>
+  <div class="precItem">
+    <nc-progress [value]="curValue3" [size]="'medium'" [total]="150" [subDynamic]="true"></nc-progress>
+  </div>
 </div>
 <p>使用方式:</p>
-<nc-tab [tabs]="tabItems2" [(selectTab)] = "currentTab2">
-  <div *ngIf="currentTab2 === 'html'">
-    <textarea style="height:120px;">
-    <div style="margin-right: 10px;display: inline-block;">
-      <nc-button (click)="confirmDyna()">进入动态</nc-button>
-    </div>
-    <div style="margin-right: 10px;display: inline-block;">
-      <nc-button [type]="'cancel'" (click)="cancelDyna()">取消动态</nc-button>
-    </div>
-    <nc-progress [value]="curValue3" [total]="total" [isDynamic]="isproDynamic"></nc-progress>
+<nc-tab [tabs]="tabItems3" [(selectTab)] = "currentTab3">
+  <div *ngIf="currentTab3 === 'html'">
+    <textarea style="height:150px;">
+    <h5>自定义宽度</h5>
+    <nc-progress [value]="curValue3" [size]="'medium'" [width]="'240px'"></nc-progress>
+    <h5>自定义进度颜色</h5>
+    <nc-progress [value]="curValue3" [size]="'medium'" [color]="'#ffa31a'"></nc-progress>
+    <h5>自定义子状态颜色</h5>
+    <nc-progress [value]="curValue3" [size]="'medium'" [color]="'#ffa31a'"
+                 [subDynamic]="true" [subColor]="'#ff66ff'"></nc-progress>
+    <h5>自定义total总数</h5>
+    <nc-progress [value]="curValue3" [size]="'medium'" [total]="150" [subDynamic]="true"></nc-progress>
     </textarea>
   </div>
-  <div *ngIf="currentTab2 === 'typescript'">
-    <textarea style="height:350px;">
-    curValue3 : number = 0;
-
-    confirmDyna() {
-        this.isproDynamic = true;
-    }
-
-    cancelDyna() {
-        this.isproDynamic = false;
-    }
+  <div *ngIf="currentTab3 === 'typescript'">
+    <textarea style="height:150px;">
+    curValue3 : number = 50;
     </textarea>
   </div>
 </nc-tab>
@@ -189,48 +163,48 @@
   <tbody>
   <tr>
     <td>total</td>
-    <td>总进度数</td>
+    <td>总数</td>
     <td>100</td>
   </tr>
   <tr>
     <td>value</td>
-    <td>当前进度数</td>
+    <td>当前值</td>
     <td>30</td>
   </tr>
   <tr>
-    <td>style</td>
-    <td>进度条尺寸,2种取值：big,small</td>
+    <td>type</td>
+    <td>类型,2种取值：normal,dynamic</td>
+    <td>normal</td>
+  </tr>
+  <tr>
+    <td>size</td>
+    <td>尺寸,3种取值：big,medium,small</td>
     <td>big</td>
   </tr>
   <tr>
     <td>width</td>
-    <td>自定义比例条的宽度，px或百分比，比如：50%，400px</td>
-    <td>360px</td>
+    <td>宽度，px或百分比，比如：50%，400px</td>
+    <td>420px</td>
   </tr>
   <tr>
-    <td>height</td>
-    <td>自定义高度，number，比如：10</td>
-    <td></td>
+    <td>color</td>
+    <td>进度颜色</td>
+    <td>#3399ff</td>
   </tr>
   <tr>
-    <td>isDynamic</td>
-    <td>是否动态进度条,true/false</td>
+    <td>subDynamic</td>
+    <td>展示子动画状态,true/false</td>
     <td>false</td>
   </tr>
   <tr>
-    <td>showProcValue</td>
-    <td>是否展示当前进度百分比,true/false</td>
-    <td>true</td>
+    <td>subColor</td>
+    <td>子状态颜色</td>
+    <td>#99d6ff</td>
   </tr>
   <tr>
-    <td>isSubDynamic</td>
-    <td>是否展示进度子动画,true/false</td>
+    <td>showInfo</td>
+    <td>展示进度百分比,true/false</td>
     <td>true</td>
-  </tr>
-  <tr>
-    <td>dynaTimelen</td>
-    <td>动态进度时长,单位s</td>
-    <td>10s</td>
   </tr>
   </tbody>
 </table>

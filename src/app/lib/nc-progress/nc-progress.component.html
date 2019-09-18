@@ -1,8 +1,8 @@
-<span class="process" [ngClass]="sizeClass" [ngStyle]="progStyleStr">
-  <span class="processing-container" [ngStyle]="proceConStyle">
-    <span class="processing" [ngClass]="colorClass" [ngStyle]="widthStyle">
-      <span class="dyna" *ngIf="isDynamic && isSubDynamic" [ngStyle]="subDynStyle"></span>
+<span class="process" [ngClass]="typeClass" [ngStyle]="progressStyle">
+  <span class="processing-container">
+    <span class="processing" [class.percent100]="value === total" [ngStyle]="processingStyle">
+      <span class="subDynamic" [ngStyle]="subDyncStyle" *ngIf="type === 'dynamic' || subDynamic"></span>
     </span>
   </span>
-  <span *ngIf="showProcValue" class="description">{{valueShow}}%</span>
+  <span *ngIf="type !== 'dynamic' && showInfo" class="description">{{valueShow}}%</span>
 </span>
