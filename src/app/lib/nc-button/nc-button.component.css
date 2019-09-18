@@ -12,6 +12,7 @@ button{
   min-width: 60px;
   min-height: 20px;
   max-width: 100%;
+  outline: none;
 }
 .button-add{
   background-color: #4db251;
