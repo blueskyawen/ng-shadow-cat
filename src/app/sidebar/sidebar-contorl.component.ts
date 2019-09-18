@@ -58,11 +58,11 @@ export class SidebarContorlComponent implements OnInit {
       {'name':'告警','label':'alert','isActive':false,'url':'/alert'},
       {'name':'展示台','label':'exhibit','isActive':false,'url':'/exhibit'},
       {'name':'可拖拽区间','label':'resize','isActive':false,'url':'/resize'},
-      {'name':'翻页','label':'pager','isActive':false,'url':'/pager'},
       {'name':'徽章','label':'badge','isActive':false,'url':'/badge'},
       {'name':'头像','label':'avater','isActive':false,'url':'/avater'},
       {'name':'消息表情','label':'msgEif','isActive':false,'url':'/msgEif'},
-      {'name':'加载占位','label':'skeleton','isActive':false,'url':'/skeleton'}];
+      {'name':'加载占位','label':'skeleton','isActive':false,'url':'/skeleton'},
+      {'name':'翻页','label':'pager','isActive':false,'url':'/pager'}];
   }
 
   ngOnInit() {
