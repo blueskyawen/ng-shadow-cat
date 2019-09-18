@@ -19,6 +19,8 @@ export class NcTransferComponent implements OnInit {
   allTargetChecked : boolean = false;
   allSourceChecked : boolean = false;
   containSTyle : any;
+  checkedResourItems : any[] = [];
+  checkedTargItems : any[] = [];
 
   constructor() {
   }
@@ -52,12 +54,14 @@ export class NcTransferComponent implements OnInit {
   }
 
   checkToTargetActive() {
-    for(let sOption of this.sourceOptions) {
-      if(sOption.checked) {
-        return this.toTargetActive = true;
-      }
-    }
-    this.toTargetActive = false;
+    let availItems = this.sourceOptions.filter(item => {
+      return !item.disable;
+    });
+    this.checkedResourItems = availItems.filter(item => {
+      return item.checked;
+    });
+    this.toTargetActive = this.checkedResourItems.length !== 0;
+    this.allSourceChecked = availItems.length === this.checkedResourItems.length;
   }
 
   checkTargOption(option : any) {
@@ -66,12 +70,11 @@ export class NcTransferComponent implements OnInit {
   }
 
   checkToSourceActive() {
-    for(let tOption of this.targetOptions) {
-      if(tOption.checked) {
-        return this.toSourceActive = true;
-      }
-    }
-    this.toSourceActive = false;
+    this.checkedTargItems = this.targetOptions.filter(item => {
+      return item.checked;
+    });
+    this.toSourceActive = this.checkedTargItems.length !== 0;
+    this.allTargetChecked = this.checkedTargItems.length === this.targetOptions.length;
   }
 
   checkAllTarget() {
@@ -95,24 +98,22 @@ export class NcTransferComponent implements OnInit {
   }
 
   targetToSource() {
-    for(let tOption of this.targetOptions) {
-      if(tOption.checked) {
-        this.sourceOptions.push({label:tOption.label,value:tOption.value,disable:false});
-      }
-    }
     this.targetOptions = this.targetOptions.filter(option => {return !option.checked;})
+    for(let tOption of this.checkedTargItems) {
+      this.sourceOptions.push({label:tOption.label,value:tOption.value,disable:false});
+    }
     this.toSourceActive = false;
+    this.allTargetChecked = false;
     this.targetOptionsChange.emit(this.targetOptions);
   }
 
   sourceToTarget() {
-    for(let sOption of this.sourceOptions) {
-      if(sOption.checked) {
-        this.targetOptions.push({label:sOption.label,value:sOption.value});
-      }
-    }
     this.sourceOptions = this.sourceOptions.filter(option => {return !option.checked;})
+    for(let sOption of this.checkedResourItems) {
+      this.targetOptions.push({label:sOption.label,value:sOption.value});
+    }
     this.toTargetActive = false;
+    this.allSourceChecked = false;
     this.targetOptionsChange.emit(this.targetOptions);
   }
 

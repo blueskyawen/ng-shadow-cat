@@ -1,16 +1,20 @@
 <div class="transferContainer" [ngStyle]="containSTyle">
   <div class="optionsContain">
     <div class="header">
-				<span class="select-all"  [class.checked]="allSourceChecked">
-					<span class="checkbox" (click)="checkAllSource()">✔</span>
-					<span class="items">{{getSourceCheckedNum()}}/{{sourceOptions.length}} items</span>
-				</span>
-      <span class="text">Source</span>
+        <span class="select-all"  [class.checked]="allSourceChecked">
+            <span class="checkbox" (click)="checkAllSource()">
+              <svg viewBox="64 64 896 896" fill="currentColor" width="12px" height="12px" data-icon="check" aria-hidden="true"><path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path></svg>
+            </span>
+            <span class="items">{{getSourceCheckedNum()}}/{{sourceOptions.length}} items</span>
+        </span>
+        <span class="text">Source</span>
     </div>
     <div class="content">
       <span class="option" *ngFor="let sourOption of sourceOptions" [class.disable]="sourOption.disable"
             [class.checked]="sourOption.checked" (click)="checkSourOption(sourOption)">
-        <span class="checkbox">✔</span>
+        <span class="checkbox">
+            <svg viewBox="64 64 896 896" fill="currentColor" width="12px" height="12px" data-icon="check" aria-hidden="true"><path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path></svg>
+        </span>
         <span class="item">{{sourOption.label}}</span>
       </span>
     </div>
@@ -21,16 +25,20 @@
   </div>
   <div class="optionsContain">
     <div class="header">
-				<span class="select-all" [class.checked]="allTargetChecked">
-					<span class="checkbox" (click)="checkAllTarget()">✔</span>
-					<span class="items">{{getTargetCheckedNum()}}/{{targetOptions.length}} items</span>
-				</span>
-      <span class="text">Target</span>
+        <span class="select-all" [class.checked]="allTargetChecked">
+            <span class="checkbox" (click)="checkAllTarget()">
+                <svg viewBox="64 64 896 896" fill="currentColor" width="12px" height="12px" data-icon="check" aria-hidden="true"><path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path></svg>
+            </span>
+            <span class="items">{{getTargetCheckedNum()}}/{{targetOptions.length}} items</span>
+        </span>
+        <span class="text">Target</span>
     </div>
     <div class="content">
       <span class="option" *ngFor="let targOption of targetOptions" (click)="checkTargOption(targOption)"
             [class.checked]="targOption.checked">
-        <span class="checkbox">✔</span>
+        <span class="checkbox">
+            <svg viewBox="64 64 896 896" fill="currentColor" width="12px" height="12px" data-icon="check" aria-hidden="true"><path d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"></path></svg>
+        </span>
         <span class="item">{{targOption.label}}</span>
       </span>
     </div>
