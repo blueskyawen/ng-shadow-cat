@@ -8,7 +8,7 @@ Ng-Shadow-Cat是一套前端组件库的Angular实现，封装了常用的一些
 
 ## 文档-Demo
 
-[ng-shadow-cat](https://zeithink.xyz//ng-shadow-cat)
+[ng-shadow-cat](https://zeithink.xyz/ng-shadow-cat)
 
 ## 使用方式
 
